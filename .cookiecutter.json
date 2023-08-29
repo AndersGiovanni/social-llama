@@ -1,0 +1,15 @@
+{
+  "_output_dir": "/Users/agmo/projects",
+  "_repo_dir": "/Users/agmo/.cookiecutters/cookiecutter-hypermodern-python",
+  "_template": "gh:cjolowicz/cookiecutter-hypermodern-python",
+  "author": "Anders Giovanni M\u00f8ller",
+  "copyright_year": "2023",
+  "development_status": "Development Status :: 1 - Planning",
+  "email": "agmo@itu.dk",
+  "friendly_name": "Social Llama",
+  "github_user": "AGMoller",
+  "license": "MIT",
+  "package_name": "social_llama",
+  "project_name": "social-llama",
+  "version": "0.0.0"
+}
