@@ -16,7 +16,7 @@ classifiers = [
 Changelog = "https://github.com/AGMoller/social-llama/releases"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.11"
 click = ">=8.0.1"
 tornado = "6.3.2"
 numpy = "^1.25.2"
