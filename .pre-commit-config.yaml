@@ -8,38 +8,45 @@ repos:
         types: [python]
         require_serial: true
         args: ["-c", "bandit.yml"]
+        exclude: "^data/"
       - id: black
         name: black
         entry: black
         language: system
         types: [python]
         require_serial: true
+        exclude: "^data/"
       - id: check-added-large-files
         name: Check for added large files
         entry: check-added-large-files
         language: system
+        exclude: "^data/"
       - id: check-toml
         name: Check Toml
         entry: check-toml
         language: system
         types: [toml]
+        exclude: "^data/"
       - id: check-yaml
         name: Check Yaml
         entry: check-yaml
         language: system
         types: [yaml]
+        exclude: "^data/"
       - id: darglint
         name: darglint
         entry: darglint
         language: system
         types: [python]
         stages: [manual]
+        exclude: "^data/"
       - id: end-of-file-fixer
         name: Fix End of Files
         entry: end-of-file-fixer
         language: system
         types: [text]
         stages: [commit, push, manual]
+        exclude: "^data/"
       - id: flake8
         name: flake8
         entry: flake8
@@ -47,6 +54,7 @@ repos:
         types: [python]
         require_serial: true
         args: [--darglint-ignore-regex, .*]
+        exclude: "^data/"
       - id: isort
         name: isort
         entry: isort
@@ -54,6 +62,7 @@ repos:
         language: system
         types_or: [cython, pyi, python]
         args: ["--filter-files"]
+        exclude: "^data/"
       - id: pyupgrade
         name: pyupgrade
         description: Automatically upgrade syntax for newer versions.
@@ -61,13 +70,16 @@ repos:
         language: system
         types: [python]
         args: [--py37-plus]
+        exclude: "^data/"
       - id: trailing-whitespace
         name: Trim Trailing Whitespace
         entry: trailing-whitespace-fixer
         language: system
         types: [text]
         stages: [commit, push, manual]
+        exclude: "^data/"
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v2.6.0
     hooks:
       - id: prettier
+        exclude: "^data/"

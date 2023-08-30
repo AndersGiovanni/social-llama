@@ -55,6 +55,11 @@ tests = ["tests", "*/tests"]
 [tool.coverage.run]
 branch = true
 source = ["social_llama", "tests"]
+omit = [
+    "*/__init__.py",
+    "*/config.py",
+    "*/site-packages/*",
+]
 
 [tool.coverage.report]
 show_missing = true
