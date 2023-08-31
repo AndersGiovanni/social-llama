@@ -16,10 +16,16 @@ classifiers = [
 Changelog = "https://github.com/AGMoller/social-llama/releases"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "3.11.*"
 click = ">=8.0.1"
 datasets = "^2.14.4"
 torch = "^2.0.1"
+peft = "^0.5.0"
+transformers = "^4.32.1"
+trl = "^0.7.1"
+bitsandbytes = "^0.41.1"
+scipy = "^1.11.2"
+accelerate = "^0.22.0"
 
 [tool.poetry.dev-dependencies]
 Pygments = ">=2.10.0"
