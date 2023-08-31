@@ -1,24 +1,31 @@
 """Dataclass to abstract the some data processing."""
 
-from typing import Dict
-from typing import List
 from typing import Union
 
 from datasets import Dataset
 from datasets import DatasetDict
+from datasets import IterableDataset
+from datasets import IterableDatasetDict
 from torch.utils.data import Dataset as TorchDataset
+from tqdm import tqdm
+
+from social_llama.config import DatasetConfig
 
 
 class DataClass(TorchDataset):
     """Dataclass abstraction for the datasets. This gives us a unified framework."""
 
-    def __init__(self) -> None:
+    def __init__(self, config) -> None:
         """Initialize the DataClass."""
         super().__init__()
-        self.data: Union[DatasetDict, Dataset, None] = None
-        self.labels: List[str] = []
+        self.data: Union[
+            DatasetDict, Dataset, IterableDataset, IterableDatasetDict, None
+        ] = None
+        self.config: DatasetConfig = config
 
-    def set_data(self, data: Union[DatasetDict, Dataset]) -> None:
+    def set_data(
+        self, data: Union[DatasetDict, Dataset, IterableDataset, IterableDatasetDict]
+    ) -> None:
         """Sets the data.
 
         Args:
@@ -26,7 +33,14 @@ class DataClass(TorchDataset):
         """
         self.data = data
 
-    def preprocess(self) -> None:
+    def get_data(self) -> None:
+        """Reads the data from the data directory.
+
+        Specific for individual datasets, so this function should be overwritten by the child class.
+        """
+        raise NotImplementedError
+
+    def preprocess(self, tokenizer) -> None:
         """This function should be overwritten by the child class.
 
         It should preprocess the data for the model.
@@ -34,26 +48,30 @@ class DataClass(TorchDataset):
         """
         raise NotImplementedError
 
-    def label_to_idx_mapper(self) -> Dict[str, int]:
-        """Returns a dictionary mapping labels to indices.
-
-        Returns:
-            Dict[str, int]: Dictionary mapping labels to indices
-        """
-        return {label: idx for idx, label in enumerate(self.labels)}
-
-    def idx_to_label_mapper(self) -> Dict[int, str]:
-        """Returns a dictionary mapping indices to labels.
-
-        Returns:
-            Dict[int, str]: Dictionary mapping indices to labels
-        """
-        return dict(enumerate(self.labels))
-
-    def set_labels(self, labels: List[str]) -> None:
-        """Sets the labels.
+    def _prompt_function(self, example: str) -> str:
+        """Prompt function for the dataset.
 
         Args:
-            labels (List[str]): List of labels
+            example (str): Example from the dataset
+
+        Returns:
+            str: Prompt for the example
         """
-        self.labels = labels
+        return self.config.prompt_template.format(
+            text=example["text"], response_good=example["response_good"]
+        )
+
+    def chars_token_ratio(self, dataset, tokenizer, nb_examples=400):
+        """Estimate the average number of characters per token in the dataset."""
+        total_characters, total_tokens = 0, 0
+        for _, example in tqdm(
+            zip(range(nb_examples), iter(dataset), strict=True), total=nb_examples
+        ):
+            text = self._prompt_function(example)
+            total_characters += len(text)
+            if tokenizer.is_fast:
+                total_tokens += len(tokenizer(text).tokens())
+            else:
+                total_tokens += len(tokenizer.tokenize(text))
+
+        return total_characters / total_tokens
