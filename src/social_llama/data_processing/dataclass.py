@@ -1,5 +1,8 @@
 """Dataclass to abstract the some data processing."""
 
+from abc import abstractmethod
+from typing import Dict
+from typing import List
 from typing import Union
 
 from datasets import Dataset
@@ -33,22 +36,41 @@ class DataClass(TorchDataset):
         """
         self.data = data
 
+    @abstractmethod
     def get_data(self) -> None:
         """Reads the data from the data directory.
 
         Specific for individual datasets, so this function should be overwritten by the child class.
         """
-        raise NotImplementedError
+        pass
 
-    def preprocess(self, tokenizer) -> None:
+    @abstractmethod
+    def preprocess(self, tokenizer, **kwargs) -> None:
         """This function should be overwritten by the child class.
 
         It should preprocess the data for the model.
         This includes tokenization, label preprocessing, and column formatting
         """
-        raise NotImplementedError
+        pass
 
-    def _prompt_function(self, example: str) -> str:
+    @abstractmethod
+    def _extract_few_shot_examples(self, dataset: dict, seed: int = 42) -> List[Dict]:
+        """Extracts the few shot examples from the dataset.
+
+        Function should be overwritten by the child class.
+        """
+        pass
+
+    @abstractmethod
+    def _apply_few_shot_prompt(self, **kwargs) -> None:
+        """Applies the few shot prompt to the dataset.
+
+        Function should be overwritten by the child class.
+        """
+        pass
+
+    @abstractmethod
+    def _prompt_function(self, example: Dict) -> str:
         """Prompt function for the dataset.
 
         Args:
@@ -57,15 +79,13 @@ class DataClass(TorchDataset):
         Returns:
             str: Prompt for the example
         """
-        return self.config.prompt_template.format(
-            text=example["text"], response_good=example["response_good"]
-        )
+        pass
 
     def chars_token_ratio(self, dataset, tokenizer, nb_examples=400):
         """Estimate the average number of characters per token in the dataset."""
         total_characters, total_tokens = 0, 0
         for _, example in tqdm(
-            zip(range(nb_examples), iter(dataset), strict=True), total=nb_examples
+            zip(range(nb_examples), iter(dataset)), total=nb_examples
         ):
             text = self._prompt_function(example)
             total_characters += len(text)

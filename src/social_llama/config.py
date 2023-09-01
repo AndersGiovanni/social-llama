@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict
 from typing import List
+from typing import Optional
 
 
 # Root directory of the project
@@ -29,8 +30,10 @@ class DatasetConfig:
     path: Path
     prompt_prefix: str
     prompt_template: str
+    prompt_template_cot: str
     labels: List[str]
     max_generated_tokens: int
+    cot_info_dict: Optional[Dict[str, str]]
     num_few_shot_examples: int = 0
 
     @property
