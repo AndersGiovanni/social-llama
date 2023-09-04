@@ -8,6 +8,7 @@ from dataclasses import asdict
 from dataclasses import dataclass
 from typing import Any
 from typing import Callable
+from typing import Dict
 from typing import Iterator
 from typing import List
 from typing import Tuple
@@ -111,7 +112,7 @@ class SocialDimensions(DataClass):
         self.set_data(data)
 
     @override
-    def preprocess(
+    def preprocess_sft(
         self, tokenizer
     ) -> Tuple[ConstantLengthDataset, ConstantLengthDataset]:
         """Preprocess the data."""
@@ -133,8 +134,8 @@ class SocialDimensions(DataClass):
 
         if self.task == "few-shot":
             # Construct the dataset as few-shot
-            train_data = self._apply_few_shot_prompt(train_data)
-            valid_data = self._apply_few_shot_prompt(valid_data)
+            train_data = self._apply_few_shot_prompt_stf(train_data)
+            valid_data = self._apply_few_shot_prompt_stf(valid_data)
 
         formatting_func: Callable = self._prompt_function
 
@@ -228,7 +229,7 @@ class SocialDimensions(DataClass):
         return "\n".join(samples_with_prompt)
 
     @override
-    def _apply_few_shot_prompt(self, dataset, seed: int = 42) -> Dataset:
+    def _apply_few_shot_prompt_stf(self, dataset, seed: int = 42) -> Dataset:
         """Applies the few shot prompt to the dataset."""
         # Shuffle dataset
         shuffled_data = dataset.shuffle(seed=seed)
@@ -255,9 +256,127 @@ class SocialDimensions(DataClass):
 
         return few_shot_dataset
 
+    @override
+    def _convert_to_q_and_a(self, samples: List[Sample]) -> Dict:
+        """Convert the dataset to a question and answer dataset."""
+        if self.task == "zero-shot":
+            return {
+                "prompt": [
+                    rf"Text: {text}\Social dimension: " for text in samples["text"]
+                ],
+                "chosen": samples["response_good"],
+                "rejected": samples["response_bad"],
+            }
+        elif self.task == "few-shot":
+            return {
+                "prompt": "".join(
+                    [
+                        f"Text: {text}\nSocial dimension: {response_good}\n"
+                        for text, response_good in zip(
+                            samples["text"][:-1], samples["response_good"][:-1]
+                        )
+                    ]
+                )
+                + f"Text: {samples['text'][-1]}\nSocial dimension: ",
+                "chosen": samples["response_good"][-1],
+                "rejected": samples["response_bad"][-1],
+            }
+        elif self.task == "cot":
+            return {
+                "prompt": "".join(
+                    [
+                        f"Text: {text}\nThe text exhibits {self.config.cot_info_dict[response_good]}. In particular in the part '{h_text!r}'.\\Social dimension: {response_good}\n"
+                        for text, h_text, response_good in zip(
+                            samples["text"][:-1],
+                            samples["h_text"][:-1],
+                            samples["response_good"][:-1],
+                        )
+                    ]
+                )
+                + f"Text: {samples['text'][-1]}\n",
+                "chosen": f"The text exhibits {self.config.cot_info_dict[samples['response_good'][-1]]}. In particular in the part '{samples['h_text'][-1]!r}'.\nSocial dimension: {samples['response_good'][-1]}\n",
+                "rejected": f"The text exhibits {self.config.cot_info_dict[samples['response_bad'][-1]]}. In particular in the part '{samples['h_text'][-1]!r}'.\nSocial dimension: {samples['response_bad'][-1]}\n",
+            }
+
+    def _apply_few_shot_prompt_dpo(self, dataset, seed: int = 42) -> Dataset:
+        """Applies the few shot prompt to the dataset."""
+        # Shuffle dataset
+        shuffled_data = dataset.shuffle(seed=seed)
+
+        # All the samples after making them into a few shot example
+        few_shot_collection = []
+
+        while shuffled_data.num_rows >= self.config.num_few_shot_examples:
+            # Extract few shot examples
+            few_shot_examples, shuffled_data = self._extract_few_shot_examples(
+                shuffled_data, seed=seed
+            )
+
+            # Add few shot examples to few shot dataset
+            few_shot_collection.append(
+                {
+                    "idx": [example["idx"] for example in few_shot_examples],
+                    "text": [example["text"] for example in few_shot_examples],
+                    "h_text": [example["h_text"] for example in few_shot_examples],
+                    "response_good": [
+                        example["response_good"] for example in few_shot_examples
+                    ],
+                    "response_bad": [
+                        example["response_bad"] for example in few_shot_examples
+                    ],
+                }
+            )
+
+            # Every 1000 examples print the number of examples left
+            if len(few_shot_collection) % 1000 == 0:
+                print(
+                    f"Number of examples left: {shuffled_data.num_rows}. Number of few shot examples: {len(few_shot_collection)}"
+                )
+
+        # Define new empty DatasetDict
+        few_shot_dataset = Dataset.from_list(few_shot_collection)
+
+        return few_shot_dataset
+
+    @override
+    def preprocess_dpo(self) -> None:
+        """Preprocess for DPO. The data needs Q&A format."""
+        self.data = self.data.train_test_split(  # type: ignore
+            test_size=0.2,
+            shuffle=True,
+            seed=42,
+        )
+
+        original_columns = self.data["train"].column_names
+
+        train_data = self.data["train"]
+        valid_data = self.data["test"]
+        print(
+            f"Size of the train set: {len(train_data)}. Size of the validation set: {len(valid_data)}"
+        )
+
+        if self.task == "few-shot" or self.task == "cot":
+            train_data = self._apply_few_shot_prompt_dpo(train_data)
+            valid_data = self._apply_few_shot_prompt_dpo(valid_data)
+
+        train_data = train_data.map(
+            self._convert_to_q_and_a,
+            # batched=True,
+            remove_columns=original_columns,
+            drop_last_batch=True,
+        )
+        valid_data = valid_data.map(
+            self._convert_to_q_and_a,
+            # batched=True,
+            remove_columns=original_columns,
+            drop_last_batch=True,
+        )
+
+        return train_data, valid_data
+
 
 if __name__ == "__main__":
-    social_dimensions = SocialDimensions(task="zero-shot")
+    social_dimensions = SocialDimensions(task="cot")
     social_dimensions.get_data()
     tokenizer_ = AutoTokenizer.from_pretrained(
         "meta-llama/Llama-2-7b-hf", trust_remote_code=True
@@ -265,6 +384,6 @@ if __name__ == "__main__":
     tokenizer_.pad_token = tokenizer_.eos_token
     tokenizer_.padding_side = "right"  # Fix weird overflow issue with fp16 training
 
-    train_data_, valid_data_ = social_dimensions.preprocess(tokenizer=tokenizer_)
+    train_data_, valid_data_ = social_dimensions.preprocess_dpo()
     train_data_.dataset = train_data_.dataset.select(range(100))
     a = 1

@@ -46,7 +46,15 @@ class DataClass(TorchDataset):
         """
 
     @abstractmethod
-    def preprocess(self, tokenizer) -> Any:
+    def preprocess_sft(self, tokenizer) -> Any:
+        """This function should be overwritten by the child class.
+
+        It should preprocess the data for the model.
+        This includes tokenization, label preprocessing, and column formatting
+        """
+
+    @abstractmethod
+    def preprocess_dpo(self) -> Any:
         """This function should be overwritten by the child class.
 
         It should preprocess the data for the model.
@@ -63,8 +71,15 @@ class DataClass(TorchDataset):
         """
 
     @abstractmethod
-    def _apply_few_shot_prompt(self, dataset, seed) -> None:
-        """Applies the few shot prompt to the dataset.
+    def _apply_few_shot_prompt_stf(self, dataset, seed) -> None:
+        """Applies the few shot prompt to the dataset for SFT.
+
+        Function should be overwritten by the child class.
+        """
+
+    @abstractmethod
+    def _apply_few_shot_prompt_dpo(self, dataset, seed) -> None:
+        """Applies the few shot prompt to the dataset for DPO.
 
         Function should be overwritten by the child class.
         """
@@ -94,3 +109,7 @@ class DataClass(TorchDataset):
                 total_tokens += len(tokenizer.tokenize(text))
 
         return total_characters / total_tokens
+
+    @abstractmethod
+    def _convert_to_q_and_a(self, samples: List[Any]) -> Dataset:
+        """Load dataset into the question answering format."""
