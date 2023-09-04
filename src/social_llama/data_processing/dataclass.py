@@ -1,8 +1,9 @@
 """Dataclass to abstract the some data processing."""
 
 from abc import abstractmethod
-from typing import Dict
+from typing import Any
 from typing import List
+from typing import Tuple
 from typing import Union
 
 from datasets import Dataset
@@ -18,13 +19,14 @@ from social_llama.config import DatasetConfig
 class DataClass(TorchDataset):
     """Dataclass abstraction for the datasets. This gives us a unified framework."""
 
-    def __init__(self, config) -> None:
+    def __init__(self, config, task: str) -> None:
         """Initialize the DataClass."""
         super().__init__()
         self.data: Union[
             DatasetDict, Dataset, IterableDataset, IterableDatasetDict, None
         ] = None
         self.config: DatasetConfig = config
+        self.task: str = task
 
     def set_data(
         self, data: Union[DatasetDict, Dataset, IterableDataset, IterableDatasetDict]
@@ -42,35 +44,33 @@ class DataClass(TorchDataset):
 
         Specific for individual datasets, so this function should be overwritten by the child class.
         """
-        pass
 
     @abstractmethod
-    def preprocess(self, tokenizer, **kwargs) -> None:
+    def preprocess(self, tokenizer) -> Any:
         """This function should be overwritten by the child class.
 
         It should preprocess the data for the model.
         This includes tokenization, label preprocessing, and column formatting
         """
-        pass
 
     @abstractmethod
-    def _extract_few_shot_examples(self, dataset: dict, seed: int = 42) -> List[Dict]:
+    def _extract_few_shot_examples(
+        self, dataset: dict, seed: int = 42
+    ) -> Tuple[List[Any], Dataset]:
         """Extracts the few shot examples from the dataset.
 
         Function should be overwritten by the child class.
         """
-        pass
 
     @abstractmethod
-    def _apply_few_shot_prompt(self, **kwargs) -> None:
+    def _apply_few_shot_prompt(self, dataset, seed) -> None:
         """Applies the few shot prompt to the dataset.
 
         Function should be overwritten by the child class.
         """
-        pass
 
     @abstractmethod
-    def _prompt_function(self, example: Dict) -> str:
+    def _prompt_function(self, example: Any) -> str:
         """Prompt function for the dataset.
 
         Args:
@@ -79,7 +79,6 @@ class DataClass(TorchDataset):
         Returns:
             str: Prompt for the example
         """
-        pass
 
     def chars_token_ratio(self, dataset, tokenizer, nb_examples=400):
         """Estimate the average number of characters per token in the dataset."""

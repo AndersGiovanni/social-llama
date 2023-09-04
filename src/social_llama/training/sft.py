@@ -163,7 +163,7 @@ training_args = TrainingArguments(
 )
 
 if script_args.dataset_name == "social_dimensions":
-    dataset = SocialDimensions()
+    dataset = SocialDimensions(task="zero-shot")
 
 dataset.get_data()
 train_dataset, eval_dataset = dataset.preprocess(tokenizer=tokenizer)
