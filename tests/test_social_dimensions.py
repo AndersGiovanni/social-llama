@@ -32,10 +32,7 @@ class TestSocialDimensions(unittest.TestCase):
         """Test the prompt function."""
         data = Sample(
             idx="0",
-            text=""""Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ...
-            Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such,
-            I might assume that your rice in question might be American Chinese food style fried rice. What\'s in that "American"
-            rice served in Malaysia, besides rice?""",
+            text=""""Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ... Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such, I might assume that your rice in question might be American Chinese food style fried rice. What\'s in that "American" rice served in Malaysia, besides rice?""",  # noqa
             h_text="As such, I might assume that your rice in question might be American Chinese food style fried rice.",
             response_good="power",
             response_bad="similarity",
@@ -45,16 +42,12 @@ class TestSocialDimensions(unittest.TestCase):
 
         self.assertEqual(
             prompt_zero_shot,
-            """Text: "Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ...
-                    Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such,
-                    I might assume that your rice in question might be American Chinese food style fried rice. What's in that "American"
-                    rice served in Malaysia, besides rice?
-        Social Dimensions: power""",
+            """Text: "Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ... Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such, I might assume that your rice in question might be American Chinese food style fried rice. What\'s in that "American" rice served in Malaysia, besides rice?\nSocial Dimensions: power""",  # noqa
         )
 
         self.assertEqual(
             prompt_cot,
-            """Text: "Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ... \n            Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such, \n            I might assume that your rice in question might be American Chinese food style fried rice. What\'s in that "American" \n            rice served in Malaysia, besides rice?\nThe text exhibits power over the behavior and outcomes of another. In particular in the part \'As such, I might assume that your rice in question might be American Chinese food style fried rice.\'.\n    The social dimensions are: power""",  # noqa
+            """Text: "Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ... Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such, I might assume that your rice in question might be American Chinese food style fried rice. What\'s in that "American" rice served in Malaysia, besides rice?\nThe text exhibits power over the behavior and outcomes of another. In particular in the part \'As such, I might assume that your rice in question might be American Chinese food style fried rice.\'.\n    The social dimensions are: power""",  # noqa
         )
 
 
