@@ -306,6 +306,8 @@ class SocialDimensions(DataClass):
                 "chosen": f"The text exhibits {self.config.cot_info_dict[samples['response_good'][-1]]}. In particular in the part '{samples['h_text'][-1]!r}'.\nSocial dimension: {samples['response_good'][-1]}\n",
                 "rejected": f"The text exhibits {self.config.cot_info_dict[samples['response_bad'][-1]]}. In particular in the part '{samples['h_text'][-1]!r}'.\nSocial dimension: {samples['response_bad'][-1]}\n",
             }
+        else:
+            raise ValueError(f"Type {type} is not supported.")
 
     def _apply_few_shot_prompt_dpo(self, dataset, seed: int = 42) -> Dataset:
         """Applies the few shot prompt to the dataset."""
