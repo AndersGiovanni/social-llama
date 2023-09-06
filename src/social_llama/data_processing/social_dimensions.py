@@ -12,6 +12,7 @@ from typing import Dict
 from typing import Iterator
 from typing import List
 from typing import Tuple
+from typing import Union
 
 from datasets import Dataset
 from datasets import load_dataset
@@ -257,13 +258,21 @@ class SocialDimensions(DataClass):
         return few_shot_dataset
 
     @override
-    def _convert_to_q_and_a(self, samples: List[Sample]) -> Dict:
-        """Convert the dataset to a question and answer dataset."""
+    def _convert_to_q_and_a(self, samples: Union[Sample, List[Sample]]) -> Dict:
+        """Convert the dataset to a question and answer dataset.
+
+        Args:
+            samples (Union[Sample, List[Sample]]): Sample (if zero-shot) or list of samples (if few-shot or CoT)
+
+        Returns:
+            Dict: Dict with the prompt, chosen response, and rejected response
+
+        Raises:
+            ValueError: If the task is not supported
+        """
         if self.task == "zero-shot":
             return {
-                "prompt": [
-                    rf"Text: {text}\Social dimension: " for text in samples["text"]
-                ],
+                "prompt": f"Text: {samples['text']}\nSocial dimension: ",
                 "chosen": samples["response_good"],
                 "rejected": samples["response_bad"],
             }
@@ -376,7 +385,7 @@ class SocialDimensions(DataClass):
 
 
 if __name__ == "__main__":
-    social_dimensions = SocialDimensions(task="cot")
+    social_dimensions = SocialDimensions(task="few-shot")
     social_dimensions.get_data()
     tokenizer_ = AutoTokenizer.from_pretrained(
         "meta-llama/Llama-2-7b-hf", trust_remote_code=True
