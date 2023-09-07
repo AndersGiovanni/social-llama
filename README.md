@@ -18,6 +18,7 @@
 [codecov]: https://app.codecov.io/gh/AGMoller/social-llama
 [pre-commit]: https://github.com/pre-commit/pre-commit
 [black]: https://github.com/psf/black
+[license]: https://opensource.org/licenses/MIT
 
 ## Features
 
