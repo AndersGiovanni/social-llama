@@ -265,7 +265,7 @@ class SocialDimensions(DataClass):
         """Convert the dataset to a question and answer dataset.
 
         Args:
-            samples (Union[Sample, List[Sample]]): Sample (if zero-shot) or list of samples (if few-shot or CoT)
+            samples (Union[Sample, List[Sample]], LazyRow): Sample (if zero-shot) or list of samples (if few-shot or CoT)
 
         Returns:
             Dict: Dict with the prompt, chosen response, and rejected response
