@@ -16,6 +16,7 @@ from typing import Union
 
 from datasets import Dataset
 from datasets import load_dataset
+from datasets.formatting.formatting import LazyRow
 from transformers import AutoTokenizer
 from trl.trainer import ConstantLengthDataset
 from typing_extensions import override
@@ -258,7 +259,9 @@ class SocialDimensions(DataClass):
         return few_shot_dataset
 
     @override
-    def _convert_to_q_and_a(self, samples: Union[Sample, List[Sample]]) -> Dict:
+    def _convert_to_q_and_a(
+        self, samples: Union[Sample, List[Sample], LazyRow]
+    ) -> Dict:
         """Convert the dataset to a question and answer dataset.
 
         Args:
@@ -272,9 +275,9 @@ class SocialDimensions(DataClass):
         """
         if self.task == "zero-shot":
             return {
-                "prompt": f"Text: {samples['text']}\nSocial dimension: ",
-                "chosen": samples["response_good"],
-                "rejected": samples["response_bad"],
+                "prompt": f"Text: {samples['text']}\nSocial dimension: ",  # type: ignore
+                "chosen": samples["response_good"],  # type: ignore
+                "rejected": samples["response_bad"],  # type: ignore
             }
         elif self.task == "few-shot":
             return {
@@ -282,29 +285,29 @@ class SocialDimensions(DataClass):
                     [
                         f"Text: {text}\nSocial dimension: {response_good}\n"
                         for text, response_good in zip(
-                            samples["text"][:-1], samples["response_good"][:-1]
+                            samples["text"][:-1], samples["response_good"][:-1]  # type: ignore
                         )
                     ]
                 )
-                + f"Text: {samples['text'][-1]}\nSocial dimension: ",
-                "chosen": samples["response_good"][-1],
-                "rejected": samples["response_bad"][-1],
+                + f"Text: {samples['text'][-1]}\nSocial dimension: ",  # type: ignore
+                "chosen": samples["response_good"][-1],  # type: ignore
+                "rejected": samples["response_bad"][-1],  # type: ignore
             }
         elif self.task == "cot":
             return {
                 "prompt": "".join(
                     [
-                        f"Text: {text}\nThe text exhibits {self.config.cot_info_dict[response_good]}. In particular in the part '{h_text!r}'.\\Social dimension: {response_good}\n"
+                        f"Text: {text}\nThe text exhibits {self.config.cot_info_dict[response_good]}. In particular in the part '{h_text!r}'.\\Social dimension: {response_good}\n"  # type: ignore
                         for text, h_text, response_good in zip(
-                            samples["text"][:-1],
-                            samples["h_text"][:-1],
-                            samples["response_good"][:-1],
+                            samples["text"][:-1],  # type: ignore
+                            samples["h_text"][:-1],  # type: ignore
+                            samples["response_good"][:-1],  # type: ignore
                         )
                     ]
                 )
-                + f"Text: {samples['text'][-1]}\n",
-                "chosen": f"The text exhibits {self.config.cot_info_dict[samples['response_good'][-1]]}. In particular in the part '{samples['h_text'][-1]!r}'.\nSocial dimension: {samples['response_good'][-1]}\n",
-                "rejected": f"The text exhibits {self.config.cot_info_dict[samples['response_bad'][-1]]}. In particular in the part '{samples['h_text'][-1]!r}'.\nSocial dimension: {samples['response_bad'][-1]}\n",
+                + f"Text: {samples['text'][-1]}\n",  # type: ignore
+                "chosen": f"The text exhibits {self.config.cot_info_dict[samples['response_good'][-1]]}. In particular in the part '{samples['h_text'][-1]!r}'.\nSocial dimension: {samples['response_good'][-1]}\n",  # type: ignore
+                "rejected": f"The text exhibits {self.config.cot_info_dict[samples['response_bad'][-1]]}. In particular in the part '{samples['h_text'][-1]!r}'.\nSocial dimension: {samples['response_bad'][-1]}\n",  # type: ignore
             }
         else:
             raise ValueError(f"Type {type} is not supported.")
@@ -350,7 +353,7 @@ class SocialDimensions(DataClass):
         return few_shot_dataset
 
     @override
-    def preprocess_dpo(self) -> None:
+    def preprocess_dpo(self) -> Tuple[Dataset, Dataset]:
         """Preprocess for DPO. The data needs Q&A format."""
         self.data = self.data.train_test_split(  # type: ignore
             test_size=0.2,
@@ -396,5 +399,3 @@ if __name__ == "__main__":
     tokenizer_.padding_side = "right"  # Fix weird overflow issue with fp16 training
 
     train_data_, valid_data_ = social_dimensions.preprocess_dpo()
-    train_data_.dataset = train_data_.dataset.select(range(100))
-    a = 1

@@ -3,6 +3,7 @@
 
 import unittest
 from dataclasses import asdict
+from typing import Dict
 
 from datasets import Dataset
 
@@ -66,7 +67,7 @@ class TestSocialDimensions(unittest.TestCase):
 
         datasetdict = Dataset.from_list([asdict(data)])
         original_columns = datasetdict.column_names
-        res = datasetdict.map(
+        res: Dict = datasetdict.map(
             self.social_dimensions_zero_shot._convert_to_q_and_a,
             remove_columns=original_columns,
         )[0]
