@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "social-llama"
-version = "0.0.1"
+version = "0.0.2"
 description = "Social Llama"
 authors = ["Anders Giovanni Møller <andersgiovanni@gmail.com>"]
 license = "MIT"
