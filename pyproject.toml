@@ -59,6 +59,7 @@ social-llama = "social_llama.__main__:main"
 [tool.poetry.group.dev.dependencies]
 datasets = "^2.14.4"
 torch = "^2.0.1"
+ipykernel = "^6.25.2"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
