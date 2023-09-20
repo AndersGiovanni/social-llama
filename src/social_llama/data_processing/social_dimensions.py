@@ -390,7 +390,7 @@ class SocialDimensions(DataClass):
 
 
 if __name__ == "__main__":
-    social_dimensions = SocialDimensions(task="few-shot")
+    social_dimensions = SocialDimensions(task="zero-shot")
     social_dimensions.get_data()
     tokenizer_ = AutoTokenizer.from_pretrained(
         "meta-llama/Llama-2-7b-hf", trust_remote_code=True
