@@ -26,6 +26,7 @@ trl = "^0.7.1"
 bitsandbytes = "^0.41.1"
 scipy = "^1.11.2"
 accelerate = "^0.22.0"
+wandb = "^0.15.10"
 
 [tool.poetry.dev-dependencies]
 Pygments = ">=2.10.0"
@@ -94,3 +95,6 @@ ignore_missing_imports = true
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[virtualenvs]
+in-project = true

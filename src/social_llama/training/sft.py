@@ -121,7 +121,7 @@ bnb_config = BitsAndBytesConfig(
 base_model = AutoModelForCausalLM.from_pretrained(
     script_args.model_name,
     quantization_config=bnb_config,
-    device_map={"": 0},
+    device_map="auto",
     trust_remote_code=True,
     use_auth_token=True,
 )
@@ -157,7 +157,7 @@ training_args = TrainingArguments(
     lr_scheduler_type=script_args.lr_scheduler_type,
     warmup_steps=script_args.num_warmup_steps,
     optim=script_args.optimizer_type,
-    bf16=True,
+    fp16=True,
     remove_unused_columns=False,
     run_name="sft_llama2",
 )
