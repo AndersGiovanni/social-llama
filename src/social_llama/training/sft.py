@@ -159,7 +159,7 @@ training_args = TrainingArguments(
     optim=script_args.optimizer_type,
     fp16=True,
     remove_unused_columns=False,
-    run_name="sft_llama2",
+    run_name=f"{script_args.model_name}_sft",
 )
 
 if script_args.dataset_name == "social_dimensions":

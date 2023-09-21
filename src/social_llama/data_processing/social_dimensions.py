@@ -275,7 +275,7 @@ class SocialDimensions(DataClass):
         """
         if self.task == "zero-shot":
             return {
-                "prompt": f"Text: {samples['text']}\nSocial dimension: ",  # type: ignore
+                "prompt": f"""Question: The following text is a social media post. The text conveys one or more social dimensions, and your job is to determine the dimension. The social dimensions are 'social_support', 'conflict', 'trust', 'fun', 'similarity', 'identity', 'respect', 'romance', 'knowledge', 'power', and 'other'. \n\nText: {samples['text']}\n\nAsnwer: """,  # type: ignore
                 "chosen": samples["response_good"],  # type: ignore
                 "rejected": samples["response_bad"],  # type: ignore
             }
@@ -283,13 +283,13 @@ class SocialDimensions(DataClass):
             return {
                 "prompt": "".join(
                     [
-                        f"Text: {text}\nSocial dimension: {response_good}\n"
+                        f"Text: {text}\n\nAnswer: {response_good}\n"
                         for text, response_good in zip(
                             samples["text"][:-1], samples["response_good"][:-1]  # type: ignore
                         )
                     ]
                 )
-                + f"Text: {samples['text'][-1]}\nSocial dimension: ",  # type: ignore
+                + f"Text: {samples['text'][-1]}\n\nAnswer: ",  # type: ignore
                 "chosen": samples["response_good"][-1],  # type: ignore
                 "rejected": samples["response_bad"][-1],  # type: ignore
             }
@@ -297,7 +297,7 @@ class SocialDimensions(DataClass):
             return {
                 "prompt": "".join(
                     [
-                        f"Text: {text}\nThe text exhibits {self.config.cot_info_dict[response_good]}. In particular in the part '{h_text!r}'.\\Social dimension: {response_good}\n"  # type: ignore
+                        f"Text: {text}\nThe text exhibits {self.config.cot_info_dict[response_good]}. In particular in the part '{h_text!r}'.\nAnswer: {response_good}\n"  # type: ignore
                         for text, h_text, response_good in zip(
                             samples["text"][:-1],  # type: ignore
                             samples["h_text"][:-1],  # type: ignore
@@ -306,8 +306,8 @@ class SocialDimensions(DataClass):
                     ]
                 )
                 + f"Text: {samples['text'][-1]}\n",  # type: ignore
-                "chosen": f"The text exhibits {self.config.cot_info_dict[samples['response_good'][-1]]}. In particular in the part '{samples['h_text'][-1]!r}'.\nSocial dimension: {samples['response_good'][-1]}\n",  # type: ignore
-                "rejected": f"The text exhibits {self.config.cot_info_dict[samples['response_bad'][-1]]}. In particular in the part '{samples['h_text'][-1]!r}'.\nSocial dimension: {samples['response_bad'][-1]}\n",  # type: ignore
+                "chosen": f"The text exhibits {self.config.cot_info_dict[samples['response_good'][-1]]}. In particular in the part '{samples['h_text'][-1]!r}'.\nAnswer: {samples['response_good'][-1]}\n",  # type: ignore
+                "rejected": f"The text exhibits {self.config.cot_info_dict[samples['response_bad'][-1]]}. In particular in the part '{samples['h_text'][-1]!r}'.\nAnswer: {samples['response_bad'][-1]}\n",  # type: ignore
             }
         else:
             raise ValueError(f"Type {type} is not supported.")

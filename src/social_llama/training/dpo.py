@@ -28,7 +28,7 @@ class ScriptArguments:
 
     # training parameters
     model_name_or_path: Optional[str] = field(
-        default="../results_sft/final_checkpoint",
+        default="./sft/final_merged_checkpoint",
         metadata={"help": "the location of the SFT model name or path"},
     )
     learning_rate: Optional[float] = field(
@@ -69,10 +69,10 @@ class ScriptArguments:
     lora_r: Optional[int] = field(default=8, metadata={"help": "the lora r parameter"})
 
     max_prompt_length: Optional[int] = field(
-        default=512, metadata={"help": "the maximum prompt length"}
+        default=1024, metadata={"help": "the maximum prompt length"}
     )
     max_length: Optional[int] = field(
-        default=1024, metadata={"help": "the maximum sequence length"}
+        default=2048, metadata={"help": "the maximum sequence length"}
     )
     max_steps: Optional[int] = field(
         default=1000, metadata={"help": "max number of training steps"}
@@ -88,7 +88,7 @@ class ScriptArguments:
     )
 
     output_dir: Optional[str] = field(
-        default="./results", metadata={"help": "the output directory"}
+        default="./dpo", metadata={"help": "the output directory"}
     )
     log_freq: Optional[int] = field(
         default=1, metadata={"help": "the logging frequency"}
@@ -126,6 +126,7 @@ if __name__ == "__main__":
         low_cpu_mem_usage=True,
         torch_dtype=torch.float16,
         load_in_4bit=True,
+        is_trainable=True,
     )
     model.config.use_cache = False
 
@@ -145,7 +146,7 @@ if __name__ == "__main__":
     social_dimensions = SocialDimensions(task="zero-shot")
     social_dimensions.get_data()
     tokenizer = AutoTokenizer.from_pretrained(
-        "meta-llama/Llama-2-7b-hf", trust_remote_code=True
+        "meta-llama/Llama-2-7b-chat-hf", trust_remote_code=True
     )
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
@@ -171,7 +172,7 @@ if __name__ == "__main__":
         optim=script_args.optimizer_type,
         fp16=True,
         remove_unused_columns=False,
-        run_name="dpo_llama2",
+        run_name=f"{script_args.model_name_or_path}_dpo",
     )
 
     peft_config = LoraConfig(
