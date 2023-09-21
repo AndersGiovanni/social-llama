@@ -46,12 +46,16 @@ class TestSocialDimensions(unittest.TestCase):
 
         self.assertEqual(
             prompt_zero_shot,
-            """Text: "Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ... Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such, I might assume that your rice in question might be American Chinese food style fried rice. What\'s in that "American" rice served in Malaysia, besides rice?\nSocial Dimensions: power""",  # noqa
+            """Text: "Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ... Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such, I might assume that your rice in question might be American Chinese food style fried rice. What's in that "American" rice served in Malaysia, besides rice?
+
+Answer: power""",  # noqa
         )
 
         self.assertEqual(
             prompt_cot,
-            """Text: "Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ... Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such, I might assume that your rice in question might be American Chinese food style fried rice. What\'s in that "American" rice served in Malaysia, besides rice?\nThe text exhibits power over the behavior and outcomes of another. In particular in the part \'As such, I might assume that your rice in question might be American Chinese food style fried rice.\'.\n    The social dimensions are: power""",  # noqa
+            """Text: "Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ... Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such, I might assume that your rice in question might be American Chinese food style fried rice. What's in that "American" rice served in Malaysia, besides rice?
+The text exhibits power over the behavior and outcomes of another. In particular in the part 'As such, I might assume that your rice in question might be American Chinese food style fried rice.'.
+    Answer: power""",  # noqa
         )
 
     def test_convert_to_q_and_a(self):
@@ -75,7 +79,7 @@ class TestSocialDimensions(unittest.TestCase):
         self.assertEqual(
             res,
             {
-                "prompt": 'Text: "Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ... Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such, I might assume that your rice in question might be American Chinese food style fried rice. What\'s in that "American" rice served in Malaysia, besides rice?\nSocial dimension: ',  # noqa
+                "prompt": "Question: The following text is a social media post. The text conveys one or more social dimensions, and your job is to determine the dimension. The social dimensions are 'social_support', 'conflict', 'trust', 'fun', 'similarity', 'identity', 'respect', 'romance', 'knowledge', 'power', and 'other'. \n\nText: \"Fried rice\" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ... Please note also that most of the food we Americans refer to as \"Chinese Food\" is American in that one ... As such, I might assume that your rice in question might be American Chinese food style fried rice. What's in that \"American\" rice served in Malaysia, besides rice?\n\nAsnwer: ",  # noqa
                 "chosen": "power",
                 "rejected": "similarity",
             },
@@ -128,7 +132,7 @@ class TestSocialDimensions(unittest.TestCase):
         self.assertEqual(
             res_few_shot,
             {
-                "prompt": 'Text: It is a a fucking weird time, when science and statistics are no longer relevant. Alright I\'m with you. If you are not heterosexual then something did not develop properly in the brain. Lost me.\nSocial dimension: conflict\nText: "No. Say it. I want you to say a homeless person would be the best choice."\nSocial dimension: social_support\nText: "We are American English. Lower your shields and surrender your words. We will add your verbal and grammatical distinctiveness to our own. Your culture will adapt to service us. Resistance is futile."\nSocial dimension: ',
+                "prompt": 'Text: It is a a fucking weird time, when science and statistics are no longer relevant. Alright I\'m with you. If you are not heterosexual then something did not develop properly in the brain. Lost me.\n\nAnswer: conflict\nText: "No. Say it. I want you to say a homeless person would be the best choice."\n\nAnswer: social_support\nText: "We are American English. Lower your shields and surrender your words. We will add your verbal and grammatical distinctiveness to our own. Your culture will adapt to service us. Resistance is futile."\n\nAnswer: ',
                 "chosen": "trust",
                 "rejected": "social_support",
             },
@@ -181,9 +185,9 @@ class TestSocialDimensions(unittest.TestCase):
         self.assertEqual(
             res_cot,
             {
-                "prompt": "Text: It is a a fucking weird time, when science and statistics are no longer relevant. Alright I'm with you. If you are not heterosexual then something did not develop properly in the brain. Lost me.\nThe text exhibits contrast or diverging views. In particular in the part ''If you are not heterosexual then something did not develop properly in the brain.''.\\Social dimension: conflict\nText: \"No. Say it. I want you to say a homeless person would be the best choice.\"\nThe text exhibits emotional or practical aid and companionship. In particular in the part ''I want you to say a homeless person would be the best choice.\"''.\\Social dimension: social_support\nText: \"We are American English. Lower your shields and surrender your words. We will add your verbal and grammatical distinctiveness to our own. Your culture will adapt to service us. Resistance is futile.\"\n",
-                "chosen": "The text exhibits will of relying on the actions or judgments of another. In particular in the part ''We will add your verbal and grammatical distinctiveness to our own.''.\nSocial dimension: trust\n",
-                "rejected": "The text exhibits emotional or practical aid and companionship. In particular in the part ''We will add your verbal and grammatical distinctiveness to our own.''.\nSocial dimension: social_support\n",
+                "prompt": "Text: It is a a fucking weird time, when science and statistics are no longer relevant. Alright I'm with you. If you are not heterosexual then something did not develop properly in the brain. Lost me.\nThe text exhibits contrast or diverging views. In particular in the part ''If you are not heterosexual then something did not develop properly in the brain.''.\nAnswer: conflict\nText: \"No. Say it. I want you to say a homeless person would be the best choice.\"\nThe text exhibits emotional or practical aid and companionship. In particular in the part ''I want you to say a homeless person would be the best choice.\"''.\nAnswer: social_support\nText: \"We are American English. Lower your shields and surrender your words. We will add your verbal and grammatical distinctiveness to our own. Your culture will adapt to service us. Resistance is futile.\"\n",
+                "chosen": "The text exhibits will of relying on the actions or judgments of another. In particular in the part ''We will add your verbal and grammatical distinctiveness to our own.''.\nAnswer: trust\n",
+                "rejected": "The text exhibits emotional or practical aid and companionship. In particular in the part ''We will add your verbal and grammatical distinctiveness to our own.''.\nAnswer: social_support\n",
             },
         )
 
