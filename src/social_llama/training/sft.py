@@ -23,7 +23,7 @@ class ScriptArguments:
     """Script arguments."""
 
     model_name: Optional[str] = field(
-        default="meta-llama/Llama-2-7b-hf", metadata={"help": "the model name"}
+        default="meta-llama/Llama-2-7b-chat-hf", metadata={"help": "the model name"}
     )
     log_with: Optional[str] = field(
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
@@ -102,7 +102,7 @@ class ScriptArguments:
     )
 
     output_dir: Optional[str] = field(
-        default="./results", metadata={"help": "the output directory"}
+        default="./sft", metadata={"help": "the output directory"}
     )
     log_freq: Optional[int] = field(
         default=1, metadata={"help": "the logging frequency"}
