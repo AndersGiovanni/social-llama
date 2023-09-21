@@ -10,3 +10,6 @@
 __pycache__/
 wandb/
 results/
+results_sft/
+sft/
+dpo/
