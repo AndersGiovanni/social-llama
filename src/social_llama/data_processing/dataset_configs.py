@@ -24,9 +24,9 @@ SOCIAL_DIMENSIONS_CONFIG = DatasetConfig(
     'power': Having power over the behavior and outcomes of another.
     'other': If none of the above social dimensions apply.
     """,
-    prompt_template="Text: {text}\nSocial Dimensions: {response_good}",
+    prompt_template="Text: {text}\n\nAnswer: {response_good}",
     prompt_template_cot="""Text: {text}\nThe text exhibits {dimension_description}. In particular in the part '{h_text}'.
-    The social dimensions are: {response_good}""",
+    Answer: {response_good}""",
     labels=[
         "social_support",
         "conflict",
