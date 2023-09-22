@@ -6,6 +6,7 @@ from dataclasses import field
 from typing import Optional
 
 import torch
+from dotenv import load_dotenv
 from peft import AutoPeftModelForCausalLM
 from peft import LoraConfig
 from transformers import AutoModelForCausalLM
@@ -16,6 +17,9 @@ from transformers import TrainingArguments
 from trl import SFTTrainer
 
 from social_llama.data_processing.social_dimensions import SocialDimensions
+
+
+load_dotenv()
 
 
 @dataclass
