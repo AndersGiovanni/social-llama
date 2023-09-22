@@ -53,3 +53,21 @@ class DatasetConfig:
             Dict[str, int]: Dictionary mapping labels to indices
         """
         return {label: idx for idx, label in enumerate(self.labels)}
+
+
+@dataclass
+class LlamaConfigs:
+    """Instructions, templates, and other configurations for the Llama model."""
+
+    default_llama_prompt: str = """<s>[INST] <<SYS>>
+{system_message}
+<</SYS>>
+
+{user_message} [/INST]
+"""
+    default_system_message: str = """You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe.
+Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content.
+Please ensure that your responses are socially unbiased and positive in nature.
+
+{custom_message}
+"""
