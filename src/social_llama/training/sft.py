@@ -113,7 +113,8 @@ parser = HfArgumentParser(ScriptArguments)
 script_args = parser.parse_args_into_dataclasses()[0]
 
 bnb_config = BitsAndBytesConfig(
-    load_in_4bit=True,
+    # load_in_4bit=True,
+    load_in_8bit=True,
     bnb_4bit_quant_type="nf4",
     bnb_4bit_compute_dtype=torch.bfloat16,
 )
