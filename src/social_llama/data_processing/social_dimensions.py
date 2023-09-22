@@ -171,17 +171,20 @@ class SocialDimensions(DataClass):
             str: Prompt for the example
 
         Raises:
-            ValueError: If the task is not supported
-
+            ValueError: If the task is not supported.
         """
+        system_message = self.llama_config.default_system_message.format(
+            custom_message=self.config.prompt_prefix
+        )
+
         if self.task == "zero-shot":
-            return self.config.prompt_template.format(
+            task_prompt = self.config.prompt_template.format(
                 text=example["text"], response_good=example["response_good"]
             )
-        elif self.task == "few-shot":
-            return example["text"]
+        elif self.task == "few-shot":  # TODO: Fix this
+            task_prompt = example["text"]
         elif self.task == "cot":
-            return self.config.prompt_template_cot.format(
+            task_prompt = self.config.prompt_template_cot.format(
                 text=example["text"],
                 response_good=example["response_good"],
                 dimension_description=self.config.cot_info_dict[  # type: ignore
@@ -191,6 +194,11 @@ class SocialDimensions(DataClass):
             )
         else:
             raise ValueError(f"Type {type} is not supported.")
+
+        return self.llama_config.default_llama_prompt.format(
+            system_message=system_message,
+            user_message=task_prompt,
+        )
 
     def _extract_few_shot_examples(
         self, dataset, seed: int = 42

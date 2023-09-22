@@ -44,18 +44,73 @@ class TestSocialDimensions(unittest.TestCase):
         prompt_zero_shot = self.social_dimensions_zero_shot._prompt_function(data)
         prompt_cot = self.social_dimensions_cot._prompt_function(data)
 
+        print(prompt_zero_shot)
+        print(prompt_cot)
+
         self.assertEqual(
             prompt_zero_shot,
-            """Text: "Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ... Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such, I might assume that your rice in question might be American Chinese food style fried rice. What's in that "American" rice served in Malaysia, besides rice?
+            """<s>[INST] <<SYS>>
+You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe.
+Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content.
+Please ensure that your responses are socially unbiased and positive in nature.
 
-Answer: power""",  # noqa
+You have the following knowledge about social dimensions of human interactions.
+The social dimensions are 'social_support', 'conflict', 'trust', 'fun', 'similarity', 'identity',
+'respect', 'romance', 'knowledge', 'power', and 'other'.
+The social dimensions are defined as follows:
+'social_support': Giving emotional or practical aid and companionship.
+'conflict': Contrast or diverging views.
+'trust': Will of relying on the actions or judgments of another.
+'fun': Experiencing leisure, laughter, and joy.
+'similarity': Shared interests, motivations or outlooks.
+'identity': Shared sense of belonging to the same community or group.
+'respect': Conferring status, respect, appreciation, gratitude, or admiration upon another.
+'romance': Intimacy among people with a sentimental or sexual relationship.
+'knowledge': Exchange of ideas or information; learning, teaching.
+'power': Having power over the behavior and outcomes of another.
+'other': If none of the above social dimensions apply.
+
+
+<</SYS>>
+
+Question: What is the social dimension of the following text?
+
+Text: "Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ... Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such, I might assume that your rice in question might be American Chinese food style fried rice. What's in that "American" rice served in Malaysia, besides rice?
+
+Answer: power [/INST]
+""",  # noqa
         )
 
         self.assertEqual(
             prompt_cot,
-            """Text: "Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ... Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such, I might assume that your rice in question might be American Chinese food style fried rice. What's in that "American" rice served in Malaysia, besides rice?
+            """<s>[INST] <<SYS>>
+You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe.
+Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content.
+Please ensure that your responses are socially unbiased and positive in nature.
+
+You have the following knowledge about social dimensions of human interactions.
+The social dimensions are 'social_support', 'conflict', 'trust', 'fun', 'similarity', 'identity',
+'respect', 'romance', 'knowledge', 'power', and 'other'.
+The social dimensions are defined as follows:
+'social_support': Giving emotional or practical aid and companionship.
+'conflict': Contrast or diverging views.
+'trust': Will of relying on the actions or judgments of another.
+'fun': Experiencing leisure, laughter, and joy.
+'similarity': Shared interests, motivations or outlooks.
+'identity': Shared sense of belonging to the same community or group.
+'respect': Conferring status, respect, appreciation, gratitude, or admiration upon another.
+'romance': Intimacy among people with a sentimental or sexual relationship.
+'knowledge': Exchange of ideas or information; learning, teaching.
+'power': Having power over the behavior and outcomes of another.
+'other': If none of the above social dimensions apply.
+
+
+<</SYS>>
+
+Text: "Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ... Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such, I might assume that your rice in question might be American Chinese food style fried rice. What's in that "American" rice served in Malaysia, besides rice?
 The text exhibits power over the behavior and outcomes of another. In particular in the part 'As such, I might assume that your rice in question might be American Chinese food style fried rice.'.
-    Answer: power""",  # noqa
+    Answer: power [/INST]
+""",  # noqa
         )
 
     def test_convert_to_q_and_a(self):
