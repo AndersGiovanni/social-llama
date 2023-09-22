@@ -14,6 +14,7 @@ from torch.utils.data import Dataset as TorchDataset
 from tqdm import tqdm
 
 from social_llama.config import DatasetConfig
+from social_llama.config import LlamaConfigs
 
 
 class DataClass(TorchDataset):
@@ -27,6 +28,7 @@ class DataClass(TorchDataset):
         ] = None
         self.config: DatasetConfig = config
         self.task: str = task
+        self.llama_config = LlamaConfigs()
 
     def set_data(
         self, data: Union[DatasetDict, Dataset, IterableDataset, IterableDatasetDict]
