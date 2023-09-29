@@ -27,7 +27,7 @@ class ScriptArguments:
     """Script arguments."""
 
     model_name: Optional[str] = field(
-        default="meta-llama/Llama-2-13b-hf", metadata={"help": "the model name"}
+        default="meta-llama/Llama-2-7b-chat-hf", metadata={"help": "the model name"}
     )
     log_with: Optional[str] = field(
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
@@ -47,26 +47,26 @@ class ScriptArguments:
         default=5000, metadata={"help": "the shuffle buffer size"}
     )
     seq_length: Optional[int] = field(
-        default=1024, metadata={"help": "the sequence length"}
+        default=2048, metadata={"help": "the sequence length"}
     )
     num_workers: Optional[int] = field(
         default=4, metadata={"help": "the number of workers"}
     )
 
     max_steps: Optional[int] = field(
-        default=500, metadata={"help": "the maximum number of sgd steps"}
+        default=300, metadata={"help": "the maximum number of sgd steps"}
     )
     logging_steps: Optional[int] = field(
         default=10, metadata={"help": "the logging frequency"}
     )
     save_steps: Optional[int] = field(
-        default=10, metadata={"help": "the saving frequency"}
+        default=75, metadata={"help": "the saving frequency"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=4, metadata={"help": "the per device train batch size"}
+        default=8, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=1, metadata={"help": "the per device eval batch size"}
+        default=2, metadata={"help": "the per device eval batch size"}
     )
     gradient_accumulation_steps: Optional[int] = field(
         default=2, metadata={"help": "the gradient accumulation steps"}
@@ -106,7 +106,7 @@ class ScriptArguments:
     )
 
     output_dir: Optional[str] = field(
-        default=f"./sft", metadata={"help": "the output directory"}
+        default=f"./sft_v2", metadata={"help": "the output directory"}
     )
     log_freq: Optional[int] = field(
         default=1, metadata={"help": "the logging frequency"}
