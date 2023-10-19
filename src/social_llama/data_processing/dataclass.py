@@ -12,6 +12,7 @@ from datasets import IterableDataset
 from datasets import IterableDatasetDict
 from torch.utils.data import Dataset as TorchDataset
 from tqdm import tqdm
+from transformers import AutoTokenizer
 
 from social_llama.config import DatasetConfig
 from social_llama.config import LlamaConfigs
@@ -20,7 +21,7 @@ from social_llama.config import LlamaConfigs
 class DataClass(TorchDataset):
     """Dataclass abstraction for the datasets. This gives us a unified framework."""
 
-    def __init__(self, config, task: str) -> None:
+    def __init__(self, config: DatasetConfig, task: str, model: str) -> None:
         """Initialize the DataClass."""
         super().__init__()
         self.data: Union[
@@ -29,6 +30,11 @@ class DataClass(TorchDataset):
         self.config: DatasetConfig = config
         self.task: str = task
         self.llama_config = LlamaConfigs()
+        self.model = model
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            self.model, trust_remote_code=True
+        )
+        self.tokenizer.use_default_system_prompt = False
 
     def set_data(
         self, data: Union[DatasetDict, Dataset, IterableDataset, IterableDatasetDict]
@@ -48,7 +54,7 @@ class DataClass(TorchDataset):
         """
 
     @abstractmethod
-    def preprocess_sft(self, tokenizer) -> Any:
+    def preprocess_sft(self) -> Any:
         """This function should be overwritten by the child class.
 
         It should preprocess the data for the model.
@@ -104,6 +110,7 @@ class DataClass(TorchDataset):
             zip(range(nb_examples), iter(dataset)), total=nb_examples
         ):
             text = self._prompt_function(example)
+            # text = example["text"]
             total_characters += len(text)
             if tokenizer.is_fast:
                 total_tokens += len(tokenizer(text).tokens())

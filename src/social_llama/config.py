@@ -55,7 +55,6 @@ class DatasetConfig:
         return {label: idx for idx, label in enumerate(self.labels)}
 
 
-@dataclass
 class LlamaConfigs:
     """Instructions, templates, and other configurations for the Llama model."""
 
@@ -71,3 +70,13 @@ Please ensure that your responses are socially unbiased and positive in nature.
 
 {custom_message}
 """
+
+    def get_chat_template(self) -> List[Dict[str, str]]:
+        """Returns a chat template."""
+        chat: List[Dict[str, str]] = [
+            {
+                "role": "system",
+                "content": """You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe. Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that your responses are socially unbiased and positive in nature.\n{prompt_prefix}""",
+            },
+        ]
+        return chat
