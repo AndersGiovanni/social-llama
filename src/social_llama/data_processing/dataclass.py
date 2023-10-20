@@ -24,7 +24,10 @@ class DataClass(TorchDataset):
     def __init__(self, config: DatasetConfig, task: str, model: str) -> None:
         """Initialize the DataClass."""
         super().__init__()
-        self.data: Union[
+        self.train_data: Union[
+            DatasetDict, Dataset, IterableDataset, IterableDatasetDict, None
+        ] = None
+        self.test_data: Union[
             DatasetDict, Dataset, IterableDataset, IterableDatasetDict, None
         ] = None
         self.config: DatasetConfig = config
@@ -35,16 +38,24 @@ class DataClass(TorchDataset):
             self.model, trust_remote_code=True
         )
         self.tokenizer.use_default_system_prompt = False
+        self.tokenizer.pad_token = self.tokenizer.eos_token
+        self.tokenizer.padding_side = (
+            "right"  # Fix weird overflow issue with fp16 training
+        )
 
     def set_data(
-        self, data: Union[DatasetDict, Dataset, IterableDataset, IterableDatasetDict]
+        self,
+        train_data: Union[DatasetDict, Dataset, IterableDataset, IterableDatasetDict],
+        test_data: Union[DatasetDict, Dataset, IterableDataset, IterableDatasetDict],
     ) -> None:
         """Sets the data.
 
         Args:
-            data (Union[DatasetDict, Dataset]): Dataset or DatasetDict
+            train_data (Union[DatasetDict, Dataset]): Dataset or DatasetDict
+            test_data (Union[DatasetDict, Dataset]): Dataset or DatasetDict
         """
-        self.data = data
+        self.train_data = train_data
+        self.test_data = test_data
 
     @abstractmethod
     def get_data(self) -> None:
