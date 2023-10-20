@@ -143,7 +143,9 @@ if __name__ == "__main__":
         load_in_4bit=True,
     )
 
-    social_dimensions = SocialDimensions(task="zero-shot")
+    social_dimensions = SocialDimensions(
+        task="zero-shot", model="meta-llama/Llama-2-7b-chat-hf"
+    )
     social_dimensions.get_data()
     tokenizer = AutoTokenizer.from_pretrained(
         "meta-llama/Llama-2-7b-chat-hf", trust_remote_code=True

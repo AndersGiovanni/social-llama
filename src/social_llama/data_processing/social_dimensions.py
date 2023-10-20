@@ -122,7 +122,7 @@ class SocialDimensions(DataClass):
     def preprocess_sft(self) -> Tuple[ConstantLengthDataset, ConstantLengthDataset]:
         """Preprocess the data."""
         print(
-            f"Size of the train set: {len(self.train_data)}. Size of the test set: {len(self.test_data)}"
+            f"Size of the train set: {len(self.train_data)}. Size of the test set: {len(self.test_data)}"  # type: ignore
         )
 
         chars_per_token = self.chars_token_ratio(self.train_data, self.tokenizer)
