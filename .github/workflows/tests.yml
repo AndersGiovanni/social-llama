@@ -83,6 +83,10 @@ jobs:
           restore-keys: |
             ${{ steps.pre-commit-cache.outputs.result }}-
 
+      - name: Hugging Face CLI Login
+        run: |
+          echo ${{ secrets.HUGGINGFACE_TOKEN }} | huggingface-cli login --stdin
+
       - name: Run Nox
         run: |
           nox --python=${{ matrix.python }}
