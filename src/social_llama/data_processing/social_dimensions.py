@@ -104,59 +104,56 @@ class SocialDimensions(DataClass):
 
     def get_data(self) -> None:
         """Reads the data from the data directory."""
-        data = load_dataset(
+        train_data = load_dataset(
             "json",
-            data_files=str(self.config.path),
+            data_files=str(self.config.path / "train.json"),
             split="train",
         )
 
-        self.set_data(data)
+        test_data = load_dataset(
+            "json",
+            data_files=str(self.config.path / "test.json"),
+            split="train",
+        )
+
+        self.set_data(train_data=train_data, test_data=test_data)
 
     @override
     def preprocess_sft(self) -> Tuple[ConstantLengthDataset, ConstantLengthDataset]:
         """Preprocess the data."""
-        # Train test split - WE NEED TO MAKE CORRECT SPLITS TO AVIOD CONTAMINATION!
-        self.data = self.data.train_test_split(  # type: ignore
-            test_size=0.2,
-            shuffle=True,
-            seed=42,
-        )
-
-        train_data = self.data["train"]
-        valid_data = self.data["test"]
         print(
-            f"Size of the train set: {len(train_data)}. Size of the validation set: {len(valid_data)}"
+            f"Size of the train set: {len(self.train_data)}. Size of the test set: {len(self.test_data)}"
         )
 
-        chars_per_token = self.chars_token_ratio(train_data, self.tokenizer)
+        chars_per_token = self.chars_token_ratio(self.train_data, self.tokenizer)
         print(f"The character to token ratio of the dataset is: {chars_per_token:.2f}")
 
         if self.task == "few-shot":
             # Construct the dataset as few-shot
-            train_data = self._apply_few_shot_prompt_stf(train_data)
-            valid_data = self._apply_few_shot_prompt_stf(valid_data)
+            self.train_data = self._apply_few_shot_prompt_stf(self.train_data)
+            self.test_data = self._apply_few_shot_prompt_stf(self.test_data)
 
         formatting_func: Callable = self._prompt_function
 
         train_dataset = ConstantLengthDataset(
             self.tokenizer,
-            train_data,
+            self.train_data,
             formatting_func=formatting_func,
             infinite=True,
-            seq_length=2048,
+            seq_length=1024,
             chars_per_token=chars_per_token,
         )
 
-        valid_dataset = ConstantLengthDataset(
+        test_dataset = ConstantLengthDataset(
             self.tokenizer,
-            valid_data,
+            self.test_data,
             formatting_func=formatting_func,
             infinite=True,
-            seq_length=2048,
+            seq_length=1024,
             chars_per_token=chars_per_token,
         )
 
-        return train_dataset, valid_dataset
+        return train_dataset, test_dataset
 
     def _prompt_function(self, example: Sample) -> str:
         """Generate a prompt for the example.
@@ -406,16 +403,7 @@ class SocialDimensions(DataClass):
 
 
 if __name__ == "__main__":
-    social_dimensions = SocialDimensions(
-        task="zero-shot", model="meta-llama/Llama-2-7b-hf"
-    )
+    social_dimensions = SocialDimensions(task="cot", model="meta-llama/Llama-2-70b-hf")
     social_dimensions.get_data()
-    # tokenizer_ = AutoTokenizer.from_pretrained(
-    #     "meta-llama/Llama-2-7b-hf", trust_remote_code=True
-    # )
-    # tokenizer_.pad_token = tokenizer_.eos_token
-    # tokenizer_.padding_side = "right"  # Fix weird overflow issue with fp16 training
 
     train_data_, valid_data_ = social_dimensions.preprocess_sft()
-
-    a = 1
