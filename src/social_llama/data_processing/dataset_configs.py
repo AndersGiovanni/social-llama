@@ -7,7 +7,7 @@ from social_llama.config import DatasetConfig
 SOCIAL_DIMENSIONS_CONFIG = DatasetConfig(
     name="social_dimensions",
     pretty_name="Social Dimensions",
-    path=DATA_DIR_SOCIAL_DIMENSIONS_PROCESSED / "labeled_dataset_small.json",
+    path=DATA_DIR_SOCIAL_DIMENSIONS_PROCESSED,
     prompt_prefix="""You have the following knowledge about social dimensions of human interactions.
 The social dimensions are 'social_support', 'conflict', 'trust', 'fun', 'similarity', 'identity',
 'respect', 'romance', 'knowledge', 'power', and 'other'.
