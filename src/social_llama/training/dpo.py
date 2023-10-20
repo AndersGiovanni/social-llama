@@ -4,9 +4,9 @@ import os
 from dataclasses import dataclass
 from dataclasses import field
 from typing import Optional
-from dotenv import load_dotenv
 
 import torch
+from dotenv import load_dotenv
 from peft import AutoPeftModelForCausalLM
 from peft import LoraConfig
 from transformers import AutoTokenizer
@@ -16,7 +16,9 @@ from trl import DPOTrainer
 
 from social_llama.data_processing.social_dimensions import SocialDimensions
 
+
 load_dotenv()
+
 
 # Define and parse arguments.
 @dataclass

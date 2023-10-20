@@ -106,7 +106,7 @@ class ScriptArguments:
     )
 
     output_dir: Optional[str] = field(
-        default=f"./sft", metadata={"help": "the output directory"}
+        default="./sft", metadata={"help": "the output directory"}
     )
     log_freq: Optional[int] = field(
         default=1, metadata={"help": "the logging frequency"}
@@ -156,7 +156,7 @@ tokenizer.pad_token = tokenizer.eos_token
 tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
 
 training_args = TrainingArguments(
-    output_dir=output_dir,main
+    output_dir=output_dir,
     per_device_train_batch_size=script_args.per_device_train_batch_size,
     gradient_accumulation_steps=script_args.gradient_accumulation_steps,
     per_device_eval_batch_size=script_args.per_device_eval_batch_size,
