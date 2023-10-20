@@ -4,9 +4,9 @@ import os
 from dataclasses import dataclass
 from dataclasses import field
 from typing import Optional
-from dotenv import load_dotenv
 
 import torch
+from dotenv import load_dotenv
 from peft import AutoPeftModelForCausalLM
 from peft import LoraConfig
 from transformers import AutoTokenizer
@@ -16,7 +16,9 @@ from trl import DPOTrainer
 
 from social_llama.data_processing.social_dimensions import SocialDimensions
 
+
 load_dotenv()
+
 
 # Define and parse arguments.
 @dataclass
@@ -145,7 +147,9 @@ if __name__ == "__main__":
         load_in_4bit=True,
     )
 
-    social_dimensions = SocialDimensions(task="zero-shot")
+    social_dimensions = SocialDimensions(
+        task="zero-shot", model="meta-llama/Llama-2-7b-chat-hf"
+    )
     social_dimensions.get_data()
     tokenizer = AutoTokenizer.from_pretrained(
         "meta-llama/Llama-2-7b-chat-hf", trust_remote_code=True

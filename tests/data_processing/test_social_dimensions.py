@@ -16,9 +16,15 @@ class TestSocialDimensions(unittest.TestCase):
 
     def setUp(self):
         """Set up the test cases."""
-        self.social_dimensions_zero_shot = SocialDimensions(task="zero-shot")
-        self.social_dimensions_few_shot = SocialDimensions(task="few-shot")
-        self.social_dimensions_cot = SocialDimensions(task="cot")
+        self.social_dimensions_zero_shot = SocialDimensions(
+            task="zero-shot", model="meta-llama/Llama-2-7b-chat-hf"
+        )
+        self.social_dimensions_few_shot = SocialDimensions(
+            task="few-shot", model="meta-llama/Llama-2-7b-chat-hf"
+        )
+        self.social_dimensions_cot = SocialDimensions(
+            task="cot", model="meta-llama/Llama-2-7b-chat-hf"
+        )
         self.sample_data = {
             "text": "example text",
             "h_text": "example h_text",
@@ -50,10 +56,7 @@ class TestSocialDimensions(unittest.TestCase):
         self.assertEqual(
             prompt_zero_shot,
             """<s>[INST] <<SYS>>
-You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe.
-Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content.
-Please ensure that your responses are socially unbiased and positive in nature.
-
+You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe. Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that your responses are socially unbiased and positive in nature.
 You have the following knowledge about social dimensions of human interactions.
 The social dimensions are 'social_support', 'conflict', 'trust', 'fun', 'similarity', 'identity',
 'respect', 'romance', 'knowledge', 'power', and 'other'.
@@ -70,24 +73,17 @@ The social dimensions are defined as follows:
 'power': Having power over the behavior and outcomes of another.
 'other': If none of the above social dimensions apply.
 
-
 <</SYS>>
 
 Question: What is the social dimension of the following text?
-
 Text: "Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ... Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such, I might assume that your rice in question might be American Chinese food style fried rice. What's in that "American" rice served in Malaysia, besides rice?
-
-Answer: power [/INST]
-""",  # noqa
+Answer: power [/INST]""",  # noqa
         )
 
         self.assertEqual(
             prompt_cot,
             """<s>[INST] <<SYS>>
-You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe.
-Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content.
-Please ensure that your responses are socially unbiased and positive in nature.
-
+You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe. Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that your responses are socially unbiased and positive in nature.
 You have the following knowledge about social dimensions of human interactions.
 The social dimensions are 'social_support', 'conflict', 'trust', 'fun', 'similarity', 'identity',
 'respect', 'romance', 'knowledge', 'power', and 'other'.
@@ -104,13 +100,12 @@ The social dimensions are defined as follows:
 'power': Having power over the behavior and outcomes of another.
 'other': If none of the above social dimensions apply.
 
-
 <</SYS>>
 
+Question: What is the social dimension of the following text?
 Text: "Fried rice" in the US (at least the Northeast US, where I am from) typically refers to the non-plain rice ... Please note also that most of the food we Americans refer to as "Chinese Food" is American in that one ... As such, I might assume that your rice in question might be American Chinese food style fried rice. What's in that "American" rice served in Malaysia, besides rice?
 The text exhibits power over the behavior and outcomes of another. In particular in the part 'As such, I might assume that your rice in question might be American Chinese food style fried rice.'.
-    Answer: power [/INST]
-""",  # noqa
+Answer: power [/INST]""",  # noqa
         )
 
     def test_convert_to_q_and_a(self):
