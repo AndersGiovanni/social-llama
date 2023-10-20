@@ -7,7 +7,7 @@ from social_llama.config import DatasetConfig
 SOCIAL_DIMENSIONS_CONFIG = DatasetConfig(
     name="social_dimensions",
     pretty_name="Social Dimensions",
-    path=DATA_DIR_SOCIAL_DIMENSIONS_PROCESSED / "labeled_dataset.json",
+    path=DATA_DIR_SOCIAL_DIMENSIONS_PROCESSED,
     prompt_prefix="""You have the following knowledge about social dimensions of human interactions.
 The social dimensions are 'social_support', 'conflict', 'trust', 'fun', 'similarity', 'identity',
 'respect', 'romance', 'knowledge', 'power', and 'other'.
@@ -24,9 +24,9 @@ The social dimensions are defined as follows:
 'power': Having power over the behavior and outcomes of another.
 'other': If none of the above social dimensions apply.
 """,
-    prompt_template="Question: What is the social dimension of the following text?\n\nText: {text}\n\nAnswer: {response_good}",
-    prompt_template_cot="""Text: {text}\nThe text exhibits {dimension_description}. In particular in the part '{h_text}'.
-    Answer: {response_good}""",
+    prompt_template="Question: What is the social dimension of the following text?\nText: {text}\nAnswer: {response_good}",
+    prompt_template_cot="""Question: What is the social dimension of the following text?\nText: {text}\nThe text exhibits {dimension_description}. In particular in the part '{h_text}'.
+Answer: {response_good}""",
     labels=[
         "social_support",
         "conflict",

@@ -12,6 +12,7 @@ from datasets import IterableDataset
 from datasets import IterableDatasetDict
 from torch.utils.data import Dataset as TorchDataset
 from tqdm import tqdm
+from transformers import AutoTokenizer
 
 from social_llama.config import DatasetConfig
 from social_llama.config import LlamaConfigs
@@ -20,25 +21,41 @@ from social_llama.config import LlamaConfigs
 class DataClass(TorchDataset):
     """Dataclass abstraction for the datasets. This gives us a unified framework."""
 
-    def __init__(self, config, task: str) -> None:
+    def __init__(self, config: DatasetConfig, task: str, model: str) -> None:
         """Initialize the DataClass."""
         super().__init__()
-        self.data: Union[
+        self.train_data: Union[
+            DatasetDict, Dataset, IterableDataset, IterableDatasetDict, None
+        ] = None
+        self.test_data: Union[
             DatasetDict, Dataset, IterableDataset, IterableDatasetDict, None
         ] = None
         self.config: DatasetConfig = config
         self.task: str = task
         self.llama_config = LlamaConfigs()
+        self.model = model
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            self.model, trust_remote_code=True
+        )
+        self.tokenizer.use_default_system_prompt = False
+        self.tokenizer.pad_token = self.tokenizer.eos_token
+        self.tokenizer.padding_side = (
+            "right"  # Fix weird overflow issue with fp16 training
+        )
 
     def set_data(
-        self, data: Union[DatasetDict, Dataset, IterableDataset, IterableDatasetDict]
+        self,
+        train_data: Union[DatasetDict, Dataset, IterableDataset, IterableDatasetDict],
+        test_data: Union[DatasetDict, Dataset, IterableDataset, IterableDatasetDict],
     ) -> None:
         """Sets the data.
 
         Args:
-            data (Union[DatasetDict, Dataset]): Dataset or DatasetDict
+            train_data (Union[DatasetDict, Dataset]): Dataset or DatasetDict
+            test_data (Union[DatasetDict, Dataset]): Dataset or DatasetDict
         """
-        self.data = data
+        self.train_data = train_data
+        self.test_data = test_data
 
     @abstractmethod
     def get_data(self) -> None:
@@ -48,7 +65,7 @@ class DataClass(TorchDataset):
         """
 
     @abstractmethod
-    def preprocess_sft(self, tokenizer) -> Any:
+    def preprocess_sft(self) -> Any:
         """This function should be overwritten by the child class.
 
         It should preprocess the data for the model.
@@ -104,6 +121,7 @@ class DataClass(TorchDataset):
             zip(range(nb_examples), iter(dataset)), total=nb_examples
         ):
             text = self._prompt_function(example)
+            # text = example["text"]
             total_characters += len(text)
             if tokenizer.is_fast:
                 total_tokens += len(tokenizer(text).tokens())

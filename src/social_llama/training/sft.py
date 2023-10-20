@@ -60,7 +60,7 @@ class ScriptArguments:
         default=10, metadata={"help": "the logging frequency"}
     )
     save_steps: Optional[int] = field(
-        default=75, metadata={"help": "the saving frequency"}
+        default=25, metadata={"help": "the saving frequency"}
     )
     per_device_train_batch_size: Optional[int] = field(
         default=8, metadata={"help": "the per device train batch size"}
@@ -106,15 +106,23 @@ class ScriptArguments:
     )
 
     output_dir: Optional[str] = field(
-        default=f"./sft_v2", metadata={"help": "the output directory"}
+        default="./sft", metadata={"help": "the output directory"}
     )
     log_freq: Optional[int] = field(
         default=1, metadata={"help": "the logging frequency"}
+    )
+    note: Optional[str] = field(
+        default="", metadata={"help": "the note to add to the run"}
+    )
+    task: Optional[str] = field(
+        default="zero-shot", metadata={"help": "the task to run"}
     )
 
 
 parser = HfArgumentParser(ScriptArguments)
 script_args = parser.parse_args_into_dataclasses()[0]
+
+output_dir = f"{script_args.output_dir}/{script_args.model_name.split('/')[-1]}_{script_args.task}_{script_args.note}"
 
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
@@ -147,9 +155,8 @@ tokenizer = AutoTokenizer.from_pretrained(
 tokenizer.pad_token = tokenizer.eos_token
 tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
 
-
 training_args = TrainingArguments(
-    output_dir=f"{script_args.output_dir}/{script_args.model_name}",
+    output_dir=output_dir,
     per_device_train_batch_size=script_args.per_device_train_batch_size,
     gradient_accumulation_steps=script_args.gradient_accumulation_steps,
     per_device_eval_batch_size=script_args.per_device_eval_batch_size,
@@ -164,14 +171,14 @@ training_args = TrainingArguments(
     optim=script_args.optimizer_type,
     fp16=True,
     remove_unused_columns=False,
-    run_name=f"{script_args.model_name}_sft",
+    run_name=f"{script_args.model_name}_sft_{script_args.task}_{script_args.note}",
 )
 
 if script_args.dataset_name == "social_dimensions":
-    dataset = SocialDimensions(task="zero-shot")
+    dataset = SocialDimensions(task=script_args.task, model=script_args.model_name)
 
 dataset.get_data()
-train_dataset, eval_dataset = dataset.preprocess_sft(tokenizer=tokenizer)
+train_dataset, eval_dataset = dataset.preprocess_sft()
 
 trainer = SFTTrainer(
     model=base_model,
@@ -179,24 +186,24 @@ trainer = SFTTrainer(
     eval_dataset=eval_dataset,
     peft_config=peft_config,
     packing=script_args.packing,
-    max_seq_length=None,
+    max_seq_length=1024,
     tokenizer=tokenizer,
     args=training_args,
 )
 trainer.train()
-trainer.save_model(script_args.output_dir)
+trainer.save_model(output_dir)
 
-output_dir = os.path.join(script_args.output_dir, "final_checkpoint")
-trainer.model.save_pretrained(output_dir)
+output_dir_final = os.path.join(output_dir, "final_checkpoint")
+trainer.model.save_pretrained(output_dir_final)
 
 # Free memory for merging weights
 del base_model
 torch.cuda.empty_cache()
 
 model = AutoPeftModelForCausalLM.from_pretrained(
-    output_dir, device_map="auto", torch_dtype=torch.bfloat16
+    output_dir_final, device_map="auto", torch_dtype=torch.bfloat16
 )
 model = model.merge_and_unload()
 
-output_merged_dir = os.path.join(script_args.output_dir, "final_merged_checkpoint")
+output_merged_dir = os.path.join(output_dir, "final_merged_checkpoint")
 model.save_pretrained(output_merged_dir, safe_serialization=True)

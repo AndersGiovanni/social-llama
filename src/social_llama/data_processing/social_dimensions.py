@@ -17,7 +17,6 @@ from typing import Union
 from datasets import Dataset
 from datasets import load_dataset
 from datasets.formatting.formatting import LazyRow
-from transformers import AutoTokenizer
 from trl.trainer import ConstantLengthDataset
 from typing_extensions import override
 
@@ -54,9 +53,9 @@ class SocialDimensions(DataClass):
         config (DatasetConfig): DatasetConfig object
     """
 
-    def __init__(self, task: str) -> None:
+    def __init__(self, task: str, model: str) -> None:
         """Initialize the SocialDimensions class."""
-        super().__init__(SOCIAL_DIMENSIONS_CONFIG, task=task)
+        super().__init__(SOCIAL_DIMENSIONS_CONFIG, task=task, model=model)
 
     def __getitem__(self, index) -> Any:
         """Get the item at the index."""
@@ -105,61 +104,56 @@ class SocialDimensions(DataClass):
 
     def get_data(self) -> None:
         """Reads the data from the data directory."""
-        data = load_dataset(
+        train_data = load_dataset(
             "json",
-            data_files=str(self.config.path),
+            data_files=str(self.config.path / "train.json"),
             split="train",
         )
 
-        self.set_data(data)
+        test_data = load_dataset(
+            "json",
+            data_files=str(self.config.path / "test.json"),
+            split="train",
+        )
+
+        self.set_data(train_data=train_data, test_data=test_data)
 
     @override
-    def preprocess_sft(
-        self, tokenizer
-    ) -> Tuple[ConstantLengthDataset, ConstantLengthDataset]:
+    def preprocess_sft(self) -> Tuple[ConstantLengthDataset, ConstantLengthDataset]:
         """Preprocess the data."""
-        # Train test split - WE NEED TO MAKE CORRECT SPLITS TO AVIOD CONTAMINATION!
-        self.data = self.data.train_test_split(  # type: ignore
-            test_size=0.2,
-            shuffle=True,
-            seed=42,
-        )
-
-        train_data = self.data["train"]
-        valid_data = self.data["test"]
         print(
-            f"Size of the train set: {len(train_data)}. Size of the validation set: {len(valid_data)}"
+            f"Size of the train set: {len(self.train_data)}. Size of the test set: {len(self.test_data)}"  # type: ignore
         )
 
-        chars_per_token = self.chars_token_ratio(train_data, tokenizer)
+        chars_per_token = self.chars_token_ratio(self.train_data, self.tokenizer)
         print(f"The character to token ratio of the dataset is: {chars_per_token:.2f}")
 
         if self.task == "few-shot":
             # Construct the dataset as few-shot
-            train_data = self._apply_few_shot_prompt_stf(train_data)
-            valid_data = self._apply_few_shot_prompt_stf(valid_data)
+            self.train_data = self._apply_few_shot_prompt_stf(self.train_data)
+            self.test_data = self._apply_few_shot_prompt_stf(self.test_data)
 
         formatting_func: Callable = self._prompt_function
 
         train_dataset = ConstantLengthDataset(
-            tokenizer,
-            train_data,
+            self.tokenizer,
+            self.train_data,
             formatting_func=formatting_func,
             infinite=True,
             seq_length=1024,
             chars_per_token=chars_per_token,
         )
 
-        valid_dataset = ConstantLengthDataset(
-            tokenizer,
-            valid_data,
+        test_dataset = ConstantLengthDataset(
+            self.tokenizer,
+            self.test_data,
             formatting_func=formatting_func,
             infinite=True,
             seq_length=1024,
             chars_per_token=chars_per_token,
         )
 
-        return train_dataset, valid_dataset
+        return train_dataset, test_dataset
 
     def _prompt_function(self, example: Sample) -> str:
         """Generate a prompt for the example.
@@ -173,8 +167,10 @@ class SocialDimensions(DataClass):
         Raises:
             ValueError: If the task is not supported.
         """
-        system_message = self.llama_config.default_system_message.format(
-            custom_message=self.config.prompt_prefix
+        chat: List[Dict[str, str]] = self.llama_config.get_chat_template()
+
+        chat[0]["content"] = chat[0]["content"].format(
+            prompt_prefix=self.config.prompt_prefix
         )
 
         if self.task == "zero-shot":
@@ -195,9 +191,15 @@ class SocialDimensions(DataClass):
         else:
             raise ValueError(f"Type {type} is not supported.")
 
-        return self.llama_config.default_llama_prompt.format(
-            system_message=system_message,
-            user_message=task_prompt,
+        chat.append(
+            {
+                "role": "user",
+                "content": task_prompt,
+            }
+        )
+
+        return self.tokenizer.apply_chat_template(
+            chat, tokenize=False, add_generation_prompt=True
         )
 
     def _extract_few_shot_examples(
@@ -234,7 +236,10 @@ class SocialDimensions(DataClass):
     def _make_few_shot_example(self, few_shot_examples: List[Sample]) -> str:
         """Make a few shot example."""
         samples_with_prompt = [
-            self._prompt_function(example) for example in few_shot_examples
+            self.config.prompt_template.format(
+                text=example["text"], response_good=example["response_good"]
+            )
+            for example in few_shot_examples
         ]
         return "\n".join(samples_with_prompt)
 
@@ -398,12 +403,7 @@ class SocialDimensions(DataClass):
 
 
 if __name__ == "__main__":
-    social_dimensions = SocialDimensions(task="zero-shot")
+    social_dimensions = SocialDimensions(task="cot", model="meta-llama/Llama-2-70b-hf")
     social_dimensions.get_data()
-    tokenizer_ = AutoTokenizer.from_pretrained(
-        "meta-llama/Llama-2-7b-hf", trust_remote_code=True
-    )
-    tokenizer_.pad_token = tokenizer_.eos_token
-    tokenizer_.padding_side = "right"  # Fix weird overflow issue with fp16 training
 
-    train_data_, valid_data_ = social_dimensions.preprocess_dpo()
+    train_data_, valid_data_ = social_dimensions.preprocess_sft()
