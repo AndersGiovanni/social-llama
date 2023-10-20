@@ -27,7 +27,7 @@ class ScriptArguments:
     """Script arguments."""
 
     model_name: Optional[str] = field(
-        default="meta-llama/Llama-2-7b-chat-hf", metadata={"help": "the model name"}
+        default="meta-llama/Llama-2-13b-hf", metadata={"help": "the model name"}
     )
     log_with: Optional[str] = field(
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
@@ -106,7 +106,7 @@ class ScriptArguments:
     )
 
     output_dir: Optional[str] = field(
-        default="./sft", metadata={"help": "the output directory"}
+        default=f"./sft", metadata={"help": "the output directory"}
     )
     log_freq: Optional[int] = field(
         default=1, metadata={"help": "the logging frequency"}
@@ -125,8 +125,8 @@ script_args = parser.parse_args_into_dataclasses()[0]
 output_dir = f"{script_args.output_dir}/{script_args.model_name.split('/')[-1]}_{script_args.task}_{script_args.note}"
 
 bnb_config = BitsAndBytesConfig(
-    # load_in_4bit=True,
-    load_in_8bit=True,
+    load_in_4bit=True,
+    # load_in_8bit=True,
     bnb_4bit_quant_type="nf4",
     bnb_4bit_compute_dtype=torch.bfloat16,
 )
@@ -156,7 +156,7 @@ tokenizer.pad_token = tokenizer.eos_token
 tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
 
 training_args = TrainingArguments(
-    output_dir=output_dir,
+    output_dir=output_dir,main
     per_device_train_batch_size=script_args.per_device_train_batch_size,
     gradient_accumulation_steps=script_args.gradient_accumulation_steps,
     per_device_eval_batch_size=script_args.per_device_eval_batch_size,

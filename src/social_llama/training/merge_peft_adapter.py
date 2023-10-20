@@ -18,7 +18,7 @@ class ScriptArguments:
     """The name of the Casual LM model we wish to fine with PPO."""
 
     adapter_model_name: Optional[str] = field(
-        default="sft/final_merged_checkpoint/", metadata={"help": "the model name"}
+        default="sft/final_checkpoint/", metadata={"help": "the model name"}
     )
     base_model_name: Optional[str] = field(
         default="meta-llama/Llama-2-13b-hf", metadata={"help": "the model name"}

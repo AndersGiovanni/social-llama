@@ -4,6 +4,7 @@ import os
 from dataclasses import dataclass
 from dataclasses import field
 from typing import Optional
+from dotenv import load_dotenv
 
 import torch
 from peft import AutoPeftModelForCausalLM
@@ -15,6 +16,7 @@ from trl import DPOTrainer
 
 from social_llama.data_processing.social_dimensions import SocialDimensions
 
+load_dotenv()
 
 # Define and parse arguments.
 @dataclass
@@ -28,7 +30,7 @@ class ScriptArguments:
 
     # training parameters
     model_name_or_path: Optional[str] = field(
-        default="./sft/final_merged_checkpoint",
+        default="sft/final_checkpoint",
         metadata={"help": "the location of the SFT model name or path"},
     )
     learning_rate: Optional[float] = field(
@@ -38,7 +40,7 @@ class ScriptArguments:
         default="cosine", metadata={"help": "the lr scheduler type"}
     )
     warmup_steps: Optional[int] = field(
-        default=100, metadata={"help": "the number of warmup steps"}
+        default=5, metadata={"help": "the number of warmup steps"}
     )
     weight_decay: Optional[float] = field(
         default=0.05, metadata={"help": "the weight decay"}
@@ -75,16 +77,16 @@ class ScriptArguments:
         default=2048, metadata={"help": "the maximum sequence length"}
     )
     max_steps: Optional[int] = field(
-        default=1000, metadata={"help": "max number of training steps"}
+        default=40, metadata={"help": "max number of training steps"}
     )
     logging_steps: Optional[int] = field(
-        default=10, metadata={"help": "the logging frequency"}
+        default=5, metadata={"help": "the logging frequency"}
     )
     save_steps: Optional[int] = field(
         default=100, metadata={"help": "the saving frequency"}
     )
     eval_steps: Optional[int] = field(
-        default=100, metadata={"help": "the evaluation frequency"}
+        default=10, metadata={"help": "the evaluation frequency"}
     )
 
     output_dir: Optional[str] = field(
