@@ -54,7 +54,7 @@ class ScriptArguments:
     )
 
     max_steps: Optional[int] = field(
-        default=300, metadata={"help": "the maximum number of sgd steps"}
+        default=200, metadata={"help": "the maximum number of sgd steps"}
     )
     logging_steps: Optional[int] = field(
         default=10, metadata={"help": "the logging frequency"}
@@ -63,7 +63,7 @@ class ScriptArguments:
         default=25, metadata={"help": "the saving frequency"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=8, metadata={"help": "the per device train batch size"}
+        default=2, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
         default=2, metadata={"help": "the per device eval batch size"}
@@ -115,7 +115,7 @@ class ScriptArguments:
         default="", metadata={"help": "the note to add to the run"}
     )
     task: Optional[str] = field(
-        default="zero-shot", metadata={"help": "the task to run"}
+        default="few-shot", metadata={"help": "the task to run"}
     )
 
 
@@ -171,7 +171,7 @@ training_args = TrainingArguments(
     optim=script_args.optimizer_type,
     fp16=True,
     remove_unused_columns=False,
-    run_name=f"{script_args.model_name}_sft_{script_args.task}_{script_args.note}",
+    run_name=f"{script_args.model_name.split('/')[-1]}_sft_{script_args.task}_{script_args.note}",
 )
 
 if script_args.dataset_name == "social_dimensions":
