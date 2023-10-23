@@ -78,7 +78,7 @@ class ScriptArguments:
         default=2048, metadata={"help": "the maximum sequence length"}
     )
     max_steps: Optional[int] = field(
-        default=200, metadata={"help": "max number of training steps"}
+        default=300, metadata={"help": "max number of training steps"}
     )
     logging_steps: Optional[int] = field(
         default=5, metadata={"help": "the logging frequency"}
@@ -91,7 +91,8 @@ class ScriptArguments:
     )
 
     output_dir: Optional[str] = field(
-        default="./dpo/Llama-2-7b-chat-hf_zero-shot_", metadata={"help": "the output directory"}
+        default="./dpo/Llama-2-7b-chat-hf_zero-shot_",
+        metadata={"help": "the output directory"},
     )
     log_freq: Optional[int] = field(
         default=1, metadata={"help": "the logging frequency"}
@@ -132,6 +133,9 @@ if __name__ == "__main__":
         is_trainable=True,
     )
     model.config.use_cache = False
+
+    MODEL_NAME = script_args.model_name_or_path.split("/")[-2]
+    output_dir = "./dpo/" + MODEL_NAME
 
     if script_args.ignore_bias_buffers:
         # torch distributed hack
@@ -177,7 +181,7 @@ if __name__ == "__main__":
         optim=script_args.optimizer_type,
         fp16=True,
         remove_unused_columns=False,
-        run_name=f"dpo_Llama-2-7b-chat-hf_zero-shot_/",
+        run_name=f"dpo_{MODEL_NAME}",
     )
 
     peft_config = LoraConfig(
