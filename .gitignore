@@ -10,10 +10,8 @@
 __pycache__/
 wandb/
 results/
-<<<<<<< HEAD
-results_sft/
+models/
+run_outputs/
 sft/
 dpo/
-=======
 .env
->>>>>>> b69969a964b85d74d67c6093b54bf39cf4b66012
