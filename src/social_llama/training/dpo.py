@@ -29,10 +29,9 @@ class ScriptArguments:
     beta: Optional[float] = field(
         default=0.1, metadata={"help": "the beta parameter for DPO loss"}
     )
-
     # training parameters
     model_name_or_path: Optional[str] = field(
-        default="sft/final_checkpoint",
+        default="sft/Llama-2-7b-chat-hf_zero-shot_/final_checkpoint",
         metadata={"help": "the location of the SFT model name or path"},
     )
     learning_rate: Optional[float] = field(
@@ -52,7 +51,7 @@ class ScriptArguments:
     )
 
     per_device_train_batch_size: Optional[int] = field(
-        default=4, metadata={"help": "train batch size per device"}
+        default=2, metadata={"help": "train batch size per device"}
     )
     per_device_eval_batch_size: Optional[int] = field(
         default=1, metadata={"help": "eval batch size per device"}
@@ -73,13 +72,13 @@ class ScriptArguments:
     lora_r: Optional[int] = field(default=8, metadata={"help": "the lora r parameter"})
 
     max_prompt_length: Optional[int] = field(
-        default=1024, metadata={"help": "the maximum prompt length"}
+        default=2048, metadata={"help": "the maximum prompt length"}
     )
     max_length: Optional[int] = field(
         default=2048, metadata={"help": "the maximum sequence length"}
     )
     max_steps: Optional[int] = field(
-        default=40, metadata={"help": "max number of training steps"}
+        default=200, metadata={"help": "max number of training steps"}
     )
     logging_steps: Optional[int] = field(
         default=5, metadata={"help": "the logging frequency"}
@@ -88,11 +87,11 @@ class ScriptArguments:
         default=100, metadata={"help": "the saving frequency"}
     )
     eval_steps: Optional[int] = field(
-        default=10, metadata={"help": "the evaluation frequency"}
+        default=20, metadata={"help": "the evaluation frequency"}
     )
 
     output_dir: Optional[str] = field(
-        default="./dpo", metadata={"help": "the output directory"}
+        default="./dpo/Llama-2-7b-chat-hf_zero-shot_", metadata={"help": "the output directory"}
     )
     log_freq: Optional[int] = field(
         default=1, metadata={"help": "the logging frequency"}
@@ -178,7 +177,7 @@ if __name__ == "__main__":
         optim=script_args.optimizer_type,
         fp16=True,
         remove_unused_columns=False,
-        run_name=f"{script_args.model_name_or_path}_dpo",
+        run_name=f"dpo_Llama-2-7b-chat-hf_zero-shot_/",
     )
 
     peft_config = LoraConfig(
