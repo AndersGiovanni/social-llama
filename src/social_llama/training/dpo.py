@@ -31,7 +31,7 @@ class ScriptArguments:
     )
     # training parameters
     model_name_or_path: Optional[str] = field(
-        default="sft/Llama-2-7b-chat-hf_zero-shot_/final_checkpoint",
+        default="sft/Llama-2-7b-chat-hf_few-shot_/final_checkpoint",
         metadata={"help": "the location of the SFT model name or path"},
     )
     learning_rate: Optional[float] = field(
@@ -78,7 +78,7 @@ class ScriptArguments:
         default=2048, metadata={"help": "the maximum sequence length"}
     )
     max_steps: Optional[int] = field(
-        default=300, metadata={"help": "max number of training steps"}
+        default=1000, metadata={"help": "max number of training steps"}
     )
     logging_steps: Optional[int] = field(
         default=5, metadata={"help": "the logging frequency"}
@@ -87,11 +87,11 @@ class ScriptArguments:
         default=100, metadata={"help": "the saving frequency"}
     )
     eval_steps: Optional[int] = field(
-        default=20, metadata={"help": "the evaluation frequency"}
+        default=200, metadata={"help": "the evaluation frequency"}
     )
 
     output_dir: Optional[str] = field(
-        default="./dpo/Llama-2-7b-chat-hf_zero-shot_",
+        default="./dpo/Llama-2-7b-chat-hf_few-shot_fp32",
         metadata={"help": "the output directory"},
     )
     log_freq: Optional[int] = field(
@@ -151,7 +151,7 @@ if __name__ == "__main__":
     )
 
     social_dimensions = SocialDimensions(
-        task="zero-shot", model="meta-llama/Llama-2-7b-chat-hf"
+        task="few-shot", model="meta-llama/Llama-2-7b-chat-hf"
     )
     social_dimensions.get_data()
     tokenizer = AutoTokenizer.from_pretrained(
