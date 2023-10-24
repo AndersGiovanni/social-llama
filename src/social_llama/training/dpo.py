@@ -128,7 +128,7 @@ if __name__ == "__main__":
     model = AutoPeftModelForCausalLM.from_pretrained(
         script_args.model_name_or_path,
         low_cpu_mem_usage=True,
-        torch_dtype=torch.float16,
+        torch_dtype=torch.float32,
         load_in_4bit=True,
         is_trainable=True,
     )
@@ -146,7 +146,7 @@ if __name__ == "__main__":
     model_ref = AutoPeftModelForCausalLM.from_pretrained(
         script_args.model_name_or_path,
         low_cpu_mem_usage=True,
-        torch_dtype=torch.float16,
+        torch_dtype=torch.float32,
         load_in_4bit=True,
     )
 
@@ -179,7 +179,7 @@ if __name__ == "__main__":
         lr_scheduler_type=script_args.lr_scheduler_type,
         warmup_steps=script_args.warmup_steps,
         optim=script_args.optimizer_type,
-        fp16=True,
+        fp16=False,
         remove_unused_columns=False,
         run_name=f"dpo_{MODEL_NAME}",
     )
