@@ -1,6 +1,7 @@
 """Evaluation of the model."""
 
 import os
+import time
 from typing import Dict
 from typing import List
 
@@ -40,7 +41,11 @@ class Evaluator:
         self.socket_prompts: pd.DataFrame = pd.read_csv(
             DATA_DIR_EVALUATION_SOCKET / "socket_prompts.csv"
         )
-        self.generation_kwargs = {"max_new_tokens": 20, "temperature": 0.9}
+        self.generation_kwargs = {
+            "max_new_tokens": 20,
+            "temperature": 0.9,
+            "truncate": 4096,
+        }
         if model_id in ["meta-llama/Llama-2-7b-chat-hf"]:
             self.inference_client = InferenceClient(
                 model=model_id, token=os.environ["HUGGINGFACEHUB_API_TOKEN"]
@@ -66,11 +71,20 @@ class Evaluator:
 
             for sample in tqdm(task_data):
                 # prediction = self.llm(sample["prompt"])
-                prediction = self.inference_client.text_generation(
-                    sample["prompt"], **self.generation_kwargs
-                )
+                has_output = False
+                while not has_output:
+                    try:
+                        prediction = self.inference_client.text_generation(
+                            sample["prompt"], **self.generation_kwargs
+                        )
+                    except Exception:
+                        time.sleep(2)
+                        continue
+                    has_output = True
+
                 prediction_processed = label_check(
-                    prediction=prediction, labels=self.social_dimensions.config.labels
+                    prediction=prediction,
+                    labels=self.social_dimensions.config.labels,
                 )
                 predictions.append(
                     {
