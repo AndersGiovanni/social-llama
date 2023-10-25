@@ -184,3 +184,15 @@ def get_all_f1(groundtruth: List[str], answer: List[str]) -> Tuple[float, float,
     rs = [compute_metrics(g, a)[2] for g, a in zip(groundtruth, answer)]
 
     return get_mean(ps), get_mean(rs), get_mean(f1s)
+
+
+def label_check(prediction: str, labels: List[str]) -> str:
+    """Check if the prediction contains a label."""
+    # sort by length of label to avoid matching substrings
+    for label in sorted(labels, key=len, reverse=True):
+        # Check if we can find the true label in the prediction
+        pattern = rf"\b{label}\b"
+        if re.search(pattern, prediction, re.IGNORECASE):
+            return label
+
+    return "FALSE"
