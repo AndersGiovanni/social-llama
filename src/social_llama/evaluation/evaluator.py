@@ -45,13 +45,17 @@ class Evaluator:
             "max_new_tokens": 20,
             "temperature": 0.9,
             "truncate": 4096,
+            "stop_sequences": self.social_dimensions.config.labels,
         }
         if model_id in ["meta-llama/Llama-2-7b-chat-hf"]:
             self.inference_client = InferenceClient(
                 model=model_id, token=os.environ["HUGGINGFACEHUB_API_TOKEN"]
             )
+            self.use_inference_client = True
         else:
-            self.tokenizer = AutoTokenizer.from_pretrained(model_id)
+            self.tokenizer = AutoTokenizer.from_pretrained(
+                "meta-llama/Llama-2-7b-chat-hf"
+            )
             self.config = AutoConfig.from_pretrained(model_id)
             self.llama_config = LlamaConfigs
             self.device = get_device()
@@ -62,6 +66,7 @@ class Evaluator:
                 # device=self.device,
                 device_map="auto",
             )
+            self.use_inference_client = False
 
     def predict(self, task: str = "social-dimensions") -> None:
         """Predict the labels for the test data."""
@@ -69,18 +74,21 @@ class Evaluator:
             task_data = self._prepare_social_dim_test_data()
             predictions = []
 
-            for sample in tqdm(task_data):
-                # prediction = self.llm(sample["prompt"])
-                has_output = False
-                while not has_output:
-                    try:
-                        prediction = self.inference_client.text_generation(
-                            sample["prompt"], **self.generation_kwargs
-                        )
-                    except Exception:
-                        time.sleep(2)
-                        continue
-                    has_output = True
+            for sample in tqdm(task_data[:20]):
+                if self.use_inference_client:
+                    has_output = False
+                    while not has_output:
+                        try:
+                            prediction = self.inference_client.text_generation(
+                                sample["prompt"], **self.generation_kwargs
+                            )
+                        except Exception:
+                            time.sleep(2)
+                            continue
+                        has_output = True
+
+                else:
+                    prediction = self.llm(sample["prompt"], **self.generation_kwargs)
 
                 prediction_processed = label_check(
                     prediction=prediction,
@@ -127,7 +135,7 @@ class Evaluator:
 
 
 if __name__ == "__main__":
-    evaluator = Evaluator("meta-llama/Llama-2-7b-chat-hf")
+    evaluator = Evaluator("AGMoller/social_llama_7b_zero-shot")
 
     evaluator.predict()
 
