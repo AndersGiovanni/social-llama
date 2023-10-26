@@ -7,6 +7,7 @@ from typing import List
 
 import pandas as pd
 from datasets import Dataset
+from datasets import load_dataset
 from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
 from tqdm import tqdm
@@ -103,12 +104,22 @@ class Evaluator:
                         "label": sample["label"],
                     }
                 )
-
             save_json(
                 DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
                 / f"{self.model_id}_predictions.json",
                 predictions,
             )
+        elif task == "socket":
+            cls_tasks = self.socket_prompts[self.socket_prompts["type"] == "CLS"][
+                "task"
+            ]
+            print(cls_tasks)
+            # for task in cls_tasks:
+            # pass
+            # data = self._prepare_socket_test_data(task=task)
+
+        else:
+            raise ValueError("Task not recognized.")
 
     def _prepare_social_dim_test_data(self) -> List[Dict[str, str]]:
         """Prepare the test data for the social dimension task."""
@@ -133,10 +144,33 @@ class Evaluator:
         # Return a list of all the values in the dictionary
         return list(test_data_formatted.values())
 
+    def _prepare_socket_test_data(self, task: str) -> List[Dict[str, str]]:
+        test_data_formatted: List[Dict[str, str]] = []
+
+        # Get all the socket prompts with type CLS
+        prompt = self.socket_prompts[self.socket_prompts["task"] == task][
+            "question"
+        ].iloc[0]
+
+        dataset: Dataset = load_dataset("Blablablab/SOCKET", task, split="test")
+        labels: List[str] = dataset.features["label"].names
+        labels_mapping: Dict[int, str] = {i: label for i, label in enumerate(labels)}
+
+        for idx, sample in enumerate(dataset):
+            test_data_formatted.append(
+                {
+                    "idx": idx,
+                    "prompt": prompt,
+                    "label": labels_mapping[sample["label"]],
+                }
+            )
+
+        return test_data_formatted
+
 
 if __name__ == "__main__":
-    evaluator = Evaluator("AGMoller/social_llama_7b_zero-shot")
+    evaluator = Evaluator("meta-llama/Llama-2-7b-chat-hf")
 
-    evaluator.predict()
+    evaluator.predict(task="socket")
 
     a = 1
