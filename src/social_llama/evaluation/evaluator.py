@@ -89,10 +89,11 @@ class Evaluator:
                         has_output = True
 
                 else:
-                    prediction = self.llm(sample["prompt"], **self.generation_kwargs)
+                    prediction = self.llm(sample["prompt"])
+                    print(prediction)
 
                 prediction_processed = label_check(
-                    prediction=prediction,
+                    prediction=prediction[0],
                     labels=self.social_dimensions.config.labels,
                 )
                 predictions.append(
