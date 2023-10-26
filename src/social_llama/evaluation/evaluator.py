@@ -48,6 +48,10 @@ class Evaluator:
             "truncate": 4096,
             "stop_sequences": self.social_dimensions.config.labels,
         }
+        self.generation_kwargs_local = {
+            "max_new_tokens": 20,
+            "temperature": 0.9,
+        }
         if model_id in ["meta-llama/Llama-2-7b-chat-hf"]:
             self.inference_client = InferenceClient(
                 model=model_id, token=os.environ["HUGGINGFACEHUB_API_TOKEN"]
@@ -89,8 +93,8 @@ class Evaluator:
                         has_output = True
 
                 else:
-                    prediction = self.llm(sample["prompt"])
-                    print(prediction)
+                    prediction: str = self.llm(sample["prompt"])["generated_text"]
+                    prediction: str = prediction.replace(sample["prompt"], "")
 
                 prediction_processed = label_check(
                     prediction=prediction[0],
