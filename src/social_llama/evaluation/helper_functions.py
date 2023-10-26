@@ -196,3 +196,18 @@ def label_check(prediction: str, labels: List[str]) -> str:
             return label
 
     return "FALSE"
+
+
+def label_finder(prediction, labels):
+    """Find the first occurrence of a label in a string."""
+    earliest_pos = len(prediction)
+    earliest_string = None
+
+    for label in labels:
+        pattern = rf"\b{re.escape(label)}\b"
+        match = re.search(pattern, prediction, re.IGNORECASE)
+        if match and match.start() < earliest_pos:
+            earliest_pos = match.start()
+            earliest_string = label
+
+    return earliest_string if earliest_string else "FALSE"
