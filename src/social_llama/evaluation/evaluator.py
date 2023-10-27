@@ -62,7 +62,7 @@ class Evaluator:
             self.use_inference_client = True
         else:
             self.config = AutoConfig.from_pretrained(model_id)
-            self.llama_config = LlamaConfigs
+            self.llama_config = LlamaConfigs()
             self.device = get_device()
             self.llm = pipeline(
                 "text-generation",
