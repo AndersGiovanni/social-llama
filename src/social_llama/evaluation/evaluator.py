@@ -236,8 +236,8 @@ class Evaluator:
 
 
 if __name__ == "__main__":
-    evaluator = Evaluator("meta-llama/Llama-2-7b-chat-hf")
+    evaluator = Evaluator("AGMoller/social_llama_7b_zero-shot")
 
-    evaluator.predict(task="socket")
+    evaluator.predict(task="social-dimensions")
 
     a = 1
