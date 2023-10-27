@@ -152,7 +152,7 @@ class Evaluator:
                 has_output = True
 
         else:
-            prediction: str = self.llm(sample["prompt"])["generated_text"]
+            prediction: str = self.llm(sample["prompt"])[0]["generated_text"]
             prediction: str = prediction.replace(sample["prompt"], "")
 
         return prediction
