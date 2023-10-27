@@ -189,6 +189,11 @@ class Evaluator:
         ].iloc[0]
 
         dataset: Dataset = load_dataset("Blablablab/SOCKET", task, split="test")
+
+        # if length is more than 2000, randomly sample 2000
+        if len(dataset) > 2000:
+            dataset = dataset.shuffle(seed=42).select(range(2000))
+
         labels: List[str] = dataset.features["label"].names
         labels_formatted = [f'"{label}"' for label in labels]
         labels_mapping: Dict[int, str] = {i: label for i, label in enumerate(labels)}
