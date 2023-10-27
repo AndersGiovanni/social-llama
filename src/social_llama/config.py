@@ -91,7 +91,7 @@ Moreover, your insights should reflect a deep understanding of the socio-cultura
                 "role": "system",
                 # "content": """You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe. Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that your responses are socially unbiased and positive in nature.\n{prompt_prefix}""",
                 # "content": """You are a helpful, respectful and honest assistant.""", # v1
-                "content": """You are a helpful, respectful and honest assistant.""",  # v2
+                "content": """You are a helpful, respectful and honest assistant.\n{prompt_prefix}""",  # v2
             },
         ]
         return chat
