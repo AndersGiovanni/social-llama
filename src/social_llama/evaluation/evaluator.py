@@ -238,6 +238,6 @@ class Evaluator:
 if __name__ == "__main__":
     evaluator = Evaluator("AGMoller/social_llama_7b_zero-shot")
 
-    evaluator.predict(task="social-dimensions")
+    evaluator.predict(task="socket")
 
     a = 1
