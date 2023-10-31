@@ -19,6 +19,11 @@ DATA_DIR_SOCIAL_DIMENSIONS: Path = DATA_DIR / "social-dimensions"
 DATA_DIR_SOCIAL_DIMENSIONS_RAW: Path = DATA_DIR_SOCIAL_DIMENSIONS / "raw"
 DATA_DIR_SOCIAL_DIMENSIONS_PROCESSED: Path = DATA_DIR_SOCIAL_DIMENSIONS / "processed"
 
+# Evaluation
+DATA_DIR_EVALUATION: Path = DATA_DIR / "evaluation"
+DATA_DIR_EVALUATION_SOCKET: Path = DATA_DIR_EVALUATION / "socket"
+DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS: Path = DATA_DIR_EVALUATION / "social-dimensions"
+
 
 # Datasets Config Class
 @dataclass
@@ -84,7 +89,9 @@ Moreover, your insights should reflect a deep understanding of the socio-cultura
         chat: List[Dict[str, str]] = [
             {
                 "role": "system",
-                "content": """You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe. Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that your responses are socially unbiased and positive in nature.\n{prompt_prefix}""",
+                # "content": """You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe. Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that your responses are socially unbiased and positive in nature.\n{prompt_prefix}""",
+                # "content": """You are a helpful, respectful and honest assistant.""", # v1
+                "content": """You are a helpful, respectful and honest assistant.\n{prompt_prefix}""",  # v2
             },
         ]
         return chat

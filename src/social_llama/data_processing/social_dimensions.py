@@ -4,12 +4,12 @@ import itertools
 import json
 import os
 import random
+from collections import defaultdict
 from dataclasses import asdict
 from dataclasses import dataclass
 from typing import Any
 from typing import Callable
 from typing import Dict
-from typing import Iterator
 from typing import List
 from typing import Tuple
 from typing import Union
@@ -155,11 +155,14 @@ class SocialDimensions(DataClass):
 
         return train_dataset, test_dataset
 
-    def _prompt_function(self, example: Sample) -> str:
+    def _prompt_function(
+        self, example: Union[Sample, List[Sample]], is_q_a: bool = False
+    ) -> str:
         """Generate a prompt for the example.
 
         Args:
             example (Sample): Sample of a social dimensions example
+            is_q_a (bool, optional): Whether the example is a question/answering example. Defaults to False.
 
         Returns:
             str: Prompt for the example
@@ -170,24 +173,46 @@ class SocialDimensions(DataClass):
         chat: List[Dict[str, str]] = self.llama_config.get_chat_template()
 
         chat[0]["content"] = chat[0]["content"].format(
-            prompt_prefix=self.config.prompt_prefix
+            # prompt_prefix=self.config.prompt_prefix
+            prompt_prefix=""
         )
 
         if self.task == "zero-shot":
             task_prompt = self.config.prompt_template.format(
-                text=example["text"], response_good=example["response_good"]
-            )
-        elif self.task == "few-shot":  # TODO: Fix this
-            task_prompt = example["text"]
-        elif self.task == "cot":
-            task_prompt = self.config.prompt_template_cot.format(
                 text=example["text"],
-                response_good=example["response_good"],
-                dimension_description=self.config.cot_info_dict[  # type: ignore
-                    example["response_good"]
-                ],
-                h_text=example["h_text"],
+                response_good=example["response_good"] if not is_q_a else "",
             )
+        elif self.task == "few-shot":
+            if is_q_a:
+                task_prompt = "".join(
+                    [
+                        self.config.prompt_template.format(
+                            text=text,
+                            response_good=response_good,
+                        )
+                        for text, response_good in zip(
+                            example["text"][:-1], example["response_good"][:-1]  # type: ignore
+                        )
+                    ]
+                )
+                task_prompt = task_prompt + f"Text: {example['text'][-1]}\nAnswer: "
+            else:
+                task_prompt = example["text"]
+        elif self.task == "cot":
+            if is_q_a:
+                task_prompt = self.config.prompt_template.format(
+                    text=example["text"],
+                    response_good="",
+                )
+            else:
+                task_prompt = self.config.prompt_template_cot.format(
+                    text=example["text"],
+                    response_good=example["response_good"],
+                    dimension_description=self.config.cot_info_dict[  # type: ignore
+                        example["response_good"]
+                    ],
+                    h_text=example["h_text"],
+                )
         else:
             raise ValueError(f"Type {type} is not supported.")
 
@@ -204,34 +229,35 @@ class SocialDimensions(DataClass):
 
     def _extract_few_shot_examples(
         self, dataset, seed: int = 42
-    ) -> Tuple[List[Sample], Dataset]:
-        """Extracts the few shot examples from the dataset."""
-        # Define variables
+    ) -> Tuple[List[dict], List[dict]]:
+        # Prepare a dictionary to hold examples for each label
+        label_examples = defaultdict(list)
         num_few_shot_examples: int = self.config.num_few_shot_examples
-        labels: Iterator = itertools.cycle(self.config.labels)
-        few_shot_examples: List[Sample] = []
 
-        # Extract few shot examples
+        # Populate the dictionary
+        for example in dataset:
+            if example["response_good"] in self.config.labels:
+                label_examples[example["response_good"]].append(example)
+
+        # Prepare the few_shot_examples list
+        few_shot_examples = []
+        labels_cycle = itertools.cycle(self.config.labels)
+
         while len(few_shot_examples) < num_few_shot_examples:
-            # Get next/another label
-            label = next(labels)
-            # Get example with that label
-            example = dataset.filter(lambda x: x["response_good"] == label).select(
-                range(1)
-            )
-            # Skip if example is None
-            if len(example) == 0:
-                continue
-            example = example[0]
-            # Add example to few shot examples
-            few_shot_examples.append(example)
-            # Remove example from dataset
-            dataset = dataset.filter(lambda x: x["text"] != example["text"])
+            label = next(labels_cycle)
+
+            if label_examples[label]:
+                example = label_examples[label].pop(0)
+                few_shot_examples.append(example)
 
         random.seed(seed)
         random.shuffle(few_shot_examples)
 
-        return few_shot_examples, dataset
+        # Remove used examples from the original dataset
+        used_texts = {example["text"] for example in few_shot_examples}
+        remaining_dataset = [x for x in dataset if x["text"] not in used_texts]
+
+        return few_shot_examples, remaining_dataset
 
     def _make_few_shot_example(self, few_shot_examples: List[Sample]) -> str:
         """Make a few shot example."""
@@ -288,39 +314,21 @@ class SocialDimensions(DataClass):
         """
         if self.task == "zero-shot":
             return {
-                "prompt": f"""Question: The following text is a social media post. The text conveys one or more social dimensions, and your job is to determine the dimension. The social dimensions are 'social_support', 'conflict', 'trust', 'fun', 'similarity', 'identity', 'respect', 'romance', 'knowledge', 'power', and 'other'. \n\nText: {samples['text']}\n\nAsnwer: """,  # type: ignore
+                "prompt": self._prompt_function(samples, is_q_a=True),  # type: ignore
                 "chosen": samples["response_good"],  # type: ignore
                 "rejected": samples["response_bad"],  # type: ignore
             }
         elif self.task == "few-shot":
             return {
-                "prompt": "".join(
-                    [
-                        f"Text: {text}\n\nAnswer: {response_good}\n"
-                        for text, response_good in zip(
-                            samples["text"][:-1], samples["response_good"][:-1]  # type: ignore
-                        )
-                    ]
-                )
-                + f"Text: {samples['text'][-1]}\n\nAnswer: ",  # type: ignore
+                "prompt": self._prompt_function(samples, is_q_a=True),  # type: ignore
                 "chosen": samples["response_good"][-1],  # type: ignore
                 "rejected": samples["response_bad"][-1],  # type: ignore
             }
         elif self.task == "cot":
             return {
-                "prompt": "".join(
-                    [
-                        f"Text: {text}\nThe text exhibits {self.config.cot_info_dict[response_good]}. In particular in the part '{h_text!r}'.\nAnswer: {response_good}\n"  # type: ignore
-                        for text, h_text, response_good in zip(
-                            samples["text"][:-1],  # type: ignore
-                            samples["h_text"][:-1],  # type: ignore
-                            samples["response_good"][:-1],  # type: ignore
-                        )
-                    ]
-                )
-                + f"Text: {samples['text'][-1]}\n",  # type: ignore
-                "chosen": f"The text exhibits {self.config.cot_info_dict[samples['response_good'][-1]]}. In particular in the part '{samples['h_text'][-1]!r}'.\nAnswer: {samples['response_good'][-1]}\n",  # type: ignore
-                "rejected": f"The text exhibits {self.config.cot_info_dict[samples['response_bad'][-1]]}. In particular in the part '{samples['h_text'][-1]!r}'.\nAnswer: {samples['response_bad'][-1]}\n",  # type: ignore
+                "prompt": self._prompt_function(samples, is_q_a=True),  # type: ignore
+                "chosen": f"The text exhibits {self.config.cot_info_dict[samples['response_good']]}. In particular in the part '{samples['h_text']!r}'.\nAnswer: {samples['response_good']}\n",  # type: ignore
+                "rejected": f"The text exhibits {self.config.cot_info_dict[samples['response_bad']]}. In particular in the part '{samples['h_text']!r}'.\nAnswer: {samples['response_bad']}\n",  # type: ignore
             }
         else:
             raise ValueError(f"Type {type} is not supported.")
@@ -333,7 +341,7 @@ class SocialDimensions(DataClass):
         # All the samples after making them into a few shot example
         few_shot_collection = []
 
-        while shuffled_data.num_rows >= self.config.num_few_shot_examples:
+        while len(shuffled_data) >= self.config.num_few_shot_examples:
             # Extract few shot examples
             few_shot_examples, shuffled_data = self._extract_few_shot_examples(
                 shuffled_data, seed=seed
@@ -357,7 +365,7 @@ class SocialDimensions(DataClass):
             # Every 1000 examples print the number of examples left
             if len(few_shot_collection) % 1000 == 0:
                 print(
-                    f"Number of examples left: {shuffled_data.num_rows}. Number of few shot examples: {len(few_shot_collection)}"
+                    f"Number of examples left: {len(shuffled_data)}. Number of few shot examples: {len(few_shot_collection)}"
                 )
 
         # Define new empty DatasetDict
@@ -368,42 +376,32 @@ class SocialDimensions(DataClass):
     @override
     def preprocess_dpo(self) -> Tuple[Dataset, Dataset]:
         """Preprocess for DPO. The data needs Q&A format."""
-        self.data = self.data.train_test_split(  # type: ignore
-            test_size=0.2,
-            shuffle=True,
-            seed=42,
-        )
+        original_columns = self.train_data.column_names
 
-        original_columns = self.data["train"].column_names
+        if self.task == "few-shot":
+            self.train_data = self._apply_few_shot_prompt_dpo(self.train_data)
+            self.test_data = self._apply_few_shot_prompt_dpo(self.test_data)
 
-        train_data = self.data["train"]
-        valid_data = self.data["test"]
-        print(
-            f"Size of the train set: {len(train_data)}. Size of the validation set: {len(valid_data)}"
-        )
-
-        if self.task == "few-shot" or self.task == "cot":
-            train_data = self._apply_few_shot_prompt_dpo(train_data)
-            valid_data = self._apply_few_shot_prompt_dpo(valid_data)
-
-        train_data = train_data.map(
+        self.train_data = self.train_data.map(
             self._convert_to_q_and_a,
             # batched=True,
             remove_columns=original_columns,
             drop_last_batch=True,
         )
-        valid_data = valid_data.map(
+        self.test_data = self.test_data.map(
             self._convert_to_q_and_a,
             # batched=True,
             remove_columns=original_columns,
             drop_last_batch=True,
         )
 
-        return train_data, valid_data
+        return self.train_data, self.test_data
 
 
 if __name__ == "__main__":
-    social_dimensions = SocialDimensions(task="cot", model="meta-llama/Llama-2-70b-hf")
+    social_dimensions = SocialDimensions(
+        task="few-shot", model="meta-llama/Llama-2-70b-hf"
+    )
     social_dimensions.get_data()
 
-    train_data_, valid_data_ = social_dimensions.preprocess_sft()
+    train_data_, valid_data_ = social_dimensions.preprocess_dpo()

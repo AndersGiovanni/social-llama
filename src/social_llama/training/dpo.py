@@ -29,10 +29,9 @@ class ScriptArguments:
     beta: Optional[float] = field(
         default=0.1, metadata={"help": "the beta parameter for DPO loss"}
     )
-
     # training parameters
     model_name_or_path: Optional[str] = field(
-        default="sft/final_checkpoint",
+        default="sft/Llama-2-7b-chat-hf_few-shot_/final_checkpoint",
         metadata={"help": "the location of the SFT model name or path"},
     )
     learning_rate: Optional[float] = field(
@@ -52,7 +51,7 @@ class ScriptArguments:
     )
 
     per_device_train_batch_size: Optional[int] = field(
-        default=4, metadata={"help": "train batch size per device"}
+        default=2, metadata={"help": "train batch size per device"}
     )
     per_device_eval_batch_size: Optional[int] = field(
         default=1, metadata={"help": "eval batch size per device"}
@@ -73,13 +72,13 @@ class ScriptArguments:
     lora_r: Optional[int] = field(default=8, metadata={"help": "the lora r parameter"})
 
     max_prompt_length: Optional[int] = field(
-        default=1024, metadata={"help": "the maximum prompt length"}
+        default=2048, metadata={"help": "the maximum prompt length"}
     )
     max_length: Optional[int] = field(
         default=2048, metadata={"help": "the maximum sequence length"}
     )
     max_steps: Optional[int] = field(
-        default=40, metadata={"help": "max number of training steps"}
+        default=1000, metadata={"help": "max number of training steps"}
     )
     logging_steps: Optional[int] = field(
         default=5, metadata={"help": "the logging frequency"}
@@ -88,11 +87,12 @@ class ScriptArguments:
         default=100, metadata={"help": "the saving frequency"}
     )
     eval_steps: Optional[int] = field(
-        default=10, metadata={"help": "the evaluation frequency"}
+        default=200, metadata={"help": "the evaluation frequency"}
     )
 
     output_dir: Optional[str] = field(
-        default="./dpo", metadata={"help": "the output directory"}
+        default="./dpo/Llama-2-7b-chat-hf_few-shot_fp32",
+        metadata={"help": "the output directory"},
     )
     log_freq: Optional[int] = field(
         default=1, metadata={"help": "the logging frequency"}
@@ -128,11 +128,14 @@ if __name__ == "__main__":
     model = AutoPeftModelForCausalLM.from_pretrained(
         script_args.model_name_or_path,
         low_cpu_mem_usage=True,
-        torch_dtype=torch.float16,
+        torch_dtype=torch.float32,
         load_in_4bit=True,
         is_trainable=True,
     )
     model.config.use_cache = False
+
+    MODEL_NAME = script_args.model_name_or_path.split("/")[-2]
+    output_dir = "./dpo/" + MODEL_NAME
 
     if script_args.ignore_bias_buffers:
         # torch distributed hack
@@ -143,12 +146,12 @@ if __name__ == "__main__":
     model_ref = AutoPeftModelForCausalLM.from_pretrained(
         script_args.model_name_or_path,
         low_cpu_mem_usage=True,
-        torch_dtype=torch.float16,
+        torch_dtype=torch.float32,
         load_in_4bit=True,
     )
 
     social_dimensions = SocialDimensions(
-        task="zero-shot", model="meta-llama/Llama-2-7b-chat-hf"
+        task="few-shot", model="meta-llama/Llama-2-7b-chat-hf"
     )
     social_dimensions.get_data()
     tokenizer = AutoTokenizer.from_pretrained(
@@ -176,9 +179,9 @@ if __name__ == "__main__":
         lr_scheduler_type=script_args.lr_scheduler_type,
         warmup_steps=script_args.warmup_steps,
         optim=script_args.optimizer_type,
-        fp16=True,
+        fp16=False,
         remove_unused_columns=False,
-        run_name=f"{script_args.model_name_or_path}_dpo",
+        run_name=f"dpo_{MODEL_NAME}",
     )
 
     peft_config = LoraConfig(
