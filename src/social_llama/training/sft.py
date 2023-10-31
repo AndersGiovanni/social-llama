@@ -17,6 +17,7 @@ from transformers import TrainingArguments
 from trl import SFTTrainer
 
 from social_llama.data_processing.social_dimensions import SocialDimensions
+from social_llama.data_processing.socket import Socket
 
 
 load_dotenv()
@@ -34,7 +35,9 @@ class ScriptArguments:
     )
 
     dataset_name: Optional[str] = field(
-        default="social_dimensions", metadata={"help": "the dataset name"}
+        default="socket",
+        metadata={"help": "the dataset name"},
+        choices=["social_dimensions", "socket"],
     )
     subset: Optional[str] = field(
         default="data/finetune", metadata={"help": "the subset to use"}
@@ -54,13 +57,13 @@ class ScriptArguments:
     )
 
     max_steps: Optional[int] = field(
-        default=200, metadata={"help": "the maximum number of sgd steps"}
+        default=1000, metadata={"help": "the maximum number of sgd steps"}
     )
     logging_steps: Optional[int] = field(
         default=10, metadata={"help": "the logging frequency"}
     )
     save_steps: Optional[int] = field(
-        default=25, metadata={"help": "the saving frequency"}
+        default=100, metadata={"help": "the saving frequency"}
     )
     per_device_train_batch_size: Optional[int] = field(
         default=2, metadata={"help": "the per device train batch size"}
@@ -112,10 +115,10 @@ class ScriptArguments:
         default=1, metadata={"help": "the logging frequency"}
     )
     note: Optional[str] = field(
-        default="", metadata={"help": "the note to add to the run"}
+        default="first_exhausted", metadata={"help": "the note to add to the run"}
     )
     task: Optional[str] = field(
-        default="few-shot", metadata={"help": "the task to run"}
+        default="zero-shot", metadata={"help": "the task to run"}
     )
 
 
@@ -176,6 +179,10 @@ training_args = TrainingArguments(
 
 if script_args.dataset_name == "social_dimensions":
     dataset = SocialDimensions(task=script_args.task, model=script_args.model_name)
+elif script_args.dataset_name == "socket":
+    dataset = Socket(task=script_args.task, model=script_args.model_name)
+else:
+    raise ValueError(f"Dataset {script_args.dataset_name} is not supported.")
 
 dataset.get_data()
 train_dataset, eval_dataset = dataset.preprocess_sft()
