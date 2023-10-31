@@ -15,6 +15,7 @@ from tqdm import tqdm
 from transformers import AutoConfig
 from transformers import AutoTokenizer
 from transformers import pipeline
+import torch
 
 from social_llama.config import DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
 from social_llama.config import DATA_DIR_EVALUATION_SOCKET
@@ -86,18 +87,23 @@ class Evaluator:
                     prediction=prediction,
                     labels=self.social_dimensions.config.labels,
                 )
+                prediction_finder = label_finder(
+                        prediction=prediction,
+                        labels=self.social_dimensions.config.labels,
+                    )
                 predictions.append(
                     {
                         "idx": sample["idx"],
                         "prompt": sample["prompt"],
                         "prediction": prediction,
                         "prediction_processed": prediction_processed,
+                        "prediction_finder": prediction_finder,
                         "label": sample["label"],
                     }
                 )
             save_json(
                 DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
-                / f"{self.model_id}_predictions.json",
+                / f"{self.model_id}_predictions_v3.json",
                 predictions,
             )
         elif task == "socket":
@@ -131,7 +137,7 @@ class Evaluator:
                     )
                 save_json(
                     DATA_DIR_EVALUATION_SOCKET
-                    / f"{task}/{self.model_id}_predictions_v2.json",
+                    / f"{task}/{self.model_id}_predictions_v3.json",
                     predictions,
                 )
 
@@ -236,8 +242,15 @@ class Evaluator:
 
 
 if __name__ == "__main__":
-    evaluator = Evaluator("AGMoller/social_llama_7b_zero-shot")
 
-    evaluator.predict(task="socket")
+    models = ["AGMoller/social_llama_7b_zero-shot", 'AGMoller/social_llama_7b_few-shot', 'AGMoller/social_llama_7b_cot']
+
+    for model in models:
+
+        torch.cuda.empty_cache()
+
+        evaluator = Evaluator(models)
+
+        evaluator.predict(task="social-dimensions")
 
     a = 1
