@@ -173,7 +173,8 @@ class SocialDimensions(DataClass):
         chat: List[Dict[str, str]] = self.llama_config.get_chat_template()
 
         chat[0]["content"] = chat[0]["content"].format(
-            prompt_prefix=self.config.prompt_prefix
+            # prompt_prefix=self.config.prompt_prefix
+            prompt_prefix=""
         )
 
         if self.task == "zero-shot":
@@ -181,7 +182,7 @@ class SocialDimensions(DataClass):
                 text=example["text"],
                 response_good=example["response_good"] if not is_q_a else "",
             )
-        elif self.task == "few-shot":  # TODO: Fix this
+        elif self.task == "few-shot":
             if is_q_a:
                 task_prompt = "".join(
                     [

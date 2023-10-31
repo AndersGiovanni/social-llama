@@ -7,6 +7,7 @@ from typing import List
 from typing import Union
 
 import pandas as pd
+import torch
 from datasets import Dataset
 from datasets import load_dataset
 from dotenv import load_dotenv
@@ -15,7 +16,6 @@ from tqdm import tqdm
 from transformers import AutoConfig
 from transformers import AutoTokenizer
 from transformers import pipeline
-import torch
 
 from social_llama.config import DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
 from social_llama.config import DATA_DIR_EVALUATION_SOCKET
@@ -88,9 +88,9 @@ class Evaluator:
                     labels=self.social_dimensions.config.labels,
                 )
                 prediction_finder = label_finder(
-                        prediction=prediction,
-                        labels=self.social_dimensions.config.labels,
-                    )
+                    prediction=prediction,
+                    labels=self.social_dimensions.config.labels,
+                )
                 predictions.append(
                     {
                         "idx": sample["idx"],
@@ -103,7 +103,7 @@ class Evaluator:
                 )
             save_json(
                 DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
-                / f"{self.model_id}_predictions_v3.json",
+                / f"{self.model_id}_predictions_empty_prompt_prefix.json",
                 predictions,
             )
         elif task == "socket":
@@ -242,14 +242,16 @@ class Evaluator:
 
 
 if __name__ == "__main__":
-
-    models = ["AGMoller/social_llama_7b_zero-shot", 'AGMoller/social_llama_7b_few-shot', 'AGMoller/social_llama_7b_cot']
+    models = [
+        "AGMoller/social_llama_7b_zero-shot",
+        "AGMoller/social_llama_7b_few-shot",
+        "AGMoller/social_llama_7b_cot",
+    ]
 
     for model in models:
-
         torch.cuda.empty_cache()
 
-        evaluator = Evaluator(models)
+        evaluator = Evaluator(model)
 
         evaluator.predict(task="social-dimensions")
 
