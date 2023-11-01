@@ -65,13 +65,13 @@ class ScriptArguments:
         default=100, metadata={"help": "the saving frequency"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=1, metadata={"help": "the per device train batch size"}
+        default=2, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=1, metadata={"help": "the per device eval batch size"}
+        default=2, metadata={"help": "the per device eval batch size"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=1, metadata={"help": "the gradient accumulation steps"}
+        default=2, metadata={"help": "the gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -155,7 +155,7 @@ tokenizer = AutoTokenizer.from_pretrained(
     script_args.model_name, trust_remote_code=True
 )
 tokenizer.pad_token = tokenizer.eos_token
-# tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
+tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
 
 training_args = TrainingArguments(
     output_dir=output_dir,
