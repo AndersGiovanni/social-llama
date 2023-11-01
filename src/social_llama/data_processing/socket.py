@@ -143,7 +143,7 @@ class Socket(DataClass):
             self.train_data,
             formatting_func=formatting_func,
             infinite=True,
-            seq_length=2048,
+            seq_length=1024,
             chars_per_token=chars_per_token,
         )
 
@@ -152,7 +152,7 @@ class Socket(DataClass):
             self.test_data,
             formatting_func=formatting_func,
             infinite=True,
-            seq_length=2048,
+            seq_length=1024,
             chars_per_token=chars_per_token,
         )
 
