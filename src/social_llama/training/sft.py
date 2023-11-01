@@ -37,7 +37,6 @@ class ScriptArguments:
     dataset_name: Optional[str] = field(
         default="socket",
         metadata={"help": "the dataset name"},
-        choices=["social_dimensions", "socket"],
     )
     subset: Optional[str] = field(
         default="data/finetune", metadata={"help": "the subset to use"}
@@ -50,7 +49,7 @@ class ScriptArguments:
         default=5000, metadata={"help": "the shuffle buffer size"}
     )
     seq_length: Optional[int] = field(
-        default=2048, metadata={"help": "the sequence length"}
+        default=1024, metadata={"help": "the sequence length"}
     )
     num_workers: Optional[int] = field(
         default=4, metadata={"help": "the number of workers"}
@@ -66,13 +65,13 @@ class ScriptArguments:
         default=100, metadata={"help": "the saving frequency"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=2, metadata={"help": "the per device train batch size"}
+        default=1, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=2, metadata={"help": "the per device eval batch size"}
+        default=1, metadata={"help": "the per device eval batch size"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=2, metadata={"help": "the gradient accumulation steps"}
+        default=1, metadata={"help": "the gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -125,7 +124,7 @@ class ScriptArguments:
 parser = HfArgumentParser(ScriptArguments)
 script_args = parser.parse_args_into_dataclasses()[0]
 
-output_dir = f"{script_args.output_dir}/{script_args.model_name.split('/')[-1]}_{script_args.task}_{script_args.note}"
+output_dir = f"{script_args.output_dir}/{script_args.model_name.split('/')[-1]}_{script_args.task}_{script_args.dataset_name}_{script_args.note}"
 
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
@@ -156,7 +155,7 @@ tokenizer = AutoTokenizer.from_pretrained(
     script_args.model_name, trust_remote_code=True
 )
 tokenizer.pad_token = tokenizer.eos_token
-tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
+# tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
 
 training_args = TrainingArguments(
     output_dir=output_dir,
@@ -172,9 +171,10 @@ training_args = TrainingArguments(
     lr_scheduler_type=script_args.lr_scheduler_type,
     warmup_steps=script_args.num_warmup_steps,
     optim=script_args.optimizer_type,
-    fp16=True,
+    # fp16=True,
+    bf16=True,
     remove_unused_columns=False,
-    run_name=f"{script_args.model_name.split('/')[-1]}_sft_{script_args.task}_{script_args.note}",
+    run_name=f"{script_args.model_name.split('/')[-1]}_sft_{script_args.task}_{script_args.dataset_name}_{script_args.note}",
 )
 
 if script_args.dataset_name == "social_dimensions":
