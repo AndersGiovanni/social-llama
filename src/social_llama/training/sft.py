@@ -16,6 +16,7 @@ from transformers import HfArgumentParser
 from transformers import TrainingArguments
 from trl import SFTTrainer
 
+from social_llama.data_processing.combine import Combined
 from social_llama.data_processing.social_dimensions import SocialDimensions
 from social_llama.data_processing.socket import Socket
 
@@ -56,7 +57,7 @@ class ScriptArguments:
     )
 
     max_steps: Optional[int] = field(
-        default=1000, metadata={"help": "the maximum number of sgd steps"}
+        default=3000, metadata={"help": "the maximum number of sgd steps"}
     )
     logging_steps: Optional[int] = field(
         default=10, metadata={"help": "the logging frequency"}
@@ -65,13 +66,13 @@ class ScriptArguments:
         default=100, metadata={"help": "the saving frequency"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=1, metadata={"help": "the per device train batch size"}
+        default=6, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=1, metadata={"help": "the per device eval batch size"}
+        default=2, metadata={"help": "the per device eval batch size"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=1, metadata={"help": "the gradient accumulation steps"}
+        default=6, metadata={"help": "the gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -181,6 +182,8 @@ if script_args.dataset_name == "social_dimensions":
     dataset = SocialDimensions(task=script_args.task, model=script_args.model_name)
 elif script_args.dataset_name == "socket":
     dataset = Socket(task=script_args.task, model=script_args.model_name)
+elif script_args.dataset_name == "combined":
+    dataset = Combined(model=script_args.model_name)
 else:
     raise ValueError(f"Dataset {script_args.dataset_name} is not supported.")
 

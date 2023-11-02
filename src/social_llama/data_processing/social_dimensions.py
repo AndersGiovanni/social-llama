@@ -116,6 +116,29 @@ class SocialDimensions(DataClass):
             split="train",
         )
 
+        # Append task to each sample (this is needed when combining datasets)
+        train_data = train_data.map(
+            lambda example: {
+                "idx": example["idx"],
+                "text": example["text"],
+                "h_text": example["h_text"],
+                "response_good": example["response_good"],
+                "response_bad": example["response_bad"],
+                "task": "social-dimensions",
+            }
+        )
+
+        test_data = test_data.map(
+            lambda example: {
+                "idx": example["idx"],
+                "text": example["text"],
+                "h_text": example["h_text"],
+                "response_good": example["response_good"],
+                "response_bad": example["response_bad"],
+                "task": "social-dimensions",
+            }
+        )
+
         self.set_data(train_data=train_data, test_data=test_data)
 
     @override
@@ -400,8 +423,10 @@ class SocialDimensions(DataClass):
 
 if __name__ == "__main__":
     social_dimensions = SocialDimensions(
-        task="few-shot", model="meta-llama/Llama-2-70b-hf"
+        task="zero-shot", model="meta-llama/Llama-2-7b-hf"
     )
     social_dimensions.get_data()
 
-    train_data_, valid_data_ = social_dimensions.preprocess_dpo()
+    train_data_, valid_data_ = social_dimensions.preprocess_sft()
+
+    # a = 1
