@@ -156,7 +156,7 @@ tokenizer = AutoTokenizer.from_pretrained(
     script_args.model_name, trust_remote_code=True
 )
 tokenizer.pad_token = tokenizer.eos_token
-# tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
+tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
 
 training_args = TrainingArguments(
     output_dir=output_dir,
@@ -172,8 +172,8 @@ training_args = TrainingArguments(
     lr_scheduler_type=script_args.lr_scheduler_type,
     warmup_steps=script_args.num_warmup_steps,
     optim=script_args.optimizer_type,
-    # fp16=True,
-    bf16=True,
+    fp16=True,
+    # bf16=True,
     remove_unused_columns=False,
     run_name=f"{script_args.model_name.split('/')[-1]}_sft_{script_args.task}_{script_args.dataset_name}_{script_args.note}",
 )
