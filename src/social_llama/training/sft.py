@@ -36,7 +36,7 @@ class ScriptArguments:
     )
 
     dataset_name: Optional[str] = field(
-        default="socket",
+        default="combined",
         metadata={"help": "the dataset name"},
     )
     subset: Optional[str] = field(
