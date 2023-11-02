@@ -1,5 +1,7 @@
 """Task specific data processing functions for social dimensions."""
 
+import random
+import warnings
 from collections import defaultdict
 from dataclasses import dataclass
 from typing import Any
@@ -16,12 +18,16 @@ from datasets import Features
 from datasets import Value
 from datasets import interleave_datasets
 from datasets import load_dataset
+from datasets.formatting.formatting import LazyRow
 from trl.trainer import ConstantLengthDataset
 from typing_extensions import override
 
 from social_llama.config import DATA_DIR_EVALUATION_SOCKET
 from social_llama.data_processing.dataclass import DataClass
 from social_llama.data_processing.dataset_configs import SOCIAL_DIMENSIONS_CONFIG
+
+
+warnings.filterwarnings("ignore")
 
 
 @dataclass
@@ -69,7 +75,7 @@ class Socket(DataClass):
         features = Features(
             {
                 "text": Value("string"),
-                "label": Value("string"),
+                "label": Value("int32"),
                 "task": Value("string"),
             }
         )
@@ -194,7 +200,7 @@ class Socket(DataClass):
                     prompt.format(
                         text=example["text"],
                     )
-                    + f" You can choose from the following labels: {', '.join(self.labels[example['task']])}\nAnswer: {example['label']}"
+                    + f" You can choose from the following labels: {', '.join(self.labels[example['task']])}\nAnswer: {self.labels[example['task']][example['label']]}"
                 )
 
         elif self.task == "few-shot":
@@ -215,12 +221,57 @@ class Socket(DataClass):
             chat, tokenize=False, add_generation_prompt=True
         )
 
+    @override
+    def preprocess_dpo(self) -> Tuple[Dataset, Dataset]:
+        """Preprocess for DPO. The data needs Q&A format."""
+        original_columns = self.train_data.column_names
+
+        self.train_data = self.train_data.map(
+            self._convert_to_q_and_a,
+            # batched=True,
+            remove_columns=original_columns,
+            drop_last_batch=True,
+        )
+        self.test_data = self.test_data.map(
+            self._convert_to_q_and_a,
+            # batched=True,
+            remove_columns=original_columns,
+            drop_last_batch=True,
+        )
+
+        return self.train_data, self.test_data
+
+    @override
+    def _convert_to_q_and_a(
+        self, samples: Union[Sample, List[Sample], LazyRow]
+    ) -> Dict[str, str]:
+        """Convert the dataset to a question and answer dataset.
+
+        Args:
+            samples (Union[Sample, List[Sample]], LazyRow): Sample (if zero-shot) or list of samples (if few-shot or CoT)
+
+        Returns:
+            Dict: Dict with the prompt, chosen response, and rejected response
+        """
+        return {
+            "prompt": self._prompt_function(samples, is_q_a=True),  # type: ignore
+            "chosen": self.labels[samples["task"]][samples["label"]],  # type: ignore
+            "rejected": self.sample_rejected_label(self.labels[samples["task"]], self.labels[samples["task"]][samples["label"]]),  # type: ignore
+        }
+
+    def sample_rejected_label(self, labels: List[str], exception: str):
+        """Randomly sample a label from the list of labels, which is not equal to the chosen/correct label."""
+        while True:
+            choice = random.choice(labels)
+            if choice != exception:
+                return choice
+
 
 if __name__ == "__main__":
     socket = Socket(task="zero-shot", model="meta-llama/Llama-2-7b-chat-hf")
 
     socket.get_data()
 
-    train, test = socket.preprocess_sft()
+    train, test = socket.preprocess_dpo()
 
     a = 1
