@@ -56,7 +56,7 @@ class ScriptArguments:
     )
 
     max_steps: Optional[int] = field(
-        default=1000, metadata={"help": "the maximum number of sgd steps"}
+        default=1400, metadata={"help": "the maximum number of sgd steps"}
     )
     logging_steps: Optional[int] = field(
         default=10, metadata={"help": "the logging frequency"}
@@ -65,7 +65,7 @@ class ScriptArguments:
         default=100, metadata={"help": "the saving frequency"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=2, metadata={"help": "the per device train batch size"}
+        default=4, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
         default=2, metadata={"help": "the per device eval batch size"}
@@ -171,8 +171,8 @@ training_args = TrainingArguments(
     lr_scheduler_type=script_args.lr_scheduler_type,
     warmup_steps=script_args.num_warmup_steps,
     optim=script_args.optimizer_type,
-    # fp16=True,
-    bf16=True,
+    fp16=True,
+    # bf16=True,
     remove_unused_columns=False,
     run_name=f"{script_args.model_name.split('/')[-1]}_sft_{script_args.task}_{script_args.dataset_name}_{script_args.note}",
 )
