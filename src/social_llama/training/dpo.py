@@ -14,7 +14,9 @@ from transformers import HfArgumentParser
 from transformers import TrainingArguments
 from trl import DPOTrainer
 
+from social_llama.data_processing.combine import Combined
 from social_llama.data_processing.social_dimensions import SocialDimensions
+from social_llama.data_processing.socket import Socket
 
 
 load_dotenv()
@@ -31,8 +33,16 @@ class ScriptArguments:
     )
     # training parameters
     model_name_or_path: Optional[str] = field(
-        default="sft/Llama-2-7b-chat-hf_few-shot_/final_checkpoint",
+        default="sft/Llama-2-7b-chat-hf_zero-shot_socket_first_exhausted/final_checkpoint",
         metadata={"help": "the location of the SFT model name or path"},
+    )
+    dataset_name: Optional[str] = field(
+        default="socket",
+        metadata={"help": "the dataset name"},
+    )
+    output_dir: Optional[str] = field(
+        default="./dpo/Llama-2-7b-chat-hf_zero-shot_socket_first_exhausted",
+        metadata={"help": "the output directory"},
     )
     learning_rate: Optional[float] = field(
         default=5e-4, metadata={"help": "optimizer learning rate"}
@@ -57,7 +67,7 @@ class ScriptArguments:
         default=1, metadata={"help": "eval batch size per device"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=4, metadata={"help": "the number of gradient accumulation steps"}
+        default=2, metadata={"help": "the number of gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -88,11 +98,6 @@ class ScriptArguments:
     )
     eval_steps: Optional[int] = field(
         default=200, metadata={"help": "the evaluation frequency"}
-    )
-
-    output_dir: Optional[str] = field(
-        default="./dpo/Llama-2-7b-chat-hf_few-shot_fp32",
-        metadata={"help": "the output directory"},
     )
     log_freq: Optional[int] = field(
         default=1, metadata={"help": "the logging frequency"}
@@ -149,18 +154,23 @@ if __name__ == "__main__":
         torch_dtype=torch.float32,
         load_in_4bit=True,
     )
+    if script_args.dataset_name == "social-dimensions":
+        dataset = SocialDimensions(
+            task="few-shot", model="meta-llama/Llama-2-7b-chat-hf"
+        )
+    elif script_args.dataset_name == "socket":
+        dataset = Socket(task="few-shot", model="meta-llama/Llama-2-7b-chat-hf")
+    elif script_args.dataset_name == "combined":
+        dataset = Combined(model="meta-llama/Llama-2-7b-chat-hf")
 
-    social_dimensions = SocialDimensions(
-        task="few-shot", model="meta-llama/Llama-2-7b-chat-hf"
-    )
-    social_dimensions.get_data()
+    dataset.get_data()
     tokenizer = AutoTokenizer.from_pretrained(
         "meta-llama/Llama-2-7b-chat-hf", trust_remote_code=True
     )
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
 
-    train_dataset, eval_dataset = social_dimensions.preprocess_dpo()
+    train_dataset, eval_dataset = dataset.preprocess_dpo()
 
     # 4. initialize training arguments:
     training_args = TrainingArguments(
