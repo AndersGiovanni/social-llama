@@ -9,6 +9,7 @@ from typing import Union
 from datasets import Dataset
 from datasets import DatasetDict
 from datasets import interleave_datasets
+from datasets.formatting.formatting import LazyRow
 from transformers import AutoTokenizer
 from trl.trainer import ConstantLengthDataset
 
@@ -172,8 +173,59 @@ class Combined:
             chat, tokenize=False, add_generation_prompt=True
         )
 
+    def preprocess_dpo(self) -> Tuple[Dataset, Dataset]:
+        """Preprocess for DPO. The data needs Q&A format."""
+        original_columns = self.train_data.column_names
+
+        self.train_data = self.train_data.map(
+            self._convert_to_q_and_a,
+            # batched=True,
+            remove_columns=original_columns,
+            drop_last_batch=True,
+        )
+        self.test_data = self.test_data.map(
+            self._convert_to_q_and_a,
+            # batched=True,
+            remove_columns=original_columns,
+            drop_last_batch=True,
+        )
+
+        return self.train_data, self.test_data
+
+    def _convert_to_q_and_a(
+        self,
+        samples: Union[
+            SocketSample,
+            List[SocketSample],
+            SocialDimensionsSample,
+            List[SocialDimensionsSample],
+            LazyRow,
+        ],
+    ) -> Dict[str, str]:
+        """Convert the dataset to a question and answer dataset.
+
+        Args:
+            samples (Union[Sample, List[Sample]], LazyRow): Sample (if zero-shot) or list of samples (if few-shot or CoT)
+
+        Returns:
+            Dict: Dict with the prompt, chosen response, and rejected response
+        """
+        if samples["task"] == "social-dimensions":
+            return {
+                "prompt": self._prompt_function(samples, is_q_a=True),  # type: ignore
+                "chosen": samples["response_good"],  # type: ignore
+                "rejected": samples["response_bad"],  # type: ignore
+            }
+        else:
+            return {
+                "prompt": self._prompt_function(samples, is_q_a=True),  # type: ignore
+                "chosen": self.socket_dataset.labels[samples["task"]][samples["label"]],  # type: ignore
+                "rejected": self.socket_dataset.sample_rejected_label(self.socket_dataset.labels[samples["task"]], self.socket_dataset.labels[samples["task"]][samples["label"]]),  # type: ignore
+            }
+
 
 if __name__ == "__main__":
     combined = Combined(model="meta-llama/Llama-2-7b-hf")
     combined.get_data()
-    train_dataset, test_dataset = combined.preprocess_sft()
+    train_dataset, test_dataset = combined.preprocess_dpo()
+    a = 1
