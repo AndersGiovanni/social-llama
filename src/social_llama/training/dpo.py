@@ -156,10 +156,10 @@ if __name__ == "__main__":
     )
     if script_args.dataset_name == "social-dimensions":
         dataset = SocialDimensions(
-            task="few-shot", model="meta-llama/Llama-2-7b-chat-hf"
+            task="zero-shot", model="meta-llama/Llama-2-7b-chat-hf"
         )
     elif script_args.dataset_name == "socket":
-        dataset = Socket(task="few-shot", model="meta-llama/Llama-2-7b-chat-hf")
+        dataset = Socket(task="zero-shot", model="meta-llama/Llama-2-7b-chat-hf")
     elif script_args.dataset_name == "combined":
         dataset = Combined(model="meta-llama/Llama-2-7b-chat-hf")
 
