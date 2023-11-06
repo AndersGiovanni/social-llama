@@ -16,6 +16,7 @@ from transformers import HfArgumentParser
 from transformers import TrainingArguments
 from trl import SFTTrainer
 
+from social_llama.data_processing.combine import Combined
 from social_llama.data_processing.social_dimensions import SocialDimensions
 from social_llama.data_processing.socket import Socket
 
@@ -35,9 +36,8 @@ class ScriptArguments:
     )
 
     dataset_name: Optional[str] = field(
-        default="socket",
+        default="combined",
         metadata={"help": "the dataset name"},
-        choices=["social_dimensions", "socket"],
     )
     subset: Optional[str] = field(
         default="data/finetune", metadata={"help": "the subset to use"}
@@ -47,14 +47,14 @@ class ScriptArguments:
         default=5000, metadata={"help": "the shuffle buffer size"}
     )
     seq_length: Optional[int] = field(
-        default=2048, metadata={"help": "the sequence length"}
+        default=1024, metadata={"help": "the sequence length"}
     )
     num_workers: Optional[int] = field(
         default=4, metadata={"help": "the number of workers"}
     )
 
     max_steps: Optional[int] = field(
-        default=1000, metadata={"help": "the maximum number of sgd steps"}
+        default=3000, metadata={"help": "the maximum number of sgd steps"}
     )
     logging_steps: Optional[int] = field(
         default=10, metadata={"help": "the logging frequency"}
@@ -63,13 +63,13 @@ class ScriptArguments:
         default=100, metadata={"help": "the saving frequency"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=16, metadata={"help": "the per device train batch size"}
+        default=6, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
         default=8, metadata={"help": "the per device eval batch size"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=2, metadata={"help": "the gradient accumulation steps"}
+        default=6, metadata={"help": "the gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -122,7 +122,7 @@ class ScriptArguments:
 parser = HfArgumentParser(ScriptArguments)
 script_args = parser.parse_args_into_dataclasses()[0]
 
-output_dir = f"{script_args.output_dir}/{script_args.model_name.split('/')[-1]}_{script_args.task}_{script_args.note}"
+output_dir = f"{script_args.output_dir}/{script_args.model_name.split('/')[-1]}_{script_args.task}_{script_args.dataset_name}_{script_args.note}"
 
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
@@ -170,14 +170,17 @@ training_args = TrainingArguments(
     warmup_steps=script_args.num_warmup_steps,
     optim=script_args.optimizer_type,
     fp16=True,
+    # bf16=True,
     remove_unused_columns=False,
-    run_name=f"{script_args.model_name.split('/')[-1]}_sft_{script_args.task}_{script_args.note}",
+    run_name=f"{script_args.model_name.split('/')[-1]}_sft_{script_args.task}_{script_args.dataset_name}_{script_args.note}",
 )
 
 if script_args.dataset_name == "social_dimensions":
     dataset = SocialDimensions(task=script_args.task, model=script_args.model_name)
 elif script_args.dataset_name == "socket":
     dataset = Socket(task=script_args.task, model=script_args.model_name)
+elif script_args.dataset_name == "combined":
+    dataset = Combined(model=script_args.model_name)
 else:
     raise ValueError(f"Dataset {script_args.dataset_name} is not supported.")
 

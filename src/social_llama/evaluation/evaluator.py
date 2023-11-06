@@ -243,9 +243,7 @@ class Evaluator:
 
 if __name__ == "__main__":
     models = [
-        "AGMoller/social_llama_7b_zero-shot",
-        "AGMoller/social_llama_7b_few-shot",
-        "AGMoller/social_llama_7b_cot",
+        "AGMoller/social-llama-7b-beta",
     ]
 
     for model in models:
@@ -254,5 +252,7 @@ if __name__ == "__main__":
         evaluator = Evaluator(model)
 
         evaluator.predict(task="social-dimensions")
+
+        evaluator.predict(task="socket")
 
     a = 1
