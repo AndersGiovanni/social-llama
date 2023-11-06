@@ -243,6 +243,7 @@ class Evaluator:
 
 if __name__ == "__main__":
     models = [
+        "AGMoller/social-llama-7b-alpha",
         "AGMoller/social-llama-7b-beta",
     ]
 
@@ -253,6 +254,6 @@ if __name__ == "__main__":
 
         evaluator.predict(task="social-dimensions")
 
-        evaluator.predict(task="socket")
+        # evaluator.predict(task="socket")
 
     a = 1
