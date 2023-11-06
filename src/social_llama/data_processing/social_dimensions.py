@@ -208,8 +208,8 @@ class SocialDimensions(DataClass):
         chat: List[Dict[str, str]] = self.llama_config.get_chat_template()
 
         chat[0]["content"] = chat[0]["content"].format(
-            # prompt_prefix=self.config.prompt_prefix
-            prompt_prefix=""
+            prompt_prefix=self.config.prompt_prefix
+            # prompt_prefix=""
         )
 
         if self.task == "zero-shot":

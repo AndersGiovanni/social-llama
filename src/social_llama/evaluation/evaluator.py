@@ -103,7 +103,7 @@ class Evaluator:
                 )
             save_json(
                 DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
-                / f"{self.model_id}_predictions_empty_prompt_prefix.json",
+                / f"{self.model_id}_predictions_v3.json",
                 predictions,
             )
         elif task == "socket":
