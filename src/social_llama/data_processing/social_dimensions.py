@@ -40,8 +40,20 @@ class Sample:
     response_bad: str
 
     def __getitem__(self, idx: str) -> Any:
-        """Get the item at the index."""
-        return self.__dict__[idx]
+        """Get the item at the index.
+
+        Args:
+            idx (str): Index
+
+        Raises:
+            KeyError: If the index is not a valid attribute of the class.
+        """
+        try:
+            return getattr(self, idx)
+        except AttributeError as exc:
+            raise KeyError(
+                f"{idx} is not a valid attribute of {type(self).__name__}"
+            ) from exc
 
 
 @dataclass

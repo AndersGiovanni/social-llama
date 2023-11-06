@@ -39,8 +39,20 @@ class Sample:
     task: str
 
     def __getitem__(self, idx: str) -> Any:
-        """Get the item at the index."""
-        return self.__dict__[idx]
+        """Get the item at the index.
+
+        Args:
+            idx (str): Index
+
+        Raises:
+            KeyError: If the index is not a valid attribute of the class.
+        """
+        try:
+            return getattr(self, idx)
+        except AttributeError as exc:
+            raise KeyError(
+                f"{idx} is not a valid attribute of {type(self).__name__}"
+            ) from exc
 
 
 @dataclass
@@ -60,7 +72,7 @@ class Socket(DataClass):
         )
         # Select the ones which type is CLS
         self.socket = self.socket[self.socket["type"].isin(["CLS"])]
-        self.data: Union[DatasetDict, DatasetDict, Dataset, None] = None
+        self.data: Union[DatasetDict, DatasetDict, Dataset, None]
         self.labels: Dict[str, List[str]] = defaultdict(list)
 
     def __getitem__(self, index) -> Any:
@@ -219,7 +231,7 @@ class Socket(DataClass):
 
         return self.tokenizer.apply_chat_template(
             chat, tokenize=False, add_generation_prompt=True
-        )
+        )  # type: ignore
 
     @override
     def preprocess_dpo(self) -> Tuple[Dataset, Dataset]:
