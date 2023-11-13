@@ -159,16 +159,17 @@ if __name__ == "__main__":
     )
     if script_args.dataset_name == "social-dimensions":
         dataset = SocialDimensions(
-            task="zero-shot", model="meta-llama/Llama-2-7b-chat-hf"
+            task="zero-shot", model="meta-llama/Llama-2-13b-chat-hf"
         )
     elif script_args.dataset_name == "socket":
-        dataset = Socket(task="zero-shot", model="meta-llama/Llama-2-7b-chat-hf")
+        dataset = Socket(task="zero-shot", model="meta-llama/Llama-2-13b-chat-hf")
     elif script_args.dataset_name == "combined":
-        dataset = Combined(model="meta-llama/Llama-2-7b-chat-hf")
+        dataset = Combined(model="meta-llama/Llama-2-13b-chat-hf")
 
     dataset.get_data()
+
     tokenizer = AutoTokenizer.from_pretrained(
-        "meta-llama/Llama-2-7b-chat-hf", trust_remote_code=True
+        "meta-llama/Llama-2-13b-chat-hf", trust_remote_code=True
     )
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
