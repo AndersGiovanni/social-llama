@@ -33,15 +33,15 @@ class ScriptArguments:
     )
     # training parameters
     model_name_or_path: Optional[str] = field(
-        default="sft/Llama-2-7b-chat-hf_zero-shot_socket_first_exhausted/final_checkpoint",
+        default="sft/Llama-2-13b-chat-hf_zero-shot_combined_first_exhausted/final_checkpoint",
         metadata={"help": "the location of the SFT model name or path"},
     )
     dataset_name: Optional[str] = field(
-        default="socket",
+        default="combined",
         metadata={"help": "the dataset name"},
     )
     output_dir: Optional[str] = field(
-        default="./dpo/Llama-2-7b-chat-hf_zero-shot_socket_first_exhausted",
+        default="./dpo/Llama-2-13b-chat-hf_zero-shot_combined_first_exhausted_3epochs",
         metadata={"help": "the output directory"},
     )
     learning_rate: Optional[float] = field(
@@ -61,13 +61,13 @@ class ScriptArguments:
     )
 
     per_device_train_batch_size: Optional[int] = field(
-        default=2, metadata={"help": "train batch size per device"}
+        default=1, metadata={"help": "train batch size per device"}
     )
     per_device_eval_batch_size: Optional[int] = field(
         default=1, metadata={"help": "eval batch size per device"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=2, metadata={"help": "the number of gradient accumulation steps"}
+        default=1, metadata={"help": "the number of gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -87,17 +87,20 @@ class ScriptArguments:
     max_length: Optional[int] = field(
         default=2048, metadata={"help": "the maximum sequence length"}
     )
-    max_steps: Optional[int] = field(
-        default=2000, metadata={"help": "max number of training steps"}
+    # max_steps: Optional[int] = field(
+    #     default=12000, metadata={"help": "max number of training steps"}
+    # )
+    num_train_epochs: Optional[int] = field(
+        default=3, metadata={"help": "max number of training steps"}
     )
     logging_steps: Optional[int] = field(
         default=5, metadata={"help": "the logging frequency"}
     )
     save_steps: Optional[int] = field(
-        default=100, metadata={"help": "the saving frequency"}
+        default=1000, metadata={"help": "the saving frequency"}
     )
     eval_steps: Optional[int] = field(
-        default=200, metadata={"help": "the evaluation frequency"}
+        default=1000, metadata={"help": "the evaluation frequency"}
     )
     log_freq: Optional[int] = field(
         default=1, metadata={"help": "the logging frequency"}
@@ -176,7 +179,8 @@ if __name__ == "__main__":
     training_args = TrainingArguments(
         per_device_train_batch_size=script_args.per_device_train_batch_size,
         per_device_eval_batch_size=script_args.per_device_eval_batch_size,
-        max_steps=script_args.max_steps,
+        # max_steps=script_args.max_steps,
+        num_train_epochs=script_args.num_train_epochs,
         logging_steps=script_args.logging_steps,
         save_steps=script_args.save_steps,
         gradient_accumulation_steps=script_args.gradient_accumulation_steps,
