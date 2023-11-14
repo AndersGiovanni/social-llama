@@ -33,15 +33,19 @@ class ScriptArguments:
     )
     # training parameters
     model_name_or_path: Optional[str] = field(
-        default="sft/Llama-2-13b-chat-hf_zero-shot_combined_first_exhausted/final_checkpoint",
+        default="sft/Llama-2-7b-chat-hf_zero-shot_combined_first_exhausted_1epoch/final_checkpoint",
         metadata={"help": "the location of the SFT model name or path"},
+    )
+    base_model: Optional[str] = field(
+        default="meta-llama/Llama-2-7b-chat-hf",
+        metadata={"help": "the base model name or path"},
     )
     dataset_name: Optional[str] = field(
         default="combined",
         metadata={"help": "the dataset name"},
     )
     output_dir: Optional[str] = field(
-        default="./dpo/Llama-2-13b-chat-hf_zero-shot_combined_first_exhausted_3epochs",
+        default="./dpo/Llama-2-7b-chat-hf_zero-shot_combined_first_exhausted_1epoch",
         metadata={"help": "the output directory"},
     )
     learning_rate: Optional[float] = field(
@@ -61,10 +65,10 @@ class ScriptArguments:
     )
 
     per_device_train_batch_size: Optional[int] = field(
-        default=1, metadata={"help": "train batch size per device"}
+        default=2, metadata={"help": "train batch size per device"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=1, metadata={"help": "eval batch size per device"}
+        default=2, metadata={"help": "eval batch size per device"}
     )
     gradient_accumulation_steps: Optional[int] = field(
         default=1, metadata={"help": "the number of gradient accumulation steps"}
@@ -91,16 +95,16 @@ class ScriptArguments:
     #     default=12000, metadata={"help": "max number of training steps"}
     # )
     num_train_epochs: Optional[int] = field(
-        default=3, metadata={"help": "max number of training steps"}
+        default=1, metadata={"help": "max number of training steps"}
     )
     logging_steps: Optional[int] = field(
         default=5, metadata={"help": "the logging frequency"}
     )
-    save_steps: Optional[int] = field(
-        default=1000, metadata={"help": "the saving frequency"}
+    save_steps: Optional[float] = field(
+        default=0.1, metadata={"help": "the saving frequency"}
     )
-    eval_steps: Optional[int] = field(
-        default=1000, metadata={"help": "the evaluation frequency"}
+    eval_steps: Optional[float] = field(
+        default=0.1, metadata={"help": "the evaluation frequency"}
     )
     log_freq: Optional[int] = field(
         default=1, metadata={"help": "the logging frequency"}
@@ -167,14 +171,13 @@ if __name__ == "__main__":
         dataset = Combined(model="meta-llama/Llama-2-13b-chat-hf")
 
     dataset.get_data()
+    train_dataset, eval_dataset = dataset.preprocess_dpo()
 
     tokenizer = AutoTokenizer.from_pretrained(
-        "meta-llama/Llama-2-13b-chat-hf", trust_remote_code=True
+        script_args.base_model, trust_remote_code=True
     )
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
-
-    train_dataset, eval_dataset = dataset.preprocess_dpo()
 
     # 4. initialize training arguments:
     training_args = TrainingArguments(
