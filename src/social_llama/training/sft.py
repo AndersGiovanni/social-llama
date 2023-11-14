@@ -29,7 +29,7 @@ class ScriptArguments:
     """Script arguments."""
 
     model_name: Optional[str] = field(
-        default="meta-llama/Llama-2-7b-chat-hf", metadata={"help": "the model name"}
+        default="meta-llama/Llama-2-13b-chat-hf", metadata={"help": "the model name"}
     )
     log_with: Optional[str] = field(
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
@@ -52,24 +52,26 @@ class ScriptArguments:
     num_workers: Optional[int] = field(
         default=4, metadata={"help": "the number of workers"}
     )
-
-    max_steps: Optional[int] = field(
-        default=3000, metadata={"help": "the maximum number of sgd steps"}
+    # max_steps: Optional[int] = field(
+    #     default=5700, metadata={"help": "the maximum number of sgd steps"}
+    # )
+    num_train_epochs: Optional[int] = field(
+        default=1, metadata={"help": "the maximum number of sgd steps"}
     )
     logging_steps: Optional[int] = field(
         default=10, metadata={"help": "the logging frequency"}
     )
     save_steps: Optional[int] = field(
-        default=100, metadata={"help": "the saving frequency"}
+        default=1000, metadata={"help": "the saving frequency"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=6, metadata={"help": "the per device train batch size"}
+        default=1, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=8, metadata={"help": "the per device eval batch size"}
+        default=1, metadata={"help": "the per device eval batch size"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=6, metadata={"help": "the gradient accumulation steps"}
+        default=1, metadata={"help": "the gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -112,7 +114,7 @@ class ScriptArguments:
         default=1, metadata={"help": "the logging frequency"}
     )
     note: Optional[str] = field(
-        default="first_exhausted", metadata={"help": "the note to add to the run"}
+        default="1_epoch", metadata={"help": "the note to add to the run"}
     )
     task: Optional[str] = field(
         default="zero-shot", metadata={"help": "the task to run"}
@@ -162,7 +164,8 @@ training_args = TrainingArguments(
     per_device_eval_batch_size=script_args.per_device_eval_batch_size,
     learning_rate=script_args.learning_rate,
     logging_steps=script_args.logging_steps,
-    max_steps=script_args.max_steps,
+    num_train_epochs=script_args.num_train_epochs,
+    # max_steps=script_args.max_steps,
     report_to=script_args.log_with,
     save_steps=script_args.save_steps,
     group_by_length=script_args.group_by_length,
