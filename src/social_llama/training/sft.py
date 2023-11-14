@@ -30,12 +30,10 @@ class ScriptArguments:
 
     model_name: Optional[str] = field(
         default="meta-llama/Llama-2-13b-chat-hf", metadata={"help": "the model name"}
-        default="meta-llama/Llama-2-13b-chat-hf", metadata={"help": "the model name"}
     )
     log_with: Optional[str] = field(
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
     )
-
     dataset_name: Optional[str] = field(
         default="social_dimensions",
         metadata={"help": "the dataset name"},
@@ -58,6 +56,7 @@ class ScriptArguments:
     )
     num_train_epochs: Optional[int] = field(
         default=1, metadata={"help": "the maximum number of sgd steps"}
+    )
     max_steps: Optional[int] = field(
         default=3000, metadata={"help": "the maximum number of sgd steps"}
     )

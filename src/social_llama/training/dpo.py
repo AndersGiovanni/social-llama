@@ -55,7 +55,7 @@ class ScriptArguments:
         default="cosine", metadata={"help": "the lr scheduler type"}
     )
     warmup_steps: Optional[int] = field(
-        default=5, metadata={"help": "the number of warmup steps"}
+        default=100, metadata={"help": "the number of warmup steps"}
     )
     weight_decay: Optional[float] = field(
         default=0.05, metadata={"help": "the weight decay"}
