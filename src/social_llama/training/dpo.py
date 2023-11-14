@@ -41,7 +41,7 @@ class ScriptArguments:
         metadata={"help": "the base model name or path"},
     )
     dataset_name: Optional[str] = field(
-        default="social-dimensions",
+        default="combined",
         metadata={"help": "the dataset name"},
     )
     output_dir: Optional[str] = field(
@@ -163,12 +163,12 @@ if __name__ == "__main__":
     )
     if script_args.dataset_name == "social-dimensions":
         dataset = SocialDimensions(
-            task="zero-shot", model="meta-llama/Llama-2-13b-chat-hf"
+            task="zero-shot", model=script_args.base_model
         )
     elif script_args.dataset_name == "socket":
-        dataset = Socket(task="zero-shot", model="meta-llama/Llama-2-13b-chat-hf")
+        dataset = Socket(task="zero-shot", model=script_args.base_model)
     elif script_args.dataset_name == "combined":
-        dataset = Combined(model="meta-llama/Llama-2-13b-chat-hf")
+        dataset = Combined(model=script_args.base_model)
 
     dataset.get_data()
     train_dataset, eval_dataset = dataset.preprocess_dpo()
