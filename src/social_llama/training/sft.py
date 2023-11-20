@@ -35,7 +35,7 @@ class ScriptArguments:
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
     )
     dataset_name: Optional[str] = field(
-        default="social_dimensions",
+        default="combined",
         metadata={"help": "the dataset name"},
     )
     subset: Optional[str] = field(
@@ -54,12 +54,9 @@ class ScriptArguments:
     num_train_epochs: Optional[int] = field(
         default=1, metadata={"help": "the number of training epochs"}
     )
-    num_train_epochs: Optional[int] = field(
-        default=1, metadata={"help": "the maximum number of sgd steps"}
-    )
-    max_steps: Optional[int] = field(
-        default=3000, metadata={"help": "the maximum number of sgd steps"}
-    )
+    # max_steps: Optional[int] = field(
+    #     default=3000, metadata={"help": "the maximum number of sgd steps"}
+    # )
     logging_steps: Optional[int] = field(
         default=10, metadata={"help": "the logging frequency"}
     )
@@ -67,10 +64,10 @@ class ScriptArguments:
         default=0.2, metadata={"help": "the saving frequency"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=2, metadata={"help": "the per device train batch size"}
+        default=1, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=2, metadata={"help": "the per device eval batch size"}
+        default=1, metadata={"help": "the per device eval batch size"}
     )
     gradient_accumulation_steps: Optional[int] = field(
         default=1, metadata={"help": "the gradient accumulation steps"}
@@ -82,7 +79,7 @@ class ScriptArguments:
         default=False, metadata={"help": "whether to group by length"}
     )
     packing: Optional[bool] = field(
-        default=True, metadata={"help": "whether to use packing for SFTTrainer"}
+        default=False, metadata={"help": "whether to use packing for SFTTrainer"}
     )
 
     lora_alpha: Optional[float] = field(
@@ -141,11 +138,11 @@ dataset.get_data()
 train_dataset, eval_dataset = dataset.preprocess_sft()
 
 # Based on the train dataset and the batch size, calculate the number of steps for 1 epoch
-script_args.max_steps = (
-    (len(train_dataset) // script_args.per_device_train_batch_size)
-    // script_args.gradient_accumulation_steps
-    * script_args.num_train_epochs
-)
+# script_args.max_steps = (
+#     (len(train_dataset) // script_args.per_device_train_batch_size)
+#     // script_args.gradient_accumulation_steps
+#     * script_args.num_train_epochs
+# )
 
 
 bnb_config = BitsAndBytesConfig(
@@ -197,7 +194,7 @@ training_args = TrainingArguments(
     fp16=False,
     # bf16=True,
     remove_unused_columns=False,
-    run_name=output_dir,
+    run_name=f"sft_{script_args.model_name.split('/')[-1]}_{script_args.task}_{script_args.dataset_name}_{script_args.note}",
     seed=42,
 )
 
