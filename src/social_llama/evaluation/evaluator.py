@@ -56,7 +56,7 @@ class Evaluator:
             "temperature": 0.9,
         }
         self.tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf")
-        if model_id in ["meta-llama/Llama-2-7b-chat-hf"]:
+        if model_id in ["meta-llama/Llama-2-7b-chat-hf", "meta-llama/Llama-2-13b-chat-hf"]:
             self.inference_client = InferenceClient(
                 model=model_id, token=os.environ["HUGGINGFACEHUB_API_TOKEN"]
             )
@@ -69,7 +69,6 @@ class Evaluator:
                 "text-generation",
                 model=model_id,
                 tokenizer=self.tokenizer,
-                # device=self.device,
                 device_map="auto",
             )
             self.use_inference_client = False
@@ -243,8 +242,12 @@ class Evaluator:
 
 if __name__ == "__main__":
     models = [
-        "AGMoller/social-llama-7b-alpha",
-        "AGMoller/social-llama-7b-beta",
+        # "AGMoller/social-llama-7b-alpha",
+        # "AGMoller/social-llama-7b-beta",
+        # "meta-llama/Llama-2-13b-chat-hf"
+        # "AGMoller/social-llama-13b-gamma"
+        # "AGMoller/social-llama-13b-alpha"
+        "AndersGiovanni/social-llama-7b-beta-1"
     ]
 
     for model in models:
@@ -254,6 +257,6 @@ if __name__ == "__main__":
 
         evaluator.predict(task="social-dimensions")
 
-        # evaluator.predict(task="socket")
+        evaluator.predict(task="socket")
 
     a = 1
