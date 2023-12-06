@@ -7,7 +7,8 @@ from typing import List
 from typing import Union
 
 import pandas as pd
-import torch
+
+# import torch
 from datasets import Dataset
 from datasets import load_dataset
 from dotenv import load_dotenv
@@ -43,7 +44,7 @@ class Evaluator:
         self.social_dimensions.get_data()
         self.llama_config = LlamaConfigs()
         self.socket_prompts: pd.DataFrame = pd.read_csv(
-            DATA_DIR_EVALUATION_SOCKET / "socket_prompts.csv"
+            DATA_DIR_EVALUATION_SOCKET / "socket_prompts_knowledge.csv"
         )
         self.generation_kwargs = {
             "max_new_tokens": 50,
@@ -107,10 +108,18 @@ class Evaluator:
                 predictions,
             )
         elif task == "socket":
-            cls_tasks = self.socket_prompts[self.socket_prompts["type"] == "CLS"][
-                "task"
-            ]
-            for task in cls_tasks:
+            # cls_tasks = self.socket_prompts[self.socket_prompts["type"] == "CLS"][
+            #     "task"
+            # ]
+            # for task in cls_tasks:
+            for task in [
+                "hahackathon#is_humor",
+                "sarc",
+                "tweet_irony",
+                "contextual-abuse#IdentityDirectedAbuse",
+                "tweet_emotion",
+                "questionintimacy",
+            ]:
                 task_data, labels = self._prepare_socket_test_data(task=task)
                 predictions = []
 
@@ -137,7 +146,7 @@ class Evaluator:
                     )
                 save_json(
                     DATA_DIR_EVALUATION_SOCKET
-                    / f"{task}/{self.model_id}_predictions_v3.json",
+                    / f"{task}/{self.model_id}_predictions_knowledge_injection.json",
                     predictions,
                 )
 
@@ -194,6 +203,11 @@ class Evaluator:
             "question"
         ].iloc[0]
 
+        # Get the knowledge of the labels
+        knowledge = self.socket_prompts[self.socket_prompts["task"] == task][
+            "knowledge"
+        ].iloc[0]
+
         dataset: Dataset = load_dataset("Blablablab/SOCKET", task, split="test")
 
         # if length is more than 2000, randomly sample 2000
@@ -208,7 +222,9 @@ class Evaluator:
             test_data_formatted.append(
                 {
                     "idx": idx,
-                    "prompt": self._prompt_socket(sample, prompt, labels_formatted),
+                    "prompt": self._prompt_socket(
+                        sample, prompt, labels_formatted, knowledge
+                    ),
                     "label": labels_mapping[sample["label"]],
                 }
             )
@@ -216,11 +232,19 @@ class Evaluator:
         return test_data_formatted, labels
 
     def _prompt_socket(
-        self, sample: Dict[str, str], prompt: str, labels: List[str]
+        self,
+        sample: Dict[str, str],
+        prompt: str,
+        labels: List[str],
+        knowledge: str = "",
     ) -> str:
         chat: List[Dict[str, str]] = self.llama_config.get_chat_template()
 
-        chat[0]["content"] = chat[0]["content"].format(prompt_prefix="")
+        chat[0]["content"] = chat[0]["content"].format(
+            prompt_prefix=f"You have the following knowledge about task-specific labels: {knowledge}"
+            if knowledge != ""
+            else ""
+        )
 
         task_prompt = (
             prompt.format(
@@ -243,17 +267,20 @@ class Evaluator:
 
 if __name__ == "__main__":
     models = [
-        "AGMoller/social-llama-7b-alpha",
-        "AGMoller/social-llama-7b-beta",
+        # "AGMoller/social-llama-7b-alpha",
+        # "AGMoller/social-llama-7b-beta",
+        "meta-llama/Llama-2-7b-chat-hf"
     ]
 
     for model in models:
-        torch.cuda.empty_cache()
+        # torch.cuda.empty_cache()
 
         evaluator = Evaluator(model)
 
-        evaluator.predict(task="social-dimensions")
+        # evaluator.predict(task="social-dimensions")
 
-        # evaluator.predict(task="socket")
+        evaluator.predict(task="socket")
+
+        del evaluator
 
     a = 1
