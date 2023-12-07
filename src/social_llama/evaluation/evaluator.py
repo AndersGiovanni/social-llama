@@ -266,9 +266,9 @@ class Evaluator:
 
 if __name__ == "__main__":
     models = [
-        # "AGMoller/social-llama-7b-alpha",
+        "AGMoller/social-llama-7b-alpha",
         # "AGMoller/social-llama-7b-beta",
-        "meta-llama/Llama-2-7b-chat-hf"
+        # "meta-llama/Llama-2-7b-chat-hf"
     ]
 
     for model in models:
