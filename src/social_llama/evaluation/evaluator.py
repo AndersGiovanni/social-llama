@@ -57,7 +57,10 @@ class Evaluator:
             "temperature": 0.9,
         }
         self.tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf")
-        if model_id in ["meta-llama/Llama-2-7b-chat-hf", "meta-llama/Llama-2-13b-chat-hf"]:
+        if model_id in [
+            "meta-llama/Llama-2-7b-chat-hf",
+            "meta-llama/Llama-2-13b-chat-hf",
+        ]:
             self.inference_client = InferenceClient(
                 model=model_id, token=os.environ["HUGGINGFACEHUB_API_TOKEN"]
             )
@@ -112,12 +115,12 @@ class Evaluator:
             # ]
             # for task in cls_tasks:
             for task in [
-                "hahackathon#is_humor",
-                "sarc",
-                "tweet_irony",
-                "contextual-abuse#IdentityDirectedAbuse",
-                "tweet_emotion",
-                "questionintimacy",
+                "contextual-abuse#PersonDirectedAbuse",
+                "hateoffensive",
+                "implicit-hate#explicit_hate",
+                "implicit-hate#implicit_hate",
+                "crowdflower",
+                "dailydialog",
             ]:
                 task_data, labels = self._prepare_socket_test_data(task=task)
                 predictions = []
