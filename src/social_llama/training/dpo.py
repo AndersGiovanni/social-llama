@@ -12,6 +12,7 @@ from peft import LoraConfig
 from transformers import AutoTokenizer
 from transformers import HfArgumentParser
 from transformers import TrainingArguments
+from accelerate import Accelerator
 from trl import DPOTrainer
 
 from social_llama.data_processing.combine import Combined
@@ -45,7 +46,7 @@ class ScriptArguments:
         metadata={"help": "the dataset name"},
     )
     output_dir: Optional[str] = field(
-        default="./dpo/Llama-2-7b-chat-hf_zero-shot_combined_first_exhausted_1epoch",
+        default="./dpo/Llama-2-7b-chat-hf_zero-shot_combined_3epoch",
         metadata={"help": "the output directory"},
     )
     learning_rate: Optional[float] = field(
@@ -71,7 +72,7 @@ class ScriptArguments:
         default=2, metadata={"help": "eval batch size per device"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=4, metadata={"help": "the number of gradient accumulation steps"}
+        default=2, metadata={"help": "the number of gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -89,13 +90,13 @@ class ScriptArguments:
         default=2048, metadata={"help": "the maximum prompt length"}
     )
     max_length: Optional[int] = field(
-        default=2048, metadata={"help": "the maximum sequence length"}
+        default=4096, metadata={"help": "the maximum sequence length"}
     )
     # max_steps: Optional[int] = field(
     #     default=12000, metadata={"help": "max number of training steps"}
     # )
     num_train_epochs: Optional[int] = field(
-        default=1, metadata={"help": "max number of training steps"}
+        default=3, metadata={"help": "max number of training steps"}
     )
     logging_steps: Optional[int] = field(
         default=5, metadata={"help": "the logging frequency"}
@@ -143,6 +144,8 @@ if __name__ == "__main__":
         torch_dtype=torch.float32,
         load_in_4bit=True,
         is_trainable=True,
+        # device_map={"": Accelerator().local_process_index},
+        # device_map={"":torch.cuda.current_device()}
     )
     model.config.use_cache = False
 
@@ -160,6 +163,8 @@ if __name__ == "__main__":
         low_cpu_mem_usage=True,
         torch_dtype=torch.float32,
         load_in_4bit=True,
+        # device_map={"": Accelerator().local_process_index},
+        # device_map={"":torch.cuda.current_device()}
     )
     if script_args.dataset_name == "social-dimensions":
         dataset = SocialDimensions(
@@ -178,6 +183,7 @@ if __name__ == "__main__":
     )
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
+    tokenizer.verbose = False
 
     # 4. initialize training arguments:
     training_args = TrainingArguments(
@@ -198,6 +204,7 @@ if __name__ == "__main__":
         warmup_steps=script_args.warmup_steps,
         optim=script_args.optimizer_type,
         fp16=False,
+        # bf16=True,
         remove_unused_columns=False,
         run_name=f"dpo_{MODEL_NAME}",
     )
