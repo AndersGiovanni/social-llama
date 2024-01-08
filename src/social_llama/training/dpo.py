@@ -12,9 +12,12 @@ from peft import LoraConfig
 from transformers import AutoTokenizer
 from transformers import HfArgumentParser
 from transformers import TrainingArguments
+from accelerate import Accelerator
 from trl import DPOTrainer
 
+from social_llama.data_processing.combine import Combined
 from social_llama.data_processing.social_dimensions import SocialDimensions
+from social_llama.data_processing.socket import Socket
 
 
 load_dotenv()
@@ -31,8 +34,20 @@ class ScriptArguments:
     )
     # training parameters
     model_name_or_path: Optional[str] = field(
-        default="sft/Llama-2-7b-chat-hf_few-shot_/final_checkpoint",
+        default="sft/Llama-2-7b-chat-hf_zero-shot_combined_first_exhausted_1epoch/final_checkpoint",
         metadata={"help": "the location of the SFT model name or path"},
+    )
+    base_model: Optional[str] = field(
+        default="meta-llama/Llama-2-7b-chat-hf",
+        metadata={"help": "the base model name or path"},
+    )
+    dataset_name: Optional[str] = field(
+        default="combined",
+        metadata={"help": "the dataset name"},
+    )
+    output_dir: Optional[str] = field(
+        default="./dpo/Llama-2-7b-chat-hf_zero-shot_combined_3epoch",
+        metadata={"help": "the output directory"},
     )
     learning_rate: Optional[float] = field(
         default=5e-4, metadata={"help": "optimizer learning rate"}
@@ -41,7 +56,7 @@ class ScriptArguments:
         default="cosine", metadata={"help": "the lr scheduler type"}
     )
     warmup_steps: Optional[int] = field(
-        default=5, metadata={"help": "the number of warmup steps"}
+        default=100, metadata={"help": "the number of warmup steps"}
     )
     weight_decay: Optional[float] = field(
         default=0.05, metadata={"help": "the weight decay"}
@@ -54,10 +69,10 @@ class ScriptArguments:
         default=2, metadata={"help": "train batch size per device"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=1, metadata={"help": "eval batch size per device"}
+        default=2, metadata={"help": "eval batch size per device"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=4, metadata={"help": "the number of gradient accumulation steps"}
+        default=2, metadata={"help": "the number of gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -75,24 +90,22 @@ class ScriptArguments:
         default=2048, metadata={"help": "the maximum prompt length"}
     )
     max_length: Optional[int] = field(
-        default=2048, metadata={"help": "the maximum sequence length"}
+        default=4096, metadata={"help": "the maximum sequence length"}
     )
-    max_steps: Optional[int] = field(
-        default=1000, metadata={"help": "max number of training steps"}
+    # max_steps: Optional[int] = field(
+    #     default=12000, metadata={"help": "max number of training steps"}
+    # )
+    num_train_epochs: Optional[int] = field(
+        default=3, metadata={"help": "max number of training steps"}
     )
     logging_steps: Optional[int] = field(
         default=5, metadata={"help": "the logging frequency"}
     )
-    save_steps: Optional[int] = field(
-        default=100, metadata={"help": "the saving frequency"}
+    save_steps: Optional[float] = field(
+        default=0.1, metadata={"help": "the saving frequency"}
     )
-    eval_steps: Optional[int] = field(
-        default=200, metadata={"help": "the evaluation frequency"}
-    )
-
-    output_dir: Optional[str] = field(
-        default="./dpo/Llama-2-7b-chat-hf_few-shot_fp32",
-        metadata={"help": "the output directory"},
+    eval_steps: Optional[float] = field(
+        default=0.1, metadata={"help": "the evaluation frequency"}
     )
     log_freq: Optional[int] = field(
         default=1, metadata={"help": "the logging frequency"}
@@ -131,6 +144,8 @@ if __name__ == "__main__":
         torch_dtype=torch.float32,
         load_in_4bit=True,
         is_trainable=True,
+        # device_map={"": Accelerator().local_process_index},
+        # device_map={"":torch.cuda.current_device()}
     )
     model.config.use_cache = False
 
@@ -148,25 +163,34 @@ if __name__ == "__main__":
         low_cpu_mem_usage=True,
         torch_dtype=torch.float32,
         load_in_4bit=True,
+        # device_map={"": Accelerator().local_process_index},
+        # device_map={"":torch.cuda.current_device()}
     )
+    if script_args.dataset_name == "social-dimensions":
+        dataset = SocialDimensions(
+            task="zero-shot", model=script_args.base_model
+        )
+    elif script_args.dataset_name == "socket":
+        dataset = Socket(task="zero-shot", model=script_args.base_model)
+    elif script_args.dataset_name == "combined":
+        dataset = Combined(model=script_args.base_model)
 
-    social_dimensions = SocialDimensions(
-        task="few-shot", model="meta-llama/Llama-2-7b-chat-hf"
-    )
-    social_dimensions.get_data()
+    dataset.get_data()
+    train_dataset, eval_dataset = dataset.preprocess_dpo()
+
     tokenizer = AutoTokenizer.from_pretrained(
-        "meta-llama/Llama-2-7b-chat-hf", trust_remote_code=True
+        script_args.base_model, trust_remote_code=True
     )
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
-
-    train_dataset, eval_dataset = social_dimensions.preprocess_dpo()
+    tokenizer.verbose = False
 
     # 4. initialize training arguments:
     training_args = TrainingArguments(
         per_device_train_batch_size=script_args.per_device_train_batch_size,
         per_device_eval_batch_size=script_args.per_device_eval_batch_size,
-        max_steps=script_args.max_steps,
+        # max_steps=script_args.max_steps,
+        num_train_epochs=script_args.num_train_epochs,
         logging_steps=script_args.logging_steps,
         save_steps=script_args.save_steps,
         gradient_accumulation_steps=script_args.gradient_accumulation_steps,
@@ -180,6 +204,7 @@ if __name__ == "__main__":
         warmup_steps=script_args.warmup_steps,
         optim=script_args.optimizer_type,
         fp16=False,
+        # bf16=True,
         remove_unused_columns=False,
         run_name=f"dpo_{MODEL_NAME}",
     )

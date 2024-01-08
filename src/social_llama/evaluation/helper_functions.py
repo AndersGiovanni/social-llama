@@ -17,7 +17,7 @@ def find_substring_indices(s: str, substrings: List[str]) -> List[int]:
     Returns:
         List[int]: The indices of the substrings within the string.
     """
-    indices = []
+    indices: List[int] = []
     for substring in substrings:
         start = 0
         while start < len(s):

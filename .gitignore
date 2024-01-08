@@ -15,3 +15,4 @@ run_outputs/
 sft/
 dpo/
 .env
+.DS_Store

@@ -3,8 +3,8 @@
 #SBATCH --job-name=dpo    # Job name
 #SBATCH --output=run_outputs/dpo.%j.out      # Name of output file (%j expands to jobId)
 #SBATCH --cpus-per-task=12       # Schedule one core
-#SBATCH --time=24:00:00          # Run time (hh:mm:ss) - run for one hour max
-#SBATCH --gres=gpu:rtx8000:1
+#SBATCH --time=2-24:00:00          # Run time (hh:mm:ss) - run for one hour max
+#SBATCH --gres=gpu:a100_40gb:1
 #SBATCH --partition=brown,red    # Run on either the Red or Brown queue
 #SBATCH --mail-type=BEGIN,FAIL,END    # Send an email when the job finishes or fails
 #SBATCH --account=researchers
@@ -13,14 +13,14 @@ hostname
 
 nvidia-smi
 
-module load poetry/1.5.1-GCCcore-12.3.0
+# module load poetry/1.5.1-GCCcore-12.3.0
 
-poetry shell
+# poetry shell
 
-poetry update
+# poetry update
 
-poetry install
+# poetry install
 
-pip install torch
+# pip install torch
 
 python -m src.social_llama.training.dpo

@@ -11,7 +11,7 @@ from social_llama.config import DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
 models = [
     i
     for i in os.listdir(DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS)
-    if os.path.isdir(DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS)
+    if os.path.isdir(DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS) and i != "assets"
 ]
 
 # Data storage for plotting

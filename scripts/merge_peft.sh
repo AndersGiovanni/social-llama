@@ -13,8 +13,8 @@ hostname
 
 nvidia-smi
 
-module load poetry/1.5.1-GCCcore-12.3.0
+# module load poetry/1.5.1-GCCcore-12.3.0
 
-poetry shell
+# poetry shell
 
 python -m src.social_llama.training.merge_peft_adapter
