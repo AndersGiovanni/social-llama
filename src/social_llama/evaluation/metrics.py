@@ -55,7 +55,7 @@ for task in tasks:
             acc = accuracy_score(predictions_finder, labels)
 
             # Append model performance data for plotting
-            model_names.append(model + "_" + file[:-20])
+            model_names.append(model + "_" + file[:-10])
             accuracies.append(acc)
 
     if len(model_names) <= 1:

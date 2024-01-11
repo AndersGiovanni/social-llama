@@ -35,7 +35,11 @@ class DataClass(TorchDataset):
         self.llama_config = LlamaConfigs()
         self.model = model
         self.tokenizer = AutoTokenizer.from_pretrained(
-            self.model, trust_remote_code=True
+            self.model,
+            trust_remote_code=True,
+            add_special_tokens=False,
+            add_eos_token=False,
+            add_bos_token=False,
         )
         self.tokenizer.use_default_system_prompt = False
         self.tokenizer.pad_token = self.tokenizer.eos_token

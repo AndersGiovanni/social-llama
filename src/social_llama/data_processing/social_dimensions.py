@@ -40,8 +40,20 @@ class Sample:
     response_bad: str
 
     def __getitem__(self, idx: str) -> Any:
-        """Get the item at the index."""
-        return self.__dict__[idx]
+        """Get the item at the index.
+
+        Args:
+            idx (str): Index
+
+        Raises:
+            KeyError: If the index is not a valid attribute of the class.
+        """
+        try:
+            return getattr(self, idx)
+        except AttributeError as exc:
+            raise KeyError(
+                f"{idx} is not a valid attribute of {type(self).__name__}"
+            ) from exc
 
 
 @dataclass
@@ -116,6 +128,29 @@ class SocialDimensions(DataClass):
             split="train",
         )
 
+        # Append task to each sample (this is needed when combining datasets)
+        train_data = train_data.map(
+            lambda example: {
+                "idx": example["idx"],
+                "text": example["text"],
+                "h_text": example["h_text"],
+                "response_good": example["response_good"],
+                "response_bad": example["response_bad"],
+                "task": "social-dimensions",
+            }
+        )
+
+        test_data = test_data.map(
+            lambda example: {
+                "idx": example["idx"],
+                "text": example["text"],
+                "h_text": example["h_text"],
+                "response_good": example["response_good"],
+                "response_bad": example["response_bad"],
+                "task": "social-dimensions",
+            }
+        )
+
         self.set_data(train_data=train_data, test_data=test_data)
 
     @override
@@ -173,8 +208,8 @@ class SocialDimensions(DataClass):
         chat: List[Dict[str, str]] = self.llama_config.get_chat_template()
 
         chat[0]["content"] = chat[0]["content"].format(
-            # prompt_prefix=self.config.prompt_prefix
-            prompt_prefix=""
+            prompt_prefix=self.config.prompt_prefix
+            # prompt_prefix=""
         )
 
         if self.task == "zero-shot":
@@ -400,8 +435,10 @@ class SocialDimensions(DataClass):
 
 if __name__ == "__main__":
     social_dimensions = SocialDimensions(
-        task="few-shot", model="meta-llama/Llama-2-70b-hf"
+        task="zero-shot", model="meta-llama/Llama-2-7b-hf"
     )
     social_dimensions.get_data()
 
-    train_data_, valid_data_ = social_dimensions.preprocess_dpo()
+    train_data_, valid_data_ = social_dimensions.preprocess_sft()
+
+    # a = 1

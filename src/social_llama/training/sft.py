@@ -16,6 +16,7 @@ from transformers import HfArgumentParser
 from transformers import TrainingArguments
 from trl import SFTTrainer
 
+from social_llama.data_processing.combine import Combined
 from social_llama.data_processing.social_dimensions import SocialDimensions
 from social_llama.data_processing.socket import Socket
 
@@ -28,16 +29,14 @@ class ScriptArguments:
     """Script arguments."""
 
     model_name: Optional[str] = field(
-        default="meta-llama/Llama-2-7b-chat-hf", metadata={"help": "the model name"}
+        default="meta-llama/Llama-2-13b-chat-hf", metadata={"help": "the model name"}
     )
     log_with: Optional[str] = field(
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
     )
-
     dataset_name: Optional[str] = field(
-        default="socket",
+        default="combined",
         metadata={"help": "the dataset name"},
-        choices=["social_dimensions", "socket"],
     )
     subset: Optional[str] = field(
         default="data/finetune", metadata={"help": "the subset to use"}
@@ -47,29 +46,31 @@ class ScriptArguments:
         default=5000, metadata={"help": "the shuffle buffer size"}
     )
     seq_length: Optional[int] = field(
-        default=2048, metadata={"help": "the sequence length"}
+        default=1024, metadata={"help": "the sequence length"}
     )
     num_workers: Optional[int] = field(
-        default=4, metadata={"help": "the number of workers"}
+        default=8, metadata={"help": "the number of workers"}
     )
-
-    max_steps: Optional[int] = field(
-        default=1000, metadata={"help": "the maximum number of sgd steps"}
+    num_train_epochs: Optional[int] = field(
+        default=1, metadata={"help": "the number of training epochs"}
     )
+    # max_steps: Optional[int] = field(
+    #     default=3000, metadata={"help": "the maximum number of sgd steps"}
+    # )
     logging_steps: Optional[int] = field(
         default=10, metadata={"help": "the logging frequency"}
     )
-    save_steps: Optional[int] = field(
-        default=100, metadata={"help": "the saving frequency"}
+    save_steps: Optional[float] = field(
+        default=0.2, metadata={"help": "the saving frequency"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=16, metadata={"help": "the per device train batch size"}
+        default=1, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=8, metadata={"help": "the per device eval batch size"}
+        default=1, metadata={"help": "the per device eval batch size"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=2, metadata={"help": "the gradient accumulation steps"}
+        default=1, metadata={"help": "the gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -78,7 +79,7 @@ class ScriptArguments:
         default=False, metadata={"help": "whether to group by length"}
     )
     packing: Optional[bool] = field(
-        default=True, metadata={"help": "whether to use packing for SFTTrainer"}
+        default=False, metadata={"help": "whether to use packing for SFTTrainer"}
     )
 
     lora_alpha: Optional[float] = field(
@@ -112,7 +113,7 @@ class ScriptArguments:
         default=1, metadata={"help": "the logging frequency"}
     )
     note: Optional[str] = field(
-        default="first_exhausted", metadata={"help": "the note to add to the run"}
+        default="1_epoch", metadata={"help": "the note to add to the run"}
     )
     task: Optional[str] = field(
         default="zero-shot", metadata={"help": "the task to run"}
@@ -122,7 +123,27 @@ class ScriptArguments:
 parser = HfArgumentParser(ScriptArguments)
 script_args = parser.parse_args_into_dataclasses()[0]
 
-output_dir = f"{script_args.output_dir}/{script_args.model_name.split('/')[-1]}_{script_args.task}_{script_args.note}"
+output_dir = f"{script_args.output_dir}/{script_args.model_name.split('/')[-1]}_{script_args.dataset_name}_{script_args.note}"
+
+if script_args.dataset_name == "social_dimensions":
+    dataset = SocialDimensions(task=script_args.task, model=script_args.model_name)
+elif script_args.dataset_name == "socket":
+    dataset = Socket(task=script_args.task, model=script_args.model_name)
+elif script_args.dataset_name == "combined":
+    dataset = Combined(model=script_args.model_name)
+else:
+    raise ValueError(f"Dataset {script_args.dataset_name} is not supported.")
+
+dataset.get_data()
+train_dataset, eval_dataset = dataset.preprocess_sft()
+
+# Based on the train dataset and the batch size, calculate the number of steps for 1 epoch
+# script_args.max_steps = (
+#     (len(train_dataset) // script_args.per_device_train_batch_size)
+#     // script_args.gradient_accumulation_steps
+#     * script_args.num_train_epochs
+# )
+
 
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
@@ -162,27 +183,20 @@ training_args = TrainingArguments(
     per_device_eval_batch_size=script_args.per_device_eval_batch_size,
     learning_rate=script_args.learning_rate,
     logging_steps=script_args.logging_steps,
-    max_steps=script_args.max_steps,
+    num_train_epochs=script_args.num_train_epochs,
+    # max_steps=script_args.max_steps,
     report_to=script_args.log_with,
     save_steps=script_args.save_steps,
     group_by_length=script_args.group_by_length,
     lr_scheduler_type=script_args.lr_scheduler_type,
     warmup_steps=script_args.num_warmup_steps,
     optim=script_args.optimizer_type,
-    fp16=True,
+    fp16=False,
+    # bf16=True,
     remove_unused_columns=False,
-    run_name=f"{script_args.model_name.split('/')[-1]}_sft_{script_args.task}_{script_args.note}",
+    run_name=f"sft_{script_args.model_name.split('/')[-1]}_{script_args.task}_{script_args.dataset_name}_{script_args.note}",
+    seed=42,
 )
-
-if script_args.dataset_name == "social_dimensions":
-    dataset = SocialDimensions(task=script_args.task, model=script_args.model_name)
-elif script_args.dataset_name == "socket":
-    dataset = Socket(task=script_args.task, model=script_args.model_name)
-else:
-    raise ValueError(f"Dataset {script_args.dataset_name} is not supported.")
-
-dataset.get_data()
-train_dataset, eval_dataset = dataset.preprocess_sft()
 
 trainer = SFTTrainer(
     model=base_model,
