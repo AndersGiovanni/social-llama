@@ -144,6 +144,7 @@ class Evaluator:
         return predictions
 
     def _predict(self, sample) -> List[str]:
+        prediction: List[str] = []
         if self.use_inference_client:
             has_output = False
             while not has_output:
@@ -159,11 +160,12 @@ class Evaluator:
                 has_output = True
 
         else:
-            self.llm(sample["prompt"])
-            exit()
+            # Flatten the list of lists into a single list
+            output: List[Dict[str, str]] = [
+                item for sublist in self.llm(sample["prompt"]) for item in sublist
+            ]
             prediction: List[str] = [
-                generation["generated_text"]
-                for generation in self.llm(sample["prompt"])
+                generation["generated_text"] for generation in output
             ]
             prediction: List[str] = [
                 pred.replace(sample["prompt"], "") for pred in prediction
