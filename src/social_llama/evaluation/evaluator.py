@@ -159,6 +159,8 @@ class Evaluator:
                 has_output = True
 
         else:
+            self.llm(sample["prompt"])
+            exit()
             prediction: List[str] = [
                 generation["generated_text"]
                 for generation in self.llm(sample["prompt"])
