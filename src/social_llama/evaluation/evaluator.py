@@ -13,6 +13,7 @@ from datasets import Dataset
 from datasets import load_dataset
 from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
+from torch.utils.data import DataLoader
 from tqdm import tqdm
 from transformers import AutoConfig
 from transformers import AutoTokenizer
@@ -56,10 +57,16 @@ class Evaluator:
             "max_new_tokens": 20,
             "temperature": 0.9,
         }
-        self.tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf")
+        if "llama" in model_id:
+            self.tokenizer = AutoTokenizer.from_pretrained(
+                "meta-llama/Llama-2-7b-chat-hf"
+            )
+        else:
+            self.tokenizer = AutoTokenizer.from_pretrained(model_id)
         if model_id in [
             "meta-llama/Llama-2-7b-chat-hf",
             "meta-llama/Llama-2-13b-chat-hf",
+            "mistralai/Mistral-7B-Instruct-v0.2",
         ]:
             self.inference_client = InferenceClient(
                 model=model_id, token=os.environ["HUGGINGFACEHUB_API_TOKEN"]
@@ -77,100 +84,88 @@ class Evaluator:
             )
             self.use_inference_client = False
 
-    def predict(self, task: str = "social-dimensions") -> None:
+    def predict(
+        self, task: str = "social-dimensions", batch_size: int = 2, note: str = ""
+    ) -> None:
         """Predict the labels for the test data."""
         if task == "social-dimensions":
             task_data = self._prepare_social_dim_test_data()
-            predictions = []
-
-            for sample in tqdm(task_data):
-                prediction = self._predict(sample)
-
-                prediction_processed = label_check(
-                    prediction=prediction,
-                    labels=self.social_dimensions.config.labels,
-                )
-                prediction_finder = label_finder(
-                    prediction=prediction,
-                    labels=self.social_dimensions.config.labels,
-                )
-                predictions.append(
-                    {
-                        "idx": sample["idx"],
-                        "prompt": sample["prompt"],
-                        "prediction": prediction,
-                        "prediction_processed": prediction_processed,
-                        "prediction_finder": prediction_finder,
-                        "label": sample["label"],
-                    }
-                )
-            save_json(
+            labels = self.social_dimensions.config.labels
+            save_path = (
                 DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
-                / f"{self.model_id}_predictions_v3.json",
-                predictions,
+                / f"{self.model_id}_predictions_{note}.json"
             )
         elif task == "socket":
-            # cls_tasks = self.socket_prompts[self.socket_prompts["type"] == "CLS"][
-            #     "task"
-            # ]
-            # for task in cls_tasks:
-            for task in [
-                "contextual-abuse#PersonDirectedAbuse",
-                "hateoffensive",
-                "implicit-hate#explicit_hate",
-                "implicit-hate#implicit_hate",
-                "crowdflower",
-                "dailydialog",
-            ]:
-                task_data, labels = self._prepare_socket_test_data(task=task)
-                predictions = []
-
-                for sample in tqdm(task_data):
-                    prediction = self._predict(sample)
-
-                    prediction_processed = label_check(
-                        prediction=prediction,
-                        labels=labels,
-                    )
-                    prediction_finder = label_finder(
-                        prediction=prediction,
-                        labels=labels,
-                    )
-                    predictions.append(
-                        {
-                            "idx": sample["idx"],
-                            "prompt": sample["prompt"],
-                            "prediction": prediction,
-                            "prediction_processed": prediction_processed,
-                            "prediction_finder": prediction_finder,
-                            "label": sample["label"],
-                        }
-                    )
-                save_json(
-                    DATA_DIR_EVALUATION_SOCKET
-                    / f"{task}/{self.model_id}_predictions_knowledge_injection.json",
-                    predictions,
-                )
-
+            task_data, labels = self._prepare_socket_test_data(task=task)
+            save_path = (
+                DATA_DIR_EVALUATION_SOCKET
+                / f"{task}/{self.model_id}_predictions_{note}.json"
+            )
         else:
             raise ValueError("Task not recognized.")
 
-    def _predict(self, sample) -> str:
+        task_data = DataLoader(
+            task_data[:5],
+            batch_size=1 if self.use_inference_client else batch_size,
+            shuffle=False,
+            num_workers=0,
+            drop_last=False,
+        )
+
+        predictions = self._process_samples(task_data, labels)
+        save_json(save_path, predictions)
+
+    def _process_samples(self, task_data, labels):
+        predictions = []
+        for batch in tqdm(task_data):
+            batch_predictions: List[str] = self._predict(batch)
+
+            for idx, prompt, label, prediction in zip(
+                batch["idx"], batch["prompt"], batch["label"], batch_predictions
+            ):
+                prediction_processed = label_check(
+                    prediction=prediction,
+                    labels=labels,
+                )
+                prediction_finder = label_finder(
+                    prediction=prediction,
+                    labels=labels,
+                )
+                predictions.append(
+                    {
+                        "idx": idx.item(),  # convert tensor to python int
+                        "prompt": prompt,
+                        "prediction": prediction,
+                        "prediction_processed": prediction_processed,
+                        "prediction_finder": prediction_finder,
+                        "label": label,
+                    }
+                )
+        return predictions
+
+    def _predict(self, sample) -> List[str]:
         if self.use_inference_client:
             has_output = False
             while not has_output:
                 try:
-                    prediction = self.inference_client.text_generation(
-                        sample["prompt"], **self.generation_kwargs
-                    )
+                    prediction: List[str] = [
+                        self.inference_client.text_generation(
+                            sample["prompt"][0], **self.generation_kwargs
+                        )
+                    ]
                 except Exception:
                     time.sleep(2)
                     continue
                 has_output = True
 
         else:
-            prediction: str = self.llm(sample["prompt"])[0]["generated_text"]
-            prediction: str = prediction.replace(sample["prompt"], "")
+            prediction: List[str] = [
+                generation["generated_text"]
+                for generation in self.llm(sample["prompt"])
+            ]
+            prediction: List[str] = [
+                pred.replace(sample["prompt"], "") for pred in prediction
+            ]
 
         return prediction
 
@@ -269,9 +264,10 @@ class Evaluator:
 
 if __name__ == "__main__":
     models = [
-        "AGMoller/social-llama-7b-alpha",
-        # "AGMoller/social-llama-7b-beta",
+        "AndersGiovanni/social-llama-7b-alpha",
+        # "AndersGiovanni/social-llama-7b-beta",
         # "meta-llama/Llama-2-7b-chat-hf"
+        # "mistralai/Mistral-7B-Instruct-v0.2"
     ]
 
     for model in models:
@@ -279,9 +275,9 @@ if __name__ == "__main__":
 
         evaluator = Evaluator(model)
 
-        # evaluator.predict(task="social-dimensions")
+        evaluator.predict(task="social-dimensions")
 
-        evaluator.predict(task="socket")
+        # evaluator.predict(task="socket")
 
         del evaluator
 
