@@ -29,7 +29,8 @@ class ScriptArguments:
     """Script arguments."""
 
     model_name: Optional[str] = field(
-        default="meta-llama/Llama-2-13b-chat-hf", metadata={"help": "the model name"}
+        default="mistralai/Mistral-7B-Instruct-v0.2",
+        metadata={"help": "the model name"},
     )
     log_with: Optional[str] = field(
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
@@ -37,9 +38,6 @@ class ScriptArguments:
     dataset_name: Optional[str] = field(
         default="combined",
         metadata={"help": "the dataset name"},
-    )
-    subset: Optional[str] = field(
-        default="data/finetune", metadata={"help": "the subset to use"}
     )
     split: Optional[str] = field(default="train", metadata={"help": "the split to use"})
     shuffle_buffer: Optional[int] = field(
@@ -49,7 +47,7 @@ class ScriptArguments:
         default=1024, metadata={"help": "the sequence length"}
     )
     num_workers: Optional[int] = field(
-        default=8, metadata={"help": "the number of workers"}
+        default=10, metadata={"help": "the number of workers"}
     )
     num_train_epochs: Optional[int] = field(
         default=1, metadata={"help": "the number of training epochs"}
@@ -64,10 +62,10 @@ class ScriptArguments:
         default=0.2, metadata={"help": "the saving frequency"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=1, metadata={"help": "the per device train batch size"}
+        default=2, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=1, metadata={"help": "the per device eval batch size"}
+        default=2, metadata={"help": "the per device eval batch size"}
     )
     gradient_accumulation_steps: Optional[int] = field(
         default=1, metadata={"help": "the gradient accumulation steps"}
@@ -191,8 +189,8 @@ training_args = TrainingArguments(
     lr_scheduler_type=script_args.lr_scheduler_type,
     warmup_steps=script_args.num_warmup_steps,
     optim=script_args.optimizer_type,
-    fp16=False,
-    # bf16=True,
+    # fp16=False,
+    bf16=True,
     remove_unused_columns=False,
     run_name=f"sft_{script_args.model_name.split('/')[-1]}_{script_args.task}_{script_args.dataset_name}_{script_args.note}",
     seed=42,
