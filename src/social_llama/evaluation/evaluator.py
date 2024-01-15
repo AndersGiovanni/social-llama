@@ -302,9 +302,9 @@ class Evaluator:
 
 if __name__ == "__main__":
     models = [
-        "AndersGiovanni/social-llama-7b-alpha",
+        # "AndersGiovanni/social-llama-7b-alpha",
         # "AndersGiovanni/social-llama-7b-beta",
-        # "meta-llama/Llama-2-7b-chat-hf"
+        "meta-llama/Llama-2-7b-chat-hf"
         # "mistralai/Mistral-7B-Instruct-v0.2"
     ]
 
