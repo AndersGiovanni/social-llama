@@ -7,8 +7,7 @@ from typing import List
 from typing import Union
 
 import pandas as pd
-
-# import torch
+import torch
 from datasets import Dataset
 from datasets import load_dataset
 from dotenv import load_dotenv
@@ -110,6 +109,7 @@ class Evaluator:
             shuffle=False,
             num_workers=0,
             drop_last=False,
+            collate_fn=self.collate_fn,
         )
 
         predictions = self._process_samples(task_data, labels)
@@ -166,12 +166,15 @@ class Evaluator:
             prediction: List[str] = [item[0]["generated_text"] for item in output]
             # Remove the prompt from the output
             prediction: List[str] = [
-                pred.replace(prompt, "") for pred, prompt in zip(prediction, sample["prompt"])
-            ]    
+                pred.replace(prompt, "")
+                for pred, prompt in zip(prediction, sample["prompt"])
+            ]
 
         return prediction
 
-    def _prepare_social_dim_test_data(self) -> List[Dict[str, str]]:
+    def _prepare_social_dim_test_data(
+        self,
+    ) -> List[Dict[str, Union[str, int, List[str]]]]:
         """Prepare the test data for the social dimension task."""
         test_data: Dataset = self.social_dimensions.test_data
 
@@ -194,7 +197,9 @@ class Evaluator:
         # Return a list of all the values in the dictionary
         return list(test_data_formatted.values())
 
-    def _prepare_socket_test_data(self, task: str) -> List[Dict[str, Union[str, int]]]:
+    def _prepare_socket_test_data(
+        self, task: str
+    ) -> List[Dict[str, Union[str, int, List[str]]]]:
         test_data_formatted: List[Dict[str, str]] = []
 
         # Get all the socket prompts with type CLS
@@ -262,6 +267,16 @@ class Evaluator:
         return self.tokenizer.apply_chat_template(
             chat, tokenize=False, add_generation_prompt=True
         )
+
+    def collate_fn(
+        self, batch: List[Dict[str, Union[str, int, List[str]]]]
+    ) -> Dict[str, Union[torch.Tensor, List[Union[str, int, List[str]]]]]:
+        """Collate function for the DataLoader to handle labels list."""
+        return {
+            "idx": torch.tensor([d["idx"] for d in batch]),
+            "prompt": [d["prompt"] for d in batch],
+            "label": [d["label"] for d in batch],
+        }
 
 
 if __name__ == "__main__":
