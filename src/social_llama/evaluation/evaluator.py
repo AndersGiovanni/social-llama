@@ -85,7 +85,7 @@ class Evaluator:
             self.use_inference_client = False
 
     def predict(
-        self, task: str = "social-dimensions", batch_size: int = 2, note: str = ""
+        self, task: str = "social-dimensions", batch_size: int = 10, note: str = ""
     ) -> None:
         """Predict the labels for the test data."""
         if task == "social-dimensions":
@@ -105,7 +105,7 @@ class Evaluator:
             raise ValueError("Task not recognized.")
 
         task_data = DataLoader(
-            task_data[:5],
+            task_data,
             batch_size=1 if self.use_inference_client else batch_size,
             shuffle=False,
             num_workers=0,
@@ -160,16 +160,14 @@ class Evaluator:
                 has_output = True
 
         else:
-            # Flatten the list of lists into a single list
-            output: List[Dict[str, str]] = [
-                item for sublist in self.llm(sample["prompt"]) for item in sublist
-            ]
+            # Predict
+            output: List[List[Dict[str, str]]] = self.llm(sample["prompt"])
+            # Select the generated output
+            prediction: List[str] = [item[0]["generated_text"] for item in output]
+            # Remove the prompt from the output
             prediction: List[str] = [
-                generation["generated_text"] for generation in output
-            ]
-            prediction: List[str] = [
-                pred.replace(sample["prompt"], "") for pred in prediction
-            ]
+                pred.replace(prompt, "") for pred, prompt in zip(prediction, sample["prompt"])
+            ]    
 
         return prediction
 
