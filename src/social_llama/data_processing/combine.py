@@ -40,6 +40,7 @@ class Combined:
             add_bos_token=False,
         )
         self.tokenizer.use_default_system_prompt = False
+        self.tokenizer.verbose = False
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.tokenizer.padding_side = (
             "right"  # Fix weird overflow issue with fp16 training

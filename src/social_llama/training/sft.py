@@ -29,7 +29,8 @@ class ScriptArguments:
     """Script arguments."""
 
     model_name: Optional[str] = field(
-        default="meta-llama/Llama-2-13b-chat-hf", metadata={"help": "the model name"}
+        default="meta-llama/Llama-2-7b-chat-hf",
+        metadata={"help": "the model name"},
     )
     log_with: Optional[str] = field(
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
@@ -37,9 +38,6 @@ class ScriptArguments:
     dataset_name: Optional[str] = field(
         default="combined",
         metadata={"help": "the dataset name"},
-    )
-    subset: Optional[str] = field(
-        default="data/finetune", metadata={"help": "the subset to use"}
     )
     split: Optional[str] = field(default="train", metadata={"help": "the split to use"})
     shuffle_buffer: Optional[int] = field(
@@ -49,7 +47,7 @@ class ScriptArguments:
         default=1024, metadata={"help": "the sequence length"}
     )
     num_workers: Optional[int] = field(
-        default=8, metadata={"help": "the number of workers"}
+        default=10, metadata={"help": "the number of workers"}
     )
     num_train_epochs: Optional[int] = field(
         default=1, metadata={"help": "the number of training epochs"}
@@ -64,13 +62,13 @@ class ScriptArguments:
         default=0.2, metadata={"help": "the saving frequency"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=1, metadata={"help": "the per device train batch size"}
+        default=4, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=1, metadata={"help": "the per device eval batch size"}
+        default=4, metadata={"help": "the per device eval batch size"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=1, metadata={"help": "the gradient accumulation steps"}
+        default=2, metadata={"help": "the gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -79,7 +77,7 @@ class ScriptArguments:
         default=False, metadata={"help": "whether to group by length"}
     )
     packing: Optional[bool] = field(
-        default=False, metadata={"help": "whether to use packing for SFTTrainer"}
+        default=True, metadata={"help": "whether to use packing for SFTTrainer"}
     )
 
     lora_alpha: Optional[float] = field(
@@ -113,7 +111,7 @@ class ScriptArguments:
         default=1, metadata={"help": "the logging frequency"}
     )
     note: Optional[str] = field(
-        default="1_epoch", metadata={"help": "the note to add to the run"}
+        default="1_epoch_multi_gpu", metadata={"help": "the note to add to the run"}
     )
     task: Optional[str] = field(
         default="zero-shot", metadata={"help": "the task to run"}
@@ -175,6 +173,7 @@ tokenizer = AutoTokenizer.from_pretrained(
 )
 tokenizer.pad_token = tokenizer.eos_token
 tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
+tokenizer.verbose = False
 
 training_args = TrainingArguments(
     output_dir=output_dir,
@@ -191,7 +190,7 @@ training_args = TrainingArguments(
     lr_scheduler_type=script_args.lr_scheduler_type,
     warmup_steps=script_args.num_warmup_steps,
     optim=script_args.optimizer_type,
-    fp16=False,
+    fp16=True,
     # bf16=True,
     remove_unused_columns=False,
     run_name=f"sft_{script_args.model_name.split('/')[-1]}_{script_args.task}_{script_args.dataset_name}_{script_args.note}",
