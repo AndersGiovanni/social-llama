@@ -46,6 +46,7 @@ class DataClass(TorchDataset):
         self.tokenizer.padding_side = (
             "right"  # Fix weird overflow issue with fp16 training
         )
+        self.tokenizer.verbose = False
 
     def set_data(
         self,
