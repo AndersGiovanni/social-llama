@@ -84,7 +84,7 @@ class Evaluator:
             self.use_inference_client = False
 
     def predict(
-        self, task: str = "social-dimensions", batch_size: int = 10, note: str = ""
+        self, task: str = "social-dimensions", batch_size: int = 8, note: str = ""
     ) -> None:
         """Predict the labels for the test data."""
         if task == "social-dimensions":
