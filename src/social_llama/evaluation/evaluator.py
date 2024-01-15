@@ -44,7 +44,7 @@ class Evaluator:
         self.social_dimensions.get_data()
         self.llama_config = LlamaConfigs()
         self.socket_prompts: pd.DataFrame = pd.read_csv(
-            DATA_DIR_EVALUATION_SOCKET / "socket_prompts_knowledge.csv"
+            DATA_DIR_EVALUATION_SOCKET / "socket_prompts_knowledge_original.csv"
         )
         self.generation_kwargs = {
             "max_new_tokens": 50,
@@ -94,26 +94,47 @@ class Evaluator:
                 DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
                 / f"{self.model_id}_predictions_{note}.json"
             )
-        elif task == "socket":
-            task_data, labels = self._prepare_socket_test_data(task=task)
-            save_path = (
-                DATA_DIR_EVALUATION_SOCKET
-                / f"{task}/{self.model_id}_predictions_{note}.json"
+            task_data = DataLoader(
+                task_data,
+                batch_size=1 if self.use_inference_client else batch_size,
+                shuffle=False,
+                num_workers=0,
+                drop_last=False,
+                collate_fn=self.collate_fn,
             )
+
+            predictions = self._process_samples(task_data, labels)
+            save_json(save_path, predictions)
+        elif task == "socket":
+            for task in [
+                "contextual-abuse#PersonDirectedAbuse",
+                "contextual-abuse#IdentityDirectedAbuse",
+                "tweet_irony",
+                "hateoffensive",
+                "tweet_emotion",
+                "implicit-hate#explicit_hate",
+                "implicit-hate#implicit_hate",
+                # "crowdflower",
+                # "dailydialog",
+            ]:
+                task_data, labels = self._prepare_socket_test_data(task=task)
+                save_path = (
+                    DATA_DIR_EVALUATION_SOCKET
+                    / f"{task}/{self.model_id}_predictions_{note}.json"
+                )
+                task_data = DataLoader(
+                    task_data,
+                    batch_size=1 if self.use_inference_client else batch_size,
+                    shuffle=False,
+                    num_workers=0,
+                    drop_last=False,
+                    collate_fn=self.collate_fn,
+                )
+
+                predictions = self._process_samples(task_data, labels)
+                save_json(save_path, predictions)
         else:
             raise ValueError("Task not recognized.")
-
-        task_data = DataLoader(
-            task_data,
-            batch_size=1 if self.use_inference_client else batch_size,
-            shuffle=False,
-            num_workers=0,
-            drop_last=False,
-            collate_fn=self.collate_fn,
-        )
-
-        predictions = self._process_samples(task_data, labels)
-        save_json(save_path, predictions)
 
     def _process_samples(self, task_data, labels):
         predictions = []
@@ -292,9 +313,9 @@ if __name__ == "__main__":
 
         evaluator = Evaluator(model)
 
-        evaluator.predict(task="social-dimensions")
+        # evaluator.predict(task="social-dimensions")
 
-        # evaluator.predict(task="socket")
+        evaluator.predict(task="socket", note="knwldg_inj_orig")
 
         del evaluator
 
