@@ -29,7 +29,7 @@ class ScriptArguments:
     """Script arguments."""
 
     model_name: Optional[str] = field(
-        default="mistralai/Mistral-7B-Instruct-v0.2",
+        default="meta-llama/Llama-2-7b-chat-hf",
         metadata={"help": "the model name"},
     )
     log_with: Optional[str] = field(
