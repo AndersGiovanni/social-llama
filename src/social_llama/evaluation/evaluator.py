@@ -107,12 +107,12 @@ class Evaluator:
             save_json(save_path, predictions)
         elif task == "socket":
             for task in [
-                "contextual-abuse#PersonDirectedAbuse",
-                "contextual-abuse#IdentityDirectedAbuse",
-                "tweet_irony",
-                "hateoffensive",
-                "tweet_emotion",
-                "implicit-hate#explicit_hate",
+                # "contextual-abuse#PersonDirectedAbuse",
+                # "contextual-abuse#IdentityDirectedAbuse",
+                # "tweet_irony",
+                # "hateoffensive",
+                # "tweet_emotion",
+                # "implicit-hate#explicit_hate",
                 "implicit-hate#implicit_hate",
                 # "crowdflower",
                 # "dailydialog",
@@ -302,9 +302,9 @@ class Evaluator:
 
 if __name__ == "__main__":
     models = [
-        # "AndersGiovanni/social-llama-7b-alpha",
+        "AndersGiovanni/social-llama-7b-alpha",
         # "AndersGiovanni/social-llama-7b-beta",
-        "meta-llama/Llama-2-7b-chat-hf"
+        # "meta-llama/Llama-2-7b-chat-hf"
         # "mistralai/Mistral-7B-Instruct-v0.2"
     ]
 
