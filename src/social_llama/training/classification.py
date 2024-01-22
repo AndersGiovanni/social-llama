@@ -156,9 +156,20 @@ def compute_metrics(eval_pred):
 
 # Load Mistral 7B Tokenizer
 checkpoint = "meta-llama/Llama-2-7b-hf"
-tokenizer = AutoTokenizer.from_pretrained(checkpoint)#, add_prefix_space=True)
-tokenizer.pad_token_id = tokenizer.eos_token_id
+# tokenizer = AutoTokenizer.from_pretrained(checkpoint)#, add_prefix_space=True)
+# tokenizer.pad_token_id = tokenizer.eos_token_id
+# tokenizer.pad_token = tokenizer.eos_token
+
+tokenizer = AutoTokenizer.from_pretrained(
+    checkpoint,
+    trust_remote_code=True,
+    add_special_tokens=False,
+    add_eos_token=False,
+)
+tokenizer.use_default_system_prompt = False
 tokenizer.pad_token = tokenizer.eos_token
+tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
+tokenizer.verbose = False
 
 
 def preprocessing_function(examples):
@@ -181,7 +192,6 @@ def preprocessing_function(examples):
 tokenized_datasets = data.map(
     preprocessing_function, batched=True, remove_columns=["text"]
 )
-tokenized_datasets = tokenized_datasets.rename_column("target", "labels")
 tokenized_datasets.set_format("torch")
 
 # Data collator for padding a batch of examples to the maximum length seen in the batch
@@ -260,8 +270,8 @@ trainer = accelerator.prepare(
     WeightedCELossTrainer(
         model=model,
         args=training_args,
-        train_dataset=accelerator.prepare(tokenized_datasets['train']),
-        eval_dataset=accelerator.prepare(tokenized_datasets['validation']),
+        train_dataset=accelerator.prepare(tokenized_datasets["train"]),
+        eval_dataset=accelerator.prepare(tokenized_datasets["validation"]),
         data_collator=data_collator,
         compute_metrics=compute_metrics,
     )
