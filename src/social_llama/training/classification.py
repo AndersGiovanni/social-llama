@@ -19,6 +19,7 @@ from transformers import DataCollatorWithPadding
 from transformers import Trainer
 from transformers import TrainerCallback
 from transformers import TrainingArguments
+from accelerate import Accelerator
 
 from social_llama.config import DATA_DIR_SOCIAL_DIMENSIONS_RAW
 
@@ -170,30 +171,30 @@ class WeightedCELossTrainer(Trainer):
 
 
 # Load Mistral 7B Tokenizer
-mistral_checkpoint = "mistralai/Mistral-7B-v0.1"
-mistral_tokenizer = AutoTokenizer.from_pretrained(
-    mistral_checkpoint, add_prefix_space=True
+checkpoint = "meta-llama/Llama-2-7b-hf"
+tokenizer = AutoTokenizer.from_pretrained(
+    checkpoint, add_prefix_space=True
 )
-mistral_tokenizer.pad_token_id = mistral_tokenizer.eos_token_id
-mistral_tokenizer.pad_token = mistral_tokenizer.eos_token
+tokenizer.pad_token_id = tokenizer.eos_token_id
+tokenizer.pad_token = tokenizer.eos_token
 
 
-def mistral_preprocessing_function(examples):
-    return mistral_tokenizer(examples["text"], truncation=True, max_length=1024)
+def preprocessing_function(examples):
+    return tokenizer(examples["text"], truncation=True, max_length=1024)
 
 
-mistral_tokenized_datasets = data.map(
-    mistral_preprocessing_function, batched=True, remove_columns=["text"]
+tokenized_datasets = data.map(
+    preprocessing_function, batched=True, remove_columns=["text"]
 )
-# mistral_tokenized_datasets = mistral_tokenized_datasets.rename_column("target", "label")
-mistral_tokenized_datasets.set_format("torch")
+# tokenized_datasets = tokenized_datasets.rename_column("target", "label")
+tokenized_datasets.set_format("torch")
 
 # Data collator for padding a batch of examples to the maximum length seen in the batch
-mistral_data_collator = DataCollatorWithPadding(tokenizer=mistral_tokenizer)
+data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
 model = AutoModelForSequenceClassification.from_pretrained(
-    pretrained_model_name_or_path=mistral_checkpoint,
-    num_labels=10,
+    pretrained_model_name_or_path=checkpoint,
+    num_labels=11,
     trust_remote_code=True,
     problem_type="multi_label_classification",
     device_map="auto",
@@ -202,7 +203,7 @@ model = AutoModelForSequenceClassification.from_pretrained(
 model.config.pad_token_id = model.config.eos_token_id
 
 
-mistral_peft_config = LoraConfig(
+peft_config = LoraConfig(
     task_type=TaskType.SEQ_CLS,
     r=2,
     lora_alpha=16,
@@ -214,17 +215,17 @@ mistral_peft_config = LoraConfig(
     ],
 )
 
-mistral_model = get_peft_model(model, mistral_peft_config)
-mistral_model.print_trainable_parameters()
+model = get_peft_model(model, peft_config)
+model.print_trainable_parameters()
 
-mistral_model = mistral_model.cuda()
+# model = model.cuda()
 
 lr = 1e-4
 batch_size = 8
 num_epochs = 5
 
 training_args = TrainingArguments(
-    output_dir="mistral-lora-token-classification",
+    output_dir="test-classification",
     learning_rate=lr,
     lr_scheduler_type="constant",
     warmup_ratio=0.1,
@@ -236,21 +237,22 @@ training_args = TrainingArguments(
     evaluation_strategy="epoch",
     save_strategy="epoch",
     load_best_model_at_end=True,
-    report_to="wandb",
+    # report_to="wandb",
     fp16=True,
     gradient_checkpointing=True,
 )
 
-
-mistral_trainer = WeightedCELossTrainer(
-    model=mistral_model,
+# accelerator = Accelerator()
+# trainer = accelerator.prepare(WeightedCELossTrainer(
+trainer = WeightedCELossTrainer(
+    model=model,
     args=training_args,
-    train_dataset=mistral_tokenized_datasets["train"],
-    eval_dataset=mistral_tokenized_datasets["validation"],
-    data_collator=mistral_data_collator,
+    train_dataset=tokenized_datasets["train"],
+    eval_dataset=tokenized_datasets["validation"],
+    data_collator=data_collator,
     compute_metrics=compute_metrics,
-)
-
+    )
+# )
 
 class CustomCallback(TrainerCallback):
     def __init__(self, trainer) -> None:
@@ -266,6 +268,6 @@ class CustomCallback(TrainerCallback):
             return control_copy
 
 
-mistral_trainer.add_callback(CustomCallback(mistral_trainer))
+trainer.add_callback(CustomCallback(trainer))
 
-mistral_trainer.train()
+trainer.train()
