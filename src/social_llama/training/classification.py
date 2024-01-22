@@ -165,6 +165,8 @@ def preprocessing_function(examples):
     return tokenizer(examples["text"], truncation=True, max_length=1024)
 
 
+formatter = lambda x: x["text"]
+
 train_dataset = ConstantLengthDataset(
     tokenizer, data["train"], infinite=True, seq_length=2048
 )
