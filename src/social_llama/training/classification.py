@@ -3,6 +3,7 @@ from copy import deepcopy
 
 import numpy as np
 import torch
+from accelerate import Accelerator
 from datasets import Dataset
 from datasets import DatasetDict
 from peft import LoraConfig
@@ -19,7 +20,7 @@ from transformers import DataCollatorWithPadding
 from transformers import Trainer
 from transformers import TrainerCallback
 from transformers import TrainingArguments
-from accelerate import Accelerator
+from trl.trainer import ConstantLengthDataset
 
 from social_llama.config import DATA_DIR_SOCIAL_DIMENSIONS_RAW
 
@@ -153,28 +154,9 @@ def compute_metrics(eval_pred):
     }
 
 
-class WeightedCELossTrainer(Trainer):
-    def compute_loss(self, model, inputs, return_outputs=False):
-        labels = inputs.pop("labels")
-        # Get model's predictions
-        outputs = model(**inputs)
-        logits = outputs.get("logits")
-        # Convert label weights to tensor
-        weights = torch.tensor(
-            [label_weights[label] for label in int_2_label.values()],
-            device=model.device,
-        )
-        # Compute custom loss
-        loss_fct = torch.nn.BCEWithLogitsLoss(weight=weights)
-        loss = loss_fct(logits, labels)
-        return (loss, outputs) if return_outputs else loss
-
-
 # Load Mistral 7B Tokenizer
 checkpoint = "meta-llama/Llama-2-7b-hf"
-tokenizer = AutoTokenizer.from_pretrained(
-    checkpoint, add_prefix_space=True
-)
+tokenizer = AutoTokenizer.from_pretrained(checkpoint, add_prefix_space=True)
 tokenizer.pad_token_id = tokenizer.eos_token_id
 tokenizer.pad_token = tokenizer.eos_token
 
@@ -183,11 +165,22 @@ def preprocessing_function(examples):
     return tokenizer(examples["text"], truncation=True, max_length=1024)
 
 
-tokenized_datasets = data.map(
-    preprocessing_function, batched=True, remove_columns=["text"]
+train_dataset = ConstantLengthDataset(
+    tokenizer, data["train"], infinite=True, seq_length=2048
 )
-# tokenized_datasets = tokenized_datasets.rename_column("target", "label")
-tokenized_datasets.set_format("torch")
+validation_dataset = ConstantLengthDataset(
+    tokenizer, data["validation"], infinite=True, seq_length=2048
+)
+test_dataset = ConstantLengthDataset(
+    tokenizer, data["test"], infinite=True, seq_length=2048
+)
+
+
+# tokenized_datasets = data.map(
+#     preprocessing_function, batched=True, remove_columns=["text"]
+# )
+# # tokenized_datasets = tokenized_datasets.rename_column("target", "label")
+# tokenized_datasets.set_format("torch")
 
 # Data collator for padding a batch of examples to the maximum length seen in the batch
 data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
@@ -241,18 +234,37 @@ training_args = TrainingArguments(
     fp16=True,
     gradient_checkpointing=True,
 )
+accelerator = Accelerator()
 
-# accelerator = Accelerator()
-# trainer = accelerator.prepare(WeightedCELossTrainer(
-trainer = WeightedCELossTrainer(
-    model=model,
-    args=training_args,
-    train_dataset=tokenized_datasets["train"],
-    eval_dataset=tokenized_datasets["validation"],
-    data_collator=data_collator,
-    compute_metrics=compute_metrics,
+
+class WeightedCELossTrainer(Trainer):
+    def compute_loss(self, model, inputs, return_outputs=False):
+        labels = inputs.pop("labels")
+        # Get model's predictions
+        outputs = model(**inputs)
+        logits = outputs.get("logits")
+        # Convert label weights to tensor
+        weights = torch.tensor(
+            [label_weights[label] for label in int_2_label.values()],
+            device=accelerator.device,
+        )
+        # Compute custom loss
+        loss_fct = torch.nn.BCEWithLogitsLoss(weight=weights)
+        loss = loss_fct(logits, labels)
+        return (loss, outputs) if return_outputs else loss
+
+
+trainer = accelerator.prepare(
+    WeightedCELossTrainer(
+        model=model,
+        args=training_args,
+        train_dataset=accelerator.prepare(train_dataset),
+        eval_dataset=accelerator.prepare(validation_dataset),
+        data_collator=data_collator,
+        compute_metrics=compute_metrics,
     )
-# )
+)
+
 
 class CustomCallback(TrainerCallback):
     def __init__(self, trainer) -> None:
