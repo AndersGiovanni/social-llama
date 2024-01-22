@@ -155,42 +155,24 @@ def compute_metrics(eval_pred):
 
 
 # Load Mistral 7B Tokenizer
-# checkpoint = "meta-llama/Llama-2-7b-hf"
+checkpoint = "meta-llama/Llama-2-7b-hf"
 # checkpoint = "mistralai/Mistral-7B-v0.1"
-checkpoint = "roberta-large"
+# checkpoint = "roberta-large"
 # checkpoint = "bert-base-uncased"
-# tokenizer = AutoTokenizer.from_pretrained(checkpoint)#, add_prefix_space=True)
 
 tokenizer = AutoTokenizer.from_pretrained(
     checkpoint,
     trust_remote_code=True,
-    # add_eos_token=True,
-    # add_bos_token=True,
     truncation=True,
 )
-# tokenizer.use_default_system_prompt = False
 tokenizer.pad_token = tokenizer.eos_token
 tokenizer.pad_token_id = tokenizer.eos_token_id
-# tokenizer.pad_token = tokenizer.eos_token
 tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
-# tokenizer.verbose = False
+tokenizer.verbose = False
 
 
 def preprocessing_function(examples):
     return tokenizer(examples["text"])
-
-
-# formatter = lambda x: x["text"]
-
-# train_dataset = ConstantLengthDataset(
-#     tokenizer, data["train"], infinite=True, seq_length=2048
-# )
-# validation_dataset = ConstantLengthDataset(
-#     tokenizer, data["validation"], infinite=True, seq_length=2048
-# )
-# test_dataset = ConstantLengthDataset(
-#     tokenizer, data["test"], infinite=True, seq_length=2048
-# )
 
 
 tokenized_datasets = data.map(
@@ -243,22 +225,8 @@ else:
     )
 
 
-# peft_config = LoraConfig(
-#     task_type=TaskType.SEQ_CLS,
-#     r=2,
-#     lora_alpha=16,
-#     lora_dropout=0.1,
-#     bias="none",
-#     target_modules=[
-#         "q_proj",
-#         "v_proj",
-#     ],
-# )
-
 model = get_peft_model(model, peft_config)
 model.print_trainable_parameters()
-
-# model = model.cuda()
 
 lr = 1e-4
 batch_size = 8
@@ -282,7 +250,7 @@ training_args = TrainingArguments(
     gradient_checkpointing=True,
     save_total_limit=1,
     run_name=f"{checkpoint}",
-    seed=42
+    seed=42,
 )
 # accelerator = Accelerator()
 
@@ -299,36 +267,21 @@ class WeightedCELossTrainer(Trainer):
             device=labels.device,
             dtype=logits.dtype,
         )
-        # print("weights",weights)
         # Compute custom loss
         loss_fct = torch.nn.BCEWithLogitsLoss(weight=weights)
-        # loss_fct = torch.nn.BCEWithLogitsLoss()
         labels = labels.type_as(logits)
         loss = loss_fct(logits, labels)
         return (loss, outputs) if return_outputs else loss
 
 
 trainer = WeightedCELossTrainer(
-        model=model,
-        args=training_args,
-        train_dataset=tokenized_datasets["train"],
-        eval_dataset=tokenized_datasets["validation"],
-        data_collator=data_collator,
-        compute_metrics=compute_metrics,
-    )
-
-
-
-# trainer = accelerator.prepare(
-#     Trainer(
-#         model=model,
-#         args=training_args,
-#         train_dataset=accelerator.prepare(tokenized_datasets["train"]),
-#         eval_dataset=accelerator.prepare(tokenized_datasets["validation"]),
-#         data_collator=data_collator,
-#         compute_metrics=compute_metrics,
-#     )
-# )
+    model=model,
+    args=training_args,
+    train_dataset=tokenized_datasets["train"],
+    eval_dataset=tokenized_datasets["validation"],
+    data_collator=data_collator,
+    compute_metrics=compute_metrics,
+)
 
 
 class CustomCallback(TrainerCallback):
@@ -350,4 +303,3 @@ trainer.add_callback(CustomCallback(trainer))
 trainer.train()
 
 trainer.evaluate(tokenized_datasets["test"], metric_key_prefix="test")
-
