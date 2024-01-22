@@ -155,7 +155,9 @@ def compute_metrics(eval_pred):
 
 
 # Load Mistral 7B Tokenizer
-checkpoint = "meta-llama/Llama-2-7b-hf"
+# checkpoint = "meta-llama/Llama-2-7b-hf"
+# checkpoint = "mistralai/Mistral-7B-v0.1"
+checkpoint = "roberta-large"
 # checkpoint = "bert-base-uncased"
 # tokenizer = AutoTokenizer.from_pretrained(checkpoint)#, add_prefix_space=True)
 
@@ -167,10 +169,10 @@ tokenizer = AutoTokenizer.from_pretrained(
     truncation=True,
 )
 # tokenizer.use_default_system_prompt = False
+tokenizer.pad_token = tokenizer.eos_token
+tokenizer.pad_token_id = tokenizer.eos_token_id
 # tokenizer.pad_token = tokenizer.eos_token
-# tokenizer.pad_token_id = tokenizer.eos_token_id
-# tokenizer.pad_token = tokenizer.eos_token
-# tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
+tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
 # tokenizer.verbose = False
 
 
@@ -206,7 +208,7 @@ model = AutoModelForSequenceClassification.from_pretrained(
     num_labels=11,
     trust_remote_code=True,
     problem_type="multi_label_classification",
-    # device_map="auto",
+    device_map="auto",
 )
 
 model.config.pad_token_id = model.config.eos_token_id
@@ -260,10 +262,10 @@ model.print_trainable_parameters()
 
 lr = 1e-4
 batch_size = 8
-num_epochs = 5
+num_epochs = 3
 
 training_args = TrainingArguments(
-    output_dir="test-classification",
+    output_dir=f"models/10dim-{checkpoint}",
     learning_rate=lr,
     lr_scheduler_type="constant",
     warmup_ratio=0.1,
@@ -275,11 +277,14 @@ training_args = TrainingArguments(
     evaluation_strategy="epoch",
     save_strategy="epoch",
     load_best_model_at_end=True,
-    # report_to="wandb",
-    # fp16=True,
+    report_to="wandb",
+    fp16=True,
     gradient_checkpointing=True,
+    save_total_limit=1,
+    run_name=f"{checkpoint}",
+    seed=42
 )
-accelerator = Accelerator()
+# accelerator = Accelerator()
 
 
 class WeightedCELossTrainer(Trainer):
@@ -291,7 +296,7 @@ class WeightedCELossTrainer(Trainer):
         # Convert label weights to tensor
         weights = torch.tensor(
             [label_weights[label] for label in int_2_label.values()],
-            device=accelerator.device,
+            device=labels.device,
             dtype=logits.dtype,
         )
         # print("weights",weights)
@@ -303,16 +308,15 @@ class WeightedCELossTrainer(Trainer):
         return (loss, outputs) if return_outputs else loss
 
 
-trainer = accelerator.prepare(
-    WeightedCELossTrainer(
+trainer = WeightedCELossTrainer(
         model=model,
         args=training_args,
-        train_dataset=accelerator.prepare(tokenized_datasets["train"]),
-        eval_dataset=accelerator.prepare(tokenized_datasets["validation"]),
+        train_dataset=tokenized_datasets["train"],
+        eval_dataset=tokenized_datasets["validation"],
         data_collator=data_collator,
         compute_metrics=compute_metrics,
     )
-)
+
 
 
 # trainer = accelerator.prepare(
@@ -344,3 +348,6 @@ class CustomCallback(TrainerCallback):
 trainer.add_callback(CustomCallback(trainer))
 
 trainer.train()
+
+trainer.evaluate(tokenized_datasets["test"], metric_key_prefix="test")
+
