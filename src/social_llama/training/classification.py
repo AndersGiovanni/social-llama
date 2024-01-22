@@ -155,7 +155,8 @@ def compute_metrics(eval_pred):
 
 
 # Load Mistral 7B Tokenizer
-checkpoint = "meta-llama/Llama-2-7b-hf"
+# checkpoint = "meta-llama/Llama-2-7b-hf"
+checkpoint = "bert-base-uncased"
 # tokenizer = AutoTokenizer.from_pretrained(checkpoint)#, add_prefix_space=True)
 # tokenizer.pad_token_id = tokenizer.eos_token_id
 # tokenizer.pad_token = tokenizer.eos_token
@@ -207,6 +208,24 @@ model = AutoModelForSequenceClassification.from_pretrained(
 
 model.config.pad_token_id = model.config.eos_token_id
 
+rank = 2
+alpha = 16
+lora_dropout = 0.1
+bias = "none"
+
+if checkpoint == 'mistralai/Mistral-7B-v0.1' or checkpoint == 'meta-llama/Llama-2-7b-hf': 
+        peft_config = LoraConfig(
+            task_type=TaskType.SEQ_CLS, r=rank, lora_alpha=alpha, lora_dropout=lora_dropout, bias=bias, 
+            target_modules=[
+                "q_proj",
+                "v_proj",
+            ],
+    )
+else: 
+    peft_config = LoraConfig(
+        task_type=TaskType.SEQ_CLS, r=rank, lora_alpha=alpha, lora_dropout=lora_dropout, bias=bias,
+    )
+
 
 peft_config = LoraConfig(
     task_type=TaskType.SEQ_CLS,
@@ -252,16 +271,21 @@ accelerator = Accelerator()
 class WeightedCELossTrainer(Trainer):
     def compute_loss(self, model, inputs, return_outputs=False):
         labels = inputs.pop("labels")
+        print("labels",labels)
         # Get model's predictions
         outputs = model(**inputs)
+        print("outputs",outputs)
         logits = outputs.get("logits")
         # Convert label weights to tensor
-        weights = torch.tensor(
-            [label_weights[label] for label in int_2_label.values()],
-            device=accelerator.device,
-        )
+        print("logits",logits)
+        # weights = torch.tensor(
+        #     [label_weights[label] for label in int_2_label.values()],
+        #     device=accelerator.device,
+        # )
+        # print("weights",weights)
         # Compute custom loss
-        loss_fct = torch.nn.BCEWithLogitsLoss(weight=weights)
+        # loss_fct = torch.nn.BCEWithLogitsLoss(weight=weights)
+        loss_fct = torch.nn.BCEWithLogitsLoss()
         loss = loss_fct(logits, labels)
         return (loss, outputs) if return_outputs else loss
 
