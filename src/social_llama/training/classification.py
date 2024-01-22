@@ -156,7 +156,7 @@ def compute_metrics(eval_pred):
 
 # Load Mistral 7B Tokenizer
 checkpoint = "meta-llama/Llama-2-7b-hf"
-tokenizer = AutoTokenizer.from_pretrained(checkpoint, add_prefix_space=True)
+tokenizer = AutoTokenizer.from_pretrained(checkpoint)#, add_prefix_space=True)
 tokenizer.pad_token_id = tokenizer.eos_token_id
 tokenizer.pad_token = tokenizer.eos_token
 
@@ -165,27 +165,27 @@ def preprocessing_function(examples):
     return tokenizer(examples["text"], truncation=True, max_length=1024)
 
 
-formatter = lambda x: x["text"]
+# formatter = lambda x: x["text"]
 
-train_dataset = ConstantLengthDataset(
-    tokenizer, data["train"], infinite=True, seq_length=2048
-)
-validation_dataset = ConstantLengthDataset(
-    tokenizer, data["validation"], infinite=True, seq_length=2048
-)
-test_dataset = ConstantLengthDataset(
-    tokenizer, data["test"], infinite=True, seq_length=2048
-)
-
-
-# tokenized_datasets = data.map(
-#     preprocessing_function, batched=True, remove_columns=["text"]
+# train_dataset = ConstantLengthDataset(
+#     tokenizer, data["train"], infinite=True, seq_length=2048
 # )
-# # tokenized_datasets = tokenized_datasets.rename_column("target", "label")
-# tokenized_datasets.set_format("torch")
+# validation_dataset = ConstantLengthDataset(
+#     tokenizer, data["validation"], infinite=True, seq_length=2048
+# )
+# test_dataset = ConstantLengthDataset(
+#     tokenizer, data["test"], infinite=True, seq_length=2048
+# )
+
+
+tokenized_datasets = data.map(
+    preprocessing_function, batched=True, remove_columns=["text"]
+)
+tokenized_datasets = tokenized_datasets.rename_column("target", "labels")
+tokenized_datasets.set_format("torch")
 
 # Data collator for padding a batch of examples to the maximum length seen in the batch
-data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
+data_collator = DataCollatorWithPadding(tokenizer=tokenizer, max_length=2048)
 
 model = AutoModelForSequenceClassification.from_pretrained(
     pretrained_model_name_or_path=checkpoint,
@@ -260,8 +260,8 @@ trainer = accelerator.prepare(
     WeightedCELossTrainer(
         model=model,
         args=training_args,
-        train_dataset=accelerator.prepare(train_dataset),
-        eval_dataset=accelerator.prepare(validation_dataset),
+        train_dataset=accelerator.prepare(tokenized_datasets['train']),
+        eval_dataset=accelerator.prepare(tokenized_datasets['validation']),
         data_collator=data_collator,
         compute_metrics=compute_metrics,
     )
