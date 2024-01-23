@@ -284,7 +284,7 @@ class WeightedCELossTrainer(Trainer):
         # Convert label weights to tensor
         weights = torch.tensor(
             [label_weights[label] for label in int_2_label.values()],
-            device=logits.device,
+            device=labels.device,
             dtype=logits.dtype,
         )
         # Compute custom loss
@@ -309,7 +309,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
         load_best_model_at_end=True,
         report_to=script_args.log_with,
         save_total_limit=1,
-        # fp16=True,
+        fp16=True,
         gradient_checkpointing=script_args.gradient_checkpointing,
         run_name=f"{script_args.checkpoint}-{script_args.note}",
         seed=42,
@@ -318,9 +318,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
 
     # Define the data collator
     data_collator = DataCollatorWithPadding(
-        tokenizer=tokenizer,
-        padding=True,
-        max_length=model.config.max_position_embeddings,
+        tokenizer=tokenizer, padding=True, max_length=512
     )
 
     # Define the trainer
@@ -372,7 +370,7 @@ if __name__ == "__main__":
         num_labels=11,
         trust_remote_code=True,
         problem_type="multi_label_classification",
-        device_map="auto",
+        # device_map="auto",
     )
 
     # Calculate the weights
@@ -382,7 +380,7 @@ if __name__ == "__main__":
     tokenizer = AutoTokenizer.from_pretrained(
         script_args.checkpoint,
         trust_remote_code=True,
-        truncation=True,
+        # truncation=True,
     )
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.pad_token_id = tokenizer.eos_token_id
@@ -394,7 +392,7 @@ if __name__ == "__main__":
         lambda examples: tokenizer(
             examples["text"],
             truncation=True,
-            max_length=model.config.max_position_embeddings,
+            max_length=512,
         ),
         batched=True,
         remove_columns=["text"],
