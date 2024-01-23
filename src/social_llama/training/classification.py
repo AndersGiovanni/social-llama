@@ -38,13 +38,14 @@ class ScriptArguments:
     """Script arguments."""
 
     checkpoint: Optional[str] = field(
-        default="meta-llama/Llama-2-7b-chat-hf",
+        default="bert-base-uncased",
         metadata={
             "help": "the model name",
-            "options": [
+            "choices": [
                 "meta-llama/Llama-2-7b-chat-hf",
                 "mistralai/Mistral-7B-v0.1",
                 "roberta-large",
+                "bert-base-uncased",
             ],
         },
     )
@@ -343,8 +344,7 @@ if __name__ == "__main__":
     script_args = parser.parse_args_into_dataclasses()[0]
 
     # Load the data
-    with open(DATA_DIR_SOCIAL_DIMENSIONS_RAW / "social_dimensions.json") as f:
-        data = json.load(f)
+    data = json.load(open(DATA_DIR_SOCIAL_DIMENSIONS_RAW / "labeled_dataset.json"))
 
     # Preprocess the data
     dataset = preprocess_data(data)
