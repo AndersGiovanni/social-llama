@@ -77,9 +77,7 @@ class ScriptArguments:
         default=0.01, metadata={"help": "the lora dropout parameter"}
     )
     lora_r: Optional[int] = field(default=2, metadata={"help": "the lora r parameter"})
-    lora_bias: Optional[str] = field(
-        default="none", metadata={"help": "the lora bias parameter"}
-    )
+    lora_bias: Optional[str] = field(default='none', metadata={"help": "the lora bias parameter"})
     learning_rate: Optional[float] = field(
         default=1e-4, metadata={"help": "the learning rate"}
     )
@@ -291,7 +289,7 @@ class WeightedCELossTrainer(Trainer):
         # Convert label weights to tensor
         weights = torch.tensor(
             [label_weights[label] for label in int_2_label.values()],
-            device=labels.device,
+            device=logits.device,
             dtype=logits.dtype,
         )
         # Compute custom loss
@@ -325,9 +323,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
 
     # Define the data collator
     data_collator = DataCollatorWithPadding(
-        tokenizer=tokenizer,
-        padding="max_length",
-        max_length=model.config.max_position_embeddings,
+        tokenizer=tokenizer, padding=True, max_length=model.config.max_position_embeddings
     )
 
     # Define the trainer
@@ -373,9 +369,6 @@ if __name__ == "__main__":
     # Count the labels
     label_counts = count_labels(dataset_dict)
 
-    # Calculate the weights
-    label_weights = calculate_weights(dataset_dict)
-
     # Load the model
     model = AutoModelForSequenceClassification.from_pretrained(
         pretrained_model_name_or_path=script_args.checkpoint,
@@ -384,13 +377,15 @@ if __name__ == "__main__":
         problem_type="multi_label_classification",
         # device_map="auto",
     )
+    
+    # Calculate the weights
+    label_weights = calculate_weights(dataset_dict)
 
     # Load the tokenizer
     tokenizer = AutoTokenizer.from_pretrained(
         script_args.checkpoint,
         trust_remote_code=True,
         truncation=True,
-        add_prefix_space=True,
     )
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.pad_token_id = tokenizer.eos_token_id
@@ -408,6 +403,9 @@ if __name__ == "__main__":
         remove_columns=["text"],
     )
     tokenized_datasets.set_format("torch")
+
+    # Fix size mismatch between model and tokenizer
+    model.resize_token_embeddings(len(tokenizer))
 
     # Get the LoRA model
     model = get_lora_model(model)
