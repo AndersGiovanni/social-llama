@@ -77,9 +77,7 @@ class ScriptArguments:
         default=0.01, metadata={"help": "the lora dropout parameter"}
     )
     lora_r: Optional[int] = field(default=2, metadata={"help": "the lora r parameter"})
-    lora_bias: Optional[str] = field(
-        default="none", metadata={"help": "the lora bias parameter"}
-    )
+    lora_bias: Optional[str] = field(default='none', metadata={"help": "the lora bias parameter"})
     learning_rate: Optional[float] = field(
         default=1e-4, metadata={"help": "the learning rate"}
     )
@@ -304,6 +302,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
         per_device_train_batch_size=script_args.per_device_train_batch_size,
         per_device_eval_batch_size=script_args.per_device_eval_batch_size,
         num_train_epochs=script_args.num_train_epochs,
+        logging_steps=script_args.logging_steps,
         evaluation_strategy="epoch",
         save_strategy="epoch",
         load_best_model_at_end=True,
@@ -372,7 +371,7 @@ if __name__ == "__main__":
         problem_type="multi_label_classification",
         # device_map="auto",
     )
-
+    
     # Calculate the weights
     label_weights = calculate_weights(dataset_dict)
 
@@ -400,7 +399,7 @@ if __name__ == "__main__":
     tokenized_datasets.set_format("torch")
 
     # Fix size mismatch between model and tokenizer
-    model.resize_token_embeddings(len(tokenizer))
+    # model.resize_token_embeddings(len(tokenizer))
 
     # Get the LoRA model
     model = get_lora_model(model)
