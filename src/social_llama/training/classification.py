@@ -130,7 +130,22 @@ def preprocess_data(data):
     texts = []
     labels = []
     for item in data:
-        item_labels = [1 if item[key] >= 2 else 0 for key in labels]
+        item_labels = [
+            1 if item[key] >= 2 else 0
+            for key in [
+                "social_support",
+                "conflict",
+                "trust",
+                "fun",
+                "similarity",
+                "identity",
+                "respect",
+                "romance",
+                "knowledge",
+                "power",
+                "other",
+            ]
+        ]
         # Check if any label has a value of 2 or more
         texts.append(item["text"])
         labels.append(item_labels)
