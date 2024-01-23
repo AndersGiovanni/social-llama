@@ -305,6 +305,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
         logging_steps=script_args.logging_steps,
         evaluation_strategy="epoch",
         save_strategy="epoch",
+        logging_steps=script_args.logging_steps,
         load_best_model_at_end=True,
         report_to=script_args.log_with,
         save_total_limit=1,
