@@ -38,11 +38,12 @@ class ScriptArguments:
     """Script arguments."""
 
     checkpoint: Optional[str] = field(
-        default="roberta-large",
+        default="meta-llama/Llama-2-7b-hf",
         metadata={
             "help": "the model name",
             "choices": [
                 "meta-llama/Llama-2-7b-chat-hf",
+                "meta-llama/Llama-2-7b-hf",
                 "mistralai/Mistral-7B-v0.1",
                 "roberta-large",
             ],
@@ -282,7 +283,7 @@ class WeightedCELossTrainer(Trainer):
         # Convert label weights to tensor
         weights = torch.tensor(
             [label_weights[label] for label in int_2_label.values()],
-            device=labels.device,
+            device=logits.device,
             dtype=logits.dtype,
         )
         # Compute custom loss
@@ -302,7 +303,6 @@ def train_model(dataset_dict, model, tokenizer, test=False):
         per_device_train_batch_size=script_args.per_device_train_batch_size,
         per_device_eval_batch_size=script_args.per_device_eval_batch_size,
         num_train_epochs=script_args.num_train_epochs,
-        logging_steps=script_args.logging_steps,
         evaluation_strategy="epoch",
         save_strategy="epoch",
         logging_steps=script_args.logging_steps,
@@ -370,7 +370,7 @@ if __name__ == "__main__":
         num_labels=11,
         trust_remote_code=True,
         problem_type="multi_label_classification",
-        # device_map="auto",
+        device_map="auto",
     )
     
     # Calculate the weights
@@ -400,7 +400,7 @@ if __name__ == "__main__":
     tokenized_datasets.set_format("torch")
 
     # Fix size mismatch between model and tokenizer
-    # model.resize_token_embeddings(len(tokenizer))
+    model.resize_token_embeddings(len(tokenizer))
 
     # Get the LoRA model
     model = get_lora_model(model)
