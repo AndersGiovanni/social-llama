@@ -84,18 +84,11 @@ class ScriptArguments:
         default=1e-4, metadata={"help": "the learning rate"}
     )
     lr_scheduler_type: Optional[str] = field(
-        default="cosine", metadata={"help": "the lr scheduler type"}
+        default="constant", metadata={"help": "the lr scheduler type"}
     )
     warmup_ratio: Optional[float] = field(
         default=0.05, metadata={"help": "the number of warmup steps"}
     )
-    weight_decay: Optional[float] = field(
-        default=0.05, metadata={"help": "the weight decay"}
-    )
-    optimizer_type: Optional[str] = field(
-        default="paged_adamw_32bit", metadata={"help": "the optimizer type"}
-    )
-
     output_dir: Optional[str] = field(
         default="./ten-dim", metadata={"help": "the output directory"}
     )
