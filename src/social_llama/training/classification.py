@@ -77,7 +77,9 @@ class ScriptArguments:
         default=0.01, metadata={"help": "the lora dropout parameter"}
     )
     lora_r: Optional[int] = field(default=2, metadata={"help": "the lora r parameter"})
-    lora_bias: Optional[str] = field(default='none', metadata={"help": "the lora bias parameter"})
+    lora_bias: Optional[str] = field(
+        default="none", metadata={"help": "the lora bias parameter"}
+    )
     learning_rate: Optional[float] = field(
         default=1e-4, metadata={"help": "the learning rate"}
     )
@@ -314,7 +316,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
         load_best_model_at_end=True,
         report_to=script_args.log_with,
         save_total_limit=1,
-        fp16=True,
+        # fp16=True,
         gradient_checkpointing=script_args.gradient_checkpointing,
         run_name=f"{script_args.checkpoint}-{script_args.note}",
         seed=42,
@@ -323,7 +325,9 @@ def train_model(dataset_dict, model, tokenizer, test=False):
 
     # Define the data collator
     data_collator = DataCollatorWithPadding(
-        tokenizer=tokenizer, padding=True, max_length=model.config.max_position_embeddings
+        tokenizer=tokenizer,
+        padding=True,
+        max_length=model.config.max_position_embeddings,
     )
 
     # Define the trainer
@@ -375,9 +379,9 @@ if __name__ == "__main__":
         num_labels=11,
         trust_remote_code=True,
         problem_type="multi_label_classification",
-        # device_map="auto",
+        device_map="auto",
     )
-    
+
     # Calculate the weights
     label_weights = calculate_weights(dataset_dict)
 
