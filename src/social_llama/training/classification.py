@@ -38,14 +38,13 @@ class ScriptArguments:
     """Script arguments."""
 
     checkpoint: Optional[str] = field(
-        default="bert-base-uncased",
+        default="roberta-large",
         metadata={
             "help": "the model name",
             "choices": [
                 "meta-llama/Llama-2-7b-chat-hf",
                 "mistralai/Mistral-7B-v0.1",
                 "roberta-large",
-                "bert-base-uncased",
             ],
         },
     )
@@ -78,7 +77,9 @@ class ScriptArguments:
         default=0.01, metadata={"help": "the lora dropout parameter"}
     )
     lora_r: Optional[int] = field(default=2, metadata={"help": "the lora r parameter"})
-    lora_bias: Optional[str] = field(default='none', metadata={"help": "the lora bias parameter"})
+    lora_bias: Optional[str] = field(
+        default="none", metadata={"help": "the lora bias parameter"}
+    )
     learning_rate: Optional[float] = field(
         default=1e-4, metadata={"help": "the learning rate"}
     )
@@ -315,7 +316,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
         load_best_model_at_end=True,
         report_to=script_args.log_with,
         save_total_limit=1,
-        fp16=True,
+        # fp16=True,
         gradient_checkpointing=script_args.gradient_checkpointing,
         run_name=f"{script_args.checkpoint}-{script_args.note}",
         seed=42,
@@ -324,7 +325,9 @@ def train_model(dataset_dict, model, tokenizer, test=False):
 
     # Define the data collator
     data_collator = DataCollatorWithPadding(
-        tokenizer=tokenizer, padding=True, max_length=model.config.hidden_size
+        tokenizer=tokenizer,
+        padding="max_length",
+        max_length=model.config.max_position_embeddings,
     )
 
     # Define the trainer
@@ -373,25 +376,6 @@ if __name__ == "__main__":
     # Calculate the weights
     label_weights = calculate_weights(dataset_dict)
 
-    # Load the tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(
-        script_args.checkpoint,
-        trust_remote_code=True,
-        truncation=True,
-    )
-    tokenizer.pad_token = tokenizer.eos_token
-    tokenizer.pad_token_id = tokenizer.eos_token_id
-    tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
-    tokenizer.verbose = False
-
-    # Tokenize the data
-    tokenized_datasets = dataset_dict.map(
-        lambda examples: tokenizer(examples["text"]),
-        batched=True,
-        remove_columns=["text"],
-    )
-    tokenized_datasets.set_format("torch")
-
     # Load the model
     model = AutoModelForSequenceClassification.from_pretrained(
         pretrained_model_name_or_path=script_args.checkpoint,
@@ -401,11 +385,35 @@ if __name__ == "__main__":
         # device_map="auto",
     )
 
+    # Load the tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+        script_args.checkpoint,
+        trust_remote_code=True,
+        truncation=True,
+        add_prefix_space=True,
+    )
+    tokenizer.pad_token = tokenizer.eos_token
+    tokenizer.pad_token_id = tokenizer.eos_token_id
+    tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
+    tokenizer.verbose = False
+
+    # Tokenize the data
+    tokenized_datasets = dataset_dict.map(
+        lambda examples: tokenizer(
+            examples["text"],
+            truncation=True,
+            max_length=model.config.max_position_embeddings,
+        ),
+        batched=True,
+        remove_columns=["text"],
+    )
+    tokenized_datasets.set_format("torch")
+
     # Get the LoRA model
     model = get_lora_model(model)
 
     # Train the model
-    trainer = train_model(dataset_dict, model, tokenizer, test=True)
+    trainer = train_model(tokenized_datasets, model, tokenizer, test=True)
 
     # Save the model
     # trainer.save_model()
