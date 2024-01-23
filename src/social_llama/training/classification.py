@@ -380,7 +380,7 @@ if __name__ == "__main__":
     tokenizer = AutoTokenizer.from_pretrained(
         script_args.checkpoint,
         trust_remote_code=True,
-        # truncation=True,
+        truncation=True,
     )
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.pad_token_id = tokenizer.eos_token_id
@@ -391,8 +391,9 @@ if __name__ == "__main__":
     tokenized_datasets = dataset_dict.map(
         lambda examples: tokenizer(
             examples["text"],
-            truncation=True,
             max_length=512,
+            truncation=True,
+            padding="max_length",
         ),
         batched=True,
         remove_columns=["text"],
