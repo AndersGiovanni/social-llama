@@ -388,6 +388,9 @@ if __name__ == "__main__":
     tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
     tokenizer.verbose = False
 
+    # Set the pad token id
+    model.config.pad_token_id = tokenizer.pad_token_id
+
     # Tokenize the data
     tokenized_datasets = dataset_dict.map(
         lambda examples: tokenizer(
