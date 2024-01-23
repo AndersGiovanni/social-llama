@@ -78,7 +78,7 @@ class ScriptArguments:
         default=0.01, metadata={"help": "the lora dropout parameter"}
     )
     lora_r: Optional[int] = field(default=2, metadata={"help": "the lora r parameter"})
-
+    lora_bias: Optional[str] = field(default='none', metadata={"help": "the lora bias parameter"})
     learning_rate: Optional[float] = field(
         default=1e-4, metadata={"help": "the learning rate"}
     )
@@ -243,10 +243,10 @@ def get_lora_model(model):
     ):
         peft_config = LoraConfig(
             task_type=TaskType.SEQ_CLS,
-            r=script_args.lora_rank,
-            lora_alpha=script_args.alpha,
+            r=script_args.lora_r,
+            lora_alpha=script_args.lora_alpha,
             lora_dropout=script_args.lora_dropout,
-            bias=script_args.bias,
+            bias=script_args.lora_bias,
             target_modules=[
                 "q_proj",
                 "v_proj",
@@ -255,10 +255,10 @@ def get_lora_model(model):
     else:
         peft_config = LoraConfig(
             task_type=TaskType.SEQ_CLS,
-            r=script_args.rank,
-            lora_alpha=script_args.alpha,
+            r=script_args.lora_r,
+            lora_alpha=script_args.lora_alpha,
             lora_dropout=script_args.lora_dropout,
-            bias=script_args.bias,
+            bias=script_args.lora_bias,
         )
 
     model = get_peft_model(model, peft_config)
@@ -398,7 +398,7 @@ if __name__ == "__main__":
         num_labels=11,
         trust_remote_code=True,
         problem_type="multi_label_classification",
-        device_map="auto",
+        # device_map="auto",
     )
 
     # Get the LoRA model
