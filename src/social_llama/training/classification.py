@@ -38,11 +38,12 @@ class ScriptArguments:
     """Script arguments."""
 
     checkpoint: Optional[str] = field(
-        default="roberta-large",
+        default="meta-llama/Llama-2-7b-hf",
         metadata={
             "help": "the model name",
             "choices": [
                 "meta-llama/Llama-2-7b-chat-hf",
+                "meta-llama/Llama-2-7b-hf",
                 "mistralai/Mistral-7B-v0.1",
                 "roberta-large",
             ],
@@ -77,9 +78,7 @@ class ScriptArguments:
         default=0.01, metadata={"help": "the lora dropout parameter"}
     )
     lora_r: Optional[int] = field(default=2, metadata={"help": "the lora r parameter"})
-    lora_bias: Optional[str] = field(
-        default="none", metadata={"help": "the lora bias parameter"}
-    )
+    lora_bias: Optional[str] = field(default='none', metadata={"help": "the lora bias parameter"})
     learning_rate: Optional[float] = field(
         default=1e-4, metadata={"help": "the learning rate"}
     )
@@ -284,7 +283,7 @@ class WeightedCELossTrainer(Trainer):
         # Convert label weights to tensor
         weights = torch.tensor(
             [label_weights[label] for label in int_2_label.values()],
-            device=labels.device,
+            device=logits.device,
             dtype=logits.dtype,
         )
         # Compute custom loss
@@ -371,9 +370,9 @@ if __name__ == "__main__":
         num_labels=11,
         trust_remote_code=True,
         problem_type="multi_label_classification",
-        # device_map="auto",
+        device_map="auto",
     )
-
+    
     # Calculate the weights
     label_weights = calculate_weights(dataset_dict)
 
