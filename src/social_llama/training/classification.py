@@ -406,7 +406,7 @@ if __name__ == "__main__":
     )
 
     # Rename the labels_one_hot column
-    tokenized_datasets.rename_column("labels_one_hot", "labels")
+    tokenized_datasets = tokenized_datasets.rename_column("labels_one_hot", "labels")
 
     # Set the format to torch
     tokenized_datasets.set_format("torch")
