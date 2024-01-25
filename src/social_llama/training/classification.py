@@ -38,7 +38,7 @@ class ScriptArguments:
     """Script arguments."""
 
     checkpoint: Optional[str] = field(
-        default="meta-llama/Llama-2-7b-hf",
+        default="roberta-large",
         metadata={
             "help": "the model name",
             "choices": [
@@ -113,7 +113,6 @@ labels = [
     "romance",
     "knowledge",
     "power",
-    "other",
 ]
 
 id2label = {i: label for i, label in enumerate(labels)}
@@ -122,31 +121,31 @@ label2id = {label: i for i, label in enumerate(labels)}
 
 def preprocess_data(data):
     # Extract the text and labels from the data
+    task_labels = [
+        "social_support",
+        "conflict",
+        "trust",
+        "fun",
+        "similarity",
+        "identity",
+        "respect",
+        "romance",
+        "knowledge",
+        "power",
+    ]
     texts = []
+    labels_vectorized = []
     labels = []
     for item in data:
-        item_labels = [
-            1 if item[key] >= 2 else 0
-            for key in [
-                "social_support",
-                "conflict",
-                "trust",
-                "fun",
-                "similarity",
-                "identity",
-                "respect",
-                "romance",
-                "knowledge",
-                "power",
-                "other",
-            ]
-        ]
+        item_labels = [1 if item[key] >= 1 else 0 for key in task_labels]
+        item_labels_str = [key for key in task_labels if item[key] >= 1]
         # Check if any label has a value of 2 or more
         texts.append(item["text"])
-        labels.append(item_labels)
+        labels_vectorized.append(item_labels)
+        labels.append(item_labels_str)
 
     # Create a dictionary with the texts and labels
-    data_dict = {"text": texts, "labels": labels}
+    data_dict = {"text": texts, "labels": labels, "labels_one_hot": labels_vectorized}
 
     # Convert the dictionary to a Dataset
     dataset = Dataset.from_dict(data_dict)
@@ -160,7 +159,7 @@ def split_data(data):
     test = data["test"]
     test = test.train_test_split(
         test_size=0.5, seed=42
-    )  # 10% for validation, 10% for test
+    )  # 15% for validation, 15% for test
     data["test"] = test["test"]
     data["validation"] = test["train"]
 
@@ -183,7 +182,7 @@ def count_labels(dataset_dict):
     # Iterate over each set in the dataset_dict
     for set_name in ["train", "validation", "test"]:
         # Iterate over the labels in the processed data
-        for label_list in dataset_dict[set_name]["labels"]:
+        for label_list in dataset_dict[set_name]["labels_one_hot"]:
             for i, label_value in enumerate(label_list):
                 if label_value == 1:  # If the label is present
                     label = id2label[i]  # Get the label name
@@ -232,7 +231,11 @@ def compute_metrics(eval_pred):
 
 
 def get_lora_model(model):
-    if script_args.checkpoint in ["HuggingFaceH4/zephyr-7b-beta", "mistralai/Mistral-7B-v0.1", "meta-llama/Llama-2-7b-hf"]:
+    if script_args.checkpoint in [
+        "HuggingFaceH4/zephyr-7b-beta",
+        "mistralai/Mistral-7B-v0.1",
+        "meta-llama/Llama-2-7b-hf",
+    ]:
         peft_config = LoraConfig(
             task_type=TaskType.SEQ_CLS,
             r=script_args.lora_r,
@@ -316,7 +319,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
 
     # Define the data collator
     data_collator = DataCollatorWithPadding(
-        tokenizer=tokenizer, padding=True, max_length=1024
+        tokenizer=tokenizer, padding=True, max_length=512
     )
 
     # Define the trainer
@@ -365,7 +368,7 @@ if __name__ == "__main__":
     # Load the model
     model = AutoModelForSequenceClassification.from_pretrained(
         pretrained_model_name_or_path=script_args.checkpoint,
-        num_labels=11,
+        num_labels=10,
         trust_remote_code=True,
         problem_type="multi_label_classification",
         device_map="auto",
@@ -394,13 +397,18 @@ if __name__ == "__main__":
     tokenized_datasets = dataset_dict.map(
         lambda examples: tokenizer(
             examples["text"],
-            max_length=1024,
+            max_length=512,
             truncation=True,
             padding="max_length",
         ),
         batched=True,
-        remove_columns=["text"],
+        remove_columns=["text", "labels"],
     )
+
+    # Rename the labels_one_hot column
+    tokenized_datasets.rename_column("labels_one_hot", "labels")
+
+    # Set the format to torch
     tokenized_datasets.set_format("torch")
 
     # Fix size mismatch between model and tokenizer
