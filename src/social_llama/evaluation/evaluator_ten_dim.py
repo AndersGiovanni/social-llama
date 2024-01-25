@@ -104,7 +104,11 @@ def evaluate_model(
     for i in tqdm(range(0, len(test_texts), batch_size)):
         batch_texts = test_texts[i : i + batch_size]
         inputs = tokenizer(
-            batch_texts, truncation=True, padding="longest", return_tensors="pt"
+            batch_texts,
+            truncation=True,
+            padding="longest",
+            max_length=512,
+            return_tensors="pt",
         )
 
         with torch.no_grad():
