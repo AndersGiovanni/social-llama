@@ -35,7 +35,6 @@ labels = [
     "romance",
     "knowledge",
     "power",
-    "other",
 ]
 id2label = {i: label for i, label in enumerate(labels)}
 label2id = {label: i for i, label in enumerate(labels)}
@@ -55,7 +54,7 @@ def get_model(model_name):
     config = PeftConfig.from_pretrained(peft_model_id)
     inference_model = AutoModelForSequenceClassification.from_pretrained(
         config.base_model_name_or_path,
-        num_labels=11,
+        num_labels=10,
         id2label=id2label,
         label2id=label2id,
     )
@@ -96,7 +95,8 @@ def evaluate_model(
 
     # Step 2: Prepare the test data
     test_texts: List[str] = dataset_dict["text"]  # type: ignore
-    test_labels: List[List[int]] = dataset_dict["labels"]  # type: ignore
+    test_labels: List[List[int]] = dataset_dict["labels_one_hot"]  # type: ignore
+    test_labels_str: List[List[str]] = dataset_dict["labels"]  # type: ignore
 
     predictions = []
 
@@ -134,14 +134,12 @@ def evaluate_model(
         "predictions": [
             {
                 "text": text,
-                "labels": [
-                    id2label[i] for i, label in enumerate(labels) if label == 1
-                ],  # convert label indices to label strings
+                "labels": labels_str,  # convert label indices to label strings
                 "predicted_labels": [
                     id2label[i] for i, pred in enumerate(pred) if pred == 1
                 ],  # convert predicted label indices to label strings
             }
-            for text, labels, pred in zip(test_texts, test_labels, predictions)
+            for text, pred, labels_str in zip(test_texts, predictions, test_labels_str)
         ],
     }
 
@@ -152,12 +150,12 @@ def evaluate_model(
         json.dump(results, f)
 
 
-data = datasets.load_dataset("AndersGiovanni/10-dim", split="test")
+data = datasets.load_dataset("AndersGiovanni/10-dim", split="test", revision="main")
 
 models = [
-    # "AndersGiovanni/roberta-large-lora-10-dim",
-    "AndersGiovanni/Mistral-7B-v0.1-lora-10-dim",
-    "AndersGiovanni/Llama-2-7b-hf-lora-10-dim",
+    "AndersGiovanni/roberta-large-lora-10-dim",
+    # "AndersGiovanni/Mistral-7B-v0.1-lora-10-dim",
+    # "AndersGiovanni/Llama-2-7b-hf-lora-10-dim",
 ]
 
 
