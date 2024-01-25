@@ -38,7 +38,7 @@ class ScriptArguments:
     """Script arguments."""
 
     checkpoint: Optional[str] = field(
-        default="roberta-large",
+        default="mistralai/Mistral-7B-v0.1",
         metadata={
             "help": "the model name",
             "choices": [
