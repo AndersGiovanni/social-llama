@@ -78,7 +78,9 @@ class ScriptArguments:
         default=0.01, metadata={"help": "the lora dropout parameter"}
     )
     lora_r: Optional[int] = field(default=2, metadata={"help": "the lora r parameter"})
-    lora_bias: Optional[str] = field(default='none', metadata={"help": "the lora bias parameter"})
+    lora_bias: Optional[str] = field(
+        default="none", metadata={"help": "the lora bias parameter"}
+    )
     learning_rate: Optional[float] = field(
         default=1e-4, metadata={"help": "the learning rate"}
     )
@@ -305,7 +307,6 @@ def train_model(dataset_dict, model, tokenizer, test=False):
         num_train_epochs=script_args.num_train_epochs,
         evaluation_strategy="epoch",
         save_strategy="epoch",
-        logging_steps=script_args.logging_steps,
         load_best_model_at_end=True,
         report_to=script_args.log_with,
         save_total_limit=1,
@@ -372,7 +373,7 @@ if __name__ == "__main__":
         problem_type="multi_label_classification",
         device_map="auto",
     )
-    
+
     # Calculate the weights
     label_weights = calculate_weights(dataset_dict)
 
@@ -413,4 +414,7 @@ if __name__ == "__main__":
     trainer = train_model(tokenized_datasets, model, tokenizer, test=True)
 
     # Save the model
-    # trainer.save_model()
+    trainer.save_model()
+
+    # Push to hub
+    trainer.push_to_hub()
