@@ -134,18 +134,15 @@ def preprocess_data(data):
         "power",
     ]
     texts = []
-    labels_vectorized = []
     labels = []
     for item in data:
         item_labels = [1 if item[key] >= 1 else 0 for key in task_labels]
-        item_labels_str = [key for key in task_labels if item[key] >= 1]
         # Check if any label has a value of 2 or more
         texts.append(item["text"])
-        labels_vectorized.append(item_labels)
-        labels.append(item_labels_str)
+        labels.append(item_labels)
 
     # Create a dictionary with the texts and labels
-    data_dict = {"text": texts, "labels": labels, "labels_one_hot": labels_vectorized}
+    data_dict = {"text": texts, "labels": labels}
 
     # Convert the dictionary to a Dataset
     dataset = Dataset.from_dict(data_dict)
@@ -182,7 +179,7 @@ def count_labels(dataset_dict):
     # Iterate over each set in the dataset_dict
     for set_name in ["train", "validation", "test"]:
         # Iterate over the labels in the processed data
-        for label_list in dataset_dict[set_name]["labels_one_hot"]:
+        for label_list in dataset_dict[set_name]["labels"]:
             for i, label_value in enumerate(label_list):
                 if label_value == 1:  # If the label is present
                     label = id2label[i]  # Get the label name
@@ -197,7 +194,7 @@ def calculate_weights(dataset_dict):
 
     # Calculate the number of instances for each label
     label_counts = {label: 0 for label in id2label.values()}
-    for label_list in dataset_dict["train"]["labels_one_hot"]:
+    for label_list in dataset_dict["train"]["labels"]:
         for i, label_value in enumerate(label_list):
             if label_value == 1:  # If the label is present
                 label = id2label[i]  # Get the label name
@@ -402,11 +399,8 @@ if __name__ == "__main__":
             padding="max_length",
         ),
         batched=True,
-        remove_columns=["text", "labels"],
+        remove_columns=["text"],
     )
-
-    # Rename the labels_one_hot column
-    tokenized_datasets = tokenized_datasets.rename_column("labels_one_hot", "labels")
 
     # Set the format to torch
     tokenized_datasets.set_format("torch")
