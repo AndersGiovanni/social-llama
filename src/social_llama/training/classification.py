@@ -54,10 +54,10 @@ class ScriptArguments:
         default=10, metadata={"help": "the number of training epochs"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=8, metadata={"help": "the per device train batch size"}
+        default=4, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=8, metadata={"help": "the per device eval batch size"}
+        default=4, metadata={"help": "the per device eval batch size"}
     )
     log_with: Optional[str] = field(
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
@@ -66,7 +66,7 @@ class ScriptArguments:
         default=10, metadata={"help": "the logging frequency"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=4, metadata={"help": "the gradient accumulation steps"}
+        default=2, metadata={"help": "the gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -116,8 +116,8 @@ labels = [
     "other",
 ]
 
-int_2_label = {i: label for i, label in enumerate(labels)}
-label_2_int = {label: i for i, label in enumerate(labels)}
+id2label = {i: label for i, label in enumerate(labels)}
+label2id = {label: i for i, label in enumerate(labels)}
 
 
 def preprocess_data(data):
@@ -175,9 +175,9 @@ def split_data(data):
 def count_labels(dataset_dict):
     # Initialize a dictionary to store the counts for each set
     label_counts = {
-        "train": {label: 0 for label in int_2_label.values()},
-        "validation": {label: 0 for label in int_2_label.values()},
-        "test": {label: 0 for label in int_2_label.values()},
+        "train": {label: 0 for label in id2label.values()},
+        "validation": {label: 0 for label in id2label.values()},
+        "test": {label: 0 for label in id2label.values()},
     }
 
     # Iterate over each set in the dataset_dict
@@ -186,7 +186,7 @@ def count_labels(dataset_dict):
         for label_list in dataset_dict[set_name]["labels"]:
             for i, label_value in enumerate(label_list):
                 if label_value == 1:  # If the label is present
-                    label = int_2_label[i]  # Get the label name
+                    label = id2label[i]  # Get the label name
                     label_counts[set_name][label] += 1  # Increment the count
 
     return label_counts
@@ -197,11 +197,11 @@ def calculate_weights(dataset_dict):
     total_instances = len(dataset_dict["train"])
 
     # Calculate the number of instances for each label
-    label_counts = {label: 0 for label in int_2_label.values()}
+    label_counts = {label: 0 for label in id2label.values()}
     for label_list in dataset_dict["train"]["labels"]:
         for i, label_value in enumerate(label_list):
             if label_value == 1:  # If the label is present
-                label = int_2_label[i]  # Get the label name
+                label = id2label[i]  # Get the label name
                 label_counts[label] += 1  # Increment the count
 
     # Calculate the weights for each label
@@ -232,10 +232,7 @@ def compute_metrics(eval_pred):
 
 
 def get_lora_model(model):
-    if (
-        script_args.checkpoint == "mistralai/Mistral-7B-v0.1"
-        or script_args.checkpoint == "meta-llama/Llama-2-7b-hf"
-    ):
+    if script_args.checkpoint in ["HuggingFaceH4/zephyr-7b-beta", "mistralai/Mistral-7B-v0.1", "meta-llama/Llama-2-7b-hf"]:
         peft_config = LoraConfig(
             task_type=TaskType.SEQ_CLS,
             r=script_args.lora_r,
@@ -284,7 +281,7 @@ class WeightedCELossTrainer(Trainer):
         logits = outputs.get("logits")
         # Convert label weights to tensor
         weights = torch.tensor(
-            [label_weights[label] for label in int_2_label.values()],
+            [label_weights[label] for label in id2label.values()],
             device=logits.device,
             dtype=logits.dtype,
         )
@@ -319,7 +316,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
 
     # Define the data collator
     data_collator = DataCollatorWithPadding(
-        tokenizer=tokenizer, padding=True, max_length=512
+        tokenizer=tokenizer, padding=True, max_length=1024
     )
 
     # Define the trainer
@@ -372,6 +369,8 @@ if __name__ == "__main__":
         trust_remote_code=True,
         problem_type="multi_label_classification",
         device_map="auto",
+        id2label=id2label,
+        label2id=label2id,
     )
 
     # Calculate the weights
@@ -395,7 +394,7 @@ if __name__ == "__main__":
     tokenized_datasets = dataset_dict.map(
         lambda examples: tokenizer(
             examples["text"],
-            max_length=512,
+            max_length=1024,
             truncation=True,
             padding="max_length",
         ),

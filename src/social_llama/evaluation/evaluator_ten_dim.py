@@ -165,3 +165,5 @@ for model_name in models:
     model, tokenizer = get_model(model_name)
 
     evaluate_model(data, model, tokenizer, model_name)
+
+    del model
