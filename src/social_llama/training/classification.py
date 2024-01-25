@@ -197,7 +197,7 @@ def calculate_weights(dataset_dict):
 
     # Calculate the number of instances for each label
     label_counts = {label: 0 for label in id2label.values()}
-    for label_list in dataset_dict["train"]["labels"]:
+    for label_list in dataset_dict["train"]["labels_one_hot"]:
         for i, label_value in enumerate(label_list):
             if label_value == 1:  # If the label is present
                 label = id2label[i]  # Get the label name
