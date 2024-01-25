@@ -60,7 +60,16 @@ def get_model(model_name):
         label2id=label2id,
     )
     tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path)
+
+    tokenizer.pad_token = tokenizer.eos_token
+    tokenizer.pad_token_id = tokenizer.eos_token_id
+    tokenizer.padding_side = "right"  # Fix weird overflow issue with fp16 training
+    tokenizer.verbose = False
+
+    # Set the pad token id
+
     model = PeftModel.from_pretrained(inference_model, peft_model_id)
+    model.config.pad_token_id = tokenizer.pad_token_id
 
     return model, tokenizer
 
