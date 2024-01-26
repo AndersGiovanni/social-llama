@@ -57,6 +57,7 @@ def get_model(model_name):
         num_labels=10,
         id2label=id2label,
         label2id=label2id,
+        force_download=True,
     )
     tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path)
 
@@ -151,12 +152,12 @@ def evaluate_model(
         json.dump(results, f)
 
 
-data = datasets.load_dataset("AndersGiovanni/10-dim", split="test")
+data = datasets.load_dataset("AndersGiovanni/10-dim", split="test", download_mode='force_redownload')
 
 models = [
     # "AndersGiovanni/roberta-large-lora-10-dim",
     "AndersGiovanni/Mistral-7B-v0.1-lora-10-dim",
-    "AndersGiovanni/Llama-2-7b-hf-lora-10-dim",
+    # "AndersGiovanni/Llama-2-7b-hf-lora-10-dim",
 ]
 
 
