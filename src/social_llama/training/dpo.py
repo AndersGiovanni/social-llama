@@ -12,7 +12,6 @@ from peft import LoraConfig
 from transformers import AutoTokenizer
 from transformers import HfArgumentParser
 from transformers import TrainingArguments
-from accelerate import Accelerator
 from trl import DPOTrainer
 
 from social_llama.data_processing.combine import Combined
@@ -167,9 +166,7 @@ if __name__ == "__main__":
         # device_map={"":torch.cuda.current_device()}
     )
     if script_args.dataset_name == "social-dimensions":
-        dataset = SocialDimensions(
-            task="zero-shot", model=script_args.base_model
-        )
+        dataset = SocialDimensions(task="zero-shot", model=script_args.base_model)
     elif script_args.dataset_name == "socket":
         dataset = Socket(task="zero-shot", model=script_args.base_model)
     elif script_args.dataset_name == "combined":

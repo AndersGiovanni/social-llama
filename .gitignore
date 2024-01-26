@@ -16,3 +16,4 @@ sft/
 dpo/
 .env
 .DS_Store
+/ten-dim/
