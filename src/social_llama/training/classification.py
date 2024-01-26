@@ -1,3 +1,5 @@
+"""Train a model on the 10-dim dataset."""
+
 import json
 import os
 from copy import deepcopy
@@ -5,9 +7,7 @@ from dataclasses import dataclass
 from dataclasses import field
 from typing import Optional
 
-import numpy as np
 import torch
-from accelerate import Accelerator
 from datasets import Dataset
 from datasets import DatasetDict
 from dotenv import load_dotenv
@@ -120,7 +120,14 @@ label2id = {label: i for i, label in enumerate(labels)}
 
 
 def preprocess_data(data):
-    # Extract the text and labels from the data
+    """Preprocess the data.
+
+    Args:
+        data (list): The data to preprocess.
+
+    Returns:
+        Dataset: The preprocessed data.
+    """
     task_labels = [
         "social_support",
         "conflict",
@@ -151,7 +158,14 @@ def preprocess_data(data):
 
 
 def split_data(data):
-    # Split the data into train, validation, and test sets
+    """Split the data into train, validation, and test sets.
+
+    Args:
+        data (Dataset): The data to split.
+
+    Returns:
+        DatasetDict: The split data.
+    """
     data = data.train_test_split(test_size=0.3, seed=42)  # 70% for train, 30% for test
     test = data["test"]
     test = test.train_test_split(
@@ -169,7 +183,14 @@ def split_data(data):
 
 
 def count_labels(dataset_dict):
-    # Initialize a dictionary to store the counts for each set
+    """Count the number of instances for each label.
+
+    Args:
+        dataset_dict (DatasetDict): The dataset to count the labels for.
+
+    Returns:
+        dict: The counts for each label.
+    """
     label_counts = {
         "train": {label: 0 for label in id2label.values()},
         "validation": {label: 0 for label in id2label.values()},
@@ -189,7 +210,14 @@ def count_labels(dataset_dict):
 
 
 def calculate_weights(dataset_dict):
-    # Calculate the total number of instances in the training set
+    """Calculate the weights for each label.
+
+    Args:
+        dataset_dict (DatasetDict): The dataset to calculate the weights for.
+
+    Returns:
+        dict: The weights for each label.
+    """
     total_instances = len(dataset_dict["train"])
 
     # Calculate the number of instances for each label
@@ -209,6 +237,14 @@ def calculate_weights(dataset_dict):
 
 
 def compute_metrics(eval_pred):
+    """Compute the metrics for the evaluation.
+
+    Args:
+        eval_pred (tuple): The evaluation predictions.
+
+    Returns:
+        dict: The metrics.
+    """
     logits, labels = eval_pred
     # Convert logits to probabilities
     probs = expit(logits)
@@ -228,6 +264,14 @@ def compute_metrics(eval_pred):
 
 
 def get_lora_model(model):
+    """Get the LoRA model.
+
+    Args:
+        model (PreTrainedModel): The model to get the LoRA model for.
+
+    Returns:
+        PreTrainedModel: The LoRA model.
+    """
     if script_args.checkpoint in [
         "HuggingFaceH4/zephyr-7b-beta",
         "mistralai/Mistral-7B-v0.1",
@@ -260,11 +304,31 @@ def get_lora_model(model):
 
 
 class CustomCallback(TrainerCallback):
+    """Custom callback to evaluate the model on the train set after each epoch."""
+
     def __init__(self, trainer) -> None:
+        """Initialize the CustomCallback.
+
+        Args:
+            trainer (Trainer): The trainer to use for evaluation.
+
+        Returns:
+            None
+        """
         super().__init__()
         self._trainer = trainer
 
     def on_epoch_end(self, args, state, control, **kwargs):
+        """Evaluate the model on the train set after each epoch.
+
+        Args:
+            args (TrainingArguments): The training arguments.
+            state (TrainerState): The trainer state.
+            control (TrainerControl): The trainer control.
+
+        Returns:
+            TrainerControl: The trainer control.
+        """
         if control.should_evaluate:
             control_copy = deepcopy(control)
             self._trainer.evaluate(
@@ -274,7 +338,19 @@ class CustomCallback(TrainerCallback):
 
 
 class WeightedCELossTrainer(Trainer):
+    """Trainer with weighted cross-entropy loss."""
+
     def compute_loss(self, model, inputs, return_outputs=False):
+        """Compute the loss.
+
+        Args:
+            model (PreTrainedModel): The model to compute the loss for.
+            inputs (dict): The inputs to the model.
+            return_outputs (bool, optional): Whether to return the outputs. Defaults to False.
+
+        Returns:
+            Union[float, tuple]: The loss or the loss and the outputs.
+        """
         labels = inputs.pop("labels")
         # Get model's predictions
         outputs = model(**inputs)
@@ -293,7 +369,17 @@ class WeightedCELossTrainer(Trainer):
 
 
 def train_model(dataset_dict, model, tokenizer, test=False):
-    # Define the training arguments
+    """Train a model.
+
+    Args:
+        dataset_dict (DatasetDict): The dataset to train on.
+        model (PreTrainedModel): The model to train.
+        tokenizer (PreTrainedTokenizer): The tokenizer used for the model.
+        test (bool, optional): Whether to evaluate the model on the testset. Defaults to False.
+
+    Returns:
+        Trainer: The trainer used to train the model.
+    """
     training_args = TrainingArguments(
         output_dir=f"{script_args.output_dir}/{script_args.checkpoint}",
         learning_rate=script_args.lr,

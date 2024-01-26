@@ -1,3 +1,5 @@
+"""Evaluate a model on the 10-dim dataset."""
+
 import json
 from typing import List
 from typing import Union
@@ -93,7 +95,6 @@ def evaluate_model(
     Returns:
         None
     """
-
     # Step 2: Prepare the test data
     test_texts: List[str] = dataset_dict["text"]  # type: ignore
     test_labels: List[List[str]] = dataset_dict["labels"]  # type: ignore
@@ -152,7 +153,9 @@ def evaluate_model(
         json.dump(results, f)
 
 
-data = datasets.load_dataset("AndersGiovanni/10-dim", split="test", download_mode='force_redownload')
+data = datasets.load_dataset(
+    "AndersGiovanni/10-dim", split="test", download_mode="force_redownload"
+)
 
 models = [
     # "AndersGiovanni/roberta-large-lora-10-dim",
