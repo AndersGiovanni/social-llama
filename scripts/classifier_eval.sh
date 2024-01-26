@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=classifier    # Job name
+#SBATCH --job-name=classifier_eval    # Job name
 #SBATCH --output=run_outputs/classifier_eval.%j.out      # Name of output file (%j expands to jobId)
 #SBATCH --cpus-per-task=12       # Schedule one core
 #SBATCH --time=06:00:00          # Run time (hh:mm:ss) - run for one hour max
