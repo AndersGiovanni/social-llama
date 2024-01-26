@@ -13,14 +13,4 @@ hostname
 
 nvidia-smi
 
-# module load poetry/1.5.1-GCCcore-12.3.0
-
-# poetry shell
-
-# poetry install
-
-# pip install torch
-
 python -m src.social_llama.training.classification
-
-# accelerate launch src/social_llama/training/sft.py

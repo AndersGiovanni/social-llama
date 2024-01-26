@@ -13,5 +13,4 @@ hostname
 
 nvidia-smi
 
-
 python -m src.social_llama.evaluation.evaluator_ten_dim
