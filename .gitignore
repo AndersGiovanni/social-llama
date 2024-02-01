@@ -17,3 +17,4 @@ dpo/
 .env
 .DS_Store
 /ten-dim/
+/data/vector-db/
