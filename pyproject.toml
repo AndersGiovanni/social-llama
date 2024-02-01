@@ -33,6 +33,12 @@ matplotlib = "^3.8.0"
 deepspeed = "^0.12.3"
 evaluate = "^0.4.1"
 black = "^23.12.1"
+langchain = "^0.1.4"
+faiss-cpu = "^1.7.4"
+fsspec = "2023.9.2"
+sentence-transformers = "^2.3.1"
+langchain-community = "^0.0.16"
+jq = "^1.6.0"
 
 [tool.poetry.dev-dependencies]
 Pygments = ">=2.10.0"
