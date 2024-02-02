@@ -25,6 +25,9 @@ DATA_DIR_EVALUATION_SOCKET: Path = DATA_DIR_EVALUATION / "socket"
 DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS: Path = DATA_DIR_EVALUATION / "social-dimensions"
 DATA_DIR_EVALUATION_TEN_DIM: Path = DATA_DIR_EVALUATION / "ten-dim"
 
+# Multilabel-test
+DATA_DIR_MULTILABEL = DATA_DIR / "multilabel"
+
 
 # Datasets Config Class
 @dataclass
