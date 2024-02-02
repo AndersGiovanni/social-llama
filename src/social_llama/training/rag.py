@@ -4,6 +4,7 @@ import os
 from typing import List
 
 import datasets
+import pandas as pd
 import torch
 from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
@@ -17,6 +18,7 @@ from tqdm import tqdm
 from transformers import AutoTokenizer
 
 from social_llama.config import DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
+from social_llama.config import DATA_DIR_EVALUATION_SOCKET
 from social_llama.config import DATA_DIR_SOCIAL_DIMENSIONS_PROCESSED
 from social_llama.config import DATA_DIR_VECTOR_DB
 from social_llama.evaluation.helper_functions import label_finder
@@ -33,112 +35,138 @@ logging.basicConfig(
 load_dotenv()
 
 
-def convert_data_to_langchain(dataset):
-    """Converts a HuggingFace dataset to a list of langchain documents.
+class RAGClassification:
+    """RAG Based classificaiton system."""
 
-    Args:
-        dataset (datasets.Dataset): HuggingFace dataset.
+    def __init__(
+        self,
+        model_name: str,
+        model_name_embedding: str = "sentence-transformers/all-MiniLM-l6-v2",
+    ) -> None:
+        """Initializes the RAG classification system."""
+        self.model_name = model_name
+        self.model_name_embedding = model_name_embedding
+        self.model_kwargs: dict = {"device": self._get_device()}
+        self.encode_kwargs: dict = {"normalize_embeddings": True}
 
-    Returns:
-        docs (list): List of langchain documents.
-    """
-    docs = []
-    for d in DataLoader(dataset["train"]):
-        docs.append(
-            Document(
-                page_content=d["text"][0],
-                metadata={
-                    "idx": d["idx"].item(),
-                    "label": d["response_good"][0],
-                },
+    def convert_data_to_langchain(self, dataset):
+        """Converts a HuggingFace dataset to a list of langchain documents.
+
+        Args:
+            dataset (datasets.Dataset): HuggingFace dataset.
+
+        Returns:
+            docs (list): List of langchain documents.
+        """
+        docs = []
+        for d in DataLoader(dataset["train"]):
+            docs.append(
+                Document(
+                    page_content=d["text"][0],
+                    metadata={
+                        "idx": d["idx"].item(),
+                        "label": d["response_good"][0],
+                    },
+                )
             )
-        )
-    return docs
+        return docs
 
-
-def make_or_load_vector_db(
-    dataset_name: str,
-    data: list,
-    model_kwargs: dict,
-    encode_kwargs: dict,
-    model_name_embedding: str = "sentence-transformers/all-MiniLM-l6-v2",
-    remake_db: bool = False,
-):
-    """Creates or loads a vector database.
-
-    Args:
-        dataset_name (str): Name of the dataset.
-        data (list): List of langchain documents.
-        model_name_embedding (str): Name of the pre-trained model to use for the vector database.
-        model_kwargs (dict): Model configuration options.
-        encode_kwargs (dict): Encoding options.
-        remake_db (bool): Whether to remake the vector database.
-
-    Returns:
-        db (FAISS): Vector database.
-        retriever (FAISSRetriever): Vector database retriever.
-    """
-    # Initialize an instance of HuggingFaceEmbeddings with the specified parameters
-    embeddings = HuggingFaceEmbeddings(
-        model_name=model_name_embedding,  # Provide the pre-trained model's path
-        model_kwargs=model_kwargs,  # Pass the model configuration options
-        encode_kwargs=encode_kwargs,  # Pass the encoding options
-    )
-
-    # Check if there exist a vector database with a name
-    if (
-        os.path.exists(str(DATA_DIR_VECTOR_DB / f"{dataset_name}.faiss"))
-        and not remake_db
+    def make_or_load_vector_db(
+        self,
+        dataset_name: str,
+        data: list,
+        remake_db: bool = False,
     ):
-        logging.info(f"Vector database {dataset_name}.faiss exists. Loading...")
-        db = FAISS.load_local(
-            str(DATA_DIR_VECTOR_DB / f"{dataset_name}.faiss"), embeddings
+        """Creates or loads a vector database.
+
+        Args:
+            dataset_name (str): Name of the dataset.
+            data (list): List of langchain documents.
+            model_name_embedding (str): Name of the pre-trained model to use for the vector database.
+            model_kwargs (dict): Model configuration options.
+            encode_kwargs (dict): Encoding options.
+            remake_db (bool): Whether to remake the vector database.
+
+        Returns:
+            db (FAISS): Vector database.
+            retriever (FAISSRetriever): Vector database retriever.
+        """
+        # Initialize an instance of HuggingFaceEmbeddings with the specified parameters
+        embeddings = HuggingFaceEmbeddings(
+            model_name=self.model_name_embedding,  # Provide the pre-trained model's path
+            model_kwargs=self.model_kwargs,  # Pass the model configuration options
+            encode_kwargs=self.encode_kwargs,  # Pass the encoding options
         )
 
-    else:
-        logging.info(
-            f"Vector database {dataset_name}.faiss does not exist. Creating..."
-        )
-        # Create an instance of the RecursiveCharacterTextSplitter class with specific parameters.
-        # It splits text into chunks of 1000 characters each with a 150-character overlap.
-        text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=1000, chunk_overlap=150
-        )
+        # Check if there exist a vector database with a name
+        if (
+            os.path.exists(str(DATA_DIR_VECTOR_DB / f"{dataset_name}.faiss"))
+            and not remake_db
+        ):
+            logging.info(f"Vector database {dataset_name}.faiss exists. Loading...")
+            db = FAISS.load_local(
+                str(DATA_DIR_VECTOR_DB / f"{dataset_name}.faiss"), embeddings
+            )
 
-        # 'data' holds the text you want to split, split the text into documents using the text splitter.
-        docs = text_splitter.split_documents(data)
+        else:
+            logging.info(
+                f"Vector database {dataset_name}.faiss does not exist. Creating..."
+            )
+            # Create an instance of the RecursiveCharacterTextSplitter class with specific parameters.
+            # It splits text into chunks of 1000 characters each with a 150-character overlap.
+            text_splitter = RecursiveCharacterTextSplitter(
+                chunk_size=1000, chunk_overlap=150
+            )
 
-        db = FAISS.from_documents(docs, embeddings)
+            # 'data' holds the text you want to split, split the text into documents using the text splitter.
+            docs = text_splitter.split_documents(data)
 
-        # Change distance strategy to cosine similarity
-        db.distance_strategy = DistanceStrategy.COSINE
+            db = FAISS.from_documents(docs, embeddings)
 
-        # Save the vector database to the specified path
-        db.save_local(str(DATA_DIR_VECTOR_DB / f"{dataset_name}.faiss"))
-        logging.info(f"Vector database {dataset_name}.faiss created and saved.")
+            # Change distance strategy to cosine similarity
+            db.distance_strategy = DistanceStrategy.COSINE
 
-    retriever = db.as_retriever(search_kwargs={"k": 4})
+            # Save the vector database to the specified path
+            db.save_local(str(DATA_DIR_VECTOR_DB / f"{dataset_name}.faiss"))
+            logging.info(f"Vector database {dataset_name}.faiss created and saved.")
 
-    return db, retriever
+        retriever = db.as_retriever(search_kwargs={"k": 4})
 
+        return db, retriever
 
-def decode_documents(response):
-    """Decodes the documents returned by the vector database.
+    def _get_device(self):
+        """Gets the device to use for the model.
 
-    Args:
-        response (list): List of tuples containing the document and the score.
+        Returns:
+            device (torch.device): Device to use for the model.
+        """
+        if torch.cuda.is_available():
+            device = torch.device("cuda")
+        # Find the device type # include looking for mps
+        elif torch.backends.mps.is_available():
+            device = torch.device("mps")
+        else:
+            device = torch.device("cpu")
+        logging.info(f"Using device: {device}")
+        return device
 
-    Returns:
-        formatted_response (str): Formatted response.
-    """
-    formatted_response = []
-    for idx, (doc, _) in enumerate(response):
-        content = doc.page_content
-        label = doc.metadata["label"]
-        formatted_response.append(
-            f'Document {idx+1}: "{content}"\nLabel {idx}: {label}'
-        )
-    return "\n".join(formatted_response)
+    def decode_documents(self, response):
+        """Decodes the documents returned by the vector database.
+
+        Args:
+            response (list): List of tuples containing the document and the score.
+
+        Returns:
+            formatted_response (str): Formatted response.
+        """
+        formatted_response = []
+        for idx, (doc, _) in enumerate(response):
+            content = doc.page_content
+            label = doc.metadata["label"]
+            formatted_response.append(
+                f'Document {idx+1}: "{content}"\nLabel {idx}: {label}'
+            )
+        return "\n".join(formatted_response)
 
 
 class HuggingfaceChatTemplate:
@@ -210,27 +238,25 @@ else:
     dataset = datasets.load_dataset(dataset_name, split="train")
     dataset_test = datasets.load_dataset(dataset_name, split="test")
     labels: List[str] = dataset.features["label"].names
+    socket_prompts: pd.DataFrame = pd.read_csv(
+        DATA_DIR_EVALUATION_SOCKET / "socket_prompts_knowledge.csv"
+    )
+
+RAG = RAGClassification(
+    model_name="meta-llama/Llama-2-70b-chat-hf",
+    model_name_embedding="sentence-transformers/all-MiniLM-l6-v2",
+)
 
 # Convert to langchain format
-docs = convert_data_to_langchain(dataset)
-docs_test = convert_data_to_langchain(dataset_test)
+docs = RAG.convert_data_to_langchain(dataset)
+docs_test = RAG.convert_data_to_langchain(dataset_test)
 
 # Make or load vector db
 logging.info("Making or loading vector database for 'social-dimensions'.")
-# Find the device type # include looking for mps
-if torch.cuda.is_available():
-    device = "cuda"
-elif torch.backends.mps.is_available():
-    device = "mps"
-else:
-    device = "cpu"
-logging.info(f"Device type: {device}")
 
-db, retriever = make_or_load_vector_db(
+db, retriever = RAG.make_or_load_vector_db(
     "social-dimensions",
     docs,
-    model_kwargs={"device": device},
-    encode_kwargs={"normalize_embeddings": True},
     remake_db=False,
 )
 
@@ -303,7 +329,7 @@ for sample in tqdm(test_data_formatted, desc="Predicting"):
     search_docs_text = db.similarity_search_with_score(sample["text"], k=5, fetch_k=10)
     # searchDocs_question = db.similarity_search_with_score(question, k=5, fetch_k=25)
 
-    decoded_text = decode_documents(search_docs_text)
+    decoded_text = RAG.decode_documents(search_docs_text)
     # decoded_question = decode_documents(searchDocs_question)
 
     output = llm.text_generation(
