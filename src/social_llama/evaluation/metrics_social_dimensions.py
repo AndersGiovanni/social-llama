@@ -36,16 +36,15 @@ for model in models:
 
                 a = 1
 
-        correct_preds = [
-            p["prediction_processed"]
-            for p in data
-            if p["prediction_processed"] in p["label"]
-        ]
+        correct_key = (
+            "prediction_finder" if "prediction_finder" in data[0] else "prediction"
+        )
+        correct_preds = [p[correct_key] for p in data if p[correct_key] in p["label"]]
 
         acc = len(correct_preds) / len(data)
 
         # Append model performance data for plotting
-        model_names.append(model + "_" + file[:-20])
+        model_names.append(model + "_" + file)
         accuracies.append(acc)
 
         # Print everything
@@ -56,7 +55,7 @@ for model in models:
         print()
 
 # Create a bar chart
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(15, 10))
 bars = plt.barh(model_names, accuracies)
 # Adjust subplot left margin
 plt.subplots_adjust(left=0.3)
