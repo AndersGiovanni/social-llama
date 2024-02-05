@@ -239,10 +239,9 @@ db, retriever = make_or_load_vector_db(
 model_name = "meta-llama/Llama-2-70b-chat-hf"
 
 llm = InferenceClient(
-    model=model_name,
-    token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
+model=model_name,
+token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
 )
-
 # Disable caching
 llm.headers["x-use-cache"] = "0"
 
@@ -299,22 +298,41 @@ test_data_formatted = list(test_data_formatted.values())
 
 predictions = []
 
-for sample in tqdm(test_data_formatted, desc="Predicting"):
+for idx, sample in tqdm(enumerate(test_data_formatted), desc="Predicting"):
     search_docs_text = db.similarity_search_with_score(sample["text"], k=5, fetch_k=10)
     # searchDocs_question = db.similarity_search_with_score(question, k=5, fetch_k=25)
 
     decoded_text = decode_documents(search_docs_text)
     # decoded_question = decode_documents(searchDocs_question)
+    
+    has_output = False
 
-    output = llm.text_generation(
-        template.format(
-            context=decoded_text,
-            text=sample["text"],
-        ),
-        max_new_tokens=100,
-        temperature=0.7,
-        # repetition_penalty=1.2,
-    )
+    while not has_output:  
+        try:
+            output = llm.text_generation(
+                template.format(
+                    context=decoded_text,
+                    text=sample["text"],
+                ),
+                max_new_tokens=100,
+                temperature=0.7,
+                # repetition_penalty=1.2,
+            )
+            has_output = True
+
+        except BaseException as e:
+            logging.info(f"Error: {e}")
+            
+            # Delete LLM
+            del llm
+
+            logging.info("Reinitializing LLM...")
+            llm = InferenceClient(
+            model=model_name,
+            token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
+            )
+            # Disable caching
+            llm.headers["x-use-cache"] = "0"
 
     label = label_finder(output, labels)
 
