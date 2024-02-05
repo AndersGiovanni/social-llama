@@ -307,8 +307,11 @@ for dataset_name in dataset_names:
         labels_mapping = {i: label for i, label in enumerate(labels)}
         is_socket = True
 
+    # Specify the model name you want to use
+    model_name = "meta-llama/Llama-2-7b-chat-hf"
+
     RAG = RAGClassification(
-        model_name="meta-llama/Llama-2-7b-chat-hf",
+        model_name=model_name,
         model_name_embedding="sentence-transformers/all-MiniLM-l6-v2",
     )
 
@@ -323,9 +326,6 @@ for dataset_name in dataset_names:
         docs,
         remake_db=True,
     )
-
-    # Specify the model name you want to use
-    model_name = "meta-llama/Llama-2-70b-chat-hf"
 
     llm = InferenceClient(
         model=model_name,
