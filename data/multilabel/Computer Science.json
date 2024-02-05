@@ -320,7 +320,7 @@
     {
         "text": "Maximum likelihood estimation of determinantal point processes.   Determinantal point processes (DPPs) have wide-ranging applications in\nmachine learning, where they are used to enforce the notion of diversity in\nsubset selection problems. Many estimators have been proposed, but surprisingly\nthe basic properties of the maximum likelihood estimator (MLE) have received\nlittle attention. The difficulty is that it is a non-concave maximization\nproblem, and such functions are notoriously difficult to understand in high\ndimensions, despite their importance in modern machine learning. Here we study\nboth the local and global geometry of the expected log-likelihood function. We\nprove several rates of convergence for the MLE and give a complete\ncharacterization of the case where these are parametric. We also exhibit a\npotential curse of dimensionality where the asymptotic variance of the MLE\nscales exponentially with the dimension of the problem. Moreover, we exhibit an\nexponential number of saddle points, and give evidence that these may be the\nonly critical points.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -422,7 +422,7 @@
     {
         "text": "Merging fragments of classical logic.   We investigate the possibility of extending the non-functionally complete\nlogic of a collection of Boolean connectives by the addition of further Boolean\nconnectives that make the resulting set of connectives functionally complete.\nMore precisely, we will be interested in checking whether an axiomatization for\nClassical Propositional Logic may be produced by merging Hilbert-style calculi\nfor two disjoint incomplete fragments of it. We will prove that the answer to\nthat problem is a negative one, unless one of the components includes only\ntop-like connectives.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -470,7 +470,7 @@
     {
         "text": "Biocompatible Writing of Data into DNA.   A simple DNA-based data storage scheme is demonstrated in which information\nis written using \"addressing\" oligonucleotides. In contrast to other methods\nthat allow arbitrary code to be stored, the resulting DNA is suitable for\ndownstream enzymatic and biological processing. This capability is crucial for\nDNA computers, and may allow for a diverse array of computational operations to\nbe carried out using this DNA. Although here we use gel-based methods for\ninformation readout, we also propose more advanced methods involving\nprotein/DNA complexes and atomic force microscopy/nano-pore schemes for data\nreadout.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -788,7 +788,7 @@
     {
         "text": "Estimating the unseen from multiple populations.   Given samples from a distribution, how many new elements should we expect to\nfind if we continue sampling this distribution? This is an important and\nactively studied problem, with many applications ranging from unseen species\nestimation to genomics. We generalize this extrapolation and related unseen\nestimation problems to the multiple population setting, where population $j$\nhas an unknown distribution $D_j$ from which we observe $n_j$ samples. We\nderive an optimal estimator for the total number of elements we expect to find\namong new samples across the populations. Surprisingly, we prove that our\nestimator's accuracy is independent of the number of populations. We also\ndevelop an efficient optimization algorithm to solve the more general problem\nof estimating multi-population frequency distributions. We validate our methods\nand theory through extensive experiments. Finally, on a real dataset of human\ngenomes across multiple ancestries, we demonstrate how our approach for unseen\nestimation can enable cohort designs that can discover interesting mutations\nwith greater efficiency.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -902,7 +902,7 @@
     {
         "text": "A practical guide to the simultaneous determination of protein structure and dynamics using metainference.   Accurate protein structural ensembles can be determined with metainference, a\nBayesian inference method that integrates experimental information with prior\nknowledge of the system and deals with all sources of uncertainty and errors as\nwell as with system heterogeneity. Furthermore, metainference can be\nimplemented using the metadynamics approach, which enables the computational\nstudy of complex biological systems requiring extensive conformational\nsampling. In this chapter, we provide a step-by-step guide to perform and\nanalyse metadynamic metainference simulations using the ISDB module of the\nopen-source PLUMED library, as well as a series of practical tips to avoid\ncommon mistakes. Specifically, we will guide the reader in the process of\nlearning how to model the structural ensemble of a small disordered peptide by\ncombining state-of-the-art molecular mechanics force fields with nuclear\nmagnetic resonance data, including chemical shifts, scalar couplings and\nresidual dipolar couplings.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -920,7 +920,7 @@
     {
         "text": "Complete Classification of Generalized Santha-Vazirani Sources.   Let $\\mathcal{F}$ be a finite alphabet and $\\mathcal{D}$ be a finite set of\ndistributions over $\\mathcal{F}$. A Generalized Santha-Vazirani (GSV) source of\ntype $(\\mathcal{F}, \\mathcal{D})$, introduced by Beigi, Etesami and Gohari\n(ICALP 2015, SICOMP 2017), is a random sequence $(F_1, \\dots, F_n)$ in\n$\\mathcal{F}^n$, where $F_i$ is a sample from some distribution $d \\in\n\\mathcal{D}$ whose choice may depend on $F_1, \\dots, F_{i-1}$.\nWe show that all GSV source types $(\\mathcal{F}, \\mathcal{D})$ fall into one\nof three categories: (1) non-extractable; (2) extractable with error\n$n^{-\\Theta(1)}$; (3) extractable with error $2^{-\\Omega(n)}$. This rules out\nother error rates like $1/\\log n$ or $2^{-\\sqrt{n}}$.\nWe provide essentially randomness-optimal extraction algorithms for\nextractable sources. Our algorithm for category (2) sources extracts with error\n$\\varepsilon$ from $n = \\mathrm{poly}(1/\\varepsilon)$ samples in time linear in\n$n$. Our algorithm for category (3) sources extracts $m$ bits with error\n$\\varepsilon$ from $n = O(m + \\log 1/\\varepsilon)$ samples in time\n$\\min\\{O(nm2^m),n^{O(\\lvert\\mathcal{F}\\rvert)}\\}$.\nWe also give algorithms for classifying a GSV source type $(\\mathcal{F},\n\\mathcal{D})$: Membership in category (1) can be decided in $\\mathrm{NP}$,\nwhile membership in category (3) is polynomial-time decidable.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -1046,7 +1046,7 @@
     {
         "text": "Performance study of SKIROC2 and SKIROC2A with BGA testboard.   SKIROC2 is an ASIC to readout the silicon pad detectors for the\nelectromagnetic calorimeter in the International Linear Collider.\nCharacteristics of SKIROC2 and the new version of SKIROC2A, packaged with BGA,\nare measured with testboards and charge injection. The results on the\nsignal-to-noise ratio of both trigger and ADC output, threshold tuning\ncapability and timing resolution are presented.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -1448,7 +1448,7 @@
     {
         "text": "The modularity of action and perception revisited using control theory and active inference.   The assumption that action and perception can be investigated independently\nis entrenched in theories, models and experimental approaches across the brain\nand mind sciences. In cognitive science, this has been a central point of\ncontention between computationalist and 4Es (enactive, embodied, extended and\nembedded) theories of cognition, with the former embracing the \"classical\nsandwich\", modular, architecture of the mind and the latter actively denying\nthis separation can be made. In this work we suggest that the modular\nindependence of action and perception strongly resonates with the separation\nprinciple of control theory and furthermore that this principle provides formal\ncriteria within which to evaluate the implications of the modularity of action\nand perception. We will also see that real-time feedback with the environment,\noften considered necessary for the definition of 4Es ideas, is not however a\nsufficient condition to avoid the \"classical sandwich\". Finally, we argue that\nan emerging framework in the cognitive and brain sciences, active inference,\nextends ideas derived from control theory to the study of biological systems\nwhile disposing of the separation principle, describing non-modular models of\nbehaviour strongly aligned with 4Es theories of cognition.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -1640,7 +1640,7 @@
     {
         "text": "A Note on Kaldi's PLDA Implementation.   Some explanations to Kaldi's PLDA implementation to make formula derivation\neasier to catch.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -1724,7 +1724,7 @@
     {
         "text": "FO model checking of geometric graphs.   Over the past two decades the main focus of research into first-order (FO)\nmodel checking algorithms has been on sparse relational structures -\nculminating in the FPT algorithm by Grohe, Kreutzer and Siebertz for FO model\nchecking of nowhere dense classes of graphs. On contrary to that, except the\ncase of locally bounded clique-width only little is currently known about FO\nmodel checking of dense classes of graphs or other structures. We study the FO\nmodel checking problem for dense graph classes definable by geometric means\n(intersection and visibility graphs). We obtain new nontrivial FPT results,\ne.g., for restricted subclasses of circular-arc, circle, box, disk, and\npolygon-visibility graphs. These results use the FPT algorithm by Gajarský et\nal. for FO model checking of posets of bounded width. We also complement the\ntractability results by related hardness reductions.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -1904,7 +1904,7 @@
     {
         "text": "Bayesian inference in Y-linked two-sex branching processes with mutations: ABC approach.   A Y-linked two-sex branching process with mutations and blind choice of males\nis a suitable model for analyzing the evolution of the number of carriers of an\nallele and its mutations of a Y-linked gene. Considering a two-sex monogamous\npopulation, in this model each female chooses her partner from among the male\npopulation without caring about his type (i.e., the allele he carries). In this\nwork, we deal with the problem of estimating the main parameters of such model\ndeveloping the Bayesian inference in a parametric framework. Firstly, we\nconsider, as sample scheme, the observation of the total number of females and\nmales up to some generation as well as the number of males of each genotype at\nlast generation. Later, we introduce the information of the mutated males only\nin the last generation obtaining in this way a second sample scheme. For both\nsamples, we apply the Approximate Bayesian Computation (ABC) methodology to\napproximate the posterior distributions of the main parameters of this model.\nThe accuracy of the procedure based on these samples is illustrated and\ndiscussed by way of simulated examples.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -2348,7 +2348,7 @@
     {
         "text": "Sequential detection of low-rank changes using extreme eigenvalues.   We study the problem of detecting an abrupt change to the signal covariance\nmatrix. In particular, the covariance changes from a \"white\" identity matrix to\nan unknown spiked or low-rank matrix. Two sequential change-point detection\nprocedures are presented, based on the largest and the smallest eigenvalues of\nthe sample covariance matrix. To control false-alarm-rate, we present an\naccurate theoretical approximation to the average-run-length (ARL) and expected\ndetection delay (EDD) of the detection, leveraging the extreme eigenvalue\ndistributions from random matrix theory and by capturing a non-negligible\ntemporal correlation in the sequence of scan statistics due to the sliding\nwindow approach. Real data examples demonstrate the good performance of our\nmethod for detecting behavior change of a swarm.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -2564,7 +2564,7 @@
     {
         "text": "Trace Expressiveness of Timed and Probabilistic Automata.   Automata expressiveness is an essential feature in understanding which of the\nformalisms available should be chosen for modelling a particular problem.\nProbabilistic and stochastic automata are suitable for modelling systems\nexhibiting probabilistic behavior and their expressiveness has been studied\nrelative to non-probabilistic transition systems and Markov chains. In this\npaper, we consider previous formalisms of Timed, Probabilistic and Stochastic\nTimed Automata, we present our new model of Timed Automata with Polynomial\nDelay, we introduce a measure of expressiveness for automata we call trace\nexpressiveness and we characterize the expressiveness of these models relative\nto each other under this new measure.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -2642,7 +2642,7 @@
     {
         "text": "A Theory of Solvability for Lossless Power Flow Equations -- Part II: Conditions for Radial Networks.   This two-part paper details a theory of solvability for the power flow\nequations in lossless power networks. In Part I, we derived a new formulation\nof the lossless power flow equations, which we term the fixed-point power flow.\nThe model is parameterized by several graph-theoretic matrices -- the power\nnetwork stiffness matrices -- which quantify the internal coupling strength of\nthe network. In Part II, we leverage the fixed-point power flow to study power\nflow solvability. For radial networks, we derive parametric conditions which\nguarantee the existence and uniqueness of a high-voltage power flow solution,\nand construct examples for which the conditions are also necessary. Our\nconditions (i) imply convergence of the fixed-point power flow iteration, (ii)\nunify and extend recent results on solvability of decoupled power flow, (iii)\ndirectly generalize the textbook two-bus system results, and (iv) provide new\ninsights into how the structure and parameters of the grid influence power flow\nsolvability.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -2942,7 +2942,7 @@
     {
         "text": "Identifiability of Nonparametric Mixture Models and Bayes Optimal Clustering.   Motivated by problems in data clustering, we establish general conditions\nunder which families of nonparametric mixture models are identifiable, by\nintroducing a novel framework involving clustering overfitted \\emph{parametric}\n(i.e. misspecified) mixture models. These identifiability conditions generalize\nexisting conditions in the literature, and are flexible enough to include for\nexample mixtures of Gaussian mixtures. In contrast to the recent literature on\nestimating nonparametric mixtures, we allow for general nonparametric mixture\ncomponents, and instead impose regularity assumptions on the underlying mixing\nmeasure. As our primary application, we apply these results to partition-based\nclustering, generalizing the notion of a Bayes optimal partition from classical\nparametric model-based clustering to nonparametric settings. Furthermore, this\nframework is constructive so that it yields a practical algorithm for learning\nidentified mixtures, which is illustrated through several examples on real\ndata. The key conceptual device in the analysis is the convex, metric geometry\nof probability measures on metric spaces and its connection to the Wasserstein\nconvergence of mixing measures. The result is a flexible framework for\nnonparametric clustering with formal consistency guarantees.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -2972,7 +2972,7 @@
     {
         "text": "Spherical Planetary Robot for Rugged Terrain Traversal.   Wheeled planetary rovers such as the Mars Exploration Rovers (MERs) and Mars\nScience Laboratory (MSL) have provided unprecedented, detailed images of the\nMars surface. However, these rovers are large and are of high-cost as they need\nto carry sophisticated instruments and science laboratories. We propose the\ndevelopment of low-cost planetary rovers that are the size and shape of\ncantaloupes and that can be deployed from a larger rover. The rover named\nSphereX is 2 kg in mass, is spherical, holonomic and contains a hopping\nmechanism to jump over rugged terrain. A small low-cost rover complements a\nlarger rover, particularly to traverse rugged terrain or roll down a canyon,\ncliff or crater to obtain images and science data. While it may be a one-way\njourney for these small robots, they could be used tactically to obtain\nhigh-reward science data. The robot is equipped with a pair of stereo cameras\nto perform visual navigation and has room for a science payload. In this paper,\nwe analyze the design and development of a laboratory prototype. The results\nshow a promising pathway towards development of a field system.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -3230,7 +3230,7 @@
     {
         "text": "Control Problems with Vanishing Lie Bracket Arising from Complete Odd Circulant Evolutionary Games.   We study an optimal control problem arising from a generalization of\nrock-paper-scissors in which the number of strategies may be selected from any\npositive odd number greater than 1 and in which the payoff to the winner is\ncontrolled by a control variable $\\gamma$. Using the replicator dynamics as the\nequations of motion, we show that a quasi-linearization of the problem admits a\nspecial optimal control form in which explicit dynamics for the controller can\nbe identified. We show that all optimal controls must satisfy a specific second\norder differential equation parameterized by the number of strategies in the\ngame. We show that as the number of strategies increases, a limiting case\nadmits a closed form for the open-loop optimal control. In performing our\nanalysis we show necessary conditions on an optimal control problem that allow\nthis analytic approach to function.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -3344,7 +3344,7 @@
     {
         "text": "Coordination game in bidirectional flow.   We have introduced evolutionary game dynamics to a one-dimensional\ncellular-automaton to investigate evolution and maintenance of cooperative\navoiding behavior of self-driven particles in bidirectional flow. In our model,\nthere are two kinds of particles, which are right-going particles and\nleft-going particles. They often face opponent particles, so that they swerve\nto the right or left stochastically in order to avoid conflicts. The particles\nreinforce their preferences of the swerving direction after their successful\navoidance. The preference is also weakened by memory-loss effect.\nResult of our simulation indicates that cooperative avoiding behavior is\nachieved, i.e., swerving directions of the particles are unified, when the\ndensity of particles is close to 1/2 and the memory-loss rate is small.\nFurthermore, when the right-going particles occupy the majority of the system,\nwe observe that their flow increases when the number of left-going particles,\nwhich prevent the smooth movement of right-going particles, becomes large. It\nis also investigated that the critical memory-loss rate of the cooperative\navoiding behavior strongly depends on the size of the system. Small system can\nprolong the cooperative avoiding behavior in wider range of memory-loss rate\nthan large system.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -4196,7 +4196,7 @@
     {
         "text": "Convergence Analysis of Gradient EM for Multi-component Gaussian Mixture.   In this paper, we study convergence properties of the gradient\nExpectation-Maximization algorithm \\cite{lange1995gradient} for Gaussian\nMixture Models for general number of clusters and mixing coefficients. We\nderive the convergence rate depending on the mixing coefficients, minimum and\nmaximum pairwise distances between the true centers and dimensionality and\nnumber of components; and obtain a near-optimal local contraction radius. While\nthere have been some recent notable works that derive local convergence rates\nfor EM in the two equal mixture symmetric GMM, in the more general case, the\nderivations need structurally different and non-trivial arguments. We use\nrecent tools from learning theory and empirical processes to achieve our\ntheoretical results.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -4736,7 +4736,7 @@
     {
         "text": "Completion of the integrable coupling systems.   In this paper, we proposed an procedure to construct the completion of the\nintegrable system by adding a perturbation to the generalized matrix problem,\nwhich can be used to continuous integrable couplings, discrete integrable\ncouplings and super integrable couplings. As example, we construct the\ncompletion of the Kaup-Newell (KN) integrable coupling, the\nWadati-Konno-Ichikawa (WKI) integrable couplingsis, vector\nAblowitz-Kaup-Newell-Segur (vAKNS) integrable couplings, the Volterra\nintegrable couplings, Dirac type integrable couplings and NLS-mKdV type\nintegrable couplings.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -4892,7 +4892,7 @@
     {
         "text": "Glitch Classification and Clustering for LIGO with Deep Transfer Learning.   The detection of gravitational waves with LIGO and Virgo requires a detailed\nunderstanding of the response of these instruments in the presence of\nenvironmental and instrumental noise. Of particular interest is the study of\nanomalous non-Gaussian noise transients known as glitches, since their high\noccurrence rate in LIGO/Virgo data can obscure or even mimic true gravitational\nwave signals. Therefore, successfully identifying and excising glitches is of\nutmost importance to detect and characterize gravitational waves. In this\narticle, we present the first application of Deep Learning combined with\nTransfer Learning for glitch classification, using real data from LIGO's first\ndiscovery campaign labeled by Gravity Spy, showing that knowledge from\npre-trained models for real-world object recognition can be transferred for\nclassifying spectrograms of glitches. We demonstrate that this method enables\nthe optimal use of very deep convolutional neural networks for glitch\nclassification given small unbalanced training datasets, significantly reduces\nthe training time, and achieves state-of-the-art accuracy above 98.8%. Once\ntrained via transfer learning, we show that the networks can be truncated and\nused as feature extractors for unsupervised clustering to automatically group\ntogether new classes of glitches and anomalies. This novel capability is of\ncritical importance to identify and remove new types of glitches which will\noccur as the LIGO/Virgo detectors gradually attain design sensitivity.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -4916,7 +4916,7 @@
     {
         "text": "SAGA and Restricted Strong Convexity.   SAGA is a fast incremental gradient method on the finite sum problem and its\neffectiveness has been tested on a vast of applications. In this paper, we\nanalyze SAGA on a class of non-strongly convex and non-convex statistical\nproblem such as Lasso, group Lasso, Logistic regression with $\\ell_1$\nregularization, linear regression with SCAD regularization and Correct Lasso.\nWe prove that SAGA enjoys the linear convergence rate up to the statistical\nestimation accuracy, under the assumption of restricted strong convexity (RSC).\nIt significantly extends the applicability of SAGA in convex and non-convex\noptimization.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -5054,13 +5054,13 @@
     {
         "text": "GP-SUM. Gaussian Processes Filtering of non-Gaussian Beliefs.   This work studies the problem of stochastic dynamic filtering and state\npropagation with complex beliefs. The main contribution is GP-SUM, a filtering\nalgorithm tailored to dynamic systems and observation models expressed as\nGaussian Processes (GP), and to states represented as a weighted sum of\nGaussians. The key attribute of GP-SUM is that it does not rely on\nlinearizations of the dynamic or observation models, or on unimodal Gaussian\napproximations of the belief, hence enables tracking complex state\ndistributions. The algorithm can be seen as a combination of a sampling-based\nfilter with a probabilistic Bayes filter. On the one hand, GP-SUM operates by\nsampling the state distribution and propagating each sample through the dynamic\nsystem and observation models. On the other hand, it achieves effective\nsampling and accurate probabilistic propagation by relying on the GP form of\nthe system, and the sum-of-Gaussian form of the belief. We show that GP-SUM\noutperforms several GP-Bayes and Particle Filters on a standard benchmark. We\nalso demonstrate its use in a pushing task, predicting with experimental\naccuracy the naturally occurring non-Gaussian distributions.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
         "text": "Reflexive Regular Equivalence for Bipartite Data.   Bipartite data is common in data engineering and brings unique challenges,\nparticularly when it comes to clustering tasks that impose on strong structural\nassumptions. This work presents an unsupervised method for assessing similarity\nin bipartite data. Similar to some co-clustering methods, the method is based\non regular equivalence in graphs. The algorithm uses spectral properties of a\nbipartite adjacency matrix to estimate similarity in both dimensions. The\nmethod is reflexive in that similarity in one dimension is used to inform\nsimilarity in the other. Reflexive regular equivalence can also use the\nstructure of transitivities -- in a network sense -- the contribution of which\nis controlled by the algorithm's only free-parameter, $\\alpha$. The method is\ncompletely unsupervised and can be used to validate assumptions of\nco-similarity, which are required but often untested, in co-clustering\nanalyses. Three variants of the method with different normalizations are tested\non synthetic data. The method is found to be robust to noise and well-suited to\nasymmetric co-similar structure, making it particularly informative for cluster\nanalysis and recommendation in bipartite data of unknown structure. In\nexperiments, the convergence and speed of the algorithm are found to be stable\nfor different levels of noise. Real-world data from a network of malaria genes\nare analyzed, where the similarity produced by the reflexive method is shown to\nout-perform other measures' ability to correctly classify genes.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -5108,13 +5108,13 @@
     {
         "text": "Shannon's entropy and its Generalizations towards Statistics, Reliability and Information Science during 1948-2018.   Starting from the pioneering works of Shannon and Weiner in 1948, a plethora\nof works have been reported on entropy in different directions. Entropy-related\nreview work in the direction of statistics, reliability and information\nscience, to the best of our knowledge, has not been reported so far. Here we\nhave tried to collect all possible works in this direction during the period\n1948-2018 so that people interested in entropy, specially the new researchers,\nget benefited.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
         "text": "Simple labeled graph $C^*$-algebras are associated to disagreeable labeled spaces.   By a labeled graph $C^*$-algebra we mean a $C^*$-algebra associated to a\nlabeled space $(E,\\mathcal L,\\mathcal E)$ consisting of a labeled graph\n$(E,\\mathcal L)$ and the smallest normal accommodating set $\\mathcal E$ of\nvertex subsets. Every graph $C^*$-algebra $C^*(E)$ is a labeled graph\n$C^*$-algebra and it is well known that $C^*(E)$ is simple if and only if the\ngraph $E$ is cofinal and satisfies Condition (L). Bates and Pask extend these\nconditions of graphs $E$ to labeled spaces, and show that if a set-finite and\nreceiver set-finite labeled space $(E,\\mathcal L, \\mathcal E)$ is cofinal and\ndisagreeable, then its $C^*$-algebra $C^*(E,\\mathcal L, \\mathcal E)$ is simple.\nIn this paper, we show that the converse is also true.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -5216,7 +5216,7 @@
     {
         "text": "On the complexity of the projective splitting and Spingarn's methods for the sum of two maximal monotone operators.   In this work we study the pointwise and ergodic iteration-complexity of a\nfamily of projective splitting methods proposed by Eckstein and Svaiter, for\nfinding a zero of the sum of two maximal monotone operators. As a consequence\nof the complexity analysis of the projective splitting methods, we obtain\ncomplexity bounds for the two-operator case of Spingarn's partial inverse\nmethod. We also present inexact variants of two specific instances of this\nfamily of algorithms, and derive corresponding convergence rate results.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -5522,7 +5522,7 @@
     {
         "text": "PPMF: A Patient-based Predictive Modeling Framework for Early ICU Mortality Prediction.   To date, developing a good model for early intensive care unit (ICU)\nmortality prediction is still challenging. This paper presents a patient based\npredictive modeling framework (PPMF) to improve the performance of ICU\nmortality prediction using data collected during the first 48 hours of ICU\nadmission. PPMF consists of three main components verifying three related\nresearch hypotheses. The first component captures dynamic changes of patients\nstatus in the ICU using their time series data (e.g., vital signs and\nlaboratory tests). The second component is a local approximation algorithm that\nclassifies patients based on their similarities. The third component is a\nGradient Decent wrapper that updates feature weights according to the\nclassification feedback. Experiments using data from MIMICIII show that PPMF\nsignificantly outperforms: (1) the severity score systems, namely SASP III,\nAPACHE IV, and MPM0III, (2) the aggregation based classifiers that utilize\nsummarized time series, and (3) baseline feature selection methods.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -5720,7 +5720,7 @@
     {
         "text": "Annealed Generative Adversarial Networks.   We introduce a novel framework for adversarial training where the target\ndistribution is annealed between the uniform distribution and the data\ndistribution. We posited a conjecture that learning under continuous annealing\nin the nonparametric regime is stable irrespective of the divergence measures\nin the objective function and proposed an algorithm, dubbed {\\ss}-GAN, in\ncorollary. In this framework, the fact that the initial support of the\ngenerative network is the whole ambient space combined with annealing are key\nto balancing the minimax game. In our experiments on synthetic data, MNIST, and\nCelebA, {\\ss}-GAN with a fixed annealing schedule was stable and did not suffer\nfrom mode collapse.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -6056,7 +6056,7 @@
     {
         "text": "Linear-time approximation schemes for planar minimum three-edge connected and three-vertex connected spanning subgraphs.   We present the first polynomial-time approximation schemes, i.e., (1 +\n{\\epsilon})-approximation algorithm for any constant {\\epsilon} > 0, for the\nminimum three-edge connected spanning subgraph problem and the minimum\nthree-vertex connected spanning subgraph problem in undirected planar graphs.\nBoth the approximation schemes run in linear time.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -6212,13 +6212,13 @@
     {
         "text": "Tractable and Scalable Schatten Quasi-Norm Approximations for Rank Minimization.   The Schatten quasi-norm was introduced to bridge the gap between the trace\nnorm and rank function. However, existing algorithms are too slow or even\nimpractical for large-scale problems. Motivated by the equivalence relation\nbetween the trace norm and its bilinear spectral penalty, we define two\ntractable Schatten norms, i.e.\\ the bi-trace and tri-trace norms, and prove\nthat they are in essence the Schatten-$1/2$ and $1/3$ quasi-norms,\nrespectively. By applying the two defined Schatten quasi-norms to various rank\nminimization problems such as MC and RPCA, we only need to solve much smaller\nfactor matrices. We design two efficient linearized alternating minimization\nalgorithms to solve our problems and establish that each bounded sequence\ngenerated by our algorithms converges to a critical point. We also provide the\nrestricted strong convexity (RSC) based and MC error bounds for our algorithms.\nOur experimental results verified both the efficiency and effectiveness of our\nalgorithms compared with the state-of-the-art methods.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
         "text": "The Word Problem of $\\mathbb{Z}^n$ Is a Multiple Context-Free Language.   The \\emph{word problem} of a group $G = \\langle \\Sigma \\rangle$ can be\ndefined as the set of formal words in $\\Sigma^*$ that represent the identity in\n$G$. When viewed as formal languages, this gives a strong connection between\nclasses of groups and classes of formal languages. For example, Anisimov showed\nthat a group is finite if and only if its word problem is a regular language,\nand Muller and Schupp showed that a group is virtually-free if and only if its\nword problem is a context-free language. Above this, not much was known, until\nSalvati showed recently that the word problem of $\\mathbb{Z}^2$ is a multiple\ncontext-free language, giving first such example. We generalize Salvati's\nresult to show that the word problem of $\\mathbb{Z}^n$ is a multiple\ncontext-free language for any $n$.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -6350,7 +6350,7 @@
     {
         "text": "Minimax Rényi Redundancy.   The redundancy for universal lossless compression of discrete memoryless\nsources in Campbell's setting is characterized as a minimax Rényi divergence,\nwhich is shown to be equal to the maximal $\\alpha$-mutual information via a\ngeneralized redundancy-capacity theorem. Special attention is placed on the\nanalysis of the asymptotics of minimax Rényi divergence, which is determined\nup to a term vanishing in blocklength.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -6662,7 +6662,7 @@
     {
         "text": "Surrogate-Based Bayesian Inverse Modeling of the Hydrological System: An Adaptive Approach Considering Surrogate Approximation Erro.   Bayesian inverse modeling is important for a better understanding of\nhydrological processes. However, this approach can be computationally demanding\nas it usually requires a large number of model evaluations. To address this\nissue, one can take advantage of surrogate modeling techniques. Nevertheless,\nwhen approximation error of the surrogate model is neglected in inverse\nmodeling, the inversion result will be biased. In this paper, we develop a\nsurrogate-based Bayesian inversion framework that explicitly quantifies and\ngradually reduces the approximation error of the surrogate. Specifically, two\nstrategies are proposed and compared. The first strategy works by obtaining an\nensemble of sparse polynomial chaos expansion (PCE) surrogates with Markov\nchain Monte Carlo sampling, while the second one uses Gaussian process (GP) to\nsimulate the approximation error of a single sparse PCE surrogate. The two\nstrategies can also be applied with other surrogates, thus they have general\napplicability. By adaptively refining the surrogate over the posterior\ndistribution, we can gradually reduce the surrogate approximation error to a\nsmall level. Demonstrated with three case studies involving\nhigh-dimensionality, multi-modality and a real-world application, respectively,\nit is found that both strategies can reduce the bias introduced by surrogate\nmodeling, while the second strategy has a better performance as it integrates\ntwo methods (i.e., sparse PCE and GP) that complement each other.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -6776,7 +6776,7 @@
     {
         "text": "Brief Notes on Hard Takeoff, Value Alignment, and Coherent Extrapolated Volition.   I make some basic observations about hard takeoff, value alignment, and\ncoherent extrapolated volition, concepts which have been central in analyses of\nsuperintelligent AI systems.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -6812,7 +6812,7 @@
     {
         "text": "Sharper and Simpler Nonlinear Interpolants for Program Verification.   Interpolation of jointly infeasible predicates plays important roles in\nvarious program verification techniques such as invariant synthesis and CEGAR.\nIntrigued by the recent result by Dai et al.\\ that combines real algebraic\ngeometry and SDP optimization in synthesis of polynomial interpolants, the\ncurrent paper contributes its enhancement that yields sharper and simpler\ninterpolants. The enhancement is made possible by: theoretical observations in\nreal algebraic geometry; and our continued fraction-based algorithm that rounds\noff (potentially erroneous) numerical solutions of SDP solvers. Experiment\nresults support our tool's effectiveness; we also demonstrate the benefit of\nsharp and simple interpolants in program verification examples.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -6926,13 +6926,13 @@
     {
         "text": "The James construction and $π_4(\\mathbb{S}^3)$ in homotopy type theory.   In the first part of this paper we present a formalization in Agda of the\nJames construction in homotopy type theory. We include several fragments of\ncode to show what the Agda code looks like, and we explain several techniques\nthat we used in the formalization. In the second part, we use the James\nconstruction to give a constructive proof that $\\pi_4(\\mathbb{S}^3)$ is of the\nform $\\mathbb{Z}/n\\mathbb{Z}$ (but we do not compute the $n$ here).",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
         "text": "Variants of RMSProp and Adagrad with Logarithmic Regret Bounds.   Adaptive gradient methods have become recently very popular, in particular as\nthey have been shown to be useful in the training of deep neural networks. In\nthis paper we have analyzed RMSProp, originally proposed for the training of\ndeep neural networks, in the context of online convex optimization and show\n$\\sqrt{T}$-type regret bounds. Moreover, we propose two variants SC-Adagrad and\nSC-RMSProp for which we show logarithmic regret bounds for strongly convex\nfunctions. Finally, we demonstrate in the experiments that these new variants\noutperform other adaptive gradient techniques or stochastic gradient descent in\nthe optimization of strongly convex functions as well as in training of deep\nneural networks.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -7460,7 +7460,7 @@
     {
         "text": "Routing in FRET-based Nanonetworks.   Nanocommunications, understood as communications between nanoscale devices,\nis commonly regarded as a technology essential for cooperation of large groups\nof nanomachines and thus crucial for development of the whole area of\nnanotechnology. While solutions for point-to-point nanocommunications have been\nalready proposed, larger networks cannot function properly without routing. In\nthis article we focus on the nanocommunications via Forster Resonance Energy\nTransfer (FRET), which was found to be a technique with a very high signal\npropagation speed, and discuss how to route signals through nanonetworks. We\nintroduce five new routing mechanisms, based on biological properties of\nspecific molecules. We experimentally validate one of these mechanisms.\nFinally, we analyze open issues showing the technical challenges for signal\ntransmission and routing in FRET-based nanocommunications.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -7532,7 +7532,7 @@
     {
         "text": "Priv'IT: Private and Sample Efficient Identity Testing.   We develop differentially private hypothesis testing methods for the small\nsample regime. Given a sample $\\cal D$ from a categorical distribution $p$ over\nsome domain $\\Sigma$, an explicitly described distribution $q$ over $\\Sigma$,\nsome privacy parameter $\\varepsilon$, accuracy parameter $\\alpha$, and\nrequirements $\\beta_{\\rm I}$ and $\\beta_{\\rm II}$ for the type I and type II\nerrors of our test, the goal is to distinguish between $p=q$ and\n$d_{\\rm{TV}}(p,q) \\geq \\alpha$.\nWe provide theoretical bounds for the sample size $|{\\cal D}|$ so that our\nmethod both satisfies $(\\varepsilon,0)$-differential privacy, and guarantees\n$\\beta_{\\rm I}$ and $\\beta_{\\rm II}$ type I and type II errors. We show that\ndifferential privacy may come for free in some regimes of parameters, and we\nalways beat the sample complexity resulting from running the $\\chi^2$-test with\nnoisy counts, or standard approaches such as repetition for endowing\nnon-private $\\chi^2$-style statistics with differential privacy guarantees. We\nexperimentally compare the sample complexity of our method to that of recently\nproposed methods for private hypothesis testing.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -7562,7 +7562,7 @@
     {
         "text": "Future Energy Consumption Prediction Based on Grey Forecast Model.   We use grey forecast model to predict the future energy consumption of four\nstates in the U.S, and make some improvments to the model.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -7760,7 +7760,7 @@
     {
         "text": "Blind Source Separation Using Mixtures of Alpha-Stable Distributions.   We propose a new blind source separation algorithm based on mixtures of\nalpha-stable distributions. Complex symmetric alpha-stable distributions have\nbeen recently showed to better model audio signals in the time-frequency domain\nthan classical Gaussian distributions thanks to their larger dynamic range.\nHowever, inference of these models is notoriously hard to perform because their\nprobability density functions do not have a closed-form expression in general.\nHere, we introduce a novel method for estimating mixture of alpha-stable\ndistributions based on characteristic function matching. We apply this to the\nblind estimation of binary masks in individual frequency bands from\nmultichannel convolutive audio mixes. We show that the proposed method yields\nbetter separation performance than Gaussian-based binary-masking methods.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -7898,7 +7898,7 @@
     {
         "text": "Discrete time Pontryagin maximum principle for optimal control problems under state-action-frequency constraints.   We establish a Pontryagin maximum principle for discrete time optimal control\nproblems under the following three types of constraints: a) constraints on the\nstates pointwise in time, b) constraints on the control actions pointwise in\ntime, and c) constraints on the frequency spectrum of the optimal control\ntrajectories. While the first two types of constraints are already included in\nthe existing versions of the Pontryagin maximum principle, it turns out that\nthe third type of constraints cannot be recast in any of the standard forms of\nthe existing results for the original control system. We provide two different\nproofs of our Pontryagin maximum principle in this article, and include several\nspecial cases fine-tuned to control-affine nonlinear and linear system models.\nIn particular, for minimization of quadratic cost functions and linear time\ninvariant control systems, we provide tight conditions under which the optimal\ncontrols under frequency constraints are either normal or abnormal.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -8474,7 +8474,7 @@
     {
         "text": "Phylogenetic networks that are their own fold-ups.   Phylogenetic networks are becoming of increasing interest to evolutionary\nbiologists due to their ability to capture complex non-treelike evolutionary\nprocesses. From a combinatorial point of view, such networks are certain types\nof rooted directed acyclic graphs whose leaves are labelled by, for example,\nspecies. A number of mathematically interesting classes of phylogenetic\nnetworks are known. These include the biologically relevant class of stable\nphylogenetic networks whose members are defined via certain fold-up and un-fold\noperations that link them with concepts arising within the theory of, for\nexample, graph fibrations. Despite this exciting link, the structural\ncomplexity of stable phylogenetic networks is still relatively poorly\nunderstood. Employing the popular tree-based, reticulation-visible, and\ntree-child properties which allow one to gauge this complexity in one way or\nanother, we provide novel characterizations for when a stable phylogenetic\nnetwork satisfies either one of these three properties.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -8564,7 +8564,7 @@
     {
         "text": "A bound on partitioning clusters.   Let $X$ be a finite collection of sets (or \"clusters\"). We consider the\nproblem of counting the number of ways a cluster $A \\in X$ can be partitioned\ninto two disjoint clusters $A_1, A_2 \\in X$, thus $A = A_1 \\uplus A_2$ is the\ndisjoint union of $A_1$ and $A_2$; this problem arises in the run time analysis\nof the ASTRAL algorithm in phylogenetic reconstruction. We obtain the bound $$\n| \\{ (A_1,A_2,A) \\in X \\times X \\times X: A = A_1 \\uplus A_2 \\} | \\leq\n|X|^{3/p} $$ where $|X|$ denotes the cardinality of $X$, and $p := \\log_3\n\\frac{27}{4} = 1.73814\\dots$, so that $\\frac{3}{p} = 1.72598\\dots$.\nFurthermore, the exponent $p$ cannot be replaced by any larger quantity. This\nimproves upon the trivial bound of $|X|^2$. The argument relies on establishing\na one-dimensional convolution inequality that can be established by elementary\ncalculus combined with some numerical verification.\nIn a similar vein, we show that for any subset $A$ of a discrete cube\n$\\{0,1\\}^n$, the additive energy of $A$ (the number of quadruples\n$(a_1,a_2,a_3,a_4)$ in $A^4$ with $a_1+a_2=a_3+a_4$) is at most $|A|^{\\log_2\n6}$, and that this exponent is best possible.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -8732,7 +8732,7 @@
     {
         "text": "On Vague Computers.   Vagueness is something everyone is familiar with. In fact, most people think\nthat vagueness is closely related to language and exists only there. However,\nvagueness is a property of the physical world. Quantum computers harness\nsuperposition and entanglement to perform their computational tasks. Both\nsuperposition and entanglement are vague processes. Thus quantum computers,\nwhich process exact data without \"exploiting\" vagueness, are actually vague\ncomputers.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -8780,7 +8780,7 @@
     {
         "text": "Infinite Mixture of Inverted Dirichlet Distributions.   In this work, we develop a novel Bayesian estimation method for the Dirichlet\nprocess (DP) mixture of the inverted Dirichlet distributions, which has been\nshown to be very flexible for modeling vectors with positive elements. The\nrecently proposed extended variational inference (EVI) framework is adopted to\nderive an analytically tractable solution. The convergency of the proposed\nalgorithm is theoretically guaranteed by introducing single lower bound\napproximation to the original objective function in the VI framework. In\nprinciple, the proposed model can be viewed as an infinite inverted Dirichelt\nmixture model (InIDMM) that allows the automatic determination of the number of\nmixture components from data. Therefore, the problem of pre-determining the\noptimal number of mixing components has been overcome. Moreover, the problems\nof over-fitting and under-fitting are avoided by the Bayesian estimation\napproach. Comparing with several recently proposed DP-related methods, the good\nperformance and effectiveness of the proposed method have been demonstrated\nwith both synthesized data and real data evaluations.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -9560,7 +9560,7 @@
     {
         "text": "Alliance formation with exclusion in the spatial public goods game.   Detecting defection and alarming partners about the possible danger could be\nessential to avoid being exploited. This act, however, may require a huge\nindividual effort from those who take this job, hence such a strategy seems to\nbe unfavorable. But structured populations can provide an opportunity where a\nlargely unselfish excluder strategy can form an effective alliance with other\ncooperative strategies, hence they can sweep out defection. Interestingly, this\nalliance is functioning even at the extremely high cost of exclusion where the\nsole application of an exclusion strategy would be harmful otherwise. These\nresults may explain why the emergence of extreme selfless behavior is not\nnecessarily against individual selection but could be the result of an\nevolutionary process.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -9680,7 +9680,7 @@
     {
         "text": "Automaton Semigroups and Groups: on the Undecidability of Problems Related to Freeness and Finiteness.   In this paper, we study algorithmic problems for automaton semigroups and\nautomaton groups related to freeness and finiteness. In the course of this\nstudy, we also exhibit some connections between the algebraic structure of\nautomaton (semi)groups and their dynamics on the boundary.\nFirst, we show that it is undecidable to check whether the group generated by\na given invertible automaton has a positive relation, i. e. a relation p = 1\nsuch that p only contains positive generators. Besides its obvious relation to\nthe freeness of the group, the absence of positive relations has previously\nbeen studied and is connected to the triviality of some stabilizers of the\nboundary. We show that the emptiness of the set of positive relations is\nequivalent to the dynamical property that all (directed positive) orbital\ngraphs centered at non-singular points are acyclic. Our approach also works to\nshow undecidability of the freeness problem for automaton semigroups; in fact,\nit shows undecidability of a strengthened version where the input automaton is\ncomplete and invertible.\nGillibert showed that the finiteness problem for automaton semigroups is\nundecidable. In the second part of the paper, we show that this undecidability\nresult also holds if the input is restricted to be bi-reversible and invertible\n(but, in general, not complete). As an immediate consequence, we obtain that\nthe finiteness problem for automaton subsemigroups of semigroups generated by\ninvertible, yet partial automata, so called automaton-inverse semigroups, is\nalso undecidable.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -9902,7 +9902,7 @@
     {
         "text": "Parameter Learning and Change Detection Using a Particle Filter With Accelerated Adaptation.   This paper presents the construction of a particle filter, which incorporates\nelements inspired by genetic algorithms, in order to achieve accelerated\nadaptation of the estimated posterior distribution to changes in model\nparameters. Specifically, the filter is designed for the situation where the\nsubsequent data in online sequential filtering does not match the model\nposterior filtered based on data up to a current point in time. The examples\nconsidered encompass parameter regime shifts and stochastic volatility. The\nfilter adapts to regime shifts extremely rapidly and delivers a clear heuristic\nfor distinguishing between regime shifts and stochastic volatility, even though\nthe model dynamics assumed by the filter exhibit neither of those features.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -10856,7 +10856,7 @@
     {
         "text": "Model Agnostic Time Series Analysis via Matrix Estimation.   We propose an algorithm to impute and forecast a time series by transforming\nthe observed time series into a matrix, utilizing matrix estimation to recover\nmissing values and de-noise observed entries, and performing linear regression\nto make predictions. At the core of our analysis is a representation result,\nwhich states that for a large model class, the transformed time series matrix\nis (approximately) low-rank. In effect, this generalizes the widely used\nSingular Spectrum Analysis (SSA) in time series literature, and allows us to\nestablish a rigorous link between time series analysis and matrix estimation.\nThe key to establishing this link is constructing a Page matrix with\nnon-overlapping entries rather than a Hankel matrix as is commonly done in the\nliterature (e.g., SSA). This particular matrix structure allows us to provide\nfinite sample analysis for imputation and prediction, and prove the asymptotic\nconsistency of our method. Another salient feature of our algorithm is that it\nis model agnostic with respect to both the underlying time dynamics and the\nnoise distribution in the observations. The noise agnostic property of our\napproach allows us to recover the latent states when only given access to noisy\nand partial observations a la a Hidden Markov Model; e.g., recovering the\ntime-varying parameter of a Poisson process without knowing that the underlying\nprocess is Poisson. Furthermore, since our forecasting algorithm requires\nregression with noisy features, our approach suggests a matrix estimation based\nmethod - coupled with a novel, non-standard matrix estimation error metric - to\nsolve the error-in-variable regression problem, which could be of interest in\nits own right. Through synthetic and real-world datasets, we demonstrate that\nour algorithm outperforms standard software packages (including R libraries) in\nthe presence of missing data as well as high levels of noise.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -10934,7 +10934,7 @@
     {
         "text": "Non-locality of the meet levels of the Trotter-Weil Hierarchy.   We prove that the meet level $m$ of the Trotter-Weil, $\\mathsf{V}_m$ is not\nlocal for all $m \\geq 1$, as conjectured in a paper by Kufleitner and Lauser.\nIn order to show this, we explicitly provide a language whose syntactic\nsemigroup is in $L \\mathsf{V}_m$ and not in $\\mathsf{V}_m*\\mathsf{D}$.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -10988,7 +10988,7 @@
     {
         "text": "Exploring Features for Predicting Policy Citations.   In this study we performed an initial investigation and evaluation of\naltmetrics and their relationship with public policy citation of research\npapers. We examined methods for using altmetrics and other data to predict\nwhether a research paper is cited in public policy and applied receiver\noperating characteristic curve on various feature groups in order to evaluate\ntheir potential usefulness. From the methods we tested, classifying based on\ntweet count provided the best results, achieving an area under the ROC curve of\n0.91.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -11210,7 +11210,7 @@
     {
         "text": "Differentially Private High Dimensional Sparse Covariance Matrix Estimation.   In this paper, we study the problem of estimating the covariance matrix under\ndifferential privacy, where the underlying covariance matrix is assumed to be\nsparse and of high dimensions. We propose a new method, called DP-Thresholding,\nto achieve a non-trivial $\\ell_2$-norm based error bound, which is\nsignificantly better than the existing ones from adding noise directly to the\nempirical covariance matrix. We also extend the $\\ell_2$-norm based error bound\nto a general $\\ell_w$-norm based one for any $1\\leq w\\leq \\infty$, and show\nthat they share the same upper bound asymptotically. Our approach can be easily\nextended to local differential privacy. Experiments on the synthetic datasets\nshow consistent results with our theoretical claims.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -11372,7 +11372,7 @@
     {
         "text": "From Monte Carlo to Las Vegas: Improving Restricted Boltzmann Machine Training Through Stopping Sets.   We propose a Las Vegas transformation of Markov Chain Monte Carlo (MCMC)\nestimators of Restricted Boltzmann Machines (RBMs). We denote our approach\nMarkov Chain Las Vegas (MCLV). MCLV gives statistical guarantees in exchange\nfor random running times. MCLV uses a stopping set built from the training data\nand has maximum number of Markov chain steps K (referred as MCLV-K). We present\na MCLV-K gradient estimator (LVS-K) for RBMs and explore the correspondence and\ndifferences between LVS-K and Contrastive Divergence (CD-K), with LVS-K\nsignificantly outperforming CD-K training RBMs over the MNIST dataset,\nindicating MCLV to be a promising direction in learning generative models.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -12062,7 +12062,7 @@
     {
         "text": "Particle Filters for Partially-Observed Boolean Dynamical Systems.   Partially-observed Boolean dynamical systems (POBDS) are a general class of\nnonlinear models with application in estimation and control of Boolean\nprocesses based on noisy and incomplete measurements. The optimal minimum mean\nsquare error (MMSE) algorithms for POBDS state estimation, namely, the Boolean\nKalman filter (BKF) and Boolean Kalman smoother (BKS), are intractable in the\ncase of large systems, due to computational and memory requirements. To address\nthis, we propose approximate MMSE filtering and smoothing algorithms based on\nthe auxiliary particle filter (APF) method from sequential Monte-Carlo theory.\nThese algorithms are used jointly with maximum-likelihood (ML) methods for\nsimultaneous state and parameter estimation in POBDS models. In the presence of\ncontinuous parameters, ML estimation is performed using the\nexpectation-maximization (EM) algorithm; we develop for this purpose a special\nsmoother which reduces the computational complexity of the EM algorithm. The\nresulting particle-based adaptive filter is applied to a POBDS model of Boolean\ngene regulatory networks observed through noisy RNA-Seq time series data, and\nperformance is assessed through a series of numerical experiments using the\nwell-known cell cycle gene regulatory model.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -12188,7 +12188,7 @@
     {
         "text": "Asymptotics of ABC.   We present an informal review of recent work on the asymptotics of\nApproximate Bayesian Computation (ABC). In particular we focus on how does the\nABC posterior, or point estimates obtained by ABC, behave in the limit as we\nhave more data? The results we review show that ABC can perform well in terms\nof point estimation, but standard implementations will over-estimate the\nuncertainty about the parameters. If we use the regression correction of\nBeaumont et al. then ABC can also accurately quantify this uncertainty. The\ntheoretical results also have practical implications for how to implement ABC.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -12314,7 +12314,7 @@
     {
         "text": "SARAH: A Novel Method for Machine Learning Problems Using Stochastic Recursive Gradient.   In this paper, we propose a StochAstic Recursive grAdient algoritHm (SARAH),\nas well as its practical variant SARAH+, as a novel approach to the finite-sum\nminimization problems. Different from the vanilla SGD and other modern\nstochastic methods such as SVRG, S2GD, SAG and SAGA, SARAH admits a simple\nrecursive framework for updating stochastic gradient estimates; when comparing\nto SAG/SAGA, SARAH does not require a storage of past gradients. The linear\nconvergence rate of SARAH is proven under strong convexity assumption. We also\nprove a linear convergence rate (in the strongly convex case) for an inner loop\nof SARAH, the property that SVRG does not possess. Numerical experiments\ndemonstrate the efficiency of our algorithm.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -12464,7 +12464,7 @@
     {
         "text": "Two types of criticality in the brain.   Neural networks with equal excitatory and inhibitory feedback show high\ncomputational performance. They operate close to a critical point characterized\nby the joint activation of large populations of neurons. Yet, in macaque motor\ncortex we observe very different dynamics with weak fluctuations on the\npopulation level. This suggests that motor cortex operates in a sub-optimal\nregime. Here we show the opposite: the large dispersion of correlations across\nneurons is a signature of a rich dynamical repertoire, hidden from macroscopic\nbrain signals, but essential for high performance in such concepts as reservoir\ncomputing. Our findings suggest a refinement of the view on criticality in\nneural systems: network topology and heterogeneity endow the brain with two\ncomplementary substrates for critical dynamics of largely different\ncomplexities.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -12560,7 +12560,7 @@
     {
         "text": "Three hypergraph eigenvector centralities.   Eigenvector centrality is a standard network analysis tool for determining\nthe importance of (or ranking of) entities in a connected system that is\nrepresented by a graph. However, many complex systems and datasets have natural\nmulti-way interactions that are more faithfully modeled by a hypergraph. Here\nwe extend the notion of graph eigenvector centrality to uniform hypergraphs.\nTraditional graph eigenvector centralities are given by a positive eigenvector\nof the adjacency matrix, which is guaranteed to exist by the Perron-Frobenius\ntheorem under some mild conditions. The natural representation of a hypergraph\nis a hypermatrix (colloquially, a tensor). Using recently established\nPerron-Frobenius theory for tensors, we develop three tensor eigenvectors\ncentralities for hypergraphs, each with different interpretations. We show that\nthese centralities can reveal different information on real-world data by\nanalyzing hypergraphs constructed from n-gram frequencies, co-tagging on stack\nexchange, and drug combinations observed in patient emergency room visits.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -13046,7 +13046,7 @@
     {
         "text": "Simplifying branched covering surface-knots by chart moves involving black vertices.   A branched covering surface-knot is a surface-knot in the form of a branched\ncovering over an oriented surface-knot $F$, where we include the case when the\ncovering has no branch points. A branched covering surface-knot is presented by\na graph called a chart on a surface diagram of $F$. We can simplify a branched\ncovering surface-knot by an addition of 1-handles with chart loops to a form\nsuch that its chart is the union of free edges and 1-handles with chart loops.\nWe investigate properties of such simplifications for the case when branched\ncovering surface-knots have a non-zero number of branch points, using chart\nmoves involving black vertices.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -13346,7 +13346,7 @@
     {
         "text": "Robust method for finding sparse solutions to linear inverse problems using an L2 regularization.   We analyzed the performance of a biologically inspired algorithm called the\nCorrected Projections Algorithm (CPA) when a sparseness constraint is required\nto unambiguously reconstruct an observed signal using atoms from an\novercomplete dictionary. By changing the geometry of the estimation problem,\nCPA gives an analytical expression for a binary variable that indicates the\npresence or absence of a dictionary atom using an L2 regularizer. The\nregularized solution can be implemented using an efficient real-time\nKalman-filter type of algorithm. The smoother L2 regularization of CPA makes it\nvery robust to noise, and CPA outperforms other methods in identifying known\natoms in the presence of strong novel atoms in the signal.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -13688,7 +13688,7 @@
     {
         "text": "Adaptive Noise Cancellation Using Deep Cerebellar Model Articulation Controller.   This paper proposes a deep cerebellar model articulation controller (DCMAC)\nfor adaptive noise cancellation (ANC). We expand upon the conventional CMAC by\nstacking sin-gle-layer CMAC models into multiple layers to form a DCMAC model\nand derive a modified backpropagation training algorithm to learn the DCMAC\nparameters. Com-pared with conventional CMAC, the DCMAC can characterize\nnonlinear transformations more effectively because of its deep structure.\nExperimental results confirm that the pro-posed DCMAC model outperforms the\nCMAC in terms of residual noise in an ANC task, showing that DCMAC provides\nenhanced modeling capability based on channel characteristics.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -14030,7 +14030,7 @@
     {
         "text": "Well quasi-orders and the functional interpretation.   The purpose of this article is to study the role of Gödel's functional\ninterpretation in the extraction of programs from proofs in well quasi-order\ntheory. The main focus is on the interpretation of Nash-Williams' famous\nminimal bad sequence construction, and the exploration of a number of much\nbroader problems which are related to this, particularly the question of the\nconstructive meaning of Zorn's lemma and the notion of recursion over the\nnon-wellfounded lexicographic ordering on infinite sequences.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -14408,7 +14408,7 @@
     {
         "text": "Convergence Results for Neural Networks via Electrodynamics.   We study whether a depth two neural network can learn another depth two\nnetwork using gradient descent. Assuming a linear output node, we show that the\nquestion of whether gradient descent converges to the target function is\nequivalent to the following question in electrodynamics: Given $k$ fixed\nprotons in $\\mathbb{R}^d,$ and $k$ electrons, each moving due to the attractive\nforce from the protons and repulsive force from the remaining electrons,\nwhether at equilibrium all the electrons will be matched up with the protons,\nup to a permutation. Under the standard electrical force, this follows from the\nclassic Earnshaw's theorem. In our setting, the force is determined by the\nactivation function and the input distribution. Building on this equivalence,\nwe prove the existence of an activation function such that gradient descent\nlearns at least one of the hidden nodes in the target network. Iterating, we\nshow that gradient descent can be used to learn the entire network one node at\na time.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -14702,7 +14702,7 @@
     {
         "text": "Formalization of Transform Methods using HOL Light.   Transform methods, like Laplace and Fourier, are frequently used for\nanalyzing the dynamical behaviour of engineering and physical systems, based on\ntheir transfer function, and frequency response or the solutions of their\ncorresponding differential equations. In this paper, we present an ongoing\nproject, which focuses on the higher-order logic formalization of transform\nmethods using HOL Light theorem prover. In particular, we present the\nmotivation of the formalization, which is followed by the related work. Next,\nwe present the task completed so far while highlighting some of the challenges\nfaced during the formalization. Finally, we present a roadmap to achieve our\nobjectives, the current status and the future goals for this project.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -15026,7 +15026,7 @@
     {
         "text": "A Novel Approach to Forecasting Financial Volatility with Gaussian Process Envelopes.   In this paper we use Gaussian Process (GP) regression to propose a novel\napproach for predicting volatility of financial returns by forecasting the\nenvelopes of the time series. We provide a direct comparison of their\nperformance to traditional approaches such as GARCH. We compare the forecasting\npower of three approaches: GP regression on the absolute and squared returns;\nregression on the envelope of the returns and the absolute returns; and\nregression on the envelope of the negative and positive returns separately. We\nuse a maximum a posteriori estimate with a Gaussian prior to determine our\nhyperparameters. We also test the effect of hyperparameter updating at each\nforecasting step. We use our approaches to forecast out-of-sample volatility of\nfour currency pairs over a 2 year period, at half-hourly intervals. From three\nkernels, we select the kernel giving the best performance for our data. We use\ntwo published accuracy measures and four statistical loss functions to evaluate\nthe forecasting ability of GARCH vs GPs. In mean squared error the GP's perform\n20% better than a random walk model, and 50% better than GARCH for the same\ndata.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -15044,7 +15044,7 @@
     {
         "text": "Explicit construction of RIP matrices is Ramsey-hard.   Matrices $\\Phi\\in\\R^{n\\times p}$ satisfying the Restricted Isometry Property\n(RIP) are an important ingredient of the compressive sensing methods. While it\nis known that random matrices satisfy the RIP with high probability even for\n$n=\\log^{O(1)}p$, the explicit construction of such matrices defied the\nrepeated efforts, and the most known approaches hit the so-called $\\sqrt{n}$\nsparsity bottleneck. The notable exception is the work by Bourgain et al\n\\cite{bourgain2011explicit} constructing an $n\\times p$ RIP matrix with\nsparsity $s=\\Theta(n^{{1\\over 2}+\\epsilon})$, but in the regime\n$n=\\Omega(p^{1-\\delta})$.\nIn this short note we resolve this open question in a sense by showing that\nan explicit construction of a matrix satisfying the RIP in the regime\n$n=O(\\log^2 p)$ and $s=\\Theta(n^{1\\over 2})$ implies an explicit construction\nof a three-colored Ramsey graph on $p$ nodes with clique sizes bounded by\n$O(\\log^2 p)$ -- a question in the extremal combinatorics which has been open\nfor decades.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -15518,7 +15518,7 @@
     {
         "text": "Opinion evolution in time-varying social influence networks with prejudiced agents.   Investigation of social influence dynamics requires mathematical models that\nare \"simple\" enough to admit rigorous analysis, and yet sufficiently \"rich\" to\ncapture salient features of social groups. Thus, the mechanism of iterative\nopinion pooling from (DeGroot, 1974), which can explain the generation of\nconsensus, was elaborated in (Friedkin and Johnsen, 1999) to take into account\nindividuals' ongoing attachments to their initial opinions, or prejudices. The\n\"anchorage\" of individuals to their prejudices may disable reaching consensus\nand cause disagreement in a social influence network. Further elaboration of\nthis model may be achieved by relaxing its restrictive assumption of a\ntime-invariant influence network. During opinion dynamics on an issue, arcs of\ninterpersonal influence may be added or subtracted from the network, and the\ninfluence weights assigned by an individual to his/her neighbors may alter. In\nthis paper, we establish new important properties of the (Friedkin and Johnsen,\n1999) opinion formation model, and also examine its extension to time-varying\nsocial influence networks.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -15614,7 +15614,7 @@
     {
         "text": "Infinitary generalizations of Deligne's completeness theorem.   Given a regular cardinal $\\kappa$ such that $\\kappa^{<\\kappa}=\\kappa$, we\nstudy a class of toposes with enough points, the $\\kappa$-separable toposes.\nThese are equivalent to sheaf toposes over a site with $\\kappa$-small limits\nthat has at most $\\kappa$ many objects and morphisms, the (basis for the)\ntopology being generated by at most $\\kappa$ many covering families, and that\nsatisfy a further exactness property $T$. We prove that these toposes have\nenough $\\kappa$-points, that is, points whose inverse image preserve all\n$\\kappa$-small limits. This generalizes the separable toposes of Makkai and\nReyes, that are a particular case when $\\kappa=\\omega$, when property $T$ is\ntrivially satisfied. This result is essentially a completeness theorem for a\ncertain infinitary logic that we call $\\kappa$-geometric, where conjunctions of\nless than $\\kappa$ formulas and existential quantification on less than\n$\\kappa$ many variables is allowed. We prove that $\\kappa$-geometric theories\nhave a $\\kappa$-classifying topos having property $T$, the universal property\nbeing that models of the theory in a Grothendieck topos with property $T$\ncorrespond to $\\kappa$-geometric morphisms (geometric morphisms the inverse\nimage of which preserves all $\\kappa$-small limits) into that topos. Moreover,\nwe prove that $\\kappa$-separable toposes occur as the $\\kappa$-classifying\ntoposes of $\\kappa$-geometric theories of at most $\\kappa$ many axioms in\ncanonical form, and that every such $\\kappa$-classifying topos is\n$\\kappa$-separable. Finally, we consider the case when $\\kappa$ is weakly\ncompact and study the $\\kappa$-classifying topos of a $\\kappa$-coherent theory\n(with at most $\\kappa$ many axioms), that is, a theory where only disjunction\nof less than $\\kappa$ formulas are allowed, obtaining a version of Deligne's\ntheorem for $\\kappa$-coherent toposes.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -15884,7 +15884,7 @@
     {
         "text": "Time-lagged autoencoders: Deep learning of slow collective variables for molecular kinetics.   Inspired by the success of deep learning techniques in the physical and\nchemical sciences, we apply a modification of an autoencoder type deep neural\nnetwork to the task of dimension reduction of molecular dynamics data. We can\nshow that our time-lagged autoencoder reliably finds low-dimensional embeddings\nfor high-dimensional feature spaces which capture the slow dynamics of the\nunderlying stochastic processes - beyond the capabilities of linear dimension\nreduction techniques.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -16124,7 +16124,7 @@
     {
         "text": "Hausdorff Measure: Lost in Translation.   In the present article we describe how one can define Hausdorff measure\nallowing empty elements in coverings, and using infinite countable coverings\nonly. In addition, we discuss how the use of different nonequivalent\ninterpretations of the notion \"countable set\", that is typical for classical\nand modern mathematics, may lead to contradictions.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -16796,7 +16796,7 @@
     {
         "text": "Towards automation of data quality system for CERN CMS experiment.   Daily operation of a large-scale experiment is a challenging task,\nparticularly from perspectives of routine monitoring of quality for data being\ntaken. We describe an approach that uses Machine Learning for the automated\nsystem to monitor data quality, which is based on partial use of data qualified\nmanually by detector experts. The system automatically classifies marginal\ncases: both of good an bad data, and use human expert decision to classify\nremaining \"grey area\" cases.\nThis study uses collision data collected by the CMS experiment at LHC in\n2010. We demonstrate that proposed workflow is able to automatically process at\nleast 20\\% of samples without noticeable degradation of the result.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -16850,7 +16850,7 @@
     {
         "text": "The maximum number of cycles in a graph with fixed number of edges.   The main topic considered is maximizing the number of cycles in a graph with\ngiven number of edges. In 2009, Király conjectured that there is constant $c$\nsuch that any graph with $m$ edges has at most $(1.4)^m$ cycles. In this paper,\nit is shown that for sufficiently large $m$, a graph with $m$ edges has at most\n$(1.443)^m$ cycles. For sufficiently large $m$, examples of a graph with $m$\nedges and $(1.37)^m$ cycles are presented. For a graph with given number of\nvertices and edges an upper bound on the maximal number of cycles is given.\nAlso, exponentially tight bounds are proved for the maximum number of cycles in\na multigraph with given number of edges, as well as in a multigraph with given\nnumber of vertices and edges.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -16904,7 +16904,7 @@
     {
         "text": "Verification of operational solar flare forecast: Case of Regional Warning Center Japan.   In this article, we discuss a verification study of an operational solar\nflare forecast in the Regional Warning Center (RWC) Japan. The RWC Japan has\nbeen issuing four-categorical deterministic solar flare forecasts for a long\ntime. In this forecast verification study, we used solar flare forecast data\naccumulated over 16 years (from 2000 to 2015). We compiled the forecast data\ntogether with solar flare data obtained with the Geostationary Operational\nEnvironmental Satellites (GOES). Using the compiled data sets, we estimated\nsome conventional scalar verification measures with 95% confidence intervals.\nWe also estimated a multi-categorical scalar verification measure. These scalar\nverification measures were compared with those obtained by the persistence\nmethod and recurrence method. As solar activity varied during the 16 years, we\nalso applied verification analyses to four subsets of forecast-observation pair\ndata with different solar activity levels. We cannot conclude definitely that\nthere are significant performance difference between the forecasts of RWC Japan\nand the persistence method, although a slightly significant difference is found\nfor some event definitions. We propose to use a scalar verification measure to\nassess the judgment skill of the operational solar flare forecast. Finally, we\npropose a verification strategy for deterministic operational solar flare\nforecasting.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -17024,7 +17024,7 @@
     {
         "text": "System calibration method for Fourier ptychographic microscopy.   Fourier ptychographic microscopy (FPM) is a recently proposed quantitative\nphase imaging technique with high resolution and wide field-of-view (FOV). In\ncurrent FPM imaging platforms, systematic error sources come from the\naberrations, LED intensity fluctuation, parameter imperfections and noise,\nwhich will severely corrupt the reconstruction results with artifacts. Although\nthese problems have been researched and some special methods have been proposed\nrespectively, there is no method to solve all of them. However, the systematic\nerror is a mixture of various sources in the real situation. It is difficult to\ndistinguish a kind of error source from another due to the similar artifacts.\nTo this end, we report a system calibration procedure, termed SC-FPM, based on\nthe simulated annealing (SA) algorithm, LED intensity correction and adaptive\nstep-size strategy, which involves the evaluation of an error matric at each\niteration step, followed by the re-estimation of accurate parameters. The great\nperformance has been achieved both in simulation and experiments. The reported\nsystem calibration scheme improves the robustness of FPM and relaxes the\nexperiment conditions, which makes the FPM more pragmatic.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -17954,7 +17954,7 @@
     {
         "text": "Non-convex Conditional Gradient Sliding.   We investigate a projection free method, namely conditional gradient sliding\non batched, stochastic and finite-sum non-convex problem. CGS is a smart\ncombination of Nesterov's accelerated gradient method and Frank-Wolfe (FW)\nmethod, and outperforms FW in the convex setting by saving gradient\ncomputations. However, the study of CGS in the non-convex setting is limited.\nIn this paper, we propose the non-convex conditional gradient sliding (NCGS)\nwhich surpasses the non-convex Frank-Wolfe method in batched, stochastic and\nfinite-sum setting.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -18176,7 +18176,7 @@
     {
         "text": "New Directions In Cellular Automata.   We Propose A Novel Automaton Model which uses Arithmetic Operations as the\nEvolving Rules, each cell has the states of the Natural Numbers k = (N), a\nradius of r = 1/2 and operates on an arbitrary input size. The Automaton reads\nan Arithmetic Expression as an input and outputs another Arithmetic Expression.\nIn Addition, we simulate a variety of One Dimensional Cellular Automata\nStructures with different Dynamics including Elementary Cellular Automata.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -18278,7 +18278,7 @@
     {
         "text": "A Spatio-Temporal Multivariate Shared Component Model with an Application in Iran Cancer Data.   Among the proposals for joint disease mapping, the shared component model has\nbecome more popular. Another recent advance to strengthen inference of disease\ndata has been the extension of purely spatial models to include time and\nspace-time interaction. Such analyses have additional benefits over purely\nspatial models. However, only a few proposed spatio-temporal models could\naddress analysing multiple diseases jointly.\nIn the proposed model, each component is shared by different subsets of\ndiseases, spatial and temporal trends are considered for each component, and\nthe relative weight of these trends for each component for each relevant\ndisease can be estimated. We present an application of the proposed method on\nincidence rates of seven prevalent cancers in Iran. The effect of the shared\ncomponents on the individual cancer types can be identified. Regional and\ntemporal variation in relative risks is shown. We present a model which\ncombines the benefits of shared-components with spatio-temporal techniques for\nmultivariate data. We show, how the model allows to analyse geographical and\ntemporal variation among diseases beyond previous approaches.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -18356,7 +18356,7 @@
     {
         "text": "Generalized Moran sets Generated by Step-wise Adjustable Iterated Function Systems.   In this article we provide a systematic way of creating generalized Moran\nsets using an analogous iterated function system (IFS) procedure. We use a\nstep-wise adjustable IFS to introduce some variance (such as\nnon-self-similarity) in the fractal limit sets. The process retains the\ncomputational simplicity of a standard IFS procedure. In our construction of\nthe generalized Moran sets, we also weaken the fourth Moran Structure Condition\nthat requires the same pattern of diameter ratios be used across a generation.\nMoreover, we provide upper and lower bounds for the Hausdorff dimension of the\nfractals created from this generalized process. Specific examples (Cantor-like\nsets, Sierpinski-like Triangles, etc) with the calculations of their\ncorresponding dimensions are studied.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
