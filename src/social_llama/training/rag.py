@@ -1,7 +1,7 @@
 """Retrieval-Augmented Generation (RAG) system for classification."""
+import ast
 import logging
 import os
-from typing import List
 
 import datasets
 import pandas as pd
@@ -25,13 +25,6 @@ from social_llama.evaluation.helper_functions import label_finder
 from social_llama.utils import save_json
 
 
-# Configure logging
-logging.basicConfig(
-    filename="logs/rag.log",
-    level=logging.INFO,
-    format="%(asctime)s:%(levelname)s:%(message)s",
-)
-
 load_dotenv()
 
 
@@ -49,7 +42,7 @@ class RAGClassification:
         self.model_kwargs: dict = {"device": self._get_device()}
         self.encode_kwargs: dict = {"normalize_embeddings": True}
 
-    def convert_data_to_langchain(self, dataset):
+    def convert_data_to_langchain(self, dataset, is_socket: bool = False):
         """Converts a HuggingFace dataset to a list of langchain documents.
 
         Args:
@@ -59,16 +52,28 @@ class RAGClassification:
             docs (list): List of langchain documents.
         """
         docs = []
-        for d in DataLoader(dataset["train"]):
-            docs.append(
-                Document(
-                    page_content=d["text"][0],
-                    metadata={
-                        "idx": d["idx"].item(),
-                        "label": d["response_good"][0],
-                    },
+        if is_socket:
+            for idx, d in enumerate(DataLoader(dataset["train"])):
+                docs.append(
+                    Document(
+                        page_content=d["text"][0],
+                        metadata={
+                            "idx": idx,
+                            "label": labels_mapping[d["label"].item()],
+                        },
+                    )
                 )
-            )
+        else:
+            for d in DataLoader(dataset["train"]):
+                docs.append(
+                    Document(
+                        page_content=d["text"][0],
+                        metadata={
+                            "idx": d["idx"].item(),
+                            "label": d["response_good"][0],
+                        },
+                    )
+                )
         return docs
 
     def make_or_load_vector_db(
@@ -130,7 +135,7 @@ class RAGClassification:
             db.save_local(str(DATA_DIR_VECTOR_DB / f"{dataset_name}.faiss"))
             logging.info(f"Vector database {dataset_name}.faiss created and saved.")
 
-        retriever = db.as_retriever(search_kwargs={"k": 4})
+        retriever = db.as_retriever(search_kwargs={"k": 5})
 
         return db, retriever
 
@@ -211,169 +216,237 @@ class HuggingfaceChatTemplate:
 
 
 # Load the data
-logging.info("Loading training and test datasets.")
-dataset_name = "social-dimensions"
+dataset_names = ["social-dimensions"]
+dataset_names = [
+    "contextual-abuse#PersonDirectedAbuse",
+    "contextual-abuse#IdentityDirectedAbuse",
+    "tweet_irony",
+    "hateoffensive",
+    "tweet_emotion",
+    "implicit-hate#explicit_hate",
+    "implicit-hate#implicit_hate",
+    "crowdflower",
+    "dailydialog",
+]
 
-if dataset_name == "social-dimensions":
-    dataset = datasets.load_dataset(
-        "json", data_files=str(DATA_DIR_SOCIAL_DIMENSIONS_PROCESSED / "train.json")
-    )
-    dataset_test = datasets.load_dataset(
-        "json", data_files=str(DATA_DIR_SOCIAL_DIMENSIONS_PROCESSED / "test.json")
-    )
-    labels = [
-        "social_support",
-        "conflict",
-        "trust",
-        "fun",
-        "similarity",
-        "identity",
-        "respect",
-        "romance",
-        "knowledge",
-        "power",
-        "other",
-    ]
-else:
-    dataset = datasets.load_dataset(dataset_name, split="train")
-    dataset_test = datasets.load_dataset(dataset_name, split="test")
-    labels: List[str] = dataset.features["label"].names
-    socket_prompts: pd.DataFrame = pd.read_csv(
-        DATA_DIR_EVALUATION_SOCKET / "socket_prompts_knowledge.csv"
+for dataset_name in dataset_names:
+    # Configure logging
+    logging.basicConfig(
+        filename=f"logs/rag_{dataset_name}.log",
+        level=logging.INFO,
+        format="%(asctime)s:%(levelname)s:%(message)s",
     )
 
-RAG = RAGClassification(
-    model_name="meta-llama/Llama-2-70b-chat-hf",
-    model_name_embedding="sentence-transformers/all-MiniLM-l6-v2",
-)
+    logging.info("Loading training and test datasets.")
 
-# Convert to langchain format
-docs = RAG.convert_data_to_langchain(dataset)
-docs_test = RAG.convert_data_to_langchain(dataset_test)
+    if dataset_name == "social-dimensions":
+        dataset = datasets.load_dataset(
+            "json", data_files=str(DATA_DIR_SOCIAL_DIMENSIONS_PROCESSED / "train.json")
+        )
+        dataset_test = datasets.load_dataset(
+            "json", data_files=str(DATA_DIR_SOCIAL_DIMENSIONS_PROCESSED / "test.json")
+        )
+        labels = [
+            "social_support",
+            "conflict",
+            "trust",
+            "fun",
+            "similarity",
+            "identity",
+            "respect",
+            "romance",
+            "knowledge",
+            "power",
+            "other",
+        ]
+        label_descriptions = """social_support: Giving emotional or practical aid and companionship.
+    conflict: Contrast or diverging views.
+    trust: Will of relying on the actions or judgments of another.
+    fun: Experiencing leisure, laughter, and joy.
+    similarity: Shared interests, motivations or outlooks.
+    identity: Shared sense of belonging to the same community or group.
+    respect: Conferring status, respect, appreciation, gratitude, or admiration upon another.
+    romance: Intimacy among people with a sentimental or sexual relationship.
+    knowledge: Exchange of ideas or information; learning, teaching.
+    power: Having power over the behavior and outcomes of another.
+    other: If none of the above social dimensions apply."""
+        is_socket = False
 
-# Make or load vector db
-logging.info("Making or loading vector database for 'social-dimensions'.")
+    else:
+        dataset = datasets.load_dataset(
+            "Blablablab/SOCKET", dataset_name, split="train"
+        )
+        dataset_test = datasets.load_dataset(
+            "Blablablab/SOCKET", dataset_name, split="test"
+        )
+        # if length is more than 2000, randomly sample 2000
+        if len(dataset_test) > 2000:
+            dataset_test = dataset_test.shuffle(seed=42).select(range(2000))
+        # Convert to DatasetDict for consistency
+        dataset = datasets.DatasetDict(
+            {
+                "train": dataset,
+            }
+        )
+        dataset_test = datasets.DatasetDict(
+            {
+                "train": dataset_test,
+            }
+        )
+        # labels: List[str] = dataset['train'].features["label"].names
+        # labels_mapping: Dict[int, str] = {i: label for i, label in enumerate(labels)}
+        socket_prompts: pd.DataFrame = pd.read_csv(
+            DATA_DIR_EVALUATION_SOCKET / "socket_prompts_knowledge.csv"
+        )
+        label_descriptions = socket_prompts[socket_prompts["task"] == dataset_name][
+            "knowledge"
+        ].iloc[0]
+        labels = ast.literal_eval(
+            socket_prompts[socket_prompts["task"] == dataset_name]["options"].iloc[0]
+        )
+        labels_mapping = {i: label for i, label in enumerate(labels)}
+        is_socket = True
 
-db, retriever = RAG.make_or_load_vector_db(
-    "social-dimensions",
-    docs,
-    remake_db=False,
-)
-
-
-# Specify the model name you want to use
-model_name = "meta-llama/Llama-2-70b-chat-hf"
-
-llm = InferenceClient(
-model=model_name,
-token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
-)
-# Disable caching
-llm.headers["x-use-cache"] = "0"
-
-system_prompt = """You are part of a RAG classification system designed to categorize texts.
-Your task is to analyze the input text and classify it into one of the provided labels based on your general knowledge and the context provided by any retrieved documents that may be relevant.
-Below are the labels you can choose from, along with their descriptions. Use the information from the retrieved documents to aid your decision if they are relevant to the input text.
-
-Labels and Descriptions:
-social_support: Giving emotional or practical aid and companionship.
-conflict: Contrast or diverging views.
-trust: Will of relying on the actions or judgments of another.
-fun: Experiencing leisure, laughter, and joy.
-similarity: Shared interests, motivations or outlooks.
-identity: Shared sense of belonging to the same community or group.
-respect: Conferring status, respect, appreciation, gratitude, or admiration upon another.
-romance: Intimacy among people with a sentimental or sexual relationship.
-knowledge: Exchange of ideas or information; learning, teaching.
-power: Having power over the behavior and outcomes of another.
-other: If none of the above social dimensions apply.
-"""
-
-task = """Using the general knowledge and the information from the retrieved documents provided above, classify the input text by selecting the most appropriate label.
-Consider the relevance and content of each document in relation to the input text and the descriptions of the labels.
-If a retrieved document is highly relevant to the input text and aligns closely with the description of a label, that label might be the correct classification.
-"""
-
-template = HuggingfaceChatTemplate(
-    model_name=model_name,
-).get_template_classification(
-    system_prompt=system_prompt,
-    task=task,
-)
-
-
-# Group by idx and collect labels
-test_data_formatted = {}
-
-# Loop through each JSON object and group by 'idx'
-for obj in DataLoader(dataset_test["train"]):
-    idx = obj["idx"].item()
-    response_good = obj["response_good"][0]
-
-    if idx not in test_data_formatted:
-        test_data_formatted[idx] = {
-            "label": [],
-            "idx": idx,
-            "text": obj["text"][0],
-        }
-
-    test_data_formatted[idx]["label"].append(response_good)
-
-# Return a list of all the values in the dictionary
-test_data_formatted = list(test_data_formatted.values())
-
-predictions = []
-
-for idx, sample in tqdm(enumerate(test_data_formatted), desc="Predicting"):
-    search_docs_text = db.similarity_search_with_score(sample["text"], k=5, fetch_k=10)
-    # searchDocs_question = db.similarity_search_with_score(question, k=5, fetch_k=25)
-
-    decoded_text = RAG.decode_documents(search_docs_text)
-    # decoded_question = decode_documents(searchDocs_question)
-    
-    has_output = False
-
-    while not has_output:  
-        try:
-            output = llm.text_generation(
-                template.format(
-                    context=decoded_text,
-                    text=sample["text"],
-                ),
-                max_new_tokens=100,
-                temperature=0.7,
-                # repetition_penalty=1.2,
-            )
-            has_output = True
-
-        except BaseException as e:
-            logging.info(f"Error: {e}")
-            
-            # Delete LLM
-            del llm
-
-            logging.info("Reinitializing LLM...")
-            llm = InferenceClient(
-            model=model_name,
-            token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
-            )
-            # Disable caching
-            llm.headers["x-use-cache"] = "0"
-
-    label = label_finder(output, labels)
-
-    predictions.append(
-        {
-            "idx": idx,
-            "text": sample["text"],
-            "label": sample["label"],
-            "prediction": label,
-            "output": output,
-            "documents": decoded_text,
-        }
+    RAG = RAGClassification(
+        model_name="meta-llama/Llama-2-7b-chat-hf",
+        model_name_embedding="sentence-transformers/all-MiniLM-l6-v2",
     )
 
-save_path = DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS / f"{model_name}_predictions_RAG.json"
+    # Convert to langchain format
+    docs = RAG.convert_data_to_langchain(dataset, is_socket=is_socket)
+    docs_test = RAG.convert_data_to_langchain(dataset_test, is_socket=is_socket)
 
-# Save predictions to JSON file
-save_json(save_path, predictions)
+    # Make or load vector db
+    logging.info(f"Making or loading vector database for '{dataset_name}'.")
+    db, retriever = RAG.make_or_load_vector_db(
+        dataset_name,
+        docs,
+        remake_db=True,
+    )
+
+    # Specify the model name you want to use
+    model_name = "meta-llama/Llama-2-70b-chat-hf"
+
+    llm = InferenceClient(
+        model=model_name,
+        token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
+    )
+    # Disable caching
+    llm.headers["x-use-cache"] = "0"
+
+    system_prompt = """You are part of a RAG classification system designed to categorize texts.
+    Your task is to analyze the input text and classify it into one of the provided labels based on your general knowledge and the context provided by any retrieved documents that may be relevant.
+    Below are the labels you can choose from, along with their descriptions. Use the information from the retrieved documents to aid your decision if they are relevant to the input text.
+
+    Labels and Descriptions:
+    {label_descriptions}
+    """.format(
+        label_descriptions=label_descriptions
+    )
+
+    task = """Using the general knowledge and the information from the retrieved documents provided above, classify the input text by selecting the most appropriate label.
+    Consider the relevance and content of each document in relation to the input text and the descriptions of the labels.
+    If a retrieved document is highly relevant to the input text and aligns closely with the description of a label, that label might be the correct classification.
+    """
+
+    template = HuggingfaceChatTemplate(
+        model_name=model_name,
+    ).get_template_classification(
+        system_prompt=system_prompt,
+        task=task,
+    )
+
+    # Group by idx and collect labels
+    test_data_formatted = {}
+
+    # Loop through each JSON object and group by 'idx'
+    for id_, obj in enumerate(DataLoader(dataset_test["train"])):
+        idx = obj["idx"].item() if dataset_name == "social-dimensions" else id_
+        response_good = (
+            obj["response_good"][0]
+            if dataset_name == "social-dimensions"
+            else obj["label"]
+        )
+
+        if idx not in test_data_formatted:
+            test_data_formatted[idx] = {
+                "label": []
+                if dataset_name == "social-dimensions"
+                else labels_mapping[response_good.item()],
+                "idx": idx,
+                "text": obj["text"][0]
+                if dataset_name == "social-dimensions"
+                else obj["text"][0],
+            }
+        else:
+            test_data_formatted[idx]["label"].append(response_good)
+
+    # Return a list of all the values in the dictionary
+    test_data_formatted = list(test_data_formatted.values())
+
+    predictions = []
+
+    for idx, sample in tqdm(enumerate(test_data_formatted[:10]), desc="Predicting"):
+        search_docs_text = db.similarity_search_with_score(
+            sample["text"], k=5, fetch_k=10
+        )
+        # searchDocs_question = db.similarity_search_with_score(question, k=5, fetch_k=25)
+
+        decoded_text = RAG.decode_documents(search_docs_text)
+        # decoded_question = decode_documents(searchDocs_question)
+
+        has_output = False
+
+        # This is need as the LLM client sometimes is just hanging and needs to be reinitialized
+        while not has_output:
+            try:
+                output = llm.text_generation(
+                    template.format(
+                        context=decoded_text,
+                        text=sample["text"],
+                    ),
+                    max_new_tokens=150,
+                    temperature=0.7,
+                    # repetition_penalty=1.2,
+                )
+                has_output = True
+
+            except Exception as e:
+                logging.info(f"Error: {e}")
+
+                # Delete LLM
+                del llm
+
+                logging.info("Reinitializing LLM...")
+                llm = InferenceClient(
+                    model=model_name,
+                    token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
+                )
+                # Disable caching
+                llm.headers["x-use-cache"] = "0"
+
+        label = label_finder(output, labels)
+
+        predictions.append(
+            {
+                "idx": idx,
+                "text": sample["text"],
+                "label": sample["label"],
+                "prediction": label,
+                "output": output,
+                "documents": decoded_text,
+            }
+        )
+
+    if is_socket:
+        save_path = (
+            DATA_DIR_EVALUATION_SOCKET
+            / f"{dataset_name}/{model_name}_predictions_RAG.json"
+        )
+    else:
+        save_path = (
+            DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS / f"{model_name}_predictions_RAG.json"
+        )
+
+    # Save predictions to JSON file
+    save_json(save_path, predictions)
