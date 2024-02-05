@@ -8,6 +8,7 @@ from typing import Optional
 import numpy as np
 import pandas as pd
 import torch
+import wandb
 from datasets import Dataset
 from datasets import DatasetDict
 from dotenv import load_dotenv
@@ -57,10 +58,10 @@ class ScriptArguments:
         default=10, metadata={"help": "the number of training epochs"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=4, metadata={"help": "the per device train batch size"}
+        default=32, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=4, metadata={"help": "the per device eval batch size"}
+        default=16, metadata={"help": "the per device eval batch size"}
     )
     log_with: Optional[str] = field(
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
@@ -356,7 +357,7 @@ class WeightedCELossTrainer(Trainer):
         return (loss, outputs) if return_outputs else loss
 
 
-def train_model(dataset_dict, model, tokenizer, test=False):
+def train_model(dataset_dict, model, tokenizer, label, test=False):
     """Train a model.
 
     Args:
@@ -392,7 +393,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
         gradient_checkpointing=script_args.gradient_checkpointing,
         run_name=f"{script_args.checkpoint}-{script_args.note}-{label}",
         seed=42,
-        logging_dir=f"logs/multilabel-{script_args.checkpoint}",
+        logging_dir=f"logs/multilabel-{label}-{script_args.checkpoint}",
     )
 
     # Define the data collator
@@ -432,7 +433,7 @@ if __name__ == "__main__":
     script_args = parser.parse_args_into_dataclasses()[0]
 
     # Load the data
-    data = pd.read_csv(DATA_DIR / "multilabel/train.csv").head(100)
+    data = pd.read_csv(DATA_DIR / "multilabel/train.csv")
 
     for label in labels:
         # Preprocess the data
@@ -491,7 +492,7 @@ if __name__ == "__main__":
         model = get_lora_model(model)
 
         # Train the model
-        trainer = train_model(tokenized_datasets, model, tokenizer, test=True)
+        trainer = train_model(tokenized_datasets, model, tokenizer, label, test=True)
 
         # Save the model
         # trainer.save_model()
@@ -514,6 +515,10 @@ if __name__ == "__main__":
             save_outputs.append(sample)
 
         save_json(DATA_DIR_MULTILABEL / f"{label}.json", save_outputs)
+
+        wandb.finish()
+
+        del model, trainer
 
         # Push to hub
         # trainer.push_to_hub()
