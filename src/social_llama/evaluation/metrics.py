@@ -24,6 +24,16 @@ for task in tasks:
     print("-" * 50)
     print(f"Task: {task}")
 
+    # if not task in [
+    #             "contextual-abuse#PersonDirectedAbuse",
+    #             "contextual-abuse#IdentityDirectedAbuse",
+    #             "tweet_irony",
+    #             "hateoffensive",
+    #             "tweet_emotion",
+    #             "implicit-hate#explicit_hate",
+    #             "implicit-hate#implicit_hate"]:
+    #     continue
+
     models = [
         i
         for i in os.listdir(os.path.join(DATA_DIR_EVALUATION_SOCKET, task))
@@ -55,17 +65,29 @@ for task in tasks:
             acc = accuracy_score(predictions_finder, labels)
 
             # Append model performance data for plotting
-            model_names.append(model + "_" + file[:-10])
+            model_names.append(model + "_" + file)
             accuracies.append(acc)
 
     if len(model_names) <= 1:
         continue
 
     # Create a bar chart
-    plt.figure(figsize=(10, 6))
-    bars = plt.barh(model_names, accuracies)
+    plt.figure(figsize=(20, 10))
+    colors = [
+        "red" if "knowledge" in model or "knwldg" in model else "blue"
+        for model in model_names
+    ]
+    colors = []
+    for model in model_names:
+        if "knowledge" in model:
+            colors.append("#06d6a0")
+        elif "knwldg" in model:
+            colors.append("#ef476f")
+        else:
+            colors.append("#118ab2")
+    bars = plt.barh(model_names, accuracies, color=colors)
     # Adjust subplot left margin
-    plt.subplots_adjust(left=0.3)
+    plt.subplots_adjust(left=0.4)
     plt.xlabel("Accuracy")
     plt.title(f"Performance Metrics for Task: {task}")
     plt.xlim(0, 1)  # Assuming accuracy is between 0 and 1
