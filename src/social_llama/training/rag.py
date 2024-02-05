@@ -236,7 +236,7 @@ db, retriever = make_or_load_vector_db(
 
 
 # Specify the model name you want to use
-model_name = "meta-llama/Llama-2-70b-chat-hf"
+model_name = "meta-llama/Llama-2-7b-chat-hf"
 
 llm = InferenceClient(
 model=model_name,
@@ -263,7 +263,7 @@ power: Having power over the behavior and outcomes of another.
 other: If none of the above social dimensions apply.
 """
 
-task = """Using the general knowledge and the information from the retrieved documents provided above, classify the input text by selecting the most appropriate label.
+task = """Using the general knowledge and the information from the retrieved documents provided below, classify the input text by selecting the most appropriate label.
 Consider the relevance and content of each document in relation to the input text and the descriptions of the labels.
 If a retrieved document is highly relevant to the input text and aligns closely with the description of a label, that label might be the correct classification.
 """
