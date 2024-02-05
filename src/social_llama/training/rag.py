@@ -386,7 +386,7 @@ for dataset_name in dataset_names:
 
     predictions = []
 
-    for idx, sample in tqdm(enumerate(test_data_formatted[:10]), desc="Predicting"):
+    for idx, sample in tqdm(enumerate(test_data_formatted), desc="Predicting"):
         search_docs_text = db.similarity_search_with_score(
             sample["text"], k=5, fetch_k=10
         )
