@@ -24,15 +24,17 @@ for task in tasks:
     print("-" * 50)
     print(f"Task: {task}")
 
-    # if not task in [
-    #             "contextual-abuse#PersonDirectedAbuse",
-    #             "contextual-abuse#IdentityDirectedAbuse",
-    #             "tweet_irony",
-    #             "hateoffensive",
-    #             "tweet_emotion",
-    #             "implicit-hate#explicit_hate",
-    #             "implicit-hate#implicit_hate"]:
-    #     continue
+    if not task in [
+        "contextual-abuse#PersonDirectedAbuse",
+        "contextual-abuse#IdentityDirectedAbuse",
+        "tweet_irony",
+        "hateoffensive",
+        "tweet_emotion",
+        "implicit-hate#explicit_hate",
+        "implicit-hate#implicit_hate",
+        "crowdflower",
+    ]:
+        continue
 
     models = [
         i
