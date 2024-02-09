@@ -8,7 +8,6 @@ from typing import Optional
 import numpy as np
 import pandas as pd
 import torch
-import wandb
 from datasets import Dataset
 from datasets import DatasetDict
 from dotenv import load_dotenv
@@ -28,6 +27,7 @@ from transformers import Trainer
 from transformers import TrainerCallback
 from transformers import TrainingArguments
 
+import wandb
 from social_llama.config import DATA_DIR
 from social_llama.config import DATA_DIR_MULTILABEL
 from social_llama.utils import save_json

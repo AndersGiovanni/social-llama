@@ -28,6 +28,8 @@ from transformers import TrainerCallback
 from transformers import TrainingArguments
 
 from social_llama.config import DATA_DIR
+from social_llama.config import DATA_DIR_MULTILABEL
+from social_llama.utils import save_json
 
 
 load_dotenv()
@@ -502,7 +504,45 @@ if __name__ == "__main__":
     trainer = train_model(tokenized_datasets, model, tokenizer, test=True)
 
     # Save the model
-    trainer.save_model()
+    # trainer.save_model()
+
+    predictions = trainer.predict(tokenized_datasets["test"])
+
+    predictions_per_class = {
+        label: {
+            "pred": [],
+            "true": [],
+        }
+        for label in id2label.values()
+    }
+
+    for prediction_logits, true_label in zip(
+        predictions.predictions, predictions.label_ids
+    ):
+        for i, label in enumerate(id2label.values()):
+            probs = expit(prediction_logits[i])
+            predictions_per_class[label]["pred"].append((probs > 0.5).astype(int))
+            predictions_per_class[label]["true"].append(true_label[i])
+
+    metrics = {}
+
+    # Save metrics to json file
+    for label, preds in predictions_per_class.items():
+        accuracy = accuracy_score(preds["true"], preds["pred"])
+        precision = precision_score(preds["true"], preds["pred"], average="micro")
+        recall = recall_score(preds["true"], preds["pred"], average="micro")
+        f1 = f1_score(preds["true"], preds["pred"], average="micro")
+        hamming_loss_ = hamming_loss(preds["true"], preds["pred"])
+        scores = {
+            "accuracy": accuracy,
+            "precision": precision,
+            "recall": recall,
+            "f1": f1,
+            "hamming_loss": hamming_loss_,
+        }
+        metrics[label] = scores
+
+    save_json(DATA_DIR_MULTILABEL / "multilabel_ovr_eval.json", metrics)
 
     # Push to hub
     # trainer.push_to_hub()
