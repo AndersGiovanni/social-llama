@@ -330,6 +330,7 @@ for dataset_name in dataset_names:
     llm = InferenceClient(
         model=model_name,
         token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
+        timeout=20,
     )
     # Disable caching
     llm.headers["x-use-cache"] = "0"
@@ -421,6 +422,7 @@ for dataset_name in dataset_names:
                 llm = InferenceClient(
                     model=model_name,
                     token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
+                    timeout=20,
                 )
                 # Disable caching
                 llm.headers["x-use-cache"] = "0"
