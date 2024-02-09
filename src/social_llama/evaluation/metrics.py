@@ -25,14 +25,15 @@ for task in tasks:
     print(f"Task: {task}")
 
     if not task in [
-        "contextual-abuse#PersonDirectedAbuse",
-        "contextual-abuse#IdentityDirectedAbuse",
-        "tweet_irony",
-        "hateoffensive",
-        "tweet_emotion",
-        "implicit-hate#explicit_hate",
-        "implicit-hate#implicit_hate",
-        "crowdflower",
+        # "contextual-abuse#PersonDirectedAbuse",
+        # "contextual-abuse#IdentityDirectedAbuse",
+        # "tweet_irony",
+        # "hateoffensive",
+        # "tweet_emotion",
+        # "implicit-hate#explicit_hate",
+        # "implicit-hate#implicit_hate",
+        # "crowdflower",
+        "dailydialog",
     ]:
         continue
 
