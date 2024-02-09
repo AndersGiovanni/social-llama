@@ -218,18 +218,25 @@ class HuggingfaceChatTemplate:
 # Load the data
 dataset_names = ["social-dimensions"]
 dataset_names = [
-    "contextual-abuse#PersonDirectedAbuse",
-    "contextual-abuse#IdentityDirectedAbuse",
-    "tweet_irony",
-    "hateoffensive",
-    "tweet_emotion",
-    "implicit-hate#explicit_hate",
-    "implicit-hate#implicit_hate",
-    "crowdflower",
-    "dailydialog",
+    # "contextual-abuse#PersonDirectedAbuse",
+    # "contextual-abuse#IdentityDirectedAbuse",
+    # "tweet_irony",
+    # "hateoffensive",
+    # "tweet_emotion",
+    # "implicit-hate#explicit_hate",
+    # "implicit-hate#implicit_hate",
+    # "crowdflower",
+    # "dailydialog",
+    "hahackathon#is_humor",
+    "sarc",
+    "questionintimacy",
 ]
 
 for dataset_name in dataset_names:
+    # Clear existing handlers
+    for handler in logging.root.handlers[:]:
+        logging.root.removeHandler(handler)
+
     # Configure logging
     logging.basicConfig(
         filename=f"logs/rag_{dataset_name}.log",
