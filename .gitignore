@@ -17,5 +17,6 @@ dpo/
 .env
 .DS_Store
 /ten-dim/
+/news-multilabel
 /data/vector-db/
 /logs/

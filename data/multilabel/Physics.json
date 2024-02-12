@@ -170,7 +170,7 @@
     {
         "text": "QCD-Aware Recursive Neural Networks for Jet Physics.   Recent progress in applying machine learning for jet physics has been built\nupon an analogy between calorimeters and images. In this work, we present a\nnovel class of recursive neural networks built instead upon an analogy between\nQCD and natural languages. In the analogy, four-momenta are like words and the\nclustering history of sequential recombination jet algorithms is like the\nparsing of a sentence. Our approach works directly with the four-momenta of a\nvariable-length set of particles, and the jet-based tree structure varies on an\nevent-by-event basis. Our experiments highlight the flexibility of our method\nfor building task-specific jet embeddings and show that recursive architectures\nare significantly more accurate and data efficient than previous image-based\nnetworks. We extend the analogy from individual jets (sentences) to full events\n(paragraphs), and show for the first time an event-level classifier operating\non all the stable particles produced in an LHC event.",
         "labels": 1,
-        "Physics": 0,
+        "Physics": 1,
         "is_Physics": 1
     },
     {
@@ -1130,7 +1130,7 @@
     {
         "text": "Non-cocompact Group Actions and $π_1$-Semistability at Infinity.   A finitely presented 1-ended group $G$ has {\\it semistable fundamental group\nat infinity} if $G$ acts geometrically on a simply connected and locally\ncompact ANR $Y$ having the property that any two proper rays in $Y$ are\nproperly homotopic. This property of $Y$ captures a notion of connectivity at\ninfinity stronger than \"1-ended\", and is in fact a feature of $G$, being\nindependent of choices. It is a fundamental property in the homotopical study\nof finitely presented groups. While many important classes of groups have been\nshown to have semistable fundamental group at infinity, the question of whether\nevery $G$ has this property has been a recognized open question for nearly\nforty years. In this paper we attack the problem by considering a proper {\\it\nbut non-cocompact} action of a group $J$ on such an $Y$. This $J$ would\ntypically be a subgroup of infinite index in the geometrically acting\nover-group $G$; for example $J$ might be infinite cyclic or some other subgroup\nwhose semistability properties are known. We divide the semistability property\nof $G$ into a $J$-part and a \"perpendicular to $J$\" part, and we analyze how\nthese two parts fit together. Among other things, this analysis leads to a\nproof (in a companion paper) that a class of groups previously considered to be\nlikely counter examples do in fact have the semistability property.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -1856,7 +1856,7 @@
     {
         "text": "The Two-fold Role of Observables in Classical and Quantum Kinematics.   Observables have a dual nature in both classical and quantum kinematics: they\nare at the same time \\emph{quantities}, allowing to separate states by means of\ntheir numerical values, and \\emph{generators of transformations}, establishing\nrelations between different states. In this work, we show how this two-fold\nrole of observables constitutes a key feature in the conceptual analysis of\nclassical and quantum kinematics, shedding a new light on the distinguishing\nfeature of the quantum at the kinematical level. We first take a look at the\nalgebraic description of both classical and quantum observables in terms of\nJordan-Lie algebras and show how the two algebraic structures are the precise\nmathematical manifestation of the two-fold role of observables. Then, we turn\nto the geometric reformulation of quantum kinematics in terms of Kähler\nmanifolds. A key achievement of this reformulation is to show that the two-fold\nrole of observables is the constitutive ingredient defining what an observable\nis. Moreover, it points to the fact that, from the restricted point of view of\nthe transformational role of observables, classical and quantum kinematics\nbehave in exactly the same way. Finally, we present Landsman's general\nframework of Poisson spaces with transition probability, which highlights with\nunmatched clarity that the crucial difference between the two kinematics lies\nin the way the two roles of observables are related to each other.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -2060,7 +2060,7 @@
     {
         "text": "Development of a passive Rehabilitation Robot for the wrist joint through the implementation of an Arduino UNO microcontroller.   In this research was implemented the use of an Arduino UNO R3 microcontroller\nto control the movements of a prototype robotic functional developed to perform\nrehabilitation exercises in the wrist joint; This device can be used to assist\nthe physiatrist to rehabilitate the tendinitis, synovitis, rheumatoid arthritis\nand for pre-operative and post-operative therapy in this joint. During the\ndesign stage of the functional prototype, the methodology of the industrial\ndesign process was used from a concurrent engineering approach, through which\nanthropometric studies could be performed related to the dimensions and angles\nof movement of the wrist joint in the population Venezuelan from the\ninformation collected, the design proposal was elaborated, and the use of CAD\nprograms defined the different forms, geometries and materials of the\ncomponents of the rehabilitation device, which were later analyzed using the\nfinite element method for the determination The tensional state of efforts and\nsafety factors through the use of CAE programs. In addition, a software was\ndeveloped for the acquisition, registration, reproduction and execution of the\ndifferent movements produced during the rehabilitation therapy. Through the\nresearch developed, a device was designed that will help the rehabilitation of\nthe wrist joint allowing the combination of dorsal-palmar flexion and\nulnar-radial movements to recover the joint function of various pathologies\npresented in the Venezuelan population.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -3158,7 +3158,7 @@
     {
         "text": "Genetic interactions from first principles.   We derive a general statistical model of interactions, starting from\nprobabilistic principles and elementary requirements. Prevailing interaction\nmodels in biomedical researches diverge both mathematically and practically. In\nparticular, genetic interaction inquiries are formulated without an obvious\nmathematical unity. Our model reveals theoretical properties unnoticed so far,\nparticularly valuable for genetic interaction mapping, where mechanistic\ndetails are mostly unknown, distribution of gene variants differ between\npopulations, and genetic susceptibilities are spuriously propagated by linkage\ndisequilibrium. When applied to data of the largest interaction mapping\nexperiment on Saccharomyces Cerevisiae to date, our results imply less aversion\nto positive interactions, detection of well-documented hubs and partial\nremapping of functional regions of the currently known genetic interaction\nlandscape. Assessment of divergent annotations across functional categories\nfurther suggests that positive interactions have a more important role on\nribosome biogenesis than previously realized. The unity of arguments elaborated\nhere enables the analysis of dissimilar interaction models and experimental\ndata with a common framework.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -3638,7 +3638,7 @@
     {
         "text": "Gamma-Band Correlations in Primary Visual Cortex.   Neural field theory is used to quantitatively analyze the two-dimensional\nspatiotemporal correlation properties of gamma-band (30 -- 70 Hz) oscillations\nevoked by stimuli arriving at the primary visual cortex (V1), and modulated by\npatchy connectivities that depend on orientation preference (OP). Correlation\nfunctions are derived analytically under different stimulus and measurement\nconditions. The predictions reproduce a range of published experimental\nresults, including the existence of two-point oscillatory temporal\ncross-correlations with zero time-lag between neurons with similar OP, the\ninfluence of spatial separation of neurons on the strength of the correlations,\nand the effects of differing stimulus orientations.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -3662,7 +3662,7 @@
     {
         "text": "Timing Aware Dummy Metal Fill Methodology.   In this paper, we analyzed parasitic coupling capacitance coming from dummy\nmetal fill and its impact on timing. Based on the modeling, we proposed two\napproaches to minimize the timing impact from dummy metal fill. The first\napproach applies more spacing between critical nets and metal fill, while the\nsecond approach leverages the shielding effects of reference nets. Experimental\nresults show consistent improvement compared to traditional metal fill method.",
         "labels": 0,
-        "Physics": 0,
+        "Physics": 1,
         "is_Physics": 0
     },
     {
@@ -3944,7 +3944,7 @@
     {
         "text": "The Impact of Antenna Height Difference on the Performance of Downlink Cellular Networks.   Capable of significantly reducing cell size and enhancing spatial reuse,\nnetwork densification is shown to be one of the most dominant approaches to\nexpand network capacity. Due to the scarcity of available spectrum resources,\nnevertheless, the over-deployment of network infrastructures, e.g., cellular\nbase stations (BSs), would strengthen the inter-cell interference as well, thus\nin turn deteriorating the system performance. On this account, we investigate\nthe performance of downlink cellular networks in terms of user coverage\nprobability (CP) and network spatial throughput (ST), aiming to shed light on\nthe limitation of network densification. Notably, it is shown that both CP and\nST would be degraded and even diminish to be zero when BS density is\nsufficiently large, provided that practical antenna height difference (AHD)\nbetween BSs and users is involved to characterize pathloss. Moreover, the\nresults also reveal that the increase of network ST is at the expense of the\ndegradation of CP. Therefore, to balance the tradeoff between user and network\nperformance, we further study the critical density, under which ST could be\nmaximized under the CP constraint. Through a special case study, it follows\nthat the critical density is inversely proportional to the square of AHD. The\nresults in this work could provide helpful guideline towards the application of\nnetwork densification in the next-generation wireless networks.",
         "labels": 0,
-        "Physics": 0,
+        "Physics": 1,
         "is_Physics": 0
     },
     {
@@ -4178,7 +4178,7 @@
     {
         "text": "Community Detection in the Network of German Princes in 1225: a Case Study.   Many social networks exhibit some underlying community structure. In\nparticular, in the context of historical research, clustering of different\ngroups into warring or friendly factions can lead to a better understanding of\nhow conflicts may arise, and whether they could be avoided or not. In this work\nwe study the crisis that started in 1225 when the Emperor of the Holy Roman\nEmpire, Frederick II and his son Henry VII got into a conflict which almost led\nto the rupture and dissolution of the Empire. We use a spin-glass-based\ncommunity detection algorithm to see how good this method is in detecting this\nrift and compare the results with an analysis performed by one of the authors\n(Gramsch) using standard social balance theory applied to History.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -4520,7 +4520,7 @@
     {
         "text": "Network analysis of Japanese global business using quasi-exhaustive micro-data for Japanese overseas subsidiaries.   Network analysis techniques remain rarely used for understanding\ninternational management strategies. Our paper highlights their value as\nresearch tool in this field of social science using a large set of micro-data\n(20,000) to investigate the presence of networks of subsidiaries overseas. The\nresearch question is the following: to what extent did/do global Japanese\nbusiness networks mirror organizational models existing in Japan? In\nparticular, we would like to assess how much the links building such business\nnetworks are shaped by the structure of big-size industrial conglomerates of\nfirms headquartered in Japan, also described as HK. The major part of the\nacademic community in the fields of management and industrial organization\nconsiders that formal links can be identified among firms belonging to HK. Miwa\nand Ramseyer (Miwa and Ramseyer 2002; Ramseyer 2006) challenge this claim and\nargue that the evidence supporting the existence of HK is weak. So far,\nquantitative empirical investigation has been conducted exclusively using data\nfor firms incorporated in Japan. Our study tests the Miwa-Ramseyer hypothesis\n(MRH) at the global level using information on the network of Japanese\nsubsidiaries overseas. The results obtained lead us to reject the MRH for the\nglobal dataset, as well as for subsets restricted to the two main\nregions/countries of destination of Japanese foreign investment. The results\nare robust to the weighting of the links, with different specifications, and\nare observed in most industrial sectors. The global Japanese network became\nincreasingly complex during the late 20th century as a consequence of increase\nin the number of Japanese subsidiaries overseas but the key features of the\nstructure remained rather stable. We draw implications of these findings for\nacademic research in international business and for professionals involved in\ncorporate strategy.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -4808,7 +4808,7 @@
     {
         "text": "Memories of a Theoretical Physicist.   While I was dealing with a brain injury and finding it difficult to work, two\nfriends (Derek Westen, a friend of the KITP, and Steve Shenker, with whom I was\nrecently collaborating), suggested that a new direction might be good. Steve in\nparticular regarded me as a good writer and suggested that I try that. I\nquickly took to Steve's suggestion. Having only two bodies of knowledge, myself\nand physics, I decided to write an autobiography about my development as a\ntheoretical physicist.\nThis is not written for any particular audience, but just to give myself a\ngoal. It will probably have too much physics for a nontechnical reader, and too\nlittle for a physicist, but perhaps there with be different things for each.\nParts may be tedious. But it is somewhat unique, I think, a blow-by-blow\nhistory of where I started and where I got to.\nProbably the target audience is theoretical physicists, especially young\nones, who may enjoy comparing my struggles with their own. Some disclaimers:\nThis is based on my own memories, jogged by the arXiv and Inspire. There will\nsurely be errors and omissions. And note the title: this is about my memories,\nwhich will be different for other people. Also, it would not be possible for me\nto mention all the authors whose work might intersect mine, so this should not\nbe treated as a reference work.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -4940,7 +4940,7 @@
     {
         "text": "An Efficient Deep Learning Technique for the Navier-Stokes Equations: Application to Unsteady Wake Flow Dynamics.   We present an efficient deep learning technique for the model reduction of\nthe Navier-Stokes equations for unsteady flow problems. The proposed technique\nrelies on the Convolutional Neural Network (CNN) and the stochastic gradient\ndescent method. Of particular interest is to predict the unsteady fluid forces\nfor different bluff body shapes at low Reynolds number. The discrete\nconvolution process with a nonlinear rectification is employed to approximate\nthe mapping between the bluff-body shape and the fluid forces. The deep neural\nnetwork is fed by the Euclidean distance function as the input and the target\ndata generated by the full-order Navier-Stokes computations for primitive bluff\nbody shapes. The convolutional networks are iteratively trained using the\nstochastic gradient descent method with the momentum term to predict the fluid\nforce coefficients of different geometries and the results are compared with\nthe full-order computations. We attempt to provide a physical analogy of the\nstochastic gradient method with the momentum term with the simplified form of\nthe incompressible Navier-Stokes momentum equation. We also construct a direct\nrelationship between the CNN-based deep learning and the Mori-Zwanzig formalism\nfor the model reduction of a fluid dynamical system. A systematic convergence\nand sensitivity study is performed to identify the effective dimensions of the\ndeep-learned CNN process such as the convolution kernel size, the number of\nkernels and the convolution layers. Within the error threshold, the prediction\nbased on our deep convolutional network has a speed-up nearly four orders of\nmagnitude compared to the full-order results and consumes an insignificant\nfraction of computational resources. The proposed CNN-based approximation\nprocedure has a profound impact on the parametric design of bluff bodies and\nthe feedback control of separated flows.",
         "labels": 1,
-        "Physics": 0,
+        "Physics": 1,
         "is_Physics": 1
     },
     {
@@ -5186,7 +5186,7 @@
     {
         "text": "Spatial interactions and oscillatory tragedies of the commons.   A tragedy of the commons (TOC) occurs when individuals acting in their own\nself-interest deplete commonly-held resources, leading to a worse outcome than\nhad they cooperated. Over time, the depletion of resources can change\nincentives for subsequent actions. Here, we investigate long-term feedback\nbetween game and environment across a continuum of incentives in an\nindividual-based framework. We identify payoff-dependent transition rules that\nlead to oscillatory TOC-s in stochastic simulations and the mean field limit.\nFurther extending the stochastic model, we find that spatially explicit\ninteractions can lead to emergent, localized dynamics, including the\npropagation of cooperative wave fronts and cluster formation of both social\ncontext and resources. These dynamics suggest new mechanisms underlying how\nTOCs arise and how they might be averted.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -5234,7 +5234,7 @@
     {
         "text": "Family-specific scaling laws in bacterial genomes.   Among several quantitative invariants found in evolutionary genomics, one of\nthe most striking is the scaling of the overall abundance of proteins, or\nprotein domains, sharing a specific functional annotation across genomes of\ngiven size. The size of these functional categories change, on average, as\npower-laws in the total number of protein-coding genes. Here, we show that such\nregularities are not restricted to the overall behavior of high-level\nfunctional categories, but also exist systematically at the level of single\nevolutionary families of protein domains. Specifically, the number of proteins\nwithin each family follows family-specific scaling laws with genome size.\nFunctionally similar sets of families tend to follow similar scaling laws, but\nthis is not always the case. To understand this systematically, we provide a\ncomprehensive classification of families based on their scaling properties.\nAdditionally, we develop a quantitative score for the heterogeneity of the\nscaling of families belonging to a given category or predefined group. Under\nthe common reasonable assumption that selection is driven solely or mainly by\nbiological function, these findings point to fine-tuned and interdependent\nfunctional roles of specific protein domains, beyond our current functional\nannotations. This analysis provides a deeper view on the links between\nevolutionary expansion of protein families and the functional constraints\nshaping the gene repertoire of bacterial genomes.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -6062,7 +6062,7 @@
     {
         "text": "Bi-National Delay Pattern Analysis For Commercial and Passenger Vehicles at Niagara Frontier Border.   Border crossing delays between New York State and Southern Ontario cause\nproblems like enormous economic loss and massive environmental pollutions. In\nthis area, there are three border-crossing ports: Peace Bridge (PB), Rainbow\nBridge (RB) and Lewiston-Queenston Bridge (LQ) at Niagara Frontier border. The\ngoals of this paper are to figure out whether the distributions of bi-national\nwait times for commercial and passenger vehicles are evenly distributed among\nthe three ports and uncover the hidden significant influential factors that\nresult in the possible insufficient utilization. The historical border wait\ntime data from 7:00 to 21:00 between 08/22/2016 and 06/20/2017 are archived, as\nwell as the corresponding temporal and weather data. For each vehicle type\ntowards each direction, a Decision Tree is built to identify the various border\ndelay patterns over the three bridges. We find that for the passenger vehicles\nto the USA, the convenient connections between the Canada freeways with USA\nI-190 by LQ and PB may cause these two bridges more congested than RB,\nespecially when it is a holiday in Canada. For the passenger vehicles in the\nother bound, RB is much more congested than LQ and PB in some cases, and the\nvisitors to Niagara Falls in the USA in summer may be a reason. For the\ncommercial trucks to the USA, the various delay patterns show PB is always more\ncongested than LQ. Hour interval and weekend are the most significant factors\nappearing in all the four Decision Trees. These Decision Trees can help the\nauthorities to make specific routing suggestions when the corresponding\nconditions are satisfied.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -6122,7 +6122,7 @@
     {
         "text": "A Computational Approach to Extinction Events in Chemical Reaction Networks with Discrete State Spaces.   Recent work of M.D. Johnston et al. has produced sufficient conditions on the\nstructure of a chemical reaction network which guarantee that the corresponding\ndiscrete state space system exhibits an extinction event. The conditions\nconsist of a series of systems of equalities and inequalities on the edges of a\nmodified reaction network called a domination-expanded reaction network. In\nthis paper, we present a computational implementation of these conditions\nwritten in Python and apply the program on examples drawn from the biochemical\nliterature, including a model of polyamine metabolism in mammals and a model of\nthe pentose phosphate pathway in Trypanosoma brucei. We also run the program on\n458 models from the European Bioinformatics Institute's BioModels Database and\nreport our results.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -6200,7 +6200,7 @@
     {
         "text": "Maximum a posteriori estimation through simulated annealing for binary asteroid orbit determination.   This paper considers a new method for the binary asteroid orbit determination\nproblem. The method is based on the Bayesian approach with a global\noptimisation algorithm. The orbital parameters to be determined are modelled\nthrough an a posteriori distribution made of a priori and likelihood terms. The\nfirst term constrains the parameters space and it allows the introduction of\navailable knowledge about the orbit. The second term is based on given\nobservations and it allows us to use and compare different observational error\nmodels. Once the a posteriori model is built, the estimator of the orbital\nparameters is computed using a global optimisation procedure: the simulated\nannealing algorithm. The maximum a posteriori (MAP) techniques are verified\nusing simulated and real data. The obtained results validate the proposed\nmethod. The new approach guarantees independence of the initial parameters\nestimation and theoretical convergence towards the global optimisation\nsolution. It is particularly useful in these situations, whenever a good\ninitial orbit estimation is difficult to get, whenever observations are not\nwell-sampled, and whenever the statistical behaviour of the observational\nerrors cannot be stated Gaussian like.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -6914,7 +6914,7 @@
     {
         "text": "Discretization error estimates for penalty formulations of a linearized Canham-Helfrich type energy.   This paper is concerned with minimization of a fourth-order linearized\nCanham-Helfrich energy subject to Dirichlet boundary conditions on curves\ninside the domain. Such problems arise in the modeling of the mechanical\ninteraction of biomembranes with embedded particles. There, the curve\nconditions result from the imposed particle--membrane coupling. We prove\nalmost-$H^{\\frac{5}{2}}$ regularity of the solution and then consider two\npossible penalty formulations. For the combination of these penalty\nformulations with a Bogner-Fox-Schmit finite element discretization we prove\ndiscretization error estimates which are optimal in view of the solution's\nreduced regularity. The error estimates are based on a general estimate for\nlinear penalty problems in Hilbert spaces. Finally, we illustrate the\ntheoretical results by numerical computations. An important feature of the\npresented discretization is that it does not require to resolve the particle\nboundary. This is crucial in order to avoid re-meshing if the presented problem\narises as subproblem in a model where particles are allowed to move or rotate.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -7442,7 +7442,7 @@
     {
         "text": "A Game of Life on Penrose tilings.   We define rules for cellular automata played on quasiperiodic tilings of the\nplane arising from the multigrid method in such a way that these cellular\nautomata are isomorphic to Conway's Game of Life. Although these tilings are\nnonperiodic, determining the next state of each tile is a local computation,\nrequiring only knowledge of the local structure of the tiling and the states of\nfinitely many nearby tiles. As an example, we show a version of a \"glider\"\nmoving through a region of a Penrose tiling. This constitutes a potential\ntheoretical framework for a method of executing computations in\nnon-periodically structured substrates such as quasicrystals.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -7664,7 +7664,7 @@
     {
         "text": "Inverse mean curvature flow in quaternionic hyperbolic space.   In this paper we complete the study started in [Pi2] of evolution by inverse\nmean curvature flow of star-shaped hypersurface in non-compact rank one\nsymmetric spaces. We consider the evolution by inverse mean curvature flow of a\nclosed, mean convex and star-shaped hypersurface in the quaternionic hyperbolic\nspace. We prove that the flow is defined for any positive time, the evolving\nhypersurface stays star-shaped and mean convex. Moreover the induced metric\nconverges, after rescaling, to a conformal multiple of the standard\nsub-Riemannian metric on the sphere defined on a codimension 3 distribution.\nFinally we show that there exists a family of examples such that the qc-scalar\ncurvature of this sub-Riemannian limit is not constant.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -7874,7 +7874,7 @@
     {
         "text": "On the accuracy and usefulness of analytic energy models for contemporary multicore processors.   This paper presents refinements to the execution-cache-memory performance\nmodel and a previously published power model for multicore processors. The\ncombination of both enables a very accurate prediction of performance and\nenergy consumption of contemporary multicore processors as a function of\nrelevant parameters such as number of active cores as well as core and Uncore\nfrequencies. Model validation is performed on the Sandy Bridge-EP and\nBroadwell-EP microarchitectures. Production-related variations in chip quality\nare demonstrated through a statistical analysis of the fit parameters obtained\non one hundred Broadwell-EP CPUs of the same model. Insights from the models\nare used to explain the performance- and energy-related behavior of the\nprocessors for scalable as well as saturating (i.e., memory-bound) codes. In\nthe process we demonstrate the models' capability to identify optimal operating\npoints with respect to highest performance, lowest energy-to-solution, and\nlowest energy-delay product and identify a set of best practices for\nenergy-efficient execution.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -8408,7 +8408,7 @@
     {
         "text": "Radiomics strategies for risk assessment of tumour failure in head-and-neck cancer.   Quantitative extraction of high-dimensional mineable data from medical images\nis a process known as radiomics. Radiomics is foreseen as an essential\nprognostic tool for cancer risk assessment and the quantification of\nintratumoural heterogeneity. In this work, 1615 radiomic features (quantifying\ntumour image intensity, shape, texture) extracted from pre-treatment FDG-PET\nand CT images of 300 patients from four different cohorts were analyzed for the\nrisk assessment of locoregional recurrences (LR) and distant metastases (DM) in\nhead-and-neck cancer. Prediction models combining radiomic and clinical\nvariables were constructed via random forests and imbalance-adjustment\nstrategies using two of the four cohorts. Independent validation of the\nprediction and prognostic performance of the models was carried out on the\nother two cohorts (LR: AUC = 0.69 and CI = 0.67; DM: AUC = 0.86 and CI = 0.88).\nFurthermore, the results obtained via Kaplan-Meier analysis demonstrated the\npotential of radiomics for assessing the risk of specific tumour outcomes using\nmultiple stratification groups. This could have important clinical impact,\nnotably by allowing for a better personalization of chemo-radiation treatments\nfor head-and-neck cancer patients from different risk groups.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -9182,7 +9182,7 @@
     {
         "text": "DeepSD: Generating High Resolution Climate Change Projections through Single Image Super-Resolution.   The impacts of climate change are felt by most critical systems, such as\ninfrastructure, ecological systems, and power-plants. However, contemporary\nEarth System Models (ESM) are run at spatial resolutions too coarse for\nassessing effects this localized. Local scale projections can be obtained using\nstatistical downscaling, a technique which uses historical climate observations\nto learn a low-resolution to high-resolution mapping. Depending on statistical\nmodeling choices, downscaled projections have been shown to vary significantly\nterms of accuracy and reliability. The spatio-temporal nature of the climate\nsystem motivates the adaptation of super-resolution image processing techniques\nto statistical downscaling. In our work, we present DeepSD, a generalized\nstacked super resolution convolutional neural network (SRCNN) framework for\nstatistical downscaling of climate variables. DeepSD augments SRCNN with\nmulti-scale input channels to maximize predictability in statistical\ndownscaling. We provide a comparison with Bias Correction Spatial\nDisaggregation as well as three Automated-Statistical Downscaling approaches in\ndownscaling daily precipitation from 1 degree (~100km) to 1/8 degrees (~12.5km)\nover the Continental United States. Furthermore, a framework using the NASA\nEarth Exchange (NEX) platform is discussed for downscaling more than 20 ESM\nmodels with multiple emission scenarios.",
         "labels": 0,
-        "Physics": 0,
+        "Physics": 1,
         "is_Physics": 0
     },
     {
@@ -9272,7 +9272,7 @@
     {
         "text": "Cosmological Simulations in Exascale Era.   The architecture of Exascale computing facilities, which involves millions of\nheterogeneous processing units, will deeply impact on scientific applications.\nFuture astrophysical HPC applications must be designed to make such computing\nsystems exploitable. The ExaNeSt H2020 EU-funded project aims to design and\ndevelop an exascale ready prototype based on low-energy-consumption ARM64 cores\nand FPGA accelerators. We participate to the design of the platform and to the\nvalidation of the prototype with cosmological N-body and hydrodynamical codes\nsuited to perform large-scale, high-resolution numerical simulations of cosmic\nstructures formation and evolution. We discuss our activities on astrophysical\napplications to take advantage of the underlying architecture.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -9602,7 +9602,7 @@
     {
         "text": "Strong and Weak Equilibria for Time-Inconsistent Stochastic Control in Continuous Time.   A new definition of continuous-time equilibrium controls is introduced. As\nopposed to the standard definition, which involves a derivative-type operation,\nthe new definition parallels how a discrete-time equilibrium is defined, and\nallows for unambiguous economic interpretation. The terms \"strong equilibria\"\nand \"weak equilibria\" are coined for controls under the new and the standard\ndefinitions, respectively. When the state process is a time-homogeneous\ncontinuous-time Markov chain, a careful asymptotic analysis gives complete\ncharacterizations of weak and strong equilibria. Thanks to Kakutani-Fan's\nfixed-point theorem, general existence of weak and strong equilibria is also\nestablished, under additional compactness assumption. Our theoretic results are\napplied to a two-state model under non-exponential discounting. In particular,\nwe demonstrate explicitly that there can be incentive to deviate from a weak\nequilibrium, which justifies the need for strong equilibria. Our analysis also\nprovides new results for the existence and characterization of discrete-time\nequilibria under infinite horizon.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -9980,7 +9980,7 @@
     {
         "text": "Infinite ergodic index of the ehrenfest wind-tree model.   The set of all possible configurations of the Ehrenfest wind-tree model\nendowed with the Hausdorff topology is a compact metric space. For a typical\nconfiguration we show that the wind-tree dynamics has infinite ergodic index in\nalmost every direction. In particular some ergodic theorems can be applied to\nshow that if we start with a large number of initially parallel particles their\ndirections decorrelate as the dynamics evolve answering the question posed by\nthe Ehrenfests.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -10130,7 +10130,7 @@
     {
         "text": "A Novel Model of Cancer-Induced Peripheral Neuropathy and the Role of TRPA1 in Pain Transduction.   Background. Models of cancer-induced neuropathy are designed by injecting\ncancer cells near the peripheral nerves. The interference of tissue-resident\nimmune cells does not allow a direct contact with nerve fibres which affects\nthe tumor microenvironment and the invasion process. Methods. Anaplastic\ntumor-1 (AT-1) cells were inoculated within the sciatic nerves (SNs) of male\nCopenhagen rats. Lumbar dorsal root ganglia (DRGs) and the SNs were collected\non days 3, 7, 14, and 21. SN tissues were examined for morphological changes\nand DRG tissues for immunofluorescence, electrophoretic tendency, and mRNA\nquantification. Hypersensitivities to cold, mechanical, and thermal stimuli\nwere determined. HC-030031, a selective TRPA1 antagonist, was used to treat\ncold allodynia. Results. Nociception thresholds were identified on day 6.\nImmunofluorescent micrographs showed overexpression of TRPA1 on days 7 and 14\nand of CGRP on day 14 until day 21. Both TRPA1 and CGRP were coexpressed on the\nsame cells. Immunoblots exhibited an increase in TRPA1 expression on day 14.\nTRPA1 mRNA underwent an increase on day 7 (normalized to 18S). Injection of\nHC-030031 transiently reversed the cold allodynia. Conclusion. A novel and a\npromising model of cancer-induced neuropathy was established, and the role of\nTRPA1 and CGRP in pain transduction was examined.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -10202,7 +10202,7 @@
     {
         "text": "Playing a true Parrondo's game with a three state coin on a quantum walk.   Playing a Parrondo's game with a qutrit is the subject of this paper. We show\nthat a true quantum Parrondo's game can be played with a 3 state coin(qutrit)\nin a 1D quantum walk in contrast to the fact that playing a true Parrondo's\ngame with a 2 state coin(qubit) in 1D quantum walk fails in the asymptotic\nlimits.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -10250,7 +10250,7 @@
     {
         "text": "Miraculous cancellations for quantum $SL_2$.   In earlier work, Helen Wong and the author discovered certain \"miraculous\ncancellations\" for the quantum trace map connecting the Kauffman bracket skein\nalgebra of a surface to its quantum Teichmueller space, occurring when the\nquantum parameter $q$ is a root of unity. The current paper is devoted to\ngiving a more representation theoretic interpretation of this phenomenon, in\nterms of the quantum group $U_q(sl_2)$ and its dual Hopf algebra $SL_2^q$.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -10562,7 +10562,7 @@
     {
         "text": "Towards a Science of Mind.   The ancient mind/body problem continues to be one of deepest mysteries of\nscience and of the human spirit. Despite major advances in many fields, there\nis still no plausible link between subjective experience (qualia) and its\nrealization in the body. This paper outlines some of the elements of a rigorous\nscience of mind (SoM) - key ideas include scientific realism of mind, agnostic\nmysterianism, careful attention to language, and a focus on concrete\n(touchstone) questions and results.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -12374,7 +12374,7 @@
     {
         "text": "Grassmannian flows and applications to nonlinear partial differential equations.   We show how solutions to a large class of partial differential equations with\nnonlocal Riccati-type nonlinearities can be generated from the corresponding\nlinearized equations, from arbitrary initial data. It is well known that\nevolutionary matrix Riccati equations can be generated by projecting linear\nevolutionary flows on a Stiefel manifold onto a coordinate chart of the\nunderlying Grassmann manifold. Our method relies on extending this idea to the\ninfinite dimensional case. The key is an integral equation analogous to the\nMarchenko equation in integrable systems, that represents the coodinate chart\nmap. We show explicitly how to generate such solutions to scalar partial\ndifferential equations of arbitrary order with nonlocal quadratic\nnonlinearities using our approach. We provide numerical simulations that\ndemonstrate the generation of solutions to\nFisher--Kolmogorov--Petrovskii--Piskunov equations with nonlocal\nnonlinearities. We also indicate how the method might extend to more general\nclasses of nonlinear partial differential systems.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -12782,7 +12782,7 @@
     {
         "text": "Event Analysis of Pulse-reclosers in Distribution Systems Through Sparse Representation.   The pulse-recloser uses pulse testing technology to verify that the line is\nclear of faults before initiating a reclose operation, which significantly\nreduces stress on the system components (e.g. substation transformers) and\nvoltage sags on adjacent feeders. Online event analysis of pulse-reclosers are\nessential to increases the overall utility of the devices, especially when\nthere are numerous devices installed throughout the distribution system. In\nthis paper, field data recorded from several devices were analyzed to identify\nspecific activity and fault locations. An algorithm is developed to screen the\ndata to identify the status of each pole and to tag time windows with a\npossible pulse event. In the next step, selected time windows are further\nanalyzed and classified using a sparse representation technique by solving an\nl1-regularized least-square problem. This classification is obtained by\ncomparing the pulse signature with the reference dictionary to find a set that\nmost closely matches the pulse features. This work also sheds additional light\non the possibility of fault classification based on the pulse signature. Field\ndata collected from a distribution system are used to verify the effectiveness\nand reliability of the proposed method.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -13286,7 +13286,7 @@
     {
         "text": "Sparse Approximation of 3D Meshes using the Spectral Geometry of the Hamiltonian Operator.   The discrete Laplace operator is ubiquitous in spectral shape analysis, since\nits eigenfunctions are provably optimal in representing smooth functions\ndefined on the surface of the shape. Indeed, subspaces defined by its\neigenfunctions have been utilized for shape compression, treating the\ncoordinates as smooth functions defined on the given surface. However, surfaces\nof shapes in nature often contain geometric structures for which the general\nsmoothness assumption may fail to hold. At the other end, some explicit mesh\ncompression algorithms utilize the order by which vertices that represent the\nsurface are traversed, a property which has been ignored in spectral\napproaches. Here, we incorporate the order of vertices into an operator that\ndefines a novel spectral domain. We propose a method for representing 3D meshes\nusing the spectral geometry of the Hamiltonian operator, integrated within a\nsparse approximation framework. We adapt the concept of a potential function\nfrom quantum physics and incorporate vertex ordering information into the\npotential, yielding a novel data-dependent operator. The potential function\nmodifies the spectral geometry of the Laplacian to focus on regions with finer\ndetails of the given surface. By sparsely encoding the geometry of the shape\nusing the proposed data-dependent basis, we improve compression performance\ncompared to previous results that use the standard Laplacian basis and spectral\ngraph wavelets.",
         "labels": 0,
-        "Physics": 0,
+        "Physics": 1,
         "is_Physics": 0
     },
     {
@@ -13898,7 +13898,7 @@
     {
         "text": "Structure preserving schemes for mean-field equations of collective behavior.   In this paper we consider the development of numerical schemes for mean-field\nequations describing the collective behavior of a large group of interacting\nagents. The schemes are based on a generalization of the classical Chang-Cooper\napproach and are capable to preserve the main structural properties of the\nsystems, namely nonnegativity of the solution, physical conservation laws,\nentropy dissipation and stationary solutions. In particular, the methods here\nderived are second order accurate in transient regimes whereas they can reach\narbitrary accuracy asymptotically for large times. Several examples are\nreported to show the generality of the approach.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -13916,7 +13916,7 @@
     {
         "text": "The relationship between the number of editorial board members and the scientific output of universities in the chemistry field.   Editorial board members, who are considered the gatekeepers of scientific\njournals, play an important role in academia, and may directly or indirectly\naffect the scientific output of a university. In this article, we used the\nquantile regression method among a sample of 1,387 university in chemistry to\ncharacterize the correlation between the number of editorial board members and\nthe scientific output of their universities. Furthermore, we used time-series\ndata and the Granger causality test to explore the causal relationship between\nthe number of editorial board members and the number of articles of some top\nuniversities. Our results suggest that the number of editorial board members is\npositively and significantly related to the scientific output (as measured by\nthe number of articles, total number of citations, citations per paper, and h\nindex) of their universities. However, the Granger causality test results\nsuggest that the causal relationship between the number of editorial board\nmembers and the number of articles of some top universities is not obvious.\nCombining these findings with the results of qualitative interviews with\neditorial board members, we discuss the causal relationship between the number\nof editorial board members and the scientific output of their universities.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -14150,7 +14150,7 @@
     {
         "text": "Structural subnetwork evolution across the life-span: rich-club, feeder, seeder.   The impact of developmental and aging processes on brain connectivity and the\nconnectome has been widely studied. Network theoretical measures and certain\ntopological principles are computed from the entire brain, however there is a\nneed to separate and understand the underlying subnetworks which contribute\ntowards these observed holistic connectomic alterations. One organizational\nprinciple is the rich-club - a core subnetwork of brain regions that are\nstrongly connected, forming a high-cost, high-capacity backbone that is\ncritical for effective communication in the network. Investigations primarily\nfocus on its alterations with disease and age. Here, we present a systematic\nanalysis of not only the rich-club, but also other subnetworks derived from\nthis backbone - namely feeder and seeder subnetworks. Our analysis is applied\nto structural connectomes in a normal cohort from a large, publicly available\nlifespan study. We demonstrate changes in rich-club membership with age\nalongside a shift in importance from 'peripheral' seeder to feeder subnetworks.\nOur results show a refinement within the rich-club structure (increase in\ntransitivity and betweenness centrality), as well as increased efficiency in\nthe feeder subnetwork and decreased measures of network integration and\nsegregation in the seeder subnetwork. These results demonstrate the different\ndevelopmental patterns when analyzing the connectome stratified according to\nits rich-club and the potential of utilizing this subnetwork analysis to reveal\nthe evolution of brain architectural alterations across the life-span.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -14228,7 +14228,7 @@
     {
         "text": "Exceptional points in two simple textbook examples.   We propose to introduce the concept of exceptional points in intermediate\ncourses on mathematics and classical mechanics by means of simple textbook\nexamples. The first one is an ordinary second-order differential equation with\nconstant coefficients. The second one is the well known damped harmonic\noscillator. They enable one to connect the occurrence of linearly dependent\nexponential solutions with a defective matrix that cannot be diagonalized but\ncan be transformed into a Jordan canonical form.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -14606,7 +14606,7 @@
     {
         "text": "Service adoption spreading in online social networks.   The collective behaviour of people adopting an innovation, product or online\nservice is commonly interpreted as a spreading phenomenon throughout the fabric\nof society. This process is arguably driven by social influence, social\nlearning and by external effects like media. Observations of such processes\ndate back to the seminal studies by Rogers and Bass, and their mathematical\nmodelling has taken two directions: One paradigm, called simple contagion,\nidentifies adoption spreading with an epidemic process. The other one, named\ncomplex contagion, is concerned with behavioural thresholds and successfully\nexplains the emergence of large cascades of adoption resulting in a rapid\nspreading often seen in empirical data. The observation of real world adoption\nprocesses has become easier lately due to the availability of large digital\nsocial network and behavioural datasets. This has allowed simultaneous study of\nnetwork structures and dynamics of online service adoption, shedding light on\nthe mechanisms and external effects that influence the temporal evolution of\nbehavioural or innovation adoption. These advancements have induced the\ndevelopment of more realistic models of social spreading phenomena, which in\nturn have provided remarkably good predictions of various empirical adoption\nprocesses. In this chapter we review recent data-driven studies addressing\nreal-world service adoption processes. Our studies provide the first detailed\nempirical evidence of a heterogeneous threshold distribution in adoption. We\nalso describe the modelling of such phenomena with formal methods and\ndata-driven simulations. Our objective is to understand the effects of\nidentified social mechanisms on service adoption spreading, and to provide\npotential new directions and open questions for future research.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -14996,7 +14996,7 @@
     {
         "text": "From modelling of systems with constraints to generalized geometry and back to numerics.   In this note we describe how some objects from generalized geometry appear in\nthe qualitative analysis and numerical simulation of mechanical systems. In\nparticular we discuss double vector bundles and Dirac structures. It turns out\nthat those objects can be naturally associated to systems with constraints --\nwe recall the mathematical construction in the context of so called implicit\nLagrangian systems. We explain how they can be used to produce new numerical\nmethods, that we call Dirac integrators.\nOn a test example of a simple pendulum in a gravity field we compare the\nDirac integrators with classical explicit and implicit methods, we pay special\nattention to conservation of constrains. Then, on a more advanced example of\nthe Ziegler column we show that the choice of numerical methods can indeed\naffect the conclusions of qualitative analysis of the dynamics of mechanical\nsystems. We also tell why we think that Dirac integrators are appropriate for\nthis kind of systems by explaining the relation with the notions of geometric\ndegree of non-conservativity and kinematic structural stability.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -15170,7 +15170,7 @@
     {
         "text": "Low-Latency Millimeter-Wave Communications: Traffic Dispersion or Network Densification?.   This paper investigates two strategies to reduce the communication delay in\nfuture wireless networks: traffic dispersion and network densification. A\nhybrid scheme that combines these two strategies is also considered. The\nprobabilistic delay and effective capacity are used to evaluate performance.\nFor probabilistic delay, the violation probability of delay, i.e., the\nprobability that the delay exceeds a given tolerance level, is characterized in\nterms of upper bounds, which are derived by applying stochastic network\ncalculus theory. In addition, to characterize the maximum affordable arrival\ntraffic for mmWave systems, the effective capacity, i.e., the service\ncapability with a given quality-of-service (QoS) requirement, is studied. The\nderived bounds on the probabilistic delay and effective capacity are validated\nthrough simulations. These numerical results show that, for a given average\nsystem gain, traffic dispersion, network densification, and the hybrid scheme\nexhibit different potentials to reduce the end-to-end communication delay. For\ninstance, traffic dispersion outperforms network densification, given high\naverage system gain and arrival rate, while it could be the worst option,\notherwise. Furthermore, it is revealed that, increasing the number of\nindependent paths and/or relay density is always beneficial, while the\nperformance gain is related to the arrival rate and average system gain,\njointly. Therefore, a proper transmission scheme should be selected to optimize\nthe delay performance, according to the given conditions on arrival traffic and\nsystem service capability.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -15344,7 +15344,7 @@
     {
         "text": "Asymmetry-Induced Synchronization in Oscillator Networks.   A scenario has recently been reported in which in order to stabilize complete\nsynchronization of an oscillator network---a symmetric state---the symmetry of\nthe system itself has to be broken by making the oscillators nonidentical. But\nhow often does such behavior---which we term asymmetry-induced synchronization\n(AISync)---occur in oscillator networks? Here we present the first general\nscheme for constructing AISync systems and demonstrate that this behavior is\nthe norm rather than the exception in a wide class of physical systems that can\nbe seen as multilayer networks. Since a symmetric network in complete synchrony\nis the basic building block of cluster synchronization in more general\nnetworks, AISync should be common also in facilitating cluster synchronization\nby breaking the symmetry of the cluster subnetworks.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -15560,7 +15560,7 @@
     {
         "text": "On constraining projections of future climate using observations and simulations from multiple climate models.   A new Bayesian framework is presented that can constrain projections of\nfuture climate using historical observations by exploiting robust estimates of\nemergent relationships between multiple climate models. We argue that emergent\nrelationships can be interpreted as constraints on model inadequacy, but that\nprojections may be biased if we do not account for internal variability in\nclimate model projections. We extend the previously proposed coexchangeable\nframework to account for natural variability in the Earth system and internal\nvariability simulated by climate models. A detailed theoretical comparison with\nprevious multi-model projection frameworks is provided.\nThe proposed framework is applied to projecting surface temperature in the\nArctic at the end of the 21st century. A subset of available climate models are\nselected in order to satisfy the assumptions of the framework. All available\ninitial condition runs from each model are utilized in order maximize the\nutility of the data. Projected temperatures in some regions are more than 2C\nlower when constrained by historical observations. The uncertainty about the\nclimate response is reduced by up to 30% where strong constraints exist.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -16100,7 +16100,7 @@
     {
         "text": "How production networks amplify economic growth.   Technological improvement is the most important cause of long-term economic\ngrowth, but the factors that drive it are still not fully understood. In\nstandard growth models technology is treated in the aggregate, and a main goal\nhas been to understand how growth depends on factors such as knowledge\nproduction. But an economy can also be viewed as a network, in which producers\npurchase goods, convert them to new goods, and sell them to households or other\nproducers. Here we develop a simple theory that shows how the network\nproperties of an economy can amplify the effects of technological improvements\nas they propagate along chains of production. A key property of an industry is\nits output multiplier, which can be understood as the average number of\nproduction steps required to make a good. The model predicts that the output\nmultiplier of an industry predicts future changes in prices, and that the\naverage output multiplier of a country predicts future economic growth. We test\nthese predictions using data from the World Input Output Database and find\nresults in good agreement with the model. The results show how purely\nstructural properties of an economy, that have nothing to do with innovation or\nhuman creativity, can exert an important influence on long-term growth.",
         "labels": 0,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 0
     },
     {
@@ -16862,7 +16862,7 @@
     {
         "text": "Machine learning quantum mechanics: solving quantum mechanics problems using radial basis function networks.   Inspired by the recent work of Carleo and Troyer[1], we apply machine\nlearning methods to quantum mechanics in this article. The radial basis\nfunction network in a discrete basis is used as the variational wavefunction\nfor the ground state of a quantum system. Variational Monte Carlo(VMC)\ncalculations are carried out for some simple Hamiltonians. The results are in\ngood agreements with theoretical values. The smallest eigenvalue of a Hermitian\nmatrix can also be acquired using VMC calculations. Our results demonstrate\nthat machine learning techniques are capable of solving quantum mechanical\nproblems.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -18236,7 +18236,7 @@
     {
         "text": "Dynamic analysis and control PID path of a model type gantry crane.   This paper presents an alternate form for the dynamic modelling of a\nmechanical system that simulates in real life a gantry crane type, using\nEuler's classical mechanics and Lagrange formalism, which allows find the\nequations of motion that our model describe. Moreover, it has a basic model\ndesign system using the SolidWorks software, based on the material and\ndimensions of the model provides some physical variables necessary for\nmodelling. In order to verify the theoretical results obtained, a contrast was\nmade between solutions obtained by simulation in SimMechanics-Matlab and\nEuler-Lagrange equations system, has been solved through Matlab libraries for\nsolving equation's systems of the type and order obtained. The force is\ndetermined, but not as exerted by the spring, as this will be the control\nvariable. The objective to bring the mass of the pendulum from one point to\nanother with a specified distance without the oscillation from it, so that, the\nanswer is overdamped. This article includes an analysis of PID control in which\nthe equations of motion of Euler-Lagrange are rewritten in the state space,\nonce there, they were implemented in Simulink to get the natural response of\nthe system to a step input in F and then draw the desired trajectories.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -18746,7 +18746,7 @@
     {
         "text": "Self-organization and the Maximum Empower Principle in the Framework of max-plus Algebra.   Self-organization is a process where order of a whole system arises out of\nlocal interactions between small components of a system.\nEmergy, defined as the amount of (solar) energy used to make a product or a\nservice, is becoming an important ecological indicator. To explain observed\nself-organization of systems by emergy the Maximum Empower Principle (MEP) was\nproposed initially without a mathematical formulation.\nEmergy analysis is based on four rules called emergy algebra. Most of emergy\ncomputations in steady state are in fact approximate results, which rely on\nlinear algebra. In such a context, a mathematical formulation of the MEP has\nbeen proposed by Giannantoni (2002).\nIn 2012 Le Corre and the second author of this paper have proposed a rigorous\nmathematical framework for emergy analysis. They established that the exact\ncomputation of emergy is based on the so-called max-plus algebra and seven\ncoherent axioms that replace the emergy algebra. In this paper the MEP in\nsteady state is formalized in the context of the max-plus algebra and graph\ntheory. The main concepts of the paper are (a) a particular graph called\n'emergy graph', (b) the notion of compatible paths of the emergy graph, and (c)\nsets of compatible paths, which are called 'emergy states'. The main results of\nthe paper are as follows:\n(1) Emergy is mathematically expressed as a maximum over all possible emergy\nstates. (2) The maximum is always reached by an emergy state. (3) Only prevail\nemergy states for which the maximum is reached.",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {
@@ -18860,7 +18860,7 @@
     {
         "text": "Radar, without tears.   A brief introduction to radar: principles, Doppler effect, antennas,\nwaveforms, power budget - and future radars. [13 pages]",
         "labels": 1,
-        "Physics": 1,
+        "Physics": 0,
         "is_Physics": 1
     },
     {

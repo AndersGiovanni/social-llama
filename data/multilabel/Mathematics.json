@@ -62,7 +62,7 @@
     {
         "text": "A unified view of entropy-regularized Markov decision processes.   We propose a general framework for entropy-regularized average-reward\nreinforcement learning in Markov decision processes (MDPs). Our approach is\nbased on extending the linear-programming formulation of policy optimization in\nMDPs to accommodate convex regularization functions. Our key result is showing\nthat using the conditional entropy of the joint state-action distributions as\nregularization yields a dual optimization problem closely resembling the\nBellman optimality equations. This result enables us to formalize a number of\nstate-of-the-art entropy-regularized reinforcement learning algorithms as\napproximate variants of Mirror Descent or Dual Averaging, and thus to argue\nabout the convergence properties of these methods. In particular, we show that\nthe exact version of the TRPO algorithm of Schulman et al. (2015) actually\nconverges to the optimal policy, while the entropy-regularized policy gradient\nmethods of Mnih et al. (2016) may fail to converge to a fixed point. Finally,\nwe illustrate empirically the effects of using various regularization\ntechniques on learning performance in a simple reinforcement learning setup.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -320,7 +320,7 @@
     {
         "text": "Maximum likelihood estimation of determinantal point processes.   Determinantal point processes (DPPs) have wide-ranging applications in\nmachine learning, where they are used to enforce the notion of diversity in\nsubset selection problems. Many estimators have been proposed, but surprisingly\nthe basic properties of the maximum likelihood estimator (MLE) have received\nlittle attention. The difficulty is that it is a non-concave maximization\nproblem, and such functions are notoriously difficult to understand in high\ndimensions, despite their importance in modern machine learning. Here we study\nboth the local and global geometry of the expected log-likelihood function. We\nprove several rates of convergence for the MLE and give a complete\ncharacterization of the case where these are parametric. We also exhibit a\npotential curse of dimensionality where the asymptotic variance of the MLE\nscales exponentially with the dimension of the problem. Moreover, we exhibit an\nexponential number of saddle points, and give evidence that these may be the\nonly critical points.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -434,7 +434,7 @@
     {
         "text": "Gradient descent GAN optimization is locally stable.   Despite the growing prominence of generative adversarial networks (GANs),\noptimization in GANs is still a poorly understood topic. In this paper, we\nanalyze the \"gradient descent\" form of GAN optimization i.e., the natural\nsetting where we simultaneously take small gradient steps in both generator and\ndiscriminator parameters. We show that even though GAN optimization does not\ncorrespond to a convex-concave game (even for simple parameterizations), under\nproper conditions, equilibrium points of this optimization procedure are still\n\\emph{locally asymptotically stable} for the traditional GAN formulation. On\nthe other hand, we show that the recently proposed Wasserstein GAN can have\nnon-convergent limit cycles near equilibrium. Motivated by this stability\nanalysis, we propose an additional regularization term for gradient descent GAN\nupdates, which \\emph{is} able to guarantee local stability for both the WGAN\nand the traditional GAN, and also shows practical promise in speeding up\nconvergence and addressing mode collapse.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -722,7 +722,7 @@
     {
         "text": "Dining Philosophers, Leader Election and Ring Size problems, in the quantum setting.   We provide the first quantum (exact) protocol for the Dining Philosophers\nproblem (DP), a central problem in distributed algorithms. It is well known\nthat the problem cannot be solved exactly in the classical setting. We then use\nour DP protocol to provide a new quantum protocol for the tightly related\nproblem of exact leader election (LE) on a ring, improving significantly in\nboth time and memory complexity over the known LE protocol by Tani et. al. To\ndo this, we show that in some sense the exact DP and exact LE problems are\nequivalent; interestingly, in the classical non-exact setting they are not.\nHopefully, the results will lead to exact quantum protocols for other important\ndistributed algorithmic questions; in particular, we discuss interesting\nconnections to the ring size problem, as well as to a physically motivated\nquestion of breaking symmetry in 1D translationally invariant systems.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -842,7 +842,7 @@
     {
         "text": "Abelian Tensor Models on the Lattice.   We consider a chain of Abelian Klebanov-Tarnopolsky fermionic tensor models\ncoupled through quartic nearest-neighbor interactions. We characterize the\ngauge-singlet spectrum for small chains ($L=2,3,4,5$) and observe that the\nspectral statistics exhibits strong evidences in favor of quasi-many body\nlocalization.",
         "labels": 0,
-        "Mathematics": 0,
+        "Mathematics": 1,
         "is_Mathematics": 0
     },
     {
@@ -872,7 +872,7 @@
     {
         "text": "Estimating the rate of defects under imperfect sampling inspection - a new approach.   We consider the problem of estimating the the rate of defects (mean number of\ndefects per item), given counts of defects detected by two independent\nimperfect inspectors on a sample of items. In contrast with the well-known\nmethod of Capture-Recapture, here we {\\it{do not}} have information regarding\nthe number of defects jointly detected by {\\it{both}} inspectors. We solve this\nproblem by constructing two types of estimators - a simple moment-type\nestimator, and a more complicated maximum-likelihood estimator. The performance\nof these estimators is studied analytically and by means of simulations. It is\nshown that the maximum-likelihood estimator is superior to the moment-type\nestimator. A systematic comparison with the Capture-Recapture method is also\nmade.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -974,7 +974,7 @@
     {
         "text": "Using deterministic approximations to accelerate SMC for posterior sampling.   Sequential Monte Carlo has become a standard tool for Bayesian Inference of\ncomplex models. This approach can be computationally demanding, especially when\ninitialized from the prior distribution. On the other hand, deter-ministic\napproximations of the posterior distribution are often available with no\ntheoretical guaranties. We propose a bridge sampling scheme starting from such\na deterministic approximation of the posterior distribution and targeting the\ntrue one. The resulting Shortened Bridge Sampler (SBS) relies on a sequence of\ndistributions that is determined in an adaptive way. We illustrate the\nrobustness and the efficiency of the methodology on a large simulation study.\nWhen applied to network datasets, SBS inference leads to different statistical\nconclusions from the one supplied by the standard variational Bayes\napproximation.",
         "labels": 0,
-        "Mathematics": 0,
+        "Mathematics": 1,
         "is_Mathematics": 0
     },
     {
@@ -1148,7 +1148,7 @@
     {
         "text": "Axion detection via Topological Casimir Effect.   We propose a new table-top experimental configuration for the direct\ndetection of dark matter axions with mass in the $(10^{-6} \\rm eV - 10^{-2} \\rm\neV)$ range using non-perturbative effects in a system with non-trivial spatial\ntopology. Different from most experimental setups found in literature on direct\ndark matter axion detection, which relies on $\\dot{\\theta}$ or\n$\\vec{\\nabla}\\theta$, we found that our system is in principle sensitive to a\nstatic $\\theta\\geq 10^{-14}$ and can also be used to set limit on the\nfundamental constant $\\theta_{\\rm QED}$ which becomes the fundamental\nobservable parameter of the Maxwell system if some conditions are met.\nConnection with Witten effect when the induced electric charge $e'$ is\nproportional to $\\theta$ and the magnetic monopole becomes the dyon with\nnon-vanishing $e'=-e \\frac{\\theta}{2\\pi}$ is also discussed.",
         "labels": 0,
-        "Mathematics": 0,
+        "Mathematics": 1,
         "is_Mathematics": 0
     },
     {
@@ -1454,7 +1454,7 @@
     {
         "text": "Numerical assessment of the percolation threshold using complement networks.   Models of percolation processes on networks currently assume locally\ntree-like structures at low densities, and are derived exactly only in the\nthermodynamic limit. Finite size effects and the presence of short loops in\nreal systems however cause a deviation between the empirical percolation\nthreshold $p_c$ and its model-predicted value $\\pi_c$. Here we show the\nexistence of an empirical linear relation between $p_c$ and $\\pi_c$ across a\nlarge number of real and model networks. Such a putatively universal relation\ncan then be used to correct the estimated value of $\\pi_c$. We further show how\nto obtain a more precise relation using the concept of the complement graph, by\ninvestigating on the connection between the percolation threshold of a network,\n$p_c$, and that of its complement, $\\bar{p}_c$.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -1520,7 +1520,7 @@
     {
         "text": "Regularization, sparse recovery, and median-of-means tournaments.   A regularized risk minimization procedure for regression function estimation\nis introduced that achieves near optimal accuracy and confidence under general\nconditions, including heavy-tailed predictor and response variables. The\nprocedure is based on median-of-means tournaments, introduced by the authors in\n[8]. It is shown that the new procedure outperforms standard regularized\nempirical risk minimization procedures such as lasso or slope in heavy-tailed\nproblems.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -1640,7 +1640,7 @@
     {
         "text": "A Note on Kaldi's PLDA Implementation.   Some explanations to Kaldi's PLDA implementation to make formula derivation\neasier to catch.",
         "labels": 0,
-        "Mathematics": 0,
+        "Mathematics": 1,
         "is_Mathematics": 0
     },
     {
@@ -1718,7 +1718,7 @@
     {
         "text": "Realisability of Pomsets via Communicating Automata.   Pomsets are a model of concurrent computations introduced by Pratt. They can\nprovide a syntax-oblivious description of semantics of coordination models\nbased on asynchronous message-passing, such as Message Sequence Charts (MSCs).\nIn this paper, we study conditions that ensure a specification expressed as a\nset of pomsets can be faithfully realised via communicating automata. Our main\ncontributions are (i) the definition of a realisability condition accounting\nfor termination soundness, (ii) conditions for global specifications with\n\"multi-threaded\" participants, and (iii) the definition of realisability\nconditions that can be decided directly over pomsets. A positive by-product of\nour approach is the efficiency gain in the verification of the realisability\nconditions obtained when restricting to specific classes of choreographies\ncharacterisable in term of behavioural types.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -1892,7 +1892,7 @@
     {
         "text": "Beyond black-boxes in Bayesian inverse problems and model validation: applications in solid mechanics of elastography.   The present paper is motivated by one of the most fundamental challenges in\ninverse problems, that of quantifying model discrepancies and errors. While\nsignificant strides have been made in calibrating model parameters, the\noverwhelming majority of pertinent methods is based on the assumption of a\nperfect model. Motivated by problems in solid mechanics which, as all problems\nin continuum thermodynamics, are described by conservation laws and\nphenomenological constitutive closures, we argue that in order to quantify\nmodel uncertainty in a physically meaningful manner, one should break open the\nblack-box forward model. In particular we propose formulating an undirected\nprobabilistic model that explicitly accounts for the governing equations and\ntheir validity. This recasts the solution of both forward and inverse problems\nas probabilistic inference tasks where the problem's state variables should not\nonly be compatible with the data but also with the governing equations as well.\nEven though the probability densities involved do not contain any black-box\nterms, they live in much higher-dimensional spaces. In combination with the\nintractability of the normalization constant of the undirected model employed,\nthis poses significant challenges which we propose to address with a\nlinearly-scaling, double-layer of Stochastic Variational Inference. We\ndemonstrate the capabilities and efficacy of the proposed model in synthetic\nforward and inverse problems (with and without model error) in elastography.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -2240,7 +2240,7 @@
     {
         "text": "Formal Methods for Adaptive Control of Dynamical Systems.   We develop a method to control discrete-time systems with constant but\ninitially unknown parameters from linear temporal logic (LTL) specifications.\nWe introduce the notions of (non-deterministic) parametric and adaptive\ntransition systems and show how to use tools from formal methods to compute\nadaptive control strategies for finite systems. For infinite systems, we first\ncompute abstractions in the form of parametric finite quotient transition\nsystems and then apply the techniques for finite systems. Unlike traditional\nadaptive control methods, our approach is correct by design, does not require a\nreference model, and can deal with a much wider range of systems and\nspecifications. Illustrative case studies are included.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -2252,7 +2252,7 @@
     {
         "text": "Improved Bounds for Online Dominating Sets of Trees.   The online dominating set problem is an online variant of the minimum\ndominating set problem, which is one of the most important NP-hard problems on\ngraphs. This problem is defined as follows: Given an undirected graph $G = (V,\nE)$, in which $V$ is a set of vertices and $E$ is a set of edges. We say that a\nset $D \\subseteq V$ of vertices is a {\\em dominating set} of $G$ if for each $v\n\\in V \\setminus D$, there exists a vertex $u \\in D$ such that $\\{ u, v \\} \\in\nE$. The vertices are revealed to an online algorithm one by one over time. When\na vertex is revealed, edges between the vertex and vertices revealed in the\npast are also revealed. A revelaed subtree is connected at any time.\nImmediately after the revelation of each vertex, an online algorithm can choose\nvertices which were already revealed irrevocably and must maintain a dominating\nset of a graph revealed so far. The cost of an algorithm on a given tree is the\nnumber of vertices chosen by it, and its objective is to minimize the cost.\nEidenbenz (Technical report, Institute of Theoretical Computer Science, ETH\nZürich, 2002) and Boyar et al.\\ (SWAT 2016) studied the case in which given\ngraphs are trees. They designed a deterministic online algorithm whose\ncompetitive ratio is at most three, and proved that a lower bound on the\ncompetitive ratio of any deterministic algorithm is two. In this paper, we also\nfocus on trees. We establish a matching lower bound for any deterministic\nalgorithm. Moreover, we design a randomized online algorithm whose competitive\nratio is at most $5/2 = 2.5$, and show that the competitive ratio of any\nrandomized algorithm is at least $4/3 \\approx 1.333$.",
         "labels": 0,
-        "Mathematics": 0,
+        "Mathematics": 1,
         "is_Mathematics": 0
     },
     {
@@ -2300,7 +2300,7 @@
     {
         "text": "Index coding with erroneous side information.   In this paper, new index coding problems are studied, where each receiver has\nerroneous side information. Although side information is a crucial part of\nindex coding, the existence of erroneous side information has not yet been\nconsidered. We study an index code with receivers that have erroneous side\ninformation symbols in the error-free broadcast channel, which is called an\nindex code with side information errors (ICSIE). The encoding and decoding\nprocedures of the ICSIE are proposed, based on the syndrome decoding. Then, we\nderive the bounds on the optimal codelength of the proposed index code with\nerroneous side information. Furthermore, we introduce a special graph for the\nproposed index coding problem, called a $\\delta_s$-cycle whose properties are\nsimilar to those of the cycle in the conventional index coding problem.\nProperties of the ICSIE are also discussed in the $\\delta_s$-cycle and clique.\nFinally, the proposed ICSIE is generalized to an index code for the scenario\nhaving both additive channel errors and side information errors, called a\ngeneralized error correcting index code (GECIC).",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -2354,7 +2354,7 @@
     {
         "text": "Efficient Computation of Feedback Control for Constrained Systems.   A method is presented for solving the discrete-time finite-horizon Linear\nQuadratic Regulator (LQR) problem subject to auxiliary linear equality\nconstraints, such as fixed end-point constraints. The method explicitly\ndetermines an affine relationship between the control and state variables, as\nin standard Riccati recursion, giving rise to feedback control policies that\naccount for constraints. Since the linearly-constrained LQR problem arises\ncommonly in robotic trajectory optimization, having a method that can\nefficiently compute these solutions is important. We demonstrate some of the\nuseful properties and interpretations of said control policies, and we compare\nthe computation time of our method against existing methods.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -2378,7 +2378,7 @@
     {
         "text": "Converse passivity theorems.   Passivity is an imperative concept and a widely utilized tool in the analysis\nand control of interconnected systems. It naturally arises in the modelling of\nphysical systems involving passive elements and dynamics. While many theorems\non passivity are known in the theory of robust control, very few converse\npassivity results exist. This paper establishes various versions of converse\npassivity theorems for nonlinear feedback systems. In particular, open-loop\npassivity is shown to be necessary to ensure closed-loop passivity from an\ninput-output perspective. Moreover, the stability of the feedback\ninterconnection of a specific system with an arbitrary passive system is shown\nto imply passivity of the system itself.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -2390,7 +2390,7 @@
     {
         "text": "Private Learning on Networks: Part II.   This paper considers a distributed multi-agent optimization problem, with the\nglobal objective consisting of the sum of local objective functions of the\nagents. The agents solve the optimization problem using local computation and\ncommunication between adjacent agents in the network. We present two randomized\niterative algorithms for distributed optimization. To improve privacy, our\nalgorithms add \"structured\" randomization to the information exchanged between\nthe agents. We prove deterministic correctness (in every execution) of the\nproposed algorithms despite the information being perturbed by noise with\nnon-zero mean. We prove that a special case of a proposed algorithm (called\nfunction sharing) preserves privacy of individual polynomial objective\nfunctions under a suitable connectivity condition on the network topology.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -2912,7 +2912,7 @@
     {
         "text": "The Parameterized Complexity of Positional Games.   We study the parameterized complexity of several positional games. Our main\nresult is that Short Generalized Hex is W[1]-complete parameterized by the\nnumber of moves. This solves an open problem from Downey and Fellows'\ninfluential list of open problems from 1999. Previously, the problem was\nthought of as a natural candidate for AW[*]-completeness. Our main tool is a\nnew fragment of first-order logic where universally quantified variables only\noccur in inequalities. We show that model-checking on arbitrary relational\nstructures for a formula in this fragment is W[1]-complete when parameterized\nby formula size. We also consider a general framework where a positional game\nis represented as a hypergraph and two players alternately pick vertices. In a\nMaker-Maker game, the first player to have picked all the vertices of some\nhyperedge wins the game. In a Maker-Breaker game, the first player wins if she\npicks all the vertices of some hyperedge, and the second player wins otherwise.\nIn an Enforcer-Avoider game, the first player wins if the second player picks\nall the vertices of some hyperedge, and the second player wins otherwise. Short\nMaker-Maker is AW[*]-complete, whereas Short Maker-Breaker is W[1]-complete and\nShort Enforcer-Avoider co-W[1]-complete parameterized by the number of moves.\nThis suggests a rough parameterized complexity categorization into positional\ngames that are complete for the first level of the W-hierarchy when the winning\nconfigurations only depend on which vertices one player has been able to pick,\nbut AW[*]-completeness when the winning condition depends on which vertices\nboth players have picked. However, some positional games where the board and\nthe winning configurations are highly structured are fixed-parameter tractable.\nWe give another example of such a game, Short k-Connect, which is\nfixed-parameter tractable when parameterized by the number of moves.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -3032,7 +3032,7 @@
     {
         "text": "Approximate Value Iteration for Risk-aware Markov Decision Processes.   We consider large-scale Markov decision processes (MDPs) with a risk measure\nof variability in cost, under the risk-aware MDPs paradigm. Previous studies\nshowed that risk-aware MDPs, based on a minimax approach to handling risk, can\nbe solved using dynamic programming for small to medium sized problems.\nHowever, due to the \"curse of dimensionality\", MDPs that model real-life\nproblems are typically prohibitively large for such approaches. In this paper,\nwe employ an approximate dynamic programming approach, and develop a family of\nsimulation-based algorithms to approximately solve large-scale risk-aware MDPs.\nIn parallel, we develop a unified convergence analysis technique to derive\nsample complexity bounds for this new family of algorithms.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -3584,7 +3584,7 @@
     {
         "text": "Topology and experimental distinguishability.   In this work we introduce the idea that the primary application of topology\nin experimental sciences is to keep track of what can be distinguished through\nexperimentation. This link provides understanding and justification as to why\ntopological spaces and continuous functions are pervasive tools in science. We\nfirst define an experimental observation as a statement that can be verified\nusing an experimental procedure and show that observations are closed under\nfinite conjunction and countable disjunction. We then consider observations\nthat identify elements within a set and show how they induce a Hausdorff and\nsecond-countable topology on that set, thus identifying an open set as one that\ncan be associated with an experimental observation. We then show that\nexperimental relationships are continuous functions, as they must preserve\nexperimental distinguishability, and that they are themselves experimentally\ndistinguishable by defining a Hausdorff and second-countable topology for this\ncollection.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -4040,7 +4040,7 @@
     {
         "text": "Persistent Monitoring of Dynamically Changing Environments Using an Unmanned Vehicle.   We consider the problem of planning a closed walk $\\mathcal W$ for a UAV to\npersistently monitor a finite number of stationary targets with equal\npriorities and dynamically changing properties. A UAV must physically visit the\ntargets in order to monitor them and collect information therein. The frequency\nof monitoring any given target is specified by a target revisit time, $i.e.$,\nthe maximum allowable time between any two successive visits to the target. The\nproblem considered in this paper is the following: Given $n$ targets and $k\n\\geq n$ allowed visits to them, find an optimal closed walk $\\mathcal W^*(k)$\nso that every target is visited at least once and the maximum revisit time over\nall the targets, $\\mathcal R(\\mathcal W(k))$, is minimized. We prove the\nfollowing: If $k \\geq n^2-n$, $\\mathcal R(\\mathcal W^*(k))$ (or simply,\n$\\mathcal R^*(k)$) takes only two values: $\\mathcal R^*(n)$ when $k$ is an\nintegral multiple of $n$, and $\\mathcal R^*(n+1)$ otherwise. This result\nsuggests significant computational savings - one only needs to determine\n$\\mathcal W^*(n)$ and $\\mathcal W^*(n+1)$ to construct an optimal solution\n$\\mathcal W^*(k)$. We provide MILP formulations for computing $\\mathcal W^*(n)$\nand $\\mathcal W^*(n+1)$. Furthermore, for {\\it any} given $k$, we prove that\n$\\mathcal R^*(k) \\geq \\mathcal R^*(k+n)$.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -4148,7 +4148,7 @@
     {
         "text": "On the optimal investment-consumption and life insurance selection problem with an external stochastic factor.   In this paper, we study a stochastic optimal control problem with stochastic\nvolatility. We prove the sufficient and necessary maximum principle for the\nproposed problem. Then we apply the results to solve an investment, consumption\nand life insurance problem with stochastic volatility, that is, we consider a\nwage earner investing in one risk-free asset and one risky asset described by a\njump-diffusion process and has to decide concerning consumption and life\ninsurance purchase. We assume that the life insurance for the wage earner is\nbought from a market composed of $M>1$ life insurance companies offering\npairwise distinct life insurance contracts. The goal is to maximize the\nexpected utilities derived from the consumption, the legacy in the case of a\npremature death and the investor's terminal wealth.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -4718,7 +4718,7 @@
     {
         "text": "Quantile Markov Decision Process.   In this paper, we consider the problem of optimizing the quantiles of the\ncumulative rewards of Markov Decision Processes (MDP), to which we refers as\nQuantile Markov Decision Processes (QMDP). Traditionally, the goal of a Markov\nDecision Process (MDP) is to maximize expected cumulative reward over a defined\nhorizon (possibly to be infinite). In many applications, however, a decision\nmaker may be interested in optimizing a specific quantile of the cumulative\nreward instead of its expectation. Our framework of QMDP provides analytical\nresults characterizing the optimal QMDP solution and presents the algorithm for\nsolving the QMDP. We provide analytical results characterizing the optimal QMDP\nsolution and present the algorithms for solving the QMDP. We illustrate the\nmodel with two experiments: a grid game and a HIV optimal treatment experiment.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -4814,7 +4814,7 @@
     {
         "text": "A Time-Spectral Method for Initial-Value Problems Using a Novel Spatial Subdomain Scheme.   We analyse a new subdomain scheme for a time-spectral method for solving\ninitial boundary value problems. Whilst spectral methods are commonplace for\nspatially dependent systems, finite difference schemes are typically applied\nfor the temporal domain. The Generalized Weighted Residual Method (GWRM) is a\nfully spectral method in that it spectrally decomposes all specified domains,\nincluding the temporal domain, with multivariate Chebyshev polynomials. The\nCommon Boundary-Condition method (CBC) is a spatial subdomain scheme that\nsolves the physical equations independently from the global connection of\nsubdomains. It is here evaluated against two finite difference methods. For the\nlinearised Burger equation the CBC-GWRM is $\\sim30\\%$ faster and $\\sim50\\%$\nmore memory efficient than the semi implicit Crank-Nicolson method at a maximum\nerror $\\sim10^{-5}$. For a forced wave equation the CBC-GWRM manages to average\nefficiently over the small time-scale in the entire temporal domain. The\nCBC-GWRM is also applied to the linearised ideal magnetohydrodynamic (MHD)\nequations for a screw pinch equilibrium. The growth rate of the most unstable\nmode was efficiently computed with an error $<0.1\\%$.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -5228,7 +5228,7 @@
     {
         "text": "Estimation of the asymptotic variance of univariate and multivariate random fields and statistical inference.   Correlated random fields are a common way to model dependence struc- tures in\nhigh-dimensional data, especially for data collected in imaging. One important\nparameter characterizing the degree of dependence is the asymp- totic variance\nwhich adds up all autocovariances in the temporal and spatial domain.\nEspecially, it arises in the standardization of test statistics based on\npartial sums of random fields and thus the construction of tests requires its\nestimation. In this paper we propose consistent estimators for this parameter\nfor strictly stationary {\\phi}-mixing random fields with arbitrary dimension of\nthe domain and taking values in a Euclidean space of arbitrary dimension, thus\nallowing for multivariate random fields. We establish consistency, provide cen-\ntral limit theorems and show that distributional approximations of related test\nstatistics based on sample autocovariances of random fields can be obtained by\nthe subsampling approach. As in applications the spatial-temporal correlations\nare often quite local, such that a large number of autocovariances vanish or\nare negligible, we also investigate a thresholding approach where sample\nautocovariances of small magnitude are omitted. Extensive simulation studies\nshow that the proposed estimators work well in practice and, when used to\nstandardize image test statistics, can provide highly accurate image testing\nprocedures.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -5570,7 +5570,7 @@
     {
         "text": "Quasi Maximum-Likelihood Estimation of Dynamic Panel Data Models.   This paper establishes the almost sure convergence and asymptotic normality\nof levels and differenced quasi maximum-likelihood (QML) estimators of dynamic\npanel data models. The QML estimators are robust with respect to initial\nconditions, conditional and time-series heteroskedasticity, and\nmisspecification of the log-likelihood. The paper also provides an ECME\nalgorithm for calculating levels QML estimates. Finally, it uses Monte Carlo\nexperiments to compare the finite sample performance of levels and differenced\nQML estimators, the differenced GMM estimator, and the system GMM estimator. In\nthese experiments the QML estimators usually have smaller --- typically\nsubstantially smaller --- bias and root mean squared errors than the panel data\nGMM estimators.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -6278,7 +6278,7 @@
     {
         "text": "Structure Preserving Model Reduction of Parametric Hamiltonian Systems.   While reduced-order models (ROMs) have been popular for efficiently solving\nlarge systems of differential equations, the stability of reduced models over\nlong-time integration is of present challenges. We present a greedy approach\nfor ROM generation of parametric Hamiltonian systems that captures the\nsymplectic structure of Hamiltonian systems to ensure stability of the reduced\nmodel. Through the greedy selection of basis vectors, two new vectors are added\nat each iteration to the linear vector space to increase the accuracy of the\nreduced basis. We use the error in the Hamiltonian due to model reduction as an\nerror indicator to search the parameter space and identify the next best basis\nvectors. Under natural assumptions on the set of all solutions of the\nHamiltonian system under variation of the parameters, we show that the greedy\nalgorithm converges with exponential rate. Moreover, we demonstrate that\ncombining the greedy basis with the discrete empirical interpolation method\nalso preserves the symplectic structure. This enables the reduction of the\ncomputational cost for nonlinear Hamiltonian systems. The efficiency, accuracy,\nand stability of this model reduction technique is illustrated through\nsimulations of the parametric wave equation and the parametric Schrodinger\nequation.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -6398,7 +6398,7 @@
     {
         "text": "Replicator equation on networks with degree regular communities.   The replicator equation is one of the fundamental tools to study evolutionary\ndynamics in well-mixed populations. This paper contributes to the literature on\nevolutionary graph theory, providing a version of the replicator equation for a\nfamily of connected networks with communities, where nodes in the same\ncommunity have the same degree. This replicator equation is applied to the\nstudy of different classes of games, exploring the impact of the graph\nstructure on the equilibria of the evolutionary dynamics.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -6506,7 +6506,7 @@
     {
         "text": "A Bootstrap Method for Error Estimation in Randomized Matrix Multiplication.   In recent years, randomized methods for numerical linear algebra have\nreceived growing interest as a general approach to large-scale problems.\nTypically, the essential ingredient of these methods is some form of randomized\ndimension reduction, which accelerates computations, but also creates random\napproximation error. In this way, the dimension reduction step encodes a\ntradeoff between cost and accuracy. However, the exact numerical relationship\nbetween cost and accuracy is typically unknown, and consequently, it may be\ndifficult for the user to precisely know (1) how accurate a given solution is,\nor (2) how much computation is needed to achieve a given level of accuracy. In\nthe current paper, we study randomized matrix multiplication (sketching) as a\nprototype setting for addressing these general problems. As a solution, we\ndevelop a bootstrap method for {directly estimating} the accuracy as a function\nof the reduced dimension (as opposed to deriving worst-case bounds on the\naccuracy in terms of the reduced dimension). From a computational standpoint,\nthe proposed method does not substantially increase the cost of standard\nsketching methods, and this is made possible by an \"extrapolation\" technique.\nIn addition, we provide both theoretical and empirical results to demonstrate\nthe effectiveness of the proposed method.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -6758,7 +6758,7 @@
     {
         "text": "Interactive Certificates for Polynomial Matrices with Sub-Linear Communication.   We develop and analyze new protocols to verify the correctness of various\ncomputations on matrices over F[x], where F is a field. The properties we\nverify concern an F[x]-module and therefore cannot simply rely on\npreviously-developed linear algebra certificates which work only for vector\nspaces. Our protocols are interactive certificates, often randomized, and\nfeaturing a constant number of rounds of communication between the prover and\nverifier. We seek to minimize the communication cost so that the amount of data\nsent during the protocol is significantly smaller than the size of the result\nbeing verified, which can be useful when combining protocols or in some\nmulti-party settings. The main tools we use are reductions to existing linear\nalgebra certificates and a new protocol to verify that a given vector is in the\nF[x]-linear span of a given matrix.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -6860,7 +6860,7 @@
     {
         "text": "Optimal compromise between incompatible conditional probability distributions, with application to Objective Bayesian Kriging.   Models are often defined through conditional rather than joint distributions,\nbut it can be difficult to check whether the conditional distributions are\ncompatible, i.e. whether there exists a joint probability distribution which\ngenerates them. When they are compatible, a Gibbs sampler can be used to sample\nfrom this joint distribution. When they are not, the Gibbs sampling algorithm\nmay still be applied, resulting in a \"pseudo-Gibbs sampler\". We show its\nstationary probability distribution to be the optimal compromise between the\nconditional distributions, in the sense that it minimizes a mean squared misfit\nbetween them and its own conditional distributions. This allows us to perform\nObjective Bayesian analysis of correlation parameters in Kriging models by\nusing univariate conditional Jeffreys-rule posterior distributions instead of\nthe widely used multivariate Jeffreys-rule posterior. This strategy makes the\nfull-Bayesian procedure tractable. Numerical examples show it has near-optimal\nfrequentist performance in terms of prediction interval coverage.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -7208,7 +7208,7 @@
     {
         "text": "Some new bounds of placement delivery arrays.   Coded caching scheme is a technique which reduce the load during peak traffic\ntimes in a wireless network system. Placement delivery array (PDA in short) was\nfirst introduced by Yan et al.. It can be used to design coded caching scheme.\nIn this paper, we prove some lower bounds of PDA on the element and some lower\nbounds of PDA on the column. We also give some constructions for optimal PDA.",
         "labels": 0,
-        "Mathematics": 0,
+        "Mathematics": 1,
         "is_Mathematics": 0
     },
     {
@@ -7520,7 +7520,7 @@
     {
         "text": "Flow equations for cold Bose gases.   We derive flow equations for cold atomic gases with one macroscopically\npopulated energy level. The generator is chosen such that the ground state\ndecouples from all other states in the system as the renormalization group flow\nprogresses. We propose a self-consistent truncation scheme for the flow\nequations at the level of three-body operators and show how they can be used to\ncalculate the ground state energy of a general $N$-body system. Moreover, we\nprovide a general method to estimate the truncation error in the calculated\nenergies. Finally, we test our scheme by benchmarking to the exactly solvable\nLieb-Liniger model and find good agreement for weak and moderate interaction\nstrengths.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -7544,7 +7544,7 @@
     {
         "text": "Treewidth distance on phylogenetic trees.   In this article we study the treewidth of the \\emph{display graph}, an\nauxiliary graph structure obtained from the fusion of phylogenetic (i.e.,\nevolutionary) trees at their leaves. Earlier work has shown that the treewidth\nof the display graph is bounded if the trees are in some formal sense\ntopologically similar. Here we further expand upon this relationship. We\nanalyse a number of reduction rules which are commonly used in the\nphylogenetics literature to obtain fixed parameter tractable algorithms. In\nsome cases (the \\emph{subtree} reduction) the reduction rules behave similarly\nwith respect to treewidth, while others (the \\emph{cluster} reduction) behave\nvery differently, and the behaviour of the \\emph{chain reduction} is\nparticularly intriguing because of its link with graph separators and forbidden\nminors. We also show that the gap between treewidth and Tree Bisection and\nReconnect (TBR) distance can be infinitely large, and that unlike, for example,\nplanar graphs the treewidth of the display graph can be as much as linear in\nits number of vertices. On a slightly different note we show that if a display\ngraph is formed from the fusion of a phylogenetic network and a tree, rather\nthan from two trees, the treewidth of the display graph is bounded whenever the\ntree can be topologically embedded (\"displayed\") within the network. This opens\nthe door to the formulation of the display problem in Monadic Second Order\nLogic (MSOL). A number of other auxiliary results are given. We conclude with a\ndiscussion and list a number of open problems.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -7640,7 +7640,7 @@
     {
         "text": "Refining Trace Abstraction using Abstract Interpretation.   The CEGAR loop in software model checking notoriously diverges when the\nabstraction refinement procedure does not derive a loop invariant. An\nabstraction refinement procedure based on an SMT solver is applied to a trace,\ni.e., a restricted form of a program (without loops). In this paper, we present\na new abstraction refinement procedure that aims at circumventing this\nrestriction whenever possible. We apply abstract interpretation to a program\nthat we derive from the given trace. If the program contains a loop, we are\nguaranteed to obtain a loop invariant. We call an SMT solver only in the case\nwhere the abstract interpretation returns an indefinite answer. That is, the\nidea is to use abstract interpretation and an SMT solver in tandem. An\nexperimental evaluation in the setting of trace abstraction indicates the\npractical potential of this idea.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -8378,7 +8378,7 @@
     {
         "text": "Improved Convergence Rates for Distributed Resource Allocation.   In this paper, we develop a class of decentralized algorithms for solving a\nconvex resource allocation problem in a network of $n$ agents, where the agent\nobjectives are decoupled while the resource constraints are coupled. The agents\ncommunicate over a connected undirected graph, and they want to collaboratively\ndetermine a solution to the overall network problem, while each agent only\ncommunicates with its neighbors. We first study the connection between the\ndecentralized resource allocation problem and the decentralized consensus\noptimization problem. Then, using a class of algorithms for solving consensus\noptimization problems, we propose a novel class of decentralized schemes for\nsolving resource allocation problems in a distributed manner. Specifically, we\nfirst propose an algorithm for solving the resource allocation problem with an\n$o(1/k)$ convergence rate guarantee when the agents' objective functions are\ngenerally convex (could be nondifferentiable) and per agent local convex\nconstraints are allowed; We then propose a gradient-based algorithm for solving\nthe resource allocation problem when per agent local constraints are absent and\nshow that such scheme can achieve geometric rate when the objective functions\nare strongly convex and have Lipschitz continuous gradients. We have also\nprovided scalability/network dependency analysis. Based on these two\nalgorithms, we have further proposed a gradient projection-based algorithm\nwhich can handle smooth objective and simple constraints more efficiently.\nNumerical experiments demonstrates the viability and performance of all the\nproposed algorithms.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -8864,7 +8864,7 @@
     {
         "text": "Formal Synthesis of Control Strategies for Positive Monotone Systems.   We design controllers from formal specifications for positive discrete-time\nmonotone systems that are subject to bounded disturbances. Such systems are\nwidely used to model the dynamics of transportation and biological networks.\nThe specifications are described using signal temporal logic (STL), which can\nexpress a broad range of temporal properties. We formulate the problem as a\nmixed-integer linear program (MILP) and show that under the assumptions made in\nthis paper, which are not restrictive for traffic applications, the existence\nof open-loop control policies is sufficient and almost necessary to ensure the\nsatisfaction of STL formulas. We establish a relation between satisfaction of\nSTL formulas in infinite time and set-invariance theories and provide an\nefficient method to compute robust control invariant sets in high dimensions.\nWe also develop a robust model predictive framework to plan controls optimally\nwhile ensuring the satisfaction of the specification. Illustrative examples and\na traffic management case study are included.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -8876,7 +8876,7 @@
     {
         "text": "Benefits from Superposed Hawkes Processes.   The superposition of temporal point processes has been studied for many\nyears, although the usefulness of such models for practical applications has\nnot be fully developed. We investigate superposed Hawkes process as an\nimportant class of such models, with properties studied in the framework of\nleast squares estimation. The superposition of Hawkes processes is demonstrated\nto be beneficial for tightening the upper bound of excess risk under certain\nconditions, and we show the feasibility of the benefit in typical situations.\nThe usefulness of superposed Hawkes processes is verified on synthetic data,\nand its potential to solve the cold-start problem of recommendation systems is\ndemonstrated on real-world data.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -8930,7 +8930,7 @@
     {
         "text": "Exact partial information decompositions for Gaussian systems based on dependency constraints.   The Partial Information Decomposition (PID) [arXiv:1004.2515] provides a\ntheoretical framework to characterize and quantify the structure of\nmultivariate information sharing. A new method (Idep) has recently been\nproposed for computing a two-predictor PID over discrete spaces.\n[arXiv:1709.06653] A lattice of maximum entropy probability models is\nconstructed based on marginal dependency constraints, and the unique\ninformation that a particular predictor has about the target is defined as the\nminimum increase in joint predictor-target mutual information when that\nparticular predictor-target marginal dependency is constrained. Here, we apply\nthe Idep approach to Gaussian systems, for which the marginally constrained\nmaximum entropy models are Gaussian graphical models. Closed form solutions for\nthe Idep PID are derived for both univariate and multivariate Gaussian systems.\nNumerical and graphical illustrations are provided, together with practical and\ntheoretical comparisons of the Idep PID with the minimum mutual information PID\n(Immi). [arXiv:1411.2832] In particular, it is proved that the Immi method\ngenerally produces larger estimates of redundancy and synergy than does the\nIdep method. In discussion of the practical examples, the PIDs are complemented\nby the use of deviance tests for the comparison of Gaussian graphical models.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -9074,7 +9074,7 @@
     {
         "text": "Simultaneous Confidence Band for Partially Linear Panel Data Models with Fixed Effects.   In this paper, we construct the simultaneous confidence band (SCB) for the\nnonparametric component in partially linear panel data models with fixed\neffects. We remove the fixed effects, and further obtain the estimators of\nparametric and nonparametric components, which do not depend on the fixed\neffects. We establish the asymptotic distribution of their maximum absolute\ndeviation between the estimated nonparametric component and the true\nnonparametric component under some suitable conditions, and hence the result\ncan be used to construct the simultaneous confidence band of the nonparametric\ncomponent. Based on the asymptotic distribution, it becomes difficult for the\nconstruction of the simultaneous confidence band. The reason is that the\nasymptotic distribution involves the estimators of the asymptotic bias and\nconditional variance, and the choice of the bandwidth for estimating the second\nderivative of nonparametric function. Clearly, these will cause computational\nburden and accumulative errors. To overcome these problems, we propose a\nBootstrap method to construct simultaneous confidence band. Simulation studies\nindicate that the proposed Bootstrap method exhibits better performance under\nthe limited samples.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -9146,7 +9146,7 @@
     {
         "text": "Modeling and Reasoning About Wireless Networks: A Graph-based Calculus Approach.   We propose a graph-based process calculus for modeling and reasoning about\nwireless networks with local broadcasts. Graphs are used at syntactical level\nto describe the topological structures of networks. This calculus is equipped\nwith a reduction semantics and a labelled transition semantics. The former is\nused to define weak barbed congruence. The latter is used to define a\nparameterized weak bisimulation emphasizing locations and local broadcasts. We\nprove that weak bisimilarity implies weak barbed congruence. The potential\napplications are illustrated by some examples and two case studies.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -10082,7 +10082,7 @@
     {
         "text": "Infinitesimal perturbation analysis for risk measures based on the Smith max-stable random field.   When using risk or dependence measures based on a given underlying model, it\nis essential to be able to quantify the sensitivity or robustness of these\nmeasures with respect to the model parameters. In this paper, we consider an\nunderlying model which is very popular in spatial extremes, the Smith\nmax-stable random field. We study the sensitivity properties of risk or\ndependence measures based on the values of this field at a finite number of\nlocations. Max-stable fields play a key role, e.g., in the modelling of natural\ndisasters. As their multivariate density is generally not available for more\nthan three locations, the Likelihood Ratio Method cannot be used to estimate\nthe derivatives of the risk measures with respect to the model parameters.\nThus, we focus on a pathwise method, the Infinitesimal Perturbation Analysis\n(IPA). We provide a convenient and tractable sufficient condition for\nperforming IPA, which is intricate to obtain because of the very structure of\nmax-stable fields involving pointwise maxima over an infinite number of random\nfunctions. IPA enables the consistent estimation of the considered measures'\nderivatives with respect to the parameters characterizing the spatial\ndependence. We carry out a simulation study which shows that the approach\nperforms well in various configurations.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -10190,7 +10190,7 @@
     {
         "text": "A fast numerical method for ideal fluid flow in domains with multiple stirrers.   A collection of arbitrarily-shaped solid objects, each moving at a constant\nspeed, can be used to mix or stir ideal fluid, and can give rise to interesting\nflow patterns. Assuming these systems of fluid stirrers are two-dimensional,\nthe mathematical problem of resolving the flow field - given a particular\ndistribution of any finite number of stirrers of specified shape and speed -\ncan be formulated as a Riemann-Hilbert problem. We show that this\nRiemann-Hilbert problem can be solved numerically using a fast and accurate\nalgorithm for any finite number of stirrers based around a boundary integral\nequation with the generalized Neumann kernel. Various systems of fluid stirrers\nare considered, and our numerical scheme is shown to handle highly multiply\nconnected domains (i.e. systems of many fluid stirrers) with minimal\ncomputational expense.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -10424,7 +10424,7 @@
     {
         "text": "Model comparison for Gibbs random fields using noisy reversible jump Markov chain Monte Carlo.   The reversible jump Markov chain Monte Carlo (RJMCMC) method offers an\nacross-model simulation approach for Bayesian estimation and model comparison,\nby exploring the sampling space that consists of several models of possibly\nvarying dimensions. A naive implementation of RJMCMC to models like Gibbs\nrandom fields suffers from computational difficulties: the posterior\ndistribution for each model is termed doubly-intractable since computation of\nthe likelihood function is rarely available. Consequently, it is simply\nimpossible to simulate a transition of the Markov chain in the presence of\nlikelihood intractability. A variant of RJMCMC is presented, called noisy\nRJMCMC, where the underlying transition kernel is replaced with an\napproximation based on unbiased estimators. Based on previous theoretical\ndevelopments, convergence guarantees for the noisy RJMCMC algorithm are\nprovided. The experiments show that the noisy RJMCMC algorithm can be much more\nefficient than other exact methods, provided that an estimator with controlled\nMonte Carlo variance is used, a fact which is in agreement with the theoretical\nanalysis.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -10460,7 +10460,7 @@
     {
         "text": "Reminiscences of Julian Schwinger: Late Harvard, Early UCLA Years (1968-1981).   These are reminiscences of my interactions with Julian Schwinger from 1968\nthrough 1981 and beyond.",
         "labels": 0,
-        "Mathematics": 0,
+        "Mathematics": 1,
         "is_Mathematics": 0
     },
     {
@@ -10604,7 +10604,7 @@
     {
         "text": "On the Semantics and Complexity of Probabilistic Logic Programs.   We examine the meaning and the complexity of probabilistic logic programs\nthat consist of a set of rules and a set of independent probabilistic facts\n(that is, programs based on Sato's distribution semantics). We focus on two\nsemantics, respectively based on stable and on well-founded models. We show\nthat the semantics based on stable models (referred to as the \"credal\nsemantics\") produces sets of probability models that dominate infinitely\nmonotone Choquet capacities, we describe several useful consequences of this\nresult. We then examine the complexity of inference with probabilistic logic\nprograms. We distinguish between the complexity of inference when a\nprobabilistic program and a query are given (the inferential complexity), and\nthe complexity of inference when the probabilistic program is fixed and the\nquery is given (the query complexity, akin to data complexity as used in\ndatabase theory). We obtain results on the inferential and query complexity for\nacyclic, stratified, and cyclic propositional and relational programs,\ncomplexity reaches various levels of the counting hierarchy and even\nexponential levels.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -11396,7 +11396,7 @@
     {
         "text": "Oblivious Routing via Random Walks.   We present novel oblivious routing algorithms for both splittable and\nunsplittable multicommodity flow. Our algorithm for minimizing congestion for\n\\emph{unsplittable} multicommodity flow is the first oblivious routing\nalgorithm for this setting. As an intermediate step towards this algorithm, we\npresent a novel generalization of Valiant's classical load balancing scheme for\npacket-switched networks to arbitrary graphs, which is of independent interest.\nOur algorithm for minimizing congestion for \\emph{splittable} multicommodity\nflow improves upon the state-of-the-art, in terms of both running time and\nperformance, for graphs that exhibit good expansion guarantees. Our algorithms\nrely on diffusing traffic via iterative applications of the random walk\noperator. Consequently, the performance guarantees of our algorithms are\nderived from the convergence of the random walk operator to the stationary\ndistribution and are expressed in terms of the spectral gap of the graph (which\ndominates the mixing time).",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -11420,7 +11420,7 @@
     {
         "text": "Sorted Concave Penalized Regression.   The Lasso is biased. Concave penalized least squares estimation (PLSE) takes\nadvantage of signal strength to reduce this bias, leading to sharper error\nbounds in prediction, coefficient estimation and variable selection. For\nprediction and estimation, the bias of the Lasso can be also reduced by taking\na smaller penalty level than what selection consistency requires, but such\nsmaller penalty level depends on the sparsity of the true coefficient vector.\nThe sorted L1 penalized estimation (Slope) was proposed for adaptation to such\nsmaller penalty levels. However, the advantages of concave PLSE and Slope do\nnot subsume each other. We propose sorted concave penalized estimation to\ncombine the advantages of concave and sorted penalizations. We prove that\nsorted concave penalties adaptively choose the smaller penalty level and at the\nsame time benefits from signal strength, especially when a significant\nproportion of signals are stronger than the corresponding adaptively selected\npenalty levels. A local convex approximation, which extends the local linear\nand quadratic approximations to sorted concave penalties, is developed to\nfacilitate the computation of sorted concave PLSE and proven to possess desired\nprediction and estimation error bounds. We carry out a unified treatment of\npenalty functions in a general optimization setting, including the penalty\nlevels and concavity of the above mentioned sorted penalties and mixed\npenalties motivated by Bayesian considerations. Our analysis of prediction and\nestimation errors requires the restricted eigenvalue condition on the design,\nnot beyond, and provides selection consistency under a required minimum signal\nstrength condition in addition. Thus, our results also sharpens existing\nresults on concave PLSE by removing the upper sparse eigenvalue component of\nthe sparse Riesz condition.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -11720,7 +11720,7 @@
     {
         "text": "Confluence of Conditional Term Rewrite Systems via Transformations.   Conditional term rewriting is an intuitive yet complex extension of term\nrewriting. In order to benefit from the simpler framework of unconditional\nrewriting, transformations have been defined to eliminate the conditions of\nconditional term rewrite systems.\nRecent results provide confluence criteria for conditional term rewrite\nsystems via transformations, yet they are restricted to CTRSs with certain\nsyntactic properties like weak left-linearity. These syntactic properties imply\nthat the transformations are sound for the given CTRS.\nThis paper shows how to use transformations to prove confluence of\noperationally terminating, right-stable deterministic conditional term rewrite\nsystems without the necessity of soundness restrictions. For this purpose, it\nis shown that certain rewrite strategies, in particular almost U-eagerness and\ninnermost rewriting, always imply soundness.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -12530,7 +12530,7 @@
     {
         "text": "Adjusting systematic bias in high dimensional principal component scores.   Principal component analysis continues to be a powerful tool in dimension\nreduction of high dimensional data. We assume a variance-diverging model and\nuse the high-dimension, low-sample-size asymptotics to show that even though\nthe principal component directions are not consistent, the sample and\nprediction principal component scores can be useful in revealing the population\nstructure. We further show that these scores are biased, and the bias is\nasymptotically decomposed into rotation and scaling parts. We propose methods\nof bias-adjustment that are shown to be consistent and work well in the finite\nbut high dimensional situations with small sample sizes. The potential\nadvantage of bias-adjustment is demonstrated in a classification setting.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -12824,7 +12824,7 @@
     {
         "text": "Optimal one-shot quantum algorithm for EQUALITY and AND.   We study the computation complexity of Boolean functions in the quantum black\nbox model. In this model our task is to compute a function\n$f:\\{0,1\\}\\to\\{0,1\\}$ on an input $x\\in\\{0,1\\}^n$ that can be accessed by\nquerying the black box. Quantum algorithms are inherently probabilistic; we are\ninterested in the lowest possible probability that the algorithm outputs\nincorrect answer (the error probability) for a fixed number of queries. We show\nthat the lowest possible error probability for $AND_n$ and $EQUALITY_{n+1}$ is\n$1/2-n/(n^2+1)$.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -13226,7 +13226,7 @@
     {
         "text": "Ordered p-median problems with neighborhoods.   In this paper, we introduce a new variant of the $p$-median facility location\nproblem in which it is assumed that the exact location of the potential\nfacilities is unknown. Instead, each of the facilities must be located in a\nregion around their initially assigned location (the neighborhood). In this\nproblem, two main decisions have to be made simultaneously: the determination\nof the potential facilities that must be open to serve the demands of the\ncustomers and the location of the open facilities in their neighborhoods, at\nglobal minimum cost. We present several mixed integer non-linear programming\nformulations for a wide family of objective functions which are common in\nLocation Analysis: ordered median functions. We also develop two math-heuristic\napproaches for solving the problem. We report the results of extensive\ncomputational experiments.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -13280,7 +13280,7 @@
     {
         "text": "Shapley effects for sensitivity analysis with correlated inputs: comparisons with Sobol' indices, numerical estimation and applications.   The global sensitivity analysis of a numerical model aims to quantify, by\nmeans of sensitivity indices estimate, the contributions of each uncertain\ninput variable to the model output uncertainty. The so-called Sobol' indices,\nwhich are based on the functional variance analysis, present a difficult\ninterpretation in the presence of statistical dependence between inputs. The\nShapley effect was recently introduced to overcome this problem as they\nallocate the mutual contribution (due to correlation and interaction) of a\ngroup of inputs to each individual input within the group.In this paper, using\nseveral new analytical results, we study the effects of linear correlation\nbetween some Gaussian input variables on Shapley effects, and compare these\neffects to classical first-order and total Sobol' indices.This illustrates the\ninterest, in terms of sensitivity analysis setting and interpretation, of the\nShapley effects in the case of dependent inputs. We also investigate the\nnumerical convergence of the estimated Shapley effects. For the practical issue\nof computationally demanding computer models, we show that the substitution of\nthe original model by a metamodel (here, kriging) makes it possible to estimate\nthese indices with precision at a reasonable computational cost.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -13706,7 +13706,7 @@
     {
         "text": "Accelerated Consensus via Min-Sum Splitting.   We apply the Min-Sum message-passing protocol to solve the consensus problem\nin distributed optimization. We show that while the ordinary Min-Sum algorithm\ndoes not converge, a modified version of it known as Splitting yields\nconvergence to the problem solution. We prove that a proper choice of the\ntuning parameters allows Min-Sum Splitting to yield subdiffusive accelerated\nconvergence rates, matching the rates obtained by shift-register methods. The\nacceleration scheme embodied by Min-Sum Splitting for the consensus problem\nbears similarities with lifted Markov chains techniques and with multi-step\nfirst order methods in convex optimization.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -13910,7 +13910,7 @@
     {
         "text": "Octupolar Tensors for Liquid Crystals.   A third-order three-dimensional symmetric traceless tensor, called the\n\\emph{octupolar} tensor, has been introduced to study tetrahedratic nematic\nphases in liquid crystals. The octupolar \\emph{potential}, a scalar-valued\nfunction generated on the unit sphere by that tensor, should ideally have four\nmaxima capturing the most probable molecular orientations (on the vertices of a\ntetrahedron), but it was recently found to possess an equally generic variant\nwith \\emph{three} maxima instead of four. It was also shown that the\nirreducible admissible region for the octupolar tensor in a three-dimensional\nparameter space is bounded by a dome-shaped surface, beneath which is a\n\\emph{separatrix} surface connecting the two generic octupolar states. The\nlatter surface, which was obtained through numerical continuation, may be\nphysically interpreted as marking a possible \\emph{intra-octupolar} transition.\nIn this paper, by using the resultant theory of algebraic geometry and the\nE-characteristic polynomial of spectral theory of tensors, we give a\nclosed-form, algebraic expression for both the dome-shaped surface and the\nseparatrix surface. This turns the envisaged intra-octupolar transition into a\nquantitative, possibly observable prediction. Some other properties of\noctupolar tensors are also studied.",
         "labels": 1,
-        "Mathematics": 0,
+        "Mathematics": 1,
         "is_Mathematics": 1
     },
     {
@@ -14570,7 +14570,7 @@
     {
         "text": "Bayesian Probabilistic Numerical Methods.   The emergent field of probabilistic numerics has thus far lacked clear\nstatistical principals. This paper establishes Bayesian probabilistic numerical\nmethods as those which can be cast as solutions to certain inverse problems\nwithin the Bayesian framework. This allows us to establish general conditions\nunder which Bayesian probabilistic numerical methods are well-defined,\nencompassing both non-linear and non-Gaussian models. For general computation,\na numerical approximation scheme is proposed and its asymptotic convergence\nestablished. The theoretical development is then extended to pipelines of\ncomputation, wherein probabilistic numerical methods are composed to solve more\nchallenging numerical tasks. The contribution highlights an important research\nfrontier at the interface of numerical analysis and uncertainty quantification,\nwith a challenging industrial application presented.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -14702,7 +14702,7 @@
     {
         "text": "Formalization of Transform Methods using HOL Light.   Transform methods, like Laplace and Fourier, are frequently used for\nanalyzing the dynamical behaviour of engineering and physical systems, based on\ntheir transfer function, and frequency response or the solutions of their\ncorresponding differential equations. In this paper, we present an ongoing\nproject, which focuses on the higher-order logic formalization of transform\nmethods using HOL Light theorem prover. In particular, we present the\nmotivation of the formalization, which is followed by the related work. Next,\nwe present the task completed so far while highlighting some of the challenges\nfaced during the formalization. Finally, we present a roadmap to achieve our\nobjectives, the current status and the future goals for this project.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -15236,7 +15236,7 @@
     {
         "text": "Conditional Model Selection in Mixed-Effects Models with cAIC4.   Model selection in mixed models based on the conditional distribution is\nappropriate for many practical applications and has been a focus of recent\nstatistical research. In this paper we introduce the R-package cAIC4 that\nallows for the computation of the conditional Akaike Information Criterion\n(cAIC). Computation of the conditional AIC needs to take into account the\nuncertainty of the random effects variance and is therefore not\nstraightforward. We introduce a fast and stable implementation for the\ncalculation of the cAIC for linear mixed models estimated with lme4 and\nadditive mixed models estimated with gamm4 . Furthermore, cAIC4 offers a\nstepwise function that allows for a fully automated stepwise selection scheme\nfor mixed models based on the conditional AIC. Examples of many possible\napplications are presented to illustrate the practical impact and easy handling\nof the package.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -15254,7 +15254,7 @@
     {
         "text": "A Time Hierarchy Theorem for the LOCAL Model.   The celebrated Time Hierarchy Theorem for Turing machines states, informally,\nthat more problems can be solved given more time. The extent to which a time\nhierarchy-type theorem holds in the distributed LOCAL model has been open for\nmany years. It is consistent with previous results that all natural problems in\nthe LOCAL model can be classified according to a small constant number of\ncomplexities, such as $O(1),O(\\log^* n), O(\\log n), 2^{O(\\sqrt{\\log n})}$, etc.\nIn this paper we establish the first time hierarchy theorem for the LOCAL\nmodel and prove that several gaps exist in the LOCAL time hierarchy.\n1. We define an infinite set of simple coloring problems called Hierarchical\n$2\\frac{1}{2}$-Coloring}. A correctly colored graph can be confirmed by simply\nchecking the neighborhood of each vertex, so this problem fits into the class\nof locally checkable labeling (LCL) problems. However, the complexity of the\n$k$-level Hierarchical $2\\frac{1}{2}$-Coloring problem is $\\Theta(n^{1/k})$,\nfor $k\\in\\mathbb{Z}^+$. The upper and lower bounds hold for both general graphs\nand trees, and for both randomized and deterministic algorithms.\n2. Consider any LCL problem on bounded degree trees. We prove an\nautomatic-speedup theorem that states that any randomized $n^{o(1)}$-time\nalgorithm solving the LCL can be transformed into a deterministic $O(\\log\nn)$-time algorithm. Together with a previous result, this establishes that on\ntrees, there are no natural deterministic complexities in the ranges\n$\\omega(\\log^* n)$---$o(\\log n)$ or $\\omega(\\log n)$---$n^{o(1)}$.\n3. We expose a gap in the randomized time hierarchy on general graphs. Any\nrandomized algorithm that solves an LCL problem in sublogarithmic time can be\nsped up to run in $O(T_{LLL})$ time, which is the complexity of the distributed\nLovasz local lemma problem, currently known to be $\\Omega(\\log\\log n)$ and\n$O(\\log n)$.",
         "labels": 0,
-        "Mathematics": 0,
+        "Mathematics": 1,
         "is_Mathematics": 0
     },
     {
@@ -15728,7 +15728,7 @@
     {
         "text": "An Asynchronous Parallel Approach to Sparse Recovery.   Asynchronous parallel computing and sparse recovery are two areas that have\nreceived recent interest. Asynchronous algorithms are often studied to solve\noptimization problems where the cost function takes the form $\\sum_{i=1}^M\nf_i(x)$, with a common assumption that each $f_i$ is sparse; that is, each\n$f_i$ acts only on a small number of components of $x\\in\\mathbb{R}^n$. Sparse\nrecovery problems, such as compressed sensing, can be formulated as\noptimization problems, however, the cost functions $f_i$ are dense with respect\nto the components of $x$, and instead the signal $x$ is assumed to be sparse,\nmeaning that it has only $s$ non-zeros where $s\\ll n$. Here we address how one\nmay use an asynchronous parallel architecture when the cost functions $f_i$ are\nnot sparse in $x$, but rather the signal $x$ is sparse. We propose an\nasynchronous parallel approach to sparse recovery via a stochastic greedy\nalgorithm, where multiple processors asynchronously update a vector in shared\nmemory containing information on the estimated signal support. We include\nnumerical simulations that illustrate the potential benefits of our proposed\nasynchronous method.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -16244,7 +16244,7 @@
     {
         "text": "$b$-symbol distance distribution of repeated-root cyclic codes.   Symbol-pair codes, introduced by Cassuto and Blaum [1], have been raised for\nsymbol-pair read channels. This new idea is motivated by the limitation of the\nreading process in high-density data storage technologies. Yaakobi et al. [8]\nintroduced codes for $b$-symbol read channels, where the read operation is\nperformed as a consecutive sequence of $b>2$ symbols. In this paper, we come up\nwith a method to compute the $b$-symbol-pair distance of two $n$-tuples, where\n$n$ is a positive integer. Also, we deal with the $b$-symbol-pair distances of\nsome kind of cyclic codes of length $p^e$ over $\\mathbb{F}_{p^m}$.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -16310,7 +16310,7 @@
     {
         "text": "Entanglement in topological systems.   These lecture notes on entanglement in topological systems are part of the\n48th IFF Spring School 2017 on Topological Matter: Topological Insulators,\nSkyrmions and Majoranas at the Forschungszentrum Juelich, Germany. They cover a\nshort discussion on topologically ordered phases and review the two main tools\navailable for detecting topological order - the entanglement entropy and the\nentanglement spectrum.",
         "labels": 0,
-        "Mathematics": 0,
+        "Mathematics": 1,
         "is_Mathematics": 0
     },
     {
@@ -16814,7 +16814,7 @@
     {
         "text": "Space-time domain solutions of the wave equation by a non-singular boundary integral method and Fourier transform.   The general space-time evolution of the scattering of an incident acoustic\nplane wave pulse by an arbitrary configuration of targets is treated by\nemploying a recently developed non-singular boundary integral method to solve\nthe Helmholtz equation in the frequency domain from which the fast Fourier\ntransform is used to obtain the full space-time solution of the wave equation.\nThe non-singular boundary integral solution can enforce the radiation boundary\ncondition at infinity exactly and can account for multiple scattering effects\nat all spacings between scatterers without adverse effects on the numerical\nprecision. More generally, the absence of singular kernels in the non-singular\nintegral equation confers high numerical stability and precision for smaller\nnumbers of degrees of freedom. The use of fast Fourier transform to obtain the\ntime dependence is not constrained to discrete time steps and is particularly\nefficient for studying the response to different incident pulses by the same\nconfiguration of scatterers. The precision that can be attained using a smaller\nnumber of Fourier components is also quantified.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -16862,7 +16862,7 @@
     {
         "text": "Machine learning quantum mechanics: solving quantum mechanics problems using radial basis function networks.   Inspired by the recent work of Carleo and Troyer[1], we apply machine\nlearning methods to quantum mechanics in this article. The radial basis\nfunction network in a discrete basis is used as the variational wavefunction\nfor the ground state of a quantum system. Variational Monte Carlo(VMC)\ncalculations are carried out for some simple Hamiltonians. The results are in\ngood agreements with theoretical values. The smallest eigenvalue of a Hermitian\nmatrix can also be acquired using VMC calculations. Our results demonstrate\nthat machine learning techniques are capable of solving quantum mechanical\nproblems.",
         "labels": 0,
-        "Mathematics": 0,
+        "Mathematics": 1,
         "is_Mathematics": 0
     },
     {
@@ -16916,7 +16916,7 @@
     {
         "text": "Extrapolating Expected Accuracies for Large Multi-Class Problems.   The difficulty of multi-class classification generally increases with the\nnumber of classes. Using data from a subset of the classes, can we predict how\nwell a classifier will scale with an increased number of classes? Under the\nassumptions that the classes are sampled identically and independently from a\npopulation, and that the classifier is based on independently learned scoring\nfunctions, we show that the expected accuracy when the classifier is trained on\nk classes is the (k-1)st moment of a certain distribution that can be estimated\nfrom data. We present an unbiased estimation method based on the theory, and\ndemonstrate its application on a facial recognition example.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -17192,7 +17192,7 @@
     {
         "text": "A stable numerical strategy for Reynolds-Rayleigh-Plesset coupling.   The coupling of Reynolds and Rayleigh-Plesset equations has been used in\nseveral works to simulate lubricated devices considering cavitation. The\nnumerical strategies proposed so far are variants of a staggered strategy where\nReynolds equation is solved considering the bubble dynamics frozen, and then\nthe Rayleigh-Plesset equation is solved to update the bubble radius with the\npressure frozen. We show that this strategy has severe stability issues and a\nstable methodology is proposed. The proposed methodology performance is\nassessed on two physical settings. The first one concerns the propagation of a\ndecompression wave along a fracture considering the presence of cavitation\nnuclei. The second one is a typical journal bearing, in which the coupled model\nis compared with the Elrod-Adams model.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -17288,7 +17288,7 @@
     {
         "text": "Robust Gaussian Stochastic Process Emulation.   We consider estimation of the parameters of a Gaussian Stochastic Process\n(GaSP), in the context of emulation (approximation) of computer models for\nwhich the outcomes are real-valued scalars. The main focus is on estimation of\nthe GaSP parameters through various generalized maximum likelihood methods,\nmostly involving finding posterior modes; this is because full Bayesian\nanalysis in computer model emulation is typically prohibitively expensive. The\nposterior modes that are studied arise from objective priors, such as the\nreference prior. These priors have been studied in the literature for the\nsituation of an isotropic covariance function or under the assumption of\nseparability in the design of inputs for model runs used in the GaSP\nconstruction. In this paper, we consider more general designs (e.g., a Latin\nHypercube Design) with a class of commonly used anisotropic correlation\nfunctions, which can be written as a product of isotropic correlation\nfunctions, each having an unknown range parameter and a fixed roughness\nparameter. We discuss properties of the objective priors and marginal\nlikelihoods for the parameters of the GaSP and establish the posterior\npropriety of the GaSP parameters, but our main focus is to demonstrate that\ncertain parameterizations result in more robust estimation of the GaSP\nparameters than others, and that some parameterizations that are in common use\nshould clearly be avoided. These results are applicable to many frequently used\ncovariance functions, e.g., power exponential, Mat{é}rn, rational quadratic\nand spherical covariance. We also generalize the results to the GaSP model with\na nugget parameter. Both theoretical and numerical evidence is presented\nconcerning the performance of the studied procedures.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -17798,7 +17798,7 @@
     {
         "text": "LocalNysation: A bottom up approach to efficient localized kernel regression.   We consider a localized approach in the well-established setting of\nreproducing kernel learning under random design. The input space $X$ is\npartitioned into local disjoint subsets $X_j$ ($j=1,...,m$) equipped with a\nlocal reproducing kernel $K_j$. It is then straightforward to define local KRR\nestimates. Our first main contribution is in showing that minimax optimal rates\nof convergence are preserved if the number $m$ of partitions grows sufficiently\nslowly with the sample size, under locally different degrees on smoothness\nassumptions on the regression function. As a byproduct, we show that low\nsmoothness on exceptional sets of small probability does not contribute,\nleading to a faster rate of convergence. Our second contribution lies in\nshowing that the partitioning approach for KRR can be efficiently combined with\nlocal Nyström subsampling, improving computational cost twofold. If the\nnumber of locally subsampled inputs grows sufficiently fast with the sample\nsize, minimax optimal rates of convergence are maintained.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -17828,7 +17828,7 @@
     {
         "text": "Stochastic Feedback Control of Systems with Unknown Nonlinear Dynamics.   This paper studies the stochastic optimal control problem for systems with\nunknown dynamics. First, an open-loop deterministic trajectory optimization\nproblem is solved without knowing the explicit form of the dynamical system.\nNext, a Linear Quadratic Gaussian (LQG) controller is designed for the nominal\ntrajectory-dependent linearized system, such that under a small noise\nassumption, the actual states remain close to the optimal trajectory. The\ntrajectory-dependent linearized system is identified using input-output\nexperimental data consisting of the impulse responses of the nominal system. A\ncomputational example is given to illustrate the performance of the proposed\napproach.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -18212,7 +18212,7 @@
     {
         "text": "Random matrices and the New York City subway system.   We analyze subway arrival times in the New York City subway system. We find\nregimes where the gaps between trains exhibit both (unitarily invariant) random\nmatrix statistics and Poisson statistics. The departure from random matrix\nstatistics is captured by the value of the Coulomb potential along the subway\nroute. This departure becomes more pronounced as trains make more stops.",
         "labels": 0,
-        "Mathematics": 0,
+        "Mathematics": 1,
         "is_Mathematics": 0
     },
     {
@@ -18458,7 +18458,7 @@
     {
         "text": "On the Importance of Correlations in Rational Choice: A Case for Non-Nashian Game Theory.   The Nash equilibrium paradigm, and Rational Choice Theory in general, rely on\nagents acting independently from each other. This note shows how this\nassumption is crucial in the definition of Rational Choice Theory. It explains\nhow a consistent Alternate Rational Choice Theory, as suggested by Jean-Pierre\nDupuy, can be built on the exact opposite assumption, and how it provides a\nviable account for alternate, actually observed behavior of rational agents\nthat is based on correlations between their decisions.\nThe end goal of this note is three-fold: (i) to motivate that the Perfect\nPrediction Equilibrium, implementing Dupuy's notion of projected time and\npreviously called \"projected equilibrium\", is a reasonable approach in certain\nreal situations and a meaningful complement to the Nash paradigm, (ii) to\nsummarize common misconceptions about this equilibrium, and (iii) to give a\nconcise motivation for future research on non-Nashian game theory.",
         "labels": 0,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 0
     },
     {
@@ -18518,7 +18518,7 @@
     {
         "text": "A Sparse Completely Positive Relaxation of the Modularity Maximization for Community Detection.   In this paper, we consider the community detection problem under either the\nstochastic block model (SBM) assumption or the degree-correlated stochastic\nblock model (DCSBM) assumption. The modularity maximization formulation for the\ncommunity detection problem is NP-hard in general. In this paper, we propose a\nsparse and low-rank completely positive relaxation for the modularity\nmaximization problem, we then develop an efficient row-by-row (RBR) type block\ncoordinate descent (BCD) algorithm to solve the relaxation and prove an\n$\\mathcal{O}(1/\\sqrt{N})$ convergence rate to a stationary point where $N$ is\nthe number of iterations. A fast rounding scheme is constructed to retrieve the\ncommunity structure from the solution. Non-asymptotic high probability bounds\non the misclassification rate are established to justify our approach. We\nfurther develop an asynchronous parallel RBR algorithm to speed up the\nconvergence. Extensive numerical experiments on both synthetic and real world\nnetworks show that the proposed approach enjoys advantages in both clustering\naccuracy and numerical efficiency. Our numerical results indicate that the\nnewly proposed method is a quite competitive alternative for community\ndetection on sparse networks with over 50 million nodes.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
@@ -18716,7 +18716,7 @@
     {
         "text": "Exact lowest-Landau-level solutions for vortex precession in Bose-Einstein condensates.   The Lowest Landau Level (LLL) equation emerges as an accurate approximation\nfor a class of dynamical regimes of Bose-Einstein Condensates (BEC) in\ntwo-dimensional isotropic harmonic traps in the limit of weak interactions.\nBuilding on recent developments in the field of spatially confined extended\nHamiltonian systems, we find a fully nonlinear solution of this equation\nrepresenting periodically modulated precession of a single vortex. Motions of\nthis type have been previously seen in numerical simulations and experiments at\nmoderately weak coupling. Our work provides the first controlled analytic\nprediction for trajectories of a single vortex, suggests new targets for\nexperiments, and opens up the prospect of finding analytic multi-vortex\nsolutions.",
         "labels": 1,
-        "Mathematics": 1,
+        "Mathematics": 0,
         "is_Mathematics": 1
     },
     {
