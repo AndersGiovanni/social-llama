@@ -24,19 +24,6 @@ for task in tasks:
     print("-" * 50)
     print(f"Task: {task}")
 
-    if not task in [
-        # "contextual-abuse#PersonDirectedAbuse",
-        # "contextual-abuse#IdentityDirectedAbuse",
-        # "tweet_irony",
-        # "hateoffensive",
-        # "tweet_emotion",
-        # "implicit-hate#explicit_hate",
-        # "implicit-hate#implicit_hate",
-        # "crowdflower",
-        "dailydialog",
-    ]:
-        continue
-
     models = [
         i
         for i in os.listdir(os.path.join(DATA_DIR_EVALUATION_SOCKET, task))
