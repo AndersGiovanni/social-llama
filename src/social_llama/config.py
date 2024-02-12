@@ -25,6 +25,9 @@ DATA_DIR_EVALUATION_SOCKET: Path = DATA_DIR_EVALUATION / "socket"
 DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS: Path = DATA_DIR_EVALUATION / "social-dimensions"
 DATA_DIR_EVALUATION_TEN_DIM: Path = DATA_DIR_EVALUATION / "ten-dim"
 
+# Vector DB
+DATA_DIR_VECTOR_DB: Path = DATA_DIR / "vector-db"
+
 
 # Datasets Config Class
 @dataclass

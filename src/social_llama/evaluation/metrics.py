@@ -24,16 +24,6 @@ for task in tasks:
     print("-" * 50)
     print(f"Task: {task}")
 
-    # if not task in [
-    #             "contextual-abuse#PersonDirectedAbuse",
-    #             "contextual-abuse#IdentityDirectedAbuse",
-    #             "tweet_irony",
-    #             "hateoffensive",
-    #             "tweet_emotion",
-    #             "implicit-hate#explicit_hate",
-    #             "implicit-hate#implicit_hate"]:
-    #     continue
-
     models = [
         i
         for i in os.listdir(os.path.join(DATA_DIR_EVALUATION_SOCKET, task))
@@ -58,11 +48,15 @@ for task in tasks:
                 ) as f:
                     data = json.load(f)
 
-            predictions_processed = [p["prediction_processed"] for p in data]
-            predictions_finder = [p["prediction_finder"] for p in data]
+            # predictions_processed = [p["prediction_processed"] for p in data]
+            # predictions_finder = [p["prediction_finder"] for p in data]
+            correct_key = (
+                "prediction_finder" if "prediction_finder" in data[0] else "prediction"
+            )
+            predictions = [p[correct_key] for p in data]
             labels = [p["label"] for p in data]
 
-            acc = accuracy_score(predictions_finder, labels)
+            acc = accuracy_score(predictions, labels)
 
             # Append model performance data for plotting
             model_names.append(model + "_" + file)
@@ -74,17 +68,15 @@ for task in tasks:
     # Create a bar chart
     plt.figure(figsize=(20, 10))
     colors = [
-        "red" if "knowledge" in model or "knwldg" in model else "blue"
+        "#06d6a0"
+        if "knowledge" in model
+        else "#ef476f"
+        if "knwldg" in model
+        else "#ffd166"
+        if "RAG" in model
+        else "#118ab2"
         for model in model_names
     ]
-    colors = []
-    for model in model_names:
-        if "knowledge" in model:
-            colors.append("#06d6a0")
-        elif "knwldg" in model:
-            colors.append("#ef476f")
-        else:
-            colors.append("#118ab2")
     bars = plt.barh(model_names, accuracies, color=colors)
     # Adjust subplot left margin
     plt.subplots_adjust(left=0.4)
