@@ -18,3 +18,4 @@ dpo/
 .DS_Store
 /ten-dim/
 /data/vector-db/
+/logs/
