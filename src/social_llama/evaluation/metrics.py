@@ -48,24 +48,38 @@ for task in tasks:
                 ) as f:
                     data = json.load(f)
 
-            predictions_processed = [p["prediction_processed"] for p in data]
-            predictions_finder = [p["prediction_finder"] for p in data]
+            # predictions_processed = [p["prediction_processed"] for p in data]
+            # predictions_finder = [p["prediction_finder"] for p in data]
+            correct_key = (
+                "prediction_finder" if "prediction_finder" in data[0] else "prediction"
+            )
+            predictions = [p[correct_key] for p in data]
             labels = [p["label"] for p in data]
 
-            acc = accuracy_score(predictions_finder, labels)
+            acc = accuracy_score(predictions, labels)
 
             # Append model performance data for plotting
-            model_names.append(model + "_" + file[:-10])
+            model_names.append(model + "_" + file)
             accuracies.append(acc)
 
     if len(model_names) <= 1:
         continue
 
     # Create a bar chart
-    plt.figure(figsize=(10, 6))
-    bars = plt.barh(model_names, accuracies)
+    plt.figure(figsize=(20, 10))
+    colors = [
+        "#06d6a0"
+        if "knowledge" in model
+        else "#ef476f"
+        if "knwldg" in model
+        else "#ffd166"
+        if "RAG" in model
+        else "#118ab2"
+        for model in model_names
+    ]
+    bars = plt.barh(model_names, accuracies, color=colors)
     # Adjust subplot left margin
-    plt.subplots_adjust(left=0.3)
+    plt.subplots_adjust(left=0.4)
     plt.xlabel("Accuracy")
     plt.title(f"Performance Metrics for Task: {task}")
     plt.xlim(0, 1)  # Assuming accuracy is between 0 and 1

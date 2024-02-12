@@ -27,6 +27,8 @@ DATA_DIR_EVALUATION_TEN_DIM: Path = DATA_DIR_EVALUATION / "ten-dim"
 
 # Multilabel-test
 DATA_DIR_MULTILABEL = DATA_DIR / "multilabel"
+# Vector DB
+DATA_DIR_VECTOR_DB: Path = DATA_DIR / "vector-db"
 
 
 # Datasets Config Class
