@@ -40,7 +40,7 @@ class ScriptArguments:
     """Script arguments."""
 
     checkpoint: Optional[str] = field(
-        default="roberta-large",
+        default="meta-llama/Llama-2-7b-hf",
         metadata={
             "help": "the model name",
             "choices": [
