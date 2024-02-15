@@ -514,7 +514,9 @@ if __name__ == "__main__":
 
             save_outputs.append(sample)
 
-        save_json(DATA_DIR_MULTILABEL / f"{label}.json", save_outputs)
+        save_json(
+            DATA_DIR_MULTILABEL / f"{script_args.checkpoint}_{label}.json", save_outputs
+        )
 
         wandb.finish()
 

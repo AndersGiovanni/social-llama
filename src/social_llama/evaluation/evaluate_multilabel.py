@@ -63,5 +63,9 @@ prediction_scores = {
     "classification_report": clf_report,
 }
 
-with open(DATA_DIR_MULTILABEL / "multilabel_scores_ovr.json", "w") as f:
+checkpoint = "meta-llama/Llama-2-7b-hf"
+
+with open(
+    DATA_DIR_MULTILABEL / f"{checkpoint}_ovr-model_multilabel-eval.json", "w"
+) as f:
     json.dump(prediction_scores, f, indent=4)

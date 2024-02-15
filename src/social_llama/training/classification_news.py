@@ -542,7 +542,11 @@ if __name__ == "__main__":
         }
         metrics[label] = scores
 
-    save_json(DATA_DIR_MULTILABEL / "multilabel_ovr_eval.json", metrics)
+    save_json(
+        DATA_DIR_MULTILABEL
+        / f"{script_args.checkpoint}_multilabel-model_ovr-eval.json",
+        metrics,
+    )
 
     # Push to hub
     # trainer.push_to_hub()
