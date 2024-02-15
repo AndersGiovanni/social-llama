@@ -1,0 +1,69 @@
+{
+    "accuracy": 0.6134774316592498,
+    "precision": 0.7762470308788598,
+    "recall": 0.8275512788047606,
+    "f1": 0.8010785635494546,
+    "hamming_loss": 0.08598219961856325,
+    "classification_report": {
+        "Computer Science": {
+            "precision": 0.8020158387329014,
+            "recall": 0.8529862174578867,
+            "f1-score": 0.8267161410018553,
+            "support": 1306.0
+        },
+        "Physics": {
+            "precision": 0.865990990990991,
+            "recall": 0.8404371584699454,
+            "f1-score": 0.8530227398779812,
+            "support": 915.0
+        },
+        "Mathematics": {
+            "precision": 0.7741585233441911,
+            "recall": 0.831002331002331,
+            "f1-score": 0.8015739179314222,
+            "support": 858.0
+        },
+        "Statistics": {
+            "precision": 0.69965075669383,
+            "recall": 0.7907894736842105,
+            "f1-score": 0.7424336009882644,
+            "support": 760.0
+        },
+        "Quantitative Biology": {
+            "precision": 0.4083333333333333,
+            "recall": 0.6363636363636364,
+            "f1-score": 0.49746192893401014,
+            "support": 77.0
+        },
+        "Quantitative Finance": {
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.6666666666666666,
+            "support": 33.0
+        },
+        "micro avg": {
+            "precision": 0.7762470308788598,
+            "recall": 0.8275512788047606,
+            "f1-score": 0.8010785635494546,
+            "support": 3949.0
+        },
+        "macro avg": {
+            "precision": 0.7028026849603188,
+            "recall": 0.769707580607446,
+            "f1-score": 0.7313124992333667,
+            "support": 3949.0
+        },
+        "weighted avg": {
+            "precision": 0.7822787280134768,
+            "recall": 0.8275512788047606,
+            "f1-score": 0.8033708822489075,
+            "support": 3949.0
+        },
+        "samples avg": {
+            "precision": 0.8123543123543124,
+            "recall": 0.8581796990887899,
+            "f1-score": 0.8115596524687435,
+            "support": 3949.0
+        }
+    }
+}
