@@ -20,7 +20,7 @@ from transformers import pipeline
 
 from social_llama.config import DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
 from social_llama.config import DATA_DIR_EVALUATION_SOCKET
-from social_llama.config import LlamaConfigs
+from social_llama.config import Configs
 from social_llama.data_processing.social_dimensions import SocialDimensions
 from social_llama.evaluation.helper_functions import label_check
 from social_llama.evaluation.helper_functions import label_finder
@@ -42,9 +42,9 @@ class Evaluator:
             task="zero-shot", model="meta-llama/Llama-2-7b-chat-hf"
         )
         self.social_dimensions.get_data()
-        self.llama_config = LlamaConfigs()
+        self.chat_config = Configs()
         self.socket_prompts: pd.DataFrame = pd.read_csv(
-            DATA_DIR_EVALUATION_SOCKET / "socket_prompts_knowledge_original.csv"
+            DATA_DIR_EVALUATION_SOCKET / "socket_prompts_knowledge.csv"
         )
         self.generation_kwargs = {
             "max_new_tokens": 50,
@@ -66,6 +66,7 @@ class Evaluator:
             "meta-llama/Llama-2-7b-chat-hf",
             "meta-llama/Llama-2-13b-chat-hf",
             "mistralai/Mistral-7B-Instruct-v0.2",
+            "google/gemma-7b-it",
         ]:
             self.inference_client = InferenceClient(
                 model=model_id, token=os.environ["HUGGINGFACEHUB_API_TOKEN"]
@@ -73,7 +74,7 @@ class Evaluator:
             self.use_inference_client = True
         else:
             self.config = AutoConfig.from_pretrained(model_id)
-            self.llama_config = LlamaConfigs()
+            self.chat_config = Configs()
             self.device = get_device()
             self.llm = pipeline(
                 "text-generation",
@@ -107,15 +108,17 @@ class Evaluator:
             save_json(save_path, predictions)
         elif task == "socket":
             for task in [
-                # "contextual-abuse#PersonDirectedAbuse",
-                # "contextual-abuse#IdentityDirectedAbuse",
-                # "tweet_irony",
-                # "hateoffensive",
-                # "tweet_emotion",
-                # "implicit-hate#explicit_hate",
-                "implicit-hate#implicit_hate",
-                # "crowdflower",
-                # "dailydialog",
+                "hasbiasedimplication",
+                "implicit-hate#stereotypical_hate",
+                "intentyn",
+                "tweet_offensive",
+                "empathy#distress_bin",
+                "complaints",
+                "hayati_politeness",
+                "stanfordpoliteness",
+                "hypo-l",
+                "rumor#rumor_bool",
+                "two-to-lie#receiver_truth",
             ]:
                 task_data, labels = self._prepare_socket_test_data(task=task)
                 save_path = (
@@ -232,6 +235,7 @@ class Evaluator:
         knowledge = self.socket_prompts[self.socket_prompts["task"] == task][
             "knowledge"
         ].iloc[0]
+        knowledge = "" if pd.isna(knowledge) else knowledge
 
         dataset: Dataset = load_dataset("Blablablab/SOCKET", task, split="test")
 
@@ -263,12 +267,16 @@ class Evaluator:
         labels: List[str],
         knowledge: str = "",
     ) -> str:
-        chat: List[Dict[str, str]] = self.llama_config.get_chat_template()
+        chat: List[Dict[str, str]] = self.chat_config.get_chat_template(
+            "system" if "llama" in self.model_id else "user"
+        )  # A bit too hardcoded, but I assume we on
 
         chat[0]["content"] = chat[0]["content"].format(
-            prompt_prefix=f"You have the following knowledge about task-specific labels: {knowledge}"
-            if knowledge != ""
-            else ""
+            prompt_prefix=(
+                f"You have the following knowledge about task-specific labels: {knowledge}"
+                if knowledge != ""
+                else ""
+            )
         )
 
         task_prompt = (
@@ -278,12 +286,18 @@ class Evaluator:
             + f" You can choose from the following labels: {', '.join(labels)}\nAnswer:"
         )
 
-        chat.append(
-            {
+        if "llama" in self.model_id:
+            chat.append(
+                {
+                    "role": "user",
+                    "content": task_prompt,
+                }
+            )
+        else:
+            chat[0] = {
                 "role": "user",
-                "content": task_prompt,
+                "content": f"{chat[0]['content']} {task_prompt}",  # Gemma is not trained with a system prompt
             }
-        )
 
         return self.tokenizer.apply_chat_template(
             chat, tokenize=False, add_generation_prompt=True
@@ -302,9 +316,11 @@ class Evaluator:
 
 if __name__ == "__main__":
     models = [
-        "AndersGiovanni/social-llama-7b-alpha",
+        # "AndersGiovanni/social-llama-7b-alpha",
         # "AndersGiovanni/social-llama-7b-beta",
-        # "meta-llama/Llama-2-7b-chat-hf"
+        "meta-llama/Llama-2-7b-chat-hf"
+        # "google/gemma-7b-it",
+        # "mistralai/Mistral-7B-Instruct-v0.2"
         # "mistralai/Mistral-7B-Instruct-v0.2"
     ]
 
@@ -315,7 +331,7 @@ if __name__ == "__main__":
 
         # evaluator.predict(task="social-dimensions")
 
-        evaluator.predict(task="socket", note="knwldg_inj_orig")
+        evaluator.predict(task="socket", note="zero-shot")
 
         del evaluator
 

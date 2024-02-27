@@ -14,8 +14,8 @@ from torch.utils.data import Dataset as TorchDataset
 from tqdm import tqdm
 from transformers import AutoTokenizer
 
+from social_llama.config import Configs
 from social_llama.config import DatasetConfig
-from social_llama.config import LlamaConfigs
 
 
 class DataClass(TorchDataset):
@@ -32,7 +32,7 @@ class DataClass(TorchDataset):
         ] = None
         self.config: DatasetConfig = config
         self.task: str = task
-        self.llama_config = LlamaConfigs()
+        self.llama_config = Configs()
         self.model = model
         self.tokenizer = AutoTokenizer.from_pretrained(
             self.model,

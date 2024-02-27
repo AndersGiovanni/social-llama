@@ -66,7 +66,7 @@ class DatasetConfig:
         return {label: idx for idx, label in enumerate(self.labels)}
 
 
-class LlamaConfigs:
+class Configs:
     """Instructions, templates, and other configurations for the Llama model."""
 
     default_llama_prompt: str = """<s>[INST] <<SYS>>
@@ -90,11 +90,15 @@ Moreover, your insights should reflect a deep understanding of the socio-cultura
 
 {custom_message}"""
 
-    def get_chat_template(self) -> List[Dict[str, str]]:
-        """Returns a chat template."""
+    def get_chat_template(self, system_role: str = "system") -> List[Dict[str, str]]:
+        """Returns a chat template.
+
+        Args:
+            system_role (str): The role of the system in the chat. For Llama, it is 'system', and for Gemma it is 'model'.
+        """
         chat: List[Dict[str, str]] = [
             {
-                "role": "system",
+                "role": system_role,
                 # "content": """You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe. Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that your responses are socially unbiased and positive in nature.\n{prompt_prefix}""",
                 # "content": """You are a helpful, respectful and honest assistant.""", # v1
                 "content": """You are a helpful, respectful and honest assistant.\n{prompt_prefix}""",  # v2
