@@ -112,6 +112,7 @@ class Evaluator:
                 "implicit-hate#stereotypical_hate",
                 "intentyn",
                 "tweet_offensive",
+                "offensiveyn",
                 "empathy#distress_bin",
                 "complaints",
                 "hayati_politeness",
