@@ -1,7 +1,8 @@
 """Retrieval-Augmented Generation (RAG) system for classification."""
-import ast
+
 import logging
 import os
+from typing import List
 
 import datasets
 import pandas as pd
@@ -169,7 +170,7 @@ class RAGClassification:
             content = doc.page_content
             label = doc.metadata["label"]
             formatted_response.append(
-                f'Document {idx+1}: "{content}"\nLabel {idx}: {label}'
+                f'Document {idx+1}: "{content}"\nLabel {idx+1}: {label}'
             )
         return "\n".join(formatted_response)
 
@@ -200,17 +201,30 @@ class HuggingfaceChatTemplate:
         Returns:
             template (str): Template.
         """
-        chat = [
-            {"role": "system", "content": system_prompt},
-            {
-                "role": "user",
-                "content": """{task}\nRetrieved Documents:\n{context}\nInput Text: {text}\nAnswer:""".format(
-                    task=task,
-                    context="{context}",
-                    text="{text}",
-                ),
-            },
-        ]
+        if "llama" in self.model_name:
+            chat = [
+                {"role": "system", "content": system_prompt},
+                {
+                    "role": "user",
+                    "content": """{task}\nRetrieved Documents:\n{context}\nInput Text: {text}\nAnswer:""".format(
+                        task=task,
+                        context="{context}",
+                        text="{text}",
+                    ),
+                },
+            ]
+        else:
+            chat = [
+                {
+                    "role": "user",
+                    "content": """{system_prompt}\n{task}\nRetrieved Documents:\n{context}\nInput Text: {text}\nAnswer:""".format(
+                        system_prompt=system_prompt,
+                        task=task,
+                        context="{context}",
+                        text="{text}",
+                    ),
+                }
+            ]
 
         return self.tokenizer.apply_chat_template(chat, tokenize=False)
 
@@ -218,18 +232,17 @@ class HuggingfaceChatTemplate:
 # Load the data
 dataset_names = ["social-dimensions"]
 dataset_names = [
-    # "contextual-abuse#PersonDirectedAbuse",
-    # "contextual-abuse#IdentityDirectedAbuse",
-    # "tweet_irony",
-    # "hateoffensive",
-    # "tweet_emotion",
-    # "implicit-hate#explicit_hate",
-    # "implicit-hate#implicit_hate",
-    # "crowdflower",
-    # "dailydialog",
-    "hahackathon#is_humor",
-    "sarc",
-    "questionintimacy",
+    "hasbiasedimplication",
+    "implicit-hate#stereotypical_hate",
+    "intentyn",
+    "tweet_offensive",
+    "empathy#distress_bin",
+    "complaints",
+    "hayati_politeness",
+    "stanfordpoliteness",
+    "hypo-l",
+    "rumor#rumor_bool",
+    "two-to-lie#receiver_truth",
 ]
 
 for dataset_name in dataset_names:
@@ -289,6 +302,17 @@ for dataset_name in dataset_names:
         # if length is more than 2000, randomly sample 2000
         if len(dataset_test) > 2000:
             dataset_test = dataset_test.shuffle(seed=42).select(range(2000))
+
+        socket_prompts: pd.DataFrame = pd.read_csv(
+            DATA_DIR_EVALUATION_SOCKET / "socket_prompts_knowledge.csv"
+        )
+        label_descriptions = socket_prompts[socket_prompts["task"] == dataset_name][
+            "knowledge"
+        ].iloc[0]
+        label_descriptions = "" if pd.isna(label_descriptions) else label_descriptions
+        labels: List[str] = dataset.features["label"].names
+        labels_mapping = {i: label for i, label in enumerate(labels)}
+
         # Convert to DatasetDict for consistency
         dataset = datasets.DatasetDict(
             {
@@ -300,22 +324,12 @@ for dataset_name in dataset_names:
                 "train": dataset_test,
             }
         )
-        # labels: List[str] = dataset['train'].features["label"].names
-        # labels_mapping: Dict[int, str] = {i: label for i, label in enumerate(labels)}
-        socket_prompts: pd.DataFrame = pd.read_csv(
-            DATA_DIR_EVALUATION_SOCKET / "socket_prompts_knowledge.csv"
-        )
-        label_descriptions = socket_prompts[socket_prompts["task"] == dataset_name][
-            "knowledge"
-        ].iloc[0]
-        labels = ast.literal_eval(
-            socket_prompts[socket_prompts["task"] == dataset_name]["options"].iloc[0]
-        )
-        labels_mapping = {i: label for i, label in enumerate(labels)}
+
         is_socket = True
 
     # Specify the model name you want to use
     model_name = "meta-llama/Llama-2-7b-chat-hf"
+    # model_name = "google/gemma-7b-it"
 
     RAG = RAGClassification(
         model_name=model_name,
@@ -331,7 +345,7 @@ for dataset_name in dataset_names:
     db, retriever = RAG.make_or_load_vector_db(
         dataset_name,
         docs,
-        remake_db=True,
+        remake_db=False,
     )
 
     llm = InferenceClient(
@@ -349,7 +363,9 @@ for dataset_name in dataset_names:
     Labels and Descriptions:
     {label_descriptions}
     """.format(
-        label_descriptions=label_descriptions
+        label_descriptions=(
+            label_descriptions if label_descriptions != "" else ", ".join(labels)
+        )
     )
 
     task = """Using the general knowledge and the information from the retrieved documents provided above, classify the input text by selecting the most appropriate label.
@@ -378,13 +394,17 @@ for dataset_name in dataset_names:
 
         if idx not in test_data_formatted:
             test_data_formatted[idx] = {
-                "label": []
-                if dataset_name == "social-dimensions"
-                else labels_mapping[response_good.item()],
+                "label": (
+                    []
+                    if dataset_name == "social-dimensions"
+                    else labels_mapping[response_good.item()]
+                ),
                 "idx": idx,
-                "text": obj["text"][0]
-                if dataset_name == "social-dimensions"
-                else obj["text"][0],
+                "text": (
+                    obj["text"][0]
+                    if dataset_name == "social-dimensions"
+                    else obj["text"][0]
+                ),
             }
         else:
             test_data_formatted[idx]["label"].append(response_good)
