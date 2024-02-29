@@ -238,7 +238,9 @@ class Evaluator:
         ].iloc[0]
         knowledge = "" if pd.isna(knowledge) else knowledge
 
-        dataset: Dataset = load_dataset("Blablablab/SOCKET", task, split="test")
+        dataset: Dataset = load_dataset(
+            "Blablablab/SOCKET", task, split="test", trust_remote_code=True
+        )
 
         # if length is more than 2000, randomly sample 2000
         if len(dataset) > 2000:
@@ -319,8 +321,8 @@ if __name__ == "__main__":
     models = [
         # "AndersGiovanni/social-llama-7b-alpha",
         # "AndersGiovanni/social-llama-7b-beta",
-        "meta-llama/Llama-2-7b-chat-hf"
-        # "google/gemma-7b-it",
+        "meta-llama/Llama-2-7b-chat-hf",
+        "google/gemma-7b-it",
         # "mistralai/Mistral-7B-Instruct-v0.2"
         # "mistralai/Mistral-7B-Instruct-v0.2"
     ]
@@ -332,7 +334,7 @@ if __name__ == "__main__":
 
         # evaluator.predict(task="social-dimensions")
 
-        evaluator.predict(task="socket", note="zero-shot")
+        evaluator.predict(task="socket", note="knowledge")
 
         del evaluator
 
