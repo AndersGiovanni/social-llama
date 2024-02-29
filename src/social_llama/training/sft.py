@@ -111,7 +111,7 @@ class ScriptArguments:
         default=1, metadata={"help": "the logging frequency"}
     )
     note: Optional[str] = field(
-        default="1_epoch_multi_gpu", metadata={"help": "the note to add to the run"}
+        default="1_epoch", metadata={"help": "the note to add to the run"}
     )
     task: Optional[str] = field(
         default="zero-shot", metadata={"help": "the task to run"}
