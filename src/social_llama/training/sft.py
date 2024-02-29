@@ -29,7 +29,7 @@ class ScriptArguments:
     """Script arguments."""
 
     model_name: Optional[str] = field(
-        default="meta-llama/Llama-2-7b-chat-hf",
+        default="google/gemma-7b-it",
         metadata={"help": "the model name"},
     )
     log_with: Optional[str] = field(
@@ -163,7 +163,19 @@ peft_config = LoraConfig(
     r=script_args.lora_r,
     lora_alpha=script_args.lora_alpha,
     lora_dropout=script_args.lora_dropout,
-    target_modules=["q_proj", "v_proj"],
+    target_modules=(
+        ["q_proj", "v_proj"]
+        if "llama" in script_args.model_name
+        else [
+            "q_proj",
+            "o_proj",
+            "k_proj",
+            "v_proj",
+            "gate_proj",
+            "up_proj",
+            "down_proj",
+        ]
+    ),
     bias="none",
     task_type="CAUSAL_LM",
 )
