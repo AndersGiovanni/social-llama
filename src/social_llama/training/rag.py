@@ -295,10 +295,10 @@ for dataset_name in dataset_names:
 
     else:
         dataset = datasets.load_dataset(
-            "Blablablab/SOCKET", dataset_name, split="train"
+            "Blablablab/SOCKET", dataset_name, split="train", trust_remote_code=True
         )
         dataset_test = datasets.load_dataset(
-            "Blablablab/SOCKET", dataset_name, split="test"
+            "Blablablab/SOCKET", dataset_name, split="test", trust_remote_code=True
         )
         # if length is more than 2000, randomly sample 2000
         if len(dataset_test) > 2000:
