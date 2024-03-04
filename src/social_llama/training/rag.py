@@ -245,6 +245,20 @@ dataset_names = [
     "rumor#rumor_bool",
     "two-to-lie#receiver_truth",
 ]
+dataset_names = [
+                "hahackathon#is_humor",
+                "sarc",
+                "contextual-abuse#IdentityDirectedAbuse",
+                "contextual-abuse#PersonDirectedAbuse",
+                "tweet_irony",
+                "questionintimacy",
+                "tweet_emotion",
+                "hateoffensive",
+                "implicit-hate#explicit_hate",
+                "implicit-hate#implicit_hate",
+                "crowdflower",
+                "dailydialog"
+]
 
 for dataset_name in dataset_names:
     # Clear existing handlers
@@ -329,8 +343,8 @@ for dataset_name in dataset_names:
         is_socket = True
 
     # Specify the model name you want to use
-    model_name = "meta-llama/Llama-2-7b-chat-hf"
-    # model_name = "google/gemma-7b-it"
+    # model_name = "meta-llama/Llama-2-7b-chat-hf"
+    model_name = "google/gemma-7b-it"
 
     RAG = RAGClassification(
         model_name=model_name,
