@@ -11,4 +11,5 @@
 
 hostname
 nvidia-smi
-python -m src.social_llama.training.rag
+python -m src.social_llama.training.rag "google/gemma-7b-it"
+python -m src.social_llama.training.rag "meta-llama/Llama-2-7b-chat-hf"
