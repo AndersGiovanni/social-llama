@@ -1,4 +1,5 @@
 """Train a model on the 10-dim dataset."""
+
 import os
 from copy import deepcopy
 from dataclasses import dataclass
@@ -40,7 +41,7 @@ class ScriptArguments:
     """Script arguments."""
 
     checkpoint: Optional[str] = field(
-        default="meta-llama/Llama-2-7b-hf",
+        default="google/gemma-2b",
         metadata={
             "help": "the model name",
             "choices": [
@@ -49,6 +50,7 @@ class ScriptArguments:
                 "mistralai/Mistral-7B-v0.1",
                 "roberta-large",
                 "bert-base-uncased",
+                "google/gemma-2b",
             ],
         },
     )
@@ -389,14 +391,16 @@ def train_model(dataset_dict, model, tokenizer, test=False):
         load_best_model_at_end=True,
         report_to=script_args.log_with,
         save_total_limit=1,
-        fp16=True
-        if script_args.checkpoint
-        in [
-            "meta-llama/Llama-2-7b-chat-hf",
-            "meta-llama/Llama-2-7b-hf",
-            "mistralai/Mistral-7B-v0.1",
-        ]
-        else False,
+        fp16=(
+            True
+            if script_args.checkpoint
+            in [
+                "meta-llama/Llama-2-7b-chat-hf",
+                "meta-llama/Llama-2-7b-hf",
+                "mistralai/Mistral-7B-v0.1",
+            ]
+            else False
+        ),
         gradient_checkpointing=script_args.gradient_checkpointing,
         run_name=f"{script_args.checkpoint}-{script_args.note}",
         seed=42,
