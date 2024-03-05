@@ -13,4 +13,5 @@ hostname
 
 nvidia-smi
 
+python -m src.social_llama.training.classification_news_multilabel
 python -m src.social_llama.training.classification_news_ovr
