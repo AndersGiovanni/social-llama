@@ -1,4 +1,5 @@
 """Train a model on the 10-dim dataset."""
+
 import os
 from copy import deepcopy
 from dataclasses import dataclass
@@ -50,6 +51,7 @@ class ScriptArguments:
                 "mistralai/Mistral-7B-v0.1",
                 "roberta-large",
                 "bert-base-uncased",
+                "google/gemma-2b",
             ],
         },
     )
@@ -268,6 +270,7 @@ def get_lora_model(model):
         "HuggingFaceH4/zephyr-7b-beta",
         "mistralai/Mistral-7B-v0.1",
         "meta-llama/Llama-2-7b-hf",
+        "google/gemma-2b",
     ]:
         peft_config = LoraConfig(
             task_type=TaskType.SEQ_CLS,
@@ -382,14 +385,17 @@ def train_model(dataset_dict, model, tokenizer, label, test=False):
         load_best_model_at_end=True,
         report_to=script_args.log_with,
         save_total_limit=1,
-        fp16=True
-        if script_args.checkpoint
-        in [
-            "meta-llama/Llama-2-7b-chat-hf",
-            "meta-llama/Llama-2-7b-hf",
-            "mistralai/Mistral-7B-v0.1",
-        ]
-        else False,
+        fp16=(
+            True
+            if script_args.checkpoint
+            in [
+                "meta-llama/Llama-2-7b-chat-hf",
+                "meta-llama/Llama-2-7b-hf",
+                "mistralai/Mistral-7B-v0.1",
+                "google/gemma-2b",
+            ]
+            else False
+        ),
         gradient_checkpointing=script_args.gradient_checkpointing,
         run_name=f"{script_args.checkpoint}-{script_args.note}-{label}",
         seed=42,

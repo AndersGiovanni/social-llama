@@ -274,6 +274,7 @@ def get_lora_model(model):
         "HuggingFaceH4/zephyr-7b-beta",
         "mistralai/Mistral-7B-v0.1",
         "meta-llama/Llama-2-7b-hf",
+        "google/gemma-2b",
     ]:
         peft_config = LoraConfig(
             task_type=TaskType.SEQ_CLS,
@@ -398,6 +399,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
                 "meta-llama/Llama-2-7b-chat-hf",
                 "meta-llama/Llama-2-7b-hf",
                 "mistralai/Mistral-7B-v0.1",
+                "google/gemma-2b",
             ]
             else False
         ),
