@@ -11,6 +11,7 @@ from sklearn.metrics import recall_score
 from social_llama.config import DATA_DIR_MULTILABEL
 from social_llama.utils import read_json
 
+checkpoint = "meta-llama/Llama-2-7b-hf"
 
 labels = [
     "Computer Science",
@@ -62,8 +63,6 @@ prediction_scores = {
     "hamming_loss": hamming_loss_,
     "classification_report": clf_report,
 }
-
-checkpoint = "meta-llama/Llama-2-7b-hf"
 
 with open(
     DATA_DIR_MULTILABEL / f"{checkpoint}_ovr-model_multilabel-eval.json", "w"
