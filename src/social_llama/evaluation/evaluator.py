@@ -44,7 +44,10 @@ class Evaluator:
         self.social_dimensions.get_data()
         self.chat_config = Configs()
         self.socket_prompts: pd.DataFrame = pd.read_csv(
-            DATA_DIR_EVALUATION_SOCKET / "socket_prompts_knowledge.csv"
+            # DATA_DIR_EVALUATION_SOCKET
+            # / "socket_prompts_knowledge.csv"
+            DATA_DIR_EVALUATION_SOCKET
+            / "socket_prompts.csv"
         )
         self.generation_kwargs = {
             "max_new_tokens": 50,
@@ -119,7 +122,7 @@ class Evaluator:
                 "implicit-hate#explicit_hate",
                 "implicit-hate#implicit_hate",
                 "crowdflower",
-                "dailydialog"
+                "dailydialog",
             ]:
                 task_data, labels = self._prepare_socket_test_data(task=task)
                 save_path = (
@@ -233,9 +236,14 @@ class Evaluator:
         ].iloc[0]
 
         # Get the knowledge of the labels
-        knowledge = self.socket_prompts[self.socket_prompts["task"] == task][
-            "knowledge"
-        ].iloc[0]
+        # check if knowledge is a column in the dataframe
+        knowledge = (
+            self.socket_prompts[self.socket_prompts["task"] == task]["knowledge"].iloc[
+                0
+            ]
+            if "knowledge" in self.socket_prompts.columns
+            else pd.NA
+        )
         knowledge = "" if pd.isna(knowledge) else knowledge
 
         dataset: Dataset = load_dataset(
@@ -334,7 +342,7 @@ if __name__ == "__main__":
 
         # evaluator.predict(task="social-dimensions")
 
-        evaluator.predict(task="socket", note="knowledge")
+        evaluator.predict(task="socket", note="zero-shot")
 
         del evaluator
 
