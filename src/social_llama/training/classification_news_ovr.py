@@ -42,7 +42,7 @@ class ScriptArguments:
     """Script arguments."""
 
     checkpoint: Optional[str] = field(
-        default="meta-llama/Llama-2-7b-hf",
+        default="google/gemma-2b",
         metadata={
             "help": "the model name",
             "choices": [
