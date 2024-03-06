@@ -9,6 +9,7 @@ import torch
 from dotenv import load_dotenv
 from peft import AutoPeftModelForCausalLM
 from peft import LoraConfig
+from transformers import AutoModelForCausalLM
 from transformers import AutoTokenizer
 from transformers import HfArgumentParser
 from transformers import TrainingArguments
@@ -157,7 +158,7 @@ if __name__ == "__main__":
             name for name, buffer in model.named_buffers() if buffer.dtype == torch.bool
         ]
 
-    model_ref = AutoPeftModelForCausalLM.from_pretrained(
+    model_ref = AutoModelForCausalLM.from_pretrained(
         script_args.model_name_or_path,
         low_cpu_mem_usage=True,
         torch_dtype=torch.float32,
