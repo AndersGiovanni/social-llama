@@ -2,7 +2,7 @@
     {
         "text": "Auto-Encoding Total Correlation Explanation.   Advances in unsupervised learning enable reconstruction and generation of\nsamples from complex distributions, but this success is marred by the\ninscrutability of the representations learned. We propose an\ninformation-theoretic approach to characterizing disentanglement and dependence\nin representation learning using multivariate mutual information, also called\ntotal correlation. The principle of total Cor-relation Ex-planation (CorEx) has\nmotivated successful unsupervised learning applications across a variety of\ndomains, but under some restrictive assumptions. Here we relax those\nrestrictions by introducing a flexible variational lower bound to CorEx.\nSurprisingly, we find that this lower bound is equivalent to the one in\nvariational autoencoders (VAE) under certain conditions. This\ninformation-theoretic view of VAE deepens our understanding of hierarchical VAE\nand motivates a new algorithm, AnchorVAE, that makes latent codes more\ninterpretable through information maximization and enables generation of richer\nand more realistic samples.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -44,7 +44,7 @@
     {
         "text": "Graphons: A Nonparametric Method to Model, Estimate, and Design Algorithms for Massive Networks.   Many social and economic systems are naturally represented as networks, from\noff-line and on-line social networks, to bipartite networks, like Netflix and\nAmazon, between consumers and products. Graphons, developed as limits of\ngraphs, form a natural, nonparametric method to describe and estimate large\nnetworks like Facebook and LinkedIn. Here we describe the development of the\ntheory of graphons, for both dense and sparse networks, over the last decade.\nWe also review theorems showing that we can consistently estimate graphons from\nmassive networks in a wide variety of models. Finally, we show how to use\ngraphons to estimate missing links in a sparse network, which has applications\nfrom estimating social and information networks in development economics, to\nrigorously and efficiently doing collaborative filtering with applications to\nmovie recommendations in Netflix and product suggestions in Amazon.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -128,7 +128,7 @@
     {
         "text": "Extension complexities of Cartesian products involving a pyramid.   It is an open question whether the linear extension complexity of the\nCartesian product of two polytopes P, Q is the sum of the extension\ncomplexities of P and Q. We give an affirmative answer to this question for the\ncase that one of the two polytopes is a pyramid.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -164,7 +164,7 @@
     {
         "text": "Efficient and principled score estimation with Nyström kernel exponential families.   We propose a fast method with statistical guarantees for learning an\nexponential family density model where the natural parameter is in a\nreproducing kernel Hilbert space, and may be infinite-dimensional. The model is\nlearned by fitting the derivative of the log density, the score, thus avoiding\nthe need to compute a normalization constant. Our approach improves the\ncomputational efficiency of an earlier solution by using a low-rank,\nNyström-like solution. The new solution retains the consistency and\nconvergence rates of the full-rank solution (exactly in Fisher distance, and\nnearly in other distances), with guarantees on the degree of cost and storage\nreduction. We evaluate the method in experiments on density estimation and in\nthe construction of an adaptive Hamiltonian Monte Carlo sampler. Compared to an\nexisting score learning approach using a denoising autoencoder, our estimator\nis empirically more data-efficient when estimating the score, runs faster, and\nhas fewer parameters (which can be tuned in a principled and interpretable\nway), in addition to providing statistical guarantees.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -320,7 +320,7 @@
     {
         "text": "Maximum likelihood estimation of determinantal point processes.   Determinantal point processes (DPPs) have wide-ranging applications in\nmachine learning, where they are used to enforce the notion of diversity in\nsubset selection problems. Many estimators have been proposed, but surprisingly\nthe basic properties of the maximum likelihood estimator (MLE) have received\nlittle attention. The difficulty is that it is a non-concave maximization\nproblem, and such functions are notoriously difficult to understand in high\ndimensions, despite their importance in modern machine learning. Here we study\nboth the local and global geometry of the expected log-likelihood function. We\nprove several rates of convergence for the MLE and give a complete\ncharacterization of the case where these are parametric. We also exhibit a\npotential curse of dimensionality where the asymptotic variance of the MLE\nscales exponentially with the dimension of the problem. Moreover, we exhibit an\nexponential number of saddle points, and give evidence that these may be the\nonly critical points.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -368,7 +368,7 @@
     {
         "text": "Predictive Independence Testing, Predictive Conditional Independence Testing, and Predictive Graphical Modelling.   Testing (conditional) independence of multivariate random variables is a task\ncentral to statistical inference and modelling in general - though\nunfortunately one for which to date there does not exist a practicable\nworkflow. State-of-art workflows suffer from the need for heuristic or\nsubjective manual choices, high computational complexity, or strong parametric\nassumptions.\nWe address these problems by establishing a theoretical link between\nmultivariate/conditional independence testing, and model comparison in the\nmultivariate predictive modelling aka supervised learning task. This link\nallows advances in the extensively studied supervised learning workflow to be\ndirectly transferred to independence testing workflows - including automated\ntuning of machine learning type which addresses the need for a heuristic\nchoice, the ability to quantitatively trade-off computational demand with\naccuracy, and the modern black-box philosophy for checking and interfacing.\nAs a practical implementation of this link between the two workflows, we\npresent a python package 'pcit', which implements our novel multivariate and\nconditional independence tests, interfacing the supervised learning API of the\nscikit-learn package. Theory and package also allow for straightforward\nindependence test based learning of graphical model structure.\nWe empirically show that our proposed predictive independence test outperform\nor are on par to current practice, and the derived graphical model structure\nlearning algorithms asymptotically recover the 'true' graph. This paper, and\nthe 'pcit' package accompanying it, thus provide powerful, scalable,\ngeneralizable, and easy-to-use methods for multivariate and conditional\nindependence testing, as well as for graphical model structure learning.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -410,7 +410,7 @@
     {
         "text": "Ultra-Fast Reactive Transport Simulations When Chemical Reactions Meet Machine Learning: Chemical Equilibrium.   During reactive transport modeling, the computational cost associated with\nchemical reaction calculations is often 10-100 times higher than that of\ntransport calculations. Most of these costs results from chemical equilibrium\ncalculations that are performed at least once in every mesh cell and at every\ntime step of the simulation. Calculating chemical equilibrium is an iterative\nprocess, where each iteration is in general so computationally expensive that\neven if every calculation converged in a single iteration, the resulting\nspeedup would not be significant. Thus, rather than proposing a fast-converging\nnumerical method for solving chemical equilibrium equations, we present a\nmachine learning method that enables new equilibrium states to be quickly and\naccurately estimated, whenever a previous equilibrium calculation with similar\ninput conditions has been performed. We demonstrate the use of this smart\nchemical equilibrium method in a reactive transport modeling example and show\nthat, even at early simulation times, the majority of all equilibrium\ncalculations are quickly predicted and, after some time steps, the\nmachine-learning-accelerated chemical solver has been fully trained to rapidly\nperform all subsequent equilibrium calculations, resulting in speedups of\nalmost two orders of magnitude. We remark that our new on-demand machine\nlearning method can be applied to any case in which a massive number of\nsequential/parallel evaluations of a computationally expensive function $f$\nneeds to be done, $y=f(x)$. We remark, that, in contrast to traditional machine\nlearning algorithms, our on-demand training approach does not require a\nstatistics-based training phase before the actual simulation of interest\ncommences. The introduced on-demand training scheme requires, however, the\nfirst-order derivatives $\\partial f/\\partial x$ for later smart predictions.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -422,7 +422,7 @@
     {
         "text": "Merging fragments of classical logic.   We investigate the possibility of extending the non-functionally complete\nlogic of a collection of Boolean connectives by the addition of further Boolean\nconnectives that make the resulting set of connectives functionally complete.\nMore precisely, we will be interested in checking whether an axiomatization for\nClassical Propositional Logic may be produced by merging Hilbert-style calculi\nfor two disjoint incomplete fragments of it. We will prove that the answer to\nthat problem is a negative one, unless one of the components includes only\ntop-like connectives.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -758,7 +758,7 @@
     {
         "text": "Learning Filter Functions in Regularisers by Minimising Quotients.   Learning approaches have recently become very popular in the field of inverse\nproblems. A large variety of methods has been established in recent years,\nranging from bi-level learning to high-dimensional machine learning techniques.\nMost learning approaches, however, only aim at fitting parametrised models to\nfavourable training data whilst ignoring misfit training data completely. In\nthis paper, we follow up on the idea of learning parametrised regularisation\nfunctions by quotient minimisation as established in [3]. We extend the model\ntherein to include higher-dimensional filter functions to be learned and allow\nfor fit- and misfit-training data consisting of multiple functions. We first\npresent results resembling behaviour of well-established derivative-based\nsparse regularisers like total variation or higher-order total variation in\none-dimension. Our second and main contribution is the introduction of novel\nfamilies of non-derivative-based regularisers. This is accomplished by learning\nfavourable scales and geometric properties while at the same time avoiding\nunfavourable ones.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -788,7 +788,7 @@
     {
         "text": "Estimating the unseen from multiple populations.   Given samples from a distribution, how many new elements should we expect to\nfind if we continue sampling this distribution? This is an important and\nactively studied problem, with many applications ranging from unseen species\nestimation to genomics. We generalize this extrapolation and related unseen\nestimation problems to the multiple population setting, where population $j$\nhas an unknown distribution $D_j$ from which we observe $n_j$ samples. We\nderive an optimal estimator for the total number of elements we expect to find\namong new samples across the populations. Surprisingly, we prove that our\nestimator's accuracy is independent of the number of populations. We also\ndevelop an efficient optimization algorithm to solve the more general problem\nof estimating multi-population frequency distributions. We validate our methods\nand theory through extensive experiments. Finally, on a real dataset of human\ngenomes across multiple ancestries, we demonstrate how our approach for unseen\nestimation can enable cohort designs that can discover interesting mutations\nwith greater efficiency.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -824,7 +824,7 @@
     {
         "text": "Solving $\\ell^p\\!$-norm regularization with tensor kernels.   In this paper, we discuss how a suitable family of tensor kernels can be used\nto efficiently solve nonparametric extensions of $\\ell^p$ regularized learning\nmethods. Our main contribution is proposing a fast dual algorithm, and showing\nthat it allows to solve the problem efficiently. Our results contrast recent\nfindings suggesting kernel methods cannot be extended beyond Hilbert setting.\nNumerical experiments confirm the effectiveness of the method.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -1142,7 +1142,7 @@
     {
         "text": "A Grouping Genetic Algorithm for Joint Stratification and Sample Allocation Designs.   Predicting the cheapest sample size for the optimal stratification in\nmultivariate survey design is a problem in cases where the population frame is\nlarge. A solution exists that iteratively searches for the minimum sample size\nnecessary to meet accuracy constraints in partitions of atomic strata created\nby the Cartesian product of auxiliary variables into larger strata. The optimal\nstratification can be found by testing all possible partitions. However the\nnumber of possible partitions grows exponentially with the number of initial\nstrata. There are alternative ways of modelling this problem, one of the most\nnatural is using Genetic Algorithms (GA). These evolutionary algorithms use\nrecombination, mutation and selection to search for optimal solutions. They\noften converge on optimal or near-optimal solution more quickly than exact\nmethods. We propose a new GA approach to this problem using grouping genetic\noperators instead of traditional operators. The results show a significant\nimprovement in solution quality for similar computational effort, corresponding\nto large monetary savings.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -1322,7 +1322,7 @@
     {
         "text": "Visual Entailment: A Novel Task for Fine-Grained Image Understanding.   Existing visual reasoning datasets such as Visual Question Answering (VQA),\noften suffer from biases conditioned on the question, image or answer\ndistributions. The recently proposed CLEVR dataset addresses these limitations\nand requires fine-grained reasoning but the dataset is synthetic and consists\nof similar objects and sentence structures across the dataset.\nIn this paper, we introduce a new inference task, Visual Entailment (VE) -\nconsisting of image-sentence pairs whereby a premise is defined by an image,\nrather than a natural language sentence as in traditional Textual Entailment\ntasks. The goal of a trained VE model is to predict whether the image\nsemantically entails the text. To realize this task, we build a dataset SNLI-VE\nbased on the Stanford Natural Language Inference corpus and Flickr30k dataset.\nWe evaluate various existing VQA baselines and build a model called Explainable\nVisual Entailment (EVE) system to address the VE task. EVE achieves up to 71%\naccuracy and outperforms several other state-of-the-art VQA based models.\nFinally, we demonstrate the explainability of EVE through cross-modal attention\nvisualizations. The SNLI-VE dataset is publicly available at\nthis https URL necla-ml/SNLI-VE.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -1358,7 +1358,7 @@
     {
         "text": "Accelerated Primal-Dual Proximal Block Coordinate Updating Methods for Constrained Convex Optimization.   Block Coordinate Update (BCU) methods enjoy low per-update computational\ncomplexity because every time only one or a few block variables would need to\nbe updated among possibly a large number of blocks. They are also easily\nparallelized and thus have been particularly popular for solving problems\ninvolving large-scale dataset and/or variables. In this paper, we propose a\nprimal-dual BCU method for solving linearly constrained convex program in\nmulti-block variables. The method is an accelerated version of a primal-dual\nalgorithm proposed by the authors, which applies randomization in selecting\nblock variables to update and establishes an $O(1/t)$ convergence rate under\nweak convexity assumption. We show that the rate can be accelerated to\n$O(1/t^2)$ if the objective is strongly convex. In addition, if one block\nvariable is independent of the others in the objective, we then show that the\nalgorithm can be modified to achieve a linear rate of convergence. The\nnumerical experiments show that the accelerated method performs stably with a\nsingle set of parameters while the original method needs to tune the parameters\nfor different datasets in order to achieve a comparable level of performance.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -1766,7 +1766,7 @@
     {
         "text": "Double-sided probing by map of Asplund's distances using Logarithmic Image Processing in the framework of Mathematical Morphology.   We establish the link between Mathematical Morphology and the map of\nAsplund's distances between a probe and a grey scale function, using the\nLogarithmic Image Processing scalar multiplication. We demonstrate that the map\nis the logarithm of the ratio between a dilation and an erosion of the function\nby a structuring function: the probe. The dilations and erosions are mappings\nfrom the lattice of the images into the lattice of the positive functions.\nUsing a flat structuring element, the expression of the map of Asplund's\ndistances can be simplified with a dilation and an erosion of the image; these\nmappings stays in the lattice of the images. We illustrate our approach by an\nexample of pattern matching with a non-flat structuring function.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -1826,7 +1826,7 @@
     {
         "text": "Uncharted Forest a Technique for Exploratory Data Analysis.   Exploratory data analysis is crucial for developing and understanding\nclassification models from high-dimensional datasets. We explore the utility of\na new unsupervised tree ensemble called uncharted forest for visualizing class\nassociations, sample-sample associations, class heterogeneity, and\nuninformative classes for provenance studies. The uncharted forest algorithm\ncan be used to partition data using random selections of variables and metrics\nbased on statistical spread. After each tree is grown, a tally of the samples\nthat arrive at every terminal node is maintained. Those tallies are stored in\nsingle sample association matrix and a likelihood measure for each sample being\npartitioned with one another can be made. That matrix may be readily viewed as\na heat map, and the probabilities can be quantified via new metrics that\naccount for class or cluster membership. We display the advantages and\nlimitations of using this technique by applying it to two classification\ndatasets and three provenance study datasets. Two of the metrics presented in\nthis paper are also compared with widely used metrics from two algorithms that\nhave variance-based clustering mechanisms.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -2018,7 +2018,7 @@
     {
         "text": "GSAE: an autoencoder with embedded gene-set nodes for genomics functional characterization.   Bioinformatics tools have been developed to interpret gene expression data at\nthe gene set level, and these gene set based analyses improve the biologists'\ncapability to discover functional relevance of their experiment design. While\nelucidating gene set individually, inter gene sets association is rarely taken\ninto consideration. Deep learning, an emerging machine learning technique in\ncomputational biology, can be used to generate an unbiased combination of gene\nset, and to determine the biological relevance and analysis consistency of\nthese combining gene sets by leveraging large genomic data sets. In this study,\nwe proposed a gene superset autoencoder (GSAE), a multi-layer autoencoder model\nwith the incorporation of a priori defined gene sets that retain the crucial\nbiological features in the latent layer. We introduced the concept of the gene\nsuperset, an unbiased combination of gene sets with weights trained by the\nautoencoder, where each node in the latent layer is a superset. Trained with\ngenomic data from TCGA and evaluated with their accompanying clinical\nparameters, we showed gene supersets' ability of discriminating tumor subtypes\nand their prognostic capability. We further demonstrated the biological\nrelevance of the top component gene sets in the significant supersets. Using\nautoencoder model and gene superset at its latent layer, we demonstrated that\ngene supersets retain sufficient biological information with respect to tumor\nsubtypes and clinical prognostic significance. Superset also provides high\nreproducibility on survival analysis and accurate prediction for cancer\nsubtypes.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -2210,7 +2210,7 @@
     {
         "text": "Interpretable Low-Dimensional Regression via Data-Adaptive Smoothing.   We consider the problem of estimating a regression function in the common\nsituation where the number of features is small, where interpretability of the\nmodel is a high priority, and where simple linear or additive models fail to\nprovide adequate performance. To address this problem, we present Maximum\nVariance Total Variation denoising (MVTV), an approach that is conceptually\nrelated both to CART and to the more recent CRISP algorithm, a state-of-the-art\nalternative method for interpretable nonlinear regression. MVTV divides the\nfeature space into blocks of constant value and fits the value of all blocks\njointly via a convex optimization routine. Our method is fully data-adaptive,\nin that it incorporates highly robust routines for tuning all hyperparameters\nautomatically. We compare our approach against CART and CRISP via both a\ncomplexity-accuracy tradeoff metric and a human study, demonstrating that that\nMVTV is a more powerful and interpretable method.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -2348,7 +2348,7 @@
     {
         "text": "Sequential detection of low-rank changes using extreme eigenvalues.   We study the problem of detecting an abrupt change to the signal covariance\nmatrix. In particular, the covariance changes from a \"white\" identity matrix to\nan unknown spiked or low-rank matrix. Two sequential change-point detection\nprocedures are presented, based on the largest and the smallest eigenvalues of\nthe sample covariance matrix. To control false-alarm-rate, we present an\naccurate theoretical approximation to the average-run-length (ARL) and expected\ndetection delay (EDD) of the detection, leveraging the extreme eigenvalue\ndistributions from random matrix theory and by capturing a non-negligible\ntemporal correlation in the sequence of scan statistics due to the sliding\nwindow approach. Real data examples demonstrate the good performance of our\nmethod for detecting behavior change of a swarm.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -2372,7 +2372,7 @@
     {
         "text": "Frank-Wolfe Optimization for Symmetric-NMF under Simplicial Constraint.   Symmetric nonnegative matrix factorization has found abundant applications in\nvarious domains by providing a symmetric low-rank decomposition of nonnegative\nmatrices. In this paper we propose a Frank-Wolfe (FW) solver to optimize the\nsymmetric nonnegative matrix factorization problem under a simplicial\nconstraint, which has recently been proposed for probabilistic clustering.\nCompared with existing solutions, this algorithm is simple to implement, and\nhas no hyperparameters to be tuned. Building on the recent advances of FW\nalgorithms in nonconvex optimization, we prove an $O(1/\\varepsilon^2)$\nconvergence rate to $\\varepsilon$-approximate KKT points, via a tight bound\n$\\Theta(n^2)$ on the curvature constant, which matches the best known result in\nunconstrained nonconvex setting using gradient methods. Numerical results\ndemonstrate the effectiveness of our algorithm. As a side contribution, we\nconstruct a simple nonsmooth convex problem where the FW algorithm fails to\nconverge to the optimum. This result raises an interesting question about\nnecessary conditions of the success of the FW algorithm on convex problems.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -2492,7 +2492,7 @@
     {
         "text": "A Dictionary Approach to Identifying Transient RFI.   As radio telescopes become more sensitive, the damaging effects of radio\nfrequency interference (RFI) become more apparent. Near radio telescope arrays,\nRFI sources are often easily removed or replaced; the challenge lies in\nidentifying them. Transient (impulsive) RFI is particularly difficult to\nidentify. We propose a novel dictionary-based approach to transient RFI\nidentification. RFI events are treated as sequences of sub-events, drawn from\nparticular labelled classes. We demonstrate an automated method of extracting\nand labelling sub-events using a dataset of transient RFI. A dictionary of\nlabels may be used in conjunction with hidden Markov models to identify the\nsources of RFI events reliably. We attain improved classification accuracy over\ntraditional approaches such as SVMs or a naïve kNN classifier. Finally, we\ninvestigate why transient RFI is difficult to classify. We show that cluster\nseparation in the principal components domain is influenced by the mains supply\nphase for certain sources.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -2702,7 +2702,7 @@
     {
         "text": "Signal-based Bayesian Seismic Monitoring.   Detecting weak seismic events from noisy sensors is a difficult perceptual\ntask. We formulate this task as Bayesian inference and propose a generative\nmodel of seismic events and signals across a network of spatially distributed\nstations. Our system, SIGVISA, is the first to directly model seismic\nwaveforms, allowing it to incorporate a rich representation of the physics\nunderlying the signal generation process. We use Gaussian processes over\nwavelet parameters to predict detailed waveform fluctuations based on\nhistorical events, while degrading smoothly to simple parametric envelopes in\nregions with no historical seismicity. Evaluating on data from the western US,\nwe recover three times as many events as previous work, and reduce mean\nlocation errors by a factor of four while greatly increasing sensitivity to\nlow-magnitude events.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -2762,7 +2762,7 @@
     {
         "text": "A framework for Multi-A(rmed)/B(andit) testing with online FDR control.   We propose an alternative framework to existing setups for controlling false\nalarms when multiple A/B tests are run over time. This setup arises in many\npractical applications, e.g. when pharmaceutical companies test new treatment\noptions against control pills for different diseases, or when internet\ncompanies test their default webpages versus various alternatives over time.\nOur framework proposes to replace a sequence of A/B tests by a sequence of\nbest-arm MAB instances, which can be continuously monitored by the data\nscientist. When interleaving the MAB tests with an an online false discovery\nrate (FDR) algorithm, we can obtain the best of both worlds: low sample\ncomplexity and any time online FDR control. Our main contributions are: (i) to\npropose reasonable definitions of a null hypothesis for MAB instances; (ii) to\ndemonstrate how one can derive an always-valid sequential p-value that allows\ncontinuous monitoring of each MAB test; and (iii) to show that using rejection\nthresholds of online-FDR algorithms as the confidence levels for the MAB\nalgorithms results in both sample-optimality, high power and low FDR at any\npoint in time. We run extensive simulations to verify our claims, and also\nreport results on real data collected from the New Yorker Cartoon Caption\ncontest.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -2906,7 +2906,7 @@
     {
         "text": "Perturbed Proximal Descent to Escape Saddle Points for Non-convex and Non-smooth Objective Functions.   We consider the problem of finding local minimizers in non-convex and\nnon-smooth optimization. Under the assumption of strict saddle points, positive\nresults have been derived for first-order methods. We present the first known\nresults for the non-smooth case, which requires different analysis and a\ndifferent algorithm.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -3290,7 +3290,7 @@
     {
         "text": "Why Adaptively Collected Data Have Negative Bias and How to Correct for It.   From scientific experiments to online A/B testing, the previously observed\ndata often affects how future experiments are performed, which in turn affects\nwhich data will be collected. Such adaptivity introduces complex correlations\nbetween the data and the collection procedure. In this paper, we prove that\nwhen the data collection procedure satisfies natural conditions, then sample\nmeans of the data have systematic \\emph{negative} biases. As an example,\nconsider an adaptive clinical trial where additional data points are more\nlikely to be tested for treatments that show initial promise. Our surprising\nresult implies that the average observed treatment effects would underestimate\nthe true effects of each treatment. We quantitatively analyze the magnitude and\nbehavior of this negative bias in a variety of settings. We also propose a\nnovel debiasing algorithm based on selective inference techniques. In\nexperiments, our method can effectively reduce bias and estimation error.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -3326,7 +3326,7 @@
     {
         "text": "Cause-Effect Deep Information Bottleneck For Incomplete Covariates.   Estimating the causal effects of an intervention in the presence of\nconfounding is a frequently occurring problem in applications such as medicine.\nThe task is challenging since there may be multiple confounding factors, some\nof which may be missing, and inferences must be made from high-dimensional,\nnoisy measurements. In this paper, we propose a decision-theoretic approach to\nestimate the causal effects of interventions where a subset of the covariates\nis unavailable for some patients during testing. Our approach uses the\ninformation bottleneck principle to perform a discrete, low-dimensional\nsufficient reduction of the covariate data to estimate a distribution over\nconfounders. In doing so, we can estimate the causal effect of an intervention\nwhere only partial covariate information is available. Our results on a causal\ninference benchmark and a real application for treating sepsis show that our\nmethod achieves state-of-the-art performance, without sacrificing\ninterpretability.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -3428,7 +3428,7 @@
     {
         "text": "A taxonomy of learning dynamics in 2 x 2 games.   Learning would be a convincing method to achieve coordination on an\nequilibrium. But does learning converge, and to what? We answer this question\nin generic 2-player, 2-strategy games, using Experience-Weighted Attraction\n(EWA), which encompasses many extensively studied learning algorithms. We\nexhaustively characterize the parameter space of EWA learning, for any payoff\nmatrix, and we understand the generic properties that imply convergent or\nnon-convergent behaviour in 2 x 2 games.\nIrrational choice and lack of incentives imply convergence to a mixed\nstrategy in the centre of the strategy simplex, possibly far from the Nash\nEquilibrium (NE). In the opposite limit, in which the players quickly modify\ntheir strategies, the behaviour depends on the payoff matrix: (i) a strong\ndiscrepancy between the pure strategies describes dominance-solvable games,\nwhich show convergence to a unique fixed point close to the NE; (ii) a\npreference towards profiles of strategies along the main diagonal describes\ncoordination games, with multiple stable fixed points corresponding to the NE;\n(iii) a cycle of best responses defines discoordination games, which commonly\nyield limit cycles or low-dimensional chaos.\nWhile it is well known that mixed strategy equilibria may be unstable, our\napproach is novel from several perspectives: we fully analyse EWA and provide\nexplicit thresholds that define the onset of instability; we find an emerging\ntaxonomy of the learning dynamics, without focusing on specific classes of\ngames ex-ante; we show that chaos can occur even in the simplest games; we make\na precise theoretical prediction that can be tested against data on\nexperimental learning of discoordination games.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -3464,7 +3464,7 @@
     {
         "text": "Recovering Sparse Nonnegative Signals via Non-convex Fraction Function Penalty.   Many real world practical problems can be formulated as\n$\\ell_{0}$-minimization problems with nonnegativity constraints, which seek the\nsparsest nonnegative signals to underdetermined linear systems. They have been\nwidely applied in signal and image processing, machine learning, pattern\nrecognition and computer vision. Unfortunately, this $\\ell_{0}$-minimization\nproblem with nonnegativity constraint is computational and NP-hard because of\nthe discrete and discontinuous nature of the $\\ell_{0}$-norm. In this paper, we\nreplace the $\\ell_{0}$-norm with a non-convex fraction function, and study the\nminimization problem of this non-convex fraction function in recovering the\nsparse nonnegative signals from an underdetermined linear system. Firstly, we\ndiscuss the equivalence between $(P_{0}^{\\geq})$ and $(FP_{a}^{\\geq})$, and the\nequivalence between $(FP_{a}^{\\geq})$ and $(FP_{a,\\lambda}^{\\geq})$. It is\nproved that the optimal solution of the problem $(P_{0}^{\\geq})$ could be\napproximately obtained by solving the regularization problem\n$(FP_{a,\\lambda}^{\\geq})$ if some specific conditions satisfied. Secondly, we\npropose a nonnegative iterative thresholding algorithm to solve the\nregularization problem $(FP_{a,\\lambda}^{\\geq})$ for all $a>0$. Finally, some\nnumerical experiments on sparse nonnegative siganl recovery problems show that\nour method performs effective in finding sparse nonnegative signals compared\nwith the linear programming.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -3644,7 +3644,7 @@
     {
         "text": "Optimal learning via local entropies and sample compression.   The aim of this paper is to provide several novel upper bounds on the excess\nrisk with a primal focus on classification problems. We suggest two approaches\nand the obtained bounds are represented via the distribution dependent local\nentropies of the classes or the sizes of specific sample com- pression schemes.\nWe show that in some cases, our guarantees are optimal up to constant factors\nand outperform previously known results. As an application of our results, we\nprovide a new tight PAC bound for the hard-margin SVM, an extended analysis of\ncertain empirical risk minimizers under log-concave distributions, a new\nvariant of an online to batch conversion, and distribution dependent localized\nbounds in the aggregation framework. We also develop techniques that allow to\nreplace empirical covering number or covering numbers with bracketing by the\ncoverings with respect to the distribution of the data. The proofs for the\nsample compression schemes are based on the moment method combined with the\nanalysis of voting algorithms.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -3818,7 +3818,7 @@
     {
         "text": "FNS: an event-driven spiking neural network framework for efficient simulations of large-scale brain models.   Limitations in processing capabilities and memory of today's computers make\nspiking neuron-based (human) whole-brain simulations inevitably characterized\nby a compromise between bio-plausibility and computational cost. It translates\ninto brain models composed of a reduced number of neurons and a simplified\nneuron's mathematical model. Taking advantage of the sparse character of\nbrain-like computation, eventdriven technique allows us to carry out efficient\nsimulation of large-scale Spiking Neural Networks (SNN). The recent Leaky\nIntegrate-and-Fire with Latency (LIFL) spiking neuron model is event-driven\ncompatible and exhibits some realistic neuronal features, opening new horizons\nin whole-brain modelling. In this paper we present FNS, a LIFL-based exact\nevent-driven spiking neural network framework implemented in Java and oriented\nto wholebrain simulations. FNS combines spiking/synaptic whole-brain modelling\nwith the event-driven approach, allowing us to define heterogeneous modules and\nmulti-scale connectivity with delayed connections and plastic synapses,\nproviding fast simulations at the same time. A novel parallelization strategy\nis also implemented in order to further speed up simulations. This paper\npresents mathematical models, software implementation and simulation routines\non which FNS is based. Finally, a reduced brain network model (1400 neurons and\n45000 synapses) is synthesized on the basis of real brain structural data, and\nthe resulting model activity is compared with associated brain functional\n(source-space MEG) data. The conducted test shows a good matching between the\nactivity of model and that of the emulated subject, in outstanding simulation\ntimes (about 20s for simulating 4s of activity with a normal PC). Dedicated\nsections of stimuli editing and output synthesis allow the neuroscientist to\nintroduce and extract brain-like signals, respectively...",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -3920,7 +3920,7 @@
     {
         "text": "Measurements of Three-Level Hierarchical Structure in the Outliers in the Spectrum of Deepnet Hessians.   We consider deep classifying neural networks. We expose a structure in the\nderivative of the logits with respect to the parameters of the model, which is\nused to explain the existence of outliers in the spectrum of the Hessian.\nPrevious works decomposed the Hessian into two components, attributing the\noutliers to one of them, the so-called Covariance of gradients. We show this\nterm is not a Covariance but a second moment matrix, i.e., it is influenced by\nmeans of gradients. These means possess an additive two-way structure that is\nthe source of the outliers in the spectrum. This structure can be used to\napproximate the principal subspace of the Hessian using certain \"averaging\"\noperations, avoiding the need for high-dimensional eigenanalysis. We\ncorroborate this claim across different datasets, architectures and sample\nsizes.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -4196,7 +4196,7 @@
     {
         "text": "Convergence Analysis of Gradient EM for Multi-component Gaussian Mixture.   In this paper, we study convergence properties of the gradient\nExpectation-Maximization algorithm \\cite{lange1995gradient} for Gaussian\nMixture Models for general number of clusters and mixing coefficients. We\nderive the convergence rate depending on the mixing coefficients, minimum and\nmaximum pairwise distances between the true centers and dimensionality and\nnumber of components; and obtain a near-optimal local contraction radius. While\nthere have been some recent notable works that derive local convergence rates\nfor EM in the two equal mixture symmetric GMM, in the more general case, the\nderivations need structurally different and non-trivial arguments. We use\nrecent tools from learning theory and empirical processes to achieve our\ntheoretical results.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -4364,7 +4364,7 @@
     {
         "text": "Can simple transmission chains foster collective intelligence in binary-choice tasks?.   In many social systems, groups of individuals can find remarkably efficient\nsolutions to complex cognitive problems, sometimes even outperforming a single\nexpert. The success of the group, however, crucially depends on how the\njudgments of the group members are aggregated to produce the collective answer.\nA large variety of such aggregation methods have been described in the\nliterature, such as averaging the independent judgments, relying on the\nmajority or setting up a group discussion. In the present work, we introduce a\nnovel approach for aggregating judgments - the transmission chain - which has\nnot yet been consistently evaluated in the context of collective intelligence.\nIn a transmission chain, all group members have access to a unique collective\nsolution and can improve it sequentially. Over repeated improvements, the\ncollective solution that emerges reflects the judgments of every group members.\nWe address the question of whether such a transmission chain can foster\ncollective intelligence for binary-choice problems. In a series of numerical\nsimulations, we explore the impact of various factors on the performance of the\ntransmission chain, such as the group size, the model parameters, and the\nstructure of the population. The performance of this method is compared to\nthose of the majority rule and the confidence-weighted majority. Finally, we\nrely on two existing datasets of individuals performing a series of binary\ndecisions to evaluate the expected performances of the three methods\nempirically. We find that the parameter space where the transmission chain has\nthe best performance rarely appears in real datasets. We conclude that the\ntransmission chain is best suited for other types of problems, such as those\nthat have cumulative properties.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -4418,7 +4418,7 @@
     {
         "text": "Complex Networks: from Classical to Quantum.   Recent progress in applying complex network theory to problems faced in\nquantum information and computation has resulted in a beneficial crossover\nbetween two fields. Complex network methods have successfully been used to\ncharacterize quantum walk and transport models, entangled communication\nnetworks, graph-theoretic models of emergent space-time and in detecting\nmesoscale structure in quantum systems. Information physics is setting the\nstage for a theory of complex and networked systems with quantum\ninformation-inspired methods appearing in complex network science, including\ninformation-theoretic distance and correlation measures for network\ncharacterization. Novel quantum induced effects have been predicted in random\ngraphs---where edges represent entangled links---and quantum computer\nalgorithms have recently been proposed to offer super-polynomial enhancement\nfor several network and graph theoretic problems. Here we review the results at\nthe cutting edge, pinpointing the similarities and reconciling the differences\nfound in the series of results at the intersection of these two fields.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -4730,7 +4730,7 @@
     {
         "text": "Fooling the classifier: Ligand antagonism and adversarial examples.   Machine learning algorithms are sensitive to so-called adversarial\nperturbations. This is reminiscent of cellular decision-making where antagonist\nligands may prevent correct signaling, like during the early immune response.\nWe draw a formal analogy between neural networks used in machine learning and\nthe general class of adaptive proofreading networks. We then apply simple\nadversarial strategies from machine learning to models of ligand\ndiscrimination. We show how kinetic proofreading leads to \"boundary tilting\"\nand identify three types of perturbation (adversarial, non adversarial and\nambiguous). We then use a gradient-descent approach to compare different\nadaptive proofreading models, and we reveal the existence of two qualitatively\ndifferent regimes characterized by the presence or absence of a critical point.\nThese regimes are reminiscent of the \"feature-to-prototype\" transition\nidentified in machine learning, corresponding to two strategies in ligand\nantagonism (broad vs. specialized). Overall, our work connects evolved cellular\ndecision-making to classification in machine learning, showing that behaviours\nclose to the decision boundary can be understood through the same mechanisms.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -4844,7 +4844,7 @@
     {
         "text": "Provability Logics of Hierarchies.   The branch of provability logic investigates the provability-based behavior\nof the mathematical theories. In a more precise way, it studies the relation\nbetween a mathematical theory $T$ and a modal logic $L$ via the provability\ninterpretation which interprets the modality as the provability predicate of\n$T$. In this paper we will extend this relation to investigate the\nprovability-based behavior of a hierarchy of theories. More precisely, using\nthe modal language with infinitely many modalities,\n$\\{\\Box_n\\}_{n=0}^{\\infty}$, we will define the hierarchical counterparts of\nsome of the classical modal theories such as $\\mathbf{K4}$, $\\mathbf{KD4}$,\n$\\mathbf{GL}$ and $\\mathbf{S4}$. Then we will define their canonical\nprovability interpretations and their corresponding soundness-completeness\ntheorems.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -4934,7 +4934,7 @@
     {
         "text": "Anisotropic triangulations via discrete Riemannian Voronoi diagrams.   The construction of anisotropic triangulations is desirable for various\napplications, such as the numerical solving of partial differential equations\nand the representation of surfaces in graphics. To solve this notoriously\ndifficult problem in a practical way, we introduce the discrete Riemannian\nVoronoi diagram, a discrete structure that approximates the Riemannian Voronoi\ndiagram. This structure has been implemented and was shown to lead to good\ntriangulations in $\\mathbb{R}^2$ and on surfaces embedded in $\\mathbb{R}^3$ as\ndetailed in our experimental companion paper.\nIn this paper, we study theoretical aspects of our structure. Given a finite\nset of points $\\cal P$ in a domain $\\Omega$ equipped with a Riemannian metric,\nwe compare the discrete Riemannian Voronoi diagram of $\\cal P$ to its\nRiemannian Voronoi diagram. Both diagrams have dual structures called the\ndiscrete Riemannian Delaunay and the Riemannian Delaunay complex. We provide\nconditions that guarantee that these dual structures are identical. It then\nfollows from previous results that the discrete Riemannian Delaunay complex can\nbe embedded in $\\Omega$ under sufficient conditions, leading to an anisotropic\ntriangulation with curved simplices. Furthermore, we show that, under similar\nconditions, the simplices of this triangulation can be straightened.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -5078,7 +5078,7 @@
     {
         "text": "Incentivized Advertising: Treatment Effect and Adverse Selection.   Incentivized advertising is a new ad format that is gaining popularity in\ndigital mobile advertising. In incentivized advertising, the publisher rewards\nusers for watching an ad. An endemic issue here is adverse selection, where\nreward-seeking users select into incentivized ad placements to obtain rewards.\nAdverse selection reduces the publisher's ad profit as well as poses a\ndifficulty to causal inference of the effectiveness of incentivized\nadvertising. To this end, we develop a treatment effect model that allows and\ncontrols for unobserved adverse selection, and estimate the model using data\nfrom a mobile gaming app that offers both incentivized and non-incentivized\nads. We find that rewarding users to watch an ad has an overall positive effect\non the ad conversion rate. A user is 27% more likely to convert when being\nrewarded to watch an ad. However there is a negative offsetting effect that\nreduces the effectiveness of incentivized ads. Some users are averse to delayed\nrewards, they prefer to collect their rewards immediately after watching the\nincentivized ads, instead of pursuing the content of the ads further. For the\nsubset of users who are averse to delayed rewards, the treatment effect is only\n13%, while it can be as high as 47% for other users.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -5096,7 +5096,7 @@
     {
         "text": "Multidimensional upwind hydrodynamics on unstructured meshes using Graphics Processing Units I. Two-dimensional uniform meshes.   We present a new method for numerical hydrodynamics which uses a\nmultidimensional generalisation of the Roe solver and operates on an\nunstructured triangular mesh. The main advantage over traditional methods based\non Riemann solvers, which commonly use one-dimensional flux estimates as\nbuilding blocks for a multidimensional integration, is its inherently\nmultidimensional nature, and as a consequence its ability to recognise\nmultidimensional stationary states that are not hydrostatic. A second novelty\nis the focus on Graphics Processing Units (GPUs). By tailoring the algorithms\nspecifically to GPUs we are able to get speedups of 100-250 compared to a\ndesktop machine. We compare the multidimensional upwind scheme to a\ntraditional, dimensionally split implementation of the Roe solver on several\ntest problems, and we find that the new method significantly outperforms the\nRoe solver in almost all cases. This comes with increased computational costs\nper time step, which makes the new method approximately a factor of 2 slower\nthan a dimensionally split scheme acting on a structured grid.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -5360,7 +5360,7 @@
     {
         "text": "Learning the Kernel for Classification and Regression.   We investigate a series of learning kernel problems with polynomial\ncombinations of base kernels, which will help us solve regression and\nclassification problems. We also perform some numerical experiments of\npolynomial kernels with regression and classification tasks on different\ndatasets.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -5432,7 +5432,7 @@
     {
         "text": "A Divergence Bound for Hybrids of MCMC and Variational Inference and an Application to Langevin Dynamics and SGVI.   Two popular classes of methods for approximate inference are Markov chain\nMonte Carlo (MCMC) and variational inference. MCMC tends to be accurate if run\nfor a long enough time, while variational inference tends to give better\napproximations at shorter time horizons. However, the amount of time needed for\nMCMC to exceed the performance of variational methods can be quite high,\nmotivating more fine-grained tradeoffs. This paper derives a distribution over\nvariational parameters, designed to minimize a bound on the divergence between\nthe resulting marginal distribution and the target, and gives an example of how\nto sample from this distribution in a way that interpolates between the\nbehavior of existing methods based on Langevin dynamics and stochastic gradient\nvariational inference (SGVI).",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -5588,7 +5588,7 @@
     {
         "text": "Full Quantification of Left Ventricle via Deep Multitask Learning Network Respecting Intra- and Inter-Task Relatedness.   Cardiac left ventricle (LV) quantification is among the most clinically\nimportant tasks for identification and diagnosis of cardiac diseases, yet still\na challenge due to the high variability of cardiac structure and the complexity\nof temporal dynamics. Full quantification, i.e., to simultaneously quantify all\nLV indices including two areas (cavity and myocardium), six regional wall\nthicknesses (RWT), three LV dimensions, and one cardiac phase, is even more\nchallenging since the uncertain relatedness intra and inter each type of\nindices may hinder the learning procedure from better convergence and\ngeneralization. In this paper, we propose a newly-designed multitask learning\nnetwork (FullLVNet), which is constituted by a deep convolution neural network\n(CNN) for expressive feature embedding of cardiac structure; two followed\nparallel recurrent neural network (RNN) modules for temporal dynamic modeling;\nand four linear models for the final estimation. During the final estimation,\nboth intra- and inter-task relatedness are modeled to enforce improvement of\ngeneralization: 1) respecting intra-task relatedness, group lasso is applied to\neach of the regression tasks for sparse and common feature selection and\nconsistent prediction; 2) respecting inter-task relatedness, three phase-guided\nconstraints are proposed to penalize violation of the temporal behavior of the\nobtained LV indices. Experiments on MR sequences of 145 subjects show that\nFullLVNet achieves high accurate prediction with our intra- and inter-task\nrelatedness, leading to MAE of 190mm$^2$, 1.41mm, 2.68mm for average areas,\nRWT, dimensions and error rate of 10.4\\% for the phase classification. This\nendows our method a great potential in comprehensive clinical assessment of\nglobal, regional and dynamic cardiac function.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -5726,7 +5726,7 @@
     {
         "text": "Polishness of some topologies related to word or tree automata.   We prove that the Büchi topology and the automatic topology are Polish. We\nalso show that this cannot be fully extended to the case of a space of infinite\nlabelled binary trees; in particular the Büchi and the Muller topologies are\nnot Polish in this case.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -5852,7 +5852,7 @@
     {
         "text": "The careless use of language in quantum information.   An imperative aspect of modern science is that scientific institutions act\nfor the benefit of a common scientific enterprise, rather than for the personal\ngain of individuals within them. This implies that science should not\nperpetuate existing or historical unequal social orders. Some scientific\nterminology, though, gives a very different impression. I will give two\nexamples of terminology invented recently for the field of quantum information\nwhich use language associated with subordination, slavery, and racial\nsegregation: 'ancilla qubit' and 'quantum supremacy'.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -5996,7 +5996,7 @@
     {
         "text": "Doing Things Twice (Or Differently): Strategies to Identify Studies for Targeted Validation.   The \"reproducibility crisis\" has been a highly visible source of scientific\ncontroversy and dispute. Here, I propose and review several avenues for\nidentifying and prioritizing research studies for the purpose of targeted\nvalidation. Of the various proposals discussed, I identify scientific data\nscience as being a strategy that merits greater attention among those\ninterested in reproducibility. I argue that the tremendous potential of\nscientific data science for uncovering high-value research studies is a\nsignificant and rarely discussed benefit of the transition to a fully\nopen-access publishing model.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -6062,7 +6062,7 @@
     {
         "text": "Bi-National Delay Pattern Analysis For Commercial and Passenger Vehicles at Niagara Frontier Border.   Border crossing delays between New York State and Southern Ontario cause\nproblems like enormous economic loss and massive environmental pollutions. In\nthis area, there are three border-crossing ports: Peace Bridge (PB), Rainbow\nBridge (RB) and Lewiston-Queenston Bridge (LQ) at Niagara Frontier border. The\ngoals of this paper are to figure out whether the distributions of bi-national\nwait times for commercial and passenger vehicles are evenly distributed among\nthe three ports and uncover the hidden significant influential factors that\nresult in the possible insufficient utilization. The historical border wait\ntime data from 7:00 to 21:00 between 08/22/2016 and 06/20/2017 are archived, as\nwell as the corresponding temporal and weather data. For each vehicle type\ntowards each direction, a Decision Tree is built to identify the various border\ndelay patterns over the three bridges. We find that for the passenger vehicles\nto the USA, the convenient connections between the Canada freeways with USA\nI-190 by LQ and PB may cause these two bridges more congested than RB,\nespecially when it is a holiday in Canada. For the passenger vehicles in the\nother bound, RB is much more congested than LQ and PB in some cases, and the\nvisitors to Niagara Falls in the USA in summer may be a reason. For the\ncommercial trucks to the USA, the various delay patterns show PB is always more\ncongested than LQ. Hour interval and weekend are the most significant factors\nappearing in all the four Decision Trees. These Decision Trees can help the\nauthorities to make specific routing suggestions when the corresponding\nconditions are satisfied.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -6122,7 +6122,7 @@
     {
         "text": "A Computational Approach to Extinction Events in Chemical Reaction Networks with Discrete State Spaces.   Recent work of M.D. Johnston et al. has produced sufficient conditions on the\nstructure of a chemical reaction network which guarantee that the corresponding\ndiscrete state space system exhibits an extinction event. The conditions\nconsist of a series of systems of equalities and inequalities on the edges of a\nmodified reaction network called a domination-expanded reaction network. In\nthis paper, we present a computational implementation of these conditions\nwritten in Python and apply the program on examples drawn from the biochemical\nliterature, including a model of polyamine metabolism in mammals and a model of\nthe pentose phosphate pathway in Trypanosoma brucei. We also run the program on\n458 models from the European Bioinformatics Institute's BioModels Database and\nreport our results.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -6218,7 +6218,7 @@
     {
         "text": "The Word Problem of $\\mathbb{Z}^n$ Is a Multiple Context-Free Language.   The \\emph{word problem} of a group $G = \\langle \\Sigma \\rangle$ can be\ndefined as the set of formal words in $\\Sigma^*$ that represent the identity in\n$G$. When viewed as formal languages, this gives a strong connection between\nclasses of groups and classes of formal languages. For example, Anisimov showed\nthat a group is finite if and only if its word problem is a regular language,\nand Muller and Schupp showed that a group is virtually-free if and only if its\nword problem is a context-free language. Above this, not much was known, until\nSalvati showed recently that the word problem of $\\mathbb{Z}^2$ is a multiple\ncontext-free language, giving first such example. We generalize Salvati's\nresult to show that the word problem of $\\mathbb{Z}^n$ is a multiple\ncontext-free language for any $n$.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -6236,7 +6236,7 @@
     {
         "text": "On the Power Spectral Density Applied to the Analysis of Old Canvases.   A routine task for art historians is painting diagnostics, such as dating or\nattribution. Signal processing of the X-ray image of a canvas provides useful\ninformation about its fabric. However, previous methods may fail when very old\nand deteriorated artworks or simply canvases of small size are studied. We\npresent a new framework to analyze and further characterize the paintings from\ntheir radiographs. First, we start from a general analysis of lattices and\nprovide new unifying results about the theoretical spectra of weaves. Then, we\nuse these results to infer the main structure of the fabric, like the type of\nweave and the thread densities. We propose a practical estimation of these\ntheoretical results from paintings with the averaged power spectral density\n(PSD), which provides a more robust tool. Furthermore, we found that the PSD\nprovides a fingerprint that characterizes the whole canvas. We search and\ndiscuss some distinctive features we may find in that fingerprint. We apply\nthese results to several masterpieces of the 17th and 18th centuries from the\nMuseo Nacional del Prado to show that this approach yields accurate results in\nthread counting and is very useful for paintings comparison, even in situations\nwhere previous methods fail.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -6350,7 +6350,7 @@
     {
         "text": "Minimax Rényi Redundancy.   The redundancy for universal lossless compression of discrete memoryless\nsources in Campbell's setting is characterized as a minimax Rényi divergence,\nwhich is shown to be equal to the maximal $\\alpha$-mutual information via a\ngeneralized redundancy-capacity theorem. Special attention is placed on the\nanalysis of the asymptotics of minimax Rényi divergence, which is determined\nup to a term vanishing in blocklength.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -6392,7 +6392,7 @@
     {
         "text": "Normalized Maximum Likelihood with Luckiness for Multivariate Normal Distributions.   The normalized maximum likelihood (NML) is one of the most important\ndistribution in coding theory and statistics. NML is the unique solution (if\nexists) to the pointwise minimax regret problem. However, NML is not defined\neven for simple family of distributions such as the normal distributions. Since\nthere does not exist any meaningful minimax-regret distribution for such case,\nit is pointed out that NML with luckiness (LNML) can be employed as an\nalternative to NML. In this paper, we develop the closed form of LNMLs for\nmultivariate normal distributions.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -6452,7 +6452,7 @@
     {
         "text": "Simulation assisted machine learning.   Predicting how a proposed cancer treatment will affect a given tumor can be\ncast as a machine learning problem, but the complexity of biological systems,\nthe number of potentially relevant genomic and clinical features, and the lack\nof very large scale patient data repositories make this a unique challenge.\n\"Pure data\" approaches to this problem are underpowered to detect\ncombinatorially complex interactions and are bound to uncover false\ncorrelations despite statistical precautions taken (1). To investigate this\nsetting, we propose a method to integrate simulations, a strong form of prior\nknowledge, into machine learning, a combination which to date has been largely\nunexplored. The results of multiple simulations (under various uncertainty\nscenarios) are used to compute similarity measures between every pair of\nsamples: sample pairs are given a high similarity score if they behave\nsimilarly under a wide range of simulation parameters. These similarity values,\nrather than the original high dimensional feature data, are used to train\nkernelized machine learning algorithms such as support vector machines, thus\nhandling the curse-of-dimensionality that typically affects genomic machine\nlearning. Using four synthetic datasets of complex systems--three biological\nmodels and one network flow optimization model--we demonstrate that when the\nnumber of training samples is small compared to the number of features, the\nsimulation kernel approach dominates over no-prior-knowledge methods. In\naddition to biology and medicine, this approach should be applicable to other\ndisciplines, such as weather forecasting, financial markets, and agricultural\nmanagement, where predictive models are sought and informative yet approximate\nsimulations are available. The Python SimKern software, the models (in MATLAB,\nOctave, and R), and the datasets are made freely available at\nthis https URL .",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -6470,13 +6470,13 @@
     {
         "text": "Algorithms for solving optimization problems arising from deep neural net models: nonsmooth problems.   Machine Learning models incorporating multiple layered learning networks have\nbeen seen to provide effective models for various classification problems. The\nresulting optimization problem to solve for the optimal vector minimizing the\nempirical risk is, however, highly nonconvex. This alone presents a challenge\nto application and development of appropriate optimization algorithms for\nsolving the problem. However, in addition, there are a number of interesting\nproblems for which the objective function is non- smooth and nonseparable. In\nthis paper, we summarize the primary challenges involved, the state of the art,\nand present some numerical results on an interesting and representative class\nof problems.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
         "text": "Parameter and State Estimation in Queues and Related Stochastic Models: A Bibliography.   This is an annotated bibliography on estimation and inference results for\nqueues and related stochastic models. The purpose of this document is to\ncollect and categorise works in the field, allowing for researchers and\npractitioners to explore the various types of results that exist. This\nbibliography attempts to include all known works that satisfy both of these\nrequirements: -Works that deal with queueing models. -Works that contain\ncontributions related to the methodology of parameter estimation, state\nestimation, hypothesis testing, confidence interval and/or actual datasets of\napplication areas. Our attempt is to make this bibliography exhaustive, yet\nthere are possibly some papers that we have missed. As it is updated\ncontinuously, additions and comments are welcomed. The sections below\ncategorise the works based on several categories. A single paper may appear in\nseveral categories simultaneously. The final section lists all works in\nchronological order along with short descriptions of the contributions. This\nbibliography is maintained at\nthis http URL and may be cited as such.\nWe welcome additions and corrections.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -6650,7 +6650,7 @@
     {
         "text": "Ensemble representation learning: an analysis of fitness and survival for wrapper-based genetic programming methods.   Recently we proposed a general, ensemble-based feature engineering wrapper\n(FEW) that was paired with a number of machine learning methods to solve\nregression problems. Here, we adapt FEW for supervised classification and\nperform a thorough analysis of fitness and survival methods within this\nframework. Our tests demonstrate that two fitness metrics, one introduced as an\nadaptation of the silhouette score, outperform the more commonly used Fisher\ncriterion. We analyze survival methods and demonstrate that $\\epsilon$-lexicase\nsurvival works best across our test problems, followed by random survival which\noutperforms both tournament and deterministic crowding. We conduct a benchmark\ncomparison to several classification methods using a large set of problems and\nshow that FEW can improve the best classifier performance in several cases. We\nshow that FEW generates consistent, meaningful features for a biomedical\nproblem with different ML pairings.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -6866,13 +6866,13 @@
     {
         "text": "Jamming transitions induced by an attraction in pedestrian flow.   We numerically study jamming transitions in pedestrian flow interacting with\nan attraction, mostly based on the social force model for pedestrians who can\njoin the attraction. We formulate the joining probability as a function of\nsocial influence from others, reflecting that individual choice behavior is\nlikely influenced by others. By controlling pedestrian influx and the social\ninfluence parameter, we identify various pedestrian flow patterns. For the\nbidirectional flow scenario, we observe a transition from the free flow phase\nto the freezing phase, in which oppositely walking pedestrians reach a complete\nstop and block each other. On the other hand, a different transition behavior\nappears in the unidirectional flow scenario, i.e., from the free flow phase to\nthe localized jam phase and then to the extended jam phase. It is also observed\nthat the extended jam phase can end up in freezing phenomena with a certain\nprobability when pedestrian flux is high with strong social influence. This\nstudy highlights that attractive interactions between pedestrians and an\nattraction can trigger jamming transitions by increasing the number of\nconflicts among pedestrians near the attraction. In order to avoid excessive\npedestrian jams, we suggest suppressing the number of conflicts under a certain\nlevel by moderating pedestrian influx especially when the social influence is\nstrong.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
         "text": "Robust Guaranteed-Cost Adaptive Quantum Phase Estimation.   Quantum parameter estimation plays a key role in many fields like quantum\ncomputation, communication and metrology. Optimal estimation allows one to\nachieve the most precise parameter estimates, but requires accurate knowledge\nof the model. Any inevitable uncertainty in the model parameters may heavily\ndegrade the quality of the estimate. It is therefore desired to make the\nestimation process robust to such uncertainties. Robust estimation was\npreviously studied for a varying phase, where the goal was to estimate the\nphase at some time in the past, using the measurement results from both before\nand after that time within a fixed time interval up to current time. Here, we\nconsider a robust guaranteed-cost filter yielding robust estimates of a varying\nphase in real time, where the current phase is estimated using only past\nmeasurements. Our filter minimizes the largest (worst-case) variance in the\nallowable range of the uncertain model parameter(s) and this determines its\nguaranteed cost. It outperforms in the worst case the optimal Kalman filter\ndesigned for the model with no uncertainty, that corresponds to the center of\nthe possible range of the uncertain parameter(s). Moreover, unlike the Kalman\nfilter, our filter in the worst case always performs better than the best\nachievable variance for heterodyne measurements, that we consider as the\ntolerable threshold for our system. Furthermore, we consider effective quantum\nefficiency and effective noise power, and show that our filter provides the\nbest results by these measures in the worst case.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -7148,7 +7148,7 @@
     {
         "text": "Parallel Simultaneous Perturbation Optimization.   Stochastic computer simulations enable users to gain new insights into\ncomplex physical systems. Optimization is a common problem in this context:\nusers seek to find model inputs that maximize the expected value of an\nobjective function. The objective function, however, is time-intensive to\nevaluate, and cannot be directly measured. Instead, the stochastic nature of\nthe model means that individual realizations are corrupted by noise. More\nformally, we consider the problem of optimizing the expected value of an\nexpensive black-box function with continuously-differentiable mean, from which\nobservations are corrupted by Gaussian noise. We present Parallel Simultaneous\nPerturbation Optimization (PSPO), which extends a well-known stochastic\noptimization algorithm, simultaneous perturbation stochastic approximation, in\nseveral important ways. Our modifications allow the algorithm to fully take\nadvantage of parallel computing resources, like high-performance cloud\ncomputing. The resulting PSPO algorithm takes fewer time-consuming iterations\nto converge, automatically chooses the step size, and can vary the error\ntolerance by step. Theoretical results are supported by a numerical example. To\ndemonstrate the performance of the algorithm, we implemented the algorithm to\nmaximize the pseudo-likelihood of a stochastic epidemiological model to data of\na measles outbreak.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -7442,7 +7442,7 @@
     {
         "text": "A Game of Life on Penrose tilings.   We define rules for cellular automata played on quasiperiodic tilings of the\nplane arising from the multigrid method in such a way that these cellular\nautomata are isomorphic to Conway's Game of Life. Although these tilings are\nnonperiodic, determining the next state of each tile is a local computation,\nrequiring only knowledge of the local structure of the tiling and the states of\nfinitely many nearby tiles. As an example, we show a version of a \"glider\"\nmoving through a region of a Penrose tiling. This constitutes a potential\ntheoretical framework for a method of executing computations in\nnon-periodically structured substrates such as quasicrystals.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -7730,7 +7730,7 @@
     {
         "text": "Strongly Hierarchical Factorization Machines and ANOVA Kernel Regression.   High-order parametric models that include terms for feature interactions are\napplied to various data mining tasks, where ground truth depends on\ninteractions of features. However, with sparse data, the high- dimensional\nparameters for feature interactions often face three issues: expensive\ncomputation, difficulty in parameter estimation and lack of structure. Previous\nwork has proposed approaches which can partially re- solve the three issues. In\nparticular, models with factorized parameters (e.g. Factorization Machines) and\nsparse learning algorithms (e.g. FTRL-Proximal) can tackle the first two issues\nbut fail to address the third. Regarding to unstructured parameters,\nconstraints or complicated regularization terms are applied such that\nhierarchical structures can be imposed. However, these methods make the\noptimization problem more challenging. In this work, we propose Strongly\nHierarchical Factorization Machines and ANOVA kernel regression where all the\nthree issues can be addressed without making the optimization problem more\ndifficult. Experimental results show the proposed models significantly\noutperform the state-of-the-art in two data mining tasks: cold-start user\nresponse time prediction and stock volatility prediction.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -8078,7 +8078,7 @@
     {
         "text": "How to model fake news.   Over the past three years it has become evident that fake news is a danger to\ndemocracy. However, until now there has been no clear understanding of how to\ndefine fake news, much less how to model it. This paper addresses both these\nissues. A definition of fake news is given, and two approaches for the\nmodelling of fake news and its impact in elections and referendums are\nintroduced. The first approach, based on the idea of a representative voter, is\nshown to be suitable to obtain a qualitative understanding of phenomena\nassociated with fake news at a macroscopic level. The second approach, based on\nthe idea of an election microstructure, describes the collective behaviour of\nthe electorate by modelling the preferences of individual voters. It is shown\nthrough a simulation study that the mere knowledge that pieces of fake news may\nbe in circulation goes a long way towards mitigating the impact of fake news.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -8180,7 +8180,7 @@
     {
         "text": "The co-evolution of emotional well-being with weak and strong friendship ties.   Social ties are strongly related to well-being. But what characterizes this\nrelationship? This study investigates social mechanisms explaining how social\nties affect well-being through social integration and social influence, and how\nwell-being affects social ties through social selection. We hypothesize that\nhighly integrated individuals - those with more extensive and dense friendship\nnetworks - report higher emotional well-being than others. Moreover, emotional\nwell-being should be influenced by the well-being of close friends. Finally,\nwell-being should affect friendship selection when individuals prefer others\nwith higher levels of well-being, and others whose well-being is similar to\ntheirs. We test our hypotheses using longitudinal social network and well-being\ndata of 117 individuals living in a graduate housing community. The application\nof a novel extension of Stochastic Actor-Oriented Models for ordered networks\n(ordered SAOMs) allows us to detail and test our hypotheses for weak- and\nstrong-tied friendship networks simultaneously. Results do not support our\nsocial integration and social influence hypotheses but provide evidence for\nselection: individuals with higher emotional well-being tend to have more\nstrong-tied friends, and there are homophily processes regarding emotional\nwell-being in strong-tied networks. Our study highlights the two-directional\nrelationship between social ties and well-being, and demonstrates the\nimportance of considering different tie strengths for various social processes.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -8504,7 +8504,7 @@
     {
         "text": "The QLBS Q-Learner Goes NuQLear: Fitted Q Iteration, Inverse RL, and Option Portfolios.   The QLBS model is a discrete-time option hedging and pricing model that is\nbased on Dynamic Programming (DP) and Reinforcement Learning (RL). It combines\nthe famous Q-Learning method for RL with the Black-Scholes (-Merton) model's\nidea of reducing the problem of option pricing and hedging to the problem of\noptimal rebalancing of a dynamic replicating portfolio for the option, which is\nmade of a stock and cash. Here we expand on several NuQLear (Numerical\nQ-Learning) topics with the QLBS model. First, we investigate the performance\nof Fitted Q Iteration for a RL (data-driven) solution to the model, and\nbenchmark it versus a DP (model-based) solution, as well as versus the BSM\nmodel. Second, we develop an Inverse Reinforcement Learning (IRL) setting for\nthe model, where we only observe prices and actions (re-hedges) taken by a\ntrader, but not rewards. Third, we outline how the QLBS model can be used for\npricing portfolios of options, rather than a single option in isolation, thus\nproviding its own, data-driven and model independent solution to the (in)famous\nvolatility smile problem of the Black-Scholes model.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -8564,7 +8564,7 @@
     {
         "text": "A bound on partitioning clusters.   Let $X$ be a finite collection of sets (or \"clusters\"). We consider the\nproblem of counting the number of ways a cluster $A \\in X$ can be partitioned\ninto two disjoint clusters $A_1, A_2 \\in X$, thus $A = A_1 \\uplus A_2$ is the\ndisjoint union of $A_1$ and $A_2$; this problem arises in the run time analysis\nof the ASTRAL algorithm in phylogenetic reconstruction. We obtain the bound $$\n| \\{ (A_1,A_2,A) \\in X \\times X \\times X: A = A_1 \\uplus A_2 \\} | \\leq\n|X|^{3/p} $$ where $|X|$ denotes the cardinality of $X$, and $p := \\log_3\n\\frac{27}{4} = 1.73814\\dots$, so that $\\frac{3}{p} = 1.72598\\dots$.\nFurthermore, the exponent $p$ cannot be replaced by any larger quantity. This\nimproves upon the trivial bound of $|X|^2$. The argument relies on establishing\na one-dimensional convolution inequality that can be established by elementary\ncalculus combined with some numerical verification.\nIn a similar vein, we show that for any subset $A$ of a discrete cube\n$\\{0,1\\}^n$, the additive energy of $A$ (the number of quadruples\n$(a_1,a_2,a_3,a_4)$ in $A^4$ with $a_1+a_2=a_3+a_4$) is at most $|A|^{\\log_2\n6}$, and that this exponent is best possible.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -8594,7 +8594,7 @@
     {
         "text": "Pachinko Prediction: A Bayesian method for event prediction from social media data.   The combination of large open data sources with machine learning approaches\npresents a potentially powerful way to predict events such as protest or social\nunrest. However, accounting for uncertainty in such models, particularly when\nusing diverse, unstructured datasets such as social media, is essential to\nguarantee the appropriate use of such methods. Here we develop a Bayesian\nmethod for predicting social unrest events in Australia using social media\ndata. This method uses machine learning methods to classify individual postings\nto social media as being relevant, and an empirical Bayesian approach to\ncalculate posterior event probabilities. We use the method to predict events in\nAustralian cities over a period in 2017/18.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -8636,7 +8636,7 @@
     {
         "text": "Homotopy Parametric Simplex Method for Sparse Learning.   High dimensional sparse learning has imposed a great computational challenge\nto large scale data analysis. In this paper, we are interested in a broad class\nof sparse learning approaches formulated as linear programs parametrized by a\n{\\em regularization factor}, and solve them by the parametric simplex method\n(PSM). Our parametric simplex method offers significant advantages over other\ncompeting methods: (1) PSM naturally obtains the complete solution path for all\nvalues of the regularization parameter; (2) PSM provides a high precision dual\ncertificate stopping criterion; (3) PSM yields sparse solutions through very\nfew iterations, and the solution sparsity significantly reduces the\ncomputational cost per iteration. Particularly, we demonstrate the superiority\nof PSM over various sparse learning approaches, including Dantzig selector for\nsparse linear regression, LAD-Lasso for sparse robust linear regression, CLIME\nfor sparse precision matrix estimation, sparse differential network estimation,\nand sparse Linear Programming Discriminant (LPD) analysis. We then provide\nsufficient conditions under which PSM always outputs sparse solutions such that\nits computational performance can be significantly boosted. Thorough numerical\nexperiments are provided to demonstrate the outstanding performance of the PSM\nmethod.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -8654,7 +8654,7 @@
     {
         "text": "$\\mathcal{P}$-schemes and Deterministic Polynomial Factoring over Finite Fields.   We introduce a family of mathematical objects called $\\mathcal{P}$-schemes,\nwhere $\\mathcal{P}$ is a poset of subgroups of a finite group $G$. A\n$\\mathcal{P}$-scheme is a collection of partitions of the right coset spaces\n$H\\backslash G$, indexed by $H\\in\\mathcal{P}$, that satisfies a list of axioms.\nThese objects generalize the classical notion of association schemes as well as\nthe notion of $m$-schemes (Ivanyos et al. 2009).\nBased on $\\mathcal{P}$-schemes, we develop a unifying framework for the\nproblem of deterministic factoring of univariate polynomials over finite fields\nunder the generalized Riemann hypothesis (GRH).",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -8888,7 +8888,7 @@
     {
         "text": "Fractal dimension and lower bounds for geometric problems.   We study the complexity of geometric problems on spaces of low fractal\ndimension. It was recently shown by [Sidiropoulos & Sridhar, SoCG 2017] that\nseveral problems admit improved solutions when the input is a pointset in\nEuclidean space with fractal dimension smaller than the ambient dimension. In\nthis paper we prove nearly-matching lower bounds, thus establishing\nnearly-optimal bounds for various problems as a function of the fractal\ndimension.\nMore specifically, we show that for any set of $n$ points in $d$-dimensional\nEuclidean space, of fractal dimension $\\delta\\in (1,d)$, for any $\\epsilon >0$\nand $c\\geq 1$, any $c$-spanner must have treewidth at least $\\Omega \\left(\n\\frac{n^{1-1/(\\delta - \\epsilon)}}{c^{d-1}} \\right)$, matching the previous\nupper bound. The construction used to prove this lower bound on the treewidth\nof spanners can also be used to derive lower bounds on the running time of\nalgorithms for various problems, assuming the Exponential Time Hypothesis. We\nprovide two prototypical results of this type. For any $\\delta \\in (1,d)$ and\nany $\\epsilon >0$ we show that:\n1) $d$-dimensional Euclidean TSP on $n$ points with fractal dimension at most\n$\\delta$ cannot be solved in time $2^{O\\left(n^{1-1/(\\delta - \\epsilon)}\n\\right)}$. The best-known upper bound is $2^{O(n^{1-1/\\delta} \\log n)}$.\n2) The problem of finding $k$-pairwise non-intersecting $d$-dimensional unit\nballs/axis parallel unit cubes with centers having fractal dimension at most\n$\\delta$ cannot be solved in time $f(k)n^{O \\left(k^{1-1/(\\delta -\n\\epsilon)}\\right)}$ for any computable function $f$. The best-known upper bound\nis $n^{O(k^{1-1/\\delta} \\log n)}$.\nThe above results nearly match previously known upper bounds from\n[Sidiropoulos & Sridhar, SoCG 2017], and generalize analogous lower bounds for\nthe case of ambient dimension due to [Marx & Sidiropoulos, SoCG 2014].",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -8918,7 +8918,7 @@
     {
         "text": "Sports stars: analyzing the performance of astronomers at visualization-based discovery.   In this data-rich era of astronomy, there is a growing reliance on automated\ntechniques to discover new knowledge. The role of the astronomer may change\nfrom being a discoverer to being a confirmer. But what do astronomers actually\nlook at when they distinguish between \"sources\" and \"noise?\" What are the\ndifferences between novice and expert astronomers when it comes to visual-based\ndiscovery? Can we identify elite talent or coach astronomers to maximize their\npotential for discovery? By looking to the field of sports performance\nanalysis, we consider an established, domain-wide approach, where the expertise\nof the viewer (i.e. a member of the coaching team) plays a crucial role in\nidentifying and determining the subtle features of gameplay that provide a\nwinning advantage. As an initial case study, we investigate whether the\nSportsCode performance analysis software can be used to understand and document\nhow an experienced HI astronomer makes discoveries in spectral data cubes. We\nfind that the process of timeline-based coding can be applied to spectral cube\ndata by mapping spectral channels to frames within a movie. SportsCode provides\na range of easy to use methods for annotation, including feature-based codes\nand labels, text annotations associated with codes, and image-based drawing.\nThe outputs, including instance movies that are uniquely associated with coded\nevents, provide the basis for a training program or team-based analysis that\ncould be used in unison with discipline specific analysis software. In this\ncoordinated approach to visualization and analysis, SportsCode can act as a\nvisual notebook, recording the insight and decisions in partnership with\nestablished analysis methods. Alternatively, in situ annotation and coding of\nfeatures would be a valuable addition to existing and future visualisation and\nanalysis packages.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -8960,7 +8960,7 @@
     {
         "text": "Diffraction-limited plenoptic imaging with correlated light.   Traditional optical imaging faces an unavoidable trade-off between resolution\nand depth of field (DOF). To increase resolution, high numerical apertures (NA)\nare needed, but the associated large angular uncertainty results in a limited\nrange of depths that can be put in sharp focus. Plenoptic imaging was\nintroduced a few years ago to remedy this trade off. To this aim, plenoptic\nimaging reconstructs the path of light rays from the lens to the sensor.\nHowever, the improvement offered by standard plenoptic imaging is practical and\nnot fundamental: the increased DOF leads to a proportional reduction of the\nresolution well above the diffraction limit imposed by the lens NA. In this\npaper, we demonstrate that correlation measurements enable pushing plenoptic\nimaging to its fundamental limits of both resolution and DOF. Namely, we\ndemonstrate to maintain the imaging resolution at the diffraction limit while\nincreasing the depth of field by a factor of 7. Our results represent the\ntheoretical and experimental basis for the effective development of the\npromising applications of plenoptic imaging.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -9182,7 +9182,7 @@
     {
         "text": "DeepSD: Generating High Resolution Climate Change Projections through Single Image Super-Resolution.   The impacts of climate change are felt by most critical systems, such as\ninfrastructure, ecological systems, and power-plants. However, contemporary\nEarth System Models (ESM) are run at spatial resolutions too coarse for\nassessing effects this localized. Local scale projections can be obtained using\nstatistical downscaling, a technique which uses historical climate observations\nto learn a low-resolution to high-resolution mapping. Depending on statistical\nmodeling choices, downscaled projections have been shown to vary significantly\nterms of accuracy and reliability. The spatio-temporal nature of the climate\nsystem motivates the adaptation of super-resolution image processing techniques\nto statistical downscaling. In our work, we present DeepSD, a generalized\nstacked super resolution convolutional neural network (SRCNN) framework for\nstatistical downscaling of climate variables. DeepSD augments SRCNN with\nmulti-scale input channels to maximize predictability in statistical\ndownscaling. We provide a comparison with Bias Correction Spatial\nDisaggregation as well as three Automated-Statistical Downscaling approaches in\ndownscaling daily precipitation from 1 degree (~100km) to 1/8 degrees (~12.5km)\nover the Continental United States. Furthermore, a framework using the NASA\nEarth Exchange (NEX) platform is discussed for downscaling more than 20 ESM\nmodels with multiple emission scenarios.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -9296,7 +9296,7 @@
     {
         "text": "Analyzing Cloud Optical Properties Using Sky Cameras.   Clouds play a significant role in the fluctuation of solar radiation received\nby the earth's surface. It is important to study the various cloud properties,\nas it impacts the total solar irradiance falling on the earth's surface. One of\nsuch important optical properties of the cloud is the Cloud Optical Thickness\n(COT). It is defined with the amount of light that can pass through the clouds.\nThe COT values are generally obtained from satellite images. However, satellite\nimages have a low temporal- and spatial- resolutions; and are not suitable for\nstudy in applications as solar energy generation and forecasting. Therefore,\nground-based sky cameras are now getting popular in such fields. In this paper,\nwe analyze the cloud optical thickness value, from the ground-based sky\ncameras, and provide future research directions.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -9326,7 +9326,7 @@
     {
         "text": "A Robust Utility Learning Framework via Inverse Optimization.   In many smart infrastructure applications flexibility in achieving\nsustainability goals can be gained by engaging end-users. However, these users\noften have heterogeneous preferences that are unknown to the decision-maker\ntasked with improving operational efficiency. Modeling user interaction as a\ncontinuous game between non-cooperative players, we propose a robust parametric\nutility learning framework that employs constrained feasible generalized least\nsquares estimation with heteroskedastic inference. To improve forecasting\nperformance, we extend the robust utility learning scheme by employing\nbootstrapping with bagging, bumping, and gradient boosting ensemble methods.\nMoreover, we estimate the noise covariance which provides approximated\ncorrelations between players which we leverage to develop a novel correlated\nutility learning framework. We apply the proposed methods both to a toy example\narising from Bertrand-Nash competition between two firms as well as to data\nfrom a social game experiment designed to encourage energy efficient behavior\namongst smart building occupants. Using occupant voting data for shared\nresources such as lighting, we simulate the game defined by the estimated\nutility functions to demonstrate the performance of the proposed methods.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -9494,7 +9494,7 @@
     {
         "text": "Comment on the Equality Condition for the I-MMSE Proof of Entropy Power Inequality.   The paper establishes the equality condition in the I-MMSE proof of the\nentropy power inequality (EPI). This is done by establishing an exact\nexpression for the deficit between the two sides of the EPI. Interestingly, a\nnecessary condition for the equality is established by making a connection to\nthe famous Cauchy functional equation.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -9614,7 +9614,7 @@
     {
         "text": "Comparative study of Discrete Wavelet Transforms and Wavelet Tensor Train decomposition to feature extraction of FTIR data of medicinal plants.   Fourier-transform infra-red (FTIR) spectra of samples from 7 plant species\nwere used to explore the influence of preprocessing and feature extraction on\nefficiency of machine learning algorithms. Wavelet Tensor Train (WTT) and\nDiscrete Wavelet Transforms (DWT) were compared as feature extraction\ntechniques for FTIR data of medicinal plants. Various combinations of signal\nprocessing steps showed different behavior when applied to classification and\nclustering tasks. Best results for WTT and DWT found through grid search were\nsimilar, significantly improving quality of clustering as well as\nclassification accuracy for tuned logistic regression in comparison to original\nspectra. Unlike DWT, WTT has only one parameter to be tuned (rank), making it a\nmore versatile and easier to use as a data processing tool in various signal\nprocessing applications.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -9644,7 +9644,7 @@
     {
         "text": "CT Image Reconstruction in a Low Dimensional Manifold.   Regularization methods are commonly used in X-ray CT image reconstruction.\nDifferent regularization methods reflect the characterization of different\nprior knowledge of images. In a recent work, a new regularization method called\na low-dimensional manifold model (LDMM) is investigated to characterize the\nlow-dimensional patch manifold structure of natural images, where the manifold\ndimensionality characterizes structural information of an image. In this paper,\nwe propose a CT image reconstruction method based on the prior knowledge of the\nlow-dimensional manifold of CT image. Using the clinical raw projection data\nfrom GE clinic, we conduct comparisons for the CT image reconstruction among\nthe proposed method, the simultaneous algebraic reconstruction technique (SART)\nwith the total variation (TV) regularization, and the filtered back projection\n(FBP) method. Results show that the proposed method can successfully recover\nstructural details of an imaging object, and achieve higher spatial and\ncontrast resolution of the reconstructed image than counterparts of FBP and\nSART with TV.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -9770,7 +9770,7 @@
     {
         "text": "Causal Effect Inference with Deep Latent-Variable Models.   Learning individual-level causal effects from observational data, such as\ninferring the most effective medication for a specific patient, is a problem of\ngrowing importance for policy makers. The most important aspect of inferring\ncausal effects from observational data is the handling of confounders, factors\nthat affect both an intervention and its outcome. A carefully designed\nobservational study attempts to measure all important confounders. However,\neven if one does not have direct access to all confounders, there may exist\nnoisy and uncertain measurement of proxies for confounders. We build on recent\nadvances in latent variable modeling to simultaneously estimate the unknown\nlatent space summarizing the confounders and the causal effect. Our method is\nbased on Variational Autoencoders (VAE) which follow the causal structure of\ninference with proxies. We show our method is significantly more robust than\nexisting methods, and matches the state-of-the-art on previous benchmarks\nfocused on individual treatment effects.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -9950,7 +9950,7 @@
     {
         "text": "Entanglement spectroscopy on a quantum computer.   We present a quantum algorithm to compute the entanglement spectrum of\narbitrary quantum states. The interesting universal part of the entanglement\nspectrum is typically contained in the largest eigenvalues of the density\nmatrix which can be obtained from the lower Renyi entropies through the\nNewton-Girard method. Obtaining the $p$ largest eigenvalues\n($\\lambda_1>\\lambda_2\\ldots>\\lambda_p$) requires a parallel circuit depth of\n$\\mathcal{O}(p(\\lambda_1/\\lambda_p)^p)$ and $\\mathcal{O}(p\\log(N))$ qubits\nwhere up to $p$ copies of the quantum state defined on a Hilbert space of size\n$N$ are needed as the input. We validate this procedure for the entanglement\nspectrum of the topologically-ordered Laughlin wave function corresponding to\nthe quantum Hall state at filling factor $\\nu=1/3$. Our scaling analysis\nexposes the tradeoffs between time and number of qubits for obtaining the\nentanglement spectrum in the thermodynamic limit using finite-size digital\nquantum computers. We also illustrate the utility of the second Renyi entropy\nin predicting a topological phase transition and in extracting the localization\nlength in a many-body localized system.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -9992,7 +9992,7 @@
     {
         "text": "On the structure of join tensors with applications to tensor eigenvalue problems.   We investigate the structure of join tensors, which may be regarded as the\nmultivariable extension of lattice-theoretic join matrices. Explicit formulae\nfor a polyadic decomposition (i.e., a linear combination of rank-1 tensors) and\na tensor-train decomposition of join tensors are derived on general join\nsemilattices. We discuss conditions under which the obtained decompositions are\noptimal in rank, and examine numerically the storage complexity of the obtained\ndecompositions for a class of LCM tensors as a special case of join tensors. In\naddition, we investigate numerically the sharpness of a theoretical upper bound\non the tensor eigenvalues of LCM tensors.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -10058,7 +10058,7 @@
     {
         "text": "Fast learning rate of deep learning via a kernel perspective.   We develop a new theoretical framework to analyze the generalization error of\ndeep learning, and derive a new fast learning rate for two representative\nalgorithms: empirical risk minimization and Bayesian deep learning. The series\nof theoretical analyses of deep learning has revealed its high expressive power\nand universal approximation capability. Although these analyses are highly\nnonparametric, existing generalization error analyses have been developed\nmainly in a fixed dimensional parametric model. To compensate this gap, we\ndevelop an infinite dimensional model that is based on an integral form as\nperformed in the analysis of the universal approximation capability. This\nallows us to define a reproducing kernel Hilbert space corresponding to each\nlayer. Our point of view is to deal with the ordinary finite dimensional deep\nneural network as a finite approximation of the infinite dimensional one. The\napproximation error is evaluated by the degree of freedom of the reproducing\nkernel Hilbert space in each layer. To estimate a good finite dimensional\nmodel, we consider both of empirical risk minimization and Bayesian deep\nlearning. We derive its generalization error bound and it is shown that there\nappears bias-variance trade-off in terms of the number of parameters of the\nfinite dimensional approximation. We show that the optimal width of the\ninternal layers can be determined through the degree of freedom and the\nconvergence rate can be faster than $O(1/\\sqrt{n})$ rate which has been shown\nin the existing studies.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -10124,7 +10124,7 @@
     {
         "text": "YUI and HANA: Control and Visualization Programs for HRC in J-PARC.   We developed control and visualization programs, YUI and HANA, for High-\nResolution Chopper spectrometer (HRC) installed at BL12 in MLF, J-PARC. YUI is\na comprehensive program to control DAQ-middleware, the accessories, and sample\nenvironment devices. HANA is a program for the data transformation and\nvisualization of inelastic neutron scattering spectra. In this paper, we\ndescribe the basic system structures and unique functions of these programs\nfrom the viewpoint of users.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -10196,7 +10196,7 @@
     {
         "text": "Distance-based Protein Folding Powered by Deep Learning.   Contact-assisted protein folding has made very good progress, but two\nchallenges remain. One is accurate contact prediction for proteins lack of many\nsequence homologs and the other is that time-consuming folding simulation is\noften needed to predict good 3D models from predicted contacts. We show that\nprotein distance matrix can be predicted well by deep learning and then\ndirectly used to construct 3D models without folding simulation at all. Using\ndistance geometry to construct 3D models from our predicted distance matrices,\nwe successfully folded 21 of the 37 CASP12 hard targets with a median family\nsize of 58 effective sequence homologs within 4 hours on a Linux computer of 20\nCPUs. In contrast, contacts predicted by direct coupling analysis (DCA) cannot\nfold any of them in the absence of folding simulation and the best CASP12 group\nfolded 11 of them by integrating predicted contacts into complex,\nfragment-based folding simulation. The rigorous experimental validation on 15\nCASP13 targets show that among the 3 hardest targets of new fold our\ndistance-based folding servers successfully folded 2 large ones with <150\nsequence homologs while the other servers failed on all three, and that our ab\ninitio folding server also predicted the best, high-quality 3D model for a\nlarge homology modeling target. Further experimental validation in CAMEO shows\nthat our ab initio folding server predicted correct fold for a membrane protein\nof new fold with 200 residues and 229 sequence homologs while all the other\nservers failed. These results imply that deep learning offers an efficient and\naccurate solution for ab initio folding on a personal computer.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -10310,13 +10310,13 @@
     {
         "text": "Permutation complexity of images of Sturmian words by marked morphisms.   We show that the permutation complexity of the image of a Sturmian word by a\nbinary marked morphism is $n+k$ for some constant $k$ and all lengths $n$\nsufficiently large.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
         "text": "A GPU Poisson-Fermi Solver for Ion Channel Simulations.   The Poisson-Fermi model is an extension of the classical Poisson-Boltzmann\nmodel to include the steric and correlation effects of ions and water treated\nas nonuniform spheres in aqueous solutions. Poisson-Boltzmann electrostatic\ncalculations are essential but computationally very demanding for molecular\ndynamics or continuum simulations of complex systems in molecular biophysics\nand electrochemistry. The graphic processing unit (GPU) with enormous\narithmetic capability and streaming memory bandwidth is now a powerful engine\nfor scientific as well as industrial computing. We propose two parallel GPU\nalgorithms, one for linear solver and the other for nonlinear solver, for\nsolving the Poisson-Fermi equation approximated by the standard finite\ndifference method in 3D to study biological ion channels with crystallized\nstructures from the Protein Data Bank, for example. Numerical methods for both\nlinear and nonlinear solvers in the parallel algorithms are given in detail to\nillustrate the salient features of the CUDA (compute unified device\narchitecture) software platform of GPU in implementation. It is shown that the\nparallel algorithms on GPU over the sequential algorithms on CPU (central\nprocessing unit) can achieve 22.8x and 16.9x speedups for the linear solver\ntime and total runtime, respectively.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -10328,7 +10328,7 @@
     {
         "text": "Smooth Pinball Neural Network for Probabilistic Forecasting of Wind Power.   Uncertainty analysis in the form of probabilistic forecasting can\nsignificantly improve decision making processes in the smart power grid for\nbetter integrating renewable energy sources such as wind. Whereas point\nforecasting provides a single expected value, probabilistic forecasts provide\nmore information in the form of quantiles, prediction intervals, or full\npredictive densities. This paper analyzes the effectiveness of a novel approach\nfor nonparametric probabilistic forecasting of wind power that combines a\nsmooth approximation of the pinball loss function with a neural network\narchitecture and a weighting initialization scheme to prevent the quantile\ncross over problem. A numerical case study is conducted using publicly\navailable wind data from the Global Energy Forecasting Competition 2014.\nMultiple quantiles are estimated to form 10%, to 90% prediction intervals which\nare evaluated using a quantile score and reliability measures. Benchmark models\nsuch as the persistence and climatology distributions, multiple quantile\nregression, and support vector quantile regression are used for comparison\nwhere results demonstrate the proposed approach leads to improved performance\nwhile preventing the problem of overlapping quantile estimates.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -10550,7 +10550,7 @@
     {
         "text": "Robust Bayesian Model Selection for Variable Clustering with the Gaussian Graphical Model.   Variable clustering is important for explanatory analysis. However, only few\ndedicated methods for variable clustering with the Gaussian graphical model\nhave been proposed. Even more severe, small insignificant partial correlations\ndue to noise can dramatically change the clustering result when evaluating for\nexample with the Bayesian Information Criteria (BIC). In this work, we try to\naddress this issue by proposing a Bayesian model that accounts for negligible\nsmall, but not necessarily zero, partial correlations. Based on our model, we\npropose to evaluate a variable clustering result using the marginal likelihood.\nTo address the intractable calculation of the marginal likelihood, we propose\ntwo solutions: one based on a variational approximation, and another based on\nMCMC. Experiments on simulated data shows that the proposed method is similarly\naccurate as BIC in the no noise setting, but considerably more accurate when\nthere are noisy partial correlations. Furthermore, on real data the proposed\nmethod provides clustering results that are intuitively sensible, which is not\nalways the case when using BIC or its extensions.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -10586,7 +10586,7 @@
     {
         "text": "Stability and performance analysis of linear positive systems with delays using input-output methods.   It is known that input-output approaches based on scaled small-gain theorems\nwith constant $D$-scalings and integral linear constraints are non-conservative\nfor the analysis of some classes of linear positive systems interconnected with\nuncertain linear operators. This dramatically contrasts with the case of\ngeneral linear systems with delays where input-output approaches provide, in\ngeneral, sufficient conditions only. Using these results we provide simple\nalternative proofs for many of the existing results on the stability of linear\npositive systems with discrete/distributed/neutral time-invariant/-varying\ndelays and linear difference equations. In particular, we give a simple proof\nfor the characterization of diagonal Riccati stability for systems with\ndiscrete-delays and generalize this equation to other types of delay systems.\nThe fact that all those results can be reproved in a very simple way\ndemonstrates the importance and the efficiency of the input-output framework\nfor the analysis of linear positive systems. The approach is also used to\nderive performance results evaluated in terms of the $L_1$-, $L_2$- and\n$L_\\infty$-gains. It is also flexible enough to be used for design purposes.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -10856,7 +10856,7 @@
     {
         "text": "Model Agnostic Time Series Analysis via Matrix Estimation.   We propose an algorithm to impute and forecast a time series by transforming\nthe observed time series into a matrix, utilizing matrix estimation to recover\nmissing values and de-noise observed entries, and performing linear regression\nto make predictions. At the core of our analysis is a representation result,\nwhich states that for a large model class, the transformed time series matrix\nis (approximately) low-rank. In effect, this generalizes the widely used\nSingular Spectrum Analysis (SSA) in time series literature, and allows us to\nestablish a rigorous link between time series analysis and matrix estimation.\nThe key to establishing this link is constructing a Page matrix with\nnon-overlapping entries rather than a Hankel matrix as is commonly done in the\nliterature (e.g., SSA). This particular matrix structure allows us to provide\nfinite sample analysis for imputation and prediction, and prove the asymptotic\nconsistency of our method. Another salient feature of our algorithm is that it\nis model agnostic with respect to both the underlying time dynamics and the\nnoise distribution in the observations. The noise agnostic property of our\napproach allows us to recover the latent states when only given access to noisy\nand partial observations a la a Hidden Markov Model; e.g., recovering the\ntime-varying parameter of a Poisson process without knowing that the underlying\nprocess is Poisson. Furthermore, since our forecasting algorithm requires\nregression with noisy features, our approach suggests a matrix estimation based\nmethod - coupled with a novel, non-standard matrix estimation error metric - to\nsolve the error-in-variable regression problem, which could be of interest in\nits own right. Through synthetic and real-world datasets, we demonstrate that\nour algorithm outperforms standard software packages (including R libraries) in\nthe presence of missing data as well as high levels of noise.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -11120,7 +11120,7 @@
     {
         "text": "Bayesian Model-Agnostic Meta-Learning.   Learning to infer Bayesian posterior from a few-shot dataset is an important\nstep towards robust meta-learning due to the model uncertainty inherent in the\nproblem. In this paper, we propose a novel Bayesian model-agnostic\nmeta-learning method. The proposed method combines scalable gradient-based\nmeta-learning with nonparametric variational inference in a principled\nprobabilistic framework. During fast adaptation, the method is capable of\nlearning complex uncertainty structure beyond a point estimate or a simple\nGaussian approximation. In addition, a robust Bayesian meta-update mechanism\nwith a new meta-loss prevents overfitting during meta-update. Remaining an\nefficient gradient-based meta-learner, the method is also model-agnostic and\nsimple to implement. Experiment results show the accuracy and robustness of the\nproposed method in various tasks: sinusoidal regression, image classification,\nactive learning, and reinforcement learning.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -11144,7 +11144,7 @@
     {
         "text": "Fast Global Convergence via Landscape of Empirical Loss.   While optimizing convex objective (loss) functions has been a powerhouse for\nmachine learning for at least two decades, non-convex loss functions have\nattracted fast growing interests recently, due to many desirable properties\nsuch as superior robustness and classification accuracy, compared with their\nconvex counterparts. The main obstacle for non-convex estimators is that it is\nin general intractable to find the optimal solution. In this paper, we study\nthe computational issues for some non-convex M-estimators. In particular, we\nshow that the stochastic variance reduction methods converge to the global\noptimal with linear rate, by exploiting the statistical property of the\npopulation loss. En route, we improve the convergence analysis for the batch\ngradient method in \\cite{mei2016landscape}.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -11408,7 +11408,7 @@
     {
         "text": "An intracardiac electrogram model to bridge virtual hearts and implantable cardiac devices.   Virtual heart models have been proposed to enhance the safety of implantable\ncardiac devices through closed loop validation. To communicate with a virtual\nheart, devices have been driven by cardiac signals at specific sites. As a\nresult, only the action potentials of these sites are sensed. However, the real\ndevice implanted in the heart will sense a complex combination of near and\nfar-field extracellular potential signals. Therefore many device functions,\nsuch as blanking periods and refractory periods, are designed to handle these\nunexpected signals. To represent these signals, we develop an intracardiac\nelectrogram (IEGM) model as an interface between the virtual heart and the\ndevice. The model can capture not only the local excitation but also far-field\nsignals and pacing afterpotentials. Moreover, the sensing controller can\nspecify unipolar or bipolar electrogram (EGM) sensing configurations and\nintroduce various oversensing and undersensing modes. The simulation results\nshow that the model is able to reproduce clinically observed sensing problems,\nwhich significantly extends the capabilities of the virtual heart model in the\ncontext of device validation.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -11648,7 +11648,7 @@
     {
         "text": "Proximodistal Exploration in Motor Learning as an Emergent Property of Optimization.   To harness the complexity of their high-dimensional bodies during\nsensorimotor development, infants are guided by patterns of freezing and\nfreeing of degrees of freedom. For instance, when learning to reach, infants\nfree the degrees of freedom in their arm proximodistally, i.e. from joints that\nare closer to the body to those that are more distant. Here, we formulate and\nstudy computationally the hypothesis that such patterns can emerge\nspontaneously as the result of a family of stochastic optimization processes\n(evolution strategies with covariance-matrix adaptation), without an innate\nencoding of a maturational schedule. In particular, we present simulated\nexperiments with an arm where a computational learner progressively acquires\nreaching skills through adaptive exploration, and we show that a proximodistal\norganization appears spontaneously, which we denote PDFF (ProximoDistal\nFreezing and Freeing of degrees of freedom). We also compare this emergent\norganization between different arm morphologies -- from human-like to quite\nunnatural ones -- to study the effect of different kinematic structures on the\nemergence of PDFF. Keywords: human motor learning; proximo-distal exploration;\nstochastic optimization; modelling; evolution strategies; cross-entropy\nmethods; policy search; morphology.}",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -11666,7 +11666,7 @@
     {
         "text": "Topological Representation of the Transit Sets of k-Point Crossover Operators.   $k$-point crossover operators and their recombination sets are studied from\ndifferent perspectives. We show that transit functions of $k$-point crossover\ngenerate, for all $k>1$, the same convexity as the interval function of the\nunderlying graph. This settles in the negative an open problem by Mulder about\nwhether the geodesic convexity of a connected graph $G$ is uniquely determined\nby its interval function $I$. The conjecture of Gitchoff and Wagner that for\neach transit set $R_k(x,y)$ distinct from a hypercube there is a unique pair of\nparents from which it is generated is settled affirmatively. Along the way we\ncharacterize transit functions whose underlying graphs are Hamming graphs, and\nthose with underlying partial cube graphs. For general values of $k$ it is\nshown that the transit sets of $k$-point crossover operators are the subsets\nwith maximal Vapnik-Chervonenkis dimension. Moreover, the transit sets of\n$k$-point crossover on binary strings form topes of uniform oriented matroid of\nVC-dimension $k+1$. The Topological Representation Theorem for oriented\nmatroids therefore implies that $k$-point crossover operators can be\nrepresented by pseudosphere arrangements. This provides the tools necessary to\nstudy the special case $k=2$ in detail.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -12044,7 +12044,7 @@
     {
         "text": "On Convex Programming Relaxations for the Permanent.   In recent years, several convex programming relaxations have been proposed to\nestimate the permanent of a non-negative matrix, notably in the works of\nGurvits and Samorodnitsky. However, the origins of these relaxations and their\nrelationships to each other have remained somewhat mysterious. We present a\nconceptual framework, implicit in the belief propagation literature, to\nsystematically arrive at these convex programming relaxations for estimating\nthe permanent -- as approximations to an exponential-sized max-entropy convex\nprogram for computing the permanent. Further, using standard convex programming\ntechniques such as duality, we establish equivalence of these aforementioned\nrelaxations to those based on capacity-like quantities studied by Gurvits and\nAnari et al.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -12062,7 +12062,7 @@
     {
         "text": "Particle Filters for Partially-Observed Boolean Dynamical Systems.   Partially-observed Boolean dynamical systems (POBDS) are a general class of\nnonlinear models with application in estimation and control of Boolean\nprocesses based on noisy and incomplete measurements. The optimal minimum mean\nsquare error (MMSE) algorithms for POBDS state estimation, namely, the Boolean\nKalman filter (BKF) and Boolean Kalman smoother (BKS), are intractable in the\ncase of large systems, due to computational and memory requirements. To address\nthis, we propose approximate MMSE filtering and smoothing algorithms based on\nthe auxiliary particle filter (APF) method from sequential Monte-Carlo theory.\nThese algorithms are used jointly with maximum-likelihood (ML) methods for\nsimultaneous state and parameter estimation in POBDS models. In the presence of\ncontinuous parameters, ML estimation is performed using the\nexpectation-maximization (EM) algorithm; we develop for this purpose a special\nsmoother which reduces the computational complexity of the EM algorithm. The\nresulting particle-based adaptive filter is applied to a POBDS model of Boolean\ngene regulatory networks observed through noisy RNA-Seq time series data, and\nperformance is assessed through a series of numerical experiments using the\nwell-known cell cycle gene regulatory model.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -12176,13 +12176,13 @@
     {
         "text": "Robust Regulation of Infinite-Dimensional Port-Hamiltonian Systems.   We will give general sufficient conditions under which a controller achieves\nrobust regulation for a boundary control and observation system. Utilizing\nthese conditions we construct a minimal order robust controller for an\narbitrary order impedance passive linear port-Hamiltonian system. The\ntheoretical results are illustrated with a numerical example where we implement\na controller for a one-dimensional Euler-Bernoulli beam with boundary controls\nand boundary observations.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
         "text": "White Matter Network Architecture Guides Direct Electrical Stimulation Through Optimal State Transitions.   Electrical brain stimulation is currently being investigated as a therapy for\nneurological disease. However, opportunities to optimize such therapies are\nchallenged by the fact that the beneficial impact of focal stimulation on both\nneighboring and distant regions is not well understood. Here, we use network\ncontrol theory to build a model of brain network function that makes\npredictions about how stimulation spreads through the brain's white matter\nnetwork and influences large-scale dynamics. We test these predictions using\ncombined electrocorticography (ECoG) and diffusion weighted imaging (DWI) data\nwho volunteered to participate in an extensive stimulation regimen. We posit a\nspecific model-based manner in which white matter tracts constrain stimulation,\ndefining its capacity to drive the brain to new states, including states\nassociated with successful memory encoding. In a first validation of our model,\nwe find that the true pattern of white matter tracts can be used to more\naccurately predict the state transitions induced by direct electrical\nstimulation than the artificial patterns of null models. We then use a targeted\noptimal control framework to solve for the optimal energy required to drive the\nbrain to a given state. We show that, intuitively, our model predicts larger\nenergy requirements when starting from states that are farther away from a\ntarget memory state. We then suggest testable hypotheses about which structural\nproperties will lead to efficient stimulation for improving memory based on\nenergy requirements. Our work demonstrates that individual white matter\narchitecture plays a vital role in guiding the dynamics of direct electrical\nstimulation, more generally offering empirical support for the utility of\nnetwork control theoretic models of brain response to stimulation.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -12854,7 +12854,7 @@
     {
         "text": "Tensor network method for reversible classical computation.   We develop a tensor network technique that can solve universal reversible\nclassical computational problems, formulated as vertex models on a square\nlattice [Nat. Commun. 8, 15303 (2017)]. By encoding the truth table of each\nvertex constraint in a tensor, the total number of solutions compatible with\npartial inputs/outputs at the boundary can be represented as the full\ncontraction of a tensor network. We introduce an iterative\ncompression-decimation (ICD) scheme that performs this contraction efficiently.\nThe ICD algorithm first propagates local constraints to longer ranges via\nrepeated contraction-decomposition sweeps over all lattice bonds, thus\nachieving compression on a given length scale. It then decimates the lattice\nvia coarse-graining tensor contractions. Repeated iterations of these two steps\ngradually collapse the tensor network and ultimately yield the exact tensor\ntrace for large systems, without the need for manual control of tensor\ndimensions. Our protocol allows us to obtain the exact number of solutions for\ncomputations where a naive enumeration would take astronomically long times.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -13034,7 +13034,7 @@
     {
         "text": "A giant with feet of clay: on the validity of the data that feed machine learning in medicine.   This paper considers the use of Machine Learning (ML) in medicine by focusing\non the main problem that this computational approach has been aimed at solving\nor at least minimizing: uncertainty. To this aim, we point out how uncertainty\nis so ingrained in medicine that it biases also the representation of clinical\nphenomena, that is the very input of ML models, thus undermining the clinical\nsignificance of their output. Recognizing this can motivate both medical\ndoctors, in taking more responsibility in the development and use of these\ndecision aids, and the researchers, in pursuing different ways to assess the\nvalue of these systems. In so doing, both designers and users could take this\nintrinsic characteristic of medicine more seriously and consider alternative\napproaches that do not \"sweep uncertainty under the rug\" within an objectivist\nfiction, which everyone can come up by believing as true.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -13118,7 +13118,7 @@
     {
         "text": "Training L1-Regularized Models with Orthant-Wise Passive Descent Algorithms.   The $L_1$-regularized models are widely used for sparse regression or\nclassification tasks. In this paper, we propose the orthant-wise passive\ndescent algorithm (OPDA) for optimizing $L_1$-regularized models, as an\nimproved substitute of proximal algorithms, which are the standard tools for\noptimizing the models nowadays. OPDA uses a stochastic variance-reduced\ngradient (SVRG) to initialize the descent direction, then apply a novel\nalignment operator to encourage each element keeping the same sign after one\niteration of update, so the parameter remains in the same orthant as before. It\nalso explicitly suppresses the magnitude of each element to impose sparsity.\nThe quasi-Newton update can be utilized to incorporate curvature information\nand accelerate the speed. We prove a linear convergence rate for OPDA on\ngeneral smooth and strongly-convex loss functions. By conducting experiments on\n$L_1$-regularized logistic regression and convolutional neural networks, we\nshow that OPDA outperforms state-of-the-art stochastic proximal algorithms,\nimplying a wide range of applications in training sparse models.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -13130,7 +13130,7 @@
     {
         "text": "Exact Tensor Completion from Sparsely Corrupted Observations via Convex Optimization.   This paper conducts a rigorous analysis for provable estimation of\nmultidimensional arrays, in particular third-order tensors, from a random\nsubset of its corrupted entries. Our study rests heavily on a recently proposed\ntensor algebraic framework in which we can obtain tensor singular value\ndecomposition (t-SVD) that is similar to the SVD for matrices, and define a new\nnotion of tensor rank referred to as the tubal rank. We prove that by simply\nsolving a convex program, which minimizes a weighted combination of tubal\nnuclear norm, a convex surrogate for the tubal rank, and the $\\ell_1$-norm, one\ncan recover an incoherent tensor exactly with overwhelming probability,\nprovided that its tubal rank is not too large and that the corruptions are\nreasonably sparse. Interestingly, our result includes the recovery guarantees\nfor the problems of tensor completion (TC) and tensor principal component\nanalysis (TRPCA) under the same algebraic setup as special cases. An\nalternating direction method of multipliers (ADMM) algorithm is presented to\nsolve this optimization problem. Numerical experiments verify our theory and\nreal-world applications demonstrate the effectiveness of our algorithm.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -13190,7 +13190,7 @@
     {
         "text": "Solvability regions of affinely parameterized quadratic equations.   Quadratic systems of equations appear in several applications. The results in\nthis paper are motivated by quadratic systems of equations that describe\nequilibrium behavior of physical infrastructure networks like the power and gas\ngrids. The quadratic systems in infrastructure networks are parameterized- the\nparameters can represent uncertainty (estimation error in resistance/inductance\nof a power transmission line, for example)or controllable decision variables\n(power outputs of generators,for example). It is then of interest to understand\nconditions on the parameters under which the quadratic system is guaranteed to\nhave a solution within a specified set (for example, bounds on voltages and\nflows in a power grid). Given nominal values of the parameters at which the\nquadratic system has a solution and the Jacobian of the quadratic system at the\nsolution i snon-singular, we develop a general framework to construct convex\nregions around the nominal value such that the system is guaranteed to have a\nsolution within a given distance of the nominal solution. We show that several\nresults from recen tliterature can be recovered as special cases of our\nframework,and demonstrate our approach on several benchmark power systems.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -13502,7 +13502,7 @@
     {
         "text": "In-Silico Proportional-Integral Moment Control of Stochastic Reaction Networks with Applications to Gene Expression (with Dimerization).   The problem of controlling the mean and the variance of a species of interest\nin a simple gene expression is addressed. It is shown that the protein mean\nlevel can be globally and robustly tracked to any desired value using a simple\nPI controller that satisfies certain sufficient conditions. Controlling both\nthe mean and variance however requires an additional control input, e.g. the\nmRNA degradation rate, and local robust tracking of mean and variance is proved\nto be achievable using multivariable PI control, provided that the reference\npoint satisfies necessary conditions imposed by the system. Even more\nimportantly, it is shown that there exist PI controllers that locally, robustly\nand simultaneously stabilize all the equilibrium points inside the admissible\nregion. The results are then extended to the mean control of a gene expression\nwith protein dimerization. It is shown that the moment closure problem can be\ncircumvented without invoking any moment closure technique. Local stabilization\nand convergence of the average dimer population to any desired reference value\nis ensured using a pure integral control law. Explicit bounds on the controller\ngain are provided and shown to be valid for any reference value. As a\nbyproduct, an explicit upper-bound of the variance of the monomer species,\nacting on the system as unknown input due to the moment openness, is obtained.\nThe results are illustrated by simulation.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -13730,7 +13730,7 @@
     {
         "text": "Stochastic Multi-objective Optimization on a Budget: Application to multi-pass wire drawing with quantified uncertainties.   Design optimization of engineering systems with multiple competing objectives\nis a painstakingly tedious process especially when the objective functions are\nexpensive-to-evaluate computer codes with parametric uncertainties. The\neffectiveness of the state-of-the-art techniques is greatly diminished because\nthey require a large number of objective evaluations, which makes them\nimpractical for problems of the above kind. Bayesian global optimization (BGO),\nhas managed to deal with these challenges in solving single-objective\noptimization problems and has recently been extended to multi-objective\noptimization (MOO). BGO models the objectives via probabilistic surrogates and\nuses the epistemic uncertainty to define an information acquisition function\n(IAF) that quantifies the merit of evaluating the objective at new designs.\nThis iterative data acquisition process continues until a stopping criterion is\nmet. The most commonly used IAF for MOO is the expected improvement over the\ndominated hypervolume (EIHV) which in its original form is unable to deal with\nparametric uncertainties or measurement noise. In this work, we provide a\nsystematic reformulation of EIHV to deal with stochastic MOO problems. The\nprimary contribution of this paper lies in being able to filter out the noise\nand reformulate the EIHV without having to observe or estimate the stochastic\nparameters. An addendum of the probabilistic nature of our methodology is that\nit enables us to characterize our confidence about the predicted Pareto front.\nWe verify and validate the proposed methodology by applying it to synthetic\ntest problems with known solutions. We demonstrate our approach on an\nindustrial problem of die pass design for a steel wire drawing process.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -13778,13 +13778,13 @@
     {
         "text": "Complete algebraic solution of multidimensional optimization problems in tropical semifield.   We consider multidimensional optimization problems that are formulated in the\nframework of tropical mathematics to minimize functions defined on vectors over\na tropical semifield (a semiring with idempotent addition and invertible\nmultiplication). The functions, given by a matrix and calculated through\nmultiplicative conjugate transposition, are nonlinear in the tropical\nmathematics sense. We start with known results on the solution of the problems\nwith irreducible matrices. To solve the problems in the case of arbitrary\n(reducible) matrices, we first derive the minimum value of the objective\nfunction, and find a set of solutions. We show that all solutions of the\nproblem satisfy a system of vector inequalities, and then use these\ninequalities to establish characteristic properties of the solution set.\nFurthermore, all solutions of the problem are represented as a family of\nsubsets, each defined by a matrix that is obtained by using a matrix\nsparsification technique. We describe a backtracking procedure that allows one\nto reduce the brute-force generation of sparsified matrices by skipping those,\nwhich cannot provide solutions, and thus offers an economical way to obtain all\nsubsets in the family. Finally, the characteristic properties of the solution\nset are used to provide complete solutions in a closed form. We illustrate the\nresults obtained with simple numerical examples.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
         "text": "Urban Vibrancy and Safety in Philadelphia.   Statistical analyses of urban environments have been recently improved\nthrough publicly available high resolution data and mapping technologies that\nhave been adopted across industries. These technologies allow us to create\nmetrics to empirically investigate urban design principles of the past\nhalf-century. Philadelphia is an interesting case study for this work, with its\nrapid urban development and population increase in the last decade. We outline\na data analysis pipeline for exploring the association between safety and local\nneighborhood features such as population, economic health and the built\nenvironment. As a particular example of our analysis pipeline, we focus on\nquantitative measures of the built environment that serve as proxies for\nvibrancy: the amount of human activity in a local area. Historically, vibrancy\nhas been very challenging to measure empirically. Measures based on land use\nzoning are not an adequate description of local vibrancy and so we construct a\ndatabase and set of measures of business activity in each neighborhood. We\nemploy several matching analyses to explore the relationship between\nneighborhood vibrancy and safety, such as comparing high crime versus low crime\nlocations within the same neighborhood. As additional sources of urban data\nbecome available, our analysis pipeline can serve as the template for further\ninvestigations into the relationships between safety, economic factors and the\nbuilt environment at the local neighborhood level.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -13826,7 +13826,7 @@
     {
         "text": "Covering and tiling hypergraphs with tight cycles.   Given $3 \\leq k \\leq s$, we say that a $k$-uniform hypergraph $C^k_s$ is a\ntight cycle on $s$ vertices if there is a cyclic ordering of the vertices of\n$C^k_s$ such that every $k$ consecutive vertices under this ordering form an\nedge. We prove that if $k \\ge 3$ and $s \\ge 2k^2$, then every $k$-uniform\nhypergraph on $n$ vertices with minimum codegree at least $(1/2 + o(1))n$ has\nthe property that every vertex is covered by a copy of $C^k_s$. Our result is\nasymptotically best possible for infinitely many pairs of $s$ and $k$, e.g.\nwhen $s$ and $k$ are coprime.\nA perfect $C^k_s$-tiling is a spanning collection of vertex-disjoint copies\nof $C^k_s$. When $s$ is divisible by $k$, the problem of determining the\nminimum codegree that guarantees a perfect $C^k_s$-tiling was solved by a\nresult of Mycroft. We prove that if $k \\ge 3$ and $s \\ge 5k^2$ is not divisible\nby $k$ and $s$ divides $n$, then every $k$-uniform hypergraph on $n$ vertices\nwith minimum codegree at least $(1/2 + 1/(2s) + o(1))n$ has a perfect\n$C^k_s$-tiling. Again our result is asymptotically best possible for infinitely\nmany pairs of $s$ and $k$, e.g. when $s$ and $k$ are coprime with $k$ even.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -13916,7 +13916,7 @@
     {
         "text": "The relationship between the number of editorial board members and the scientific output of universities in the chemistry field.   Editorial board members, who are considered the gatekeepers of scientific\njournals, play an important role in academia, and may directly or indirectly\naffect the scientific output of a university. In this article, we used the\nquantile regression method among a sample of 1,387 university in chemistry to\ncharacterize the correlation between the number of editorial board members and\nthe scientific output of their universities. Furthermore, we used time-series\ndata and the Granger causality test to explore the causal relationship between\nthe number of editorial board members and the number of articles of some top\nuniversities. Our results suggest that the number of editorial board members is\npositively and significantly related to the scientific output (as measured by\nthe number of articles, total number of citations, citations per paper, and h\nindex) of their universities. However, the Granger causality test results\nsuggest that the causal relationship between the number of editorial board\nmembers and the number of articles of some top universities is not obvious.\nCombining these findings with the results of qualitative interviews with\neditorial board members, we discuss the causal relationship between the number\nof editorial board members and the scientific output of their universities.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -14186,7 +14186,7 @@
     {
         "text": "On Gallai's and Hajós' Conjectures for graphs with treewidth at most 3.   A path (resp. cycle) decomposition of a graph $G$ is a set of edge-disjoint\npaths (resp. cycles) of $G$ that covers the edge set of $G$. Gallai (1966)\nconjectured that every graph on $n$ vertices admits a path decomposition of\nsize at most $\\lfloor (n+1)/2\\rfloor$, and Hajós (1968) conjectured that\nevery Eulerian graph on $n$ vertices admits a cycle decomposition of size at\nmost $\\lfloor (n-1)/2\\rfloor$. Gallai's Conjecture was verified for many\nclasses of graphs. In particular, Lovász (1968) verified this conjecture for\ngraphs with at most one vertex of even degree, and Pyber (1996) verified it for\ngraphs in which every cycle contains a vertex of odd degree. Hajós'\nConjecture, on the other hand, was verified only for graphs with maximum degree\n$4$ and for planar graphs. In this paper, we verify Gallai's and Hajós'\nConjectures for graphs with treewidth at most $3$. Moreover, we show that the\nonly graphs with treewidth at most $3$ that do not admit a path decomposition\nof size at most $\\lfloor n/2\\rfloor$ are isomorphic to $K_3$ or $K_5-e$.\nFinally, we use the technique developed in this paper to present new proofs for\nGallai's and Hajós' Conjectures for graphs with maximum degree at most $4$,\nand for planar graphs with girth at least $6$.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -14408,7 +14408,7 @@
     {
         "text": "Convergence Results for Neural Networks via Electrodynamics.   We study whether a depth two neural network can learn another depth two\nnetwork using gradient descent. Assuming a linear output node, we show that the\nquestion of whether gradient descent converges to the target function is\nequivalent to the following question in electrodynamics: Given $k$ fixed\nprotons in $\\mathbb{R}^d,$ and $k$ electrons, each moving due to the attractive\nforce from the protons and repulsive force from the remaining electrons,\nwhether at equilibrium all the electrons will be matched up with the protons,\nup to a permutation. Under the standard electrical force, this follows from the\nclassic Earnshaw's theorem. In our setting, the force is determined by the\nactivation function and the input distribution. Building on this equivalence,\nwe prove the existence of an activation function such that gradient descent\nlearns at least one of the hidden nodes in the target network. Iterating, we\nshow that gradient descent can be used to learn the entire network one node at\na time.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -14450,7 +14450,7 @@
     {
         "text": "A Projection-Based Reformulation and Decomposition Algorithm for Global Optimization of a Class of Mixed Integer Bilevel Linear Programs.   We propose an extended variant of the reformulation and decomposition\nalgorithm for solving a special class of mixed-integer bilevel linear programs\n(MIBLPs) where continuous and integer variables are involved in both upper- and\nlower-level problems. In particular, we consider MIBLPs with upper-level\nconstraints that involve lower-level variables. We assume that the inducible\nregion is nonempty and all variables are bounded. By using the reformulation\nand decomposition scheme, an MIBLP is first converted into its equivalent\nsingle-level formulation, then computed by a column-and-constraint generation\nbased decomposition algorithm. The solution procedure is enhanced by a\nprojection strategy that does not require the relatively complete response\nproperty. To ensure its performance, we prove that our new method converges to\nthe global optimal solution in a finite number of iterations. A large-scale\ncomputational study on random instances and instances of hierarchical supply\nchain planning are presented to demonstrate the effectiveness of the algorithm.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -14462,7 +14462,7 @@
     {
         "text": "A Lagrangian Model to Predict Microscallop Motion in non Newtonian Fluids.   The need to develop models to predict the motion of microrobots, or robots of\na much smaller scale, moving in fluids in a low Reynolds number regime, and in\nparticular, in non Newtonian fluids, cannot be understated. The article\ndevelops a Lagrangian based model for one such mechanism - a two-link mechanism\ntermed a microscallop, moving in a low Reynolds number environment in a non\nNewtonian fluid. The modelling proceeds through the conventional Lagrangian\nconstruction for a two-link mechanism and then goes on to model the external\nfluid forces using empirically based models for viscosity to complete the\ndynamic model. The derived model is then simulated for different initial\nconditions and key parameters of the non Newtonian fluid, and the results are\ncorroborated with a few existing experimental results on a similar mechanism\nunder identical conditions.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -14576,7 +14576,7 @@
     {
         "text": "Upper-Bounding the Regularization Constant for Convex Sparse Signal Reconstruction.   Consider reconstructing a signal $x$ by minimizing a weighted sum of a convex\ndifferentiable negative log-likelihood (NLL) (data-fidelity) term and a convex\nregularization term that imposes a convex-set constraint on $x$ and enforces\nits sparsity using $\\ell_1$-norm analysis regularization. We compute upper\nbounds on the regularization tuning constant beyond which the regularization\nterm overwhelmingly dominates the NLL term so that the set of minimum points of\nthe objective function does not change. Necessary and sufficient conditions for\nirrelevance of sparse signal regularization and a condition for the existence\nof finite upper bounds are established. We formulate an optimization problem\nfor finding these bounds when the regularization term can be globally minimized\nby a feasible $x$ and also develop an alternating direction method of\nmultipliers (ADMM) type method for their computation. Simulation examples show\nthat the derived and empirical bounds match.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -14594,7 +14594,7 @@
     {
         "text": "On the Statistical Challenges of Echo State Networks and Some Potential Remedies.   Echo state networks are powerful recurrent neural networks. However, they are\noften unstable and shaky, making the process of finding an good ESN for a\nspecific dataset quite hard. Obtaining a superb accuracy by using the Echo\nState Network is a challenging task. We create, develop and implement a family\nof predictably optimal robust and stable ensemble of Echo State Networks via\nregularizing the training and perturbing the input. Furthermore, several\ndistributions of weights have been tried based on the shape to see if the shape\nof the distribution has the impact for reducing the error. We found ESN can\ntrack in short term for most dataset, but it collapses in the long run.\nShort-term tracking with large size reservoir enables ESN to perform strikingly\nwith superior prediction. Based on this scenario, we go a further step to\naggregate many of ESNs into an ensemble to lower the variance and stabilize the\nsystem by stochastic replications and bootstrapping of input data.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -14690,7 +14690,7 @@
     {
         "text": "Interplay between social influence and competitive strategical games in multiplex networks.   We present a model that takes into account the coupling between evolutionary\ngame dynamics and social influence. Importantly, social influence and game\ndynamics take place in different domains, which we model as different layers of\na multiplex network. We show that the coupling between these dynamical\nprocesses can lead to cooperation in scenarios where the pure game dynamics\npredicts defection. In addition, we show that the structure of the network\nlayers and the relation between them can further increase cooperation.\nRemarkably, if the layers are related in a certain way, the system can reach a\npolarized metastable state.These findings could explain the prevalence of\npolarization observed in many social dilemmas.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -14840,13 +14840,13 @@
     {
         "text": "Toric Codes, Multiplicative Structure and Decoding.   Long linear codes constructed from toric varieties over finite fields, their\nmultiplicative structure and decoding. The main theme is the inherent\nmultiplicative structure on toric codes. The multiplicative structure allows\nfor \\emph{decoding}, resembling the decoding of Reed-Solomon codes and aligns\nwith decoding by error correcting pairs. We have used the multiplicative\nstructure on toric codes to construct linear secret sharing schemes with\n\\emph{strong multiplication} via Massey's construction generalizing the Shamir\nLinear secret sharing shemes constructed from Reed-Solomon codes. We have\nconstructed quantum error correcting codes from toric surfaces by the\nCalderbank-Shor-Steane method.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
         "text": "Computing Simple Multiple Zeros of Polynomial Systems.   Given a polynomial system f associated with a simple multiple zero x of\nmultiplicity {\\mu}, we give a computable lower bound on the minimal distance\nbetween the simple multiple zero x and other zeros of f. If x is only given\nwith limited accuracy, we propose a numerical criterion that f is certified to\nhave {\\mu} zeros (counting multiplicities) in a small ball around x.\nFurthermore, for simple double zeros and simple triple zeros whose Jacobian is\nof normalized form, we define modified Newton iterations and prove the\nquantified quadratic convergence when the starting point is close to the exact\nsimple multiple zero. For simple multiple zeros of arbitrary multiplicity whose\nJacobian matrix may not have a normalized form, we perform unitary\ntransformations and modified Newton iterations, and prove its non-quantified\nquadratic convergence and its quantified convergence for simple triple zeros.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -14930,7 +14930,7 @@
     {
         "text": "Environmental feedback drives cooperation in spatial social dilemmas.   Exploiting others is beneficial individually but it could also be detrimental\nglobally. The reverse is also true: a higher cooperation level may change the\nenvironment in a way that is beneficial for all competitors. To explore the\npossible consequence of this feedback we consider a coevolutionary model where\nthe local cooperation level determines the payoff values of the applied\nprisoner's dilemma game. We observe that the coevolutionary rule provides a\nsignificantly higher cooperation level comparing to the traditional setup\nindependently of the topology of the applied interaction graph. Interestingly,\nthis cooperation supporting mechanism offers lonely defectors a high surviving\nchance for a long period hence the relaxation to the final cooperating state\nhappens logarithmically slow. As a consequence, the extension of the\ntraditional evolutionary game by considering interactions with the environment\nprovides a good opportunity for cooperators, but their reward may arrive with\nsome delay.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -15044,7 +15044,7 @@
     {
         "text": "Explicit construction of RIP matrices is Ramsey-hard.   Matrices $\\Phi\\in\\R^{n\\times p}$ satisfying the Restricted Isometry Property\n(RIP) are an important ingredient of the compressive sensing methods. While it\nis known that random matrices satisfy the RIP with high probability even for\n$n=\\log^{O(1)}p$, the explicit construction of such matrices defied the\nrepeated efforts, and the most known approaches hit the so-called $\\sqrt{n}$\nsparsity bottleneck. The notable exception is the work by Bourgain et al\n\\cite{bourgain2011explicit} constructing an $n\\times p$ RIP matrix with\nsparsity $s=\\Theta(n^{{1\\over 2}+\\epsilon})$, but in the regime\n$n=\\Omega(p^{1-\\delta})$.\nIn this short note we resolve this open question in a sense by showing that\nan explicit construction of a matrix satisfying the RIP in the regime\n$n=O(\\log^2 p)$ and $s=\\Theta(n^{1\\over 2})$ implies an explicit construction\nof a three-colored Ramsey graph on $p$ nodes with clique sizes bounded by\n$O(\\log^2 p)$ -- a question in the extremal combinatorics which has been open\nfor decades.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -15326,7 +15326,7 @@
     {
         "text": "Iteratively Linearized Reweighted Alternating Direction Method of Multipliers for a Class of Nonconvex Problems.   In this paper, we consider solving a class of nonconvex and nonsmooth\nproblems frequently appearing in signal processing and machine learning\nresearch. The traditional alternating direction method of multipliers\nencounters troubles in both mathematics and computations in solving the\nnonconvex and nonsmooth subproblem. In view of this, we propose a reweighted\nalternating direction method of multipliers. In this algorithm, all subproblems\nare convex and easy to solve. We also provide several guarantees for the\nconvergence and prove that the algorithm globally converges to a critical point\nof an auxiliary function with the help of the Kurdyka-{\\L}ojasiewicz property.\nSeveral numerical results are presented to demonstrate the efficiency of the\nproposed algorithm.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -15428,13 +15428,13 @@
     {
         "text": "Efficient Propagation of Uncertainties in Manufacturing Supply Chains: Time Buckets, L-leap and Multilevel Monte Carlo.   Uncertainty propagation of large scale discrete supply chains can be\nprohibitive when a large number of events occur during the simulated period and\ndiscrete event simulations (DES) are costly. We present a time bucket method to\napproximate and accelerate the DES of supply chains. Its stochastic version,\nwhich we call the L(logistic)-leap method, can be viewed as an extension of the\nleap methods, e.g., tau-leap, D-leap, developed in the chemical engineering\ncommunity for the acceleration of stochastic DES of chemical reactions. The\nL-leap method instantaneously updates the system state vector at discrete time\npoints and the production rates and policies of a supply chain are assumed to\nbe stationary during each time bucket. We propose to use Multilevel Monte Carlo\n(MLMC) to efficiently propagate the uncertainties in a supply chain network,\nwhere the levels are naturally defined by the sizes of the time buckets of the\nsimulations. We demonstrate the efficiency and accuracy of our methods using\nfour numerical examples derived from a real world manufacturing material flow.\nIn these examples, our multilevel L-leap approach can be faster than the\nstandard Monte Carlo (MC) method by one or two orders of magnitudes without\ncompromising the accuracy.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
         "text": "Spatially Adaptive Colocalization Analysis in Dual-Color Fluorescence Microscopy.   Colocalization analysis aims to study complex spatial associations between\nbio-molecules via optical imaging techniques. However, existing colocalization\nanalysis workflows only assess an average degree of colocalization within a\ncertain region of interest and ignore the unique and valuable spatial\ninformation offered by microscopy. In the current work, we introduce a new\nframework for colocalization analysis that allows us to quantify colocalization\nlevels at each individual location and automatically identify pixels or regions\nwhere colocalization occurs. The framework, referred to as spatially adaptive\ncolocalization analysis (SACA), integrates a pixel-wise local kernel model for\ncolocalization quantification and a multi-scale adaptive propagation-separation\nstrategy for utilizing spatial information to detect colocalization in a\nspatially adaptive fashion. Applications to simulated and real biological\ndatasets demonstrate the practical merits of SACA in what we hope to be an\neasily applicable and robust colocalization analysis method. In addition,\ntheoretical properties of SACA are investigated to provide rigorous statistical\njustification.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -15518,7 +15518,7 @@
     {
         "text": "Opinion evolution in time-varying social influence networks with prejudiced agents.   Investigation of social influence dynamics requires mathematical models that\nare \"simple\" enough to admit rigorous analysis, and yet sufficiently \"rich\" to\ncapture salient features of social groups. Thus, the mechanism of iterative\nopinion pooling from (DeGroot, 1974), which can explain the generation of\nconsensus, was elaborated in (Friedkin and Johnsen, 1999) to take into account\nindividuals' ongoing attachments to their initial opinions, or prejudices. The\n\"anchorage\" of individuals to their prejudices may disable reaching consensus\nand cause disagreement in a social influence network. Further elaboration of\nthis model may be achieved by relaxing its restrictive assumption of a\ntime-invariant influence network. During opinion dynamics on an issue, arcs of\ninterpersonal influence may be added or subtracted from the network, and the\ninfluence weights assigned by an individual to his/her neighbors may alter. In\nthis paper, we establish new important properties of the (Friedkin and Johnsen,\n1999) opinion formation model, and also examine its extension to time-varying\nsocial influence networks.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -15566,7 +15566,7 @@
     {
         "text": "Enhancing Blood Glucose Prediction with Meal Absorption and Physical Exercise Information.   Objective: Numerous glucose prediction algorithm have been proposed to\nempower type 1 diabetes (T1D) management. Most of these algorithms only account\nfor input such as glucose, insulin and carbohydrate, which limits their\nperformance. Here, we present a novel glucose prediction algorithm which, in\naddition to standard inputs, accounts for meal absorption and physical exercise\ninformation to enhance prediction accuracy. Methods: a compartmental model of\nglucose-insulin dynamics combined with a deconvolution technique for state\nestimation is employed for glucose prediction. In silico data corresponding\nfrom the 10 adult subjects of UVa-Padova simulator, and clinical data from 10\nadults with T1D were used. Finally, a comparison against a validated glucose\nprediction algorithm based on a latent variable with exogenous input (LVX)\nmodel is provided. Results: For a prediction horizon of 60 minutes, accounting\nfor meal absorption and physical exercise improved glucose forecasting\naccuracy. In particular, root mean square error (mg/dL) went from 26.68 to\n23.89, p<0.001 (in silico data); and from 37.02 to 35.96, p<0.001 (clinical\ndata - only meal information). Such improvement in accuracy was translated into\nsignificant improvements on hypoglycaemia and hyperglycaemia prediction.\nFinally, the performance of the proposed algorithm is statistically superior to\nthat of the LVX algorithm (26.68 vs. 32.80, p<0.001 (in silico data); 37.02 vs.\n49.17, p<0.01 (clinical data). Conclusion: Taking into account meal absorption\nand physical exercise information improves glucose prediction accuracy.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -15674,7 +15674,7 @@
     {
         "text": "SUBIC: A Supervised Bi-Clustering Approach for Precision Medicine.   Traditional medicine typically applies one-size-fits-all treatment for the\nentire patient population whereas precision medicine develops tailored\ntreatment schemes for different patient subgroups. The fact that some factors\nmay be more significant for a specific patient subgroup motivates clinicians\nand medical researchers to develop new approaches to subgroup detection and\nanalysis, which is an effective strategy to personalize treatment. In this\nstudy, we propose a novel patient subgroup detection method, called Supervised\nBiclustring (SUBIC) using convex optimization and apply our approach to detect\npatient subgroups and prioritize risk factors for hypertension (HTN) in a\nvulnerable demographic subgroup (African-American). Our approach not only finds\npatient subgroups with guidance of a clinically relevant target variable but\nalso identifies and prioritizes risk factors by pursuing sparsity of the input\nvariables and encouraging similarity among the input variables and between the\ninput and target variables",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -15722,7 +15722,7 @@
     {
         "text": "The discrete logarithm problem over prime fields: the safe prime case. The Smart attack, non-canonical lifts and logarithmic derivatives.   In this brief note we connect the discrete logarithm problem over prime\nfields in the safe prime case to the logarithmic derivative.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -16100,7 +16100,7 @@
     {
         "text": "How production networks amplify economic growth.   Technological improvement is the most important cause of long-term economic\ngrowth, but the factors that drive it are still not fully understood. In\nstandard growth models technology is treated in the aggregate, and a main goal\nhas been to understand how growth depends on factors such as knowledge\nproduction. But an economy can also be viewed as a network, in which producers\npurchase goods, convert them to new goods, and sell them to households or other\nproducers. Here we develop a simple theory that shows how the network\nproperties of an economy can amplify the effects of technological improvements\nas they propagate along chains of production. A key property of an industry is\nits output multiplier, which can be understood as the average number of\nproduction steps required to make a good. The model predicts that the output\nmultiplier of an industry predicts future changes in prices, and that the\naverage output multiplier of a country predicts future economic growth. We test\nthese predictions using data from the World Input Output Database and find\nresults in good agreement with the model. The results show how purely\nstructural properties of an economy, that have nothing to do with innovation or\nhuman creativity, can exert an important influence on long-term growth.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -16244,7 +16244,7 @@
     {
         "text": "$b$-symbol distance distribution of repeated-root cyclic codes.   Symbol-pair codes, introduced by Cassuto and Blaum [1], have been raised for\nsymbol-pair read channels. This new idea is motivated by the limitation of the\nreading process in high-density data storage technologies. Yaakobi et al. [8]\nintroduced codes for $b$-symbol read channels, where the read operation is\nperformed as a consecutive sequence of $b>2$ symbols. In this paper, we come up\nwith a method to compute the $b$-symbol-pair distance of two $n$-tuples, where\n$n$ is a positive integer. Also, we deal with the $b$-symbol-pair distances of\nsome kind of cyclic codes of length $p^e$ over $\\mathbb{F}_{p^m}$.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -16400,7 +16400,7 @@
     {
         "text": "A fast algorithm for maximal propensity score matching.   We present a new algorithm which detects the maximal possible number of\nmatched disjoint pairs satisfying a given caliper when a bipartite matching is\ndone with respect to a scalar index (e.g., propensity score), and constructs a\ncorresponding matching. Variable width calipers are compatible with the\ntechnique, provided that the width of the caliper is a Lipschitz function of\nthe index. If the observations are ordered with respect to the index then the\nmatching needs $O(N)$ operations, where $N$ is the total number of subjects to\nbe matched. The case of 1-to-$n$ matching is also considered.\nWe offer also a new fast algorithm for optimal complete one-to-one matching\non a scalar index when the treatment and control groups are of the same size.\nThis allows us to improve greedy nearest neighbor matching on a scalar index.\nKeywords: propensity score matching, nearest neighbor matching, matching with\ncaliper, variable width caliper.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -16982,7 +16982,7 @@
     {
         "text": "Feature uncertainty bounding schemes for large robust nonlinear SVM classifiers.   We consider the binary classification problem when data are large and subject\nto unknown but bounded uncertainties. We address the problem by formulating the\nnonlinear support vector machine training problem with robust optimization. To\ndo so, we analyze and propose two bounding schemes for uncertainties associated\nto random approximate features in low dimensional spaces. The proposed\ntechniques are based on Random Fourier Features and the Nyström methods. The\nresulting formulations can be solved with efficient stochastic approximation\ntechniques such as stochastic (sub)-gradient, stochastic proximal gradient\ntechniques or their variants.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -17108,7 +17108,7 @@
     {
         "text": "Optimizing wearable assistive devices with neuromuscular models and optimal control.   The coupling of human movement dynamics with the function and design of\nwearable assistive devices is vital to better understand the interaction\nbetween the two. Advanced neuromuscular models and optimal control formulations\nprovide the possibility to study and improve this interaction. In addition,\noptimal control can also be used to generate predictive simulations that\ngenerate novel movements for the human model under varying optimization\ncriterion.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -17138,7 +17138,7 @@
     {
         "text": "MOBILITY21: Strategic Investments for Transportation Infrastructure & Technology.   America's transportation infrastructure is the backbone of our economy. A\nstrong infrastructure means a strong America - an America that competes\nglobally, supports local and regional economic development, and creates jobs.\nStrategic investments in our transportation infrastructure are vital to our\nnational security, economic growth, transportation safety and our technology\nleadership. This document outlines critical needs for our transportation\ninfrastructure, identifies new technology drivers and proposes strategic\ninvestments for safe and efficient air, ground, rail and marine mobility of\npeople and goods.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -17318,7 +17318,7 @@
     {
         "text": "Modular System for Shelves and Coasts (MOSSCO v1.0) - a flexible and multi-component framework for coupled coastal ocean ecosystem modelling.   Shelf and coastal sea processes extend from the atmosphere through the water\ncolumn and into the sea bed. These processes are driven by physical, chemical,\nand biological interactions at local scales, and they are influenced by\ntransport and cross strong spatial gradients. The linkages between domains and\nmany different processes are not adequately described in current model systems.\nTheir limited integration level in part reflects lacking modularity and\nflexibility; this shortcoming hinders the exchange of data and model components\nand has historically imposed supremacy of specific physical driver models. We\nhere present the Modular System for Shelves and Coasts (MOSSCO,\nthis http URL), a novel domain and process coupling system\ntailored---but not limited--- to the coupling challenges of and applications in\nthe coastal ocean. MOSSCO builds on the existing coupling technology Earth\nSystem Modeling Framework and on the Framework for Aquatic Biogeochemical\nModels, thereby creating a unique level of modularity in both domain and\nprocess coupling; the new framework adds rich metadata, flexible scheduling,\nconfigurations that allow several tens of models to be coupled, and tested\nsetups for coastal coupled applications. That way, MOSSCO addresses the\ntechnology needs of a growing marine coastal Earth System community that\nencompasses very different disciplines, numerical tools, and research\nquestions.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -17390,7 +17390,7 @@
     {
         "text": "Crime Prediction by Data-Driven Green's Function method.   We develop an algorithm that forecasts cascading events, by employing a\nGreen's function scheme on the basis of the self-exciting point process model.\nThis method is applied to open data of 10 types of crimes happened in Chicago.\nIt shows a good prediction accuracy superior to or comparable to the standard\nmethods which are the expectation-maximization method and prospective hotspot\nmaps method. We find a cascade influence of the crimes that has a long-time,\nlogarithmic tail; this result is consistent with an earlier study on\nburglaries. This long-tail feature cannot be reproduced by the other standard\nmethods. In addition, a merit of the Green's function method is the low\ncomputational cost in the case of high density of events and/or large amount of\nthe training data.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -17462,7 +17462,7 @@
     {
         "text": "Sparsity constrained split feasibility for dose-volume constraints in inverse planning of intensity-modulated photon or proton therapy.   A split feasibility formulation for the inverse problem of\nintensity-modulated radiation therapy (IMRT) treatment planning with\ndose-volume constraints (DVCs) included in the planning algorithm is presented.\nIt involves a new type of sparsity constraint that enables the inclusion of a\npercentage-violation constraint in the model problem and its handling by\ncontinuous (as opposed to integer) methods. We propose an iterative algorithmic\nframework for solving such a problem by applying the feasibility-seeking\nCQ-algorithm of Byrne combined with the automatic relaxation method (ARM) that\nuses cyclic projections. Detailed implementation instructions are furnished.\nFunctionality of the algorithm was demonstrated through the creation of an\nintensity-modulated proton therapy plan for a simple 2D C-shaped geometry and\nalso for a realistic base-of-skull chordoma treatment site. Monte Carlo\nsimulations of proton pencil beams of varying energy were conducted to obtain\ndose distributions for the 2D test case. A research release of the Pinnacle3\nproton treatment planning system was used to extract pencil beam doses for a\nclinical base-of-skull chordoma case. In both cases the beamlet doses were\ncalculated to satisfy dose-volume constraints according to our new algorithm.\nExamination of the dose-volume histograms following inverse planning with our\nalgorithm demonstrated that it performed as intended. The application of our\nproposed algorithm to dose-volume constraint inverse planning was successfully\ndemonstrated. Comparison with optimized dose distributions from the research\nrelease of the Pinnacle3 treatment planning system showed the algorithm could\nachieve equivalent or superior results.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -17654,7 +17654,7 @@
     {
         "text": "GlobeNet: Convolutional Neural Networks for Typhoon Eye Tracking from Remote Sensing Imagery.   Advances in remote sensing technologies have made it possible to use\nhigh-resolution visual data for weather observation and forecasting tasks. We\npropose the use of multi-layer neural networks for understanding complex\natmospheric dynamics based on multichannel satellite images. The capability of\nour model was evaluated by using a linear regression task for single typhoon\ncoordinates prediction. A specific combination of models and different\nactivation policies enabled us to obtain an interesting prediction result in\nthe northeastern hemisphere (ENH).",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -17672,7 +17672,7 @@
     {
         "text": "Adaptive Estimation for Nonlinear Systems using Reproducing Kernel Hilbert Spaces.   This paper extends a conventional, general framework for online adaptive\nestimation problems for systems governed by unknown nonlinear ordinary\ndifferential equations. The central feature of the theory introduced in this\npaper represents the unknown function as a member of a reproducing kernel\nHilbert space (RKHS) and defines a distributed parameter system (DPS) that\ngoverns state estimates and estimates of the unknown function. This paper 1)\nderives sufficient conditions for the existence and stability of the infinite\ndimensional online estimation problem, 2) derives existence and stability of\nfinite dimensional approximations of the infinite dimensional approximations,\nand 3) determines sufficient conditions for the convergence of finite\ndimensional approximations to the infinite dimensional online estimates. A new\ncondition for persistency of excitation in a RKHS in terms of its evaluation\nfunctionals is introduced in the paper that enables proof of convergence of the\nfinite dimensional approximations of the unknown function in the RKHS. This\npaper studies two particular choices of the RKHS, those that are generated by\nexponential functions and those that are generated by multiscale kernels\ndefined from a multiresolution analysis.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -17954,7 +17954,7 @@
     {
         "text": "Non-convex Conditional Gradient Sliding.   We investigate a projection free method, namely conditional gradient sliding\non batched, stochastic and finite-sum non-convex problem. CGS is a smart\ncombination of Nesterov's accelerated gradient method and Frank-Wolfe (FW)\nmethod, and outperforms FW in the convex setting by saving gradient\ncomputations. However, the study of CGS in the non-convex setting is limited.\nIn this paper, we propose the non-convex conditional gradient sliding (NCGS)\nwhich surpasses the non-convex Frank-Wolfe method in batched, stochastic and\nfinite-sum setting.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -18074,7 +18074,7 @@
     {
         "text": "Minors of two-connected graphs of large path-width.   Let $P$ be a graph with a vertex $v$ such that $P\\backslash v$ is a forest,\nand let $Q$ be an outerplanar graph. We prove that there exists a number\n$p=p(P,Q)$ such that every 2-connected graph of path-width at least $p$ has a\nminor isomorphic to $P$ or $Q$. This result answers a question of Seymour and\nimplies a conjecture of Marshall and Wood. The proof is based on a new property\nof tree-decompositions.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -18206,7 +18206,7 @@
     {
         "text": "Deep learning for universal linear embeddings of nonlinear dynamics.   Identifying coordinate transformations that make strongly nonlinear dynamics\napproximately linear is a central challenge in modern dynamical systems. These\ntransformations have the potential to enable prediction, estimation, and\ncontrol of nonlinear systems using standard linear theory. The Koopman operator\nhas emerged as a leading data-driven embedding, as eigenfunctions of this\noperator provide intrinsic coordinates that globally linearize the dynamics.\nHowever, identifying and representing these eigenfunctions has proven to be\nmathematically and computationally challenging. This work leverages the power\nof deep learning to discover representations of Koopman eigenfunctions from\ntrajectory data of dynamical systems. Our network is parsimonious and\ninterpretable by construction, embedding the dynamics on a low-dimensional\nmanifold that is of the intrinsic rank of the dynamics and parameterized by the\nKoopman eigenfunctions. In particular, we identify nonlinear coordinates on\nwhich the dynamics are globally linear using a modified auto-encoder. We also\ngeneralize Koopman representations to include a ubiquitous class of systems\nthat exhibit continuous spectra, ranging from the simple pendulum to nonlinear\noptics and broadband turbulence. Our framework parametrizes the continuous\nfrequency using an auxiliary network, enabling a compact and efficient\nembedding at the intrinsic rank, while connecting our models to half a century\nof asymptotics. In this way, we benefit from the power and generality of deep\nlearning, while retaining the physical interpretability of Koopman embeddings.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -18320,7 +18320,7 @@
     {
         "text": "Dynamic Advisor-Based Ensemble (dynABE): Case Study in Stock Trend Prediction of Critical Metal Companies.   The demand for metals by modern technology has been shifting from common base\nmetals to a variety of minor metals, such as cobalt or indium. The industrial\nimportance and limited geological availability of some minor metals have led to\nthem being considered more \"critical,\" and there is a growing investment\ninterest in such critical metals and their producing companies. In this\nresearch, we create a novel framework, Dynamic Advisor-Based Ensemble (dynABE),\nfor stock prediction and use critical metal companies as case study. dynABE\nuses domain knowledge to diversify the feature set by dividing them into\ndifferent \"advisors.\" creates high-level ensembles with complex base models for\neach advisor, and combines the advisors together dynamically during validation\nwith a novel and effective online update strategy. We test dynABE on three\ncobalt-related companies, and it achieves the best-case misclassification error\nof 31.12% and excess return of 477% compared to the stock itself in a year and\na half. In addition to presenting an effective stock prediction model with\ndecent profitabilities, this research further analyzes dynABE to visualize how\nit works in practice, which also yields discoveries of its interesting\nbehaviors when processing time-series data.",
         "labels": 0,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 0
     },
     {
@@ -18398,7 +18398,7 @@
     {
         "text": "The Diverse Club: The Integrative Core of Complex Networks.   A complex system can be represented and analyzed as a network, where nodes\nrepresent the units of the network and edges represent connections between\nthose units. For example, a brain network represents neurons as nodes and axons\nbetween neurons as edges. In many networks, some nodes have a\ndisproportionately high number of edges. These nodes also have many edges\nbetween each other, and are referred to as the rich club. In many different\nnetworks, the nodes of this club are assumed to support global network\nintegration. However, another set of nodes potentially exhibits a connectivity\nstructure that is more advantageous to global network integration. Here, in a\nmyriad of different biological and man-made networks, we discover the diverse\nclub--a set of nodes that have edges diversely distributed across the network.\nThe diverse club exhibits, to a greater extent than the rich club, properties\nconsistent with an integrative network function--these nodes are more highly\ninterconnected and their edges are more critical for efficient global\nintegration. Moreover, we present a generative evolutionary network model that\nproduces networks with a diverse club but not a rich club, thus demonstrating\nthat these two clubs potentially evolved via distinct selection pressures.\nGiven the variety of different networks that we analyzed--the c. elegans, the\nmacaque brain, the human brain, the United States power grid, and global air\ntraffic--the diverse club appears to be ubiquitous in complex networks. These\nresults warrant the distinction and analysis of two critical clubs of nodes in\nall complex systems.",
         "labels": 0,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 0
     },
     {
@@ -18452,7 +18452,7 @@
     {
         "text": "The placement of the head that maximizes predictability. An information theoretic approach.   The minimization of the length of syntactic dependencies is a\nwell-established principle of word order and the basis of a mathematical theory\nof word order. Here we complete that theory from the perspective of information\ntheory, adding a competing word order principle: the maximization of\npredictability of a target element. These two principles are in conflict: to\nmaximize the predictability of the head, the head should appear last, which\nmaximizes the costs with respect to dependency length minimization. The\nimplications of such a broad theoretical framework to understand the\noptimality, diversity and evolution of the six possible orderings of subject,\nobject and verb are reviewed.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -18614,7 +18614,7 @@
     {
         "text": "System of unbiased representatives for a collection of bicolorings.   Let $\\mathcal{B}$ denote a set of bicolorings of $[n]$, where each bicoloring\nis a mapping of the points in $[n]$ to $\\{-1,+1\\}$.\nFor each $B \\in \\mathcal{B}$, let $Y_B=(B(1),\\ldots,B(n))$.\nFor each $A \\subseteq [n]$, let $X_A \\in \\{0,1\\}^n$ denote the incidence\nvector of $A$.\nA non-empty set $A$ is said to be an `unbiased representative' for a\nbicoloring $B \\in \\mathcal{B}$ if $\\left\\langle X_A,Y_B\\right\\rangle =0$.\nGiven a set $\\mathcal{B}$ of bicolorings, we study the minimum cardinality of\na family $\\mathcal{A}$ consisting of subsets of $[n]$ such that every\nbicoloring in $\\mathcal{B}$ has an unbiased representative in $\\mathcal{A}$.",
         "labels": 1,
-        "Computer Science": 1,
+        "Computer Science": 0,
         "is_Computer Science": 1
     },
     {
@@ -18746,7 +18746,7 @@
     {
         "text": "Self-organization and the Maximum Empower Principle in the Framework of max-plus Algebra.   Self-organization is a process where order of a whole system arises out of\nlocal interactions between small components of a system.\nEmergy, defined as the amount of (solar) energy used to make a product or a\nservice, is becoming an important ecological indicator. To explain observed\nself-organization of systems by emergy the Maximum Empower Principle (MEP) was\nproposed initially without a mathematical formulation.\nEmergy analysis is based on four rules called emergy algebra. Most of emergy\ncomputations in steady state are in fact approximate results, which rely on\nlinear algebra. In such a context, a mathematical formulation of the MEP has\nbeen proposed by Giannantoni (2002).\nIn 2012 Le Corre and the second author of this paper have proposed a rigorous\nmathematical framework for emergy analysis. They established that the exact\ncomputation of emergy is based on the so-called max-plus algebra and seven\ncoherent axioms that replace the emergy algebra. In this paper the MEP in\nsteady state is formalized in the context of the max-plus algebra and graph\ntheory. The main concepts of the paper are (a) a particular graph called\n'emergy graph', (b) the notion of compatible paths of the emergy graph, and (c)\nsets of compatible paths, which are called 'emergy states'. The main results of\nthe paper are as follows:\n(1) Emergy is mathematically expressed as a maximum over all possible emergy\nstates. (2) The maximum is always reached by an emergy state. (3) Only prevail\nemergy states for which the maximum is reached.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
@@ -18854,7 +18854,7 @@
     {
         "text": "Univalent Foundations and the UniMath Library.   We give a concise presentation of the Univalent Foundations of mathematics\noutlining the main ideas, followed by a discussion of the UniMath library of\nformalized mathematics implementing the ideas of the Univalent Foundations\n(section 1), and the challenges one faces in attempting to design a large-scale\nlibrary of formalized mathematics (section 2). This leads us to a general\ndiscussion about the links between architecture and mathematics where a meeting\nof minds is revealed between architects and mathematicians (section 3). On the\nway our odyssey from the foundations to the \"horizon\" of mathematics will lead\nus to meet the mathematicians David Hilbert and Nicolas Bourbaki as well as the\narchitect Christopher Alexander.",
         "labels": 1,
-        "Computer Science": 0,
+        "Computer Science": 1,
         "is_Computer Science": 1
     },
     {
