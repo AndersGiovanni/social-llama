@@ -62,13 +62,13 @@ class ScriptArguments:
         default=0.2, metadata={"help": "the saving frequency"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=4, metadata={"help": "the per device train batch size"}
+        default=1, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=4, metadata={"help": "the per device eval batch size"}
+        default=1, metadata={"help": "the per device eval batch size"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=2, metadata={"help": "the gradient accumulation steps"}
+        default=1, metadata={"help": "the gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -136,11 +136,11 @@ dataset.get_data()
 train_dataset, eval_dataset = dataset.preprocess_sft()
 
 # Based on the train dataset and the batch size, calculate the number of steps for 1 epoch
-# script_args.max_steps = (
-#     (len(train_dataset) // script_args.per_device_train_batch_size)
-#     // script_args.gradient_accumulation_steps
-#     * script_args.num_train_epochs
-# )
+script_args.max_steps = (
+    (len(train_dataset) // script_args.per_device_train_batch_size)
+    // script_args.gradient_accumulation_steps
+    * script_args.num_train_epochs
+)
 
 
 bnb_config = BitsAndBytesConfig(
@@ -194,8 +194,8 @@ training_args = TrainingArguments(
     per_device_eval_batch_size=script_args.per_device_eval_batch_size,
     learning_rate=script_args.learning_rate,
     logging_steps=script_args.logging_steps,
-    num_train_epochs=script_args.num_train_epochs,
-    # max_steps=script_args.max_steps,
+    # num_train_epochs=script_args.num_train_epochs,
+    max_steps=script_args.max_steps,
     report_to=script_args.log_with,
     save_steps=script_args.save_steps,
     group_by_length=script_args.group_by_length,

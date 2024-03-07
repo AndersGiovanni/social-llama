@@ -12,6 +12,7 @@ from peft import LoraConfig
 from transformers import AutoTokenizer
 from transformers import HfArgumentParser
 from transformers import TrainingArguments
+from transformers import AutoModelForCausalLM
 from trl import DPOTrainer
 
 from social_llama.data_processing.combine import Combined
@@ -33,11 +34,11 @@ class ScriptArguments:
     )
     # training parameters
     model_name_or_path: Optional[str] = field(
-        default="sft/Llama-2-7b-chat-hf_zero-shot_combined_first_exhausted_1epoch/final_checkpoint",
+        default="sft/gemma-7b-it_combined_1_epoch/final_merged_checkpoint",
         metadata={"help": "the location of the SFT model name or path"},
     )
     base_model: Optional[str] = field(
-        default="meta-llama/Llama-2-7b-chat-hf",
+        default="google/gemma-7b-it",
         metadata={"help": "the base model name or path"},
     )
     dataset_name: Optional[str] = field(
@@ -45,7 +46,7 @@ class ScriptArguments:
         metadata={"help": "the dataset name"},
     )
     output_dir: Optional[str] = field(
-        default="./dpo/Llama-2-7b-chat-hf_zero-shot_combined_3epoch",
+        default="./dpo/gemma-7b-it_combined_1_epoch_3epoch",
         metadata={"help": "the output directory"},
     )
     learning_rate: Optional[float] = field(
@@ -65,13 +66,13 @@ class ScriptArguments:
     )
 
     per_device_train_batch_size: Optional[int] = field(
-        default=2, metadata={"help": "train batch size per device"}
+        default=1, metadata={"help": "train batch size per device"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=2, metadata={"help": "eval batch size per device"}
+        default=1, metadata={"help": "eval batch size per device"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=2, metadata={"help": "the number of gradient accumulation steps"}
+        default=1, metadata={"help": "the number of gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -137,12 +138,13 @@ if __name__ == "__main__":
     script_args = parser.parse_args_into_dataclasses()[0]
 
     # 1. load a pretrained model
-    model = AutoPeftModelForCausalLM.from_pretrained(
+    model = AutoModelForCausalLM.from_pretrained(
         script_args.model_name_or_path,
         low_cpu_mem_usage=True,
         torch_dtype=torch.float32,
         load_in_4bit=True,
-        is_trainable=True,
+        # is_trainable=True,
+
         # device_map={"": Accelerator().local_process_index},
         # device_map={"":torch.cuda.current_device()}
     )
@@ -157,14 +159,14 @@ if __name__ == "__main__":
             name for name, buffer in model.named_buffers() if buffer.dtype == torch.bool
         ]
 
-    model_ref = AutoPeftModelForCausalLM.from_pretrained(
-        script_args.model_name_or_path,
-        low_cpu_mem_usage=True,
-        torch_dtype=torch.float32,
-        load_in_4bit=True,
-        # device_map={"": Accelerator().local_process_index},
-        # device_map={"":torch.cuda.current_device()}
-    )
+    # model_ref = AutoModelForCausalLM.from_pretrained(
+    #     script_args.model_name_or_path,
+    #     low_cpu_mem_usage=True,
+    #     torch_dtype=torch.float32,
+    #     load_in_4bit=True,
+    #     # device_map={"": Accelerator().local_process_index},
+    #     # device_map={"":torch.cuda.current_device()}
+    # )
     if script_args.dataset_name == "social-dimensions":
         dataset = SocialDimensions(task="zero-shot", model=script_args.base_model)
     elif script_args.dataset_name == "socket":
@@ -218,6 +220,15 @@ if __name__ == "__main__":
             "fc_in",
             "fc_out",
             "wte",
+        ] if "llama" in script_args.base_model
+        else [
+            "q_proj",
+            "o_proj",
+            "k_proj",
+            "v_proj",
+            "gate_proj",
+            "up_proj",
+            "down_proj",
         ],
         bias="none",
         task_type="CAUSAL_LM",
@@ -226,7 +237,7 @@ if __name__ == "__main__":
     # 5. initialize the DPO trainer
     dpo_trainer = DPOTrainer(
         model,
-        model_ref,
+        # model_ref,
         args=training_args,
         beta=script_args.beta,
         train_dataset=train_dataset,

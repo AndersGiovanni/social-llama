@@ -56,12 +56,16 @@ class Evaluator:
             # "stop_sequences": self.social_dimensions.config.labels,
         }
         self.generation_kwargs_local = {
-            "max_new_tokens": 20,
+            "max_new_tokens": 1024,
             "temperature": 0.9,
         }
         if "llama" in model_id:
             self.tokenizer = AutoTokenizer.from_pretrained(
                 "meta-llama/Llama-2-7b-chat-hf"
+            )
+        elif "gemma" in model_id:
+            self.tokenizer = AutoTokenizer.from_pretrained(
+                "google/gemma-7b-it"
             )
         else:
             self.tokenizer = AutoTokenizer.from_pretrained(model_id)
@@ -123,6 +127,17 @@ class Evaluator:
                 "implicit-hate#implicit_hate",
                 "crowdflower",
                 "dailydialog",
+                "hasbiasedimplication",
+                "implicit-hate#stereotypical_hate",
+                "intentyn",
+                "tweet_offensive",
+                "empathy#distress_bin",
+                "complaints",
+                "hayati_politeness",
+                "stanfordpoliteness",
+                "hypo-l",
+                "rumor#rumor_bool",
+                "two-to-lie#receiver_truth",
             ]:
                 task_data, labels = self._prepare_socket_test_data(task=task)
                 save_path = (
@@ -329,8 +344,9 @@ if __name__ == "__main__":
     models = [
         # "AndersGiovanni/social-llama-7b-alpha",
         # "AndersGiovanni/social-llama-7b-beta",
-        "meta-llama/Llama-2-7b-chat-hf",
-        "google/gemma-7b-it",
+        "AndersGiovanni/social-gemma-7b-beta",
+        # "meta-llama/Llama-2-7b-chat-hf",
+        # "google/gemma-7b-it",
         # "mistralai/Mistral-7B-Instruct-v0.2"
         # "mistralai/Mistral-7B-Instruct-v0.2"
     ]
