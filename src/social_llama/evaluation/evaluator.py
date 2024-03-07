@@ -43,12 +43,7 @@ class Evaluator:
         )
         self.social_dimensions.get_data()
         self.chat_config = Configs()
-        self.socket_prompts: pd.DataFrame = pd.read_csv(
-            # DATA_DIR_EVALUATION_SOCKET
-            # / "socket_prompts_knowledge.csv"
-            DATA_DIR_EVALUATION_SOCKET
-            / "socket_prompts.csv"
-        )
+        self.socket_prompts: pd.DataFrame
         self.generation_kwargs = {
             "max_new_tokens": 50,
             "temperature": 0.9,
@@ -64,9 +59,7 @@ class Evaluator:
                 "meta-llama/Llama-2-7b-chat-hf"
             )
         elif "gemma" in model_id:
-            self.tokenizer = AutoTokenizer.from_pretrained(
-                "google/gemma-7b-it"
-            )
+            self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-7b-it")
         else:
             self.tokenizer = AutoTokenizer.from_pretrained(model_id)
         if model_id in [
@@ -88,7 +81,7 @@ class Evaluator:
                 model=model_id,
                 tokenizer=self.tokenizer,
                 device_map="auto",
-                **self.generation_kwargs_local
+                **self.generation_kwargs_local,
             )
             self.use_inference_client = False
 
@@ -96,6 +89,12 @@ class Evaluator:
         self, task: str = "social-dimensions", batch_size: int = 8, note: str = ""
     ) -> None:
         """Predict the labels for the test data."""
+        self.socket_prompts: pd.DataFrame = pd.read_csv(
+            DATA_DIR_EVALUATION_SOCKET / "socket_prompts.csv"
+            if note == "zero-shot"
+            else DATA_DIR_EVALUATION_SOCKET / "socket_prompts_knowledge.csv"
+        )
+
         if task == "social-dimensions":
             task_data = self._prepare_social_dim_test_data()
             labels = self.social_dimensions.config.labels
