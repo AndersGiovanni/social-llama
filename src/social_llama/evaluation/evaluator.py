@@ -56,8 +56,9 @@ class Evaluator:
             # "stop_sequences": self.social_dimensions.config.labels,
         }
         self.generation_kwargs_local = {
-            "max_new_tokens": 25,
+            "max_new_tokens": 200,
             "temperature": 0.9,
+            "do_sample": True
         }
         if "llama" in model_id:
             self.tokenizer = AutoTokenizer.from_pretrained(
@@ -116,29 +117,29 @@ class Evaluator:
             save_json(save_path, predictions)
         elif task == "socket":
             for task in [
-                "hahackathon#is_humor",
-                "sarc",
-                "contextual-abuse#IdentityDirectedAbuse",
-                "contextual-abuse#PersonDirectedAbuse",
+                # "hahackathon#is_humor",
+                # "sarc",
+                # "contextual-abuse#IdentityDirectedAbuse",
+                # "contextual-abuse#PersonDirectedAbuse",
                 "tweet_irony",
-                "questionintimacy",
-                "tweet_emotion",
-                "hateoffensive",
-                "implicit-hate#explicit_hate",
-                "implicit-hate#implicit_hate",
-                "crowdflower",
-                "dailydialog",
-                "hasbiasedimplication",
-                "implicit-hate#stereotypical_hate",
-                "intentyn",
-                "tweet_offensive",
-                "empathy#distress_bin",
-                "complaints",
-                "hayati_politeness",
-                "stanfordpoliteness",
-                "hypo-l",
-                "rumor#rumor_bool",
-                "two-to-lie#receiver_truth",
+                # "questionintimacy",
+                # "tweet_emotion",
+                # "hateoffensive",
+                # "implicit-hate#explicit_hate",
+                # "implicit-hate#implicit_hate",
+                # "crowdflower",
+                # "dailydialog",
+                # "hasbiasedimplication",
+                # "implicit-hate#stereotypical_hate",
+                # "intentyn",
+                # "tweet_offensive",
+                # "empathy#distress_bin",
+                # "complaints",
+                # "hayati_politeness",
+                # "stanfordpoliteness",
+                # "hypo-l",
+                # "rumor#rumor_bool",
+                # "two-to-lie#receiver_truth",
             ]:
                 task_data, labels = self._prepare_socket_test_data(task=task)
                 save_path = (
@@ -185,6 +186,10 @@ class Evaluator:
                         "label": label,
                     }
                 )
+                print(prompt)
+                print(prediction)
+                print(prediction_finder)
+                print("-"*20)
         return predictions
 
     def _predict(self, sample) -> List[str]:
