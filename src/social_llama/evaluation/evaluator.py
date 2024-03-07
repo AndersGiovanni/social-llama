@@ -56,7 +56,7 @@ class Evaluator:
             # "stop_sequences": self.social_dimensions.config.labels,
         }
         self.generation_kwargs_local = {
-            "max_new_tokens": 1024,
+            "max_new_tokens": 25,
             "temperature": 0.9,
         }
         if "llama" in model_id:
@@ -88,6 +88,7 @@ class Evaluator:
                 model=model_id,
                 tokenizer=self.tokenizer,
                 device_map="auto",
+                **self.generation_kwargs_local
             )
             self.use_inference_client = False
 
@@ -343,8 +344,8 @@ class Evaluator:
 if __name__ == "__main__":
     models = [
         # "AndersGiovanni/social-llama-7b-alpha",
-        # "AndersGiovanni/social-llama-7b-beta",
-        "AndersGiovanni/social-gemma-7b-beta",
+        "AndersGiovanni/social-llama-7b-beta",
+        # "AndersGiovanni/social-gemma-7b-beta",
         # "meta-llama/Llama-2-7b-chat-hf",
         # "google/gemma-7b-it",
         # "mistralai/Mistral-7B-Instruct-v0.2"
