@@ -51,7 +51,7 @@ class Evaluator:
             # "stop_sequences": self.social_dimensions.config.labels,
         }
         self.generation_kwargs_local = {
-            "max_new_tokens": 200,
+            "max_new_tokens": 250,
             "temperature": 0.9,
             "do_sample": True
         }
