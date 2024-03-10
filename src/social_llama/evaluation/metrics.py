@@ -21,6 +21,33 @@ tasks = [
 ]
 
 for task in tasks:
+    if task not in [
+        "hasbiasedimplication",
+        "implicit-hate#stereotypical_hate",
+        "intentyn",
+        "tweet_offensive",
+        "offensiveyn",
+        "empathy#distress_bin",
+        "complaints",
+        "hayati_politeness",
+        "stanfordpoliteness",
+        "hypo-l",
+        "rumor#rumor_bool",
+        "two-to-lie#receiver_truth",
+        "hahackathon#is_humor",
+        "sarc",
+        "contextual-abuse#IdentityDirectedAbuse",
+        "contextual-abuse#PersonDirectedAbuse",
+        "tweet_irony",
+        "questionintimacy",
+        "tweet_emotion",
+        "hateoffensive",
+        "implicit-hate#explicit_hate",
+        "implicit-hate#implicit_hate",
+        "crowdflower",
+        "dailydialog",
+    ]:
+        continue
     print("-" * 50)
     print(f"Task: {task}")
 
@@ -68,13 +95,17 @@ for task in tasks:
     # Create a bar chart
     plt.figure(figsize=(20, 10))
     colors = [
-        "#06d6a0"
-        if "knowledge" in model
-        else "#ef476f"
-        if "knwldg" in model
-        else "#ffd166"
-        if "RAG" in model
-        else "#118ab2"
+        (
+            "#06d6a0"
+            if "knowledge" in model
+            else (
+                "#ef476f"
+                if "knwldg" in model
+                else "#ffd166"
+                if "RAG" in model
+                else "#118ab2"
+            )
+        )
         for model in model_names
     ]
     bars = plt.barh(model_names, accuracies, color=colors)
