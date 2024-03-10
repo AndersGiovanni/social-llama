@@ -18,6 +18,7 @@ from langchain_core.documents import Document
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from transformers import AutoTokenizer
+from transformers import pipeline
 
 from social_llama.config import DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
 from social_llama.config import DATA_DIR_EVALUATION_SOCKET
@@ -363,14 +364,30 @@ for dataset_name in dataset_names:
         docs,
         remake_db=False,
     )
-
-    llm = InferenceClient(
-        model=model_name,
-        token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
-        timeout=20,
-    )
-    # Disable caching
-    llm.headers["x-use-cache"] = "0"
+    if model_name in ["AndersGiovanni/social-llama-7b-beta"]:
+        if "llama" in model_name:
+            tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf")
+        elif "gemma" in model_name:
+            tokenizer = AutoTokenizer.from_pretrained("google/gemma-7b-it")
+        else:
+            tokenizer = AutoTokenizer.from_pretrained(model_name)
+        llm = pipeline(
+            "text-generation",
+            model=model_name,
+            tokenizer=tokenizer,
+            device_map="auto",
+            **{"max_new_tokens": 250, "temperature": 0.9, "do_sample": True},
+        )
+        use_inference_client = False
+    else:
+        llm = InferenceClient(
+            model=model_name,
+            token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
+            timeout=20,
+        )
+        # Disable caching
+        llm.headers["x-use-cache"] = "0"
+        use_inference_client = True
 
     system_prompt = """You are part of a RAG classification system designed to categorize texts.
     Your task is to analyze the input text and classify it into one of the provided labels based on your general knowledge and the context provided by any retrieved documents that may be relevant.
