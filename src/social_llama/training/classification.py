@@ -292,10 +292,7 @@ def get_lora_model(model):
             lora_alpha=script_args.lora_alpha,
             lora_dropout=script_args.lora_dropout,
             bias=script_args.lora_bias,
-            target_modules=[
-                "q_proj",
-                "v_proj",
-            ],
+            target_modules=["q_proj", "o_proj", "k_proj", "v_proj", "gate_proj", "up_proj", "down_proj"],
         )
     else:
         peft_config = LoraConfig(
@@ -451,6 +448,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
 if __name__ == "__main__":
     # Set os.environ["WANDB_PROJECT"] to project name
     os.environ["WANDB_PROJECT"] = "ten-dim"
+    os.environ["WANDB__SERVICE_WAIT"] = "300"
 
     # Load script arguments
     parser = HfArgumentParser(ScriptArguments)
