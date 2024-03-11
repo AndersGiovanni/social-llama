@@ -3,6 +3,7 @@
 import logging
 import os
 import sys
+from typing import Dict
 from typing import List
 
 import datasets
@@ -460,32 +461,48 @@ for dataset_name in dataset_names:
 
         # This is need as the LLM client sometimes is just hanging and needs to be reinitialized
         while not has_output:
-            try:
-                output = llm.text_generation(
+            if use_inference_client:
+                try:
+                    output = llm.text_generation(
+                        template.format(
+                            context=decoded_text,
+                            text=sample["text"],
+                        ),
+                        max_new_tokens=250,
+                        temperature=0.9,
+                        # repetition_penalty=1.2,
+                    )
+                    has_output = True
+
+                except Exception as e:
+                    logging.info(f"Error: {e}")
+
+                    # Delete LLM
+                    del llm
+
+                    logging.info("Reinitializing LLM...")
+                    llm = InferenceClient(
+                        model=model_name,
+                        token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
+                        timeout=20,
+                    )
+                    # Disable caching
+                    llm.headers["x-use-cache"] = "0"
+            else:
+                # Predict
+                output: List[List[Dict[str, str]]] = llm(
                     template.format(
                         context=decoded_text,
                         text=sample["text"],
-                    ),
-                    max_new_tokens=150,
-                    temperature=0.7,
-                    # repetition_penalty=1.2,
+                    )
                 )
-                has_output = True
-
-            except Exception as e:
-                logging.info(f"Error: {e}")
-
-                # Delete LLM
-                del llm
-
-                logging.info("Reinitializing LLM...")
-                llm = InferenceClient(
-                    model=model_name,
-                    token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
-                    timeout=20,
-                )
-                # Disable caching
-                llm.headers["x-use-cache"] = "0"
+                # Select the generated output
+                prediction: List[str] = [item[0]["generated_text"] for item in output]
+                # Remove the prompt from the output
+                prediction: List[str] = [
+                    pred.replace(prompt, "")
+                    for pred, prompt in zip(prediction, sample["prompt"])
+                ]
 
         label = label_finder(output, labels)
 
