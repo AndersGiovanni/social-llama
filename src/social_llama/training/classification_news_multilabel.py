@@ -400,6 +400,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
                 "meta-llama/Llama-2-7b-hf",
                 "mistralai/Mistral-7B-v0.1",
                 "google/gemma-2b",
+                "google/gemma-7b",
             ]
             else False
         ),
