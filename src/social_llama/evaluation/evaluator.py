@@ -116,29 +116,29 @@ class Evaluator:
             save_json(save_path, predictions)
         elif task == "socket":
             for task in [
-                # "hahackathon#is_humor",
-                # "sarc",
-                # "contextual-abuse#IdentityDirectedAbuse",
-                # "contextual-abuse#PersonDirectedAbuse",
+                "hahackathon#is_humor",
+                "sarc",
+                "contextual-abuse#IdentityDirectedAbuse",
+                "contextual-abuse#PersonDirectedAbuse",
                 "tweet_irony",
-                # "questionintimacy",
-                # "tweet_emotion",
-                # "hateoffensive",
-                # "implicit-hate#explicit_hate",
-                # "implicit-hate#implicit_hate",
-                # "crowdflower",
-                # "dailydialog",
-                # "hasbiasedimplication",
-                # "implicit-hate#stereotypical_hate",
-                # "intentyn",
-                # "tweet_offensive",
-                # "empathy#distress_bin",
-                # "complaints",
-                # "hayati_politeness",
-                # "stanfordpoliteness",
-                # "hypo-l",
-                # "rumor#rumor_bool",
-                # "two-to-lie#receiver_truth",
+                "questionintimacy",
+                "tweet_emotion",
+                "hateoffensive",
+                "implicit-hate#explicit_hate",
+                "implicit-hate#implicit_hate",
+                "crowdflower",
+                "dailydialog",
+                "hasbiasedimplication",
+                "implicit-hate#stereotypical_hate",
+                "intentyn",
+                "tweet_offensive",
+                "empathy#distress_bin",
+                "complaints",
+                "hayati_politeness",
+                "stanfordpoliteness",
+                "hypo-l",
+                "rumor#rumor_bool",
+                "two-to-lie#receiver_truth",
             ]:
                 task_data, labels = self._prepare_socket_test_data(task=task)
                 save_path = (
@@ -185,10 +185,6 @@ class Evaluator:
                         "label": label,
                     }
                 )
-                print(prompt)
-                print(prediction)
-                print(prediction_finder)
-                print("-"*20)
         return predictions
 
     def _predict(self, sample) -> List[str]:
@@ -363,7 +359,7 @@ if __name__ == "__main__":
 
         # evaluator.predict(task="social-dimensions")
 
-        evaluator.predict(task="socket", note="zero-shot")
+        evaluator.predict(task="socket", note="knowledge")
 
         del evaluator
 

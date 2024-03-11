@@ -9,10 +9,12 @@ import torch
 from dotenv import load_dotenv
 from peft import AutoPeftModelForCausalLM
 from peft import LoraConfig
+from peft import PeftModel
 from transformers import AutoTokenizer
 from transformers import HfArgumentParser
 from transformers import TrainingArguments
 from transformers import AutoModelForCausalLM
+from transformers import BitsAndBytesConfig
 from trl import DPOTrainer
 
 from social_llama.data_processing.combine import Combined
@@ -34,7 +36,7 @@ class ScriptArguments:
     )
     # training parameters
     model_name_or_path: Optional[str] = field(
-        default="sft/gemma-7b-it_combined_1_epoch/final_merged_checkpoint",
+        default="sft/gemma-7b-it_combined_1_epoch_v2/final_checkpoint",
         metadata={"help": "the location of the SFT model name or path"},
     )
     base_model: Optional[str] = field(
@@ -46,7 +48,7 @@ class ScriptArguments:
         metadata={"help": "the dataset name"},
     )
     output_dir: Optional[str] = field(
-        default="./dpo/gemma-7b-it_combined_1_epoch_3epoch",
+        default="./dpo/gemma-7b-it_combined_1_epoch_3epoch_v2",
         metadata={"help": "the output directory"},
     )
     learning_rate: Optional[float] = field(
@@ -72,7 +74,7 @@ class ScriptArguments:
         default=1, metadata={"help": "eval batch size per device"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=1, metadata={"help": "the number of gradient accumulation steps"}
+        default=4, metadata={"help": "the number of gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -137,16 +139,43 @@ if __name__ == "__main__":
     parser = HfArgumentParser(ScriptArguments)
     script_args = parser.parse_args_into_dataclasses()[0]
 
-    # 1. load a pretrained model
-    model = AutoModelForCausalLM.from_pretrained(
-        script_args.model_name_or_path,
-        low_cpu_mem_usage=True,
-        torch_dtype=torch.float32,
+    # Load the base model.
+    bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
-        # is_trainable=True,
+        # load_in_8bit=True,
+        # llm_int8_threshold=6.0,
+        # llm_int8_has_fp16_weight=False,
+        # bnb_4bit_compute_dtype=torch.bfloat16,
+        # bnb_4bit_use_double_quant=True,
+        # bnb_4bit_quant_type="nf4",
+    )
 
-        # device_map={"": Accelerator().local_process_index},
-        # device_map={"":torch.cuda.current_device()}
+    # 1. load a pretrained model
+    # model = AutoPeftModelForCausalLM.from_pretrained(
+    #     script_args.model_name_or_path,
+    #     low_cpu_mem_usage=True,
+    #     torch_dtype=torch.float32,
+    #     load_in_4bit=False,
+    #     load_in_8bit=True,
+    #     is_trainable=True,
+    #     # device_map={"": Accelerator().local_process_index},
+    #     # device_map={"":torch.cuda.current_device()}
+    # )
+    model = AutoModelForCausalLM.from_pretrained(
+        script_args.base_model,
+        # load_in_4bit=True,
+        quantization_config=bnb_config,
+        # attn_implementation="flash_attention_2",
+        torch_dtype=torch.float32,
+        device_map="auto",
+    )
+    model_ref = AutoModelForCausalLM.from_pretrained(
+        script_args.base_model,
+        # load_in_4bit=True,
+        quantization_config=bnb_config,
+        # attn_implementation="flash_attention_2",
+        torch_dtype=torch.float32,
+        device_map="auto",
     )
     model.config.use_cache = False
 
@@ -159,11 +188,28 @@ if __name__ == "__main__":
             name for name, buffer in model.named_buffers() if buffer.dtype == torch.bool
         ]
 
-    # model_ref = AutoModelForCausalLM.from_pretrained(
+    # Load the adapter.
+    model = PeftModel.from_pretrained(
+        model,
+        script_args.model_name_or_path,
+        is_trainable=True,
+        # adapter_name="train",
+    )
+    # Load the adapter a second time, with a different name, which will be our reference model.
+    # model.load_adapter(script_args.model_name_or_path, adapter_name="reference")
+
+    model_ref = PeftModel.from_pretrained(
+        model_ref,
+        script_args.model_name_or_path,
+        # adapter_name="train",
+    )
+
+    # model_ref = AutoPeftModelForCausalLM.from_pretrained(
     #     script_args.model_name_or_path,
     #     low_cpu_mem_usage=True,
     #     torch_dtype=torch.float32,
-    #     load_in_4bit=True,
+    #     load_in_4bit=False,
+    #     load_in_8bit=True,
     #     # device_map={"": Accelerator().local_process_index},
     #     # device_map={"":torch.cuda.current_device()}
     # )
@@ -205,7 +251,7 @@ if __name__ == "__main__":
         fp16=False,
         # bf16=True,
         remove_unused_columns=False,
-        run_name=f"dpo_{MODEL_NAME}",
+        run_name=f"dpo_{MODEL_NAME}_v2",
     )
 
     peft_config = LoraConfig(
@@ -220,16 +266,17 @@ if __name__ == "__main__":
             "fc_in",
             "fc_out",
             "wte",
-        ] if "llama" in script_args.base_model
-        else [
-            "q_proj",
-            "o_proj",
-            "k_proj",
-            "v_proj",
-            "gate_proj",
-            "up_proj",
-            "down_proj",
-        ],
+        ], 
+        # if "llama" in script_args.base_model
+        # else [
+        #     "q_proj",
+        #     "o_proj",
+        #     "k_proj",
+        #     "v_proj",
+        #     "gate_proj",
+        #     "up_proj",
+        #     "down_proj",
+        # ],
         bias="none",
         task_type="CAUSAL_LM",
     )
@@ -237,15 +284,17 @@ if __name__ == "__main__":
     # 5. initialize the DPO trainer
     dpo_trainer = DPOTrainer(
         model,
-        # model_ref,
+        model_ref,
         args=training_args,
         beta=script_args.beta,
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
         tokenizer=tokenizer,
-        peft_config=peft_config,
+        # peft_config=peft_config,
         max_prompt_length=script_args.max_prompt_length,
         max_length=script_args.max_length,
+        # model_adapter_name="train",
+        # ref_adapter_name="reference",
     )
 
     # 6. train
