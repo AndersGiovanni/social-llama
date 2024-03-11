@@ -17,6 +17,7 @@ from peft import get_peft_model
 from scipy.special import expit
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import f1_score
+from sklearn.metrics import hamming_loss
 from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
 from transformers import AutoModelForSequenceClassification
@@ -27,7 +28,9 @@ from transformers import Trainer
 from transformers import TrainerCallback
 from transformers import TrainingArguments
 
+from social_llama.config import DATA_DIR_EVALUATION_TEN_DIM
 from social_llama.config import DATA_DIR_SOCIAL_DIMENSIONS_RAW
+from social_llama.utils import save_json
 
 
 load_dotenv()
@@ -38,7 +41,7 @@ class ScriptArguments:
     """Script arguments."""
 
     checkpoint: Optional[str] = field(
-        default="mistralai/Mistral-7B-v0.1",
+        default="google/gemma-2b",
         metadata={
             "help": "the model name",
             "choices": [
@@ -46,6 +49,8 @@ class ScriptArguments:
                 "meta-llama/Llama-2-7b-hf",
                 "mistralai/Mistral-7B-v0.1",
                 "roberta-large",
+                "google/gemma-2b",
+                "google/gemma-7b",
             ],
         },
     )
@@ -54,10 +59,10 @@ class ScriptArguments:
         default=10, metadata={"help": "the number of training epochs"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=4, metadata={"help": "the per device train batch size"}
+        default=8, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=4, metadata={"help": "the per device eval batch size"}
+        default=8, metadata={"help": "the per device eval batch size"}
     )
     log_with: Optional[str] = field(
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
@@ -66,7 +71,7 @@ class ScriptArguments:
         default=10, metadata={"help": "the logging frequency"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=2, metadata={"help": "the gradient accumulation steps"}
+        default=8, metadata={"help": "the gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -255,11 +260,13 @@ def compute_metrics(eval_pred):
     precision = precision_score(labels, predictions, average="micro")
     recall = recall_score(labels, predictions, average="micro")
     f1 = f1_score(labels, predictions, average="micro")
+    hamming_loss_ = hamming_loss(labels, predictions)
     return {
         "accuracy": accuracy,
         "precision": precision,
         "recall": recall,
         "f1": f1,
+        "hamming_loss": hamming_loss_,
     }
 
 
@@ -276,6 +283,8 @@ def get_lora_model(model):
         "HuggingFaceH4/zephyr-7b-beta",
         "mistralai/Mistral-7B-v0.1",
         "meta-llama/Llama-2-7b-hf",
+        "google/gemma-2b",
+        "google/gemma-7b",
     ]:
         peft_config = LoraConfig(
             task_type=TaskType.SEQ_CLS,
@@ -393,7 +402,18 @@ def train_model(dataset_dict, model, tokenizer, test=False):
         load_best_model_at_end=True,
         report_to=script_args.log_with,
         save_total_limit=1,
-        fp16=True,
+        fp16=(
+            True
+            if script_args.checkpoint
+            in [
+                "meta-llama/Llama-2-7b-chat-hf",
+                "meta-llama/Llama-2-7b-hf",
+                "mistralai/Mistral-7B-v0.1",
+                "google/gemma-2b",
+                "google/gemma-7b",
+            ]
+            else False
+        ),
         gradient_checkpointing=script_args.gradient_checkpointing,
         run_name=f"{script_args.checkpoint}-{script_args.note}",
         seed=42,
@@ -505,3 +525,46 @@ if __name__ == "__main__":
 
     # Push to hub
     trainer.push_to_hub()
+
+    # Predict on testset, and evaluate OVR
+    predictions = trainer.predict(tokenized_datasets["test"])
+
+    predictions_per_class = {
+        label: {
+            "pred": [],
+            "true": [],
+        }
+        for label in id2label.values()
+    }
+
+    for prediction_logits, true_label in zip(
+        predictions.predictions, predictions.label_ids
+    ):
+        for i, label in enumerate(id2label.values()):
+            probs = expit(prediction_logits[i])
+            predictions_per_class[label]["pred"].append((probs > 0.5).astype(int))
+            predictions_per_class[label]["true"].append(true_label[i])
+
+    metrics = {}
+
+    # Save metrics to json file
+    for label, preds in predictions_per_class.items():
+        accuracy = accuracy_score(preds["true"], preds["pred"])
+        precision = precision_score(preds["true"], preds["pred"], average="micro")
+        recall = recall_score(preds["true"], preds["pred"], average="micro")
+        f1 = f1_score(preds["true"], preds["pred"], average="micro")
+        hamming_loss_ = hamming_loss(preds["true"], preds["pred"])
+        scores = {
+            "accuracy": accuracy,
+            "precision": precision,
+            "recall": recall,
+            "f1": f1,
+            "hamming_loss": hamming_loss_,
+        }
+        metrics[label] = scores
+
+    save_json(
+        DATA_DIR_EVALUATION_TEN_DIM
+        / f"{script_args.checkpoint}_multilabel-model_ovr-eval.json",
+        metrics,
+    )
