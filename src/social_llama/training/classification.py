@@ -59,10 +59,10 @@ class ScriptArguments:
         default=10, metadata={"help": "the number of training epochs"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=8, metadata={"help": "the per device train batch size"}
+        default=16, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=8, metadata={"help": "the per device eval batch size"}
+        default=16, metadata={"help": "the per device eval batch size"}
     )
     log_with: Optional[str] = field(
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
@@ -71,7 +71,7 @@ class ScriptArguments:
         default=10, metadata={"help": "the logging frequency"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=8, metadata={"help": "the gradient accumulation steps"}
+        default=4, metadata={"help": "the gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -419,7 +419,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
 
     # Define the data collator
     data_collator = DataCollatorWithPadding(
-        tokenizer=tokenizer, padding=True, max_length=512
+        tokenizer=tokenizer, padding=True, max_length=1024
     )
 
     # Define the trainer
@@ -498,7 +498,7 @@ if __name__ == "__main__":
     tokenized_datasets = dataset_dict.map(
         lambda examples: tokenizer(
             examples["text"],
-            max_length=512,
+            max_length=1024,
             truncation=True,
             padding="max_length",
         ),
