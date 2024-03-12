@@ -41,7 +41,7 @@ class ScriptArguments:
     """Script arguments."""
 
     checkpoint: Optional[str] = field(
-        default="google/gemma-2b",
+        default="google/gemma-7b",
         metadata={
             "help": "the model name",
             "choices": [
@@ -59,10 +59,10 @@ class ScriptArguments:
         default=10, metadata={"help": "the number of training epochs"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=16, metadata={"help": "the per device train batch size"}
+        default=2, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=16, metadata={"help": "the per device eval batch size"}
+        default=2, metadata={"help": "the per device eval batch size"}
     )
     log_with: Optional[str] = field(
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
