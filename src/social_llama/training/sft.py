@@ -68,7 +68,7 @@ class ScriptArguments:
         default=1, metadata={"help": "the per device eval batch size"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=1, metadata={"help": "the gradient accumulation steps"}
+        default=4, metadata={"help": "the gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -111,7 +111,7 @@ class ScriptArguments:
         default=1, metadata={"help": "the logging frequency"}
     )
     note: Optional[str] = field(
-        default="1_epoch", metadata={"help": "the note to add to the run"}
+        default="1_epoch_v3", metadata={"help": "the note to add to the run"}
     )
     task: Optional[str] = field(
         default="zero-shot", metadata={"help": "the task to run"}
@@ -165,16 +165,16 @@ peft_config = LoraConfig(
     lora_dropout=script_args.lora_dropout,
     target_modules=(
         ["q_proj", "v_proj"]
-        if "llama" in script_args.model_name
-        else [
-            "q_proj",
-            "o_proj",
-            "k_proj",
-            "v_proj",
-            "gate_proj",
-            "up_proj",
-            "down_proj",
-        ]
+        # if "llama" in script_args.model_name
+        # else [
+        #     "q_proj",
+        #     "o_proj",
+        #     "k_proj",
+        #     "v_proj",
+        #     "gate_proj",
+        #     "up_proj",
+        #     "down_proj",
+        # ]
     ),
     bias="none",
     task_type="CAUSAL_LM",
@@ -232,7 +232,7 @@ torch.cuda.empty_cache()
 model = AutoPeftModelForCausalLM.from_pretrained(
     output_dir_final, device_map="auto", torch_dtype=torch.bfloat16
 )
-model = model.merge_and_unload()
+# model = model.merge_and_unload()
 
-output_merged_dir = os.path.join(output_dir, "final_merged_checkpoint")
-model.save_pretrained(output_merged_dir, safe_serialization=True)
+# output_merged_dir = os.path.join(output_dir, "final_merged_checkpoint")
+# model.save_pretrained(output_merged_dir, safe_serialization=True)
