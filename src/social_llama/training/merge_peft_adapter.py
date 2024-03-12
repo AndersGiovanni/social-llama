@@ -19,14 +19,15 @@ class ScriptArguments:
 
     adapter_model_name: Optional[str] = field(
         # default="dpo/Llama-2-7b-chat-hf_zero-shot_combined_3epoch/final_checkpoint/",
-        default="dpo/gemma-7b-it_combined_1_epoch_3epoch/final_checkpoint/",
+        default="dpo/gemma-7b-it_combined_1_epoch_3epoch_v2/final_checkpoint/",
+        # default="dpo/gemma-7b-it_combined_1_epoch_3epoch/final_checkpoint/",
         metadata={"help": "the model name"},
     )
     base_model_name: Optional[str] = field(
         default="google/gemma-7b-it", metadata={"help": "the model name"}
     )
     output_name: Optional[str] = field(
-        default="social-gemma-7b-beta", metadata={"help": "the model name"}
+        default="social-gemma-7b-beta_v2", metadata={"help": "the model name"}
     )
 
 
