@@ -10,6 +10,7 @@ import pandas as pd
 import torch
 from datasets import Dataset
 from datasets import load_dataset
+from datasets import disable_caching
 from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
 from torch.utils.data import DataLoader
@@ -21,14 +22,15 @@ from transformers import pipeline
 from social_llama.config import DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
 from social_llama.config import DATA_DIR_EVALUATION_SOCKET
 from social_llama.config import Configs
-from social_llama.data_processing.social_dimensions import SocialDimensions
+# from social_llama.data_processing.social_dimensions import SocialDimensions
 from social_llama.evaluation.helper_functions import label_check
 from social_llama.evaluation.helper_functions import label_finder
 from social_llama.utils import get_device
 from social_llama.utils import save_json
 
-
 load_dotenv()
+
+disable_caching()
 
 
 class Evaluator:
@@ -38,10 +40,10 @@ class Evaluator:
         """Initialize the evaluator."""
         self.socket_tasks: List[str] = ["CLS", "REG", "PAIR", "SPAN"]
         self.model_id = model_id
-        self.social_dimensions = SocialDimensions(
-            task="zero-shot", model="meta-llama/Llama-2-7b-chat-hf"
-        )
-        self.social_dimensions.get_data()
+        # self.social_dimensions = SocialDimensions(
+        #     task="zero-shot", model="meta-llama/Llama-2-7b-chat-hf"
+        # )
+        # self.social_dimensions.get_data()
         self.chat_config = Configs()
         self.socket_prompts: pd.DataFrame
         self.generation_kwargs = {
@@ -97,23 +99,24 @@ class Evaluator:
         )
 
         if task == "social-dimensions":
-            task_data = self._prepare_social_dim_test_data()
-            labels = self.social_dimensions.config.labels
-            save_path = (
-                DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
-                / f"{self.model_id}_predictions_{note}.json"
-            )
-            task_data = DataLoader(
-                task_data,
-                batch_size=1 if self.use_inference_client else batch_size,
-                shuffle=False,
-                num_workers=0,
-                drop_last=False,
-                collate_fn=self.collate_fn,
-            )
+            a = 1
+            # task_data = self._prepare_social_dim_test_data()
+            # labels = self.social_dimensions.config.labels
+            # save_path = (
+            #     DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
+            #     / f"{self.model_id}_predictions_{note}.json"
+            # )
+            # task_data = DataLoader(
+            #     task_data,
+            #     batch_size=1 if self.use_inference_client else batch_size,
+            #     shuffle=False,
+            #     num_workers=0,
+            #     drop_last=False,
+            #     collate_fn=self.collate_fn,
+            # )
 
-            predictions = self._process_samples(task_data, labels)
-            save_json(save_path, predictions)
+            # predictions = self._process_samples(task_data, labels)
+            # save_json(save_path, predictions)
         elif task == "socket":
             for task in [
                 # "hahackathon#is_humor",
@@ -185,10 +188,6 @@ class Evaluator:
                         "label": label,
                     }
                 )
-                print(prompt)
-                print(prediction)
-                print(prediction_finder)
-                print("-"*20)
         return predictions
 
     def _predict(self, sample) -> List[str]:
@@ -220,30 +219,30 @@ class Evaluator:
 
         return prediction
 
-    def _prepare_social_dim_test_data(
-        self,
-    ) -> List[Dict[str, Union[str, int, List[str]]]]:
-        """Prepare the test data for the social dimension task."""
-        test_data: Dataset = self.social_dimensions.test_data
+    # def _prepare_social_dim_test_data(
+    #     self,
+    # ) -> List[Dict[str, Union[str, int, List[str]]]]:
+    #     """Prepare the test data for the social dimension task."""
+    #     test_data: Dataset = self.social_dimensions.test_data
 
-        test_data_formatted = {}
+    #     test_data_formatted = {}
 
-        # Loop through each JSON object and group by 'idx'
-        for obj in test_data:
-            idx = obj["idx"]
-            response_good = obj["response_good"]
+    #     # Loop through each JSON object and group by 'idx'
+    #     for obj in test_data:
+    #         idx = obj["idx"]
+    #         response_good = obj["response_good"]
 
-            if idx not in test_data_formatted:
-                test_data_formatted[idx] = {
-                    "label": [],
-                    "idx": idx,
-                    "prompt": self.social_dimensions._prompt_function(obj, is_q_a=True),
-                }
+    #         if idx not in test_data_formatted:
+    #             test_data_formatted[idx] = {
+    #                 "label": [],
+    #                 "idx": idx,
+    #                 "prompt": self.social_dimensions._prompt_function(obj, is_q_a=True),
+    #             }
 
-            test_data_formatted[idx]["label"].append(response_good)
+    #         test_data_formatted[idx]["label"].append(response_good)
 
-        # Return a list of all the values in the dictionary
-        return list(test_data_formatted.values())
+    #     # Return a list of all the values in the dictionary
+    #     return list(test_data_formatted.values())
 
     def _prepare_socket_test_data(
         self, task: str
@@ -267,8 +266,9 @@ class Evaluator:
         knowledge = "" if pd.isna(knowledge) else knowledge
 
         dataset: Dataset = load_dataset(
-            "Blablablab/SOCKET", task, split="test", trust_remote_code=True
+            "Blablablab/SOCKET", task, split="test", #trust_remote_code=True
         )
+        dataset.cleanup_cache_files()
 
         # if length is more than 2000, randomly sample 2000
         if len(dataset) > 2000:
