@@ -345,7 +345,8 @@ if __name__ == "__main__":
     models = [
         # "AndersGiovanni/social-llama-7b-alpha",
         # "AndersGiovanni/social-llama-7b-beta",
-        "AndersGiovanni/social-gemma-7b-beta_v2"
+        # "AndersGiovanni/social-gemma-7b-beta_v2"
+        "AndersGiovanni/social-gemma-7b-beta_v2_sft"
         # "AndersGiovanni/social-gemma-7b-beta",
         # "meta-llama/Llama-2-7b-chat-hf",
         # "google/gemma-7b-it",
@@ -360,7 +361,7 @@ if __name__ == "__main__":
 
         # evaluator.predict(task="social-dimensions")
 
-        evaluator.predict(task="socket", note="zero-shot")
+        evaluator.predict(task="socket", note="knowledge")
 
         del evaluator
 
