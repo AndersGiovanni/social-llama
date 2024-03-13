@@ -9,8 +9,8 @@ from typing import Union
 import pandas as pd
 import torch
 from datasets import Dataset
-from datasets import load_dataset
 from datasets import disable_caching
+from datasets import load_dataset
 from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
 from torch.utils.data import DataLoader
@@ -19,14 +19,16 @@ from transformers import AutoConfig
 from transformers import AutoTokenizer
 from transformers import pipeline
 
-from social_llama.config import DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
+# from social_llama.config import DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
 from social_llama.config import DATA_DIR_EVALUATION_SOCKET
 from social_llama.config import Configs
+
 # from social_llama.data_processing.social_dimensions import SocialDimensions
 from social_llama.evaluation.helper_functions import label_check
 from social_llama.evaluation.helper_functions import label_finder
 from social_llama.utils import get_device
 from social_llama.utils import save_json
+
 
 load_dotenv()
 
@@ -55,7 +57,7 @@ class Evaluator:
         self.generation_kwargs_local = {
             "max_new_tokens": 250,
             "temperature": 0.9,
-            "do_sample": True
+            "do_sample": True,
         }
         if "llama" in model_id:
             self.tokenizer = AutoTokenizer.from_pretrained(
@@ -99,7 +101,7 @@ class Evaluator:
         )
 
         if task == "social-dimensions":
-            a = 1
+            pass
             # task_data = self._prepare_social_dim_test_data()
             # labels = self.social_dimensions.config.labels
             # save_path = (
@@ -266,7 +268,9 @@ class Evaluator:
         knowledge = "" if pd.isna(knowledge) else knowledge
 
         dataset: Dataset = load_dataset(
-            "Blablablab/SOCKET", task, split="test", #trust_remote_code=True
+            "Blablablab/SOCKET",
+            task,
+            split="test",  # trust_remote_code=True
         )
         dataset.cleanup_cache_files()
 

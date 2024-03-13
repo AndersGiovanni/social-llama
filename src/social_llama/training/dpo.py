@@ -7,14 +7,15 @@ from typing import Optional
 
 import torch
 from dotenv import load_dotenv
-from peft import AutoPeftModelForCausalLM
+
+# from peft import AutoPeftModelForCausalLM
 from peft import LoraConfig
 from peft import PeftModel
+from transformers import AutoModelForCausalLM
 from transformers import AutoTokenizer
+from transformers import BitsAndBytesConfig
 from transformers import HfArgumentParser
 from transformers import TrainingArguments
-from transformers import AutoModelForCausalLM
-from transformers import BitsAndBytesConfig
 from trl import DPOTrainer
 
 from social_llama.data_processing.combine import Combined
@@ -266,7 +267,7 @@ if __name__ == "__main__":
             "fc_in",
             "fc_out",
             "wte",
-        ], 
+        ],
         # if "llama" in script_args.base_model
         # else [
         #     "q_proj",
