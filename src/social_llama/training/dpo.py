@@ -36,7 +36,7 @@ class ScriptArguments:
     )
     # training parameters
     model_name_or_path: Optional[str] = field(
-        default="sft/gemma-7b-it_combined_1_epoch_v2/final_checkpoint",
+        default="sft/gemma-7b-it_combined_1_epoch_v3/final_checkpoint",
         metadata={"help": "the location of the SFT model name or path"},
     )
     base_model: Optional[str] = field(
@@ -48,7 +48,7 @@ class ScriptArguments:
         metadata={"help": "the dataset name"},
     )
     output_dir: Optional[str] = field(
-        default="./dpo/gemma-7b-it_combined_1_epoch_3epoch_v2",
+        default="./dpo/gemma-7b-it_combined_1_epoch_3epoch_v3",
         metadata={"help": "the output directory"},
     )
     learning_rate: Optional[float] = field(
@@ -248,8 +248,8 @@ if __name__ == "__main__":
         lr_scheduler_type=script_args.lr_scheduler_type,
         warmup_steps=script_args.warmup_steps,
         optim=script_args.optimizer_type,
-        fp16=False,
-        # bf16=True,
+        # fp16=False,
+        bf16=True,
         remove_unused_columns=False,
         run_name=f"dpo_{MODEL_NAME}_v2",
     )
