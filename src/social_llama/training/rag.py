@@ -3,9 +3,9 @@
 import logging
 import os
 import sys
+import time
 from typing import Dict
 from typing import List
-import time
 
 import datasets
 import pandas as pd
@@ -194,7 +194,9 @@ class HuggingfaceChatTemplate:
         """
         self.model_name: str = model_name
         if "llama" in model_name:
-            self.tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf")
+            self.tokenizer = AutoTokenizer.from_pretrained(
+                "meta-llama/Llama-2-7b-chat-hf"
+            )
         elif "gemma" in model_name:
             self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-7b-it")
         else:
@@ -318,10 +320,10 @@ for dataset_name in dataset_names:
 
     else:
         dataset = datasets.load_dataset(
-            "Blablablab/SOCKET", dataset_name, split="train" #, trust_remote_code=True
+            "Blablablab/SOCKET", dataset_name, split="train"  # , trust_remote_code=True
         )
         dataset_test = datasets.load_dataset(
-            "Blablablab/SOCKET", dataset_name, split="test" #, trust_remote_code=True
+            "Blablablab/SOCKET", dataset_name, split="test"  # , trust_remote_code=True
         )
         # if length is more than 2000, randomly sample 2000
         if len(dataset_test) > 2000:
@@ -353,7 +355,9 @@ for dataset_name in dataset_names:
 
     # Specify the model name you want to use
     # model_name = "meta-llama/Llama-2-7b-chat-hf"
-    model_name = sys.argv[1] if len(sys.argv) > 1 else "AndersGiovanni/social-llama-7b-beta"
+    model_name = (
+        sys.argv[1] if len(sys.argv) > 1 else "AndersGiovanni/social-llama-7b-beta"
+    )
 
     RAG = RAGClassification(
         model_name=model_name,
@@ -507,10 +511,13 @@ for dataset_name in dataset_names:
                 # Select the generated output
                 prediction: str = output[0]["generated_text"]
                 # Remove the prompt from the output
-                prediction: str = prediction.replace(template.format(
+                prediction: str = prediction.replace(
+                    template.format(
                         context=decoded_text,
                         text=sample["text"],
-                    ), "")
+                    ),
+                    "",
+                )
                 has_output = True
 
         end_time = time.time()
@@ -525,7 +532,7 @@ for dataset_name in dataset_names:
                 "prediction": label,
                 "output": prediction,
                 "documents": decoded_text,
-                "inference_time": end_time - start_time
+                "inference_time": end_time - start_time,
             }
         )
 
