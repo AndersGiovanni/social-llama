@@ -41,7 +41,7 @@ class ScriptArguments:
     """Script arguments."""
 
     checkpoint: Optional[str] = field(
-        default="google/gemma-7b",
+        default="google/gemma-2b",
         metadata={
             "help": "the model name",
             "choices": [
@@ -99,7 +99,7 @@ class ScriptArguments:
         default="./ten-dim", metadata={"help": "the output directory"}
     )
     note: Optional[str] = field(
-        default="", metadata={"help": "the note to add to the run"}
+        default="same_BS", metadata={"help": "the note to add to the run"}
     )
 
 
@@ -419,7 +419,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
 
     # Define the data collator
     data_collator = DataCollatorWithPadding(
-        tokenizer=tokenizer, padding=True, max_length=1024
+        tokenizer=tokenizer, padding=True, max_length=512
     )
 
     # Define the trainer
@@ -498,7 +498,7 @@ if __name__ == "__main__":
     tokenized_datasets = dataset_dict.map(
         lambda examples: tokenizer(
             examples["text"],
-            max_length=1024,
+            max_length=512,
             truncation=True,
             padding="max_length",
         ),
@@ -563,6 +563,6 @@ if __name__ == "__main__":
 
     save_json(
         DATA_DIR_EVALUATION_TEN_DIM
-        / f"{script_args.checkpoint}_multilabel-model_ovr-eval.json",
+        / f"{script_args.checkpoint}_multilabel-model_ovr-eval-sameBS.json",
         metrics,
     )
