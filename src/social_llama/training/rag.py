@@ -242,8 +242,8 @@ class HuggingfaceChatTemplate:
 # Load the data
 dataset_names = ["social-dimensions"]
 dataset_names = [
-    "hasbiasedimplication",
-    "implicit-hate#stereotypical_hate",
+    # "hasbiasedimplication",
+    # "implicit-hate#stereotypical_hate",
     "intentyn",
     "tweet_offensive",
     "offensiveyn",
@@ -523,7 +523,7 @@ for dataset_name in dataset_names:
                 "text": sample["text"],
                 "label": sample["label"],
                 "prediction": label,
-                "output": output,
+                "output": prediction,
                 "documents": decoded_text,
                 "inference_time": end_time - start_time
             }
