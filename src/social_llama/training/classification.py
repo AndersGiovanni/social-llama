@@ -99,7 +99,7 @@ class ScriptArguments:
         default="./ten-dim", metadata={"help": "the output directory"}
     )
     note: Optional[str] = field(
-        default="same_BS", metadata={"help": "the note to add to the run"}
+        default="TEST-SPLIT", metadata={"help": "the note to add to the run"}
     )
 
 
@@ -171,11 +171,13 @@ def split_data(data):
     Returns:
         DatasetDict: The split data.
     """
-    data = data.train_test_split(test_size=0.3, seed=42)  # 70% for train, 30% for test
+    data = data.train_test_split(
+        test_size=0.8, seed=1337
+    )  # 80% for train, 20% for test
     test = data["test"]
     test = test.train_test_split(
         test_size=0.5, seed=42
-    )  # 15% for validation, 15% for test
+    )  # 10% for validation, 10% for test
     data["test"] = test["test"]
     data["validation"] = test["train"]
 
@@ -292,7 +294,15 @@ def get_lora_model(model):
             lora_alpha=script_args.lora_alpha,
             lora_dropout=script_args.lora_dropout,
             bias=script_args.lora_bias,
-            target_modules=["q_proj", "o_proj", "k_proj", "v_proj", "gate_proj", "up_proj", "down_proj"],
+            target_modules=[
+                "q_proj",
+                "o_proj",
+                "k_proj",
+                "v_proj",
+                "gate_proj",
+                "up_proj",
+                "down_proj",
+            ],
         )
     else:
         peft_config = LoraConfig(
@@ -400,7 +410,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
         report_to=script_args.log_with,
         save_total_limit=1,
         fp16=(
-            True
+            False
             if script_args.checkpoint
             in [
                 "meta-llama/Llama-2-7b-chat-hf",
@@ -419,7 +429,7 @@ def train_model(dataset_dict, model, tokenizer, test=False):
 
     # Define the data collator
     data_collator = DataCollatorWithPadding(
-        tokenizer=tokenizer, padding=True, max_length=512
+        tokenizer=tokenizer, padding=True, max_length=1024
     )
 
     # Define the trainer
@@ -498,7 +508,7 @@ if __name__ == "__main__":
     tokenized_datasets = dataset_dict.map(
         lambda examples: tokenizer(
             examples["text"],
-            max_length=512,
+            max_length=1024,
             truncation=True,
             padding="max_length",
         ),
@@ -563,6 +573,6 @@ if __name__ == "__main__":
 
     save_json(
         DATA_DIR_EVALUATION_TEN_DIM
-        / f"{script_args.checkpoint}_multilabel-model_ovr-eval-sameBS.json",
+        / f"{script_args.checkpoint}_multilabel-model_ovr-eval-TEST-SPLIT.json",
         metrics,
     )
