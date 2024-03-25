@@ -29,14 +29,14 @@ class ScriptArguments:
     """Script arguments."""
 
     model_name: Optional[str] = field(
-        default="google/gemma-7b-it",
+        default="meta-llama/Llama-2-7b-hf",
         metadata={"help": "the model name"},
     )
     log_with: Optional[str] = field(
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
     )
     dataset_name: Optional[str] = field(
-        default="combined",
+        default="socket",
         metadata={"help": "the dataset name"},
     )
     split: Optional[str] = field(default="train", metadata={"help": "the split to use"})
@@ -50,7 +50,7 @@ class ScriptArguments:
         default=10, metadata={"help": "the number of workers"}
     )
     num_train_epochs: Optional[int] = field(
-        default=1, metadata={"help": "the number of training epochs"}
+        default=5, metadata={"help": "the number of training epochs"}
     )
     # max_steps: Optional[int] = field(
     #     default=3000, metadata={"help": "the maximum number of sgd steps"}
@@ -68,7 +68,7 @@ class ScriptArguments:
         default=1, metadata={"help": "the per device eval batch size"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=4, metadata={"help": "the gradient accumulation steps"}
+        default=32, metadata={"help": "the gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -202,8 +202,8 @@ training_args = TrainingArguments(
     lr_scheduler_type=script_args.lr_scheduler_type,
     warmup_steps=script_args.num_warmup_steps,
     optim=script_args.optimizer_type,
-    fp16=True,
-    # bf16=True,
+    # fp16=True,
+    bf16=True,
     remove_unused_columns=False,
     run_name=f"sft_{script_args.model_name.split('/')[-1]}_{script_args.task}_{script_args.dataset_name}_{script_args.note}",
     seed=42,

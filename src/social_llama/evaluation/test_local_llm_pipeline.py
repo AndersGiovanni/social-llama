@@ -6,7 +6,7 @@ from transformers import pipeline
 
 
 # Initialize the model and tokenizer
-model = "google/gemma-7b-it"
+model = "sft/gemma-7b-it_combined_1_epoch_v3"
 tokenizer = AutoTokenizer.from_pretrained(model)
 text_generation_pipeline = pipeline(
     "text-generation",

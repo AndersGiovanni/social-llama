@@ -69,6 +69,7 @@ class Evaluator:
             self.tokenizer = AutoTokenizer.from_pretrained(model_id)
         if model_id in [
             "meta-llama/Llama-2-7b-chat-hf",
+            "meta-llama/Llama-2-7b-hf",
             "meta-llama/Llama-2-13b-chat-hf",
             "mistralai/Mistral-7B-Instruct-v0.2",
             "google/gemma-7b-it",
@@ -354,9 +355,10 @@ if __name__ == "__main__":
         # "AndersGiovanni/social-llama-7b-alpha",
         # "AndersGiovanni/social-llama-7b-beta",
         # "AndersGiovanni/social-gemma-7b-beta_v2"
-        "AndersGiovanni/social-gemma-7b-beta_v2_sft"
+        # "AndersGiovanni/social-gemma-7b-beta_v2_sft"
         # "AndersGiovanni/social-gemma-7b-beta",
-        # "meta-llama/Llama-2-7b-chat-hf",
+        # "meta-llama/Llama-2-7b-hf",
+        "AndersGiovanni/social-llama-7b-alpha-v2"
         # "google/gemma-7b-it",
         # "mistralai/Mistral-7B-Instruct-v0.2"
         # "mistralai/Mistral-7B-Instruct-v0.2"
@@ -369,7 +371,7 @@ if __name__ == "__main__":
 
         # evaluator.predict(task="social-dimensions")
 
-        evaluator.predict(task="socket", note="knowledge")
+        evaluator.predict(task="socket", note="zero-shot")
 
         del evaluator
 

@@ -37,19 +37,19 @@ class ScriptArguments:
     )
     # training parameters
     model_name_or_path: Optional[str] = field(
-        default="sft/gemma-7b-it_combined_1_epoch_v3/final_checkpoint",
+        default="sft/Llama-2-7b-hf_socket_5_epoch_v3/final_checkpoint",
         metadata={"help": "the location of the SFT model name or path"},
     )
     base_model: Optional[str] = field(
-        default="google/gemma-7b-it",
+        default="meta-llama/Llama-2-7b-hf",
         metadata={"help": "the base model name or path"},
     )
     dataset_name: Optional[str] = field(
-        default="combined",
+        default="socket",
         metadata={"help": "the dataset name"},
     )
     output_dir: Optional[str] = field(
-        default="./dpo/gemma-7b-it_combined_1_epoch_3epoch_v3",
+        default="./dpo/Llama-2-7b-hf_socket_5_epoch_v3",
         metadata={"help": "the output directory"},
     )
     learning_rate: Optional[float] = field(
@@ -75,7 +75,7 @@ class ScriptArguments:
         default=1, metadata={"help": "eval batch size per device"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=4, metadata={"help": "the number of gradient accumulation steps"}
+        default=32, metadata={"help": "the number of gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}

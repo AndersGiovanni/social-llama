@@ -19,29 +19,28 @@ class ScriptArguments:
 
     adapter_model_name: Optional[str] = field(
         # default="dpo/Llama-2-7b-chat-hf_zero-shot_combined_3epoch/final_checkpoint/",
-        default="sft/gemma-7b-it_combined_1_epoch_v2/final_checkpoint/",
-        # default="dpo/gemma-7b-it_combined_1_epoch_3epoch/final_checkpoint/",
+        default="dpo/Llama-2-7b-hf_socket_5_epoch_v3/final_checkpoint/",
         metadata={"help": "the model name"},
     )
     base_model_name: Optional[str] = field(
-        default="google/gemma-7b-it", metadata={"help": "the model name"}
+        default="meta-llama/Llama-2-7b-hf", metadata={"help": "the model name"}
     )
     output_name: Optional[str] = field(
-        default="social-gemma-7b-beta_v2_sft", metadata={"help": "the model name"}
+        default="social-llama-7b-alpha-v2", metadata={"help": "the model name"}
     )
-
+    
 
 parser = HfArgumentParser(ScriptArguments)
 script_args = parser.parse_args_into_dataclasses()[0]
-# assert (
-#     script_args.adapter_model_name is not None
-# ), "please provide the name of the Adapter you would like to merge"
-# assert (
-#     script_args.base_model_name is not None
-# ), "please provide the name of the Base model"
-# assert (
-#     script_args.base_model_name is not None
-# ), "please provide the output name of the merged model"
+assert (
+    script_args.adapter_model_name is not None
+), "please provide the name of the Adapter you would like to merge"
+assert (
+    script_args.base_model_name is not None
+), "please provide the name of the Base model"
+assert (
+    script_args.base_model_name is not None
+), "please provide the output name of the merged model"
 
 peft_config = PeftConfig.from_pretrained(script_args.adapter_model_name)
 if peft_config.task_type == "SEQ_CLS":
@@ -65,3 +64,5 @@ model = model.merge_and_unload()
 model.save_pretrained(f"{script_args.output_name}")
 tokenizer.save_pretrained(f"{script_args.output_name}")
 model.push_to_hub(f"{script_args.output_name}", use_temp_dir=False)
+
+tokenizer.push_to_hub(f"{script_args.output_name}", use_temp_dir=False)
