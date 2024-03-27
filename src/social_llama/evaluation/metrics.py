@@ -6,7 +6,7 @@ import os
 # Suppress warnings
 import warnings
 
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.metrics import accuracy_score
 
@@ -181,44 +181,44 @@ for task in tasks:
         continue
 
     # Create a bar chart
-    # plt.figure(figsize=(20, 10))
-    # colors = [
-    #     (
-    #         "#06d6a0"
-    #         if "knowledge" in model
-    #         else (
-    #             "#ef476f"
-    #             if "knwldg" in model
-    #             else "#ffd166"
-    #             if "RAG" in model
-    #             else "#118ab2"
-    #         )
-    #     )
-    #     for model in model_names
-    # ]
-    # bars = plt.barh(model_names, accuracies, color=colors)
-    # # Adjust subplot left margin
-    # plt.subplots_adjust(left=0.4)
-    # plt.xlabel("Accuracy")
-    # plt.title(f"Performance Metrics for Task: {task}")
-    # plt.xlim(0, 1)  # Assuming accuracy is between 0 and 1
-    # for bar in bars:
-    #     plt.text(
-    #         bar.get_width() + 0.01,
-    #         bar.get_y() + bar.get_height() / 2,
-    #         f"{bar.get_width():.3f}",
-    #         va="center",
-    #         ha="left",
-    #     )
-    # plt.savefig(
-    #     os.path.join(DATA_DIR_EVALUATION_SOCKET, "assets", f"{task}_accuracy.png")
-    # )
+    plt.figure(figsize=(20, 10))
+    colors = [
+        (
+            "#06d6a0"
+            if "knowledge" in model
+            else (
+                "#ef476f"
+                if "knwldg" in model
+                else "#ffd166"
+                if "RAG" in model
+                else "#118ab2"
+            )
+        )
+        for model in model_names
+    ]
+    bars = plt.barh(model_names, accuracies, color=colors)
+    # Adjust subplot left margin
+    plt.subplots_adjust(left=0.4)
+    plt.xlabel("Accuracy")
+    plt.title(f"Performance Metrics for Task: {task}")
+    plt.xlim(0, 1)  # Assuming accuracy is between 0 and 1
+    for bar in bars:
+        plt.text(
+            bar.get_width() + 0.01,
+            bar.get_y() + bar.get_height() / 2,
+            f"{bar.get_width():.3f}",
+            va="center",
+            ha="left",
+        )
+    plt.savefig(
+        os.path.join(DATA_DIR_EVALUATION_SOCKET, "assets", f"{task}_accuracy.png")
+    )
     # plt.show()
 
 # Save the results in a CSV
-results_llama.to_csv(
-    os.path.join(DATA_DIR_EVALUATION_SOCKET, "assets/results_llama.csv"), index=False
-)
-results_gemma.to_csv(
-    os.path.join(DATA_DIR_EVALUATION_SOCKET, "assets/results_gemma.csv"), index=False
-)
+# results_llama.to_csv(
+#     os.path.join(DATA_DIR_EVALUATION_SOCKET, "assets/results_llama.csv"), index=False
+# )
+# results_gemma.to_csv(
+#     os.path.join(DATA_DIR_EVALUATION_SOCKET, "assets/results_gemma.csv"), index=False
+# )
