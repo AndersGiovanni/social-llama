@@ -1,7 +1,7 @@
 """Generate reverse instructions for the socket benchmark."""
 
-from typing import Dict
-from typing import List
+from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import as_completed
 
 import pandas as pd
 from datasets import load_dataset
@@ -24,7 +24,7 @@ socket_prompts: pd.DataFrame = pd.read_csv(
 )
 
 # Get all classification tasks
-start_index = 0  # Specify the start index
+start_index = 1  # Specify the start index
 stop_index = 5  # Specify the stop index
 cls_tasks = socket_prompts[socket_prompts["type"] == "CLS"][start_index:stop_index]
 
@@ -69,6 +69,39 @@ for task in tqdm(cls_tasks["task"].unique(), desc="Load and sample data"):
 client = OpenAI()
 
 
+# Function to process each sample
+def process_sample(
+    sample, labels_mapping, labels, system_prompt, reverse_instructions_prompts, client
+):
+    """Process each sample to generate reverse instructions."""
+    text = sample["text"][0]
+    label = labels_mapping[sample["label"].item()]
+
+    sample_reverse_instruction_prompt = reverse_instructions_prompts.format(
+        text=text, label_list=labels, label=label
+    )
+
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo-0125",
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": sample_reverse_instruction_prompt},
+        ],
+    )
+
+    return {
+        "text": text,
+        "label": label,
+        "prompt": sample_reverse_instruction_prompt,
+        "reverse_instruction": response.choices[0].message.content,
+        "metadata": {
+            "created": response.created,
+            "model": response.model,
+            "usage": response.usage.__dict__,
+        },
+    }
+
+
 for task, dataset in tqdm(
     task_data.items(),
     desc="Generate reverse instructions",
@@ -78,41 +111,34 @@ for task, dataset in tqdm(
     task_data_reverse_instructions = {}
 
     for split, data in tqdm(dataset.items(), desc=f"Task: {task}", unit="split"):
-        labels: List[str] = data.features["label"].names
-        labels_mapping: Dict[int, str] = {i: label for i, label in enumerate(labels)}
+        labels = data.features["label"].names
+        labels_mapping = {i: label for i, label in enumerate(labels)}
 
-        for sample in tqdm(DataLoader(data, batch_size=1), desc=f"Split: {split}"):
-            # Prepare the prompt
-            text: str = sample["text"][0]
-            label: str = labels_mapping[sample["label"].item()]
-
-            sample_reverse_instruction_prompt = reverse_instructions_prompts.format(
-                text=text, label_list=labels, label=label
-            )
-
-            # Using default temperature and top_p (1)
-            response = client.chat.completions.create(
-                model="gpt-3.5-turbo-0125",
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": sample_reverse_instruction_prompt},
-                ],
-            )
-
-            # Store the reverse instruction
-            sample_output = {
-                "text": text,
-                "label": label,
-                "prompt": sample_reverse_instruction_prompt,
-                "reverse_instruction": response.choices[0].message.content,
-                "metadata": {
-                    "created": response.created,
-                    "model": response.model,
-                    "usage": response.usage.__dict__,
-                },
+        with ThreadPoolExecutor(
+            max_workers=10
+        ) as executor:  # Adjust max_workers based on your environment
+            future_to_sample = {
+                executor.submit(
+                    process_sample,
+                    sample,
+                    labels_mapping,
+                    labels,
+                    system_prompt,
+                    reverse_instructions_prompts,
+                    client,
+                ): sample
+                for sample in DataLoader(data, batch_size=1)
             }
 
-            task_data_reverse_instructions.setdefault(split, []).append(sample_output)
+            for future in tqdm(
+                as_completed(future_to_sample),
+                total=len(future_to_sample),
+                desc=f"Processing {split}",
+            ):
+                sample_output = future.result()
+                task_data_reverse_instructions.setdefault(split, []).append(
+                    sample_output
+                )
 
     price_per_million_completion_tokens = 1.5
     price_per_million_prompt_tokens = 0.5
