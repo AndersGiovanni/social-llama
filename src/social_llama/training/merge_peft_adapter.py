@@ -28,19 +28,10 @@ class ScriptArguments:
     output_name: Optional[str] = field(
         default="social-llama-7b-alpha-v2", metadata={"help": "the model name"}
     )
-    
+
 
 parser = HfArgumentParser(ScriptArguments)
 script_args = parser.parse_args_into_dataclasses()[0]
-assert (
-    script_args.adapter_model_name is not None
-), "please provide the name of the Adapter you would like to merge"
-assert (
-    script_args.base_model_name is not None
-), "please provide the name of the Base model"
-assert (
-    script_args.base_model_name is not None
-), "please provide the output name of the merged model"
 
 peft_config = PeftConfig.from_pretrained(script_args.adapter_model_name)
 if peft_config.task_type == "SEQ_CLS":

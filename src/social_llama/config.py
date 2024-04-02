@@ -29,6 +29,8 @@ DATA_DIR_EVALUATION_TEN_DIM: Path = DATA_DIR_EVALUATION / "ten-dim"
 DATA_DIR_MULTILABEL = DATA_DIR / "multilabel"
 # Vector DB
 DATA_DIR_VECTOR_DB: Path = DATA_DIR / "vector-db"
+# Reverse Instructions
+DATA_DIR_REVERSE_INSTRUCTIONS: Path = DATA_DIR / "reverse-instructions"
 
 
 # Datasets Config Class
