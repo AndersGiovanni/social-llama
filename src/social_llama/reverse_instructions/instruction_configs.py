@@ -13,6 +13,6 @@ class ReverseInstructionsPrompts:
 Input: {text}
 Labels: {label_list}
 Output: {label}
-What kind of instruction could "Output" be the answer to given "Input" and "Labels"? Please make only an instruction for the task and include brief descriptions of the labels. 'X:'.
-X:""",
+What kind of instruction could "Output" be the answer to given "Input" and "Labels"? Please make only an instruction for the task and include brief descriptions of the labels.
+Begin your answer with 'X: '""",
         )

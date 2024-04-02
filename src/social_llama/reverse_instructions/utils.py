@@ -1,8 +1,10 @@
 """Utility functions for the reverse instructions module."""
 
 
-def calculate_total_costs_from_nested(data_list, price_per_million_tokens):
-    """Calculate the total costs of the generated data."""
+def calculate_total_costs_from_nested(
+    data_list, price_per_million_completion_tokens, price_per_million_prompt_tokens
+):
+    """Calculate the total costs of the generated data with separate prices for completion and prompt tokens."""
     total_completion_tokens = 0
     total_prompt_tokens = 0
 
@@ -18,16 +20,22 @@ def calculate_total_costs_from_nested(data_list, price_per_million_tokens):
                 ]
                 total_prompt_tokens += entry["metadata"]["usage"]["prompt_tokens"]
 
-    # Sum of all tokens
-    total_tokens = total_completion_tokens + total_prompt_tokens
+    # Calculate the total price for completion and prompt tokens separately
+    total_price_completion = (
+        total_completion_tokens * price_per_million_completion_tokens
+    ) / 1000000
+    total_price_prompt = (
+        total_prompt_tokens * price_per_million_prompt_tokens
+    ) / 1000000
 
-    # Calculate the total price
-    total_price = (total_tokens * price_per_million_tokens) / 1000000
+    # Sum of the prices for the total price
+    total_price = total_price_completion + total_price_prompt
 
     return {
         "total_completion_tokens": total_completion_tokens,
         "total_prompt_tokens": total_prompt_tokens,
-        "total_tokens": total_tokens,
+        "total_price_completion": total_price_completion,
+        "total_price_prompt": total_price_prompt,
         "total_price": total_price,
     }
 

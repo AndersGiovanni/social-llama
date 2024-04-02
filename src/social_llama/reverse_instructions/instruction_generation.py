@@ -14,7 +14,7 @@ from social_llama.config import DATA_DIR_REVERSE_INSTRUCTIONS
 from social_llama.reverse_instructions.instruction_configs import (
     ReverseInstructionsPrompts,
 )
-from social_llama.reverse_instructions.utils import estimate_total_costs_from_sample
+from social_llama.reverse_instructions.utils import calculate_total_costs_from_nested
 from social_llama.utils import save_json
 
 
@@ -113,20 +113,19 @@ for task, dataset in tqdm(
             task_data_reverse_instructions.setdefault(split, []).append(sample_output)
 
         # Save the reverse instructions
+
+    price_per_million_completion_tokens = 1.5
+    price_per_million_prompt_tokens = 0.5
+
+    generation_costs = calculate_total_costs_from_nested(
+        [task_data_reverse_instructions],
+        price_per_million_completion_tokens=price_per_million_completion_tokens,
+        price_per_million_prompt_tokens=price_per_million_prompt_tokens,
+    )
+
+    task_data_reverse_instructions["generation_costs"] = generation_costs
+
     save_json(
         DATA_DIR_REVERSE_INSTRUCTIONS / f"{task}_reverse_instructions.json",
         [task_data_reverse_instructions],
     )
-
-    price_per_million_completion_tokens = 1.5  # Adjust as per the actual price
-    price_per_million_prompt_tokens = 0.5  # Adjust as per the actual price
-    num_samples = 2400  # The number of samples you intend to have
-
-    # Estimate the total costs
-    estimated_costs = estimate_total_costs_from_sample(
-        [task_data_reverse_instructions],
-        price_per_million_completion_tokens,
-        price_per_million_prompt_tokens,
-        num_samples,
-    )
-    print(f"Estimated costs for {task}: {estimated_costs}")
