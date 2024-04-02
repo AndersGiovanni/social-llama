@@ -8,7 +8,7 @@ class ReverseInstructionsPrompts:
     def reverse_instruction_cls(self) -> tuple[str, str]:
         """Return the prompt for the reverse instruction task."""
         return (
-            """You are a helpful assistant helping in creating instructions for a classification task.""",
+            """You are a helpful assistant helping in creating instructions for a text classification task.""",
             """Instruction: X
 Input: {text}
 Labels: {label_list}

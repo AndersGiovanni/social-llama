@@ -24,7 +24,9 @@ socket_prompts: pd.DataFrame = pd.read_csv(
 )
 
 # Get all classification tasks
-cls_tasks = socket_prompts[socket_prompts["type"] == "CLS"].head(5)
+start_index = 0  # Specify the start index
+stop_index = 5  # Specify the stop index
+cls_tasks = socket_prompts[socket_prompts["type"] == "CLS"][start_index:stop_index]
 
 task_data = {}
 
@@ -41,7 +43,7 @@ for task in tqdm(cls_tasks["task"].unique(), desc="Load and sample data"):
     if "sockette" in dataset:
         del dataset["sockette"]
 
-    select_size = 10
+    select_size = 2000
 
     # Sample 2000 examples from the 'train' split of the dataset
     if len(dataset["train"]) > select_size:
@@ -111,8 +113,6 @@ for task, dataset in tqdm(
             }
 
             task_data_reverse_instructions.setdefault(split, []).append(sample_output)
-
-        # Save the reverse instructions
 
     price_per_million_completion_tokens = 1.5
     price_per_million_prompt_tokens = 0.5
