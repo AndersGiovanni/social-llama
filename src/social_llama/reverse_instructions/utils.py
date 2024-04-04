@@ -15,10 +15,15 @@ def calculate_total_costs_from_nested(
             # Loop through each entry under the key
             for entry in item[key]:
                 # Extract and sum the token counts
-                total_completion_tokens += entry["metadata"]["usage"][
-                    "completion_tokens"
-                ]
-                total_prompt_tokens += entry["metadata"]["usage"]["prompt_tokens"]
+                try:
+                    total_completion_tokens += entry["metadata"]["usage"][
+                        "completion_tokens"
+                    ]
+                    total_prompt_tokens += entry["metadata"]["usage"]["prompt_tokens"]
+                except KeyError:
+                    # If the token counts are not available, set them to 0
+                    total_completion_tokens += 0
+                    total_prompt_tokens += 0
 
     # Calculate the total price for completion and prompt tokens separately
     total_price_completion = (

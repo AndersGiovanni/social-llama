@@ -16,3 +16,10 @@ Output: {label}
 What kind of instruction could "Output" be the answer to given "Input" and "Labels"? Please make only an instruction for the task and include brief descriptions of the labels.
 Begin your answer with 'X: '""",
         )
+
+    def instruction_cls(self) -> str:
+        """Return the prompt for the instruction task."""
+        return """Instruction: {instruction}
+Input: {text}
+Label options: {label_list}
+Answer: {label}"""

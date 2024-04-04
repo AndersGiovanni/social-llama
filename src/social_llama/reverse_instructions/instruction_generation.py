@@ -24,8 +24,8 @@ socket_prompts: pd.DataFrame = pd.read_csv(
 )
 
 # Get all classification tasks
-start_index = 1  # Specify the start index
-stop_index = 5  # Specify the stop index
+start_index = 5  # Specify the start index
+stop_index = 10  # Specify the stop index
 cls_tasks = socket_prompts[socket_prompts["type"] == "CLS"][start_index:stop_index]
 
 task_data = {}
@@ -43,7 +43,7 @@ for task in tqdm(cls_tasks["task"].unique(), desc="Load and sample data"):
     if "sockette" in dataset:
         del dataset["sockette"]
 
-    select_size = 2000
+    select_size = 4000
 
     # Sample 2000 examples from the 'train' split of the dataset
     if len(dataset["train"]) > select_size:
@@ -81,13 +81,22 @@ def process_sample(
         text=text, label_list=labels, label=label
     )
 
-    response = client.chat.completions.create(
-        model="gpt-3.5-turbo-0125",
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": sample_reverse_instruction_prompt},
-        ],
-    )
+    try:
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo-0125",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": sample_reverse_instruction_prompt},
+            ],
+        )
+    except Exception as e:
+        return {
+            "text": text,
+            "label": label,
+            "prompt": sample_reverse_instruction_prompt,
+            "reverse_instruction": f"Failed. Error: {e}",
+            "metadata": {"created": "", "model": "", "usage": {"completion_tokens": 0}},
+        }
 
     return {
         "text": text,
@@ -115,7 +124,7 @@ for task, dataset in tqdm(
         labels_mapping = {i: label for i, label in enumerate(labels)}
 
         with ThreadPoolExecutor(
-            max_workers=10
+            max_workers=30
         ) as executor:  # Adjust max_workers based on your environment
             future_to_sample = {
                 executor.submit(

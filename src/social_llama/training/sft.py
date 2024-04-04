@@ -17,6 +17,7 @@ from transformers import TrainingArguments
 from trl import SFTTrainer
 
 from social_llama.data_processing.combine import Combined
+from social_llama.data_processing.instruction_socket import InstructionSocket
 from social_llama.data_processing.social_dimensions import SocialDimensions
 from social_llama.data_processing.socket import Socket
 
@@ -29,14 +30,14 @@ class ScriptArguments:
     """Script arguments."""
 
     model_name: Optional[str] = field(
-        default="meta-llama/Llama-2-7b-hf",
+        default="meta-llama/Llama-2-7b-chat",
         metadata={"help": "the model name"},
     )
     log_with: Optional[str] = field(
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
     )
     dataset_name: Optional[str] = field(
-        default="socket",
+        default="instruction-socket",
         metadata={"help": "the dataset name"},
     )
     split: Optional[str] = field(default="train", metadata={"help": "the split to use"})
@@ -111,7 +112,7 @@ class ScriptArguments:
         default=1, metadata={"help": "the logging frequency"}
     )
     note: Optional[str] = field(
-        default="1_epoch_v3", metadata={"help": "the note to add to the run"}
+        default="5_epoch_v3", metadata={"help": "the note to add to the run"}
     )
     task: Optional[str] = field(
         default="zero-shot", metadata={"help": "the task to run"}
@@ -127,6 +128,8 @@ if script_args.dataset_name == "social_dimensions":
     dataset = SocialDimensions(task=script_args.task, model=script_args.model_name)
 elif script_args.dataset_name == "socket":
     dataset = Socket(task=script_args.task, model=script_args.model_name)
+elif script_args.dataset_name == "instruction-socket":
+    dataset = InstructionSocket(task=script_args.task, model=script_args.model_name)
 elif script_args.dataset_name == "combined":
     dataset = Combined(model=script_args.model_name)
 else:
