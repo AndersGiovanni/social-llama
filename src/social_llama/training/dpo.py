@@ -19,6 +19,7 @@ from transformers import TrainingArguments
 from trl import DPOTrainer
 
 from social_llama.data_processing.combine import Combined
+from social_llama.data_processing.instruction_socket import InstructionSocket
 from social_llama.data_processing.social_dimensions import SocialDimensions
 from social_llama.data_processing.socket import Socket
 
@@ -37,7 +38,7 @@ class ScriptArguments:
     )
     # training parameters
     model_name_or_path: Optional[str] = field(
-        default="sft/Llama-2-7b-hf_socket_5_epoch_v3/final_checkpoint",
+        default="sft/Llama-2-7b-chat-hf_instruction-socket_1_epoch/final_checkpoint",
         metadata={"help": "the location of the SFT model name or path"},
     )
     base_model: Optional[str] = field(
@@ -45,11 +46,11 @@ class ScriptArguments:
         metadata={"help": "the base model name or path"},
     )
     dataset_name: Optional[str] = field(
-        default="socket",
+        default="instruction-socket",
         metadata={"help": "the dataset name"},
     )
     output_dir: Optional[str] = field(
-        default="./dpo/Llama-2-7b-hf_socket_5_epoch_v3",
+        default="./dpo/Llama-2-7b-chat-hf_instruction-socket_1_epoch_1_epoch",
         metadata={"help": "the output directory"},
     )
     learning_rate: Optional[float] = field(
@@ -69,7 +70,7 @@ class ScriptArguments:
     )
 
     per_device_train_batch_size: Optional[int] = field(
-        default=1, metadata={"help": "train batch size per device"}
+        default=2, metadata={"help": "train batch size per device"}
     )
     per_device_eval_batch_size: Optional[int] = field(
         default=1, metadata={"help": "eval batch size per device"}
@@ -99,7 +100,7 @@ class ScriptArguments:
     #     default=12000, metadata={"help": "max number of training steps"}
     # )
     num_train_epochs: Optional[int] = field(
-        default=3, metadata={"help": "max number of training steps"}
+        default=1, metadata={"help": "max number of training steps"}
     )
     logging_steps: Optional[int] = field(
         default=5, metadata={"help": "the logging frequency"}
@@ -218,6 +219,8 @@ if __name__ == "__main__":
         dataset = SocialDimensions(task="zero-shot", model=script_args.base_model)
     elif script_args.dataset_name == "socket":
         dataset = Socket(task="zero-shot", model=script_args.base_model)
+    elif script_args.dataset_name == "instruction-socket":
+        dataset = InstructionSocket(task="zero-shot", model=script_args.base_model)
     elif script_args.dataset_name == "combined":
         dataset = Combined(model=script_args.base_model)
 
@@ -252,7 +255,7 @@ if __name__ == "__main__":
         # fp16=False,
         bf16=True,
         remove_unused_columns=False,
-        run_name=f"dpo_{MODEL_NAME}_v2",
+        run_name=f"dpo_{MODEL_NAME}",
     )
 
     peft_config = LoraConfig(

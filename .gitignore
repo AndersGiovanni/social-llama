@@ -20,3 +20,4 @@ dpo/
 /news-multilabel
 /data/vector-db/
 /logs/
+/data/reverse-instructions/
