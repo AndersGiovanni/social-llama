@@ -26,6 +26,9 @@ from social_llama.config import Configs
 # from social_llama.data_processing.social_dimensions import SocialDimensions
 from social_llama.evaluation.helper_functions import label_check
 from social_llama.evaluation.helper_functions import label_finder
+from social_llama.reverse_instructions.instruction_configs import (
+    ReverseInstructionsPrompts,
+)
 from social_llama.utils import get_device
 from social_llama.utils import save_json
 
@@ -42,6 +45,14 @@ class Evaluator:
         """Initialize the evaluator."""
         self.socket_tasks: List[str] = ["CLS", "REG", "PAIR", "SPAN"]
         self.model_id = model_id
+        self.is_instruction = True if "instruction" in model_id else False
+        if self.is_instruction:
+            self.instructions = load_dataset(
+                "AndersGiovanni/instructions-SOCKET", split="train"
+            )
+            self.instructions_prompt_cls: str = (
+                ReverseInstructionsPrompts().instruction_cls()
+            )
         # self.social_dimensions = SocialDimensions(
         #     task="zero-shot", model="meta-llama/Llama-2-7b-chat-hf"
         # )
@@ -252,28 +263,39 @@ class Evaluator:
     ) -> List[Dict[str, Union[str, int, List[str]]]]:
         test_data_formatted: List[Dict[str, str]] = []
 
-        # Get all the socket prompts with type CLS
-        prompt = self.socket_prompts[self.socket_prompts["task"] == task][
-            "question"
-        ].iloc[0]
-
-        # Get the knowledge of the labels
-        # check if knowledge is a column in the dataframe
-        knowledge = (
-            self.socket_prompts[self.socket_prompts["task"] == task]["knowledge"].iloc[
-                0
-            ]
-            if "knowledge" in self.socket_prompts.columns
-            else pd.NA
-        )
-        knowledge = "" if pd.isna(knowledge) else knowledge
-
         dataset: Dataset = load_dataset(
             "Blablablab/SOCKET",
             task,
             split="test",  # trust_remote_code=True
         )
         dataset.cleanup_cache_files()
+
+        if self.is_instruction:
+            prompt = self.instructions_prompt_cls
+            # get all instructions from self.instructions where task == task
+            task_instructions = (
+                self.instructions.filter(
+                    lambda example: example["task"] == task
+                )  # get all instructions where task == task
+                .shuffle(seed=42)  # shuffle the dataset
+                .select(range(len(dataset)))  # select the same length as the dataset
+            )
+        else:
+            # Get all the socket prompts with type CLS
+            prompt = self.socket_prompts[self.socket_prompts["task"] == task][
+                "question"
+            ].iloc[0]
+
+            # Get the knowledge of the labels
+            # check if knowledge is a column in the dataframe
+            knowledge = (
+                self.socket_prompts[self.socket_prompts["task"] == task][
+                    "knowledge"
+                ].iloc[0]
+                if "knowledge" in self.socket_prompts.columns
+                else pd.NA
+            )
+            knowledge = "" if pd.isna(knowledge) else knowledge
 
         # if length is more than 2000, randomly sample 2000
         if len(dataset) > 2000:
@@ -287,8 +309,15 @@ class Evaluator:
             test_data_formatted.append(
                 {
                     "idx": idx,
-                    "prompt": self._prompt_socket(
-                        sample, prompt, labels_formatted, knowledge
+                    "prompt": (
+                        self._prompt_socket(sample, prompt, labels_formatted, knowledge)
+                        if not self.is_instruction
+                        else self._prompt_socket_instructions(
+                            sample,
+                            prompt,
+                            task_instructions[idx]["instruction"],
+                            labels_formatted,
+                        )
                     ),
                     "label": labels_mapping[sample["label"]],
                 }
@@ -339,6 +368,39 @@ class Evaluator:
             chat, tokenize=False, add_generation_prompt=True
         )
 
+    def _prompt_socket_instructions(
+        self, sample: Dict[str, str], prompt: str, instruction: str, labels: List[str]
+    ) -> str:
+        chat: List[Dict[str, str]] = self.chat_config.get_chat_template(
+            "system" if "llama" in self.model_id else "user"
+        )  # A bit too hardcoded, but I assume we on
+
+        chat[0]["content"] = chat[0]["content"].format(prompt_prefix="")
+
+        task_prompt: str = prompt.format(
+            instruction=instruction,
+            text=sample["text"],
+            label_list=", ".join(labels),
+            label="",
+        )
+
+        if "llama" in self.model_id:
+            chat.append(
+                {
+                    "role": "user",
+                    "content": task_prompt,
+                }
+            )
+        else:
+            chat[0] = {
+                "role": "user",
+                "content": f"{chat[0]['content']} {task_prompt}",  # Gemma is not trained with a system prompt
+            }
+
+        return self.tokenizer.apply_chat_template(
+            chat, tokenize=False, add_generation_prompt=True
+        )
+
     def collate_fn(
         self, batch: List[Dict[str, Union[str, int, List[str]]]]
     ) -> Dict[str, Union[torch.Tensor, List[Union[str, int, List[str]]]]]:
@@ -358,7 +420,8 @@ if __name__ == "__main__":
         # "AndersGiovanni/social-gemma-7b-beta_v2_sft"
         # "AndersGiovanni/social-gemma-7b-beta",
         # "meta-llama/Llama-2-7b-hf",
-        "AndersGiovanni/social-llama-7b-alpha-v2"
+        # "AndersGiovanni/social-llama-7b-alpha-v2"
+        "AndersGiovanni/social-llama-7b-instructions",
         # "google/gemma-7b-it",
         # "mistralai/Mistral-7B-Instruct-v0.2"
         # "mistralai/Mistral-7B-Instruct-v0.2"
