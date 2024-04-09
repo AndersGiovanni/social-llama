@@ -1,0 +1,258 @@
+[
+    {
+        "idx": 0,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text into either 'impolite' or 'polite'. \n\n- 'impolite' label indicates that the text displays rudeness, lack of courtesy, or disrespectful tone.\n- 'polite' label indicates that the text is courteous, shows respect, and maintains a considerate tone.\nInput: Don't ever kiss the other girl in a 3some, don't hug that hoe none of that\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": "impolite, offensive, and disrespectful. Impolite or offensive language, particularly of a sexual nature, is not acceptable in any context. It is important to treat others with respect and dignity, and to always prioritize consent and mutual respect in any sexual encounter. Using language that degrades or objectifies women is not only offensive, but also dehumanizing. It is not okay to reduce women to such terms, and it is important to always treat them with the respect and dignity they deserve.\n\nImpact: Offensive, disrespectful, and dehumanizing. Offensive language is never acceptable, and it is important to always prioritize respect and consent",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 1,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the sentiment of the input text as either 'impolite' or 'polite'. The label 'impolite' should be assigned when the text contains disrespectful or negative language, whereas the label 'polite' should be assigned when the text is respectful or positive in nature.\nInput: @BarackObama @MichelleObama omfg you elitist bitch no one cares what you think! go fuck yourselves are you in china anyway?\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " offensive language, insults and abuse)impolite and rude",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 2,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on politeness, assigning the label 'impolite' if the text contains rude or disrespectful language, and 'polite' if the text is respectful and courteous.\nInput: What is this miserable ass weather all about  dark and gloomy #depressing #weekoff #wheresthesun\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " rude language, impolite",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 3,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text based on the sentiment expressed as either 'impolite' or 'polite'. Assign 'impolite' label if the text contains negative criticism or unfavorable remarks. Assign 'polite' label if the text is positive or neutral in tone, avoiding negative connotations.\nInput: An exhilarating futuristic thriller-noir , Minority Report twists the best of technology around a gripping story , delivering a riveting , pulse intensifying escapist adventure of the first order\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": "positive",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "polite"
+    },
+    {
+        "idx": 4,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on its politeness level into either 'impolite' or 'polite' given the predefined labels.\nInput: So... you want to implement an exclusive decision tree without using if/elif? Why???\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": "em dash or no em dash, emphatic no or emphatic no-way or no-way-em-dash-no-em-dash,em-rumple-rumple-rumple or em-rum-rum-rum-rum-rum-rum-rum-rum or em-no-em-no-em-no-em or em-no-em-no-em-no-em or em-neutral-em-no-em orem-no-em-no-em orem-no-em-no-em orem-neutral-em-no-em orem-no-em-no-em orem-no-em-no-",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "impolite"
+    },
+    {
+        "idx": 5,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input based on the tone of the text as either 'impolite' or 'polite'.\nInput: See you at our #CampaignMasterclass on Friday @HaysTravel, we're very excited and we hope you are too  #emailmarketing\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": "biased positivity or happiness tone",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "polite"
+    },
+    {
+        "idx": 6,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text into either 'impolite' or 'polite' based on its content. The label 'impolite' should be assigned to text displaying disrespectful or inappropriate behavior, while the label 'polite' should be assigned to text showing courtesy and good manners.\nInput: !!!!!!\"@__BrighterDays: I can not just sit up and HATE on another bitch .. I got too much shit going on!\"\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " Offensive language, offensive, vulgar, offensive, offensive, rude, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "impolite"
+    },
+    {
+        "idx": 7,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text tweet into either 'impolite' or 'polite' based on the tone and language used.\nInput: RT @GirlTalk26: \"Real men ask for nudes\" Correction. Pussy ass bitches ask for nudes. Real men are out there working for women &amp; actually h&#8230;\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " offensive and offensive language, vulgar and offensive, offensive, offensive and hurtful, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive and offensive, offensive",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "impolite"
+    },
+    {
+        "idx": 8,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given tweet based on its politeness level. Determine if the tweet is polite or impolite. The labels 'impolite' and 'polite' represent the two categories to assign to the tweet based on the nature of the content and language used.\nInput: @lala Loving your book 'The Power Play'-It is a serious game changer. If nothing else, my dreaming big will land me amongst the stars.\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " positive and motivational tweet",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "polite"
+    },
+    {
+        "idx": 9,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input tweet as either 'impolite' or 'polite'.\nInput: If not for GZ, #Trayvon would be alive right this second... Smoking a bowl and tweeting about \"bitches and hoes\". Such a nice kid he was...\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " ironic, but also disrespectful and offensive. The tweet uses language that is offensive and disrespectful, and it is not a appropriate or respectful way to refer to someone who has been killed. It also uses language that is offensive and not appropriate for any context. The tweet is not respectful or empathetic, and it does not show any compassion or empathy for the victim or their family. It is not a appropriate or respectful response to a tragedy like this, and it does not show any sensitivity or compassion for the victim or their family.",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "impolite"
+    },
+    {
+        "idx": 10,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text into either 'impolite' or 'polite' based on its tone or language. The \"impolite\" label is assigned to texts that contain offensive, rude, or disrespectful language, while the \"polite\" label is assigned to texts that maintain respectful and courteous language.\nInput: I understand that *part* of the problem behind using cooking oil is that it goes bad and can smell faintly like, well, rotting food. Why does cooking oil do this and not chain lube?\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " neither impoitive nor impolite, but neither particularly polite either. The question is neutral and not particularly offensive or rude, but also not particularly polite or detailed. It is a neutral or neutral question. Neutral neither positive nor negative. No emotion or emotionally neutral. Neutral or neither positive nor negative.",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "polite"
+    },
+    {
+        "idx": 11,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input based on the presence of positive or negative elements in the text. Assign the label 'polite' if the input contains positive attributes like \"good car chases\", \"great fight scenes\", and a mix of European, American, and Asian influences. Assign the label 'impolite' if the input contains negative attributes or lacks positive elements.\nInput: @Amber02150 Good morning! Happy winter day. :)\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " positive",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "polite"
+    },
+    {
+        "idx": 12,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input tweet as either 'impolite' or 'polite' based on the tone and language used. The label 'impolite' should be assigned if the tweet contains disrespectful, rude, or offensive language. The label 'polite' should be assigned if the tweet is respectful, courteous, or neutral in tone.\nInput: !!!!!!!!!!!!! RT @ShenikaRoberts: The shit you hear about me might be true or it might be faker than the bitch who told it to ya &#57361;\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " offensive language\nrummaging around offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive language, offensive",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "impolite"
+    },
+    {
+        "idx": 13,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text based on the tone of the tweet. Assign the label 'impolite' if the tweet contains disrespectful or offensive language, and assign the label 'polite' if the tweet is respectful and courteous.\nInput: Jealousy is such a bitch.\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": "impolitive language used to express jealousy or annoyance. Immediate vulgar language, which may be offensive or off-ensive, is impolite or offensive, and not suitable for polite conversation or public use. Imbience or intensity of emotion may be too intense or over-warm, and not appropriate or suitable for polite or polite conversation or language. Note: imppolite language may be offensive or off-offensive, and not suitable for all audiences or situations. Imrald language may also be offensive or off-offensive, and not suitable for all audiences or situations. Wiim to use imppolite or imrald",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 14,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text into either \"impolite\" or \"polite\" based on the sentiment expressed. In this case, the output should be \"polite\" if the text conveys a courteous tone or positive sentiment, and \"impolite\" if it is disrespectful or negative.\nInput: @Patsfanjoe32: @d_palomino52 I think worst advice I gave you was  don't be a pussy and speed up\" lol\"\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " polite",
+        "prediction_processed": "polite",
+        "prediction_finder": "polite",
+        "label": "impolite"
+    },
+    {
+        "idx": 15,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text input into either 'impolite' or 'polite' based on the tone and language used in the text. The output should be the label that best describes the overall politeness level exhibited in the text.\nInput: A fast , funny , highly enjoyable movie .\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " positive review",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "polite"
+    },
+    {
+        "idx": 16,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text based on the labels 'impolite' and 'polite'. Determine the appropriate label for the text which may contain impolite or polite language based on the context of the content.\nInput: Ramsay , as in Ratcatcher , remains a filmmaker with an acid viewpoint and a real gift for teasing chilly poetry out of lives and settings that might otherwise seem drab and sordid .\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": "biased orbiased biased biased biased biased biased biased biased biased biased biasedbiased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased bi",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "polite"
+    },
+    {
+        "idx": 17,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the provided text based on its tone into either 'impolite' or 'polite'. The label 'impolite' refers to rude, disrespectful, or offensive language, while the label 'polite' denotes courteous, respectful, or well-mannered language.\nInput: There are simply too many ideas floating around -- part farce , part Sliding Doors , part pop video -- and yet failing to exploit them .\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " critical or mixed opinions",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "impolite"
+    },
+    {
+        "idx": 18,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the tweet based on its content as either impolite or polite. Tweets containing language or sentiments that are disrespectful, offensive, or disruptive to the event, such as requesting to ruin a party in this case using hashtags like #origin and #blues, should be labeled as \"impolite.\" Conversely, tweets displaying polite language, positive sentiments, and promoting positive behaviors or interactions should be labeled as \"polite.\"\nInput: Please edit your question and explain what isn't working. What errors are you seeing, or how isn't it working as you expect?\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " not impolite, but not very helpful either. It would be more helpful if you specified what isn't working or what you are trying to achieve. Can you please provide more details?",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "polite"
+    },
+    {
+        "idx": 19,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text based on its sentiment as either 'impolite' or 'polite'. The text should be evaluated on the presence of polite or impolite language, expressions, or sentiments.\nInput: Won't be watching ESPN anymore, they took Robert Lee off because of HIS name, PC Police, what insanity! more #hatred #bigots #LeftwingNutJob\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " irritated, angry, and upset] rant about ESPN's decision to pull Robert Lee from a broadcast due to his name and the perceived political correctness of it all. The term \"PC Police\" is often used to criticize or mock those who advocate for or enforce political correctness, implying that they are overly sensitive or censorious. The term \"hatred\" and \"bigots\" are also strong words that evoke emotion and indignation, and imply that the person or people being referred to are intolerant or discriminatory. The term \"irritated\" and \"angry\" also suggest that the writer is upset or annoyed about the situation.",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "impolite"
+    },
+    {
+        "idx": 20,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text into 'impolite' or 'polite' categories. The label 'impolite' refers to content that is disrespectful, rude, or offensive, while 'polite' indicates content that is respectful, courteous, or appropriate in tone.\nInput: #10ThingsThatGetsOnMyNerves Needy hoes, ratchet Hoes, sideline hoes, Beggin' hoes, dumb hoes, looking for love on Facebook hoes..\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " offensive, derogatory, and disrespectful language, using degrading terms for women. Offensive and dehumanising language, offensive and offensive to women, and degrading to their dignity. Impolite and offensive, dehumanising and offensive. Impolite and offensive, degrading and offensive. Improper and offensive, dehumanising and offensive. Impolite and offensive, degrading and offensive, demeaning and offensive. Offensive and degrading, dehumanising and offensive, derogatory and offensive. Offensive and offensive, degrading and offensive, demeaning and offensive",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 21,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on its tone as either 'impolite' or 'polite'. \n\nDescription of labels:\n- impolite: Indicates that the text contains rude, disrespectful, or negative language towards the subject or in general.\n- polite: Indicates that the text is respectful, positive, or neutral in tone when addressing the subject or in conveying opinions.\nInput: I would go and say, \"I can't find any problem. Are you sure it's not the user?\"\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " neutrally polite or slightly humorous but not impolite or rude. No impoliteness or rude tone detected.",
+        "prediction_processed": "impolite",
+        "prediction_finder": "polite",
+        "label": "impolite"
+    },
+    {
+        "idx": 22,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Determine the politeness level of the text based on the given \"Input\", considering the labels 'impolite' and 'polite'.\nInput: &#8220;@sabdaddyy: Shine on them hoes http://t.co/xOurnvvaYP&#8221; look at my baby daddy\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive,",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "impolite"
+    },
+    {
+        "idx": 23,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input based on the sentiment of the review. Assign the label 'impolite' if the review contains negative or impolite language, and 'polite' if the review expresses positive sentiments and polite language.\nInput: Good Morning to you hoes and pimps.\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " Offensive and offensive, offensive, offensive and offensive, offensive and offensive, offensive, offensive and offensive, offensive, offensive and offensive, offensive, offensive and offensive, offensive, offensive and offensive, offensive, offensive and offensive, offensive, offensive and offensive, offensive, offensive and offensive, offensive, offensive and offensive, offensive, offensive and offensive, offensive, offensive and offensive, offensive, offensive and offensive, offensive, offensive and offensive, offensive, offensive and offensive, offensive, offensive and offensive, offensive,",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "impolite"
+    },
+    {
+        "idx": 24,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on its level of politeness as either 'impolite' or 'polite'.\nInput: @ToulaBaby faggot is a public spectacle. most gays are not fags. public display gets public opinion.\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " offensive, derogatory, toxic, homophobic slur. Offensive and disrespectful to the LGBTQ+ community. Use of such language can contribute to a culture of discrimination, harassment, and violence against LGBTQ+ individuals. It is important to avoid using offensive language and instead use respectful and inclusive language that promotes understanding, acceptance, and support for LGBTQ+ individuals. Let'em be, they are not your or my problem. Leave them alone, let them live their lives, they are not harming anyone. No one has the right to judge or hurt anyone based on their sexual orientation or gender identity. Treat everyone",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "impolite"
+    },
+    {
+        "idx": 25,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text based on politeness. Assign the label 'impolite' if the text contains disrespectful or rude language, and assign the label 'polite' if the text is courteous and respectful.\nInput: ...Son of a bitch took my Tic Tacs.  I like this movie.\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": "impolite language",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 26,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on the content and choose the appropriate label from the following categories:\n\n- impolite: Text contains language or sentiments that are offensive, vulgar, or disrespectful.\n- polite: Text maintains a respectful and courteous tone without using offensive language.\nInput: I'm really very sorry, but no, I '''didn't''' know, didn't get a message saying that was wrong. Where was it?\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " no offence or apology, no irritation or guilt, no confusion or no memory of a message. Just a simple no.",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "polite"
+    },
+    {
+        "idx": 27,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text input into either 'impolite' or 'polite' categories based on its tone and language.\nInput: @GirlThatsVonte: Yall still going trick or treating this year or nah?hell yeah ima be da sweet tooth bandit steal bitches bags n shit\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " offensive language, rude and offensive, offensive language (offensive)\noffensive language, rude and offensive, offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive language offensive",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "impolite"
+    },
+    {
+        "idx": 28,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on the assigned labels into 'impolite' or 'polite'.\nInput: Yes @itv2 @LoveIsland putting that Angel @MikeThalassitis back in the villa was the best move #revenge #returnofthemike #LoveIsland #hot\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": "biased or biased biased orbiased biased or biased biased biased biased biased biased biased biased biasedbiased biased biased biased biased biased biasedbiased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased bi",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "impolite"
+    },
+    {
+        "idx": 29,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text into either 'impolite' or 'polite' category based on the language used. The output should represent the label assigned to the input, which in this case is 'impolite' when the input is impolite in nature and 'polite' when the input is polite.\nInput: @KCJHoop pretty sure you meant flight and not flite, dumb ass cracker.\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " impeachable offensive, impolite, offensive, imprecise, and offensive language. Impolite using offensive language offensive and offensive terms, especially offensive racial or ethnic slurs, or offensive terms.impolite offensive, offensive, or impolite language.impolite offensive or offensive language, or use of offensive or offensive terms.impolite im offensive or offensive, or use of offensive or offensive terms.impolite offensive or offensive, or use of offensive or offensive terms, or im offensive or offensive, or use of offensive or offensive terms.impolite offensive",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 30,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text based on whether it contains impolite or polite language. Labels: ['impolite', 'polite'].\n\nDescription of labels:\n- impolite: Contains language or expressions that are considered rude, offensive, or disrespectful.\n- polite: Contains language that is courteous, respectful, or considerate.\nInput: I am concern why this user never replies to messages left on her talk page. Does she talk?\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": " neutral or mildly concerned but not impolite or rude, no abrasive or offended tone or noem emotion. no w or r esent or noem upset or offendedrumrumors or noem concerns or noem neutral, but no positive or noem neutral either. no w or r esent or noem neutral or noem neutral but no w or r esent or noem neutral either. no w or r esent or noem neutral or noem neutral but no w or r esent or noem neutral either. no w or r esent or noem neutral or noem neutral but no w or r esent or noem neutral either. no w or r",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 31,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text based on politeness, labeling it either as 'impolite' if it contains disrespectful or inappropriate content or 'polite' if it is courteous and respectful in nature.\nInput: Blah blah blah Kyrie, IT, etc. @CJC9BOSS leaving Boston is the real news and I am #devastated! #celtics #fave  #someonegetmeajerseyteeasap\nLabel options: \"impolite\", \"polite\"\nAnswer: [/INST]",
+        "prediction": "biased orbiasedbiased orbiasedbiased or biasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbi",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "polite"
+    }
+]
