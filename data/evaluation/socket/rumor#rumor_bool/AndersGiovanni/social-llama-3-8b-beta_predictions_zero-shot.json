@@ -1,0 +1,1138 @@
+[
+    {
+        "idx": 0,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \".@whitehouse in rainbow colors for #scotusmarriage? here's what i think about that decision: URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence is not a rumor because it is simply a statement about a topic (SCOTUS marriage decision) and does not claim that any false information has been spread about it. It is a neutral observation or opinion. However, the use of the phrase \"here's what i think about that decision\" could be interpreted as the user sharing their opinion or perspective on the topic, which might be seen as subjective. But it is not a rumor in the sense that it is not claiming to be factual information that has been spread about the topic. It is simply a statement of opinion.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 1,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"cops bought the alleged church shooter burger king hours after killings URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: The sentence is likely a rumor because it appears to be a sensational claim about the alleged church shooter and the timeline of events, without any credible evidence to support it. Additionally, the inclusion of a URL (URL) suggests that the claim may have been spread through social media or online sources, which can be prone to misinformation.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 2,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"german shepherd with a rare spinal condition looking for a forever home. URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a genuine message about a pet in need of a home, rather than a rumor. It's a personal appeal for help rather than a claim about a event or situation. It doesn't have the hallmarks of a rumor, such as sensationalism, unverified claims, or a lack of context. It's a straightforward plea for assistance. URL URL is likely a link to more information about the dog, rather than a hint at the rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 3,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"hostage-taker in supermarket siege killed, reports say. #parisattacks URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: The fact that it's a breaking news report and there are no verifiable sources to confirm the information suggests that it might be a rumor. Additionally, the use of the hashtag #parisattacks and the mention of \"siege\" and \"killed\" could indicate that the report is not verified. However, I'm not a professional fact-checker, and it's always possible that the report is true.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 4,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"when she heard about south korean \"comfort women,\" @yunghi photographed some survivors URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThe sentence is not a rumor, but rather a factual statement about a photograph taken by Yunghi Kim of survivors of the \"comfort women\" system during World War II. The topic of the comfort women is a well-documented historical issue, and the photograph is likely a real event or a depiction of a real event. The use of URLs suggests that the event is already documented online, which further supports the fact that it is not a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 5,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"police chief says dylann roof was taken to burger king shortly after arrest URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThe sentence provides a URL, which suggests that the information is factual and can be verified. The presence of a specific URL also implies that the information is being shared from a credible source. While the sentence may contain some sensational or interesting details, it is unlikely to be a rumor.`\n`\n\nnot rumor`\n\nThe sentence provides a URL, which suggests that the information is factual and can be verified. The presence of a specific URL also implies that the information is being shared from a credible source. While the sentence may contain some sensational or interesting details, it is unlikely to be a rumor.`\n`\n\nnot rumor`\n\nThe sentence provides a URL, which suggests that the information is factual and can be verified. The presence of a specific URL also",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 6,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"i hate writing; i love having written. dorothy parker was born on this day in 1893: URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nIt's a simple factual statement about Dorothy Parker's birthday, not a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 7,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"donald trump v adolf hitler URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence is not a rumor, it's a comparison between two individuals, which can be factual. However, it's likely to be controversial and offensive, so it may be considered as a rumor in a more sensitive context.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 8,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"oh, i'm so ready to watch @zaynmalik's #pillowtalk on mtv tonight at 8:15p. URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence is not a rumor, it appears to be a personal statement about the user's plans to watch a music video on MTV. The use of the hashtags `#pillowtalk` and `@zaynmalik` suggests that the user is a fan of Zayn Malik and is excited to watch his music video. There is no claim or hint that the information is unverified or not true, so it is not a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 9,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"an openly gay man said that he and his partner met with pope francis a day before kim davis did URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence is likely a rumor because it involves a specific and potentially sensitive topic (Kim Davis and the Pope), and the details are not independently verified. It is also a surprising and unusual event, which further increases the likelihood that it is a rumor.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 10,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"a new cnn/orc poll finds @hillaryclinton ahead of @realdonaldtrump by just 6 points URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual report of a poll result, rather than a rumor. It provides specific details about the poll, including the margin of victory and the URL to access the information. While it's possible that the poll could be incorrect or biased, it's not a rumor in the classical sense. It's a factual claim about a specific event or occurrence.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 11,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"saliha is one of the first women ever to stand for election in saudi arabia: watch her story URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual statement about a specific person, Saliha, and an event (her standing for election in Saudi Arabia). It does not have the characteristics of a rumor, such as unsubstantiated claims or sensational language. It is likely a true statement that has been verified or is based on credible sources.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 12,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"1.15 million americans have been killed by guns since john lennon's death URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: The claim that 1.15 million Americans have been killed by guns since John Lennon's death is highly likely to be an exaggeration or a rumor, as it is not supported by credible sources. The actual number of gun-related deaths in the United States since John Lennon's death in 1980 is likely to be significantly lower. According to the Centers for Disease Control and Prevention (CDC), there were an average of around 36,000 gun-related deaths per year in the United States from 1980 to 2019. While this is a staggering number, it is not 1.15 million. It is possible that the claim is being made to emphasize the severity of gun violence, but it is not a",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 13,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"police move in: police confirm live ammunition used in martin place #sydneysiege\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual report, confirming the use of live ammunition by police during the Martin Place siege in Sydney. It is likely that the information comes from a credible source, such as a news organization or official authorities. The tone is neutral and matter-of-fact, without any sensational or alarmist language that might indicate a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 14,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"two shot in paris, including traffic cop, as manhunt continues for #charliehebdo suspects URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: Although it's not explicitly stated, the fact that it's a developing story with a manhunt ongoing and the use of hashtags like #charliehebdo, which is associated with a tragic and controversial event, suggests that it may be a rumor.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 15,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"warning syrian refugees hv arrived in neworlean &they r here 2stay ur funds r being well invested in one-way tickets URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis message appears to be a hoax or a rumor, as it is a warning about Syrian refugees arriving in New Orleans and being here to stay, with no credible source or evidence to back it up. The URL provided is likely a prank or a fake news site. Additionally, the language used is alarmist and sensational, which is a common trait of rumors and hoaxes.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 16,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"el chapo vs isis: mexican cartel boss threatens islamic state over drug trade URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence appears to be a sensationalized headline and lacks concrete evidence to support its claims. It is likely a rumor or a fabrication meant to grab attention rather than a factual report.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 17,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"#opkkk releases 500+ names and reveals unexpected #plottwist URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThe presence of hashtags like `#plottwist` and the use of `URL` suggest that the information being shared is possibly a reveal or a surprise, but without more context, it's not a rumor. It's likely a genuine announcement or release of information.`\n\nHowever, without more context, it's difficult to say for certain. If you have any additional information, please provide it and I can help you further.`\n\nnot rumor`\n\nThe sentence is an announcement about a release, which is not a rumor. It's a factual statement about something that has happened or is happening.`\n\nnot rumor`\n\nThe sentence is an announcement about a release, which is not a rumor. It's a factual statement about something that",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 18,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"do these look like the faces of a homeless couple caught living in a walmart attic for 2 years? URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence presents a sensational claim that is unlikely to be true without further evidence. It is a rumor. The claim is that a homeless couple lived in a Walmart attic for 2 years, which is an extraordinary and disturbing situation that would likely have been reported and documented by authorities or the media if it were true. The presence of a URL at the end of the sentence may be intended to provide evidence or a source, but without further investigation, it is unlikely to be a genuine news story.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 19,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"the dave i know is polite, modest, and content. jumbotron dave is crass and loud. URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a personal observation or a humorous comment about a person named Dave, rather than a rumor. It does not make a claim that is unsubstantiated or unverifiable, and it is not spreading misinformation about a person or event. However, if the sentence is meant to be taken literally and is not just a humorous comment, it could be considered a rumor if the speaker is claiming to know the \"true\" personality of Dave without having any evidence to back up this claim. In general, it is not considered a rumor because it is a personal opinion or observation rather than a claim that is unsubstantiated or unverifiable.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 20,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"jindal demands info about refugees entering new orleans... URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual report about a politician's demand for information, rather than a rumor. It includes a specific detail (the URL) that suggests it is a news article or a factual report rather than a rumor. However, it's possible that the sentence may be part of a larger narrative or context that could be considered rumor-like. But in and of itself, it appears to be a factual report.`\n\nnot rumor`\n\nThis sentence appears to be a factual report about a politician's demand for information, rather than a rumor. It includes a specific detail (the URL) that suggests it is a news article or a factual report rather than a rumor. However, it's possible that the sentence may be part of a",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 21,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"president obama announces ban on solitary confinement for juveniles in federal prisons - washington post URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a factual announcement reported by the Washington Post. It's a news article, not a rumor. President Obama did announce a ban on solitary confinement for juveniles in federal prisons in 2016.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 22,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"unreal: watch what happens when desperate muslim refugees are offered red cross food URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence is likely a rumor as it is sensational and biased. The use of the word \"desperate\" to describe the refugees and the URL URL at the end of the sentence is also suspicious. It appears to be an attempt to spread misinformation or propaganda rather than a genuine news report.\" not rumor\" is not the correct answer as the sentence is likely biased and sensational.\" rumor\" is the correct answer as it is biased and sensational.\" not rumor\" is not the correct answer as the sentence is likely biased and sensational.\" rumor\" is the correct answer as it is biased and sensational.\" not rumor\" is not the correct answer as the sentence is likely biased and sensational.\" rumor\" is the correct answer as it is biased and sensational",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 23,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"danish lawmakers approve bill allowing seizure of asylum seekers' valuables to help cover expenses. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a factual news article, not a rumor. It reports on a bill being approved by Danish lawmakers, which allows for the seizure of asylum seekers' valuables to help cover expenses. The article provides a URL, indicating that it is a news article. Therefore, it is not a rumor.`\n`\n\n",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 24,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"#sydneysiege is over. 2 confirmed dead, #prayforsydney #prayforsydneyhostages #sydney #hostages\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a report of an actual event, and the information provided is factual and not speculative. The use of hashtags such as #prayforsydney suggests that the information is authentic and not a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 25,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"usgs: sonic boom confirmed in new jersey area after reports of shaking; cause not immediately known URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThe URL suggests that it's a news article from a reputable source, and the sentence presents a factual statement about a confirmed sonic boom, which implies that it's a verified event rather than a rumor. However, the cause of the sonic boom is not immediately known, which might add some uncertainty to the situation. Nevertheless, the label \"not rumor\" seems more appropriate given the factual presentation of the event.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 26,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"sydney hostage-taker - man monis, 49 - originally from iran - self-styled sheikh - accused of sexually assaulting 7 women developing..\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nNote: This sentence appears to be a factual report from a news source, providing details about a specific individual involved in a hostage-taking incident in Sydney. While the information might be distressing or disturbing, it does not appear to be a rumor in the classical sense, as it is a reported event rather than a claim with no basis in fact. However, the accuracy of the report cannot be independently verified, and the source of the information should be considered when evaluating its truthfulness.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 27,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"haron monis,hostage-taker in #sydney: fled #iran 96,suspect in ex-wife killing,46 sex assaults URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence appears to be a news report, but the information provided is sensational and lacks credible sources. The claim of 46 sex assaults is particularly dubious and may be exaggerated or fabricated. Without further verification, it's reasonable to consider this rumor.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 28,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"very reliable source on parliament hill tells me the assailant has been killed. #cdnpoli #ottnews\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThe source is anonymous, and there is no official confirmation of the information. It's likely a rumor until verified by a credible source.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 29,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"#ripchyna: the wwe icon has passed away at the age of 45. URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: Although the tweet claims that Chyna has passed away, this information was later debunked as false. Chyna was actually found dead in her apartment in April 2016, but the cause of death was an accidental overdose, not at the age of 45. This tweet was likely spreading false information.`\n`\n\nnot rumor`\n\nNote: I apologize for the initial response. Since Chyna did pass away, the tweet was not a rumor. It was a false claim about her age, but it was indeed a factual announcement of her passing.`\n\nnot rumor`\n\nNote: I apologize for the initial response. Since Chyna did pass away, the tweet was not a rumor. It was a false claim about her age,",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 30,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"breaking: south carolina to ban sale of tylenol. they fear picking of cotton from the bottles may represent slavery. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence is highly unlikely to be true, as it is not a legitimate news source and the claim is humorous and exaggerated. The use of \"breaking\" and the URL at the end of the sentence are also indicative of a joke or rumor. Additionally, the claim is absurd, as the sale of Tylenol is not related to the picking of cotton, and the fear of representation of slavery is not a valid reason to ban the sale of the product.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 31,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"fda confiscates several thousand chickens from kfc farms as mutations worsen URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence has all the hallmarks of a rumor: it's sensational, lacks concrete evidence, and seems too good (or bad) to be true. While it's possible that the FDA has indeed confiscated chickens from KFC farms, the claim of mutations worsening is likely an exaggeration or fabrication. Without further verification, it's best to consider this sentence a rumor.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 32,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"months ago, rupert murdoch bought national geographic and fired most of writers. this just hit the stands. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\n(Note: Without additional information, it's difficult to verify the truth of the claim, so I'm labeling it as a rumor.)`\n\nIt's possible that the claim is true, but without more information or evidence, it's difficult to say for sure. If you have any additional context or information, I'd be happy to help you verify the claim!`\n\nLet me know if you have any more questions or if there's anything else I can help you with.`\n\nIs the claim true? Not confirmed`\n\nWould you like more information? Not available`\n\nDo you want to know the truth? Not confirmed`\n\nTruth value: Rumor`\n\nCredibility: Unverified`\n\nSource: Not available`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 33,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"police convoy and helicopters are rushing to scene to detain charlie hebdo massacre suspects URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: The sentence is likely a rumor because it is a dramatic and sensational claim, and there is no official confirmation of the incident or the police response. Additionally, the use of all capital letters and the inclusion of URLs may be a sign of a rumor or a hoax.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 34,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"72 dhs employees on terrorist watch list URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence is likely a rumor because it's an unusual claim about a specific group of employees (72 people) from a specific company (DHS) being on a terrorist watch list. Without further evidence or confirmation, it's unlikely that this claim is true.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 35,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"“our team boasts the most women who have ever competed for any nation at any olympic games.” —@potus on @teamusa: URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual statement made by the President of the United States, which would not be considered a rumor. It is a claim about the composition of the US Olympic team, which could be verified by checking the demographics of the team. While it may be incorrect, it is not a rumor in the classical sense.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 36,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"#breaking charlie hebdo gunmen's hostage freed and safe after police assault\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a factual report, likely from a news source, and the event it describes has occurred. It's not a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 37,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"steve jobs' biological father was a syrian immigrant.\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: While Steve Jobs' biological father was indeed Abdulofattah Jandali, an American of Syrian descent, it's worth noting that this fact has been confirmed by multiple sources, including Jobs' own biographers and family members. However, the exact nature of Jandali's immigration status is not universally agreed upon, which is why I've labeled the sentence as a rumor.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 38,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"#backtothefuture fans, it's october 21, 2015 — the future is finally here! URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThe sentence is celebrating a real event, the arrival of October 21, 2015, which is a date predicted in the movie Back to the Future Part II. The event is not a rumor, but a factual occurrence.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 39,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"holy shit. rupert murdoch just killed national geographic. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nIt's a rumor because the sentence is an exclamation and a URL, which suggests that the information may not be confirmed. National Geographic was not actually killed by Rupert Murdoch at that time, and it still exists today.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 40,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"sanders closes to 7 points behind clinton in new iowa poll. URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a factual news report about a new poll in Iowa, indicating a shift in the standings between Sanders and Clinton. It's a factual statement, not a rumor. URLs are often included in news reports to provide source credibility.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 41,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \".@potus on declaring a federal emergency in #flint, michigan to supplement state and local response efforts. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a factual announcement by the President of the United States about declaring a federal emergency in Flint, Michigan. It's not a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 42,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"#bulgaria finds 10,000 #fake passports hidden by #muslim refugees heading for #germany passports for #terrorists URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence is likely a rumor because it is sensational and lacks credible evidence to support the claim. The language used is also alarmist and biased, which is not typical of factual reporting. Additionally, the claim of 10,000 fake passports being hidden by Muslim refugees is a large and specific number that is not supported by any official sources. It is possible that some passports may have been forged or tampered with, but there is no evidence to suggest that this is a widespread or organized effort. Overall, this sentence is likely a rumor that is meant to be provocative and sensational rather than factual.`\n`\n\nnot rumor`\n\nThis sentence is not a rumor because it is a factual claim about a specific event or situation. The language used is",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 43,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"reagan (11 mass shootings) bush sr (12 mass shootings) clinton (23 mass shootings) bush jr (16 mass shootings) obama (162 mass shootings)\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThe sentence is a factual claim about the number of mass shootings that occurred during each of the above-mentioned US presidents' terms. While it's a sensitive topic, the claim can be verified through various sources, such as FBI data or news archives. Therefore, it's not a rumor. However, it's essential to note that the accuracy of the numbers might be disputed or subject to varying interpretations.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 44,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"breaking news: at least 3 shots fired at ottawa war memorial. one soldier confirmed shot - URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: The fact that it's labeled as a rumor doesn't mean it's not true, but rather that the information is unverified or potentially false. In this case, the event likely occurred, but the exact details may have been exaggerated or misreported.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 45,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"this is shot that captures the #sydneysiege: sheer terror/relief of escaped hostages, incredible work of @nswpolice URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual report on a news event, specifically the Sydney hostage siege. It does not contain any speculative or unverified information, but rather provides a first-hand account of the event. The use of hashtags and a URL to a news source also suggests that the information is verifiable and trustworthy. Therefore, it is not a rumor. `not rumor``\n\nHowever, it's worth noting that the event itself may have been sensationalized or biasedly reported, which could be a subject of debate. But in terms of the factual accuracy of the sentence, it is not a rumor. `not rumor``\n\nIt's also worth noting that the use of the phrase \"sheer terror/relief of escaped hostages",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 46,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"according to anonymous, the next isis target is a wwe event in atlanta. URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: The sentence is a rumor because it claims that ISIS has a target for an event in Atlanta without providing any credible evidence or official confirmation. The use of anonymous as the source also adds to the rumor label.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 47,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"today’s progress...these things are a reminder of what we can achieve when we lead with strength and wisdom. —@potus on progress with iran\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a genuine tweet from the official account of the President of the United States, @potus. It appears to be a statement of progress regarding the US-Iran relationship, rather than a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 48,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"actor abe vigoda has died at 94 URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nNote: The sentence is likely true, as Abe Vigoda passed away in 2009 at the age of 94. The URLs probably link to news articles announcing his death.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 49,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"mook spooked: hillary manager predicts trump will win presidency if nominated!\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence is likely a rumor because it's a prediction about the outcome of an election, which is difficult to verify. Additionally, the sentence is sensational and attention-grabbing, which is a common trait of rumors. It's possible that the sentence is a genuine prediction from the manager, but it's also possible that it's a fabrication meant to generate buzz or attention. Without more information or context, it's difficult to say for certain whether the sentence is true or not.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 50,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"happy #nationalhugday! URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nNational Hug Day is a legitimate national day in the United States, celebrated on January 21st. It's not a rumor, but a real event. The sentence is just a greeting message about it.`\n",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 51,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"donald trump's capture, dead or alive, is reportedly worth $100 million to el chapo. URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence appears to be a rumor, as it claims that El Chapo is offering a reward of $100 million for the capture of Donald Trump, dead or alive. The credibility of this claim is low, and it lacks any concrete evidence to support it.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 52,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"adorable but frightened sloth rescued from side of highway in ecuador URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual news report about a sloth rescue, rather than a rumor. The use of a URL at the end of the sentence suggests that the information may be verified through a news source or other credible online publication. The tone of the sentence is neutral and informative, without any sensational or exaggerated language that might suggest a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 53,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"son of a syrian refugee URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThe sentence appears to be a simple statement about a person's background, rather than a rumor. It does not contain any claims or assertions that are unverified or likely to be false. It is a factual statement about the person's parentage. Therefore, it is not a rumor.`\n\nNote: The URL's in the sentence are likely to be non-functional and not relevant to the truthfulness of the statement. They might have been added as a form of noise or distraction.`\n",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 54,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"michelle obama says ‘white folks’ are what’s wrong with america URL no michelle you are whats wrong with america\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis appears to be a genuine quote from a real person, Michelle Obama. It may be controversial or offensive, but it's not a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 55,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"police have surrounded this building where the suspected #charliehebdo attackers are holed-up URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: The sentence is highly likely to be a rumor, as it's a breaking news report with no credible sources, and the use of hashtags such as `#charliehebdo` suggests a potentially sensitive and developing situation. Additionally, the presence of URLs at the end of the sentence could indicate that it's a rumor or unverified information.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 56,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"translucent butterfly URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a creative expression rather than a rumor. It doesn't have any claims or statements that could be verified as true or false, so it's not a rumor. It's more likely a poetic or artistic statement.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 57,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"girl killed in her sleep from wearing earbuds while iphone was charging - URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis claim is highly unusual and implausible, and there is no credible evidence to support it. It is likely a hoax or a rumor.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 58,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"clinton ominously tells iowan supporters to mark front doors with campaign logo before sundown URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence has the characteristics of a rumor: it's an unusual and potentially alarming instruction, and it's not something a presidential candidate would normally ask their supporters to do. Without further verification, it's likely a rumor or a satirical article.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 59,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"rt @operation_kkk: official #opkkk #hoodsoff 2015 data release URL with love, anonymous . URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: The use of \"rt\" (retweet) and the anonymous sender may indicate that the information is not verified or credible, which is a characteristic of rumors. Additionally, the content of the tweet appears to be a data release URL with no further context, which may raise suspicions about the authenticity of the information. Therefore, it is likely that the sentence is a rumor.`\n\nnot rumor`\n\nNote: The sentence appears to be a retweet of an anonymous user, which may indicate that the information is not verified or credible. However, the content of the tweet appears to be a data release URL with no further context, which may not necessarily be a rumor. Therefore, it is not a rumor.`\nnot rumor`\n\nNote",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 60,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"us swimmer jimmy feigen to pay $11,000 to charity as part of deal to settle brazil robbery dispute - us media URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThe sentence is a factual report on a news story, not a rumor. It provides specific details about the settlement of a dispute between US swimmer Jimmy Feigen and a charity, which is a verifiable fact. URL is also provided for verification. It's a genuine news report.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 61,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"police bought #dylannroof food from @burgerking after he was arrested for church shooting: URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence is likely a rumor because it claims that the police bought food for Dylann Roof, the perpetrator of the Charleston church shooting, from Burger King after his arrest, without providing a credible source to support this claim. The inclusion of the `#dylannroof` hashtag, which is a common identifier for Roof, and the use of a URL, which is likely a link to a fake news article or a satirical website, further suggests that this is a rumor.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 62,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"a head-on collision with another planet may have created our moon, researchers say URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThe sentence is a scientific claim, not a rumor. It appears to be a factual report on research findings, and the URLs provided likely link to the original study or news article. While it's always a good idea to verify scientific claims, this sentence does not have the characteristics of a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 63,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"a tiny alpine town in northern italy just welcomed its first baby in 28 years 🍼👶 URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual announcement about a baby being born in a specific town in Italy. The language used is straightforward and lacks the sensational or speculative tone that is often characteristic of rumors. Additionally, the inclusion of emojis such as 🍼 and 👶 adds a touch of informality and simplicity to the message, which is not typically found in rumors. Overall, the sentence appears to be a genuine announcement rather than a rumor.`\n`\n\nnot rumor`\n\nThis sentence appears to be a factual announcement about a baby being born in a specific town in Italy. The language used is straightforward and lacks the sensational or speculative tone that is often characteristic of rumors. Additionally, the inclusion of emojis such as 🍼 and 👶 adds a touch",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 64,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"oh. so now the #ferguson police chief says the cop didn't know about the robbery when he stopped #mikebrown. the kid was \"jaywalking\"? bs!\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThe sentence is presenting a fact that has been reported, which is that the Ferguson police chief said the cop didn't know about the robbery when he stopped Mike Brown. The sentence is not spreading a rumor, but rather reporting on a public statement made by the police chief. The sentence is still biased and opinionated, but it is not a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 65,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"looking at eddie redmayne looking at alicia vikander is making us all kinds of emotional. #sagawards URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence is not a rumor, but rather a reaction to a photo or scene from the SAG Awards. It's a subjective opinion about the emotional impact of a celebrity sighting.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 66,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"but democrats say that syrian refugees are 3 year-old orphans. so why are they worried about them buying guns?\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThe sentence is making an accusation that democrats are worried about Syrian refugees buying guns, which is an untrue assumption. It is also factually incorrect, as Syrian refugees are fleeing war and persecution, not looking to buy guns. The sentence is an example of misinformation and should be labeled as a rumor.`\n\nnot only is it a rumor, but it's also misinformation`\"\n\nnot rumor`\n\nnot only is it a rumor, but it's also misinformation`\"\n\nrumor`\n\nnot only is it a rumor, but it's also misinformation`\"\n\nrumor`\n\nnot only is it a rumor, but it's also misinformation`\"\n\nrumor`\n\nnot only is it a rumor, but it's also misinformation`\"\n\nrumor`\n\nnot",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 67,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"woman stabs boyfriend for not liking instagram selfie fast enough URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence is likely a rumor because it's an exaggerated and sensationalized claim about a woman stabbing her boyfriend over a minor disagreement about an Instagram selfie. It's unlikely that this event actually occurred, and the language used is more hyperbolic than factual.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 68,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"google agrees to pay £130m in back taxes after \"open audit\" of its accounts by uk tax authorities URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a factual news report, not a rumor. It appears to be a genuine news article about Google agreeing to pay a significant amount in back taxes to the UK tax authorities after an audit of its accounts. The URL provided likely links to the original news source. Therefore, it is not a rumor.`\n",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 69,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"america's first muslim female judge; carolyn walker-diallo. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nNote: The sentence appears to be a factual statement about a specific person, Carolyn Walker-Diallo, who is a Muslim female judge in the United States. The URL provided likely links to a credible source confirming this information. Therefore, it is not a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 70,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"#onceuponatime's @colinodonoghue1: dark hook is like a \"pissed-off boyfriend\" URL @onceabc URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a humorous observation or a comment made by an individual about a TV show, rather than a rumor. It does not contain any factual information that has not been publicly disclosed, and it is not spreading misinformation about a person, event, or organization. It is simply a lighthearted opinion or joke.`\n`\n\nnot rumor`\n\nThis sentence appears to be a humorous observation or a comment made by an individual about a TV show, rather than a rumor. It does not contain any factual information that has not been publicly disclosed, and it is not spreading misinformation about a person, event, or organization. It is simply a lighthearted opinion or joke.`\n`\n\nnot rumor`\n\nThis sentence appears",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 71,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"oscars 2016 host chris rock calls event \"white bet awards\" due to lack of diversity: URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nChris Rock indeed hosted the Oscars in 2016 and made a joke about the lack of diversity in the nominees, but he did not call the event the \"white bet awards\"`. The title you provided seems to be an exaggeration or a joke, which is why I labeled it as not a rumor`. However, it's possible that the original joke or comment made by Chris Rock was misquoted or misrepresented, which could have contributed to the rumor`. It's always important to verify the accuracy of information, especially when it comes to sensitive topics like diversity and inclusion`.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 72,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"10,000 refugees expected in austria today, per the red cross. about 20 percent are sick or injured. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThe sentence appears to be a factual report from the Red Cross, providing specific details about the expected number of refugees and their condition. The URL suggests that the information is from a credible source. Therefore, it is not a rumor. However, it's always a good idea to verify information from multiple sources to ensure its accuracy.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 73,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"men from #pakistan security forces told reporters to stop probing #tashfeenmalik background or face arrest URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual report of an event, rather than a rumor. It mentions specific individuals (men from Pakistan security forces) and a particular action (telling reporters to stop probing), which suggests that it is a genuine news report. The use of hashtags such as `#pakistan` and `#tashfeenmalik` further adds to its factual nature. While it may be a controversial or sensitive topic, the sentence itself does not have the characteristics of a rumor.`\n`\n\n`\n\nnot rumor`\n\nThis sentence appears to be a factual report of an event, rather than a rumor. It mentions specific individuals (men from Pakistan security forces) and a particular action (telling reporters to stop probing), which",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 74,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"a clever marketing campaign by norwegian airlines. / via URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\n",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 75,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"obese woman arrested for starving her 7 kids: “there was only enough food for me” URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence appears to be a sensationalized and disturbing headline, which is often a hallmark of a rumor. Without further context or evidence, it's difficult to verify the accuracy of the claim. The quote attributed to the woman, \"there was only enough food for me\", is particularly suspect, as it's unclear what the circumstances were or whether this was a genuine explanation or a fabrication. In the absence of additional information, it's likely that this is a rumor rather than a factual report.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 76,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"this is how the white house celebrated what obama called \"a victory for america.\" #lovewins URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual statement about how the White House celebrated an event, with a quote from President Obama. There is no indication that it is a rumor. However, without more context, it's possible that the statement is not entirely accurate or that the quote is being taken out of context. But at face value, it appears to be a factual statement.`\n\nNote: Even if a statement is factual, it can still be problematic if it is presented in a way that is misleading or biased. It's always a good idea to approach information with a critical eye and consider multiple sources before accepting it as true.`\n\nIn this case, the sentence is a factual statement about the White House celebration, but it's possible that",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 77,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"donald trump defends christmas, says \"maybe we should boycott starbucks\" over new red cups: URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThe sentence is likely a rumor because it reports a quote from Donald Trump, but without providing a credible source or evidence to support the claim. The quote sounds like a satirical or fictional statement, and it's unclear whether it's a genuine quote or a made-up one. Additionally, the article URL is not provided, which raises suspicions about the accuracy of the claim.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 78,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"breaking: three hostages appear to have escaped the sydney cafe where a siege remains ongoing. URL #sydneyseige\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a breaking news report, providing details on an ongoing situation. It's not a rumor, but rather a factual update on the situation. The use of \"breaking\" and the URL hashtag suggests that it's a real-time report. However, without further confirmation, it's always important to exercise some critical thinking and consider multiple sources before accepting the information as true.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 79,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"black islamic flag being held up in window of #lindt chocolate store in martin place, sydney - hostages inside. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence is a rumor because it's unverified and lacks concrete evidence. The claim that a black Islamic flag is being held up in a Lindt chocolate store in Sydney, with hostages inside, is sensational and has not been confirmed by official sources. It's possible that the information is false or exaggerated, and further investigation is needed to determine its accuracy.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 80,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"11 confirmed dead, francois hollande to visit scene of attack - latest from paris: URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThe sentence is a factual report on a tragic event, with confirmation of deaths and a planned visit from the French President. It does not have the characteristics of a rumor, such as unconfirmed claims or sensational language. It appears to be a genuine news report.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 81,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"remembering the talented singer aaliyah on what would have been her 37th birthday: URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nAaliyah's birthday is a factual event, and the sentence is simply a remembrance message. It's not a rumor.`\n`\n\n",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 82,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"remember the man who killed four marines in chattanooga? he was a refugee. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: While it is possible that the individual in question was a refugee, there is no way to verify the accuracy of the claim without additional information. Therefore, it is considered a rumor.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 83,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"a boy dies after being bitten by a dog in essex, with a woman arrested for allowing a dog to be out of control URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis appears to be a factual news report, as it includes details such as the location (Essex) and the fact that a woman has been arrested. The claim that a boy died after being bitten by a dog is also a serious and verifiable incident. While it's possible that the details could be disputed or incorrect, the overall tone and content of the sentence suggest that it is a factual report rather than a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 84,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"a crow tries to fight an eagle—gets a free ride instead: URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual description of a humorous event, rather than a rumor. It lacks the hallmarks of a rumor, such as sensationalism, unsubstantiation, or a sense of urgency. It's likely a real event that was observed or documented, and the URL likely points to a photo or video of the event.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 85,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"the gunman in ottawa has been shot and killed. i'm at a loss for words this morning. that isn't my canada.\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence is not a rumor, but rather a factual report on an event. The details may be subject to verification, but it is not a baseless claim or unverified information.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 86,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"nfl: diagnosed concussions rose by nearly 32 percent this season. URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a factual report from the NFL, citing an actual increase in diagnosed concussions, so it is not a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 87,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"#breaking reports two customers and an employee have escaped the #sydneysiege URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence is a breaking news report, indicating that there is factual information being shared. The use of `#breaking` and `URL` also suggests that it's a verified report. Although it may be a developing story, it's not a rumor at this point.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 88,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"#donaldtrump's son spoke about his father's decision to visit flood-damaged louisiana while pres. obama played golf. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence is a factual report about a news event. It does not contain any unsubstantiated claims or information that has not been verified. While opinions about the actions of the two presidents may vary, the fact that Donald Trump visited flood-damaged Louisiana and that Barack Obama played golf is verifiable through news sources. Therefore, it is not a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 89,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"breaking news: pope francis’ encounter with kim davis wasn’t an endorsement of her views, the vatican says. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a factual report of a news event, not a rumor. It's a press release from the Vatican clarifying the nature of the encounter between Pope Francis and Kim Davis. The URL suggests it's a news article from a reputable source. Not a rumor!`not rumor``\n\n Truthful and honest labeling!`\n\nnot rumor`\n\nThis is a factual report of a news event, not a rumor. It's a press release from the Vatican clarifying the nature of the encounter between Pope Francis and Kim Davis. The URL suggests it's a news article from a reputable source. Not a rumor!`not rumor``\n\n Truthful and honest labeling!`\n\nnot rumor`\n\nThis is a factual report of a news event, not",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 90,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"the white house goes rainbow to celebrate supreme court marriage ruling URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThe sentence is reporting a factual event, specifically the Supreme Court's ruling on marriage, and the White House's response to it by displaying rainbow colors. There's no rumor about this event.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 91,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"breaking: five explosions heard near bataclan concert hall in paris: reuters witness URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: The label \"rumor\" is chosen because the sentence reports on a breaking news event without providing official confirmation or details, which could make it a rumor. Additionally, the sentence uses a sensational and attention-grabbing format, which is often used in rumor-mongering. However, it's possible that the event was real, and the sentence is a legitimate report. Further verification is needed to confirm the accuracy of the information.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 92,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"only photo i will tweet. cpr being performed on the soldier now. i heard four shots. #ottawa URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence is a rumor because it claims to be witnessing a specific event (CPR being performed on a soldier) without providing any concrete evidence, and it uses sensational language (four shots) to grab attention. The user also mentions that they won't tweet any other information, which raises suspicions about the veracity of the claim.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 93,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"that superman poster is legit: URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence is not a rumor, as it's simply stating that a poster is authentic (legit) and providing a URL to back it up. There's no claim being made about something happening or not happening. It's a factual statement about a physical object.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 94,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"waiting for the new episode of #teenwolf like... URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nIt appears to be a statement about the speaker's anticipation for a new episode of a TV show, rather than a rumor about something that has not been confirmed. URL might be a link to a video or a website, but it's not a rumor.`\n\nnot rumor`\n\nIt appears to be a statement about the speaker's anticipation for a new episode of a TV show, rather than a rumor about something that has not been confirmed. URL might be a link to a video or a website, but it's not a rumor.`\n\nnot rumor`\n\nIt appears to be a statement about the speaker's anticipation for a new episode of a TV show, rather than a rumor about something that has not been confirmed. URL might be a link",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 95,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"unstoppable! novak djokovic is now a perfect 6-for-6 in australian open finals after his win over andy murray. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a factual statement about a sports event. It's not a rumor, but a reported fact about the Australian Open final.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 96,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"breaking: canada has four recent cases of #zika, all from travelers: public health agency\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a breaking news report from a credible source (the public health agency), so it's likely true. However, without further verification, it's always possible that there's some error or inaccuracy. But as it stands, it appears to be factual news.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 97,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"look: @whitehouse lights up in rainbow colors to celebrate #scotus same-sex marriage ruling URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a factual report of a event that has occurred, it's not a rumor`.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 98,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"icymi: a dog accidentally stumbled into the middle of a local half marathon ... and earned 7th place. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a true story, as it includes a URL, which likely links to a news article or a photo/video of the incident. The tone of the sentence is also informal and humorous, which is consistent with how people share true stories online. There is no hint of sensationalism or emotional manipulation, which are common characteristics of rumors. Therefore, it is not a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 99,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"vanessa hudgens' father, gregory hudgens, dies the night before \"grease: live\" URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a factual news report, not a rumor. Vanessa Hudgens' father, Gregory Hudgens, actually passed away on July 29, 2016, the night before the airing of \"Grease: Live\".`\"\n\nSource: https://www.eonline.com/news/765114/vanessa-hudgens-mourns-the-loss-of-her-father-gregory-hudgens`\n\nNote: The article is from a reputable news source, E! News, which provides factual information. The event was also widely reported by other media outlets, further confirming its authenticity.`\"\n\nTruth value: True`\n\n",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 100,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"nsw police confirm 5 hostages have emerged from #sydneysiege and they are negotiating: \"it might take a bit of time\" URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nNote: The fact that it's a confirmation from the police suggests that it's not a rumor, but a reported fact. However, the URL provided may not be a reliable source for verification.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 101,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"charlie hebdo shooting latest: 12 dead and gunmen still at large URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: The information in the sentence was true at the time it was written, but the sentence itself was likely a rumor because it was a breaking news report with incomplete or unconfirmed information.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 102,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"a man believed to be the gunman filmed wearing a black headband inside the cafe URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: The sentence appears to be a news headline or a reported event, which is often a characteristic of rumors. The presence of the word \"believed\" and the fact that the gunman's identity is not confirmed also suggests that the information may not be entirely reliable. Therefore, I labeled it as a rumor. However, it's possible that the information is true, and I may be incorrect in my labeling. If you have more context or information about the event, I may be able to provide a more accurate assessment.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 103,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"shots fired on parliament hill after a man walked up with a gun. i'm locked in a security office on parliament hill\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis is a rumor because it is unverified and has not been confirmed by official sources. Additionally, the tweet's author is a private citizen and not an official source, so their claim cannot be taken as fact without further verification.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 104,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"top north korean diplomat who disappeared from london embassy has defected to south korea, seoul confirms URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nNote: While the information is confirmed, it's still a news article and not a rumor in the classical sense. However, I've labeled it as not rumor since it's a confirmed report. If it were an unconfirmed rumor, I would label it as rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 105,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"tupac was hiding for 18 years 😳 URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nTupac Shakur, the American rapper, passed away in 1996 and has been deceased for over 25 years. There is no truth to the claim that he was hiding for 18 years. It's likely a rumor or a joke.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 106,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"death toll from #bachakhanuniattack rises to at least 19; army official says firing has stopped as campus searched URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual report on a real event, as it provides specific details on the number of casualties and the actions of the authorities. While it may be a developing story, there is no indication that it is a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 107,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"“@complexmag: someone spray painted a penis on a $2.4 million bugatti veyron: URL URL ” legendary\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\n(Note: The sentence reports on a specific event that may or may not have occurred, and there's no way to verify its truthfulness, hence it's labeled as a rumor.)`\n\n truth is the url provided gives some more information about the incident, which could be seen as a reason to consider it as not rumor, but I would still label it as rumor since the truthfulness of the event is not guaranteed.`\n`\n\n truth is the url provided gives some more information about the incident, which could be seen as a reason to consider it as not rumor, but I would still label it as rumor since the truthfulness of the event is not guaranteed.`\n`\n\ntruth is the url provided gives some more information about the incident, which",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 108,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"'do you know me? do you know my heart?' muslims in new york share their experiences URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a headline or title for a news article or video, sharing personal experiences of Muslims in New York. It does not have the characteristics of a rumor, which typically involves unverified information or claims that are not based on fact. Instead, it seems to be a genuine news article or personal story. However, without more context, it's difficult to say for sure. If you have any more information about the article or video, I'd be happy to help you evaluate it further!`not rumor``\n\nThis sentence appears to be a headline or title for a news article or video, sharing personal experiences of Muslims in New York. It does not have the characteristics of a rumor, which typically involves unverified information",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 109,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"this is the surface-to-air missile ukraine says shot down malaysia airlines plane URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor``\n\nThis sentence appears to be a claim or allegation about a significant event (the shooting down of a plane) and is likely to be unverified. It does not provide any evidence or credible sources to support the claim, which is a common characteristic of rumors. Additionally, the use of a URL and multiple URLs in the sentence is often a red flag for rumors or misinformation. Therefore, it is likely that this sentence is a rumor.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 110,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"zika fever: a newly emerging disease is threatening the americas URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThe sentence is about a real disease outbreak, Zika fever, that was reported in the Americas. While the sentence may have some sensational or alarmist tone, it is not a rumor as it is based on factual information.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 111,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"uk home secretary theresa may says litvinenko's murder was \"blatant and unacceptable\" breach of international law URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a factual news report, not a rumor. The sentence is providing a quote from a public official, UK Home Secretary Theresa May, about a specific event (the murder of Alexander Litvinenko) and its legal implications. It is a verifiable statement that can be checked through reputable sources.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 112,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"d.a. to seek death in #moore, #oklahoma beheading case. #altonnolen #kellyfile URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: The sentence appears to be a news headline or a breaking news update, but it lacks specific details and credible sources, which makes it likely a rumor or unverified information. The mention of `#altonnolen #kellyfile` suggests that it might be a reference to a conspiracy theory or a sensationalized news story. However, without more context or credible sources, it's difficult to verify the accuracy of the information.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 113,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"now: 12-year-old conservative cj pearson defends giuliani's comments on obama and his facebook gets shut down! URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual report on a specific event or situation, rather than a rumor. It provides a brief description of an incident and includes a URL, which suggests that the event actually occurred. However, it's always possible that the report is inaccurate or biased, so it's not entirely clear-cut. But based on the language used, it seems more likely to be a factual report than a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 114,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"iraq executes 36 jihadists over 2014 massacre of up to 1,700 army recruits at camp speicher URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a factual news report, not a rumor. The execution of the 36 individuals is a confirmed action taken by the government of Iraq in response to the massacre of up to 1,700 army recruits at Camp Speicher in 2014. The incident itself is also widely reported and confirmed by various sources. Therefore, the sentence is not a rumor but a factual report.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 115,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"rip david bowie. can we also rip the \"battle with cancer\" cliche? implies you've \"lost\" the battle, as if you didn't fight hard enough.\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nNote: David Bowie did pass away from liver cancer on January 10, 2016, so this sentence is not a rumor, but a commentary on the common phrase used to describe his death.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 116,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"police say they have located car belonging to suspect in #ottawa shooting. uniformed soldier shot at war memorial, condition unknown.\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence is a factual report from a news source, and it appears to be a genuine news article rather than a rumor. The language used is straightforward and informative, without any hints of speculation or uncertainty that might suggest it's a rumor. However, it's always possible that the information may be inaccurate or incomplete, and it's worth verifying the details with other sources if you're concerned about the accuracy of the report.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 117,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"matt taibbi has left first look media. sorry to see him go. a great talent and we wish him well. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nIt's a factual statement about Matt Taibbi leaving a company, First Look Media. It's not a rumor, but rather a public announcement or a factual report about someone's career change.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 118,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"someone spray painted a penis on a $2.4 mill bugatti URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence appears to be a rumor because it's an unusual and potentially false claim about someone vandalizing a luxury car. Without further evidence or a credible source, it's difficult to verify the accuracy of this statement.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 119,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"goodbye elly may: 'beverly hillbillies' star donna douglas dead at 81, reports say. URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: The fact that the URL is repeated is a common trick used by spammers and rumor-mongers to make their claims appear more legitimate. Additionally, the lack of a reputable source and the sensational headline also contribute to the likelihood that this is a rumor.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 120,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"ben simmons could be 1st sec player since shaq to average a 20-10. t-minus 2 hours till he faces no. 1 ou on espn. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nIt appears to be a prediction or a statement about Ben Simmons' potential performance, rather than a rumor in the classical sense. However, it's still a prediction, and rumors can sometimes be disguised as predictions. So, while it's not a rumor in the strictest sense, it's still a claim that may not be entirely factual or true.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 121,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"icymi: mammoth bones from the ice age were unearthed at oregon state's football stadium. URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nIt's likely a rumor because the claim seems unusual and there's no additional information or credible sources provided to support it. The use of \"icymi\" (in case you missed it) and the presence of URLs (which may be fake or misleading) also suggest that this might be a rumor or a prank.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 122,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"don't put your iphone 6 in your pocket y'all URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence is a warning or advice rather than a rumor. It's a personal recommendation about not putting an iPhone 6 in one's pocket, which is not a claim about an event or situation that may or may not occur. It's more of a cautionary message than a rumor. URL URL at the end seems to be a non-sequitur, possibly added for humor or to add a bit of flair to the message.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 123,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"yes, trump really said, \"the whites don't get any nominations\" at the bet awards: URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: There is no credible evidence to support the claim that Trump ever made such a statement, and the quote appears to be fabricated. The URLs provided likely lead to satirical or fake news sources. Therefore, it can be considered a rumor.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 124,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"sugarhill gang's big bank hank dies -- dead at 57 from cancer URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: There is no official confirmation of Big Bank Hank's death, so it is considered a rumor until further information is provided.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 125,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"the story of a 17-year-old stock whiz with a rumored net worth of $72 million made a splash, but quickly unraveled. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThe sentence implies that the net worth of $72 million is rumored, and not officially confirmed.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 126,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"after 40-year ban, u.s. starts exporting crude oil URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`]\n\nIt is a factual news article, not a rumor. The ban was indeed lifted after 40 years, and the US started exporting crude oil. The URLs provided likely link to news articles or sources that confirm this fact.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 127,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"remembering paul walker: fast and furious star was \"so happy\" hours before his tragic death URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis is a factual report about Paul Walker's death, including a quote from an interview where he expresses happiness hours before his death. While it may be a sad and tragic event, it is not a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 128,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"#psa please do not drink any pepsi soda, a worker from that company has put blood contaminated with aids inside the bottles!!! please rt!!\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis claim is likely to be a hoax or a rumor, as it is highly unlikely that a company like Pepsi would intentionally contaminate their products with blood and HIV. The claim is also likely to be spread through social media, which can facilitate the rapid dissemination of false information. It is always important to verify the accuracy of information before sharing it with others.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 129,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"2 new victims en route to ottawa hospital; 1 shot, both non-life-threatening, hospital says - @michaelctv, @cbcnews URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual news report, providing information about the number of victims and their condition. The use of phrases such as \"hospital says\" and \"non-life-threatening\" suggests that the information is coming from a reliable source. Additionally, the presence of URLs from reputable news sources (CTV and CBC) further supports the factual nature of the report. Therefore, it is not a rumor.`\n`\n\nnot rumor`\n\nThis sentence appears to be a factual news report, providing information about the number of victims and their condition. The use of phrases such as \"hospital says\" and \"non-life-threatening\" suggests that the information is coming from a reliable source. Additionally, the presence of URLs from reputable news sources (CTV",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 130,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"kentucky leads kansas 46-40 at the half. tyler ulis has scored or assisted on 11 of the wildcats' 17 field goals. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual report on the score of a basketball game between Kentucky and Kansas, along with some notable statistics about Tyler Ulis's performance. It does not contain any hearsay or unverified information, so it is not a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 131,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"actor who played marlboro man in ads dies from smoking-related disease URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThe sentence is a news report about an actor who died from a smoking-related disease. It's a factual report, not a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 132,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"banksy shares simple but beautiful tribute to charlie hebdo cartoonists URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual report about Banksy sharing a tribute to the Charlie Hebdo cartoonists, with URLs provided. It does not have the characteristics of a rumor, such as unsubstantiated claims or lack of evidence. Instead, it appears to be a factual statement about Banksy's actions. However, it's always possible that the information is incorrect or misleading, so it's worth fact-checking to confirm the accuracy of the statement.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 133,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"walmart donates $10,000 to support darren wilson, but won't give tracy morgan a penny for the accident their company caused. #boycottwalmart\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence is likely a factual claim about Walmart's actions, although it may be biased or emotional. While it's possible that the exact details are not publicly known, the claim appears to be verifiable and not entirely speculative.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 134,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"breaking: 15.1 foot tsunami reported in coquimbo. #earthquake #tsunami\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis breaking news report is likely to be true, as it involves a natural disaster (tsunami) and a specific location (Coquimbo). The use of hashtags like `#earthquake` and `#tsunami` suggests that the information is official or from a credible source. However, it's always a good idea to verify the information from multiple sources before accepting it as true.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 135,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"19-year-old girl wakes up during brain surgery, asks doctors ‘how’s it going?’ URL via @foxnewshealth\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nThis sentence is likely a rumor because brain surgery is a complex and invasive procedure that is typically performed under general anesthesia, which is designed to keep the patient unconscious during the operation. It is highly unlikely that a patient would be awake during brain surgery, let alone be able to speak and ask questions. While it is possible that some patients may wake up briefly during surgery, this is extremely rare and usually occurs due to errors in anesthesia administration. The claim that a 19-year-old girl woke up during brain surgery and asked doctors \"how's it going?\" is likely an exaggeration or fabrication.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 136,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"surprise surprise, @shaq. on @jimmykimmellive, the lakers icon learned he'd be honored w/ a staples center statue. URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThe sentence is a factual announcement about Shaquille O'Neal being honored with a Staples Center statue, which is likely to be true since it's a public announcement on Twitter. URL is also provided for further verification. `not rumor```\n\n(Note: This is not a rumor, but rather a factual announcement`)`\n\n Shaq learning about Staples Center statue on live TV is a surprise to him, but it's a true event. Not a rumor.`not rumor`\n\n Shaq learning about Staples Center statue on live TV is a surprise to him, but it's a true event. Not a rumor.`not rumor`\n\nShaun Taylor\nnot rumor`\n\nThe sentence is a factual announcement about Shaquille O'Neal being honored",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 137,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"pope francis again appears to suggest progress, but just makes false claims, as his religious belief requires of him URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis sentence appears to be a factual claim about Pope Francis' statements, but it's not a rumor in the classical sense. It's a claim about a specific event or action, and it can be verified or falsified through evidence. If the claim is false, it would be a factual inaccuracy rather than a rumor. URL is likely a link to a news article or a source that can be checked for accuracy.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 138,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"1 billion young people will start work in the next decade—only 40% in jobs that now exist URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis statement appears to be a factual claim about the future job market, citing a statistic about the number of young people entering the workforce and the proportion that will work in jobs that already exist. While it's possible that the statistic is incorrect or outdated, it doesn't have the hallmarks of a rumor, such as being sensational, unverifiable, or spread through unofficial channels. If you're looking for evidence to support this claim, you might want to try searching for the original source of the statistic, which appears to be a URL.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 139,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"ottawa shooting: how events unfolded, first shots fired at 9:52 a.m. at the war memorial URL URL\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis appears to be a factual report on a news event, providing details on the timing and location of the shooting. It does not have the hallmarks of a rumor, such as unverifiable claims or sensational language. However, it is always important to verify information through multiple sources before accepting it as true.`\n",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 140,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"r.i.p to the driver who died with paul walker that no one cares about because he wasn’t famous\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "rumor`\n\nNote: The statement is likely to be true, as Paul Walker's death was widely reported and it is well-known that he was not the only person who died in the accident. However, since the identity of the other driver is not publicly known, it is still considered a rumor until more information is released.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 141,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"fukushima's new looming crisis: radioactive groundwater seeping toward pacific ocean, @mariyamaguchi reports: URL -jm\", is it a rumor? You can choose from the following labels: \"not rumor\", \"rumor\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not rumor`\n\nThis appears to be a factual report from a news source (@mariyamaguchi), and the URL provided suggests that it's a credible source. While it's always important to verify information, this doesn't seem to be a rumor. Fukushima has had a number of issues related to radioactive contamination in the past, so this report would be concerning if true. However, without further verification, it's impossible to say for certain whether this is a fact or not. It's always a good idea to fact-check information before accepting it as true.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    }
+]
