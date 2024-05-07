@@ -1,0 +1,1280 @@
+[
+    {
+        "idx": 0,
+        "text": "fukushima's new looming crisis: radioactive groundwater seeping toward pacific ocean, @mariyamaguchi reports: URL -jm",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"japan: fukushima nuclear plant is leaking 80,000 gallons of radioactive water into ocean daily. URL\"\nLabel 1: rumor\nDocument 2: \"fukushima reactors leaking into groundwater, can't be stopped from getting in ocean, buildings now on mushy land URL\"\nLabel 2: rumor\nDocument 3: \"details: radioactive water from under #fukushima has risen 60cm above protective barrier, freely leaking to ocean URL\"\nLabel 3: rumor\nDocument 4: \"estimated 300 tons of contaminated water leaking into pacific ocean per day from wrecked #fukushima nuclear plant URL\"\nLabel 4: rumor\nDocument 5: \"fukushima – toxic water leak a level 3 serious incident URL fuck you tepco! fucking ocean is boiling!!! #yan\"\nLabel 5: rumor",
+        "inference_time": 24.499882459640503
+    },
+    {
+        "idx": 1,
+        "text": "r.i.p to the driver who died with paul walker that no one cares about because he wasn’t famous",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"r.i.p to the driver that died with paul walker that no one cares about because he wasn't famous\"\nLabel 1: rumor\nDocument 2: \"r.i.p to the driver who died with paul walker that no one cares about because he wasn’t famous.\"\nLabel 2: rumor\nDocument 3: \"r.i.p to the driver who died with paul walker that no one cares about because he wasn't famous.\"\nLabel 3: rumor\nDocument 4: \"r.i.p to the driver that died with paul walker that no one cares about because he wasn't famous.\"\nLabel 4: rumor\nDocument 5: \"“r.i.p to the driver who died with paul walker that no one cares about because he wasn’t famous” omg:(\"\nLabel 5: rumor",
+        "inference_time": 25.065399885177612
+    },
+    {
+        "idx": 2,
+        "text": "ottawa shooting: how events unfolded, first shots fired at 9:52 a.m. at the war memorial URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor Truthrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"breaking news: soldier shot at national war memorial in ottawa URL\"\nLabel 1: rumor\nDocument 2: \"developing story: shots fired on parliament hill, soldier shot at war memorial URL #ottawa URL\"\nLabel 2: rumor\nDocument 3: \"soldier shot at national war memorial in ottawa URL URL\"\nLabel 3: rumor\nDocument 4: \"the scene at the war memorial in ottawa URL URL\"\nLabel 4: rumor\nDocument 5: \"it was a long, dark day in ottawa. a timeline of the attack: URL #ottawashooting URL\"\nLabel 5: rumor",
+        "inference_time": 24.58892560005188
+    },
+    {
+        "idx": 3,
+        "text": "1 billion young people will start work in the next decade—only 40% in jobs that now exist URL URL",
+        "label": "not rumor",
+        "prediction": "not rumor",
+        "output": " not rumor (not verified fact, but based on a study or research data)\nnot rumor (not verified fact, but based on research data or a study)\n\nnot rumor (not verified fact, but based on research data or a study) not",
+        "documents": "Document 1: \"good news: our businesses have added 15 million jobs over the past 77 months → URL URL\"\nLabel 1: not rumor\nDocument 2: \"in china, 77% of jobs are threatened by automation URL URL\"\nLabel 2: not rumor\nDocument 3: \"study finds girls outperforming future employers in school URL URL\"\nLabel 3: not rumor\nDocument 4: \"apple announces most profitable quarter in u.s. history—and the end of unprecedented growth URL URL\"\nLabel 4: not rumor\nDocument 5: \"young people have the power and potential to change the world. happy #youthday! URL URL\"\nLabel 5: not rumor",
+        "inference_time": 23.253847360610962
+    },
+    {
+        "idx": 4,
+        "text": "pope francis again appears to suggest progress, but just makes false claims, as his religious belief requires of him URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": " rumorbiased opinion\nbiased opinion rumorbiased opinion biased opinion rumorbiased opinion biased opinion biased opinion rumorbiased opinion biased opinion biased opinion biased opinion rumorbiased opinion biased opinion biased opinion biased opinion biased opinion biased opinion rumorbiased opinion biased opinion biased opinion biased opinion",
+        "documents": "Document 1: \"the vatican insists pope francis’ encounter with kim davis was not endorsement of her views URL URL\"\nLabel 1: rumor\nDocument 2: \"pope francis is the real mvp URL\"\nLabel 2: rumor\nDocument 3: \"pope francis’ meeting wasn’t an endorsement of kim davis, vatican says URL\"\nLabel 3: rumor\nDocument 4: \"vatican says #kimdavis' meeting w/ #popefrancis 'should not be considered a form of support.' URL URL\"\nLabel 4: rumor\nDocument 5: \"one day, we will see our animals again in the eternity of christ, pope francis said to a boy whose dog died URL\"\nLabel 5: rumor",
+        "inference_time": 23.838427782058716
+    },
+    {
+        "idx": 5,
+        "text": "surprise surprise, @shaq. on @jimmykimmellive, the lakers icon learned he'd be honored w/ a staples center statue. URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor (not rumor) rumor (not rumor) not rumor not rumor not rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumor",
+        "documents": "Document 1: \"this young warriors fan wants riley curry to be his valentine. what does pops have to say about that? URL\"\nLabel 1: not rumor\nDocument 2: \"we hope you're as excited about thursday as this kid was about lebron's easy basket: URL\"\nLabel 2: not rumor\nDocument 3: \"an adorable young fan asked riley curry to be his valentine ... and steph responded: URL URL\"\nLabel 3: not rumor\nDocument 4: \"a golden send-off. in his final olympics, carmelo anthony becomes the first man to win three hoops gold medals. URL\"\nLabel 4: not rumor\nDocument 5: \"remembering paul walker: URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.46175265312195
+    },
+    {
+        "idx": 6,
+        "text": "19-year-old girl wakes up during brain surgery, asks doctors ‘how’s it going?’ URL via @foxnewshealth",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor) rumor news rumor (rumor) not rumor rumor (rumor) not rumor rumor (rumor) rumor (rumor) not rumor rumor (rumor) not rumor rumor (rumor) not rumor rumor",
+        "documents": "Document 1: \"19-year-old girl wakes up during brain surgery to ask doctors: ‘how’s it going?’ URL\"\nLabel 1: rumor\nDocument 2: \"ben carson is the most brainless brain surgeon in america. my new column: URL\"\nLabel 2: rumor\nDocument 3: \"several in critical condition - one in a coma - after clinical trial of new drug in france, health minister says URL\"\nLabel 3: not rumor\nDocument 4: \"ninety took drug in french clinical trial that left one brain-dead and five more hospitalised, health minister says URL\"\nLabel 4: not rumor\nDocument 5: \".@realbencarson: \"what good does it do a man to gain the whole world & to lose his soul?\" URL\"\nLabel 5: not rumor",
+        "inference_time": 23.516106367111206
+    },
+    {
+        "idx": 7,
+        "text": "breaking: 15.1 foot tsunami reported in coquimbo. #earthquake #tsunami",
+        "label": "not rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"alert: tsunami advisory issued for southern california from 3-7 a.m. local time. stay away from ocean and shoreline. #cawx #tsunami\"\nLabel 1: not rumor\nDocument 2: \"#breaking : both charlie hebdo suspects killed as police storm building (police sources) URL URL\"\nLabel 2: rumor\nDocument 3: \"#breaking news: shots fired at parliament hill. follow developing story: URL URL\"\nLabel 3: rumor\nDocument 4: \"breaking: huge explosion of an #oil pipeline belonging to @saudi_aramco near sudair, #saudiarabia. URL\"\nLabel 4: rumor\nDocument 5: \"fukushima – toxic water leak a level 3 serious incident URL fuck you tepco! fucking ocean is boiling!!! #yan\"\nLabel 5: rumor",
+        "inference_time": 23.63438081741333
+    },
+    {
+        "idx": 8,
+        "text": "walmart donates $10,000 to support darren wilson, but won't give tracy morgan a penny for the accident their company caused. #boycottwalmart",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"walmart donates $10,000 to support darren wilson and the on going racist police murders #ferguson #boycottwalmart URL\"\nLabel 1: rumor\nDocument 2: \"what? rt @70torinoman: walmart donates $10,000 to support darren wilson #ferguson #boycottwalmart URL\"\nLabel 2: rumor\nDocument 3: \"currently boycotting walmart & sam's on w. florissant they donated 10,000 to darren wilson!!!!!! cars are turning around! #fergusonoctober\"\nLabel 3: rumor\nDocument 4: \"darren wilson got $500k from abc for interview, plus $500k for donations... he is a killer millionaire, literally\"\nLabel 4: rumor\nDocument 5: \"if darren wilson was paid by @abc it would be a painful reminder that destroying black life remains profitable in america. #ferguson\"\nLabel 5: rumor",
+        "inference_time": 23.678043127059937
+    },
+    {
+        "idx": 9,
+        "text": "banksy shares simple but beautiful tribute to charlie hebdo cartoonists URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumor",
+        "documents": "Document 1: \"banksy shares simple but beautiful tribute to charlie hebdo cartoonists URL\"\nLabel 1: rumor\nDocument 2: \"this powerful cartoon about the charlie hebdo attack is not by banksy URL URL\"\nLabel 2: rumor\nDocument 3: \"banksy's illustrated response to the charlie hebdo attack isn't by banksy. but it is striking URL URL\"\nLabel 3: rumor\nDocument 4: \"banksy's response to the #charliehebdo attack isn't by banksy. but it is striking: URL URL\"\nLabel 4: rumor\nDocument 5: \"banksy's response to the #charliehebdo shooting URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.60752558708191
+    },
+    {
+        "idx": 10,
+        "text": "actor who played marlboro man in ads dies from smoking-related disease URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"man who portrayed the marlboro man in the 1970s dies from smoking-related disease URL\"\nLabel 1: rumor\nDocument 2: \"ex-marlboro man dies from smoking-related disease... URL\"\nLabel 2: rumor\nDocument 3: \"marlboro man dies of smoking-related disease URL URL\"\nLabel 3: rumor\nDocument 4: \"eric lawson, former 'marlboro man' in cigarette ads dies of smoking-related disease URL URL\"\nLabel 4: rumor\nDocument 5: \"ex-marlboro man dies from smoking -related disease URL via @fox411\"\nLabel 5: rumor",
+        "inference_time": 23.67115545272827
+    },
+    {
+        "idx": 11,
+        "text": "kentucky leads kansas 46-40 at the half. tyler ulis has scored or assisted on 11 of the wildcats' 17 field goals. URL",
+        "label": "not rumor",
+        "prediction": "not rumor",
+        "output": " not rumor truth not rumorbiased newsbiased reportbiased analysisbiased opinionbiased viewbiased informationbiased sourcebiased interpretationbiased interpretationbiased interpretationbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biased",
+        "documents": "Document 1: \"what a rally for no. 1. oklahoma came back from 14 down and won 77-75 at lsu on this late jumper: URL\"\nLabel 1: not rumor\nDocument 2: \"ooh, baby! dickie v loved this reverse dunk by ben simmons. lsu's up double-digits on no. 1 oklahoma: URL\"\nLabel 2: not rumor\nDocument 3: \"the terps do it again! no. 8 maryland knocks off no. 3 iowa 74-68, has beaten 5 of its last 7 top-5 opponents. URL\"\nLabel 3: not rumor\nDocument 4: \"it’s a three-peat! team usa routs serbia 96-66 to win its third-straight and 15th basketball gold medal. URL\"\nLabel 4: not rumor\nDocument 5: \"we hope you're as excited about thursday as this kid was about lebron's easy basket: URL\"\nLabel 5: not rumor",
+        "inference_time": 24.32087230682373
+    },
+    {
+        "idx": 12,
+        "text": "2 new victims en route to ottawa hospital; 1 shot, both non-life-threatening, hospital says - @michaelctv, @cbcnews URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor truth rumor not rumor news truth news truth rumor rumor rumor truth rumor truth rumor rumor rumor rumor truth rumor rumor truth rumor truth rumor truth rumor truth rumor truth rumor rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor",
+        "documents": "Document 1: \"breaking news: ottawa police confirm at least 3 separate shooting sites and multiple suspects - URL\"\nLabel 1: rumor\nDocument 2: \"breaking news: one soldier has died after ottawa shooting, suspect(s) still at large - URL\"\nLabel 2: rumor\nDocument 3: \"senior u.s. official: canadian government has informed u.s. that one shooter is dead in ottawa. live blog: URL\"\nLabel 3: rumor\nDocument 4: \"breaking news: soldier shot at national war memorial in ottawa URL\"\nLabel 4: rumor\nDocument 5: \"update: attacker shot dead in parliament after soldier shot at war memorial URL #ottawashooting URL\"\nLabel 5: rumor",
+        "inference_time": 23.880129098892212
+    },
+    {
+        "idx": 13,
+        "text": "#psa please do not drink any pepsi soda, a worker from that company has put blood contaminated with aids inside the bottles!!! please rt!!",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": " rumor (rumor)\n\nrumor (rumor) rumor (rumor) rumor rumor (rumor) rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor",
+        "documents": "Document 1: \"win: macy's stops stocking sodastream URL #bds #palestine @aicnews URL\"\nLabel 1: rumor\nDocument 2: \"the end is nigh: pepsi is testing doritos-flavored mountain dew. yes, for real: URL\"\nLabel 2: rumor\nDocument 3: \"walmart donates $10,000 to support darren wilson and the on going racist police murders #ferguson #boycottwalmart URL\"\nLabel 3: rumor\nDocument 4: \"pepsi is currently taste-testing doritos flavored mountrain dew. would you try it? URL URL\"\nLabel 4: rumor\nDocument 5: \"currently boycotting walmart & sam's on w. florissant they donated 10,000 to darren wilson!!!!!! cars are turning around! #fergusonoctober\"\nLabel 5: rumor",
+        "inference_time": 23.47575855255127
+    },
+    {
+        "idx": 14,
+        "text": "remembering paul walker: fast and furious star was \"so happy\" hours before his tragic death URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor true rumor rumor truth not rumor rumor truth rumor true not rumor rumor truth rumor truth rumor truth rumor truth truth rumor rumor truth truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth",
+        "documents": "Document 1: \"paul walker's fast and the furious costars and more react to the actor's tragic death: URL\"\nLabel 1: rumor\nDocument 2: \"fast & furious stars heartbreakingly mourn paul walker's death URL URL\"\nLabel 2: rumor\nDocument 3: \"paul walker remembered: celebs react to 'fast and furious' star's death URL\"\nLabel 3: rumor\nDocument 4: \"his movies brought thrills and laughter to millions. can't believe he died in car crash rip paul walker URL\"\nLabel 4: rumor\nDocument 5: \"fast & furious franchise responds to paul walker's death: URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.828912019729614
+    },
+    {
+        "idx": 15,
+        "text": "after 40-year ban, u.s. starts exporting crude oil URL URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor (not verified news but based on current events) not rumor (not verified news but based on facts)\nrumor not rumor not rumor rumor not rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor",
+        "documents": "Document 1: \"thanks to the #irandeal, iran's four pathways to a nuclear weapon have been blocked → URL URL\"\nLabel 1: not rumor\nDocument 2: \"we are running out of chocolate, warns world's largest chocolate manufacturer URL URL\"\nLabel 2: rumor\nDocument 3: \"the world is running out of chocolate, world’s largest chocolate manufacturer warns URL URL\"\nLabel 3: rumor\nDocument 4: \"‘i can’t do this anymore,’ think 320 million americans quietly going about day URL URL\"\nLabel 4: not rumor\nDocument 5: \"breaking: huge explosion of an #oil pipeline belonging to @saudi_aramco near sudair, #saudiarabia. URL\"\nLabel 5: rumor",
+        "inference_time": 23.362147092819214
+    },
+    {
+        "idx": 16,
+        "text": "the story of a 17-year-old stock whiz with a rumored net worth of $72 million made a splash, but quickly unraveled. URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": " Truthrumorrumorrumorrumorrumorrumorrumor Truthrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumor",
+        "documents": "Document 1: \"today's cover: meet the teen who's made $72 million trading stocks on his lunch breaks URL URL\"\nLabel 1: rumor\nDocument 2: \"high school student reportedly makes 72 million on stock market. URL @wallstreet @stuyvesanthigh URL\"\nLabel 2: rumor\nDocument 3: \"#rtlny: because a stuyvesant senior made $72 million trading stocks on his lunch break URL URL\"\nLabel 3: rumor\nDocument 4: \"leonardo dicaprio is giving away $15 million to environmental causes: URL URL\"\nLabel 4: not rumor\nDocument 5: \"corporations have sold or spun off $1.6 trillion worth of subsidiaries & biz lines this year. URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.62156915664673
+    },
+    {
+        "idx": 17,
+        "text": "sugarhill gang's big bank hank dies -- dead at 57 from cancer URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor truth rumor not rumor rumor rumor truth rumor rumor rumor truth rumor rumor rumor truth rumor rumor truth rumor rumor truth rumor rumor rumor truth rumor rumor rumor truth rumor rumor truth rumor rumor truth rumor rumor truth rumor rumor truth rumor rumor truth",
+        "documents": "Document 1: \"sugarhill gang's big bank hank dies at 57 from cancer URL URL\"\nLabel 1: rumor\nDocument 2: \"the sugarhill gang's big bank hank has died at 57: URL URL\"\nLabel 2: rumor\nDocument 3: \"rest in peace: big bank hank of sugarhill gang dead at 57 URL URL\"\nLabel 3: rumor\nDocument 4: \"sugarhill gang rapper big bank hank has died at the age of 57. read about his legacy and contribution to hip hop: URL\"\nLabel 4: rumor\nDocument 5: \"so sad to learn big bank hank has passed away--the sugarhill gang rapper was 57. URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.65354561805725
+    },
+    {
+        "idx": 18,
+        "text": "yes, trump really said, \"the whites don't get any nominations\" at the bet awards: URL URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor truth? rumor truth? rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor truthrumor truthrumor rumor truthrumor truthrumor rumor truthrumor truthrumor rumor truthrum",
+        "documents": "Document 1: \"donald trump has been disqualified for running for president URL\"\nLabel 1: rumor\nDocument 2: \".@berniesanders says @realdonaldtrump is \"using racism as a way to attract votes\" #bernieoncnn URL URL\"\nLabel 2: rumor\nDocument 3: \"donald trump spokesperson decried lack of \"pure breeds\" running for president URL URL\"\nLabel 3: not rumor\nDocument 4: \"#oscarnoms: nominations for best actress in a leading role URL URL\"\nLabel 4: not rumor\nDocument 5: \"cnn/orc poll: donald trump now competitive in general election URL via @jennagiesta URL\"\nLabel 5: rumor",
+        "inference_time": 23.763335704803467
+    },
+    {
+        "idx": 19,
+        "text": "don't put your iphone 6 in your pocket y'all URL URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"quite a design flaw rt @nymag: if you sit with your iphone 6 plus in your pocket, it bends beyond repair URL\"\nLabel 1: rumor\nDocument 2: \"iphone 6 owners claim it's bending in their pockets URL\"\nLabel 2: rumor\nDocument 3: \"iphone 6 plus owners are complaining that their phones are actually bending: URL URL\"\nLabel 3: rumor\nDocument 4: \"and here's a guy bending an iphone 6 plus with his bare hands URL URL\"\nLabel 4: rumor\nDocument 5: \"iphone 6 plus users are sitting on and bending their enormous new phones URL\"\nLabel 5: rumor",
+        "inference_time": 23.572546243667603
+    },
+    {
+        "idx": 20,
+        "text": "icymi: mammoth bones from the ice age were unearthed at oregon state's football stadium. URL URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor, rumor truth, not rumor not rumor not rumor not rumor truthrumor truth truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truth",
+        "documents": "Document 1: \"the las vegas raiders? URL URL\"\nLabel 1: not rumor\nDocument 2: \"mysterious creature discovered in california, everyone naturally cries alien: URL URL\"\nLabel 2: rumor\nDocument 3: \"#animaloftheday: the first afghan fanged deer was seen in more than 60 years! URL URL\"\nLabel 3: rumor\nDocument 4: \"from the vault: anatomical maquettes of fanciful creatures URL URL\"\nLabel 4: not rumor\nDocument 5: \"icymi: joe parsons's snowmobile sit-n-spin backflip was unreal. see more epic #xgames action on abc all afternoon: URL\"\nLabel 5: not rumor",
+        "inference_time": 23.377065181732178
+    },
+    {
+        "idx": 21,
+        "text": "ben simmons could be 1st sec player since shaq to average a 20-10. t-minus 2 hours till he faces no. 1 ou on espn. URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "biased rumor (biased rumor) not rumor biased rumor biased rumor biased rumor biased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased rumorbiased",
+        "documents": "Document 1: \"ooh, baby! dickie v loved this reverse dunk by ben simmons. lsu's up double-digits on no. 1 oklahoma: URL\"\nLabel 1: not rumor\nDocument 2: \"this young warriors fan wants riley curry to be his valentine. what does pops have to say about that? URL\"\nLabel 2: not rumor\nDocument 3: \"ooh, baby! icymi: dickie v loved this reverse dunk by freshman phenom ben simmons. URL\"\nLabel 3: not rumor\nDocument 4: \"icymi: this wayne selden dunk was absolutely absurd. URL\"\nLabel 4: not rumor\nDocument 5: \"icymi: somehow lebron came out in shorts that didn't match the rest of his team ... so he had to change mid-quarter. URL\"\nLabel 5: not rumor",
+        "inference_time": 23.616601705551147
+    },
+    {
+        "idx": 22,
+        "text": "goodbye elly may: 'beverly hillbillies' star donna douglas dead at 81, reports say. URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": " rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor",
+        "documents": "Document 1: \"donna douglas, who played elly may on \"beverly hillbillies,\" has died at 81: URL (bill haber, ap) URL\"\nLabel 1: rumor\nDocument 2: \"family says 'beverly hillbillies' actress donna douglas is dead at age 81 - @nbc12 URL\"\nLabel 2: rumor\nDocument 3: \"donna douglas, known for role as elly may clampett on \"the beverly hillbillies,\" dies. URL URL\"\nLabel 3: rumor\nDocument 4: \"donna douglas, who played buxom tomboy elly may clampett on the 1960s sitcom 'the beverly hillbillies,' has died: URL\"\nLabel 4: rumor\nDocument 5: \"max baer describes donna douglas as \"elly may until the day she died\": URL (cbs) URL\"\nLabel 5: rumor",
+        "inference_time": 23.9494731426239
+    },
+    {
+        "idx": 23,
+        "text": "someone spray painted a penis on a $2.4 mill bugatti URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"thumbs up emoji rt @complexmag someone spray painted a penis on a $2.4 million bugatti veyron: URL URL\"\nLabel 1: rumor\nDocument 2: \"a vandal painted a brilliantly simple penis on a $2 million bugatti veyron ( URL ) URL\"\nLabel 2: rumor\nDocument 3: \"15 year old \"swatter\" got 25 years URL\"\nLabel 3: rumor\nDocument 4: \"#zika virus: everything you need to know about the mosquito that spreads it URL URL\"\nLabel 4: not rumor\nDocument 5: \"disease spread by bugs that bite your face as you sleep is found in the us URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.640387535095215
+    },
+    {
+        "idx": 24,
+        "text": "matt taibbi has left first look media. sorry to see him go. a great talent and we wish him well. URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": " not rumorbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased",
+        "documents": "Document 1: \"we have some bad news, friends fans. the whole cast won't be reuniting in february: URL URL\"\nLabel 1: not rumor\nDocument 2: \"caitlyn jenner mourns the loss of bruce: \"maybe he didn't deserve to be gone.\" URL URL\"\nLabel 2: not rumor\nDocument 3: \"#riphulkhogan my heart is ripping like your shirt. wwe'll miss you.\"\nLabel 3: rumor\nDocument 4: \"jeb bush campaign kicks off 3-state farewell tour with iowa town hall meeting URL URL\"\nLabel 4: not rumor\nDocument 5: \"everyone mad at bruce for his sex change but no one gave ashit about that nerd minkus changing into chanel west coast URL\"\nLabel 5: rumor",
+        "inference_time": 23.811219215393066
+    },
+    {
+        "idx": 25,
+        "text": "police say they have located car belonging to suspect in #ottawa shooting. uniformed soldier shot at war memorial, condition unknown.",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor news breaking news factual news rumor rumor news (rumor rumor news factual news rumor (rumor news factual news rumor news breaking news factual news rumor news breaking news factual news rumor news breaking news factual news rumor news breaking news",
+        "documents": "Document 1: \"uniformed canadian soldier shot at war memorial in #ottawa.\"\nLabel 1: rumor\nDocument 2: \"soldier shot at national war memorial in ottawa URL #cdnpoli #hw\"\nLabel 2: rumor\nDocument 3: \"breaking news: soldier shot at national war memorial in ottawa URL\"\nLabel 3: rumor\nDocument 4: \"police in #ottawa cannot confirm whether gunman shot dead in parliament is the same person that shot and killed soldier at the war memorial,\"\nLabel 4: rumor\nDocument 5: \"soldier shot at national war memorial in ottawa URL URL\"\nLabel 5: rumor",
+        "inference_time": 24.416357278823853
+    },
+    {
+        "idx": 26,
+        "text": "rip david bowie. can we also rip the \"battle with cancer\" cliche? implies you've \"lost\" the battle, as if you didn't fight hard enough.",
+        "label": "not rumor",
+        "prediction": "not rumor",
+        "output": "not rumor\nrumor (not rumor, but rumour as in the battle with cancer cliche) rumour (not truth) not truth truth (not rumor) not truth truth (rumour) not truth truth truth not rumor not truth",
+        "documents": "Document 1: \"the guardian front page, tuesday 12 january 2016: david bowie 1947-2016 URL\"\nLabel 1: not rumor\nDocument 2: \"#riphulkhogan my heart is ripping like your shirt. wwe'll miss you.\"\nLabel 2: rumor\nDocument 3: \"caitlyn jenner mourns the loss of bruce: \"maybe he didn't deserve to be gone.\" URL URL\"\nLabel 3: not rumor\nDocument 4: \"beck on david bowie: \"he’s always been a guidepost for me\" URL URL\"\nLabel 4: not rumor\nDocument 5: \"paul walker dies, millions cried. millions died of human hunger, no one simply gives a fk.\"\nLabel 5: rumor",
+        "inference_time": 23.423452854156494
+    },
+    {
+        "idx": 27,
+        "text": "iraq executes 36 jihadists over 2014 massacre of up to 1,700 army recruits at camp speicher URL",
+        "label": "not rumor",
+        "prediction": "not rumor",
+        "output": "not rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot",
+        "documents": "Document 1: \"at least 30 people killed in double blast near shia shrine of sayyida zeinab, south of damascus - syrian state media URL\"\nLabel 1: not rumor\nDocument 2: \"at least 45 killed in triple bombing near damascus URL\"\nLabel 2: not rumor\nDocument 3: \"dozens of people were killed in car bomb, 2 suicide bombings near damascus, syria, state media says. URL\"\nLabel 3: not rumor\nDocument 4: \"isis claims responsibility for triple bombing that killed at least 45 people and injured more than 100 near damascus. URL\"\nLabel 4: not rumor\nDocument 5: \"al arabiya television station says three americans have reportedly been kidnapped in baghdad in iraq\"\nLabel 5: not rumor",
+        "inference_time": 23.582945585250854
+    },
+    {
+        "idx": 28,
+        "text": "now: 12-year-old conservative cj pearson defends giuliani's comments on obama and his facebook gets shut down! URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor truthrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"never thought i’d see the day when obama would play politics with kids. URL #pjnet URL\"\nLabel 1: rumor\nDocument 2: \"wtf? community agitator obama secretly met w/ ferguson activists & told them to stay on course URL URL\"\nLabel 2: rumor\nDocument 3: \"obama keeps michelle's URL site running despite the shutdown but URL is shutdown because? #spitehouse\"\nLabel 3: rumor\nDocument 4: \"hey @cnnpolitics @cnn where did this poll go? apparantly a lot of people like @berniesanders. you should report that URL\"\nLabel 4: rumor\nDocument 5: \"white house #shutdown URL , but are posting alerts on him getting a sandwich. URL\"\nLabel 5: rumor",
+        "inference_time": 23.55450415611267
+    },
+    {
+        "idx": 29,
+        "text": "d.a. to seek death in #moore, #oklahoma beheading case. #altonnolen #kellyfile URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor not rumor but based on rumor\nrumor true but rumor\nrumor rumor rumor rumor rumor rumor rumor rumor truthrumor rumor rumor rumor rumor rumor rumor rumor rumor truthrumor rumor rumor rumor truthrumor rumor rumor",
+        "documents": "Document 1: \"#oklahoma prosecutor files formal notification that he will seek death penalty for beheading suspect #altonnolen. #kellyfile\"\nLabel 1: rumor\nDocument 2: \"update: photo of suspect, alton nolen, in moore, okla. beheading released. URL URL\"\nLabel 2: rumor\nDocument 3: \"oklahoma beheading suspect alton nolen ordered held without bond URL URL\"\nLabel 3: rumor\nDocument 4: \"beheading suspect attended same mosque as 9/11 terrorist: moore, oklahoma -- alton nolen, the man who beheaded... URL\"\nLabel 4: rumor\nDocument 5: \"okla beheading victim colleen hufford, rest in peace #beheading #jihad #jahkeemyisrael URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.43105936050415
+    },
+    {
+        "idx": 30,
+        "text": "uk home secretary theresa may says litvinenko's murder was \"blatant and unacceptable\" breach of international law URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor not rumor rumor rumor not rumor rumor not rumor truth not rumor rumor not rumor truth not rumor truth not rumor rumor not rumor truth not rumor truth not rumor truth not rumor truth not rumor truth not rumor truth not rumor truth not rumor truth not",
+        "documents": "Document 1: \"president putin \"probably\" approved ex-russian spy alexander litvinenko's assassination in 2006, inquiry finds URL\"\nLabel 1: not rumor\nDocument 2: \"a russian officer \"pushed that button deliberately\" & shot down #mh17, ukrainian gov. says: URL URL\"\nLabel 2: rumor\nDocument 3: \"#mh17 was shot down by \"terrorists,\" an advisor to ukraine’s minister of internal affairs says URL URL\"\nLabel 3: rumor\nDocument 4: \"u.s intel: missile that hit #mh17 was most likely fired by pro-russian separatists. details: URL URL\"\nLabel 4: rumor\nDocument 5: \"latest update: attacker shot dead in parliament after soldier shot at national war memorial URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.7008376121521
+    },
+    {
+        "idx": 31,
+        "text": "zika fever: a newly emerging disease is threatening the americas URL URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor (not rumor) rumor (not rumor) not rumor not rumor not rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor",
+        "documents": "Document 1: \"#zika virus: everything you need to know about the mosquito that spreads it URL URL\"\nLabel 1: not rumor\nDocument 2: \"the @who predicts 3 to 4 million cases of #zikavirus that is spreading through americas URL\"\nLabel 2: not rumor\nDocument 3: \"the @who sets up zika \"emergency team\" after \"explosive\" spread of the virus URL URL\"\nLabel 3: not rumor\nDocument 4: \"zika virus \"spreading explosively\" around the americas, who director-general says. URL\"\nLabel 4: not rumor\nDocument 5: \"disease spread by bugs that bite your face as you sleep is found in the us URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.648371934890747
+    },
+    {
+        "idx": 32,
+        "text": "this is the surface-to-air missile ukraine says shot down malaysia airlines plane URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor truth truth not rumor truth rumor not rumor rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor",
+        "documents": "Document 1: \"latest: malaysia airlines #mh17 shot down by a surface-to-air missile, u.s. officials say URL URL\"\nLabel 1: rumor\nDocument 2: \"ukrainian minister says rebels shot down #mh17 malaysia airlines plane URL URL\"\nLabel 2: rumor\nDocument 3: \"breaking: malaysia airlines passenger 'shot down' near russian border in ukraine URL URL\"\nLabel 3: rumor\nDocument 4: \"malaysia airlines says it lost contact with plane that was flying in ukrainian airspace URL URL\"\nLabel 4: rumor\nDocument 5: \"could a buk surface-to-air missile system have brought down malaysia airlines flight 17? URL #mh17 URL\"\nLabel 5: rumor",
+        "inference_time": 23.69197416305542
+    },
+    {
+        "idx": 33,
+        "text": "'do you know me? do you know my heart?' muslims in new york share their experiences URL URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": " rumor not rumor not rumor rumor rumor not rumor not rumor rumor not rumor not rumor rumor not rumor rumor not rumor rumor not rumor not rumor rumor not rumor not rumor rumor not rumor not rumor rumor not rumor not rumor rumor not rumor not rumor rumor not",
+        "documents": "Document 1: \"someone trolled twitter into thinking macklemore joined isis: URL URL\"\nLabel 1: rumor\nDocument 2: \"just in: isis video claims to show beheading of british citizen URL\"\nLabel 2: rumor\nDocument 3: \"saudi cleric proclaims snowman-building 'anti-islamic' (photos, video) URL URL\"\nLabel 3: rumor\nDocument 4: \"el chapo threatens isis URL URL\"\nLabel 4: rumor\nDocument 5: \"quote of the day URL URL\"\nLabel 5: not rumor",
+        "inference_time": 23.9803307056427
+    },
+    {
+        "idx": 34,
+        "text": "“@complexmag: someone spray painted a penis on a $2.4 million bugatti veyron: URL URL ” legendary",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor rumor truth not rumor rumor truth not rumor rumor rumor truth rumor rumor truth rumor rumor rumor rumor truth rumor truth rumor rumor rumor truth rumor rumor truth rumor rumor rumor truth rumor rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth",
+        "documents": "Document 1: \"thumbs up emoji rt @complexmag someone spray painted a penis on a $2.4 million bugatti veyron: URL URL\"\nLabel 1: rumor\nDocument 2: \"a vandal painted a brilliantly simple penis on a $2 million bugatti veyron ( URL ) URL\"\nLabel 2: rumor\nDocument 3: \"that powerful, 40-year-old letter from lego to parents? it's real URL URL\"\nLabel 3: rumor\nDocument 4: \"that powerful lego letter to parents from the 1970s? it's real URL URL\"\nLabel 4: rumor\nDocument 5: \"researcher @naskrecki on his encounter with a goliath birdeater, the world's largest spider URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.89013957977295
+    },
+    {
+        "idx": 35,
+        "text": "death toll from #bachakhanuniattack rises to at least 19; army official says firing has stopped as campus searched URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor news\nrumor truth (not verified, but reliable source) not rumor (rumor truth)\nrumor rumor rumor rumor truthrumor rumor truthrumor truthrumor rumor truthrumor truthrumor truthrum",
+        "documents": "Document 1: \"taliban says it is behind #bachakhanuniattack that left at least 19 dead, pakistani media report URL\"\nLabel 1: not rumor\nDocument 2: \"soldier shot at national war memorial in ottawa URL #cdnpoli #hw\"\nLabel 2: rumor\nDocument 3: \"latest update: attacker shot dead in parliament after soldier shot at national war memorial URL URL\"\nLabel 3: rumor\nDocument 4: \"breaking: soldier shot at war memorial in ottawa, hill on lockdown, shooter at large URL #ottnews\"\nLabel 4: rumor\nDocument 5: \"breaking news: one soldier has died after ottawa shooting, suspect(s) still at large - URL\"\nLabel 5: rumor",
+        "inference_time": 23.241061449050903
+    },
+    {
+        "idx": 36,
+        "text": "tupac was hiding for 18 years 😳 URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"cant believe tupac is still alive URL\"\nLabel 1: rumor\nDocument 2: \"maybe tupac is alive and we're dead.\"\nLabel 2: rumor\nDocument 3: \"@legendgary #hitemup! bad boy c.e.o. @iamdiddy arrested in connection with murder of tupac shakur: ... URL @wethewest\"\nLabel 3: rumor\nDocument 4: \"'sean combs hoax: puff daddy arrested in tupac shakur murder totally fake; p diddy is ok' URL URL\"\nLabel 4: rumor\nDocument 5: \"still waiting for tupac to accept my als ice bucket challenge. bruh, i know you're still alive.\"\nLabel 5: rumor",
+        "inference_time": 25.04211926460266
+    },
+    {
+        "idx": 37,
+        "text": "top north korean diplomat who disappeared from london embassy has defected to south korea, seoul confirms URL",
+        "label": "not rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"north korea media says kim jong un has made appearance after 40+ days missing: URL URL\"\nLabel 1: rumor\nDocument 2: \"north korea may be preparing for a missile launch. URL URL\"\nLabel 2: not rumor\nDocument 3: \"north korea says it has arrested a us student on charges of committing a \"hostile act\" URL\"\nLabel 3: not rumor\nDocument 4: \"turkey claims russian plane violated its airspace and summons ambassador URL\"\nLabel 4: not rumor\nDocument 5: \"current passenger breakdown by nationality - via @theage @smh #mh17 URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.794986486434937
+    },
+    {
+        "idx": 38,
+        "text": "shots fired on parliament hill after a man walked up with a gun. i'm locked in a security office on parliament hill",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\n rumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor",
+        "documents": "Document 1: \"more shots fired just off parliament hill. police telling everyone to take cover.\"\nLabel 1: rumor\nDocument 2: \"parliament hill in lockdown after soldier shot at #ottawa's war memorial, just south of east block.\"\nLabel 2: rumor\nDocument 3: \"breaking - shooting on parliament hill. rcmp have weapons drawn #cdnpoli URL\"\nLabel 3: rumor\nDocument 4: \"#breaking news: shots fired at parliament hill. follow developing story: URL URL\"\nLabel 4: rumor\nDocument 5: \"developing story: shots fired on parliament hill, soldier shot at war memorial URL #ottawa URL\"\nLabel 5: rumor",
+        "inference_time": 23.47908616065979
+    },
+    {
+        "idx": 39,
+        "text": "a man believed to be the gunman filmed wearing a black headband inside the cafe URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor truthrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumor",
+        "documents": "Document 1: \"according to seven, this is a picture of the gunman URL\"\nLabel 1: rumor\nDocument 2: \"stills from eyewitness video show two #charliehebdo attackers wearing hoods & black clothing shoot a wounded man URL\"\nLabel 2: rumor\nDocument 3: \"audio may have captured michael brown shooting URL\"\nLabel 3: rumor\nDocument 4: \"fbi probing alleged audio of michael brown shooting URL URL\"\nLabel 4: rumor\nDocument 5: \"up to 100 masked men, dressed in black, involved in \"migrant attack\" in stockholm URL URL\"\nLabel 5: not rumor",
+        "inference_time": 23.579840660095215
+    },
+    {
+        "idx": 40,
+        "text": "charlie hebdo shooting latest: 12 dead and gunmen still at large URL URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumourrumorrumourrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"breaking charlie hebdo latest: 11 dead 10 wounded (five critical) two gunmen unaccounted for URL URL\"\nLabel 1: rumor\nDocument 2: \"update: 12 now confirmed dead in #charliehebdo attack in paris, @ap is reporting. story: URL (ap) URL\"\nLabel 2: rumor\nDocument 3: \"breaking: 10 reportedly shot dead at paris hq of french weekly charlie hebdo URL\"\nLabel 3: rumor\nDocument 4: \"eleven dead in shooting at paris offices of satirical magazine charlie hebdo – live updates URL\"\nLabel 4: rumor\nDocument 5: \"#breaking : both charlie hebdo suspects killed as police storm building (police sources) URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.588193655014038
+    },
+    {
+        "idx": 41,
+        "text": "nsw police confirm 5 hostages have emerged from #sydneysiege and they are negotiating: \"it might take a bit of time\" URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor truth not verified, but based on credible source and relevant information rumor truth not verified, but based on credible source and relevant informationrumor truth not verified, but based on credible source and relevant informationrumor truth",
+        "documents": "Document 1: \"more: police confirm 3 hostages escape sydney cafe, unknown number remain inside URL #sydneysiege\"\nLabel 1: rumor\nDocument 2: \"police seem relaxed, suggesting all hostages are out and gunman no longer a threat URL #sydneysiege\"\nLabel 2: rumor\nDocument 3: \"police: negotiators are now in contact with armed hostage-taker in sydney situation; motive remains unknown - URL\"\nLabel 3: rumor\nDocument 4: \"five hostages escape sydney cafe siege — live updates from @buzzfeedoz URL URL\"\nLabel 4: rumor\nDocument 5: \"five hostages have escaped the besieged lindt cafe in #sydney | our latest update: URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.14612364768982
+    },
+    {
+        "idx": 42,
+        "text": "vanessa hudgens' father, gregory hudgens, dies the night before \"grease: live\" URL URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor not rumor\nrumor not rumor (rumor, but news article and verified information)\nrumor not rumor (rumor, but news article and verified information)\nrumor not rumor (rumor, but news article and verified information",
+        "documents": "Document 1: \"keeping vanessa hudgens in our thoughts. her dad greg died last night from cancer: URL URL\"\nLabel 1: not rumor\nDocument 2: \"harry potter stars react to the tragic news of alan rickman's death: URL URL\"\nLabel 2: not rumor\nDocument 3: \"judy carne, \"laugh-in’s\" \"sock it to me\" girl, dies at 76 URL URL\"\nLabel 3: rumor\nDocument 4: \"donna douglas, who played elly may on \"beverly hillbillies,\" has died at 81: URL (bill haber, ap) URL\"\nLabel 4: rumor\nDocument 5: \"judy carne, ‘sock it to me girl’ on ‘laugh-in,’ dies at 76 URL\"\nLabel 5: rumor",
+        "inference_time": 23.63591957092285
+    },
+    {
+        "idx": 43,
+        "text": "icymi: a dog accidentally stumbled into the middle of a local half marathon ... and earned 7th place. URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": " truths rumor not rumor not rumor rumor not rumor not rumor truth rumor truth rumor not rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth",
+        "documents": "Document 1: \"3-legged dog expected to survive after getting shot while scaring off armed robbers. URL URL\"\nLabel 1: not rumor\nDocument 2: \"dog finds absolutely perfect place to shit URL\"\nLabel 2: not rumor\nDocument 3: \"olympics: usain bolt wins 200m gold, staying on track for 3 golds in 3 events at 3 olympics URL URL\"\nLabel 3: not rumor\nDocument 4: \"meet quasimodo, the dog with the short spine URL URL\"\nLabel 4: not rumor\nDocument 5: \"cool dog! mt @cbsnews: goliath encounter: puppy-sized spider surprises scientist in rainforest URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.7083957195282
+    },
+    {
+        "idx": 44,
+        "text": "look: @whitehouse lights up in rainbow colors to celebrate #scotus same-sex marriage ruling URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor) rumor (rumor) rumor (rumor) rumor (rumor) not rumor rumor (rumor) rumor (rumor) not rumor rumor (rumor) rumor (rumor) rumor (rumor",
+        "documents": "Document 1: \"the @whitehouse is rainbow-colored tonight in celebration of scotus same-sex marriage ruling. URL URL\"\nLabel 1: rumor\nDocument 2: \"white house shines rainbow-colored lights in honor of #scotus gay marriage decision #lovewins URL URL\"\nLabel 2: rumor\nDocument 3: \"see the white house light up as a rainbow to celebrate gay marriage URL URL\"\nLabel 3: rumor\nDocument 4: \"the white house is lit like a rainbow tonight in honor of the #scotusmarriage ruling. URL\"\nLabel 4: rumor\nDocument 5: \"the white house was lit up with rainbow lights to celebrate marriage equality: URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.37361454963684
+    },
+    {
+        "idx": 45,
+        "text": "breaking: canada has four recent cases of #zika, all from travelers: public health agency",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor not rumor (rumor not verified but based on reliable sources)\n\nnot rumor not verified (rumor not verified but based on reliable sources) rumor not verified but based on reliable sources rumor not verified but based on reliable sources rumor not verified",
+        "documents": "Document 1: \"31 \"travel-associated\" cases of zika virus reported in 11 u.s. states + d.c. this year and last, cdc says. URL\"\nLabel 1: not rumor\nDocument 2: \"cdc: 31 cases of zika virus in 11 us states; all patients had traveled, 19 were to puerto rico - @blythebernhard URL\"\nLabel 2: not rumor\nDocument 3: \"the @who predicts 3 to 4 million cases of #zikavirus that is spreading through americas URL\"\nLabel 3: not rumor\nDocument 4: \"zika virus \"spreading explosively\" around the americas, who director-general says. URL\"\nLabel 4: not rumor\nDocument 5: \"#zika virus: everything you need to know about the mosquito that spreads it URL URL\"\nLabel 5: not rumor",
+        "inference_time": 23.243388891220093
+    },
+    {
+        "idx": 46,
+        "text": "unstoppable! novak djokovic is now a perfect 6-for-6 in australian open finals after his win over andy murray. URL",
+        "label": "not rumor",
+        "prediction": "not rumor",
+        "output": "not rumor (biased towards fact and truth)\nnot rumor (biased towards fact and truth)\nbiased truth (biased towards fact and biased truthbiased truthbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiased",
+        "documents": "Document 1: \"britain's johanna konta clinches australian open semi-final place by beating zhang shuai 6-4 6-1 in melbourne URL\"\nLabel 1: not rumor\nDocument 2: \"wow. anthony johnson's knockout win is the 3rd-quickest finish in @ufc light heavyweight history (0:13). #ufc202 URL\"\nLabel 2: not rumor\nDocument 3: \"pope francis is the real mvp URL\"\nLabel 3: rumor\nDocument 4: \"it’s a three-peat! team usa routs serbia 96-66 to win its third-straight and 15th basketball gold medal. URL\"\nLabel 4: not rumor\nDocument 5: \"michael phelps' gold medals and speedo crashed asu's \"curtain of distraction\" last night. you read that right. URL\"\nLabel 5: not rumor",
+        "inference_time": 24.452279567718506
+    },
+    {
+        "idx": 47,
+        "text": "waiting for the new episode of #teenwolf like... URL",
+        "label": "not rumor",
+        "prediction": "not rumor",
+        "output": "not rumor (not rumor)biased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased opinionbiased",
+        "documents": "Document 1: \"what was your favorite moment from this week's #teenwolf? watch + let me know: URL URL\"\nLabel 1: not rumor\nDocument 2: \"#teenwolf starts in 5 minutes! rt if you're watching + tweeting + crying + screaming with @mtvteenwolf & me! URL\"\nLabel 2: not rumor\nDocument 3: \"a #gilmoregirls revival is coming to @netflix, with @thelaurengraham and @alexisbledel URL URL\"\nLabel 3: not rumor\nDocument 4: \"i haven't stopped watching #pillowtalk all weekend (and i'm not even sorry): URL URL\"\nLabel 4: not rumor\nDocument 5: \"the broadcast premiere of @zaynmalik's #pillowtalk is on mtv right now 💥 URL URL\"\nLabel 5: not rumor",
+        "inference_time": 25.25887107849121
+    },
+    {
+        "idx": 48,
+        "text": "that superman poster is legit: URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": " rumor biased towards truthbiased truthbiased truthbiased truthbiased truthbiased truthbiased not rumorbiased rumorbiased truthbiasedbiased rumorbiased biasedbiased truthbiasedbiased rumorbiased biasedbiased truthbiasedbiased rumorbiased biasedbiased truthbiasedbiased rumorbiased biasedbiased truth",
+        "documents": "Document 1: \"have you seen our exclusive @batmanvsuperman pics yet? URL URL\"\nLabel 1: not rumor\nDocument 2: \"we've devoted 24 pages to #batman v #superman, interviewing @zacksnyder, @benaffleck, henry cavill, @galgadot... URL\"\nLabel 2: not rumor\nDocument 3: \"that powerful, 40-year-old letter from lego to parents? it's real URL URL\"\nLabel 3: rumor\nDocument 4: \"that powerful lego letter to parents from the 1970s? it's real URL URL\"\nLabel 4: rumor\nDocument 5: \"from the vault: anatomical maquettes of fanciful creatures URL URL\"\nLabel 5: not rumor",
+        "inference_time": 25.06246590614319
+    },
+    {
+        "idx": 49,
+        "text": "only photo i will tweet. cpr being performed on the soldier now. i heard four shots. #ottawa URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"breaking news: soldier shot at national war memorial in ottawa URL\"\nLabel 1: rumor\nDocument 2: \"soldier shot at national war memorial in ottawa URL #cdnpoli #hw\"\nLabel 2: rumor\nDocument 3: \"update: attacker shot dead in parliament after soldier shot at war memorial URL #ottawashooting URL\"\nLabel 3: rumor\nDocument 4: \"uniformed canadian soldier shot at war memorial in #ottawa.\"\nLabel 4: rumor\nDocument 5: \"soldier shot at national war memorial in ottawa URL URL\"\nLabel 5: rumor",
+        "inference_time": 25.17342519760132
+    },
+    {
+        "idx": 50,
+        "text": "breaking: five explosions heard near bataclan concert hall in paris: reuters witness URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor truth not rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor",
+        "documents": "Document 1: \"breaking: police operation at bataclan concert venue over, two attackers killed: bfm tv URL\"\nLabel 1: not rumor\nDocument 2: \"the beatles' rooftop concert happened 47 years ago today. here are 15 things you didn't know URL URL\"\nLabel 2: not rumor\nDocument 3: \"police taking people out of #paris grocery where hostages were being held. URL\"\nLabel 3: rumor\nDocument 4: \"cnn: new audio reveals 10 shots fired at michael brown. cluster of 6... a pause... and then 4 more URL\"\nLabel 4: rumor\nDocument 5: \"five hostages escape sydney cafe siege — live updates from @buzzfeedoz URL URL\"\nLabel 5: rumor",
+        "inference_time": 24.813578605651855
+    },
+    {
+        "idx": 51,
+        "text": "the white house goes rainbow to celebrate supreme court marriage ruling URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor rumor rumor rumor (rumor rumor rumor) rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor",
+        "documents": "Document 1: \"see the white house light up as a rainbow to celebrate gay marriage URL URL\"\nLabel 1: rumor\nDocument 2: \"the @whitehouse is rainbow-colored tonight in celebration of scotus same-sex marriage ruling. URL URL\"\nLabel 2: rumor\nDocument 3: \"the white house was lit up with rainbow lights to celebrate marriage equality: URL URL\"\nLabel 3: rumor\nDocument 4: \"photo: white house lit in rainbow colors after high court's gay marriage ruling URL URL\"\nLabel 4: rumor\nDocument 5: \"white house lit in rainbow colors after high court's gay marriage ruling (with photo) URL\"\nLabel 5: rumor",
+        "inference_time": 23.79687237739563
+    },
+    {
+        "idx": 52,
+        "text": "breaking news: pope francis’ encounter with kim davis wasn’t an endorsement of her views, the vatican says. URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"the vatican insists pope francis’ encounter with kim davis was not endorsement of her views URL URL\"\nLabel 1: rumor\nDocument 2: \"pope francis’ meeting wasn’t an endorsement of kim davis, vatican says URL\"\nLabel 2: rumor\nDocument 3: \"vatican official says there is \"a sense of regret\" that pope francis met with kim davis: URL URL\"\nLabel 3: rumor\nDocument 4: \"vatican says #kimdavis' meeting w/ #popefrancis 'should not be considered a form of support.' URL URL\"\nLabel 4: rumor\nDocument 5: \"pope francis is the real mvp URL\"\nLabel 5: rumor",
+        "inference_time": 23.701319217681885
+    },
+    {
+        "idx": 53,
+        "text": "#donaldtrump's son spoke about his father's decision to visit flood-damaged louisiana while pres. obama played golf. URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor) truth (not rumor) truth (rumor) not rumor truth (rumor truth not rumor rumor truth (rumor) rumor truth not rumor rumor truth (rumor) not rumor truth (rumor) rumor",
+        "documents": "Document 1: \".@realdonaldtrump's son, eric, slams @hillaryclinton & @potus for their response to flooding in #louisiana. URL\"\nLabel 1: not rumor\nDocument 2: \"never thought i’d see the day when obama would play politics with kids. URL #pjnet URL\"\nLabel 2: rumor\nDocument 3: \"ever wonder why the most mass shootings ever have happened under obama? URL via @rebootliberty URL\"\nLabel 3: rumor\nDocument 4: \"pres. obama on #sanbernardino: \"we have a pattern now of mass shootings in this country.\" URL URL\"\nLabel 4: rumor\nDocument 5: \"thoughts and prayers are not enough. pres. obama speaks on mass shootings over the years: URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.422568798065186
+    },
+    {
+        "idx": 54,
+        "text": "#breaking reports two customers and an employee have escaped the #sydneysiege URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"breaking: police enter #lindt cafe, hostages flee URL #sydneysiege URL\"\nLabel 1: rumor\nDocument 2: \"more: police confirm 3 hostages escape sydney cafe, unknown number remain inside URL #sydneysiege\"\nLabel 2: rumor\nDocument 3: \"police confirm that #sydneysiege is finally over. two people reportedly injured after suffering gunshot wounds URL\"\nLabel 3: rumor\nDocument 4: \"first photos: hostage pressed against a window. #sydneysiege URL\"\nLabel 4: rumor\nDocument 5: \"five hostages have escaped the besieged lindt cafe in #sydney | our latest update: URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.640329122543335
+    },
+    {
+        "idx": 55,
+        "text": "nfl: diagnosed concussions rose by nearly 32 percent this season. URL URL",
+        "label": "not rumor",
+        "prediction": "not rumor",
+        "output": "not rumor\nnot rumor truth based on facts news article reliable source true information verified facts\nnot rumor true news not speculative truth not biasedbiased information unbiased reporting not rumor truth based on facts not rumor truth based on facts truth based on factsbiased information",
+        "documents": "Document 1: \"doctor of \"concussion\" fame willing to \"bet my medical license\" that o.j. simpson has cte: URL URL\"\nLabel 1: not rumor\nDocument 2: \"ex-new york giants safety tyler sash, who died at 27, found to have degenerative brain disease c.t.e. - ny times URL\"\nLabel 2: not rumor\nDocument 3: \"this week in sports: bill belichick visits hospital to watch terminally ill fan die URL URL\"\nLabel 3: not rumor\nDocument 4: \"'madden 15' predicted the patriots would win 28-24. which is exactly what happened. URL\"\nLabel 4: rumor\nDocument 5: \"sources: calvin johnson told detroit lions he plans on retiring from the nfl. URL URL\"\nLabel 5: not rumor",
+        "inference_time": 23.338675498962402
+    },
+    {
+        "idx": 56,
+        "text": "the gunman in ottawa has been shot and killed. i'm at a loss for words this morning. that isn't my canada.",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"update: ottawa police confirm gunman in canada shooting shot and killed. search on for possible additional gunmen. URL\"\nLabel 1: rumor\nDocument 2: \"senior u.s. official: canadian government has informed u.s. that one shooter is dead in ottawa. live blog: URL\"\nLabel 2: rumor\nDocument 3: \"police in #ottawa cannot confirm whether gunman shot dead in parliament is the same person that shot and killed soldier at the war memorial,\"\nLabel 3: rumor\nDocument 4: \"breaking update: canadian soldier injured at parliament hill shooting dies URL #ottawa\"\nLabel 4: rumor\nDocument 5: \"watch video showing gunfire inside canada's parliament in ottawa URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.765527963638306
+    },
+    {
+        "idx": 57,
+        "text": "a crow tries to fight an eagle—gets a free ride instead: URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor truthiness not verified, but likely true based on the context of the retrieved documents and the facts about birds of prey)\nrumor truthiness not verified, but likely true based on the context of the retrieved documents and the",
+        "documents": "Document 1: \"just a crow riding an eagle, nbd. URL URL\"\nLabel 1: rumor\nDocument 2: \"meet the south american goliath birdeater -- a spider the size of a puppy: URL URL\"\nLabel 2: rumor\nDocument 3: \"we only have one thing to say about that giant goliath birdeater spider: URL URL\"\nLabel 3: rumor\nDocument 4: \"researcher @naskrecki on his encounter with a goliath birdeater, the world's largest spider URL URL\"\nLabel 4: rumor\nDocument 5: \"google south american goliath birdeater. helllll noooooo✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋✋\"\nLabel 5: rumor",
+        "inference_time": 23.379707098007202
+    },
+    {
+        "idx": 58,
+        "text": "a boy dies after being bitten by a dog in essex, with a woman arrested for allowing a dog to be out of control URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor\nnot rumor rumor not rumor not rumor not rumor truth rumor not rumor not truth not rumor rumor truth rumor truth rumor truth rumor truth rumor rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth",
+        "documents": "Document 1: \"woman who stabbed paedophile to death in east london has three-and-a-half-year jail term more than doubled URL\"\nLabel 1: not rumor\nDocument 2: \"3-legged dog expected to survive after getting shot while scaring off armed robbers. URL URL\"\nLabel 2: not rumor\nDocument 3: \"nation's dog owners demand to know who's a good boy URL URL\"\nLabel 3: not rumor\nDocument 4: \"oregon community helps mother after boy punished for being tardy due to vehicle problems: URL URL\"\nLabel 4: rumor\nDocument 5: \"her father shot her in the head, as an \"honor killing\" URL via @nytopinion URL\"\nLabel 5: not rumor",
+        "inference_time": 23.639426231384277
+    },
+    {
+        "idx": 59,
+        "text": "remember the man who killed four marines in chattanooga? he was a refugee. URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor) with a twist of political context (rumor with a political agenda)\n\nrumor because it's based on unverified information, and rumor because it's using a known rumor (rumor about the Chattanooga shooting) and",
+        "documents": "Document 1: \"soldier killed at war memorial identified as cpl. nathan cirillo - URL URL\"\nLabel 1: rumor\nDocument 2: \"cpl. nathan cirillo, 24, identified as the soldier who was shot, killed at the war memorial today. #cbcott #ottnews URL\"\nLabel 2: rumor\nDocument 3: \"this is the soldier who died today at the #ottawa war memorial. his name is cpl. nathan cirillo. #rip #ottawastrong URL\"\nLabel 3: rumor\nDocument 4: \"three of five detainees swapped are now isis leaders: URL #talibanswap #tcot #ccot #usa #bowie URL\"\nLabel 4: rumor\nDocument 5: \"r.i.p. to roger rodas, the guy that died with paul walker. he's human too URL\"\nLabel 5: rumor",
+        "inference_time": 23.075828790664673
+    },
+    {
+        "idx": 60,
+        "text": "remembering the talented singer aaliyah on what would have been her 37th birthday: URL URL",
+        "label": "not rumor",
+        "prediction": "not rumor",
+        "output": " not rumor (not rumor, based on truth; birthday remembrance)\nnot rumor Truth not rumorbiased newsrumorbiasedrumorrumorrumorrumorbiasedrumorbiasedrumorbiasedrumorbiasedrumorbiasedrumorbiasedrum",
+        "documents": "Document 1: \"13 questions with @madisonbeer, the 16-year-old singer @justinbieber discovered on youtube: URL URL\"\nLabel 1: not rumor\nDocument 2: \"we're keeping céline dion in our thoughts--her brother daniel has died of cancer at age 59: URL URL\"\nLabel 2: not rumor\nDocument 3: \"happy birthday to the man who brought sexy back! 🎉🔥 URL URL\"\nLabel 3: not rumor\nDocument 4: \"virginia woolf was born today in 1882. listen to the only known recording of her voice here. URL URL\"\nLabel 4: not rumor\nDocument 5: \"so sad to learn big bank hank has passed away--the sugarhill gang rapper was 57. URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.24573278427124
+    },
+    {
+        "idx": 61,
+        "text": "11 confirmed dead, francois hollande to visit scene of attack - latest from paris: URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": " rumor (rumor) rumor (not rumor, rumor (rumor) rumor (rumor) rumor (rumor) rumor (rumor) rumor (rumor) rumor (rumor) rumor (rumor) rumor (rumor",
+        "documents": "Document 1: \"at least 11 dead in shooting at hq of #charliehebdo in #paris (police source) URL\"\nLabel 1: rumor\nDocument 2: \"update: 12 now confirmed dead in #charliehebdo attack in paris, @ap is reporting. story: URL (ap) URL\"\nLabel 2: rumor\nDocument 3: \"breaking: 10 reportedly shot dead at paris hq of french weekly charlie hebdo URL\"\nLabel 3: rumor\nDocument 4: \"#charliehebdo - 11 dead including 2 police in paris shooting. photo @martinbureau1 #afp URL\"\nLabel 4: rumor\nDocument 5: \"at least 12 dead in the paris shooting. updated story and background info: URL #charliehebdo URL\"\nLabel 5: rumor",
+        "inference_time": 23.384669065475464
+    },
+    {
+        "idx": 62,
+        "text": "black islamic flag being held up in window of #lindt chocolate store in martin place, sydney - hostages inside. URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor truth truth rumor not rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"hostages in sydney cafe made to hold up islamic flags URL\"\nLabel 1: rumor\nDocument 2: \"developing: gunman takes hostages in sydney cafe, 'isis' flags being held against window - URL URL\"\nLabel 2: rumor\nDocument 3: \"breaking news: gunmen take hostages at sydney cafe, wave islamic flag URL URL\"\nLabel 3: rumor\nDocument 4: \"hostage taker in sydney cafe demands isis flag and call with australian pm, sky news reports. URL #sydneysiege\"\nLabel 4: rumor\nDocument 5: \"first photos: hostage pressed against a window. #sydneysiege URL\"\nLabel 5: rumor",
+        "inference_time": 23.57145929336548
+    },
+    {
+        "idx": 63,
+        "text": "breaking: three hostages appear to have escaped the sydney cafe where a siege remains ongoing. URL #sydneyseige",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor (rumor because the information is unverified and based on reports from the scene, not official sources)\nrumor (rumor because the information is unverified and based on reports from the scene, not official sources)\n",
+        "documents": "Document 1: \"more: police confirm 3 hostages escape sydney cafe, unknown number remain inside URL #sydneysiege\"\nLabel 1: rumor\nDocument 2: \"five hostages escape sydney cafe siege — live updates from @buzzfeedoz URL URL\"\nLabel 2: rumor\nDocument 3: \"five hostages have escaped the besieged lindt cafe in #sydney | our latest update: URL URL\"\nLabel 3: rumor\nDocument 4: \"breaking: police enter #lindt cafe, hostages flee URL #sydneysiege URL\"\nLabel 4: rumor\nDocument 5: \"#breaking: hostages are being held and a siege is taking place at sydney's lindt chocolat cafe in martin place.\"\nLabel 5: rumor",
+        "inference_time": 24.4073703289032
+    },
+    {
+        "idx": 64,
+        "text": "donald trump defends christmas, says \"maybe we should boycott starbucks\" over new red cups: URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor truthfulness is uncertain truthfulness is uncertain rumor rumor truthfulness is uncertain rumor rumor truthfulness is uncertain rumor rumor truthfulness is uncertain rumor rumor truthfulness is uncertain rumor rumor truthfulness is uncertain rumor rumor truthfulness is uncertain",
+        "documents": "Document 1: \"people are enraged that starbucks' red cups aren't christmas-y enough URL URL\"\nLabel 1: rumor\nDocument 2: \"for everyone who thinks starbucks red cups are ruining christmas URL URL\"\nLabel 2: rumor\nDocument 3: \"starbucks is testing a new latte that tastes exactly like guinness: URL URL\"\nLabel 3: rumor\nDocument 4: \"solo cups have been red for decades. if starbucks was taking a shot at christmas, solo shot first.\"\nLabel 4: rumor\nDocument 5: \"donald trump spokesperson decried lack of \"pure breeds\" running for president URL URL\"\nLabel 5: not rumor",
+        "inference_time": 23.82873249053955
+    },
+    {
+        "idx": 65,
+        "text": "this is how the white house celebrated what obama called \"a victory for america.\" #lovewins URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor rumor rumor (rumor) rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor",
+        "documents": "Document 1: \"the @whitehouse is lit up like a rainbow! #lovewins URL\"\nLabel 1: rumor\nDocument 2: \"breaking: the @whitehouse is celebrating with us tonight lit up in rainbow colors. #lovewins URL\"\nLabel 2: rumor\nDocument 3: \"white house shines rainbow-colored lights in honor of #scotus gay marriage decision #lovewins URL URL\"\nLabel 3: rumor\nDocument 4: \"the white house bathed in rainbow #scotusgaymarriage URL\"\nLabel 4: rumor\nDocument 5: \"the @whitehouse is rainbow-colored tonight in celebration of scotus same-sex marriage ruling. URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.712485313415527
+    },
+    {
+        "idx": 66,
+        "text": "obese woman arrested for starving her 7 kids: “there was only enough food for me” URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor truth, but rumor truth rumor rumor truth rumor rumor rumor rumor truth rumor truth rumor rumor rumor truth rumor truth rumor truth rumor rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth",
+        "documents": "Document 1: \"obese woman arrested for starving her 7 kids: \"there was only enough food for me\" URL URL\"\nLabel 1: rumor\nDocument 2: \"check out new steps we're taking to expand access to meals for the kids who need it most: URL URL\"\nLabel 2: not rumor\nDocument 3: \"woman a leading authority on what shouldn’t be in poor people’s grocery carts URL URL\"\nLabel 3: not rumor\nDocument 4: \"police taking people out of #paris grocery where hostages were being held. URL\"\nLabel 4: rumor\nDocument 5: \"an 11-month old baby is among the hostages at the kosher supermarket in paris. unbearably sad. URL\"\nLabel 5: rumor",
+        "inference_time": 24.827752828598022
+    },
+    {
+        "idx": 67,
+        "text": "a clever marketing campaign by norwegian airlines. / via URL URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor rumor (rumor not rumor) not rumor not rumor rumor rumor (rumor not rumor) rumor (rumor not rumor) not rumor not rumor rumor not rumor rumor not rumor rumor (rumor not rumor) not rumor not rumor",
+        "documents": "Document 1: \"news saudi arabia's national airline planning to introduce gender segregation on flights URL URL\"\nLabel 1: rumor\nDocument 2: \"vladimir putin’s motorcade as seen from the air. URL URL\"\nLabel 2: rumor\nDocument 3: \"10 ways lean startup methodology can impact your business URL by @scottgerber\"\nLabel 3: not rumor\nDocument 4: \"up to 100 masked men, dressed in black, involved in \"migrant attack\" in stockholm URL URL\"\nLabel 4: not rumor\nDocument 5: \"breaking: malaysia airlines passenger 'shot down' near russian border in ukraine URL URL\"\nLabel 5: rumor",
+        "inference_time": 24.999136924743652
+    },
+    {
+        "idx": 68,
+        "text": "men from #pakistan security forces told reporters to stop probing #tashfeenmalik background or face arrest URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor truth truth rumor truth rumor rumor truth rumor rumor truth rumor rumor rumor truth truth rumor truth rumor truth rumor truth truth rumor truth rumor truth rumor truth truth rumor truth rumor truth truth rumor truth rumor truth truth rumor truth truth rumor truth rumor truth rumor",
+        "documents": "Document 1: \"shock: 72 'homeland security' employees on terrorist watch list... URL\"\nLabel 1: rumor\nDocument 2: \"#mh17 was shot down by \"terrorists,\" an advisor to ukraine’s minister of internal affairs says URL URL\"\nLabel 2: rumor\nDocument 3: \"a russian officer \"pushed that button deliberately\" & shot down #mh17, ukrainian gov. says: URL URL\"\nLabel 3: rumor\nDocument 4: \"this is the face of female jihadist #tashfeenmalik could pass for a widow or orphan😤#norefugees #islamistheproblem URL\"\nLabel 4: rumor\nDocument 5: \"72 dhs employees on terrorist watch list URL via @kredo0 URL\"\nLabel 5: rumor",
+        "inference_time": 24.13026189804077
+    },
+    {
+        "idx": 69,
+        "text": "10,000 refugees expected in austria today, per the red cross. about 20 percent are sick or injured. URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"help the red cross provide food, water & cots for refugees across europe. URL   #aidrefugees URL\"\nLabel 1: rumor\nDocument 2: \"first 10,000 syrian refugees arrive in new orleans noticed there are no women or children @realdonaldtrump #tcot URL\"\nLabel 2: rumor\nDocument 3: \"today first load of obama's 10,000 syrian “refugees” has arrived in new orleans – all single males 18-30 years old URL\"\nLabel 3: rumor\nDocument 4: \"first load of 10,000 syrian refugees has arrived in new orleans, being resettled unbeknownst to locals #tcot URL\"\nLabel 4: rumor\nDocument 5: \"ironic timing – today first load of 10,000 syrian “refugees” has arrived in new orleans –… URL URL\"\nLabel 5: rumor",
+        "inference_time": 24.713244915008545
+    },
+    {
+        "idx": 70,
+        "text": "oscars 2016 host chris rock calls event \"white bet awards\" due to lack of diversity: URL URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor\nnot rumor (rumor but rumor) rumor not rumor (rumor) not rumor (rumor) not rumor (rumor) rumor not rumor (rumor) not rumor (rumor) not rumor (rumor)",
+        "documents": "Document 1: \"#oscarnoms: nominations for best actress in a leading role URL URL\"\nLabel 1: not rumor\nDocument 2: \"congratulations, jennifer lawrence! URL #oscarnoms #oscars URL\"\nLabel 2: not rumor\nDocument 3: \"nonwhite actors nearly swept every nominated category at the #sagawards URL URL\"\nLabel 3: not rumor\nDocument 4: \"watch live: as sun goes down, white house lights up rainbow colors to celebrate scotus ruling URL URL\"\nLabel 4: rumor\nDocument 5: \"donald trump has been disqualified for running for president URL\"\nLabel 5: rumor",
+        "inference_time": 24.820799112319946
+    },
+    {
+        "idx": 71,
+        "text": "#onceuponatime's @colinodonoghue1: dark hook is like a \"pissed-off boyfriend\" URL @onceabc URL",
+        "label": "not rumor",
+        "prediction": "not rumor",
+        "output": " not rumor (biased towards the TV show and the character analysis)\nbiased towards rumor (biased towards the TV show and the character analysis)\nbiased towards not rumor biased towards rumor biased towards biased towards biased towards biased towards biased towards biased towards biased towards biased",
+        "documents": "Document 1: \"@legendgary #hitemup! bad boy c.e.o. @iamdiddy arrested in connection with murder of tupac shakur: ... URL @wethewest\"\nLabel 1: rumor\nDocument 2: \"this is @jackalltimelow asking you to watch the #vma #weekendbrunch that's starting right now. 🙌 URL\"\nLabel 2: not rumor\nDocument 3: \".@dylanobrien learned the hard way to not mess with @shelleyhennig: URL URL\"\nLabel 3: not rumor\nDocument 4: \".@bilodope @emilybett @aishataylor at the #instyleglobes bash #goldenglobes URL\"\nLabel 4: not rumor\nDocument 5: \".@selenagomez was on the prowl for hot guys at the #instyleglobes after-party: URL URL\"\nLabel 5: not rumor",
+        "inference_time": 24.871233224868774
+    },
+    {
+        "idx": 72,
+        "text": "america's first muslim female judge; carolyn walker-diallo. URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor rumor rumor not rumor rumor not rumor rumor rumor rumor rumor rumor rumor not rumor rumor rumor rumor not rumor rumor rumor not rumor rumor rumor rumor not rumor rumor rumor not rumor rumor not rumor rumor rumor not rumor rumor not rumor rumor not rumor rumor",
+        "documents": "Document 1: \"colleen hufford was a white woman, hardly worth a mention from pres. obama (unlike #ferguson) URL URL\"\nLabel 1: rumor\nDocument 2: \"paula deen moves to have discrimination suit dismissed. just in time for her new book \"how to cook a jew\".\"\nLabel 2: rumor\nDocument 3: \"islamic tribunal using sharia law in texas has been confirmed URL @breitbartnews #a4a URL\"\nLabel 3: rumor\nDocument 4: \"islamic tribunal in texas operating under sharia law♨️wtf is this😡@lodisilverado @amymek #tcot URL URL\"\nLabel 4: rumor\nDocument 5: \"where is michelle obama’s hashtag for meriam ibrahim? she’s pregnant and sentenced to die URL URL\"\nLabel 5: rumor",
+        "inference_time": 25.359270334243774
+    },
+    {
+        "idx": 73,
+        "text": "google agrees to pay £130m in back taxes after \"open audit\" of its accounts by uk tax authorities URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor (not verified but factual news article, rumor news, not verified but factual news article, rumor news, not verified but factual news article, rumor news, not verified but factual news article, rumor news, not verified but factual news article",
+        "documents": "Document 1: \"appeal court judges rule so-called bedroom tax is discriminatory in two cases brought against uk government URL\"\nLabel 1: not rumor\nDocument 2: \"irs sent $46,378,040 in refunds to 23,994 ‘unauthorized’ aliens at 1 atlanta address | cns news URL via @sharethis\"\nLabel 2: rumor\nDocument 3: \"today, the @deptofdefense took steps to expand paid leave for military moms and dads → URL URL\"\nLabel 3: not rumor\nDocument 4: \"hasan gets $278k but victims denied army benefits. disgusting waste of tax $$. garnish his wages & send 2 red cross URL\"\nLabel 4: rumor\nDocument 5: \"microsoft is reportedly buying 'minecraft' developer mojang for $2 billion URL\"\nLabel 5: rumor",
+        "inference_time": 24.98716902732849
+    },
+    {
+        "idx": 74,
+        "text": "woman stabs boyfriend for not liking instagram selfie fast enough URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor truth)\nrumor truth is rumor truth is not rumor truth not rumor rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth",
+        "documents": "Document 1: \"29 times @msleamichele's instagram inspired us to live a healthier life: URL URL\"\nLabel 1: not rumor\nDocument 2: \"her father shot her in the head, as an \"honor killing\" URL via @nytopinion URL\"\nLabel 2: not rumor\nDocument 3: \"it's been 5 years since \"what makes you beautiful\" lit up our world like nobody else: URL URL\"\nLabel 3: not rumor\nDocument 4: \"donald trump admits he says horrible things just to keep people interested in him URL URL\"\nLabel 4: not rumor\nDocument 5: \"and here's a guy bending an iphone 6 plus with his bare hands URL URL\"\nLabel 5: rumor",
+        "inference_time": 24.916095733642578
+    },
+    {
+        "idx": 75,
+        "text": "but democrats say that syrian refugees are 3 year-old orphans. so why are they worried about them buying guns?",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor) with a hint of humor\nrumor with a conspiracy theory flavor\nrumor (rumor) with a sense of irony\nrumor (rumor) with a conspiracy theory flavor (rumor) with a",
+        "documents": "Document 1: \"today first load of obama's 10,000 syrian “refugees” has arrived in new orleans – all single males 18-30 years old URL\"\nLabel 1: rumor\nDocument 2: \"first 10,000 syrian refugees arrive in new orleans noticed there are no women or children @realdonaldtrump #tcot URL\"\nLabel 2: rumor\nDocument 3: \"latest starving 'refugees' from #syria . these guys look like friggin soldiers to me! URL\"\nLabel 3: rumor\nDocument 4: \"ironic timing – today first load of 10,000 syrian “refugees” has arrived in new orleans –… URL URL\"\nLabel 4: rumor\nDocument 5: \"thoughts and prayers are not enough. pres. obama speaks on mass shootings over the years: URL URL\"\nLabel 5: rumor",
+        "inference_time": 24.767290353775024
+    },
+    {
+        "idx": 76,
+        "text": "looking at eddie redmayne looking at alicia vikander is making us all kinds of emotional. #sagawards URL",
+        "label": "not rumor",
+        "prediction": "FALSE",
+        "output": " not rumorbiased opinions not verified factsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinionsbiased opinions",
+        "documents": "Document 1: \"kate winslet congratulating leonardo dicaprio after his #sagawards win is everything 💕 URL URL\"\nLabel 1: not rumor\nDocument 2: \"nonwhite actors nearly swept every nominated category at the #sagawards URL URL\"\nLabel 2: not rumor\nDocument 3: \"kate winslet and leonardo dicaprio #sagawards embrace, we repeat kate and leo sag awards embrace. ❤ URL\"\nLabel 3: not rumor\nDocument 4: \"#oscarnoms: nominations for best actress in a leading role URL URL\"\nLabel 4: not rumor\nDocument 5: \"kristen stewart: reality: URL demented right-wing fantasy: URL\"\nLabel 5: rumor",
+        "inference_time": 25.09900689125061
+    },
+    {
+        "idx": 77,
+        "text": "oh. so now the #ferguson police chief says the cop didn't know about the robbery when he stopped #mikebrown. the kid was \"jaywalking\"? bs!",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumorbiased opinion (rumor biased opinion with rumor undertone)\n\nrumor biased opinion (rumor biased opinion with rumor undertone because biased opinion is often associated with rumor or unverified information)rumor biased opinion (rumor biased opinion",
+        "documents": "Document 1: \"confirmed: this is irrelevant. rt @ksdknews: confirmed: #mikebrown had no criminal record. URL #ferguson\"\nLabel 1: rumor\nDocument 2: \"nbc: arrest records show #ferguson cops jailed twice as many people last night as they originally claimed. URL\"\nLabel 2: rumor\nDocument 3: \"after police arrested #dylannroof, they went and bought him burger king because he was hungry. #charlestonshooting URL\"\nLabel 3: rumor\nDocument 4: \"who got violent? pregnant woman shot by #ferguson cop while sitting in car tuesday, loses eye: URL URL\"\nLabel 4: rumor\nDocument 5: \"78, not 31, arrested overnight in #ferguson. URL\"\nLabel 5: rumor",
+        "inference_time": 24.729628324508667
+    },
+    {
+        "idx": 78,
+        "text": "a tiny alpine town in northern italy just welcomed its first baby in 28 years 🍼👶 URL URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor (not rumor truth but truth about rare event)\nrumor truth truth about rare event truth about rare event truth about rare event truth about rare event truth about rare event truth about rare event truth about rare event truth about rare event truth about",
+        "documents": "Document 1: \"a rare white giraffe has been spotted in tanzania... perhaps the only one in the world. URL URL\"\nLabel 1: not rumor\nDocument 2: \"after eluding capture for years, 2 mafia bosses arrested in underground bunker in southern italy. URL\"\nLabel 2: not rumor\nDocument 3: \"orphanage saved by bikini car wash URL URL\"\nLabel 3: not rumor\nDocument 4: \"alert: don't fall for this new facebook scam URL URL\"\nLabel 4: rumor\nDocument 5: \"oregon community helps mother after boy punished for being tardy due to vehicle problems: URL URL\"\nLabel 5: rumor",
+        "inference_time": 24.921064376831055
+    },
+    {
+        "idx": 79,
+        "text": "a head-on collision with another planet may have created our moon, researchers say URL URL",
+        "label": "not rumor",
+        "prediction": "not rumor",
+        "output": "not rumor truth truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truthnot rumor truth",
+        "documents": "Document 1: \"‘planet nine’ may exist on the edge of our solar system, claim astronomers URL URL\"\nLabel 1: not rumor\nDocument 2: \"the people have spoken: there is now a petition for @snoopdogg to narrate \"planet earth\" URL URL\"\nLabel 2: not rumor\nDocument 3: \"researcher @naskrecki on his encounter with a goliath birdeater, the world's largest spider URL URL\"\nLabel 3: rumor\nDocument 4: \"mysterious creature discovered in california, everyone naturally cries alien: URL URL\"\nLabel 4: rumor\nDocument 5: \"we only have one thing to say about that giant goliath birdeater spider: URL URL\"\nLabel 5: rumor",
+        "inference_time": 25.01223349571228
+    },
+    {
+        "idx": 80,
+        "text": "police bought #dylannroof food from @burgerking after he was arrested for church shooting: URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor truthrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumor",
+        "documents": "Document 1: \"after police arrested #dylannroof, they went and bought him burger king because he was hungry. #charlestonshooting URL\"\nLabel 1: rumor\nDocument 2: \"cops bought burger king for dylann roof following his arrest URL URL\"\nLabel 2: rumor\nDocument 3: \"cops who arrested dylann roof treated him to a burger king URL URL\"\nLabel 3: rumor\nDocument 4: \"cops rewarded dylann storm roof with burger king following his arrest for an act of domestic terrorism. URL\"\nLabel 4: rumor\nDocument 5: \"breaking news campaign donations link top gop contenders to #dylannroof. #tedcruz returns $8k. URL URL\"\nLabel 5: rumor",
+        "inference_time": 25.00706958770752
+    },
+    {
+        "idx": 81,
+        "text": "us swimmer jimmy feigen to pay $11,000 to charity as part of deal to settle brazil robbery dispute - us media URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor (not rumor) rumor (not rumor) not rumor not rumor not rumor rumor (not rumor) not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor",
+        "documents": "Document 1: \"american swimmers who claimed that they were robbed in rio should apologize to residents, brazilian police said. URL\"\nLabel 1: not rumor\nDocument 2: \"us olympic swimmers \"invented\" robbery story to cover up petrol station altercation, rio police sources tell bbc URL\"\nLabel 2: not rumor\nDocument 3: \"judge issues search warrants, seizure of passports for 2 us swimmers, including ryan lochte, around alleged robbery. URL\"\nLabel 3: not rumor\nDocument 4: \"darren wilson got $500k from abc for interview, plus $500k for donations... he is a killer millionaire, literally\"\nLabel 4: rumor\nDocument 5: \"leonardo dicaprio is giving away $15 million to environmental causes: URL URL\"\nLabel 5: not rumor",
+        "inference_time": 23.985779523849487
+    },
+    {
+        "idx": 82,
+        "text": "rt @operation_kkk: official #opkkk #hoodsoff 2015 data release URL with love, anonymous . URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"calling #anonymous collective to fire at all #kkk & affiliated sources on nov 16. URL #opkkk #hoodsoff retweet/share\"\nLabel 1: rumor\nDocument 2: \"anonymous to kkk: you can hood, but you can't hide. #opkkk #hoodsoff URL\"\nLabel 2: rumor\nDocument 3: \"'hoods off': anonymous announces operation to name kkk members URL #opkkk\"\nLabel 3: rumor\nDocument 4: \"►#anonymous operation #kkk ►ku klux klan, we never stopped watching you URL #opkkk #hoodsoff URL\"\nLabel 4: rumor\nDocument 5: \"breaking news here oooof #hoodsoff #opkkk #anonops #anonymous #anonfamily #kkk #racism URL\"\nLabel 5: rumor",
+        "inference_time": 23.66492795944214
+    },
+    {
+        "idx": 83,
+        "text": "clinton ominously tells iowan supporters to mark front doors with campaign logo before sundown URL",
+        "label": "not rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"retreating clinton campaign torches iowa town to slow advance of sanders volunteers URL URL\"\nLabel 1: not rumor\nDocument 2: \"jeb bush campaign kicks off 3-state farewell tour with iowa town hall meeting URL URL\"\nLabel 2: not rumor\nDocument 3: \"the white house is glowing with pride URL | ap photo URL\"\nLabel 3: rumor\nDocument 4: \".@hillaryclinton not talking about ’92 clinton-gore confederate campaign button URL URL\"\nLabel 4: rumor\nDocument 5: \"white house #shutdown URL , but are posting alerts on him getting a sandwich. URL\"\nLabel 5: rumor",
+        "inference_time": 23.70160484313965
+    },
+    {
+        "idx": 84,
+        "text": "girl killed in her sleep from wearing earbuds while iphone was charging - URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor truth truth unknown rumor truth rumor truth rumor truth rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor truth rumor truth rumor truth rumor rumor truth rumor truth rumor truth rumor rumor truth rumor rumor rumor truth rumor rumor truth rumor rumor truth rumor truth",
+        "documents": "Document 1: \"her father shot her in the head, as an \"honor killing\" URL via @nytopinion URL\"\nLabel 1: not rumor\nDocument 2: \"some iphone 6 plus owners accidentally bending their iphones in pockets URL by @kellyhodgkins\"\nLabel 2: rumor\nDocument 3: \"and here's a guy bending an iphone 6 plus with his bare hands URL URL\"\nLabel 3: rumor\nDocument 4: \"iphone 6 plus owners are complaining that their phones are actually bending: URL URL\"\nLabel 4: rumor\nDocument 5: \"disease spread by bugs that bite your face as you sleep is found in the us URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.715569496154785
+    },
+    {
+        "idx": 85,
+        "text": "translucent butterfly URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor) not rumor (rumor not rumor)\nnot rumor (rumor not rumor) rumor (rumor not rumor) not rumor (rumor not rumor) rumor (rumor not rumor) not rumor (rumor",
+        "documents": "Document 1: \"translucent butterfly - beautiful! ' URL\"\nLabel 1: rumor\nDocument 2: \"from the vault: anatomical maquettes of fanciful creatures URL URL\"\nLabel 2: not rumor\nDocument 3: \"woah, nature. URL URL\"\nLabel 3: rumor\nDocument 4: \"photos of the day URL URL\"\nLabel 4: not rumor\nDocument 5: \"watch live: as sun goes down, white house lights up rainbow colors to celebrate scotus ruling URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.348212003707886
+    },
+    {
+        "idx": 86,
+        "text": "police have surrounded this building where the suspected #charliehebdo attackers are holed-up URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor truth truth rumor not rumor rumor rumor not rumor rumor truth rumor truth rumor truth rumor rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor truth rumor",
+        "documents": "Document 1: \"developing: police pursuing #charliehebdo shooting suspects, helicopters deployed - live feed: URL URL\"\nLabel 1: rumor\nDocument 2: \"police chief investigating #charliehebdo reportedly killed himself while preparing report on terror attack... hmm... URL\"\nLabel 2: rumor\nDocument 3: \"breaking charlie hebdo latest: 11 dead 10 wounded (five critical) two gunmen unaccounted for URL URL\"\nLabel 3: rumor\nDocument 4: \"#breaking : both charlie hebdo suspects killed as police storm building (police sources) URL URL\"\nLabel 4: rumor\nDocument 5: \"french police chief killed himself after #charliehebdo attack URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.733702659606934
+    },
+    {
+        "idx": 87,
+        "text": "michelle obama says ‘white folks’ are what’s wrong with america URL no michelle you are whats wrong with america",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor with a hint of racism and a touch of humor)\nrumor (rumor with a hint of racism and a touch of humor)\nrumor (rumor with a hint of racism and a touch of humor) rumor",
+        "documents": "Document 1: \"colleen hufford was a white woman, hardly worth a mention from pres. obama (unlike #ferguson) URL URL\"\nLabel 1: rumor\nDocument 2: \"obama keeps michelle's URL site running despite the shutdown but URL is shutdown because? #spitehouse\"\nLabel 2: rumor\nDocument 3: \"malia obama wears t shirt of an anti white anti cop rap group. #nypd URL #barbaraboxer #respectformuslims #blackprivilege\"\nLabel 3: rumor\nDocument 4: \"wtf? community agitator obama secretly met w/ ferguson activists & told them to stay on course URL URL\"\nLabel 4: rumor\nDocument 5: \"obama gently guides michelle’s hand as she maneuvers drone joystick URL URL\"\nLabel 5: not rumor",
+        "inference_time": 24.370759963989258
+    },
+    {
+        "idx": 88,
+        "text": "son of a syrian refugee URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor\nnot rumor (rumor) rumor (rumor) rumor (rumor) rumor (rumor) not rumor (rumor) rumor (rumor) rumor (rumor) not rumor (rumor)",
+        "documents": "Document 1: \"ironic timing – today first load of 10,000 syrian “refugees” has arrived in new orleans –… URL URL\"\nLabel 1: rumor\nDocument 2: \"today first load of obama's 10,000 syrian “refugees” has arrived in new orleans – all single males 18-30 years old URL\"\nLabel 2: rumor\nDocument 3: \"sacha baron cohen and his wife donate $1 million to syrian refugees URL URL\"\nLabel 3: not rumor\nDocument 4: \"jindal protests sending of syrian refugees to new orleans URL URL\"\nLabel 4: rumor\nDocument 5: \"older brother of syrian boy in iconic image dies of injuries from airstrike on family home. URL URL\"\nLabel 5: not rumor",
+        "inference_time": 24.846259832382202
+    },
+    {
+        "idx": 89,
+        "text": "adorable but frightened sloth rescued from side of highway in ecuador URL URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor (not rumor, but rumor-like because it's based on a news article but also sensationalized)\nrumor (not rumor) rumor-like because it's based on a news article but also sensationalized\nnot rumor (rumor,",
+        "documents": "Document 1: \"a sloth clings to a pole in ecuador ... and so much more. see the week in 37 photos URL URL\"\nLabel 1: not rumor\nDocument 2: \"meet the south american goliath birdeater -- a spider the size of a puppy: URL URL\"\nLabel 2: rumor\nDocument 3: \"cool dog! mt @cbsnews: goliath encounter: puppy-sized spider surprises scientist in rainforest URL URL\"\nLabel 3: rumor\nDocument 4: \"giant puppy-sized spider found in south america said to be world's largest URL URL\"\nLabel 4: rumor\nDocument 5: \"scientist releases this horrifying picture of a puppy-sized spider he found in the rainforest URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.960553646087646
+    },
+    {
+        "idx": 90,
+        "text": "donald trump's capture, dead or alive, is reportedly worth $100 million to el chapo. URL URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"el chapo puts $100 million bounty on donald trump...dead or alive! URL\"\nLabel 1: rumor\nDocument 2: \"mexican drug kingpin 'el chapo' reportedly threatens to destroy isis \"p*ssies.\" URL URL\"\nLabel 2: rumor\nDocument 3: \"el chapo threatens isis URL URL\"\nLabel 3: rumor\nDocument 4: \"leonardo dicaprio is giving away $15 million to environmental causes: URL URL\"\nLabel 4: not rumor\nDocument 5: \"‘el chapo’ threatens #isis: ‘my men will destroy you’ - URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.778805017471313
+    },
+    {
+        "idx": 91,
+        "text": "happy #nationalhugday! URL",
+        "label": "not rumor",
+        "prediction": "not rumor",
+        "output": "not rumor (not rumor) Happy National Hug Day URL not rumor. not rumor.\nnot rumor not rumor not rumor (not rumor) not rumor not rumor not rumor not rumor not rumor not rumor not rumor not rumor not rumor not rumor not",
+        "documents": "Document 1: \"happy #nationalhugday URL\"\nLabel 1: not rumor\nDocument 2: \"happy #nationalchocolatecakeday! URL\"\nLabel 2: not rumor\nDocument 3: \"happy birthday, @potus! URL\"\nLabel 3: not rumor\nDocument 4: \"happy #lefthandersday URL\"\nLabel 4: not rumor\nDocument 5: \"happy birthday to the man who brought sexy back! 🎉🔥 URL URL\"\nLabel 5: not rumor",
+        "inference_time": 23.514564275741577
+    },
+    {
+        "idx": 92,
+        "text": "mook spooked: hillary manager predicts trump will win presidency if nominated!",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor\nrumor news rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor",
+        "documents": "Document 1: \"cnn/orc poll: donald trump now competitive in general election URL via @jennagiesta URL\"\nLabel 1: rumor\nDocument 2: \".@hillaryclinton is ahead of @berniesanders by 19 percentage points, in a new cbs news poll released sunday. URL\"\nLabel 2: rumor\nDocument 3: \"first on cnn: @tommychong wants @berniesanders for next \"commander in kush\" URL URL\"\nLabel 3: not rumor\nDocument 4: \"donald trump has been disqualified for running for president URL\"\nLabel 4: rumor\nDocument 5: \"hard work, focus, and a dream—that’s the spirit of @michaelphelps. tonight, we congratulate him and all of @teamusa on making history.\"\nLabel 5: not rumor",
+        "inference_time": 24.67898988723755
+    },
+    {
+        "idx": 93,
+        "text": "actor abe vigoda has died at 94 URL URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor not rumor (rumor not because the information comes from a reliable source and has been widely reported, but not rumor because it is verified fact not based on hearsay or speculation.rumor not because the information comes from a reliable source",
+        "documents": "Document 1: \"actor abe vigoda, known for roles in 'the godfather' and 'barney miller,' has died. URL URL\"\nLabel 1: not rumor\nDocument 2: \"actor james earl jones is not dead: URL URL\"\nLabel 2: rumor\nDocument 3: \"older brother of syrian boy in iconic image dies of injuries from airstrike on family home. URL URL\"\nLabel 3: not rumor\nDocument 4: \"rip kenny baker, the actor behind legendary star wars droid r2-d2: URL URL\"\nLabel 4: not rumor\nDocument 5: \"cant believe tupac is still alive URL\"\nLabel 5: rumor",
+        "inference_time": 23.51800036430359
+    },
+    {
+        "idx": 94,
+        "text": "today’s progress...these things are a reminder of what we can achieve when we lead with strength and wisdom. —@potus on progress with iran",
+        "label": "not rumor",
+        "prediction": "FALSE",
+        "output": "biased not rumorbiased biased not rumorbiasedbiased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased",
+        "documents": "Document 1: \"this is a good day. once again, we’re seeing what’s possible with strong american diplomacy. —@potus #irandeal URL\"\nLabel 1: not rumor\nDocument 2: \"we have now cut off every single path that iran could have used to build a bomb. —@potus #irandeal URL\"\nLabel 2: not rumor\nDocument 3: \"american leadership in action: iran's four pathways to a nuclear weapon have now been blocked. #irandeal URL\"\nLabel 3: not rumor\nDocument 4: \"we still have sanctions on iran for its violations of human rights—for its support for terrorism &...its ballistic missile program —@potus\"\nLabel 4: not rumor\nDocument 5: \"thanks to the #irandeal, iran's four pathways to a nuclear weapon have been blocked → URL URL\"\nLabel 5: not rumor",
+        "inference_time": 23.87664222717285
+    },
+    {
+        "idx": 95,
+        "text": "according to anonymous, the next isis target is a wwe event in atlanta. URL URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"dearborn michigan, this morning. pro isis rally. spread the word, the fit is about to hit the shan here in the us. URL\"\nLabel 1: rumor\nDocument 2: \"don't worry ppl #isis isn't a threat to homeland. man wearing body armor with isis flag on it arrested in #texas URL\"\nLabel 2: rumor\nDocument 3: \"someone trolled twitter into thinking macklemore joined isis: URL URL\"\nLabel 3: rumor\nDocument 4: \"#muslim arrested in #texas today with #isis flag on body armor URL\"\nLabel 4: rumor\nDocument 5: \"el chapo threatens isis URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.648218393325806
+    },
+    {
+        "idx": 96,
+        "text": "this is shot that captures the #sydneysiege: sheer terror/relief of escaped hostages, incredible work of @nswpolice URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorbiased (biased towards the facts but biased towards a particular perspective)biased towards factsbiased rumorbiased truthbiased biased truthbiased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased",
+        "documents": "Document 1: \"first photos: hostage pressed against a window. #sydneysiege URL\"\nLabel 1: rumor\nDocument 2: \"breaking @skybusiness: freed hostage borne high from #sydneysiege w/c.4 paramedic teams on the scene URL ( carsonscottli\"\nLabel 2: rumor\nDocument 3: \"breaking news: gunmen take hostages at sydney cafe, wave islamic flag URL URL\"\nLabel 3: rumor\nDocument 4: \"police seem relaxed, suggesting all hostages are out and gunman no longer a threat URL #sydneysiege\"\nLabel 4: rumor\nDocument 5: \"breaking: police enter #lindt cafe, hostages flee URL #sydneysiege URL\"\nLabel 5: rumor",
+        "inference_time": 23.401043176651
+    },
+    {
+        "idx": 97,
+        "text": "breaking news: at least 3 shots fired at ottawa war memorial. one soldier confirmed shot - URL URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"breaking news: soldier shot at national war memorial in ottawa URL\"\nLabel 1: rumor\nDocument 2: \"soldier shot at national war memorial in ottawa URL URL\"\nLabel 2: rumor\nDocument 3: \"developing story: shots fired on parliament hill, soldier shot at war memorial URL #ottawa URL\"\nLabel 3: rumor\nDocument 4: \"1 shot at war memorial in canada's capital. URL\"\nLabel 4: rumor\nDocument 5: \"update: attacker shot dead in parliament after soldier shot at war memorial URL #ottawashooting URL\"\nLabel 5: rumor",
+        "inference_time": 23.54668378829956
+    },
+    {
+        "idx": 98,
+        "text": "reagan (11 mass shootings) bush sr (12 mass shootings) clinton (23 mass shootings) bush jr (16 mass shootings) obama (162 mass shootings)",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor\nrumor (rumor, rumor, rumor) rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor",
+        "documents": "Document 1: \"mass shootings list. reagan - 11 bush sr - 12 clinton - 23 bush jr - 16 obama - 162 #sanbernadino\"\nLabel 1: rumor\nDocument 2: \".@johnrlottjr:\"the number of ppl killed by mass shootings during obama’s tenure is 424 casualties…paris this year alone has 508 casualties.\"\"\nLabel 2: rumor\nDocument 3: \"ever wonder why the most mass shootings ever have happened under obama? URL via @rebootliberty URL\"\nLabel 3: rumor\nDocument 4: \"thoughts and prayers are not enough. pres. obama speaks on mass shootings over the years: URL URL\"\nLabel 4: rumor\nDocument 5: \"pres. obama on #sanbernardino: \"we have a pattern now of mass shootings in this country.\" URL URL\"\nLabel 5: rumor",
+        "inference_time": 24.592777490615845
+    },
+    {
+        "idx": 99,
+        "text": "#bulgaria finds 10,000 #fake passports hidden by #muslim refugees heading for #germany passports for #terrorists URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor\nrumor\nrumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor",
+        "documents": "Document 1: \"and so it begins…isis flag among refugees in germany fighting the police [pictures] URL URL\"\nLabel 1: rumor\nDocument 2: \"at least 39 migrants, including children, drown as boat sinks between turkey & greece URL URL\"\nLabel 2: not rumor\nDocument 3: \"#muslim arrested in #texas today with #isis flag on body armor URL\"\nLabel 3: rumor\nDocument 4: \"latest starving 'refugees' from #syria . these guys look like friggin soldiers to me! URL\"\nLabel 4: rumor\nDocument 5: \"first 10,000 syrian refugees arrive in new orleans noticed there are no women or children @realdonaldtrump #tcot URL\"\nLabel 5: rumor",
+        "inference_time": 24.977938413619995
+    },
+    {
+        "idx": 100,
+        "text": ".@potus on declaring a federal emergency in #flint, michigan to supplement state and local response efforts. URL",
+        "label": "not rumor",
+        "prediction": "not rumor",
+        "output": "not rumor news factual information truth truth not rumor truth not rumor truth not rumor truth not rumor truth not rumor truth not rumor truth not rumor truth not rumor truth not rumor truth not rumor truth not rumor truth not rumor truth not rumor truth not rumor truth",
+        "documents": "Document 1: \"michigan gov. @onetoughnerd: #flintwatercrisis may affect \"many more\" children. URL URL\"\nLabel 1: not rumor\nDocument 2: \"email: michigan officials gave bottled water to state employees a year before flint residents got it URL\"\nLabel 2: not rumor\nDocument 3: \"our children should not have to be worried about the water that they're drinking —@potus on the situation in flint URL\"\nLabel 3: not rumor\nDocument 4: \"missouri governor declares state of emergency ahead of grand jury URL\"\nLabel 4: rumor\nDocument 5: \".@potus just announced new reforms to address the overuse of solitary confinement: URL URL\"\nLabel 5: not rumor",
+        "inference_time": 24.138197660446167
+    },
+    {
+        "idx": 101,
+        "text": "sanders closes to 7 points behind clinton in new iowa poll. URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor rumor news poll rumor news True rumor news not rumor rumor not rumor rumor True rumor news true rumor not rumor rumor truth rumor not rumor rumor truth rumor truth rumor not rumor rumor truth rumor truth truth rumor not rumor rumor truth truth rumor truth truth",
+        "documents": "Document 1: \"retreating clinton campaign torches iowa town to slow advance of sanders volunteers URL URL\"\nLabel 1: not rumor\nDocument 2: \"no, internet, cnn did not delete its poll showing bernie sanders won the democratic debate. URL URL\"\nLabel 2: rumor\nDocument 3: \"poll: @hillaryclinton's lead over @berniesanders shrinks as her edge over gop vanishes URL URL\"\nLabel 3: rumor\nDocument 4: \".@hillaryclinton is ahead of @berniesanders by 19 percentage points, in a new cbs news poll released sunday. URL\"\nLabel 4: rumor\nDocument 5: \"cnn/orc poll: clinton did best in 1st dem debate, but only sanders significantly increased support in past month. URL\"\nLabel 5: rumor",
+        "inference_time": 23.602437019348145
+    },
+    {
+        "idx": 102,
+        "text": "holy shit. rupert murdoch just killed national geographic. URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor\nnot rumor\nnot rumor rumor (rumor truth not verified but rumor rumor truth not verified but rumor rumor truth not verified but rumor truth not verified but rumor rumor truth not verified but rumor rumor truth not verified but rumor",
+        "documents": "Document 1: \"researcher @naskrecki on his encounter with a goliath birdeater, the world's largest spider URL URL\"\nLabel 1: rumor\nDocument 2: \"the people have spoken: there is now a petition for @snoopdogg to narrate \"planet earth\" URL URL\"\nLabel 2: not rumor\nDocument 3: \"fbi 'super pissed off' at white house meddling... URL\"\nLabel 3: not rumor\nDocument 4: \"is the truth out there? in nod to @thexfiles, @cia releases hundreds of declassified docs URL URL\"\nLabel 4: not rumor\nDocument 5: \"‘i can’t do this anymore,’ think 320 million americans quietly going about day URL URL\"\nLabel 5: not rumor",
+        "inference_time": 23.40703582763672
+    },
+    {
+        "idx": 103,
+        "text": "#backtothefuture fans, it's october 21, 2015 — the future is finally here! URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor because predictions about the future are not always accurate and this one is not verified. It's a popular rumor but not fact based on truth. rumor because predictions about the future are not always accurate and this one is not verified",
+        "documents": "Document 1: \"great scott! #backtothefuture 2 (almost) nailed its 2015 predictions. @hplabs makes theirs: URL URL\"\nLabel 1: rumor\nDocument 2: \"the 5 most accurate predictions from the decade-jumping adventures in #backtothefuture: URL URL\"\nLabel 2: rumor\nDocument 3: \"10 'back to the future' predictions that came true URL URL\"\nLabel 3: rumor\nDocument 4: \"correct predictions in back to the future ii URL\"\nLabel 4: rumor\nDocument 5: \"#stevenuniverse will finally return to our screens in january! URL URL\"\nLabel 5: not rumor",
+        "inference_time": 23.282464742660522
+    },
+    {
+        "idx": 104,
+        "text": "steve jobs' biological father was a syrian immigrant.",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"remember: steve jobs' biological father was a syrian migrant. URL (photo: ap) URL\"\nLabel 1: rumor\nDocument 2: \"steve jobs was adopted. his biological father was abdulfattah jandali, a syrian muslim.\"\nLabel 2: rumor\nDocument 3: \"dna confirms hakeem from ‘empire’ is jay-z's biological son [read details👇👇👇👇👇🏾👇🏿 URL URL\"\nLabel 3: rumor\nDocument 4: \"seth rogen has been cast as steve wozniak in the steve jobs biopic starring christian bale. URL URL\"\nLabel 4: rumor\nDocument 5: \"anne frank was a refugee denied entrance to the united states URL #syrianrefugees URL\"\nLabel 5: rumor",
+        "inference_time": 23.687841415405273
+    },
+    {
+        "idx": 105,
+        "text": "#breaking charlie hebdo gunmen's hostage freed and safe after police assault",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor truthrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumor",
+        "documents": "Document 1: \"#breaking : both charlie hebdo suspects killed as police storm building (police sources) URL URL\"\nLabel 1: rumor\nDocument 2: \"breaking charlie hebdo latest: 11 dead 10 wounded (five critical) two gunmen unaccounted for URL URL\"\nLabel 2: rumor\nDocument 3: \"police chief investigating #charliehebdo reportedly killed himself while preparing report on terror attack... hmm... URL\"\nLabel 3: rumor\nDocument 4: \"afp: suspected #charliehebdo gunmen have been killed\"\nLabel 4: rumor\nDocument 5: \"#breaking gunman in policewoman killing suspected in new paris hostage-taking: source\"\nLabel 5: rumor",
+        "inference_time": 23.519832611083984
+    },
+    {
+        "idx": 106,
+        "text": "“our team boasts the most women who have ever competed for any nation at any olympic games.” —@potus on @teamusa: URL",
+        "label": "not rumor",
+        "prediction": "FALSE",
+        "output": " True Not Rumorbiased but factual informationbiased towards a nation but not rumorbiased news not rumorbiased factsbiased newsbiased biased biased biased biasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiased",
+        "documents": "Document 1: \"if you could compete in any olympic event, what would you choose? —@potus asks @flotus: URL URL\"\nLabel 1: not rumor\nDocument 2: \"‘keep it,’ says simone biles throwing gold medal to adoring men's gymnastics team URL #rio2016 URL\"\nLabel 2: not rumor\nDocument 3: \"olympics: matthew centrowitz wins men's 1,500m race, first gold for us in event since 1908. URL URL\"\nLabel 3: not rumor\nDocument 4: \"olympics: usain bolt wins 200m gold, staying on track for 3 golds in 3 events at 3 olympics URL URL\"\nLabel 4: not rumor\nDocument 5: \"russian olympic officials concerned after learning team’s clean urine reservoir almost empty URL URL\"\nLabel 5: not rumor",
+        "inference_time": 23.438453197479248
+    },
+    {
+        "idx": 107,
+        "text": "72 dhs employees on terrorist watch list URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor truth unknownrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"what? \"72 dhs employees found on terrorist watch list\" URL\"\nLabel 1: rumor\nDocument 2: \"72 dhs employees on terrorist watch list - washington free beacon URL\"\nLabel 2: rumor\nDocument 3: \"72 dhs employees on the terror watch list: URL h/t @penguinsfan62\"\nLabel 3: rumor\nDocument 4: \"72 dhs employees on terrorist watch list URL via @kredo0 URL\"\nLabel 4: rumor\nDocument 5: \"shock: 72 'homeland security' employees on terrorist watch list... URL\"\nLabel 5: rumor",
+        "inference_time": 24.677695989608765
+    },
+    {
+        "idx": 108,
+        "text": "police convoy and helicopters are rushing to scene to detain charlie hebdo massacre suspects URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumor",
+        "documents": "Document 1: \"breaking charlie hebdo latest: 11 dead 10 wounded (five critical) two gunmen unaccounted for URL URL\"\nLabel 1: rumor\nDocument 2: \"developing: police pursuing #charliehebdo shooting suspects, helicopters deployed - live feed: URL URL\"\nLabel 2: rumor\nDocument 3: \"#breaking : both charlie hebdo suspects killed as police storm building (police sources) URL URL\"\nLabel 3: rumor\nDocument 4: \"police chief investigating #charliehebdo reportedly killed himself while preparing report on terror attack... hmm... URL\"\nLabel 4: rumor\nDocument 5: \"french police chief killed himself after #charliehebdo attack URL URL\"\nLabel 5: rumor",
+        "inference_time": 25.039999961853027
+    },
+    {
+        "idx": 109,
+        "text": "months ago, rupert murdoch bought national geographic and fired most of writers. this just hit the stands. URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor rumor not rumor rumor not rumor rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor not rumor rumor",
+        "documents": "Document 1: \"the people have spoken: there is now a petition for @snoopdogg to narrate \"planet earth\" URL URL\"\nLabel 1: not rumor\nDocument 2: \"#breaking news: shots fired at parliament hill. follow developing story: URL URL\"\nLabel 2: rumor\nDocument 3: \"leonardo dicaprio is giving away $15 million to environmental causes: URL URL\"\nLabel 3: not rumor\nDocument 4: \"mark zuckerberg is now richer than the koch brothers 💰 URL URL\"\nLabel 4: not rumor\nDocument 5: \"reporter charlo green quit on air to start a marijuana business URL will quitting on tv pay off? URL\"\nLabel 5: rumor",
+        "inference_time": 25.14701795578003
+    },
+    {
+        "idx": 110,
+        "text": "fda confiscates several thousand chickens from kfc farms as mutations worsen URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor truth rumors true not rumor truth truth rumors truth rumor not rumor truth truth rumors truth rumor not rumor truth truth rumors truth rumor not rumor truth truth rumors truth rumor not rumor truth truth rumors truth rumor not rumor truth truth rumors truth",
+        "documents": "Document 1: \"4 legged chickens: fda confiscates several thousand chickens from kfc farms as mutations worsen URL\"\nLabel 1: rumor\nDocument 2: \"chick-fil-a manager reportedly bans list of unprofessional words, internet erupts: URL URL\"\nLabel 2: rumor\nDocument 3: \"donald trump spokesperson decried lack of \"pure breeds\" running for president URL URL\"\nLabel 3: not rumor\nDocument 4: \"no baes allowed: a chick-fil-a manager bans 22 hip words URL URL\"\nLabel 4: rumor\nDocument 5: \"kfc ban wipes because they offend muslims URL ban islam instead, why are there halal only kfc's? URL\"\nLabel 5: rumor",
+        "inference_time": 24.036579370498657
+    },
+    {
+        "idx": 111,
+        "text": "breaking: south carolina to ban sale of tylenol. they fear picking of cotton from the bottles may represent slavery. URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (humor?) \n\nrumor (humor?) (rumor) (humor?)rumor (humor?)rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumor",
+        "documents": "Document 1: \"let's let our friends know that a state senator in south carolina stated \"women are a lesser cut of meat\" #chewonthis URL\"\nLabel 1: rumor\nDocument 2: \"sc state senator also opposes bill that would make it harder for domestic abusers to own guns: URL URL\"\nLabel 2: rumor\nDocument 3: \"dewshine drink suspected in deaths of tennessee teens. URL\"\nLabel 3: not rumor\nDocument 4: \"after police arrested #dylannroof, they went and bought him burger king because he was hungry. #charlestonshooting URL\"\nLabel 4: rumor\nDocument 5: \"lets start by boycotting koch industiers they paid for george zimmerman legal fees #justicefortrayvon #jurorb37 URL\"\nLabel 5: rumor",
+        "inference_time": 23.856966733932495
+    },
+    {
+        "idx": 112,
+        "text": "#ripchyna: the wwe icon has passed away at the age of 45. URL URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor) rumor (rumor) not rumor rumor rumor rumor (rumor) rumor (rumor) rumor (rumor) rumor (rumor) rumor (rumor) rumor (rumor) rumor (rumor",
+        "documents": "Document 1: \"#riphulkhogan my heart is ripping like your shirt. wwe'll miss you.\"\nLabel 1: rumor\nDocument 2: \"rip roger rodas, the man who died with paul walker. #rippaulwalker #riprogerrodas URL\"\nLabel 2: rumor\nDocument 3: \"an undefeated high school wrestler lost on purpose against an opponent with down syndrome: URL URL\"\nLabel 3: not rumor\nDocument 4: \"a touching tribute to a fallen soldier URL URL\"\nLabel 4: rumor\nDocument 5: \"paul walker's co-stars take to twitter to share their condolences following his death URL #rippaulwalker #teampw\"\nLabel 5: rumor",
+        "inference_time": 23.3728244304657
+    },
+    {
+        "idx": 113,
+        "text": "very reliable source on parliament hill tells me the assailant has been killed. #cdnpoli #ottnews",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"confirmed | 1 shooter shot dead at parliament hill, but there is more than 1 suspect. #cbcott #ottnews\"\nLabel 1: rumor\nDocument 2: \"#breaking news: shots fired at parliament hill. follow developing story: URL URL\"\nLabel 2: rumor\nDocument 3: \"breaking - shooting on parliament hill. rcmp have weapons drawn #cdnpoli URL\"\nLabel 3: rumor\nDocument 4: \"breaking update: canadian soldier injured at parliament hill shooting dies URL #ottawa\"\nLabel 4: rumor\nDocument 5: \"kevin vickers hailed as hero who took down attacker at parliament hill: URL #cbcott #ottnews URL\"\nLabel 5: rumor",
+        "inference_time": 23.63884949684143
+    },
+    {
+        "idx": 114,
+        "text": "haron monis,hostage-taker in #sydney: fled #iran 96,suspect in ex-wife killing,46 sex assaults URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrumor truthrum",
+        "documents": "Document 1: \"escaped #sydneysiege hostage, elly chen, a top student and skilled sportswoman URL URL\"\nLabel 1: rumor\nDocument 2: \"first photos: hostage pressed against a window. #sydneysiege URL\"\nLabel 2: rumor\nDocument 3: \"breaking @skybusiness: freed hostage borne high from #sydneysiege w/c.4 paramedic teams on the scene URL ( carsonscottli\"\nLabel 3: rumor\nDocument 4: \"breaking news: gunmen take hostages at sydney cafe, wave islamic flag URL URL\"\nLabel 4: rumor\nDocument 5: \"more: police confirm 3 hostages escape sydney cafe, unknown number remain inside URL #sydneysiege\"\nLabel 5: rumor",
+        "inference_time": 23.549519777297974
+    },
+    {
+        "idx": 115,
+        "text": "sydney hostage-taker - man monis, 49 - originally from iran - self-styled sheikh - accused of sexually assaulting 7 women developing..",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor Truth truth rumor Truth truth rumor truth truth rumor truth rumor truth truth rumor truth rumor truth rumor truth truth rumor truth truth rumor truth truth truth rumor truth truth rumor truth truth rumor truth truth rumor truth truth rumor truth truth rumor truth truth rumor truth",
+        "documents": "Document 1: \"police: negotiators are now in contact with armed hostage-taker in sydney situation; motive remains unknown - URL\"\nLabel 1: rumor\nDocument 2: \"statement from prime minister tony abbott on sydney hostage situation. URL\"\nLabel 2: rumor\nDocument 3: \"first photos: hostage pressed against a window. #sydneysiege URL\"\nLabel 3: rumor\nDocument 4: \"escaped #sydneysiege hostage, elly chen, a top student and skilled sportswoman URL URL\"\nLabel 4: rumor\nDocument 5: \"breaking @skybusiness: freed hostage borne high from #sydneysiege w/c.4 paramedic teams on the scene URL ( carsonscottli\"\nLabel 5: rumor",
+        "inference_time": 23.74899172782898
+    },
+    {
+        "idx": 116,
+        "text": "usgs: sonic boom confirmed in new jersey area after reports of shaking; cause not immediately known URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor rumor not rumor rumor not rumor rumor rumor (rumor) rumor rumor not rumor rumor rumor rumor not rumor rumor rumor rumor rumor not rumor rumor rumor rumor not rumor rumor rumor rumor not rumor rumor rumor rumor rumor not rumor rumor rumor rumor not",
+        "documents": "Document 1: \"'great pacific garbage patch' researchers return with data URL URL\"\nLabel 1: rumor\nDocument 2: \"north korea 'planning some kind of rocket launch' us officials say, citing increased activity at test site URL\"\nLabel 2: not rumor\nDocument 3: \"north korea may be preparing for a missile launch. URL URL\"\nLabel 3: not rumor\nDocument 4: \"america’s biggest toy company is changing the most famous body in the world URL URL\"\nLabel 4: not rumor\nDocument 5: \"@antoniofrench alleged new shooting audio of #michaelbrown / URL\"\nLabel 5: rumor",
+        "inference_time": 23.615036487579346
+    },
+    {
+        "idx": 117,
+        "text": "#sydneysiege is over. 2 confirmed dead, #prayforsydney #prayforsydneyhostages #sydney #hostages",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumor",
+        "documents": "Document 1: \"police confirm that #sydneysiege is finally over. two people reportedly injured after suffering gunshot wounds URL\"\nLabel 1: rumor\nDocument 2: \"#breaking: at least two people have died following the #sydneysiege. 5 people are being treated by paramedics.\"\nLabel 2: rumor\nDocument 3: \"more: police confirm 3 hostages escape sydney cafe, unknown number remain inside URL #sydneysiege\"\nLabel 3: rumor\nDocument 4: \"police seem relaxed, suggesting all hostages are out and gunman no longer a threat URL #sydneysiege\"\nLabel 4: rumor\nDocument 5: \"breaking @skybusiness: freed hostage borne high from #sydneysiege w/c.4 paramedic teams on the scene URL ( carsonscottli\"\nLabel 5: rumor",
+        "inference_time": 23.554368495941162
+    },
+    {
+        "idx": 118,
+        "text": "danish lawmakers approve bill allowing seizure of asylum seekers' valuables to help cover expenses. URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor not rumor rumor not rumor not rumorrumor not rumorrumor not rumorrumor not rumorrumor not rumorrumor not rumorrumor not rumorrumor not rumorrumor not rumorrumor not rumorrumor not rumor",
+        "documents": "Document 1: \"poland says cannot accept migrants under eu quotas after paris attacks. more updates: URL URL\"\nLabel 1: not rumor\nDocument 2: \"help the red cross provide food, water & cots for refugees across europe. URL   #aidrefugees URL\"\nLabel 2: rumor\nDocument 3: \"merkel says refugees must return home once war is over URL\"\nLabel 3: not rumor\nDocument 4: \"gop candidates, lawmakers return donations made by leader of racist group cited in dylann roof's manifesto: URL\"\nLabel 4: rumor\nDocument 5: \"judge issues search warrants, seizure of passports for 2 us swimmers, including ryan lochte, around alleged robbery. URL\"\nLabel 5: not rumor",
+        "inference_time": 23.623923778533936
+    },
+    {
+        "idx": 119,
+        "text": "unreal: watch what happens when desperate muslim refugees are offered red cross food URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": " rumor (rumor)\nrumor (rumor) (rumor) rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor rumor",
+        "documents": "Document 1: \"help the red cross provide food, water & cots for refugees across europe. URL   #aidrefugees URL\"\nLabel 1: rumor\nDocument 2: \"ironic timing – today first load of 10,000 syrian “refugees” has arrived in new orleans –… URL URL\"\nLabel 2: rumor\nDocument 3: \"latest starving 'refugees' from #syria . these guys look like friggin soldiers to me! URL\"\nLabel 3: rumor\nDocument 4: \"jindal protests sending of syrian refugees to new orleans URL URL\"\nLabel 4: rumor\nDocument 5: \"breaking news: gunmen take hostages at sydney cafe, wave islamic flag URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.6365647315979
+    },
+    {
+        "idx": 120,
+        "text": "president obama announces ban on solitary confinement for juveniles in federal prisons - washington post URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor (not rumor) Truth not verified but credible source (washington post) and relevance to topic (juvenile solitary confinement ban) support the rumor classification. Truth not verified but credible source (washington post) and relevance to topic (",
+        "documents": "Document 1: \"america is a nation of second chances —@potus on new reforms to solitary confinement: URL URL\"\nLabel 1: not rumor\nDocument 2: \".@potus's reforms to solitary confinement will expand treatment for the mentally ill: URL URL\"\nLabel 2: not rumor\nDocument 3: \".@potus just announced new reforms to address the overuse of solitary confinement: URL URL\"\nLabel 3: not rumor\nDocument 4: \"u.s. justice department to end use of private prisons. URL\"\nLabel 4: not rumor\nDocument 5: \"after mass shootings, obama seeks to expand background checks for gun sales by executive order to bypass congress URL\"\nLabel 5: rumor",
+        "inference_time": 23.27908682823181
+    },
+    {
+        "idx": 121,
+        "text": "jindal demands info about refugees entering new orleans... URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"jindal protests sending of syrian refugees to new orleans URL URL\"\nLabel 1: rumor\nDocument 2: \"ironic timing – today first load of 10,000 syrian “refugees” has arrived in new orleans –… URL URL\"\nLabel 2: rumor\nDocument 3: \"first load of 10,000 syrian refugees has arrived in new orleans, being resettled unbeknownst to locals #tcot URL\"\nLabel 3: rumor\nDocument 4: \"today first load of obama's 10,000 syrian “refugees” has arrived in new orleans – all single males 18-30 years old URL\"\nLabel 4: rumor\nDocument 5: \"first 10,000 syrian refugees arrive in new orleans noticed there are no women or children @realdonaldtrump #tcot URL\"\nLabel 5: rumor",
+        "inference_time": 23.691837310791016
+    },
+    {
+        "idx": 122,
+        "text": "the dave i know is polite, modest, and content. jumbotron dave is crass and loud. URL URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor\nnot rumor rumor not rumor biasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiased",
+        "documents": "Document 1: \"uk #krispykreme apologizes for 'kkk wednesday' customer promo. URL URL\"\nLabel 1: rumor\nDocument 2: \"13 questions with @madisonbeer, the 16-year-old singer @justinbieber discovered on youtube: URL URL\"\nLabel 2: not rumor\nDocument 3: \"jimmy fallon and sesame street characters photobomb families & it's seriously adorable: URL URL\"\nLabel 3: not rumor\nDocument 4: \"the always hilarious @shelleyhennig has taken over the @mtvteenwolf vine and it's as amazing as it sounds. URL\"\nLabel 4: not rumor\nDocument 5: \"it ain't banksy! meet @lucilleclerc, artist behind the iconic #charliehebdo pencil tribute URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.57481098175049
+    },
+    {
+        "idx": 123,
+        "text": "do these look like the faces of a homeless couple caught living in a walmart attic for 2 years? URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor, rumor truth not verifiedrumor rumor truth not verifiedrumor truth not verifiedrumor truth not verifiedrumor truth not verifiedrumor truth not verifiedrumor truth not verifiedrumor truth not verifiedrumor truth",
+        "documents": "Document 1: \"do these look like the faces of a homeless couple caught living in a walmart attic for over 2 years? URL\"\nLabel 1: rumor\nDocument 2: \"latest starving 'refugees' from #syria . these guys look like friggin soldiers to me! URL\"\nLabel 2: rumor\nDocument 3: \"marilyn monroe and james dean smoking in new york city URL\"\nLabel 3: rumor\nDocument 4: \"florida couple arrested for selling fake real estate on the moon #wtf15 👉🏿👉 URL URL\"\nLabel 4: rumor\nDocument 5: \"the white house is glowing with pride URL | ap photo URL\"\nLabel 5: rumor",
+        "inference_time": 23.41096258163452
+    },
+    {
+        "idx": 124,
+        "text": "#opkkk releases 500+ names and reveals unexpected #plottwist URL URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"'hoods off': anonymous announces operation to name kkk members URL #opkkk\"\nLabel 1: rumor\nDocument 2: \"breaking news here oooof #hoodsoff #opkkk #anonops #anonymous #anonfamily #kkk #racism URL\"\nLabel 2: rumor\nDocument 3: \"calling #anonymous collective to fire at all #kkk & affiliated sources on nov 16. URL #opkkk #hoodsoff retweet/share\"\nLabel 3: rumor\nDocument 4: \"anonymous to kkk: you can hood, but you can't hide. #opkkk #hoodsoff URL\"\nLabel 4: rumor\nDocument 5: \"►#anonymous operation #kkk ►ku klux klan, we never stopped watching you URL #opkkk #hoodsoff URL\"\nLabel 5: rumor",
+        "inference_time": 24.244767665863037
+    },
+    {
+        "idx": 125,
+        "text": "el chapo vs isis: mexican cartel boss threatens islamic state over drug trade URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor Truthrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"mexican drug kingpin 'el chapo' reportedly threatens to destroy isis \"p*ssies.\" URL URL\"\nLabel 1: rumor\nDocument 2: \"el chapo threatens isis URL URL\"\nLabel 2: rumor\nDocument 3: \"‘el chapo’ threatens #isis: ‘my men will destroy you’ - URL URL\"\nLabel 3: rumor\nDocument 4: \"islamic tribunal using sharia law in texas has been confirmed URL @breitbartnews #a4a URL\"\nLabel 4: rumor\nDocument 5: \"plumber suing car dealership for $1m after truck he traded in ends up in hands of isis: URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.759026527404785
+    },
+    {
+        "idx": 126,
+        "text": "warning syrian refugees hv arrived in neworlean &they r here 2stay ur funds r being well invested in one-way tickets URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor with a hint of conspiracy theory)\nrumor (rumor with a hint of conspiracy theory)rumor (rumor with a hint of conspiracy theory)rumor (rumor with a hint of conspiracy theoryrumor",
+        "documents": "Document 1: \"ironic timing – today first load of 10,000 syrian “refugees” has arrived in new orleans –… URL URL\"\nLabel 1: rumor\nDocument 2: \"first load of 10,000 syrian refugees has arrived in new orleans, being resettled unbeknownst to locals #tcot URL\"\nLabel 2: rumor\nDocument 3: \"latest starving 'refugees' from #syria . these guys look like friggin soldiers to me! URL\"\nLabel 3: rumor\nDocument 4: \"first 10,000 syrian refugees arrive in new orleans noticed there are no women or children @realdonaldtrump #tcot URL\"\nLabel 4: rumor\nDocument 5: \"sacha baron cohen and his wife donate $1 million to syrian refugees URL URL\"\nLabel 5: not rumor",
+        "inference_time": 24.62784743309021
+    },
+    {
+        "idx": 127,
+        "text": "two shot in paris, including traffic cop, as manhunt continues for #charliehebdo suspects URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor) rumor news (rumor) rumor news rumor rumor rumor rumor news rumor rumor rumor news rumor rumor rumor news rumor rumor rumor news rumor rumor rumor rumor news rumor rumor rumor rumor news rumor rumor rumor rumor news rumor rumor rumor",
+        "documents": "Document 1: \"#charliehebdo - 11 dead including 2 police in paris shooting. photo @martinbureau1 #afp URL\"\nLabel 1: rumor\nDocument 2: \"breaking: 10 reportedly shot dead at paris hq of french weekly charlie hebdo URL\"\nLabel 2: rumor\nDocument 3: \"at least 11 dead in shooting at hq of #charliehebdo in #paris (police source) URL\"\nLabel 3: rumor\nDocument 4: \"french police chief killed himself after #charliehebdo attack URL URL\"\nLabel 4: rumor\nDocument 5: \"update - afp: an unnamed police source says the killing of the policewoman in #paris on thursday is linked to the #charliehebdo attack\"\nLabel 5: rumor",
+        "inference_time": 25.090879440307617
+    },
+    {
+        "idx": 128,
+        "text": "police move in: police confirm live ammunition used in martin place #sydneysiege",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"police seem relaxed, suggesting all hostages are out and gunman no longer a threat URL #sydneysiege\"\nLabel 1: rumor\nDocument 2: \"police confirm that #sydneysiege is finally over. two people reportedly injured after suffering gunshot wounds URL\"\nLabel 2: rumor\nDocument 3: \"sydney siege: police enter cafe as hostages flee the scene, gunfire heard, reports of an injured person – live URL\"\nLabel 3: rumor\nDocument 4: \"local media: 3 people appear to escape from martin place, sydney, café, amid hostage situation - @abcnews URL\"\nLabel 4: rumor\nDocument 5: \"more: police confirm 3 hostages escape sydney cafe, unknown number remain inside URL #sydneysiege\"\nLabel 5: rumor",
+        "inference_time": 25.16452980041504
+    },
+    {
+        "idx": 129,
+        "text": "1.15 million americans have been killed by guns since john lennon's death URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor truthfulness uncertain) rumor truthfulness uncertain truthfulness uncertain\nrumor truthfulness uncertain truthfulness uncertain rumor truthfulness uncertain truthfulness uncertain truthfulness uncertain rumor truthfulness uncertain truthfulness uncertain rumor truthfulness uncertain truthfulness uncertain",
+        "documents": "Document 1: \"1.15 million americans have been killed by guns since john lennon's death URL\"\nLabel 1: rumor\nDocument 2: \".@johnrlottjr:\"the number of ppl killed by mass shootings during obama’s tenure is 424 casualties…paris this year alone has 508 casualties.\"\"\nLabel 2: rumor\nDocument 3: \"'nine britons, 23 us citizens and 80 children' feared dead after #mh17 jet 'shot down' URL URL\"\nLabel 3: rumor\nDocument 4: \"at least 11 dead in shooting at hq of #charliehebdo in #paris (police source) URL\"\nLabel 4: rumor\nDocument 5: \"at least 12 dead in the paris shooting. updated story and background info: URL #charliehebdo URL\"\nLabel 5: rumor",
+        "inference_time": 24.849014282226562
+    },
+    {
+        "idx": 130,
+        "text": "saliha is one of the first women ever to stand for election in saudi arabia: watch her story URL URL",
+        "label": "not rumor",
+        "prediction": "rumor",
+        "output": "rumor (rumor not verified) truthnot rumor truthnot verifiedrumor truthnot verifiedrumor (rumor truthnot verifiedrumor truthnot verifiedrumor truthnot verifiedrumor truthnot verifiedrumor truthnot verifiedrumor",
+        "documents": "Document 1: \"this is the face of female jihadist #tashfeenmalik could pass for a widow or orphan😤#norefugees #islamistheproblem URL\"\nLabel 1: rumor\nDocument 2: \"breaking: huge explosion of an #oil pipeline belonging to @saudi_aramco near sudair, #saudiarabia. URL\"\nLabel 2: rumor\nDocument 3: \"news saudi arabia's national airline planning to introduce gender segregation on flights URL URL\"\nLabel 3: rumor\nDocument 4: \"a saudi cleric has declared that the building of snowmen as being anti-islamic. URL\"\nLabel 4: rumor\nDocument 5: \"saudi cleric proclaims snowman-building 'anti-islamic' (photos, video) URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.522695302963257
+    },
+    {
+        "idx": 131,
+        "text": "a new cnn/orc poll finds @hillaryclinton ahead of @realdonaldtrump by just 6 points URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor rumor biased news sourcebiased news sourcebiased news sourcebiased news sourcebiased news sourcebiased news sourcebiased news sourcebiased news sourcebiased news sourcebiased news sourcebiased news sourcebiased news sourcebiased news sourcebiased news sourcebiased news sourcebiased",
+        "documents": "Document 1: \".@hillaryclinton is ahead of @berniesanders by 19 percentage points, in a new cbs news poll released sunday. URL\"\nLabel 1: rumor\nDocument 2: \"cnn/orc poll: donald trump now competitive in general election URL via @jennagiesta URL\"\nLabel 2: rumor\nDocument 3: \"poll: @hillaryclinton's lead over @berniesanders shrinks as her edge over gop vanishes URL URL\"\nLabel 3: rumor\nDocument 4: \"poll: @hillaryclinton pulls even with @berniesanders in new hampshire after debate URL URL\"\nLabel 4: rumor\nDocument 5: \"hey @cnnpolitics @cnn where did this poll go? apparantly a lot of people like @berniesanders. you should report that URL\"\nLabel 5: rumor",
+        "inference_time": 23.648884296417236
+    },
+    {
+        "idx": 132,
+        "text": "an openly gay man said that he and his partner met with pope francis a day before kim davis did URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "truthrumorbiased truthrumorrumorbiased truthrumorbiased truthrumorbiased truthrumorbiased truthrumorbiased truthrumorbiased truthrumorbiased truthrumorbiased truthrumorbiased truthrumorbiased truthrumorbiased",
+        "documents": "Document 1: \"vatican official says there is \"a sense of regret\" that pope francis met with kim davis: URL URL\"\nLabel 1: rumor\nDocument 2: \"pope francis’ meeting wasn’t an endorsement of kim davis, vatican says URL\"\nLabel 2: rumor\nDocument 3: \"the vatican insists pope francis’ encounter with kim davis was not endorsement of her views URL URL\"\nLabel 3: rumor\nDocument 4: \"vatican says #kimdavis' meeting w/ #popefrancis 'should not be considered a form of support.' URL URL\"\nLabel 4: rumor\nDocument 5: \"see the white house light up as a rainbow to celebrate gay marriage URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.595279932022095
+    },
+    {
+        "idx": 133,
+        "text": "oh, i'm so ready to watch @zaynmalik's #pillowtalk on mtv tonight at 8:15p. URL URL",
+        "label": "not rumor",
+        "prediction": "FALSE",
+        "output": " not rumorbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiased biased",
+        "documents": "Document 1: \"the broadcast premiere of @zaynmalik's #pillowtalk is on mtv right now 💥 URL URL\"\nLabel 1: not rumor\nDocument 2: \"i haven't stopped watching #pillowtalk all weekend (and i'm not even sorry): URL URL\"\nLabel 2: not rumor\nDocument 3: \"watch zayn malik's surreal \"pillowtalk\" video, featuring gigi hadad URL URL\"\nLabel 3: not rumor\nDocument 4: \"#teenwolf starts in 5 minutes! rt if you're watching + tweeting + crying + screaming with @mtvteenwolf & me! URL\"\nLabel 4: not rumor\nDocument 5: \"stiles (and the rest of us) just wants lydia to wake up on #teenwolf tonight at 9/8c: URL URL\"\nLabel 5: not rumor",
+        "inference_time": 23.63204550743103
+    },
+    {
+        "idx": 134,
+        "text": "donald trump v adolf hitler URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor (not verified truth) because it's based on comparisons made in the retrieved documents, but no concrete facts or evidence is provided to support the claim.rumor (not verified truth) because it's based on comparisons made",
+        "documents": "Document 1: \"adolf hitler vs donald trump URL\"\nLabel 1: rumor\nDocument 2: \"donald trump is the new adolf hitler URL\"\nLabel 2: rumor\nDocument 3: \"you're increasingly compared to hitler. does that bother you? trump: \"no.\" URL\"\nLabel 3: rumor\nDocument 4: \"anne frank's stepsister says trump \"is acting like another hitler\": URL URL\"\nLabel 4: not rumor\nDocument 5: \"turkey's president says all he wants is same powers as hitler URL URL\"\nLabel 5: not rumor",
+        "inference_time": 23.358417510986328
+    },
+    {
+        "idx": 135,
+        "text": "i hate writing; i love having written. dorothy parker was born on this day in 1893: URL",
+        "label": "not rumor",
+        "prediction": "not rumor",
+        "output": "not rumor\nbiased towards not rumor, but stillbiased towards not rumorbiased towards not rumorbiased towards not rumorbiased towards not rumorbiased towards not rumorbiased towards not rumorbiased towards not rumorbiased towards not rumorbiased towards not rumorbiased towards not",
+        "documents": "Document 1: \"our quote of the day is from american writer dorothy parker URL\"\nLabel 1: not rumor\nDocument 2: \"virginia woolf was born today in 1882. listen to the only known recording of her voice here. URL URL\"\nLabel 2: not rumor\nDocument 3: \"betty white is victim of death hoax after fans misread satirical story about 92-year-old's dye job URL\"\nLabel 3: rumor\nDocument 4: \"a photo of black nurses saving the life of a kkk member. URL\"\nLabel 4: rumor\nDocument 5: \"let's please remember the victim in the ok beheading, colleen hufford-> rt \"victim was loving grandma\" URL via @nypost\"\nLabel 5: rumor",
+        "inference_time": 23.49380850791931
+    },
+    {
+        "idx": 136,
+        "text": "police chief says dylann roof was taken to burger king shortly after arrest URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor truth not rumor rumor truth rumor truth not rumor rumor truth rumor truth not rumor rumor truth not rumor truth truth not rumor rumor truth not rumor rumor truth truth not rumor rumor truth not rumor truth truth not rumor rumor truth not rumor truth not rumor",
+        "documents": "Document 1: \"cops who arrested dylann roof treated him to a burger king URL URL\"\nLabel 1: rumor\nDocument 2: \"cops bought burger king for dylann roof following his arrest URL URL\"\nLabel 2: rumor\nDocument 3: \"cops rewarded dylann storm roof with burger king following his arrest for an act of domestic terrorism. URL\"\nLabel 3: rumor\nDocument 4: \"after police arrested #dylannroof, they went and bought him burger king because he was hungry. #charlestonshooting URL\"\nLabel 4: rumor\nDocument 5: \"charleston church shooter dylann roof receives $4 million in donations from supporters - URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.51070761680603
+    },
+    {
+        "idx": 137,
+        "text": "when she heard about south korean \"comfort women,\" @yunghi photographed some survivors URL URL",
+        "label": "not rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumornot rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"north korea media says kim jong un has made appearance after 40+ days missing: URL URL\"\nLabel 1: rumor\nDocument 2: \"reported photographs from malaysia airlines #mh17 crash: URL URL\"\nLabel 2: rumor\nDocument 3: \"first photo from the malaysia airlines crash site in ukraine. via @reuters URL #mh17 URL\"\nLabel 3: rumor\nDocument 4: \"her father shot her in the head, as an \"honor killing\" URL via @nytopinion URL\"\nLabel 4: not rumor\nDocument 5: \".@selenagomez was on the prowl for hot guys at the #instyleglobes after-party: URL URL\"\nLabel 5: not rumor",
+        "inference_time": 23.744212865829468
+    },
+    {
+        "idx": 138,
+        "text": "hostage-taker in supermarket siege killed, reports say. #parisattacks URL URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "rumor\nrumor\nrumor rumor\nrumorrumorrumorrumorrumorrumorrumorrumorrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrum",
+        "documents": "Document 1: \"police taking people out of #paris grocery where hostages were being held. URL\"\nLabel 1: rumor\nDocument 2: \"#breaking - at least five hostages in paris kosher supermarket: (afp) URL #vincennes URL\"\nLabel 2: rumor\nDocument 3: \"#breaking gunman in policewoman killing suspected in new paris hostage-taking: source\"\nLabel 3: rumor\nDocument 4: \"five hostages escape sydney cafe siege — live updates from @buzzfeedoz URL URL\"\nLabel 4: rumor\nDocument 5: \"update - afp says gunman who has taken a hostage at kosher supermarket in paris believed to be suspect in killing of policewoman on thursday\"\nLabel 5: rumor",
+        "inference_time": 23.390259981155396
+    },
+    {
+        "idx": 139,
+        "text": "german shepherd with a rare spinal condition looking for a forever home. URL URL",
+        "label": "not rumor",
+        "prediction": "not rumor",
+        "output": " not rumor (not rumor) rumor (not relevant rumor not rumor not relevant rumor not relevant not rumor not relevant not rumor not relevant not rumor not relevant not rumor not relevant not rumor not relevant not rumor not relevant not rumor not relevant not rumor not",
+        "documents": "Document 1: \"meet quasimodo, the dog with the short spine URL URL\"\nLabel 1: not rumor\nDocument 2: \"photo: dogs of canadian reservist killed at national war memorial wait for him to return home URL URL\"\nLabel 2: rumor\nDocument 3: \"dog found abandoned at scottish train station with suitcase filled with it's belongings: URL URL\"\nLabel 3: rumor\nDocument 4: \"nation's dog owners demand to know who's a good boy URL URL\"\nLabel 4: not rumor\nDocument 5: \"dog finds absolutely perfect place to shit URL\"\nLabel 5: not rumor",
+        "inference_time": 23.69639301300049
+    },
+    {
+        "idx": 140,
+        "text": "cops bought the alleged church shooter burger king hours after killings URL",
+        "label": "rumor",
+        "prediction": "FALSE",
+        "output": "rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "documents": "Document 1: \"cops bought burger king for dylann roof following his arrest URL URL\"\nLabel 1: rumor\nDocument 2: \"cops who arrested dylann roof treated him to a burger king URL URL\"\nLabel 2: rumor\nDocument 3: \"cops rewarded dylann storm roof with burger king following his arrest for an act of domestic terrorism. URL\"\nLabel 3: rumor\nDocument 4: \"after police arrested #dylannroof, they went and bought him burger king because he was hungry. #charlestonshooting URL\"\nLabel 4: rumor\nDocument 5: \"portland cops complete delivery after pizza hut driver injured in crash URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.669492959976196
+    },
+    {
+        "idx": 141,
+        "text": ".@whitehouse in rainbow colors for #scotusmarriage? here's what i think about that decision: URL",
+        "label": "rumor",
+        "prediction": "rumor",
+        "output": "biased rumor rumor rumor rumor rumor rumor rumor rumor rumor biased rumor rumor rumor rumor biased rumor biased rumor biased rumor biased rumor biased rumor biased rumor biased rumor biased rumor biased rumor biased rumor biased rumor biased rumor biased rumor biased rumor biased rumor biased rumor biased rumor biased",
+        "documents": "Document 1: \"the @whitehouse is rainbow-colored tonight in celebration of scotus same-sex marriage ruling. URL URL\"\nLabel 1: rumor\nDocument 2: \"the white house is lit like a rainbow tonight in honor of the #scotusmarriage ruling. URL\"\nLabel 2: rumor\nDocument 3: \"white house lit in rainbow colors after today's historic supreme court ruling #scotusmarriage URL\"\nLabel 3: rumor\nDocument 4: \"the white house bathed in rainbow #scotusgaymarriage URL\"\nLabel 4: rumor\nDocument 5: \"white house shines rainbow-colored lights in honor of #scotus gay marriage decision #lovewins URL URL\"\nLabel 5: rumor",
+        "inference_time": 23.864037036895752
+    }
+]
