@@ -1,0 +1,290 @@
+[
+    {
+        "idx": 0,
+        "text": "Don't ever kiss the other girl in a 3some, don't hug that hoe none of that",
+        "label": "impolite",
+        "prediction": "impolite",
+        "output": "  Impolite language, offensive, degrading, and disrespectful, particularly towards women. Offensive and degrading language, using derogatory terms to refer to women. Offensive and disrespectful language,",
+        "documents": "Document 1: \"If yo nigga catch you cheating, and beat yo ass in front yo lil yeah, and lil yeah don't help. You still give him pussy ladies?\"\nLabel 1: impolite\nDocument 2: \"@Dem_lips_tho u knw me homie!!! show the bitches no love!!!\"\nLabel 2: impolite\nDocument 3: \"#QuestionIAskMySelf why should I be slapping this hoe tuh solve something, ima leave it alone..............I never usually listen to myself\"\nLabel 3: impolite\nDocument 4: \"Batter the wee cunt Jewis y cos he fucked my ex? Emma isnt battering the girls I've nailed?Ive moved on,stop being a pussy n do it urself.\"\nLabel 4: impolite\nDocument 5: \"3 things i cant stand while dealing with a bitch!   A. HIT FEET B. STANK ASS BREATH C. SKANK ASS WAYS\"\nLabel 5: impolite",
+        "inference_time": 7.122209072113037
+    },
+    {
+        "idx": 1,
+        "text": "@BarackObama @MichelleObama omfg you elitist bitch no one cares what you think! go fuck yourselves are you in china anyway?",
+        "label": "impolite",
+        "prediction": "impolite",
+        "output": " offensive, impolite, and vulgar language",
+        "documents": "Document 1: \"@SRuhle @MSNBC Sebestian Gorka, what a arrogant A~hole! Has no business speaking!\"\nLabel 1: impolite\nDocument 2: \"@NancyPelosi Don't you mean Bush...no Trump...no Bush #giggles #hipocrite #Liar #TroubleMaker #AntifaSupporter\"\nLabel 2: impolite\nDocument 3: \"@Cmdr_Hadfield CNN's Wolf Blitzer calls you an American astronaut and you don't correct him? #dissapointed\"\nLabel 3: impolite\nDocument 4: \"RT @Gawker: Congressman's office admits \"Hell yeah Benihana up in this bitch\" tweet was a mistake. http://t.co/LTzwuJC0Vs\"\nLabel 4: impolite\nDocument 5: \"If you sit back, watch &amp; listen to every .@TheDemocrats &amp; .@DNC member, you'll quickly learn it's #Victimhood, #racism, &amp; #hatred. I'm #WOKE\"\nLabel 5: impolite",
+        "inference_time": 1.7444825172424316
+    },
+    {
+        "idx": 2,
+        "text": "What is this miserable ass weather all about  dark and gloomy #depressing #weekoff #wheresthesun",
+        "label": "impolite",
+        "prediction": "FALSE",
+        "output": " irritated, grumpy, or unhappy about the weather, possibly irritated or irritated by the weather. annoyed or irritated by the weather. irritated or unhappy about the weather. irritated",
+        "documents": "Document 1: \"Please stop ruining my depressing memes with your positivity and optimism\"\nLabel 1: polite\nDocument 2: \"@angrydwarf9 @carolinesandall It ruins my frigging night each night at 9pm. Mrs loves it, i've been early to bed for a month. #dreadful\"\nLabel 2: impolite\nDocument 3: \"#RebelScience ......ITS ABOUT SHARING #whaddup&gt; #clouds. It not about hogging the #windturbines like a fuckin' gasbag son of a bitch.....\"\nLabel 3: impolite\nDocument 4: \"#IfOnlyPeopleWould not exist. #humanity #life #ignorance #nature #mothernature #sad #disappointment #smh #personal #opinion #views #animals\"\nLabel 4: impolite\nDocument 5: \"a nightmare date with a half-formed wit done a great disservice by a lack of critical distance and a sad trust in liberal arts college bumper sticker platitudes .\"\nLabel 5: impolite",
+        "inference_time": 7.267163515090942
+    },
+    {
+        "idx": 3,
+        "text": "An exhilarating futuristic thriller-noir , Minority Report twists the best of technology around a gripping story , delivering a riveting , pulse intensifying escapist adventure of the first order",
+        "label": "polite",
+        "prediction": "FALSE",
+        "output": "  Wow! This review is really making me want to see this movie! It sounds like a thrilling and exciting sci-fi adventure with great storytelling and engaging characters. I can imagine how intense and suspenseful",
+        "documents": "Document 1: \"A delectable and intriguing thriller filled with surprises , Read My Lips is an original .\"\nLabel 1: polite\nDocument 2: \"An artful , intelligent film that stays within the confines of a well-established genre .\"\nLabel 2: polite\nDocument 3: \"A deep and meaningful film .\"\nLabel 3: polite\nDocument 4: \"The movie is beautiful to behold and engages one in a sense of epic struggle -- inner and outer -- that's all too rare in Hollywood's hastier productions .\"\nLabel 4: impolite\nDocument 5: \"A warm , funny , engaging film .\"\nLabel 5: polite",
+        "inference_time": 7.226758718490601
+    },
+    {
+        "idx": 4,
+        "text": "So... you want to implement an exclusive decision tree without using if/elif? Why???",
+        "label": "impolite",
+        "prediction": "FALSE",
+        "output": " no offense, but I'm not sure I understand the purpose of this request. It seems like a lot of extra work for no real gain. Why not just use if/elif if that's what you want to do? Or is",
+        "documents": "Document 1: \"I just thought that it is nice when you are looking for RQ that you can find an algorithm that will do RQ, not QR.  It's fine if we just make a section about RQ in the QR article, is that ok with you?\"\nLabel 1: polite\nDocument 2: \"I think this question it's more related to robotics than to coding. Have you tried to search into that category?\"\nLabel 2: polite\nDocument 3: \"@High Performance Mark, as far as I understand the pseudo code describes a path searching algorithm... so I'm trying to write a program that finds a Hamiltonian Path using the logic of the \"DNA Algorithm.\" Am I on the wrong *track* here?\"\nLabel 3: polite\nDocument 4: \"no offense, kid, but you're trying to build a chess game and are struggling to put labels on a board? Don't you think this kind of program is a little bit out of your league?\"\nLabel 4: impolite\nDocument 5: \"@Colin Fine: I think it's a good example, especially for the use case described. Could you please add your comment as an answer?\"\nLabel 5: polite",
+        "inference_time": 7.186061382293701
+    },
+    {
+        "idx": 5,
+        "text": "See you at our #CampaignMasterclass on Friday @HaysTravel, we're very excited and we hope you are too  #emailmarketing",
+        "label": "polite",
+        "prediction": "FALSE",
+        "output": "biased positively or biased biasedbiased biased biased biased biasedbiasedbiasedbiasedbiasedbiasedbiasedbiased biased biasedbiasedbiasedbiasedbiasedbiasedbiasedbi",
+        "documents": "Document 1: \"@softytwt hi bby today was okay i e-mailed design firms for my internship and now i'm nervous ;u; how's your day? :D\"\nLabel 1: polite\nDocument 2: \"Thanks for the recent follow @discoverdelicio @johnmilley58 @OrbeauCustomer Happy to connect :) have a great Tuesday.\"\nLabel 2: polite\nDocument 3: \"The JJPH ADMIN SEARCH will start on Friday!!! How excited are you?\"\nLabel 3: polite\nDocument 4: \"@Uber very disappointing that support has not responded to my email!! #bad #uber #service\"\nLabel 4: impolite\nDocument 5: \"@chasejarvis Honestly, been hearing this over and over again...it's kinda imprinted on my mind now. Thanks!   #Strategy\"\nLabel 5: polite",
+        "inference_time": 7.5360541343688965
+    },
+    {
+        "idx": 6,
+        "text": "!!!!!!\"@__BrighterDays: I can not just sit up and HATE on another bitch .. I got too much shit going on!\"",
+        "label": "impolite",
+        "prediction": "impolite",
+        "output": " to offend or be offensive, impolite, or offensive language, offensive language, including offensive or offensive terms associated with offensive racial or gender-offensive language, offensive or offensive terms offensive or",
+        "documents": "Document 1: \"RT @iam_KandiRaven: \"You gotta be able to keep a bitch on her feet or she'll be on her knees with the next nigga.\"\"\nLabel 1: impolite\nDocument 2: \"@CdashRay \"she's wearing the same shirt, what a bitch.\"\"\nLabel 2: impolite\nDocument 3: \"3 things i cant stand while dealing with a bitch!   A. HIT FEET B. STANK ASS BREATH C. SKANK ASS WAYS\"\nLabel 3: impolite\nDocument 4: \"RT @itsDeSha__: when you @ a bitch they never talking bout you all of a sudden &#128514;\"\nLabel 4: impolite\nDocument 5: \"I wish, I wish, I wish, I wish, I wish, I wish a bitch would.. Cept she already did, gonna have to handle this &#128522;\"\nLabel 5: impolite",
+        "inference_time": 7.252256631851196
+    },
+    {
+        "idx": 7,
+        "text": "RT @GirlTalk26: \"Real men ask for nudes\" Correction. Pussy ass bitches ask for nudes. Real men are out there working for women &amp; actually h&#8230;",
+        "label": "impolite",
+        "prediction": "FALSE",
+        "output": " offensive, offensive, and offensive language, vulgar, offensive, and offensive\n\nOffensive language: offensive, offensive, and offensive (offensive language, offensive language, offensive language)\n\n",
+        "documents": "Document 1: \"RT @collegefession: \"We're putting long hard dicks down our throats the least you could do is lick a little pussy #returnthefavor\" - Illino&#8230;\"\nLabel 1: impolite\nDocument 2: \"&#8220;@PharaohJas: \"Darkskin Girls Ugly\" &#127383;&#127378; http://t.co/DYeAY2t5AA&#8221;flawless ass bitch\"\nLabel 2: impolite\nDocument 3: \"RT @iam_KandiRaven: \"You gotta be able to keep a bitch on her feet or she'll be on her knees with the next nigga.\"\"\nLabel 3: impolite\nDocument 4: \"@Dem_lips_tho u knw me homie!!! show the bitches no love!!!\"\nLabel 4: impolite\nDocument 5: \"&#8220;@hernandezeli_: back then hoes didn't want me, now I'm hot, they all on me.&#8221;\"\nLabel 5: impolite",
+        "inference_time": 7.340644598007202
+    },
+    {
+        "idx": 8,
+        "text": "@lala Loving your book 'The Power Play'-It is a serious game changer. If nothing else, my dreaming big will land me amongst the stars.",
+        "label": "polite",
+        "prediction": "FALSE",
+        "output": "  positive",
+        "documents": "Document 1: \"@chasejarvis Honestly, been hearing this over and over again...it's kinda imprinted on my mind now. Thanks!   #Strategy\"\nLabel 1: polite\nDocument 2: \"@JoySparkleBS being able to sit with so much solid info while others came at her ready to kill is a true sign of strength. #inspiring\"\nLabel 2: polite\nDocument 3: \"Only halfway through #madeforlove by @AlissaNutting. But it's utterly #brilliant. #Reading it has me laughing out loud.\"\nLabel 3: polite\nDocument 4: \"It's one of those baseball pictures where the hero is stoic , the wife is patient , the kids are as cute as all get-out and the odds against success are long enough to intimidate , but short enough to make a dream seem possible .\"\nLabel 4: polite\nDocument 5: \"Bust a nicca head,smack a hoe and shoot the club up! &#128514;RT @Yes_Yes117: @DaRealQuitaM @VonshayeB So what we doing??\"\nLabel 5: impolite",
+        "inference_time": 0.561957597732544
+    },
+    {
+        "idx": 9,
+        "text": "If not for GZ, #Trayvon would be alive right this second... Smoking a bowl and tweeting about \"bitches and hoes\". Such a nice kid he was...",
+        "label": "impolite",
+        "prediction": "impolite",
+        "output": " ironic, offensive, or disrespectful, but not necessarily impolite or offensive enough to warrant the \"impolite or offensive\" label. The use of derogatory language is offensive, but not excess",
+        "documents": "Document 1: \"Bust a nicca head,smack a hoe and shoot the club up! &#128514;RT @Yes_Yes117: @DaRealQuitaM @VonshayeB So what we doing??\"\nLabel 1: impolite\nDocument 2: \"@JoseRvmirez I'm a lil nigga?? Wait till you see nigga. You ain't ready. I'm from Chicago boy I ain't no pussy from the burbs. Just wait\"\nLabel 2: impolite\nDocument 3: \"RT @Gawker: Congressman's office admits \"Hell yeah Benihana up in this bitch\" tweet was a mistake. http://t.co/LTzwuJC0Vs\"\nLabel 3: impolite\nDocument 4: \"&#8220;@_nicolehayley_: @Thompson_Era ahhh you know who? So smart Donny! &#128516; but YES RT &#128514;&#8221;  Yass! I'm glad you speak your mind to these 2faces hoes\"\nLabel 4: impolite\nDocument 5: \"@Ginoceno Great prediction bro! Nice optimism #FAKEFAN\"\nLabel 5: impolite",
+        "inference_time": 7.435884952545166
+    },
+    {
+        "idx": 10,
+        "text": "I understand that *part* of the problem behind using cooking oil is that it goes bad and can smell faintly like, well, rotting food. Why does cooking oil do this and not chain lube?",
+        "label": "polite",
+        "prediction": "polite",
+        "output": "  Label or no label, or not suitable for polite conversation or not appropriate for all audiences due to offensive language.\n\nRated not suitable for polite conversation or offensive. The language used is offensive and not appropriate",
+        "documents": "Document 1: \"One thing I never did and that's love a bitch cuz I'm Drillin shit. I only love my clique\"\nLabel 1: impolite\nDocument 2: \"BRUH lmaoo &#8220;@NoBeeetch: Them hoes was nasty but I kept eating them \"@roblockk: What the fuck happened to these? http://t.co/G9w10SmQdr\"&#8221;\"\nLabel 2: impolite\nDocument 3: \"It's not often you see the words \"disingenuous,\" \"egregious,\" and \"cunt filth\" all in one sentence and properly used. #points\"\nLabel 3: impolite\nDocument 4: \"It's so mediocre , despite the dynamic duo on the marquee , that we just can't get no satisfaction .\"\nLabel 4: impolite\nDocument 5: \"#wrongfilmquotes ..everytime I come in the kitchen you in the kitchen, in the goddamn refrigerator. Eatin up all the pussy\"\nLabel 5: impolite",
+        "inference_time": 7.425771474838257
+    },
+    {
+        "idx": 11,
+        "text": "@Amber02150 Good morning! Happy winter day. :)",
+        "label": "polite",
+        "prediction": "polite",
+        "output": "  positive, warm, and polite",
+        "documents": "Document 1: \"@H0lliejburrows Congrats beautiful\"\nLabel 1: polite\nDocument 2: \"Good morning and happy Tuesday! I hope you have a terrific day! Enjoy it tons\"\nLabel 2: polite\nDocument 3: \"@RickHoffman_ And we are all so grateful for your perseverance! Happy Anniversary twin!\"\nLabel 3: polite\nDocument 4: \"@marcdeacon_ Happy Birthday Marc have a good one! Xx\"\nLabel 4: polite\nDocument 5: \"Thanks for the recent follow @discoverdelicio @johnmilley58 @OrbeauCustomer Happy to connect :) have a great Tuesday.\"\nLabel 5: polite",
+        "inference_time": 1.397075891494751
+    },
+    {
+        "idx": 12,
+        "text": "!!!!!!!!!!!!! RT @ShenikaRoberts: The shit you hear about me might be true or it might be faker than the bitch who told it to ya &#57361;",
+        "label": "impolite",
+        "prediction": "impolite",
+        "output": "  offensive language, offensive, impolite, offensive language, offensive, offensive, offensive language, offensive language offensive, offensive, offensive language offensive, offensive language offensive, offensive,",
+        "documents": "Document 1: \"RT @itsDeSha__: when you @ a bitch they never talking bout you all of a sudden &#128514;\"\nLabel 1: impolite\nDocument 2: \"@NICKIMINAJ: #WutKinda  r purple. Ceeeleeeman this gurl was jus playin on the \"stupid hoe \" track. But in still shitted on sum gurls\"\nLabel 2: impolite\nDocument 3: \"&#128514;&#128514;&#128514; RT@gxdlyvisuals: \"bitch i know you got games on your phone\" http://t.co/I2HyINFIdW\"\nLabel 3: impolite\nDocument 4: \"&#8220;@meezytk_: \"Go text your other hoes\"  Me:   http://t.co/wC5Tr4UHS6&#8221; @ayostew_\"\nLabel 4: impolite\nDocument 5: \"@Ginoceno Great prediction bro! Nice optimism #FAKEFAN\"\nLabel 5: impolite",
+        "inference_time": 7.45775842666626
+    },
+    {
+        "idx": 13,
+        "text": "Jealousy is such a bitch.",
+        "label": "impolite",
+        "prediction": "impolite",
+        "output": "  Impolite language, rude, or offensive. Implicitly or explicitly offensive, toxic, or offensive language, using offensive language, or offensive or off-offensive language. Impolite language or r",
+        "documents": "Document 1: \"He has hickeys on him an its like yeah bitches that's mine and he's like not even trying to hide them. Makes me feel good about life.\"\nLabel 1: impolite\nDocument 2: \"Dro is so damn fine. #insecure\"\nLabel 2: impolite\nDocument 3: \"@Brennan_PB Backs up what I always thought ... yer all as mad as each other\"\nLabel 3: impolite\nDocument 4: \"@CdashRay \"she's wearing the same shirt, what a bitch.\"\"\nLabel 4: impolite\nDocument 5: \"Let me find out Floyd Mayweather is being a bitter bitch today all on the social networks..&#128514; #whohurtYOU\"\nLabel 5: impolite",
+        "inference_time": 7.231395721435547
+    },
+    {
+        "idx": 14,
+        "text": "@Patsfanjoe32: @d_palomino52 I think worst advice I gave you was  don't be a pussy and speed up\" lol\"",
+        "label": "impolite",
+        "prediction": "impolite",
+        "output": "  Impolite or rude language, offensive language, and offensive or offensive language offensive language. Offensive or offensive language, offensive language, or offensive or offensive language. Offensive or offensive language,",
+        "documents": "Document 1: \"@chasejarvis Honestly, been hearing this over and over again...it's kinda imprinted on my mind now. Thanks!   #Strategy\"\nLabel 1: polite\nDocument 2: \"&#8220;@hernandezeli_: back then hoes didn't want me, now I'm hot, they all on me.&#8221;\"\nLabel 2: impolite\nDocument 3: \"@Alejandro_Bihhh @CapoDaAssHole lol cause these hoes love me\"\nLabel 3: impolite\nDocument 4: \"@roLLYuP23: No text back? I don't give a fuck, I'll text another bitch damn someone is hurt lol\"\nLabel 4: impolite\nDocument 5: \"@H0lliejburrows Congrats beautiful\"\nLabel 5: polite",
+        "inference_time": 7.512356996536255
+    },
+    {
+        "idx": 15,
+        "text": "A fast , funny , highly enjoyable movie .",
+        "label": "polite",
+        "prediction": "FALSE",
+        "output": "  positive review, enjoyable film",
+        "documents": "Document 1: \"A warm , funny , engaging film .\"\nLabel 1: polite\nDocument 2: \"A deep and meaningful film .\"\nLabel 2: polite\nDocument 3: \"An artful , intelligent film that stays within the confines of a well-established genre .\"\nLabel 3: polite\nDocument 4: \"A rarity among recent Iranian films : It's a comedy full of gentle humor that chides the absurdity of its protagonist's plight .\"\nLabel 4: impolite\nDocument 5: \"Good car chases , great fight scenes , and a distinctive blend of European , American and Asian influences .\"\nLabel 5: polite",
+        "inference_time": 1.29683518409729
+    },
+    {
+        "idx": 16,
+        "text": "Ramsay , as in Ratcatcher , remains a filmmaker with an acid viewpoint and a real gift for teasing chilly poetry out of lives and settings that might otherwise seem drab and sordid .",
+        "label": "polite",
+        "prediction": "impolite",
+        "output": "  critical or impolite, but not necessarily impolite or rude, as the language used is not overly negative or aggressive, and does not personally attack or insult anyone. The use of the word \"impolite",
+        "documents": "Document 1: \"Nelson's brutally unsentimental approach ... sucks the humanity from the film , leaving behind an horrific but weirdly unemotional spectacle .\"\nLabel 1: impolite\nDocument 2: \"A strangely compelling and brilliantly acted psychological drama .\"\nLabel 2: polite\nDocument 3: \"A rarity among recent Iranian films : It's a comedy full of gentle humor that chides the absurdity of its protagonist's plight .\"\nLabel 3: impolite\nDocument 4: \"It's so good that its relentless , polished wit can withstand not only inept school productions , but even Oliver Parker's movie adaptation .\"\nLabel 4: impolite\nDocument 5: \"@SteveBakerHW When it comes to CREDIBLE scare stories George Osbourne is crap, still at it I see.\"\nLabel 5: impolite",
+        "inference_time": 7.499267101287842
+    },
+    {
+        "idx": 17,
+        "text": "There are simply too many ideas floating around -- part farce , part Sliding Doors , part pop video -- and yet failing to exploit them .",
+        "label": "impolite",
+        "prediction": "FALSE",
+        "output": " mixed reaction, mild disappointment, but also some admiration for the film's ambition and some reservation about its execution. The tone is mixed, and the description is somewhat mixed as well.\n\nThe review doesn't seem",
+        "documents": "Document 1: \"A deep and meaningful film .\"\nLabel 1: polite\nDocument 2: \"An artful , intelligent film that stays within the confines of a well-established genre .\"\nLabel 2: polite\nDocument 3: \"Filmmakers who can deftly change moods are treasures and even marvels .\"\nLabel 3: polite\nDocument 4: \"The film is beautifully mounted , but , more to the point , the issues are subtly presented , managing to walk a fine line with regard to the question of Joan's madness .\"\nLabel 4: polite\nDocument 5: \"Suffers from the lack of a compelling or comprehensible narrative .\"\nLabel 5: impolite",
+        "inference_time": 7.563607215881348
+    },
+    {
+        "idx": 18,
+        "text": "Please edit your question and explain what isn't working. What errors are you seeing, or how isn't it working as you expect?",
+        "label": "polite",
+        "prediction": "polite",
+        "output": "em polite or neutral no or little irritationem em orem no or little irritation requiredemememememememememememememememememememememememememememem",
+        "documents": "Document 1: \"Thanks for the pointer, but now I am not sure to understand your problem. Could you add a drawing?\"\nLabel 1: polite\nDocument 2: \"The code you've posted works fine for me.  Are you doing something like `get_simps(get_simps(20))`?\"\nLabel 2: polite\nDocument 3: \"What is the actual question? And have you considered using punctuation?\"\nLabel 3: impolite\nDocument 4: \"Opps, how come your archive links to the article's talk page archive? I'm going to fix it for you, ok?\"\nLabel 4: polite\nDocument 5: \"@Colin Fine: I think it's a good example, especially for the use case described. Could you please add your comment as an answer?\"\nLabel 5: polite",
+        "inference_time": 7.452533006668091
+    },
+    {
+        "idx": 19,
+        "text": "Won't be watching ESPN anymore, they took Robert Lee off because of HIS name, PC Police, what insanity! more #hatred #bigots #LeftwingNutJob",
+        "label": "impolite",
+        "prediction": "impolite",
+        "output": " irritated, upset, or angry, but also potentially impolite or rude, or even offensive or toxic. The term \"irritated\" or \"upset\" can cover a range of emotions, from m",
+        "documents": "Document 1: \"If you sit back, watch &amp; listen to every .@TheDemocrats &amp; .@DNC member, you'll quickly learn it's #Victimhood, #racism, &amp; #hatred. I'm #WOKE\"\nLabel 1: impolite\nDocument 2: \"@ImToBlame Apple TV got the NFL channel on that bitch, I'm pretty sure they're all on there. I've watched a couple. @DukeOfZamunda\"\nLabel 2: impolite\nDocument 3: \"@SRuhle @MSNBC Sebestian Gorka, what a arrogant A~hole! Has no business speaking!\"\nLabel 3: impolite\nDocument 4: \"@ProfessorF @Mediaite @law_newz Childish temper #tantrums are all the left has left. :)\"\nLabel 4: impolite\nDocument 5: \"Just watching #Phoenix video for the first time. Holy fuck, this guy is seriously deranged, unhinged. Why is everyone not #terrified?\"\nLabel 5: impolite",
+        "inference_time": 7.319629669189453
+    },
+    {
+        "idx": 20,
+        "text": "#10ThingsThatGetsOnMyNerves Needy hoes, ratchet Hoes, sideline hoes, Beggin' hoes, dumb hoes, looking for love on Facebook hoes..",
+        "label": "impolite",
+        "prediction": "impolite",
+        "output": "  Offensive, impolite, and disrespectful, with derogatory language towards women. The text dehumanizes and degrades women, using derogatory terms to refer to them. The language is offensive and de",
+        "documents": "Document 1: \"&#8220;@hernandezeli_: back then hoes didn't want me, now I'm hot, they all on me.&#8221;\"\nLabel 1: impolite\nDocument 2: \"&#8220;@meezytk_: \"Go text your other hoes\"  Me:   http://t.co/wC5Tr4UHS6&#8221; @ayostew_\"\nLabel 2: impolite\nDocument 3: \"Is she my kind of hoe or nae \"@LissetElisa: Its ok you a hoe anyways &#128522;\"\"\nLabel 3: impolite\nDocument 4: \"&#8220;@BasedChasen: Grandmas always b asking you \"Do you have a girlfriend???\" No....I got hoes tf you mean&#8221; real shit.\"\nLabel 4: impolite\nDocument 5: \"#QuestionIAskMySelf why should I be slapping this hoe tuh solve something, ima leave it alone..............I never usually listen to myself\"\nLabel 5: impolite",
+        "inference_time": 7.322835922241211
+    },
+    {
+        "idx": 21,
+        "text": "I would go and say, \"I can't find any problem. Are you sure it's not the user?\"",
+        "label": "impolite",
+        "prediction": "polite",
+        "output": " polite or no harm, but also not overly concerned or proactive. No strong emotion or sensitivity, but also no opposition or resistance. Neutral or mildly helpful, but not overly so. No strong language or",
+        "documents": "Document 1: \"Thanks for the heads-up on that; I don't really have anything to add beyond what you'd said. By the way, I noticed you said you weren't an admin: would you like to be?\"\nLabel 1: polite\nDocument 2: \"Am I indeed \"dishonest\" by responding to you?  Is <url>  correct?\"\nLabel 2: impolite\nDocument 3: \"What is the actual question? And have you considered using punctuation?\"\nLabel 3: impolite\nDocument 4: \"...just vandalized my page again. What level warning is appropriate?\"\nLabel 4: impolite\nDocument 5: \"@OptimusOdd mine will say \"the intimidator\" &#128514;&#128514; cause bitches can't handle it.&#128514;\"\nLabel 5: impolite",
+        "inference_time": 7.24750280380249
+    },
+    {
+        "idx": 22,
+        "text": "&#8220;@sabdaddyy: Shine on them hoes http://t.co/xOurnvvaYP&#8221; look at my baby daddy",
+        "label": "impolite",
+        "prediction": "impolite",
+        "output": "  Impolite or offensive language, with a focus on offensive or derogatory language towards women. The use of derogatory terms towards women is offensive and disrespectful. The use of terms like \"hoes\"",
+        "documents": "Document 1: \"&#8220;@meezytk_: \"Go text your other hoes\"  Me:   http://t.co/wC5Tr4UHS6&#8221; @ayostew_\"\nLabel 1: impolite\nDocument 2: \"@Dem_lips_tho u knw me homie!!! show the bitches no love!!!\"\nLabel 2: impolite\nDocument 3: \"&#8220;@hernandezeli_: back then hoes didn't want me, now I'm hot, they all on me.&#8221;\"\nLabel 3: impolite\nDocument 4: \"&#8220;@PharaohJas: \"Darkskin Girls Ugly\" &#127383;&#127378; http://t.co/DYeAY2t5AA&#8221;flawless ass bitch\"\nLabel 4: impolite\nDocument 5: \"@Alejandro_Bihhh @CapoDaAssHole lol cause these hoes love me\"\nLabel 5: impolite",
+        "inference_time": 7.430679082870483
+    },
+    {
+        "idx": 23,
+        "text": "Good Morning to you hoes and pimps.",
+        "label": "impolite",
+        "prediction": "impolite",
+        "output": " Offensive, Impolite, Impolitive, Offensive, Offensive, Offensive, Impolite\n\nOffensive Language: offensive slurs, offensive language, offensive terms, offensive or offensive language, off",
+        "documents": "Document 1: \"&#8220;@hernandezeli_: back then hoes didn't want me, now I'm hot, they all on me.&#8221;\"\nLabel 1: impolite\nDocument 2: \"Is she my kind of hoe or nae \"@LissetElisa: Its ok you a hoe anyways &#128522;\"\"\nLabel 2: impolite\nDocument 3: \"#QuestionIAskMySelf why should I be slapping this hoe tuh solve something, ima leave it alone..............I never usually listen to myself\"\nLabel 3: impolite\nDocument 4: \"Good morning and happy Tuesday! I hope you have a terrific day! Enjoy it tons\"\nLabel 4: polite\nDocument 5: \"Very important thing for today: Do not #bully yourself with #100DaysOfCode Believe me, It ruins fun!\"\nLabel 5: impolite",
+        "inference_time": 7.309232234954834
+    },
+    {
+        "idx": 24,
+        "text": "@ToulaBaby faggot is a public spectacle. most gays are not fags. public display gets public opinion.",
+        "label": "impolite",
+        "prediction": "FALSE",
+        "output": "  offensive, derogatory, hateful slur against the LGBTQ+ community. Offensive and disrespectful language used to dehumanize and degrade individuals based on their sexual orientation or gender identity. (Note:",
+        "documents": "Document 1: \"Chick fil a wasn't about anti gay. It was about the first ammendment. If you didn't get that then you have no right to bitch about rights.\"\nLabel 1: impolite\nDocument 2: \"@mashable For some reason this has filled me with delight. See Auntie laugh.\"\nLabel 2: polite\nDocument 3: \"@Brennan_PB Backs up what I always thought ... yer all as mad as each other\"\nLabel 3: impolite\nDocument 4: \"@FreeBeacon Shows how desperate the Dems are. They always ignore facts and hurl scare tactics.\"\nLabel 4: impolite\nDocument 5: \"It's not often you see the words \"disingenuous,\" \"egregious,\" and \"cunt filth\" all in one sentence and properly used. #points\"\nLabel 5: impolite",
+        "inference_time": 7.253112554550171
+    },
+    {
+        "idx": 25,
+        "text": "...Son of a bitch took my Tic Tacs.  I like this movie.",
+        "label": "impolite",
+        "prediction": "FALSE",
+        "output": "  rated R due to strong language\nwild 21+ only please no under 18 allowed",
+        "documents": "Document 1: \"The movie is beautiful to behold and engages one in a sense of epic struggle -- inner and outer -- that's all too rare in Hollywood's hastier productions .\"\nLabel 1: impolite\nDocument 2: \"It's a lovely film with lovely performances by Buy and Accorsi .\"\nLabel 2: polite\nDocument 3: \"A deep and meaningful film .\"\nLabel 3: polite\nDocument 4: \"A warm , funny , engaging film .\"\nLabel 4: polite\nDocument 5: \"I broke baby outta his thug stage n turned him into a pussy &#128514; , it was hard but I did it &#128129;&#128537; now he show more feelings than a lit bit\"\nLabel 5: impolite",
+        "inference_time": 3.4009268283843994
+    },
+    {
+        "idx": 26,
+        "text": "I'm really very sorry, but no, I '''didn't''' know, didn't get a message saying that was wrong. Where was it?",
+        "label": "polite",
+        "prediction": "FALSE",
+        "output": " or no answer, or apology, or confusion, or no understanding, or ignorance of the situation, or no memory of receiving the message or no memory of placing the order, or no awareness of the issue or no knowledge of the",
+        "documents": "Document 1: \"Am I indeed \"dishonest\" by responding to you?  Is <url>  correct?\"\nLabel 1: impolite\nDocument 2: \"@MarkRDuckett it did, i saw the tweet, it had a crack at u, about a greens tweet. it holds a grudge dude. so pathetic.\"\nLabel 2: impolite\nDocument 3: \"RT @Gawker: Congressman's office admits \"Hell yeah Benihana up in this bitch\" tweet was a mistake. http://t.co/LTzwuJC0Vs\"\nLabel 3: impolite\nDocument 4: \"&#128514;&#128514;&#128514; RT@gxdlyvisuals: \"bitch i know you got games on your phone\" http://t.co/I2HyINFIdW\"\nLabel 4: impolite\nDocument 5: \"@nextofficial placed order for nearly a grand SIX weeks ago, called yesterday, order 'missing' and no call back today! #shocking\"\nLabel 5: impolite",
+        "inference_time": 7.293758869171143
+    },
+    {
+        "idx": 27,
+        "text": "@GirlThatsVonte: Yall still going trick or treating this year or nah?hell yeah ima be da sweet tooth bandit steal bitches bags n shit",
+        "label": "impolite",
+        "prediction": "FALSE",
+        "output": "  Offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive, offensive\n\nRated offensive due to offensive language",
+        "documents": "Document 1: \"RT @cocaLove_: bitch be working and keep singing like she ain't never bust a move &#128539;\"\nLabel 1: impolite\nDocument 2: \"@NICKIMINAJ: #WutKinda  r purple. Ceeeleeeman this gurl was jus playin on the \"stupid hoe \" track. But in still shitted on sum gurls\"\nLabel 2: impolite\nDocument 3: \"@JoseRvmirez I'm a lil nigga?? Wait till you see nigga. You ain't ready. I'm from Chicago boy I ain't no pussy from the burbs. Just wait\"\nLabel 3: impolite\nDocument 4: \"@ShanTaughtHer: These catfish hoes thinkin they slick.. But niggas catching on &#128524;\"\nLabel 4: impolite\nDocument 5: \"@Dem_lips_tho u knw me homie!!! show the bitches no love!!!\"\nLabel 5: impolite",
+        "inference_time": 7.402889966964722
+    },
+    {
+        "idx": 28,
+        "text": "Yes @itv2 @LoveIsland putting that Angel @MikeThalassitis back in the villa was the best move #revenge #returnofthemike #LoveIsland #hot",
+        "label": "impolite",
+        "prediction": "FALSE",
+        "output": " biased or biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased bi",
+        "documents": "Document 1: \"@LoveIsland #loveisand next time there's a dumping get #Olivia out of there! She's #dreadful and not good for Chris\"\nLabel 1: impolite\nDocument 2: \"@MA_Bisson @AroundTheRings @LA2024 'felt our soul'! hilarious!\"\nLabel 2: polite\nDocument 3: \"&#8220;@dablueprint: @NigelDixon1 Just think if Alex won some games!&#8221; That sorry son of a bitch will never \"win\" us a game\"\nLabel 3: impolite\nDocument 4: \"Bust a nicca head,smack a hoe and shoot the club up! &#128514;RT @Yes_Yes117: @DaRealQuitaM @VonshayeB So what we doing??\"\nLabel 4: impolite\nDocument 5: \"@SHanafin34 gotta love Tanner Country, hoes &amp; all,haha!\"\nLabel 5: impolite",
+        "inference_time": 7.704350709915161
+    },
+    {
+        "idx": 29,
+        "text": "@KCJHoop pretty sure you meant flight and not flite, dumb ass cracker.",
+        "label": "impolite",
+        "prediction": "impolite",
+        "output": " offensive, rude, and impolite language. Offensive and rude to refer to someone using a racial slur and offensive. Intended to hurt and offend, rather than to communicate or offend, no apologies",
+        "documents": "Document 1: \"How come quiet well behaved cats and dogs have to ride on a plane in a tiny bag while screaming small humans roam free? #outrage #teampet\"\nLabel 1: polite\nDocument 2: \"@AllyiahsFace You're page is full of make up. It's a valid question. But you probably prefer to be smashed and dashed\"\nLabel 2: impolite\nDocument 3: \"@Cmdr_Hadfield CNN's Wolf Blitzer calls you an American astronaut and you don't correct him? #dissapointed\"\nLabel 3: impolite\nDocument 4: \"@Delta.  Are you kidding?  Delayed from 7:30pm to 11:00 - only to cancel it because the pilot is overtime.\"\nLabel 4: impolite\nDocument 5: \"@TheView Joy isn't a comedian. She's a bully for fat shaming the governor. Great example she's setting for her grandson.\"\nLabel 5: impolite",
+        "inference_time": 7.1496734619140625
+    },
+    {
+        "idx": 30,
+        "text": "I am concern why this user never replies to messages left on her talk page. Does she talk?",
+        "label": "impolite",
+        "prediction": "FALSE",
+        "output": "rumored orrumoredrumors orrumorsrumor orrumorsrumorrumorrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrum",
+        "documents": "Document 1: \"RT @itsDeSha__: when you @ a bitch they never talking bout you all of a sudden &#128514;\"\nLabel 1: impolite\nDocument 2: \"@roLLYuP23: No text back? I don't give a fuck, I'll text another bitch damn someone is hurt lol\"\nLabel 2: impolite\nDocument 3: \"Opps, how come your archive links to the article's talk page archive? I'm going to fix it for you, ok?\"\nLabel 3: polite\nDocument 4: \"@Brennan_PB Backs up what I always thought ... yer all as mad as each other\"\nLabel 4: impolite\nDocument 5: \"&#8220;@meezytk_: \"Go text your other hoes\"  Me:   http://t.co/wC5Tr4UHS6&#8221; @ayostew_\"\nLabel 5: impolite",
+        "inference_time": 7.456109523773193
+    },
+    {
+        "idx": 31,
+        "text": "Blah blah blah Kyrie, IT, etc. @CJC9BOSS leaving Boston is the real news and I am #devastated! #celtics #fave  #someonegetmeajerseyteeasap",
+        "label": "polite",
+        "prediction": "FALSE",
+        "output": "biased or biased biased biased biasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbi",
+        "documents": "Document 1: \"@Brennan_PB Backs up what I always thought ... yer all as mad as each other\"\nLabel 1: impolite\nDocument 2: \"&#8220;@dablueprint: @NigelDixon1 Just think if Alex won some games!&#8221; That sorry son of a bitch will never \"win\" us a game\"\nLabel 2: impolite\nDocument 3: \"@LoveIsland #loveisand next time there's a dumping get #Olivia out of there! She's #dreadful and not good for Chris\"\nLabel 3: impolite\nDocument 4: \"Bust a nicca head,smack a hoe and shoot the club up! &#128514;RT @Yes_Yes117: @DaRealQuitaM @VonshayeB So what we doing??\"\nLabel 4: impolite\nDocument 5: \"@ProfessorF @Mediaite @law_newz Childish temper #tantrums are all the left has left. :)\"\nLabel 5: impolite",
+        "inference_time": 7.67870831489563
+    }
+]
