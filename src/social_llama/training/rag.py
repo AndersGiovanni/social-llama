@@ -193,14 +193,7 @@ class HuggingfaceChatTemplate:
             None
         """
         self.model_name: str = model_name
-        if "llama" in model_name:
-            self.tokenizer = AutoTokenizer.from_pretrained(
-                "meta-llama/Llama-2-7b-chat-hf"
-            )
-        elif "gemma" in model_name:
-            self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-7b-it")
-        else:
-            self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.tokenizer.use_default_system_prompt = False
 
     def get_template_classification(self, system_prompt: str, task: str) -> str:
@@ -244,8 +237,8 @@ class HuggingfaceChatTemplate:
 # Load the data
 dataset_names = ["social-dimensions"]
 dataset_names = [
-    # "hasbiasedimplication",
-    # "implicit-hate#stereotypical_hate",
+    "hasbiasedimplication",
+    "implicit-hate#stereotypical_hate",
     "intentyn",
     "tweet_offensive",
     "offensiveyn",
@@ -256,7 +249,6 @@ dataset_names = [
     "hypo-l",
     "rumor#rumor_bool",
     "two-to-lie#receiver_truth",
-    # here is the switch
     "hahackathon#is_humor",
     "sarc",
     "contextual-abuse#IdentityDirectedAbuse",
@@ -375,19 +367,16 @@ for dataset_name in dataset_names:
         docs,
         remake_db=False,
     )
-    if model_name in ["AndersGiovanni/social-llama-7b-beta"]:
-        if "llama" in model_name:
-            tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf")
-        elif "gemma" in model_name:
-            tokenizer = AutoTokenizer.from_pretrained("google/gemma-7b-it")
-        else:
-            tokenizer = AutoTokenizer.from_pretrained(model_name)
+    if model_name in ["AndersGiovanni/social-llama-7b-beta", "AndersGiovanni/social-llama-3-8b-beta", "AndersGiovanni/social-llama-7b-instructions", "AndersGiovanni/social-llama-3-8b-instructions"]:
+        # tokenizer = AutoTokenizer.from_pretrained(model_name)
+        tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf") # Just for running the old Llama-2 models with no tokenizer.
         llm = pipeline(
             "text-generation",
             model=model_name,
             tokenizer=tokenizer,
             device_map="auto",
-            **{"max_new_tokens": 250, "temperature": 0.9, "do_sample": True},
+            # model_kwargs={"load_in_8bit": True},
+            **{"max_new_tokens": 50, "temperature": 0.9, "do_sample": True},
         )
         use_inference_client = False
     else:
@@ -475,7 +464,7 @@ for dataset_name in dataset_names:
         while not has_output:
             if use_inference_client:
                 try:
-                    output = llm.text_generation(
+                    prediction = llm.text_generation(
                         template.format(
                             context=decoded_text,
                             text=sample["text"],
