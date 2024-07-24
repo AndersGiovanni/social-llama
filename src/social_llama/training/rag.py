@@ -1,7 +1,11 @@
 """Retrieval-Augmented Generation (RAG) system for classification."""
-import ast
+
 import logging
 import os
+import sys
+import time
+from typing import Dict
+from typing import List
 
 import datasets
 import pandas as pd
@@ -16,6 +20,7 @@ from langchain_core.documents import Document
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from transformers import AutoTokenizer
+from transformers import pipeline
 
 from social_llama.config import DATA_DIR_EVALUATION_SOCIAL_DIMENSIONS
 from social_llama.config import DATA_DIR_EVALUATION_SOCKET
@@ -26,6 +31,7 @@ from social_llama.utils import save_json
 
 
 load_dotenv()
+datasets.disable_caching()
 
 
 class RAGClassification:
@@ -169,7 +175,7 @@ class RAGClassification:
             content = doc.page_content
             label = doc.metadata["label"]
             formatted_response.append(
-                f'Document {idx+1}: "{content}"\nLabel {idx}: {label}'
+                f'Document {idx+1}: "{content}"\nLabel {idx+1}: {label}'
             )
         return "\n".join(formatted_response)
 
@@ -200,17 +206,30 @@ class HuggingfaceChatTemplate:
         Returns:
             template (str): Template.
         """
-        chat = [
-            {"role": "system", "content": system_prompt},
-            {
-                "role": "user",
-                "content": """{task}\nRetrieved Documents:\n{context}\nInput Text: {text}\nAnswer:""".format(
-                    task=task,
-                    context="{context}",
-                    text="{text}",
-                ),
-            },
-        ]
+        if "llama" in self.model_name:
+            chat = [
+                {"role": "system", "content": system_prompt},
+                {
+                    "role": "user",
+                    "content": """{task}\nRetrieved Documents:\n{context}\nInput Text: {text}\nAnswer:""".format(
+                        task=task,
+                        context="{context}",
+                        text="{text}",
+                    ),
+                },
+            ]
+        else:
+            chat = [
+                {
+                    "role": "user",
+                    "content": """{system_prompt}\n{task}\nRetrieved Documents:\n{context}\nInput Text: {text}\nAnswer:""".format(
+                        system_prompt=system_prompt,
+                        task=task,
+                        context="{context}",
+                        text="{text}",
+                    ),
+                }
+            ]
 
         return self.tokenizer.apply_chat_template(chat, tokenize=False)
 
@@ -218,18 +237,30 @@ class HuggingfaceChatTemplate:
 # Load the data
 dataset_names = ["social-dimensions"]
 dataset_names = [
-    # "contextual-abuse#PersonDirectedAbuse",
-    # "contextual-abuse#IdentityDirectedAbuse",
-    # "tweet_irony",
-    # "hateoffensive",
-    # "tweet_emotion",
-    # "implicit-hate#explicit_hate",
-    # "implicit-hate#implicit_hate",
-    # "crowdflower",
-    # "dailydialog",
+    "hasbiasedimplication",
+    "implicit-hate#stereotypical_hate",
+    "intentyn",
+    "tweet_offensive",
+    "offensiveyn",
+    "empathy#distress_bin",
+    "complaints",
+    "hayati_politeness",
+    "stanfordpoliteness",
+    "hypo-l",
+    "rumor#rumor_bool",
+    "two-to-lie#receiver_truth",
     "hahackathon#is_humor",
     "sarc",
+    "contextual-abuse#IdentityDirectedAbuse",
+    "contextual-abuse#PersonDirectedAbuse",
+    "tweet_irony",
     "questionintimacy",
+    "tweet_emotion",
+    "hateoffensive",
+    "implicit-hate#explicit_hate",
+    "implicit-hate#implicit_hate",
+    "crowdflower",
+    "dailydialog",
 ]
 
 for dataset_name in dataset_names:
@@ -281,14 +312,25 @@ for dataset_name in dataset_names:
 
     else:
         dataset = datasets.load_dataset(
-            "Blablablab/SOCKET", dataset_name, split="train"
+            "Blablablab/SOCKET", dataset_name, split="train"  # , trust_remote_code=True
         )
         dataset_test = datasets.load_dataset(
-            "Blablablab/SOCKET", dataset_name, split="test"
+            "Blablablab/SOCKET", dataset_name, split="test"  # , trust_remote_code=True
         )
         # if length is more than 2000, randomly sample 2000
         if len(dataset_test) > 2000:
             dataset_test = dataset_test.shuffle(seed=42).select(range(2000))
+
+        socket_prompts: pd.DataFrame = pd.read_csv(
+            DATA_DIR_EVALUATION_SOCKET / "socket_prompts_knowledge.csv"
+        )
+        label_descriptions = socket_prompts[socket_prompts["task"] == dataset_name][
+            "knowledge"
+        ].iloc[0]
+        label_descriptions = "" if pd.isna(label_descriptions) else label_descriptions
+        labels: List[str] = dataset.features["label"].names
+        labels_mapping = {i: label for i, label in enumerate(labels)}
+
         # Convert to DatasetDict for consistency
         dataset = datasets.DatasetDict(
             {
@@ -300,22 +342,14 @@ for dataset_name in dataset_names:
                 "train": dataset_test,
             }
         )
-        # labels: List[str] = dataset['train'].features["label"].names
-        # labels_mapping: Dict[int, str] = {i: label for i, label in enumerate(labels)}
-        socket_prompts: pd.DataFrame = pd.read_csv(
-            DATA_DIR_EVALUATION_SOCKET / "socket_prompts_knowledge.csv"
-        )
-        label_descriptions = socket_prompts[socket_prompts["task"] == dataset_name][
-            "knowledge"
-        ].iloc[0]
-        labels = ast.literal_eval(
-            socket_prompts[socket_prompts["task"] == dataset_name]["options"].iloc[0]
-        )
-        labels_mapping = {i: label for i, label in enumerate(labels)}
+
         is_socket = True
 
     # Specify the model name you want to use
-    model_name = "meta-llama/Llama-2-7b-chat-hf"
+    # model_name = "meta-llama/Llama-2-7b-chat-hf"
+    model_name = (
+        sys.argv[1] if len(sys.argv) > 1 else "meta-llama/Meta-Llama-3-8B-Instruct"
+    )
 
     RAG = RAGClassification(
         model_name=model_name,
@@ -331,16 +365,46 @@ for dataset_name in dataset_names:
     db, retriever = RAG.make_or_load_vector_db(
         dataset_name,
         docs,
-        remake_db=True,
+        remake_db=False,
     )
-
-    llm = InferenceClient(
-        model=model_name,
-        token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
-        timeout=20,
-    )
-    # Disable caching
-    llm.headers["x-use-cache"] = "0"
+    if model_name in [
+        "AndersGiovanni/social-llama-7b-beta",
+        "AndersGiovanni/social-llama-3-8b-beta",
+        "AndersGiovanni/social-llama-7b-instructions",
+    ]:  # , "AndersGiovanni/social-llama-3-8b-instructions"]:
+        if model_name in [
+            "AndersGiovanni/social-llama-7b-beta",
+            "AndersGiovanni/social-llama-7b-instructions",
+        ]:
+            tokenizer = AutoTokenizer.from_pretrained(
+                "meta-llama/Llama-2-7b-chat-hf"
+            )  # Just for running the old Llama-2 models with no tokenizer.
+        else:
+            tokenizer = AutoTokenizer.from_pretrained(model_name)
+        llm = pipeline(
+            "text-generation",
+            model=model_name,
+            tokenizer=tokenizer,
+            device_map="auto",
+            # model_kwargs={"load_in_8bit": True},
+            **{"max_new_tokens": 50, "temperature": 0.9, "do_sample": True},
+        )
+        use_inference_client = False
+    else:
+        if model_name == "AndersGiovanni/social-llama-3-8b-instructions":
+            client_path = (
+                "https://jpj5tfymwx6rrtj2.us-east-1.aws.endpoints.huggingface.cloud"
+            )
+        else:
+            client_path = model_name
+        llm = InferenceClient(
+            model=client_path,
+            token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
+            timeout=20,
+        )
+        # Disable caching
+        llm.headers["x-use-cache"] = "0"
+        use_inference_client = True
 
     system_prompt = """You are part of a RAG classification system designed to categorize texts.
     Your task is to analyze the input text and classify it into one of the provided labels based on your general knowledge and the context provided by any retrieved documents that may be relevant.
@@ -349,7 +413,9 @@ for dataset_name in dataset_names:
     Labels and Descriptions:
     {label_descriptions}
     """.format(
-        label_descriptions=label_descriptions
+        label_descriptions=(
+            label_descriptions if label_descriptions != "" else ", ".join(labels)
+        )
     )
 
     task = """Using the general knowledge and the information from the retrieved documents provided above, classify the input text by selecting the most appropriate label.
@@ -378,13 +444,17 @@ for dataset_name in dataset_names:
 
         if idx not in test_data_formatted:
             test_data_formatted[idx] = {
-                "label": []
-                if dataset_name == "social-dimensions"
-                else labels_mapping[response_good.item()],
+                "label": (
+                    []
+                    if dataset_name == "social-dimensions"
+                    else labels_mapping[response_good.item()]
+                ),
                 "idx": idx,
-                "text": obj["text"][0]
-                if dataset_name == "social-dimensions"
-                else obj["text"][0],
+                "text": (
+                    obj["text"][0]
+                    if dataset_name == "social-dimensions"
+                    else obj["text"][0]
+                ),
             }
         else:
             test_data_formatted[idx]["label"].append(response_good)
@@ -406,35 +476,59 @@ for dataset_name in dataset_names:
         has_output = False
 
         # This is need as the LLM client sometimes is just hanging and needs to be reinitialized
+
+        start_time = time.time()
         while not has_output:
-            try:
-                output = llm.text_generation(
+            if use_inference_client:
+                try:
+                    prediction = llm.text_generation(
+                        template.format(
+                            context=decoded_text,
+                            text=sample["text"],
+                        ),
+                        max_new_tokens=250,
+                        temperature=0.9,
+                        # repetition_penalty=1.2,
+                    )
+                    has_output = True
+
+                except Exception as e:
+                    logging.info(f"Error: {e}")
+
+                    # Delete LLM
+                    del llm
+
+                    logging.info("Reinitializing LLM...")
+                    llm = InferenceClient(
+                        model=client_path,
+                        token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
+                        timeout=20,
+                    )
+                    # Disable caching
+                    llm.headers["x-use-cache"] = "0"
+            else:
+                # Predict
+                output: List[List[Dict[str, str]]] = llm(
+                    template.format(
+                        context=decoded_text,
+                        text=sample["text"],
+                    )
+                )
+                # Select the generated output
+                prediction: str = output[0]["generated_text"]
+                # Remove the prompt from the output
+                prediction: str = prediction.replace(
                     template.format(
                         context=decoded_text,
                         text=sample["text"],
                     ),
-                    max_new_tokens=150,
-                    temperature=0.7,
-                    # repetition_penalty=1.2,
+                    "",
                 )
                 has_output = True
 
-            except Exception as e:
-                logging.info(f"Error: {e}")
+        end_time = time.time()
 
-                # Delete LLM
-                del llm
-
-                logging.info("Reinitializing LLM...")
-                llm = InferenceClient(
-                    model=model_name,
-                    token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
-                    timeout=20,
-                )
-                # Disable caching
-                llm.headers["x-use-cache"] = "0"
-
-        label = label_finder(output, labels)
+        label = label_finder(prediction, labels)
 
         predictions.append(
             {
@@ -442,8 +536,9 @@ for dataset_name in dataset_names:
                 "text": sample["text"],
                 "label": sample["label"],
                 "prediction": label,
-                "output": output,
+                "output": prediction,
                 "documents": decoded_text,
+                "inference_time": end_time - start_time,
             }
         )
 

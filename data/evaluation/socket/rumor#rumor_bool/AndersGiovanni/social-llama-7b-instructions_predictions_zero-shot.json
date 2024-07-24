@@ -1,0 +1,1138 @@
+[
+    {
+        "idx": 0,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input based on whether it is a rumor or not a rumor. Assign the appropriate label to the input as either 'rumor' or 'not rumor'.\nInput: .@whitehouse in rainbow colors for #scotusmarriage? here's what i think about that decision: URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or not rumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumorrum or rumor or notrumorrumorrum or rumor or notrumorrumorrum or rumor or notrumorrumorrumrum or rumor or notrumorrumorrumrum or rumor or notrumorrumorrumrumrum or rumor or notrumorrumorrumrumrum or rumor or notrumorrumorrumrumrumrum orrumor or notrumorrumorrumrumrumrum or",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 1,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the input text is a rumor or not based on the given labels. \nLabels:\n- 'not rumor': Indicates that the input text does not contain a rumor or false information.\n- 'rumor': Indicates that the input text contains a rumor or potentially false information.\nInput: cops bought the alleged church shooter burger king hours after killings URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or notrumorrumor but not confirmed by official sources.rumor or not confirmedrumor but rumor or not confirmedrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumorrum or rumor or notrumorrumorrum or rumor or notrumorrumorrum or rumor or notrumorrumorrum or rumor or notrumorrumorrum or rumor or notrumorrumorrum or rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 2,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether a piece of information is a rumor or not based on the given text. The labels 'not rumor' and 'rumor' help distinguish between verified information and unverified claims or misinformation respectively.\nInput: german shepherd with a rare spinal condition looking for a forever home. URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but rather a true story or news article about a real-life situation. The story is about a German Shepherd with a rare spinal condition in need of a forever home, which is a real-life situation and not a rumor. The URL provided is a legitimate source for more information or to donate to the cause. Not rumor, but true news article or story.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 3,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the provided text as either 'not rumor' or 'rumor' based on whether it contains false or unverified information. \n\n- Label 'not rumor': Refers to a piece of text that contains verified or accurate information devoid of any false claims or rumors.\n- Label 'rumor': Refers to a piece of text that contains unverified or false information that lacks concrete evidence or validation.\nInput: hostage-taker in supermarket siege killed, reports say. #parisattacks URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or report of a developing news event, with no confirmation of the details or sources of the report.rumor or report of a developing news event, with no confirmation of the details or sources of the report.rumor or report of a developing news event, with no confirmation of the details or sources of the report.rumor or report of a developing news event, with no confirmation of the details or sources of the report.rumor or report of a developing news event, with no confirmation of the details or sources of the report.rumor or report of a developing news event, with no confirmation of the details or sources of the report.rumor or report of a developing news event, with no",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 4,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text into either 'not rumor' or 'rumor' based on the content. The text may contain information related to reality or a demented right-wing fantasy.\nInput: when she heard about south korean \"comfort women,\" @yunghi photographed some survivors URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " biased or biased biased biased biased biased biased biasedbiased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased bi",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "not rumor"
+    },
+    {
+        "idx": 5,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the input text contains a rumor or not based on the given labels. The label 'not rumor' indicates that the text does not contain a rumor, while the label 'rumor' suggests that the text conveys a rumor.\nInput: police chief says dylann roof was taken to burger king shortly after arrest URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or notrumor, but not rumor. Rumor or notrumor, but not rumor.rumor or notrumor, but not rumor.rumor or notrumor, but notrumor.rumor or notrumor, but notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrum or notrumorrumrum or notrumorrumrum or notrumorrumrum or notrumorrumrumrum or notrumorrumrumrum orrumor or notrumorrumrumrumrum orrum rumor or notrumorrumrumrumrumrum orrumrumrumrumrumrumrumrumrum",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 6,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on whether it represents a rumor or not.\nLabels Description:\n- 'not rumor': Indicates the input text does not convey false or unverified information.\n- 'rumor': Refers to the input text containing false or unverified information which could potentially mislead individuals.\nInput: i hate writing; i love having written. dorothy parker was born on this day in 1893: URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " biographical note or biography of a biographical subject biography biography biographical note biography biographical biography biography biography biographical biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "not rumor"
+    },
+    {
+        "idx": 7,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text based on whether it contains a rumor or not.\n\nLabels Description:\n- 'not rumor': Indicates that the text does not include a rumor or false information.\n- 'rumor': Indicates that the text includes a rumor or false information.\nInput: donald trump v adolf hitler URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or notrumor, but not verified or fact-checkedrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or rumor or notrumorrumorrumor or rumor or notrumorrumorrumor or rumor or notrumorrumorrumor or rumor or notrumorrumorrumor orrumor or notrumorrumorrumor or rumor or notrumorrumorrumorrumor orrumor or notrumorrumorrumorrumor orrumor or notrumorrumorrumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 8,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text input based on whether it contains a rumor or not.\n- 'not rumor': Indicates that the text does not contain any unverified information or false claims.\n- 'rumor': Indicates that the text includes unverified information or false claims.\nInput: oh, i'm so ready to watch @zaynmalik's #pillowtalk on mtv tonight at 8:15p. URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "biased orbiased or biased or biased or biased orbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbi",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "not rumor"
+    },
+    {
+        "idx": 9,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Determine if the given input, which includes reported photographs from Malaysia Airlines #MH17 crash, is a rumor or not. Use the labels 'not rumor' and 'rumor', with the output being the assigned label after classification. The output in this case is 'rumor', indicating that the content is associated with a rumor.\nInput: an openly gay man said that he and his partner met with pope francis a day before kim davis did URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 10,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text as either 'not rumor' or 'rumor', based on the content.\nInput: a new cnn/orc poll finds @hillaryclinton ahead of @realdonaldtrump by just 6 points URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but news article or report based on a poll result",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 11,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text based on whether it contains a rumor or not.\nLabels:\n- 'not rumor': Indicates the text does not contain any unverified information or false claims.\n- 'rumor': Suggests the text includes unverified information or false claims.\nInput: saliha is one of the first women ever to stand for election in saudi arabia: watch her story URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "biographical note or biography biased biographical note biographical biography biographical biography biography biographies biography biographer biographers biography biographers biography biographers biography biographer biographers biography biographer biographers biography biographers biography biographer biographers biography biographer biographers biography biographer biographers biography biographer biographers biography biographer biographers biography biographer biographers biography biographer biographers biography biographer biographers biography biographer biographers biography biographer biographers biography biographer biograph",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "not rumor"
+    },
+    {
+        "idx": 12,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text as either 'not rumor' or 'rumor'. This task entails determining if the input text falls under the category of authentic information ('not rumor') or unverified or incorrect information ('rumor').\nInput: 1.15 million americans have been killed by guns since john lennon's death URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but not entirely accurate either. The claim that 1.15 million Americans have been killed by guns since John Lennon's death is not accurate. According to the Gun Violence Archive, the number of gun-related deaths in the United States since 1968 (the year John Lennon was assassinated) is around 1.45 million, not 1.15 million. Additionally, the figure includes all gun-related deaths, not just homicides, and includes suicides and accidents.\nnotrumor, but not entirely accurate either. The claim is not entirely accurate, but not a rumor either. The number is not 1",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 13,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text as 'not rumor' or 'rumor'. 'not rumor' should be chosen if the text expresses factual information or opinion supported by evidence. 'rumor' should be selected if the text contains unverified information, speculation, or gossip.\nInput: police move in: police confirm live ammunition used in martin place #sydneysiege\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or notrumor but based on reported factual events,rumors or eyewitness accounts,rumors or notrumorsrumorsrumor or notrumor but based on reported factual events,rumors or eyewitness accounts,rumors or notrumorsrumor or notrumor but based on reported factual events,rumors or eyewitness accounts,rumors or notrumorsrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or not",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 14,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on whether it contains a rumor or not rumor. Rumor refers to information that is unverified or not proven to be true, while not rumor indicates information that is confirmed or established as factual.\nInput: two shot in paris, including traffic cop, as manhunt continues for #charliehebdo suspects URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor\nrumor has it that two people were shot in Paris, including a traffic cop, as a manhunt continues for the suspects of the #CharlieHebdo attack. Rumors are spreading quickly on social media, but no official confirmation yet. Stay tuned for updates. #rumor or #rumour or #rumourrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 15,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text into one of the two categories - 'not rumor' or 'rumor'.\nInput: warning syrian refugees hv arrived in neworlean &they r here 2stay ur funds r being well invested in one-way tickets URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor</rumor> - likely an exaggerated or unverified claim about the arrival of Syrian refugees in New Orleans and the availability of one-way tickets to their destination. It is important to verify information before spreading rumors, especially about sensitive or potentially dangerous topics like immigration and refugee resettlement.",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 16,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the text based on whether it contains a rumor or not. Assign the label 'rumor' if the text involves spreading unverified information or gossip, and assign 'not rumor' if the text does not contain any such rumors.\nInput: el chapo vs isis: mexican cartel boss threatens islamic state over drug trade URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor orrumor or notrumorrumorrumor or notrumorrumorrumor orrumor or notrumorrumorrumor orrumor or notrumorrumorrumorrumor orrumor or notrumorrumorrumorrumorrum orrumor or notrumorrumorrumorrumorrum orrumor or notrumorrumorrumorrumorrum orrumor or notrumorrumorrumorrumorrum or",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 17,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text based on the content as either \"not rumor\" or \"rumor.\" \"Not rumor\" refers to factual information or verified news, while \"rumor\" refers to information that is unverified, misleading, or not supported by evidence.\nInput: #opkkk releases 500+ names and reveals unexpected #plottwist URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "biased orbiasedbiased or biasedbiased or biasedbiased or biasedbiased biased biased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "rumor"
+    },
+    {
+        "idx": 18,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text into one of the two categories — \"not rumor\" or \"rumor\" based on the content. \n\nBrief descriptions of the labels:\n- 'not rumor': Denotes information or news that is confirmed and verified to be true.\n- 'rumor': Denotes information that is speculative, unverified, or potentially false.\nInput: do these look like the faces of a homeless couple caught living in a walmart attic for 2 years? URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or sensationalised media report, but not confirmed as true or falserumor or sensationalised media report, but not confirmed as true or falserumor or sensationalised media report, but not confirmed as true or falserumor or sensationalised media report, but not confirmed as true or falserumor or sensationalised media report, but not confirmed as true or falserumor or sensationalised media report, but not confirmed as true or falserumor or sensationalised media report, but not confirmed as true or falserumor or sensationalised media report, but not confirmed as true or falserumor or sensationalised media report, but not confirmed as true or falserumor or sensationalised",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 19,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the input text contains a rumor or not. Assign the label 'rumor' if the text spreads unverified information or gossips, while assign 'not rumor' if the text presents verified information or facts.\nInput: the dave i know is polite, modest, and content. jumbotron dave is crass and loud. URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " biased or biased biased or biased biased or biased biased biased or biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "not rumor"
+    },
+    {
+        "idx": 20,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text based on whether it contains a rumor or not.  \nLabels:  \n- 'not rumor': Denotes text that does not contain rumors or false information.  \n- 'rumor': Denotes text that contains rumors or false information.\nInput: jindal demands info about refugees entering new orleans... URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or notrumor or rumor mill but notrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 21,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text into either 'not rumor' or 'rumor' category based on the content.\nInput: president obama announces ban on solitary confinement for juveniles in federal prisons - washington post URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but news article based on real event. The article reports on a recent announcement by President Obama regarding the ban on solitary confinement for juveniles in federal prisons.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 22,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the input text contains a rumor or not based on the given labels.\n\nLabels:\n- 'not rumor': Indicates that the input text does not contain a rumor.\n- 'rumor': Indicates that the input text contains a rumor or unverified information.\nInput: unreal: watch what happens when desperate muslim refugees are offered red cross food URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " rumor or stereotype, but not rumor implying a threat or harm to Muslims or refugees. It is not verified and it is based on a stereotype and it is not true to all Muslims or refugees. notrumor, not verified, stereotype and not true to all Muslims or refugees. notrumor, not verified, stereotype and not true to all Muslims or refugeesrumor or stereotype, not verified, not true to all Muslims or refugeesrumor or stereotype, not verified, not true to all Muslims or refugeesrumor or stereotype, not verified, not true to",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 23,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text as either 'not rumor' or 'rumor' based on the content.\nInput: danish lawmakers approve bill allowing seizure of asylum seekers' valuables to help cover expenses. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "neutral news article based on a real news story from Denmark about a proposed bill allowing the seizure of valuables from asylum seekers to cover expenses. The article provides a neutral news report on the development and includes a URL to the original source. The article is not rumor, but rather a factual news report.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 24,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the given input text is a rumor or not based on the content.\nLabels: \n- 'not rumor': Indicates that the text does not contain any unverified or speculative information.\n- 'rumor': Denotes that the text contains unverified or speculative information.\nInput: #sydneysiege is over. 2 confirmed dead, #prayforsydney #prayforsydneyhostages #sydney #hostages\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 25,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input, a full statement from PM Abbott on #sydneysiege #martinplace #lindt with a URL, into one of the two labels - 'not rumor' if the content is verified information or 'rumor' if it may contain unverified or misleading information.\nInput: usgs: sonic boom confirmed in new jersey area after reports of shaking; cause not immediately known URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or newsrumor, not verifiedrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 26,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the text content based on whether it is a rumor or not. \n- Labels: \n    - 'not rumor': Indicates that the text content does not contain any rumors or false information.\n    - 'rumor': Indicates that the text content includes rumors or false information.\nInput: sydney hostage-taker - man monis, 49 - originally from iran - self-styled sheikh - accused of sexually assaulting 7 women developing..\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "biographical details of an individual, not rumor or rumor- not rumorrumor biographical details of an individual, not rumor or rumor biographical details of an individual, not rumor or rumor biographical details of an individual, not rumor or rumor biographical details of an individual, not rumor or rumor biographical details of an individual, not rumor or rumor biographical details of an individual, not rumor or rumor biographical details of an individual, not rumor or rumor biographical details of an individual, not rumor or rumor biographical details of an individual, not rumor or rumor biographical details of an individual, not rumor or rumor bi",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 27,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text as whether it contains a rumor or not based on the provided labels.\nLabels:\n- 'not rumor': Indicates that the text does not contain any rumor or false information.\n- 'rumor': Indicates that the text suggests the presence of a rumor or misinformation.\nInput: haron monis,hostage-taker in #sydney: fled #iran 96,suspect in ex-wife killing,46 sex assaults URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 28,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text based on the presence of truthful information. Assign the label 'not rumor' if the information is verified and accurate, and 'rumor' if the information lacks verification or credibility.\nInput: very reliable source on parliament hill tells me the assailant has been killed. #cdnpoli #ottnews\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or report from a trusted source on Parliament Hill, but without official confirmation or verification from official sources, so be cautious and verify before sharing or believing rumors or reports of the assassination or any other important details. #cdnpoli #ottnews Rumor or Report, not verified or confirmed by official sources.rumor or report,rumor or report,rumor or reportrumor or reportrumor or reportrumor or reportrumor or reportrumor or reportrumor or reportrumor or reportrumor or reportrumor or reportrumor or reportrumor or reportrumor or reportrumor or reportrumor or reportrumor or reportrumor or reportrum",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 29,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the text based on whether it contains verified information or rumors.\nLabels:\n- 'not rumor': Indicates that the information in the text is confirmed and reliable.\n- 'rumor': Signifies that the information in the text is unverified or speculated.\nInput: #ripchyna: the wwe icon has passed away at the age of 45. URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor\n Rumors are swirling about the death of WWE star Chyna, but no official statement has been released by the WWE or any of Chyna's representatives. As a result, this rumor is unconfirmed and should be treated with caution until more information is available. Our thoughts are with Chyna's friends, family and fans during this difficult time. #rumor #notconfirmedrumor #rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 30,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text into either \"not rumor\" or \"rumor\" based on the content. \"Not rumor\" refers to information that is factual, while \"rumor\" denotes unverified or potentially false information.\nInput: breaking: south carolina to ban sale of tylenol. they fear picking of cotton from the bottles may represent slavery. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 31,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text as either 'not rumor' or 'rumor' based on the content. \n\n- 'not rumor': Indicates that the information presented is confirmed and trustworthy.\n- 'rumor': Implies that the information might not be verified or could be false.\nInput: fda confiscates several thousand chickens from kfc farms as mutations worsen URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or not rumor, but possibly true -rumors of a KFC chicken shortage have been circulating for years, but this specific rumor about the FDA confiscating chickens from KFC farms may or may not be true. It could be a rumor or a real news story, but it's worth noting that there have been recent reports of avian flu outbreaks in some KFC locations. So, it's possible that this rumor could have some basis in truth. However, until there is official confirmation from KFC or the FDA, it's difficult to say for sure whether this rumor is true or not. Rumor or possible truth, but",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 32,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on whether it contains confirmed information or a rumor related to a Gilmore Girls revival. Assign the label 'not rumor' to texts with confirmed details, and 'rumor' to texts with unverified information.\nInput: months ago, rupert murdoch bought national geographic and fired most of writers. this just hit the stands. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but news article or update about a real event\nrumor or notrumor: not rumor, but news article or update about a real event (rumor of Murdoch buying Nat Geo, but not about the firing of writers)",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 33,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on whether it contains a verified fact (\"not rumor\") or an unverified claim or piece of information (\"rumor\").\nInput: police convoy and helicopters are rushing to scene to detain charlie hebdo massacre suspects URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " Rumor or not confirmed informationrumor]rumors of suspects being detained or on the run, police and helicopters rushing to the scene. Rumors or unverified reports of suspects being detained or on the run, police and helicopters rushing to the scene. Rumors or unverified reports of the suspects being detained or on the run, police and helicopters rushing to the scene. Rumor or not confirmed informationrumorrumors of suspects being detained or on the run, police and helicopters rushing to the scene. Rumors or unverified reports of suspects being detained or on the run, police and helic",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 34,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on whether it contains a rumor or not. The labels to assign are \"not rumor\" for verifiable or confirmed information and \"rumor\" for unverified or false information.\nInput: 72 dhs employees on terrorist watch list URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or notrumor: There is no evidence to support the claim that 72 DHS employees are on a terrorist watch list. The claim is unsubstantiated and has been repeatedly debunked by fact-checking organizations. Therefore, it is a rumor.\nrumor or no rumor:rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 35,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the text input based on the labels ['not rumor', 'rumor'], assigning one label to indicate whether the text contains verified information ('not rumor') or unverified information ('rumor').\nInput: “our team boasts the most women who have ever competed for any nation at any olympic games.” —@potus on @teamusa: URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but fact-based on a statement from the official Twitter account of the President of the United States.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 36,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text about baseball players having a \"fight club\" at a Texas high school based on the labels ['not rumor', 'rumor'].\nInput: #breaking charlie hebdo gunmen's hostage freed and safe after police assault\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or not confirmed reports of a fight club at a Texas high school involving baseball players. No official confirmation or confirmation of the rumor from any sources yet.rumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrumor or not confirmed reportsrum",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 37,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input into the appropriate label - either 'not rumor' if the statement indicates that Banksy has not been arrested, or 'rumor' if the statement suggests that Banksy has been arrested.\nInput: steve jobs' biological father was a syrian immigrant.\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " biographical fact or not rumor biographical fact or not rumor biographical biographical biography biographical biography biographies biography biographies biography biographies biographical biographical biography biographies biography biographies biographical biographical biography biographies biography biographies biographical biographical biography biographies biography biographies biographical biographical biography biographies biography biographies biographical biographical biography biographies biography biographies biographical biographical biography biographies biography biographies biographical biographical biography biographies biography biographies biographical biographical biography biographies biography biographies bi",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 38,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the input text is a rumor or not based on the content. \nLabels: \n- 'not rumor': Indicates that the text does not contain false or unverified information.\n- 'rumor': Implies that the text contains unverified or potentially false information.\nInput: #backtothefuture fans, it's october 21, 2015 — the future is finally here! URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " or not rumor, but rather a reference or inside joke or trend notice, not a rumor. The date mentioned is a nod to the Back to the Future movie franchise and the date October 21, 2015, which is a reference to the date in the movie. It is not a rumor, but rather a fun or humorous reference or inside joke. notrumor notrumor but not rumor either notrumor notrumor but rather a reference or inside joke or trend notice notrumor notrumor but rather a reference or inside joke or trend notice notrumor notrumor notrumor or notrumor but rather a reference or inside jo",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 39,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text based on whether it contains a rumor or not. Assign the label 'rumor' if the text implies unverified or misleading information, and assign 'not rumor' if the text contains verified and accurate details.\nInput: holy shit. rupert murdoch just killed national geographic. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 40,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text input as either 'not rumor' or 'rumor' based on whether the content suggests factual information or unsubstantiated claims. In this context, 'not rumor' signifies a statement that is verified or true, while 'rumor' denotes unconfirmed or speculative content.\nInput: sanders closes to 7 points behind clinton in new iowa poll. URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but news article or fact-based article. The article reports on a poll result, which is a factual statement not rumor but news.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 41,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input based on the provided labels.\nLabels:\n- 'not rumor': Indicates that the information presented is confirmed and not a rumor.\n- 'rumor': Indicates that the information presented is dubious or unverified.\nInput: .@potus on declaring a federal emergency in #flint, michigan to supplement state and local response efforts. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but news article or press release from official or trustworthy sources, such as the White House press office or official government agencies like FEMA.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 42,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input based on the labels ['not rumor', 'rumor'], indicating whether the content is a rumor or not a rumor.\nInput: #bulgaria finds 10,000 #fake passports hidden by #muslim refugees heading for #germany passports for #terrorists URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor\nrumor or not, it is not verified and may not be true, but it is being spread as factual information, which is often not true and can be harmful or damaging, and may be an attempt to create fear or mistrust of a particular group of people, and it is not based on any factual evidence, but rather on unsubstantiated claims or rumors.rumor mill, rumor, or unverified claims.rumor,rumor or not verified,rumors of refugees or immigrants spreading terror rumors or not verified,rumors of terrorist passports or passports for terrorists or rumors of terrorist passports or passports for terror",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 43,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text based on the provided labels into either 'not rumor' or 'rumor'.\nInput: reagan (11 mass shootings) bush sr (12 mass shootings) clinton (23 mass shootings) bush jr (16 mass shootings) obama (162 mass shootings)\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but misleading information or cherry-picked data. The numbers provided are not accurate and are misleadingly presented to create a false narrative. The data is not adjusted for population or time period, and the numbers are not accurate. There is no evidence to support the claim that the number of mass shootings has increased under any of the presidents listed. The numbers provided are not a reliable or accurate measure of the incidence of mass shootings.\nnot rumor, but misinformation or cherry-picked data. The numbers provided are not accurate and are misleadingly presented to create a false narrative. The data is not adjusted for population or time period, and the numbers are not",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 44,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the input text is a rumor or not a rumor based on the content provided. The two possible labels are:\n1. 'not rumor': Denotes that the text does not contain rumor or unverified information.\n2. 'rumor': Denotes that the text may contain speculation or unconfirmed information.\nInput: breaking news: at least 3 shots fired at ottawa war memorial. one soldier confirmed shot - URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or breaking news report of an ongoing incident, with unconfirmed reports of shots fired at an Ottawa war memorial and a reported injured soldier.rumor or breaking news report of an ongoing incident, with unconfirmed reports of shots fired at an Ottawa war memorial and a reported injured soldier.rumor or breaking news report of an ongoing incident, with unconfirmed reports of shots fired at an Ottawa war memorial and a reported injured soldier.rumor or breaking news report of an ongoing incident, with unconfirmed reports of shots fired at an Ottawa war memorial and a reported injured soldier.rumor or breaking news report of an ongoing",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 45,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the input text is a rumor or not rumor based on the information provided about the status of the movie \"Fast and Furious 7\" following Paul Walker's death. \n\n- 'not rumor': The report suggests that despite the delay due to Paul Walker's death, the movie will not be canceled.\n- 'rumor': The report hints that the information regarding the status of the movie \"Fast and Furious 7\" might not be confirmed or is based on speculation.\nInput: this is shot that captures the #sydneysiege: sheer terror/relief of escaped hostages, incredible work of @nswpolice URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " biased or biased biased or biased biased biased biased biasedbiasedbiasedbiased biased biasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiased",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "rumor"
+    },
+    {
+        "idx": 46,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text as either \"not rumor\" or \"rumor\" based on the content. Assign the label \"not rumor\" if the text contains verified information or facts. Assign the label \"rumor\" if the text contains unverified or potentially false information.\nInput: according to anonymous, the next isis target is a wwe event in atlanta. URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 47,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text based on the labels 'not rumor' and 'rumor'.\nInput: today’s progress...these things are a reminder of what we can achieve when we lead with strength and wisdom. —@potus on progress with iran\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " biased or biased biased biased biased or biased biased biased biased biased biasedbiased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "not rumor"
+    },
+    {
+        "idx": 48,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text whether it contains a rumor or not based on the behavior described. \n\nLabels:\n- 'not rumor': Indicates the text contains factual information about individuals not smiling during a seizure and being able to speak coherently afterward.\n- 'rumor': Signifies the text contains unverified or potentially false information related to the behavior during a seizure.\n\nInput: Describes people not smiling during a seizure and immediately speaking coherently.\nInput: actor abe vigoda has died at 94 URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor: not rumor, factual information rumor-rumor-rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumor",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 49,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text based on whether the content is a rumor or not.\n\nLabels:\n- 'not rumor': Indicates that the mentioned mysterious creature discovered in California is not considered a rumor.\n- 'rumor': Suggests that the discovery of the mysterious creature in California is being rumored or speculated to be an alien presence.\nInput: mook spooked: hillary manager predicts trump will win presidency if nominated!\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor rumor rumor or prophecyrumor but not rumorrumor notrumorrumor rumorrumor rumorrumorrumorrumorrumorrumorrumorrumorrumorrumrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 50,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text into either 'not rumor' or 'rumor' based on the content. The output label should represent whether the text contains verifiable information ('not rumor') or unverified information ('rumor').\nInput: happy #nationalhugday! URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor or rumor but rather a holiday greeting or 'warm and fuzzy' message. Happy National Hug Day! URL not rumor orrumor but rather a holiday greeting or 'warm and fuzzy' message. Happy National Hug Day! URL not rumor orrumor but rather a holiday greeting or 'warm and fuzzy' message. not rumor or rumor but rather a holiday greeting or 'warm and fuzzy' message. not rumor orrumor but rather a holiday greeting or 'warm and fuzzy' message. not rumor orrumor but rather a holiday greeting or 'w",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 51,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text as either \"rumor\" or \"not rumor\". \"Rumor\" refers to content that spreads unverified and potentially false information, while \"not rumor\" denotes information that has been verified or does not contain false statements.\nInput: donald trump's capture, dead or alive, is reportedly worth $100 million to el chapo. URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 52,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given news article based on its content into either 'not rumor' or 'rumor'. In this case, categorize the article about the attorney and new audio of Michael Brown's shooting incident as 'rumor'.\nInput: adorable but frightened sloth rescued from side of highway in ecuador URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 53,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given news headline based on the provided labels as follows:\n- 'not rumor': Indicates the headline presents fact-based information.\n- 'rumor': Denotes the headline may contain unverified or speculatory content.\nOutput: Determine the label that best represents whether the news headline is factual or potentially speculative.\nInput: son of a syrian refugee URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "biased or sensitive. biased or biased biased or biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased bi",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "rumor"
+    },
+    {
+        "idx": 54,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input based on whether it represents a rumor or not rumor. Assign the appropriate label from the labels ['not rumor', 'rumor'] to the input text, which in this case would be 'rumor' due to the statement about the University of Ottawa being on lockdown.\nInput: michelle obama says ‘white folks’ are what’s wrong with america URL no michelle you are whats wrong with america\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " Rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 55,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text input as either a rumor or not a rumor based on the provided labels. In this task, the labels 'not rumor' and 'rumor' are used to categorize the text content. For each input, assign the appropriate label that best represents whether the content is factual or a rumor.\nInput: police have surrounded this building where the suspected #charliehebdo attackers are holed-up URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or breaking newsrumor of an ongoing situationrumor of an ongoing situationrumor or notrumorrumor or notrumorrumor or rumorrumor or rumorrumor or rumorrumor or rumorrumor or rumorrumor or rumorrumor or rumorrum or rumorrum orrumorrum orrumorrum orrumorrum orrumorrum orrumorrum orrumorrum orrumorrum orrumorrum orrumorrum orrumorrum orrumorrum orrumorrum orrumorrum orrumorrum orrumorrum orrumorrum orrumorrum orrumorrum orrumorrum orrumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 56,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text as either 'not rumor' or 'rumor', where 'not rumor' indicates that the content does not involve any rumor or myth, while 'rumor' indicates the presence of a rumor or myth within the text.\nInput: translucent butterfly URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but rather a not-rumor-rumorrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrum",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 57,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the input text describes a rumor or not based on the presence or absence of reliable information. Assign the label 'rumor' if the text contains unverified or potentially false claims, and 'not rumor' if the information is confirmed or verified to be true.\nInput: girl killed in her sleep from wearing earbuds while iphone was charging - URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 58,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text into either \"rumor\" or \"not rumor\" based on the content. \nLabels: \n- 'not rumor': Indicates that the information in the text is verified and confirmed as factual. \n- 'rumor': Implies that the information in the text is unverified and may not be true.\nInput: clinton ominously tells iowan supporters to mark front doors with campaign logo before sundown URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumorrum or notrumorrumorrum or rumor or notrumorrumorrum or rumor or notrumorrumorrumrum or rumor or notrumorrumorrumrum or rumor or notrumorrumorrumrum or rumor or notrumorrumorrumrum or rumor or notrumorrumorrumrum or rumor or notrumorrumorrumrum or rumor or notrumorrumorrumrum or rumor or notrumorrumorrumrum",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 59,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the input text is a rumor or not based on the provided labels. \n- 'not rumor': Indicates that the text does not contain false or unverified information.\n- 'rumor': Suggests that the text might contain false, unverified, or unsubstantiated information.\nInput: rt @operation_kkk: official #opkkk #hoodsoff 2015 data release URL with love, anonymous . URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " no rumor orrumor, but not verifiedrumor or no rumorrumorrumor norumorrumorrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrum",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 60,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given photos of the day by analyzing the content. Determine if the provided content is a rumor or not. Assign the label 'not rumor' if the content is factual, authentic, and does not contain misleading information. Assign the label 'rumor' if the content is unverified, potentially false, or contains misleading information.\nInput: us swimmer jimmy feigen to pay $11,000 to charity as part of deal to settle brazil robbery dispute - us media URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but news article about a real event or settlement agreement\nnot rumor, but news article about a real event or settlement agreement\nnot rumor, but news article about a real event or settlement agreement not rumor, but news article about a real event or settlement agreement not rumor, but news article about a real event or settlement agreement not rumor, but news article about a real event or settlement agreement not rumor, but news article about a real event or settlement agreement not rumor, but news article about a real event or settlement agreement not rumor, but news article about a real event or settlement agreement not rumor, but news article about a real event or settlement agreement not rumor, but news article about",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 61,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text as either \"not rumor\" or \"rumor\". \"Not rumor\" refers to information that is verified and factual, whereas \"rumor\" relates to unverified or false information.\nInput: police bought #dylannroof food from @burgerking after he was arrested for church shooting: URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 62,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the text is a rumor or not based on the given input. Labels are 'not rumor' and 'rumor', categorizing the text as either containing a rumor or not.\nInput: a head-on collision with another planet may have created our moon, researchers say URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but potentially interesting scientific theory or researchrumor, as it is a speculative and unproven idea. The article source is a reputable scientific publication, but the idea is not widely accepted or proven. Therefore, it is not a rumor, but an interesting scientific theory or rumor. URL not rumor, but rumor or notrumorrumor not confirmed or provenrumor rumor or notrumorrumor not confirmed or provenrumorrumor not confirmed or provenrumorrumor not confirmed or provenrumorrumor not confirmed or provenrumorrumor not confirmed or provenrumorrumor not confirmed or provenrumorrumor not confirmed or provenrumorrumor not",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 63,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text based on whether it contains a rumor or not.\n- Labels: \n  - 'not rumor': Indicates the input text does not contain a rumor.\n  - 'rumor': Indicates the input text contains a rumor.\nInput: a tiny alpine town in northern italy just welcomed its first baby in 28 years 🍼👶 URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but a news article or news story about a real event or factual occurrence. The birth of a baby in a small Italian town is a real news event, not a rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 64,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text as either 'not rumor' or 'rumor' based on whether the text contains factual information or a false or unverified claim.\n\n- Label 'not rumor': Indicates the input text contains accurate and verified information with no misleading or false claims.\n- Label 'rumor': Indicates the input text contains false, misleading, or unverified information that is circulating as a potential rumor or misinformation.\nInput: oh. so now the #ferguson police chief says the cop didn't know about the robbery when he stopped #mikebrown. the kid was \"jaywalking\"? bs!\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " norumorrumorrumorrumorrumor norumorrumorrumorrumorrumorrumor norumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "rumor"
+    },
+    {
+        "idx": 65,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the input text is a rumor or not a rumor based on the given labels. \n\n- 'not rumor': Indicates that the information in the text is verified and true.\n- 'rumor': Indicates that the information in the text is unverified and potentially false or misleading.\nInput: looking at eddie redmayne looking at alicia vikander is making us all kinds of emotional. #sagawards URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "biased or biased biased biased biased biased biasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbi",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "not rumor"
+    },
+    {
+        "idx": 66,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the input text contains a rumor or not. Assign the label 'rumor' if the text is a rumor, and 'not rumor' if it is not a rumor.\nInput: but democrats say that syrian refugees are 3 year-old orphans. so why are they worried about them buying guns?\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or not rumor, but not verified, or not true, but not rumor</rumor or not rumor, but not verified, or not true, but not rumorrumor or not rumor, but not verified, or not true, but not rumorrumor or not rumor, but not verified, or not true, but not rumorrumor or not rumor, but not verified, or not true, but not rumorrumor or not rumor, but not verified, or not true, but not rumorrumor or not rumor, but not verified, or not true, but not rumorrumor or not rumor, but not verified, or not true, but",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 67,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input based on whether the information is a verified fact or a rumor.\n- Labels:\n   - 'not rumor': Indicates the information is confirmed and trustworthy.\n   - 'rumor': Indicates the information is unverified or misleading.\nInput: woman stabs boyfriend for not liking instagram selfie fast enough URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or urban legend",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 68,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Determine whether the input text is a rumor or not a rumor based on the content.  \nLabels: \n- 'not rumor': Indicates that the text does not contain any false information or misleading claims.\n- 'rumor': Suggests that the text contains untrue or misleading information that is spread widely but lacks evidence or credibility.\nInput: google agrees to pay £130m in back taxes after \"open audit\" of its accounts by uk tax authorities URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, news article or rumor, but fact-based news story. The article reports on a real news story about Google agreeing to pay £130m in back taxes to UK tax authorities, based on an open audit of their accounts.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 69,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text as either \"not rumor\" or \"rumor\". \"not rumor\" refers to factual information that has been verified, while \"rumor\" pertains to unverified or potentially false information.\nInput: america's first muslim female judge; carolyn walker-diallo. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " biographical information or biographical note about a real person, not rumor biographical biographical biography biography biographical biography biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography bi",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 70,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text as either a 'rumor' or 'not rumor' based on the content.\nInput: #onceuponatime's @colinodonoghue1: dark hook is like a \"pissed-off boyfriend\" URL @onceabc URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "biased biased biased biased biased biased biased biased biased biasedbiased biasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiased",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "not rumor"
+    },
+    {
+        "idx": 71,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Perform text classification on the input text regarding the Sydney siege incident. Assign a label based on the presence of verified information or rumors. Use the labels 'not rumor' for verified information and 'rumor' for unverified or speculative content.\nInput: oscars 2016 host chris rock calls event \"white bet awards\" due to lack of diversity: URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but comment or opinion based on current events or trends. not rumor, but not verifiedrumor or news either, just an opinion or comment on a current issue or event. notrumor, but not verifiedrumor or news either, just an opinion or comment on a current issue or event. notrumor, but not verifiedrumor or news either, just an opinion or comment on a current issue or event. notrumor, but not verifiedrumor or news either, just an opinion or comment on a current issue or event. notrumor, but not verifiedrumor or news either, just an opinion or comment on a current issue or event. notrumor, but not verifiedrumor",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 72,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the given input is a rumor or not based on the provided statement. Assign the label 'not rumor' if the statement does not involve spreading unverified information or speculation, and assign the label 'rumor' if the statement involves rumors or unverified claims.\nInput: 10,000 refugees expected in austria today, per the red cross. about 20 percent are sick or injured. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but news article based on reported factual information from a reputable source such as the Red Cross.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 73,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the given input text is a rumor or not based on the content. \n\nDescription of Labels:\n- 'not rumor': Indicates that the text does not contain any false or misleading information.\n- 'rumor': Indicates that the text contains unverified or potentially false information.\nInput: men from #pakistan security forces told reporters to stop probing #tashfeenmalik background or face arrest URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or warningrumor or notrumorrumor or warningrumor or notrumorrumor or notrumorrumor or rumorrumor or notrumorrumor or rumorrumor or notrumorrumor orrumorrum or notrumorrumorrum or rumorrum or notrumorrumorrum or rumorrum or notrumorrumorrum orrumorrum or notrumorrumorrum orrumorrum or notrumorrumorrum orrumorrum or notrumorrumorrum orrumorrum or notrumorrumorrum orrumorrum or notrumorrumorrum orrumorrum or notrumorrumorrum or",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 74,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Determine if the input text contains a rumor or not based on the provided labels. Labels are: 'not rumor', indicating that the information presented is verified and accurate, and 'rumor', indicating that the information is unverified or potentially false.\nInput: a clever marketing campaign by norwegian airlines. / via URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or not rumor,rumor or not rumor,rumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrum or not rumorrum or not rumorrum or rumor or not rumorrum orrum or not rum orrumrum or not rum orrumrum or rum or not rumrum or rum or not rumrum orrum or not rum orrumrum orrum or not rum orrumrum orrum or not rum orrumrum or",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 75,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text based on whether it is a rumor or not. Assign the label 'rumor' if the text contains unverified information or hearsay, and assign the label 'not rumor' if the text provides verified or credible information.\nInput: obese woman arrested for starving her 7 kids: “there was only enough food for me” URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 76,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text based on whether it contains a rumor or not. Assign the label 'rumor' if the text indicates the presence of a rumor or misinformation, and assign the label 'not rumor' if the text does not contain any rumor or misinformation.\nInput: this is how the white house celebrated what obama called \"a victory for america.\" #lovewins URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or not rumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or rumor or notrumorrumorrumor or notrumorrumorrumor orrumor or notrumorrumorrumorrumor orrumor or notrumorrumorrumorrumor orrumor or notrumorrumorrumorrumorrumorrumor orrumorrum or notrumorrumorrumorrumorrumorrumorrum orrumorrum or notrumorrumorrumorrumorrumorrumorrum",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 77,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text as either a rumor or not a rumor based on the content. Assign the label 'rumor' if the text contains unverified or false information, while assign 'not rumor' if the text contains verified or truthful information.\nInput: donald trump defends christmas, says \"maybe we should boycott starbucks\" over new red cups: URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or notrumor but based on unverified or biased news sourcesrumor or notrumor but based on unverified or biased news sourcesbiased orbiased biased biased orbiased biased biasedbiased orbiasedbiased biasedbiased biased biasedbiased biased biasedbiased biased biased biased biasedbiased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased bi",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 78,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text as either 'not rumor' or 'rumor' based on the content. In this case, the output is 'rumor'. The label 'not rumor' refers to information that is confirmed or verified, while 'rumor' indicates that the information may be unconfirmed or spreading without substantiated evidence.\nInput: breaking: three hostages appear to have escaped the sydney cafe where a siege remains ongoing. URL #sydneyseige\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 79,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on whether it contains misinformation or not.\nLabels:\n- 'not rumor': The input text does not contain any rumors or misinformation.\n- 'rumor': The input text contains rumors or misinformation.\nInput: black islamic flag being held up in window of #lindt chocolate store in martin place, sydney - hostages inside. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 80,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text into either 'not rumor' or 'rumor' based on the content of the text. A text should be labeled as 'rumor' if it contains unverified or false information whereas it should be labeled as 'not rumor' if the information presented is accurate or verified.\nInput: 11 confirmed dead, francois hollande to visit scene of attack - latest from paris: URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 81,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text input based on whether it contains a rumor or not. Assign the label 'not rumor' if the text does not convey a rumor and 'rumor' if it does.\nInput: remembering the talented singer aaliyah on what would have been her 37th birthday: URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor biography or biographical biography or biographical biography biography biographical biography biography biography biographical biography biography biographical biography biography biographical biography biography biographical biography biography biographical biography biography biographical biography biography biographical biography biography biographical biography biography biographical biography biography biographical biography biography biographical biography biography biographical biography biography biographical biography biography biographical biography biography biographical biography biographical biography biographical biography biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical biography biographical bi",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 82,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text as either \"not rumor\" or \"rumor\" based on whether the information regarding Steve Jobs being adopted and his biological father being Abdulfattah Jandali is factual or a potential rumor. \n\n- 'not rumor': The information provided is factual, verified, and not a rumor.\n- 'rumor': The information provided is unverified, questionable, or potentially false.\nInput: remember the man who killed four marines in chattanooga? he was a refugee. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or not rumor: There is a rumor or a factual claim that is being spread, but it is not verified or confirmed. The rumor or claim is not necessarily false, but it is also not verified or confirmed. Rumors or claims of this type often circulate without being fact-checked or verified, and they may be based on incomplete or inaccurate information. It is important to fact-check and verify information before accepting or sharing it as true or not rumorrumor rumor or not rumor rumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 83,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text as either 'not rumor' or 'rumor'.\nInput: a boy dies after being bitten by a dog in essex, with a woman arrested for allowing a dog to be out of control URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 84,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input based on the presence of a rumor. Assign the label 'not rumor' if the input does not contain a rumor and 'rumor' if the input contains a rumor.\nInput: a crow tries to fight an eagle—gets a free ride instead: URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but a true story about animals behaving in an unusual manner. The story is based on a true event and is not a rumor. The video shows a crow trying to fight an eagle, but instead of fighting, the eagle ends up carrying the crow on its back. It is a remarkable sight, and it is a true occurrence. Not a rumor, but a true story based on facts.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 85,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text into one of the two categories: 'not rumor' or 'rumor', based on the content. In this case, the output should be 'rumor' as the input text discusses a rumor about Raven Symone blasting Bill Cosby's rape story.\nInput: the gunman in ottawa has been shot and killed. i'm at a loss for words this morning. that isn't my canada.\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 86,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Determine the veracity of the content in the input by classifying it as either \"not rumor\" or \"rumor\". For example, evaluate if the information presented, such as videos showing the suffering of starving in the Syrian town of #madaya, is accurate and reliable (not rumor) or false and unverified (rumor).\nInput: nfl: diagnosed concussions rose by nearly 32 percent this season. URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but news article or statistic report",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 87,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text into either \"rumor\" or \"not rumor\" based on whether the content suggests unverified information or facts respectively.\nInput: #breaking reports two customers and an employee have escaped the #sydneysiege URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 88,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the input text is a rumor or not based on the provided labels. \nDescription of labels:\n- 'not rumor': Indicates that the information in the text is factual and not a rumor.\n- 'rumor': Indicates that the information in the text is speculative or unverified, possibly spread without confirmation.\nInput: #donaldtrump's son spoke about his father's decision to visit flood-damaged louisiana while pres. obama played golf. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "biased or biased biased or biased biased biased biased biased biased biased biased biased biasedbiased biasedbiased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "not rumor"
+    },
+    {
+        "idx": 89,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text based on whether it contains a rumor or not. Assign the label \"not rumor\" if the text does not contain a rumor and assign the label \"rumor\" if the text contains a rumor.\nInput: breaking news: pope francis’ encounter with kim davis wasn’t an endorsement of her views, the vatican says. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but news article or rumor-notrumor",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 90,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text containing information about a crash that resulted in fatalities, mentioning a celebrity's involvement, into either \"not rumor\" or \"rumor\" categories.\nInput: the white house goes rainbow to celebrate supreme court marriage ruling URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but news article orrumor about a real event (not a rumor or news article, but a news article or rumor about a real event) not a rumor, but news article or rumor about a real event. The article or rumor is about a real event that happened or is happening, but the source of the information is not a primary source (e.g. not a direct source or a source directly involved in the event, but rather a secondary or tertiary source or a source with no direct connection to the event) not rumor or rumor rumor or news article rumor or news article not rumorrumorrumorrumorrumorrumorrumrumrumrum",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 91,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on whether it contains a rumor or not. Assign the label 'rumor' if the text contains unverified information or gossip, and assign the label 'not rumor' if the text presents verified and accurate information.\nInput: breaking: five explosions heard near bataclan concert hall in paris: reuters witness URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 92,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text as either 'not rumor' or 'rumor'.\nInput: only photo i will tweet. cpr being performed on the soldier now. i heard four shots. #ottawa URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor\nrumor has it that a soldier was shot in Ottawa, but I can't confirm any details yet. #ottawarumors Rumors of a possible shooting in downtown Ottawa.w Rumors of a possible shooting in downtown Ottawa.rumors of a possible shooting in downtown Ottawa.rumors of a possible shooting in downtown Ottawa.rumors of a possible shooting in downtown Ottawa.rumors of a possible shooting in downtown Ottawarumors of a possible shooting in downtown Ottawarumors of a possible shooting in downtown Ottawarumors of a possible shooting in downtown Ottawarumors of a",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 93,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on the labels provided. In this task, the labels are 'not rumor' and 'rumor'. Assign the appropriate label to the input text, which in this case would be 'rumor'.\nInput: that superman poster is legit: URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 94,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the text as either \"not rumor\" or \"rumor\" based on the content. Assign the label \"not rumor\" if the text contains sports information and describes a game event. Assign the label \"rumor\" if the text contains speculative or unverified information.\nInput: waiting for the new episode of #teenwolf like... URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, not rumor orrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrum",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 95,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the text regarding a suspected suicide car bomb blast near the Russian embassy in the Afghan capital, Kabul - reports URL into one of the following categories - 'not rumor' (indicating the event described is confirmed or reported by reliable sources) or 'rumor' (suggesting the event is unverified or deemed unreliable).\nInput: unstoppable! novak djokovic is now a perfect 6-for-6 in australian open finals after his win over andy murray. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " biased or biased biased or biasedbiased or biased biasedbiased or biasedbiased biased biased biased biased biasedbiasedbiased biased biased biasedbiased biasedbiased biased biased biased biased biased biased biasedbiased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "not rumor"
+    },
+    {
+        "idx": 96,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text based on whether it contains a rumor or not. Assign the label \"rumor\" if the text suggests unverified or false information, and assign the label \"not rumor\" if the text is factual and verified.\nInput: breaking: canada has four recent cases of #zika, all from travelers: public health agency\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or news article about current events, not rumorrumor but factual news article about current events.rumor or notrumorrumor or news article about current eventsrumor or notrumorrumor or news article about current eventsrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or rumor or notrumorrumorrumor or notrumorrumorrumor or notrumorrumorrumor or rumor or notrumorrumorrumor or notrumorrumorrumor or rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 97,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input based on the labels into 'not rumor' or 'rumor'. In this case, assign the output label 'rumor' or 'not rumor' to the input that includes news about #selena's killer & former fan club president not being released early from prison.\nInput: look: @whitehouse lights up in rainbow colors to celebrate #scotus same-sex marriage ruling URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 98,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given news article based on the information provided into either \"rumor\" or \"not rumor\" category. \"Rumor\" is assigned if the news content is unverified or spreading possibly false information, while \"not rumor\" is assigned to verified or credible news reports.\nInput: icymi: a dog accidentally stumbled into the middle of a local half marathon ... and earned 7th place. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 99,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text as either a rumor or not a rumor based on the content. If the text contains information that could be misleading, unverified, or potentially spread false information, label it as 'rumor.' Otherwise, label it as 'not rumor.'\nInput: vanessa hudgens' father, gregory hudgens, dies the night before \"grease: live\" URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not rumorrum or not",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 100,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text as either a 'not rumor' or a 'rumor' based on the content. In this case, the output is 'rumor' as the text discusses the mourning of Paul Walker by Vin Diesel and other 'Fast & Furious' co-stars.\nInput: nsw police confirm 5 hostages have emerged from #sydneysiege and they are negotiating: \"it might take a bit of time\" URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 101,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text into either 'not rumor' or 'rumor' based on the content. Assign the label that best represents whether the text contains a rumor or not.\nInput: charlie hebdo shooting latest: 12 dead and gunmen still at large URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor\nrumors of a shooting, with casualties and a gunman still on the loose. Rumors of a shooting, with casualties and a gunman still on the loose. Rumors of a shooting, with casualties and a gunman still on the loose. Rumors of a shooting, with casualties and a gunman still on the loose. Rumors of a shooting, with casualties and a gunman still on the loose. Rumors of a shooting, with casualties and a gunman still on the loose. Rumors of a shooting, with casualties and a gunman still on the loose. Rumors of a shooting, with casualties and a gunman",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 102,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the provided text based on whether it is considered a rumor or not.\n\nLabels: \n- 'not rumor': Indicates that the information is confirmed or credible.\n- 'rumor': Indicates that the information is unverified or speculative.\nInput: a man believed to be the gunman filmed wearing a black headband inside the cafe URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor not confirmed rumor or confirmationrumor or notrumorrumor not confirmedrumorrumorrumor rumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 103,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text based on whether it contains a rumor or not.  \n  - Labels:\n    - 'not rumor': Indicates the text does not contain a spreading rumor.\n    - 'rumor': Indicates the text contains a spreading rumor.\nInput: shots fired on parliament hill after a man walked up with a gun. i'm locked in a security office on parliament hill\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 104,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on whether it contains a factual statement or a rumor. Assign the label 'not rumor' if the text presents a verified fact, and 'rumor' if the text conveys unverified or false information.\nInput: top north korean diplomat who disappeared from london embassy has defected to south korea, seoul confirms URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but confirmed report - source is AP or Reuters or other trustworthy news agency or newspaper. Not rumor, but confirmed report.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 105,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the input text is related to a rumor or not. Assign the label 'not rumor' if the text is not spreading any unverified information or 'rumor' if the text contains potentially false or unconfirmed claims.\nInput: tupac was hiding for 18 years 😳 URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumorrumor, notrumorrumorrumor or notrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "rumor"
+    },
+    {
+        "idx": 106,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text based on whether it contains a rumor or not.\nLabels:\n- 'not rumor': The text does not contain any rumors or false information.\n- 'rumor': The text contains rumors or false information.\nInput: death toll from #bachakhanuniattack rises to at least 19; army official says firing has stopped as campus searched URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or news report of a current event, but not rumorrumor Rumor or news report of a current event, but not rumorrumor or news report of a current event, but not rumorrumor or news report of a current event, but not rumorrumor or news report of a current event, but not rumorrumor or news report of a current event, but not rumorrumor or news report of a current event, but not rumorrumor or news report of a current event, but not rumorrumor or news report of a current event, but not rumorrumor or news report of a current event, but not rumorrumor or news report of a current",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 107,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text as a rumor or not rumor based on the content. \n\n- Labels: \n  - 'not rumor': Indicates the text does not contain false information or claims.\n  - 'rumor': Signifies the text contains unverified or potentially false information or claims.\nInput: “@complexmag: someone spray painted a penis on a $2.4 million bugatti veyron: URL URL ” legendary\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or not rumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumorrum or notrumorrumorrumrum orrumor or notrumorrumorrumrumrum orrum or notrumorrumorrumrumrumrum orrum or notrumorrumorrumrumrumrumrum orrum or notrumorrumorrumrumrumrumrumrumrum orrum or notrumorrumorrumrumrumrumrumrumrumrum orrum or notrumorrumorrumrumrumrumrumrumrumrumrumrum orrum or notrumorrumorrumrumrum",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 108,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether an article is discussing a rumor or not based on the content provided.\n\n- Labels:\n    - 'not rumor': The article provides factual information and does not involve false or unverified claims.\n    - 'rumor': The article contains unverified or potentially false information.\nInput: 'do you know me? do you know my heart?' muslims in new york share their experiences URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "biased towards or biased biasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiased",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "not rumor"
+    },
+    {
+        "idx": 109,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text as either \"not rumor\" or \"rumor\" based on the content. \n\nBrief descriptions of labels:\n- 'not rumor': The text does not contain any rumors or false information.\n- 'rumor': The text contains rumors, unverified information, or potential misinformation.\nInput: this is the surface-to-air missile ukraine says shot down malaysia airlines plane URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or notrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 110,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on whether it pertains to a rumor or not. Assign the label 'rumor' if the input involves spreading unverified information or hearsay, while assign 'not rumor' if the content is verified or not speculative.\nInput: zika fever: a newly emerging disease is threatening the americas URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but based on verified news article or report about a real-world health concern: Zika virus outbreak in the Americas. The World Health Organization (WHO) has declared the outbreak a public health emergency of international concern, and the virus has been linked to birth defects and other health problems. The article or report provides factual information about the outbreak, not rumors or unverified claims. URL or links to trustworthy news sources provided. not rumor but based on verified news article or report about a real-world health concern: Zika virus outbreak in the Americas. The World Health Organization (WHO) has declared the outbreak a public health emergency of",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 111,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on whether it contains reliable information or a rumor about a reported event. Assign the label 'not rumor' if the text provides confirmed or factual details. Assign the label 'rumor' if the text conveys unverified or potentially false information.\nInput: uk home secretary theresa may says litvinenko's murder was \"blatant and unacceptable\" breach of international law URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, not rumor but news article or press release not rumor notrumor but news article or press release notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrumor notrum",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 112,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the input text contains a rumor or not based on the text content. \n\nLabels:\n- 'not rumor': Indicates that the text does not contain rumors or misinformation.\n- 'rumor': Suggests the presence of rumors or unverified information in the text.\nInput: d.a. to seek death in #moore, #oklahoma beheading case. #altonnolen #kellyfile URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor\nrumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 113,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the statement based on whether it is a rumor or not. Assign the label 'rumor' if the statement is a rumor, or 'not rumor' if the statement is not a rumor. \n\nLabels:\n- 'rumor': Indicates the statement is false or misleading information.\n- 'not rumor': Indicates the statement is true or accurate.\nInput: now: 12-year-old conservative cj pearson defends giuliani's comments on obama and his facebook gets shut down! URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "biased or biased biased biased biased biased biasedbiased biased biased biasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbi",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "rumor"
+    },
+    {
+        "idx": 114,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text based on whether it contains a rumor or not.\nLabels: \n- 'not rumor': If the text does not contain any misinformation, unverified claim, or false information.\n- 'rumor': If the text contains rumor, misinformation, or unverified claims.\nInput: iraq executes 36 jihadists over 2014 massacre of up to 1,700 army recruits at camp speicher URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " News article or report about a real event, so this is not a rumor. The article reports on a news event that has been reported on by multiple sources, including the Associated Press and other news agencies. The article cites the source of the information as \"Iraq executes 36 jihadists over 2014 massacre of up to 1,700 army recruits at camp Speicher\". The event occurred in 2014, and the article is based on factual reporting, not rumor.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 115,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text input that mentions watching Zayn Malik's surreal \"Pillowtalk\" video featuring Gigi Hadid using the labels ['not rumor', 'rumor'].\nInput: rip david bowie. can we also rip the \"battle with cancer\" cliche? implies you've \"lost\" the battle, as if you didn't fight hard enough.\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " biased or biased biased or biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "not rumor"
+    },
+    {
+        "idx": 116,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on whether it contains a rumor or not.\n\nLabels:\n- 'not rumor': Indicates that the input text does not contain a rumor or false information.\n- 'rumor': Indicates that the input text contains a rumor or false information.\nInput: police say they have located car belonging to suspect in #ottawa shooting. uniformed soldier shot at war memorial, condition unknown.\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or update on a current event, not rumorrumor or update on a current event, not rumorrumor or update on a current event, not rumorrumor or update on a current event, not rumorrumor or update on a current event, not rumorrumor or update on a current event, not rumorrumor or update on a current event, not rumorrumor or update on a current event, not rumorrumor or update on a current event, not rumorrumor or update on a current event, not rumorrumor or update on a current event, not rumorrumor or update on a current event, not rumorrumor or update on a",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 117,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input as either a rumor or not a rumor based on the content provided. Choose the label 'rumor' if the text suggests the information is spreading without substantial evidence or verification. Choose the label 'not rumor' if the content is factual and verified.\nInput: matt taibbi has left first look media. sorry to see him go. a great talent and we wish him well. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "biased or biased biased or biased biased or biasedbiased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased bi",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "rumor"
+    },
+    {
+        "idx": 118,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text based on whether it contains a rumor or not.\n\nLabels:\n- 'not rumor': Indicates that the input text does not contain a rumor, false information, or unverified news.\n- 'rumor': Indicates that the input text suggests a possible rumor, false information, or unverified news.\nInput: someone spray painted a penis on a $2.4 mill bugatti URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or not rumorrumor or not rumorrumor or notrumor notrumor rumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumorrum or notrumorrumorrum orrumorrum orrumorrum orrumrumrum orrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrumrum",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 119,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text as either a rumor or not a rumor based on the content. Assign the label 'rumor' if the text contains false or misleading information that is unverified or fabricated. Assign the label 'not rumor' if the text contains accurate information that debunks any false claims or misinformation.\nInput: goodbye elly may: 'beverly hillbillies' star donna douglas dead at 81, reports say. URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, rumor\nrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrum or not rumorrumrum or not rumorrum or rum or not rumrumrum orrum or not rumrumrum orrum or not rumrumrum orrum or not rumrumrum orrum or not rumrumrum orrum or not rumrumrum orrum or not rumrumrum orrum or not rumrumrum orrum or not rumrumrum orrum or not rumrumrum or",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 120,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text into two categories: 'not rumor' (indicating the text does not contain any baseless information or gossip) and 'rumor' (signifying the text contains unverified or potentially false information).\nInput: ben simmons could be 1st sec player since shaq to average a 20-10. t-minus 2 hours till he faces no. 1 ou on espn. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "biased or biased biased or biased biased or biased biased biasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbi",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "not rumor"
+    },
+    {
+        "idx": 121,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text as either 'rumor' or 'not rumor' based on the content. In this scenario, the output is 'rumor' indicating that the provided input likely contains information that could be inaccurate or unverified.\nInput: icymi: mammoth bones from the ice age were unearthed at oregon state's football stadium. URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 122,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the information in the input tweet is a rumor or not based on the following labels:\n\n- 'not rumor': Indicates that the information provided is confirmed and factual.\n- 'rumor': Indicates that the information provided is not confirmed and might be false or misleading.\nInput: don't put your iphone 6 in your pocket y'all URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or not rumorrumor or notrumor but not confirmedrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumorrum or rumor or notrumorrumorrum or rumor or notrumorrumorrum orrumor or notrumorrumorrum or rumor or notrumorrumorrum orrumor or notrumorrumorrum orrumor or notrumorrumorrum orrumor or notrumorrumorrum orrumor or notrumorrum",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 123,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the text based on whether it contains information pertaining to a rumor or not.\n\nLabels: \n- 'not rumor': Indicates that the text does not contain any rumor or false information.\n- 'rumor': Indicates that the text contains unverified or potentially false information that may be a rumor.\nInput: yes, trump really said, \"the whites don't get any nominations\" at the bet awards: URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or quote verification, not rumor, but rumor or hearsay or quotation verification, notrumorrumor or hearsay or quote verificationrumor or notrumorrumor or hearsay or quote verificationrumor or notrumorrumor or hearsay or quote verificationrumor or notrumorrumor or hearsay or quote verificationrumor or notrumorrumor or hearsay or quote verificationrumor or notrumorrumor or hearsay or quote verificationrumor or notrumorrumor or hearsay or quote verificationrumor or notrumorrumor or hearsay or quote verificationrum",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 124,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text containing 36 best quotes from Davos 2016 into one of the two categories - 'not rumor' or 'rumor'.\nInput: sugarhill gang's big bank hank dies -- dead at 57 from cancer URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " biographical or biographical biographical biographical biography biograph biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography biography bi",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "rumor"
+    },
+    {
+        "idx": 125,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether the input text is a rumor or not rumor based on the provided content. \nLabels:\n- 'not rumor': Indicates the text contains valid and factual information.\n- 'rumor': Suggests the text may contain unverified or false information or gossip.\nInput: the story of a 17-year-old stock whiz with a rumored net worth of $72 million made a splash, but quickly unraveled. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but based on a true story. The article reports on a real-life event or person, but the specific details may be exaggerated or exaggerated. The term \"rumor\" is not used, but the article does not provide enough information to verify the net worth of the 17-year-old. Therefore, it is not a rumor, but not a confirmed fact either.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 126,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text into one of two categories based on the labels provided. The labels are 'not rumor' for non-rumors and 'rumor' for potential rumors or unverified information.\nInput: after 40-year ban, u.s. starts exporting crude oil URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, news article based on factual events, but with a not rumor label applied as no rumor or rumor is involved in this article. News article about a real event. not rumor, but fact-based news article about a real event. not rumor, but fact-based news article about a real event. not rumor, but fact-based news article about a real event. not rumor, but fact-based news article about a real event. not rumor, but fact-based news article about a real event. not rumor, but fact-based news article about a real event. not rumor, but fact-based news article about a real event. not rumor, but",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 127,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the text as either a rumor or not a rumor based on the content. \n\nLabels:\n- 'not rumor': Indicates that the text does not contain any unverified or false information.\n- 'rumor': Indicates that the text contains unverified or false information that is circulating as a rumor.\nInput: remembering paul walker: fast and furious star was \"so happy\" hours before his tragic death URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumorrumor or not rumor",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 128,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the text as either 'not rumor' or 'rumor' based on whether the content is factual information ('not rumor') or a piece of unverified or false information ('rumor').\nInput: #psa please do not drink any pepsi soda, a worker from that company has put blood contaminated with aids inside the bottles!!! please rt!!\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 129,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input based on the presence of a rumor related to a celebrity or public figure. Labels are 'not rumor' for content that does not suggest a rumor and 'rumor' for content that does suggest a rumor.\nInput: 2 new victims en route to ottawa hospital; 1 shot, both non-life-threatening, hospital says - @michaelctv, @cbcnews URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 130,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether a given news update is a rumor or not based on the information provided.  \nDescription of labels:\n- 'not rumor': Indicates that the news update contains verified and confirmed information without any elements of speculation or misinformation.\n- 'rumor': Specifies that the news update includes unconfirmed or false information that needs to be verified before considering it as accurate.\nInput: kentucky leads kansas 46-40 at the half. tyler ulis has scored or assisted on 11 of the wildcats' 17 field goals. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor but not rumor either. Just a news update reporting on a current event, the Kentucky-Kansas basketball game. The details provided are based on actual events and are not rumored or speculative. The source is a trusted news source and the information is verified. Not rumor but not rumor either. Just a news update reporting on a current event. not rumor but not rumor either. just a news update reporting on a current event. not rumor but not rumor either. just a news update reporting on a current event. not rumor but not rumor either. just a news update reporting on a current event. not rumor but not rumor either. just a news update reporting on a",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 131,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text based on whether it contains a rumor or not. Assign the label 'not rumor' if the text does not contain a rumor, and assign the label 'rumor' if the text does contain a rumor.\nInput: actor who played marlboro man in ads dies from smoking-related disease URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but rather a news article about a real person who died from a smoking-related disease, hence the not rumor but fact-based article about his death.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 132,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text as 'not rumor' or 'rumor' based on the content. \nLabels: \n- 'not rumor': Indicates the text contains factual information or is not related to a rumor.\n- 'rumor': Indicates the text contains unverified or false information that may be circulating as a rumor.\nInput: banksy shares simple but beautiful tribute to charlie hebdo cartoonists URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " biased biased biased biased biased biased biased biasedbiased biasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiased",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "rumor"
+    },
+    {
+        "idx": 133,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text based on whether it contains a factual statement or a rumor regarding the topic mentioned in the URL.\n\nLabels:\n- 'not rumor': Indicates that the information provided in the text is a verified fact and not a rumor.\n- 'rumor': Indicates that the information provided in the text is an unverified claim or rumor.\nInput: walmart donates $10,000 to support darren wilson, but won't give tracy morgan a penny for the accident their company caused. #boycottwalmart\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or allegation, but not verifiedrumor orrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor or allegationrumor orrumor or rumorrumor orrumor orrumorrumor orrumorrumorrumorrumorrumorrumorrumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 134,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether a tweet contains a rumor or not based on the content. \nLabels: \n- 'not rumor': Indicates that the tweet does not contain misleading or false information.\n- 'rumor': Indicates that the tweet contains rumors or false information.\nInput: breaking: 15.1 foot tsunami reported in coquimbo. #earthquake #tsunami\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 135,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the text based on whether it contains a rumor or not.\n\nLabels:\n- 'not rumor': Indicates that the text does not contain any rumor or false information.\n- 'rumor': Indicates that the text contains a rumor or false information.\nInput: 19-year-old girl wakes up during brain surgery, asks doctors ‘how’s it going?’ URL via @foxnewshealth\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but news article or true story\nrumor or true story norumor notrumor notrumor notrumor truemagazine article or news story true notrumor notrumor notrumor notrumorrum or true story true notrumor notrumor notrumor notrumorrum or true story true notrumor notrumor notrumor notrumorrum or true story true notrumor notrumor notrumor notrumorrum or true story true notrumor notrumor notrumor notrumorrum or true story true notrumor notrumor notrumor notrumorrum or true story true notrumor notrumor notrumor not",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 136,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify whether a news piece is labeled as \"rumor\" or \"not rumor.\" If the input text discusses unconfirmed events or information that lacks official verification like claims in this instance, categorize it as \"rumor.\" If the content pertains to verified, factual information, choose the label \"not rumor.\"\nInput: surprise surprise, @shaq. on @jimmykimmellive, the lakers icon learned he'd be honored w/ a staples center statue. URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " biased orbi biased biased orbi biasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiased",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "not rumor"
+    },
+    {
+        "idx": 137,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given text as either \"not rumor\" or \"rumor\" based on the content. \n- 'not rumor': Indicates that the text is factual or credible information.\n- 'rumor': Indicates that the text contains unverified, potentially false information.\nInput: pope francis again appears to suggest progress, but just makes false claims, as his religious belief requires of him URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but criticism or analysis of a religious figure or institution.rumor or notrumor, but not rumor or rumor, but criticism or analysis of a religious figure or institution. not rumor, but fact-based criticism or analysis of a religious figure or institution, not rumor, but fact-based criticism or analysis of a religious figure or institution. not rumor, but fact-based criticism or analysis of a religious figure or institution not rumor, but fact-based criticism or analysis of a religious figure or institution notrumor, but fact-based criticism or analysis of a religious figure or institution notrumor, but fact-based criticism or analysis of a religious figure or institution notrumor, but",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 138,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input as either \"not rumor\" or \"rumor\" based on the content. \n- Label 'not rumor': Indicates that the text does not contain any rumors or unverified information.\n- Label 'rumor': Indicates that the text contains rumors or unverified information.\nInput: 1 billion young people will start work in the next decade—only 40% in jobs that now exist URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " not rumor, but based on a prediction or estimate: not rumor but based on a prediction or estimate. Not rumor, but based on a prediction or estimate. The article provides a specific date and source for the prediction, and not rumor or rumor but based on a prediction or estimate. Not rumor but based on a prediction or estimate.",
+        "prediction_processed": "not rumor",
+        "prediction_finder": "not rumor",
+        "label": "not rumor"
+    },
+    {
+        "idx": 139,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Determine whether the input text contains a rumor or not.  \nLabels: \n- 'not rumor': The text does not contain any false information or unverified claims.\n- 'rumor': The text contains false information or unverified claims that may mislead or deceive readers.\nInput: ottawa shooting: how events unfolded, first shots fired at 9:52 a.m. at the war memorial URL URL\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or notrumor, butrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumor or notrumorrumorrum orrumor or notrumorrumorrum orrumor or notrumorrumorrumrum orrumor or notrumorrumorrumrum orrumor or notrumorrumorrumrum orrumor or notrumorrumorrumrum orrumor or notrumorrumorrumrum orrumor or notrumorrumorrumrum orrumor or notrumorrumorrumrum orrumor or",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 140,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the input text based on the content into one of the two categories - 'not rumor' or 'rumor'.\nInput: r.i.p to the driver who died with paul walker that no one cares about because he wasn’t famous\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": " rumor or notrumorrumor or rumorrumor or notrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrumorrum",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    },
+    {
+        "idx": 141,
+        "prompt": "<s>[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n\n<</SYS>>\n\nInstruction: Classify the given input text based on the provided labels into either 'rumor' or 'not rumor'.\nInput: fukushima's new looming crisis: radioactive groundwater seeping toward pacific ocean, @mariyamaguchi reports: URL -jm\nLabel options: \"not rumor\", \"rumor\"\nAnswer: [/INST]",
+        "prediction": "rumor or fact-based news article, but not rumorrumor-rumor or fact-based news article, but not rumorrumor or fact-based news article, but not rumorrumor or fact-based news article, but not rumorrumor or fact-based news article, but not rumorrumor or fact-based news article, but not rumorrumor or fact-based news article, but not rumorrumor or fact-based news article, but not rumorrumor or fact-based news article, but not rumorrumor or fact-based news article, but not rumorrumor or fact-based news article, but not rumorrumor or fact",
+        "prediction_processed": "rumor",
+        "prediction_finder": "rumor",
+        "label": "rumor"
+    }
+]

@@ -7,14 +7,19 @@ from typing import Optional
 
 import torch
 from dotenv import load_dotenv
-from peft import AutoPeftModelForCausalLM
+
+# from peft import AutoPeftModelForCausalLM
 from peft import LoraConfig
+from peft import PeftModel
+from transformers import AutoModelForCausalLM
 from transformers import AutoTokenizer
+from transformers import BitsAndBytesConfig
 from transformers import HfArgumentParser
 from transformers import TrainingArguments
 from trl import DPOTrainer
 
 from social_llama.data_processing.combine import Combined
+from social_llama.data_processing.instruction_socket import InstructionSocket
 from social_llama.data_processing.social_dimensions import SocialDimensions
 from social_llama.data_processing.socket import Socket
 
@@ -33,19 +38,19 @@ class ScriptArguments:
     )
     # training parameters
     model_name_or_path: Optional[str] = field(
-        default="sft/Llama-2-7b-chat-hf_zero-shot_combined_first_exhausted_1epoch/final_checkpoint",
+        default="sft/Meta-Llama-3-8B-Instruct_socket_1_epoch/final_checkpoint",
         metadata={"help": "the location of the SFT model name or path"},
     )
     base_model: Optional[str] = field(
-        default="meta-llama/Llama-2-7b-chat-hf",
+        default="meta-llama/Meta-Llama-3-8B-Instruct",
         metadata={"help": "the base model name or path"},
     )
     dataset_name: Optional[str] = field(
-        default="combined",
+        default="socket",
         metadata={"help": "the dataset name"},
     )
     output_dir: Optional[str] = field(
-        default="./dpo/Llama-2-7b-chat-hf_zero-shot_combined_3epoch",
+        default="./dpo/Meta-Llama-3-8B-Instruct_socket_1_epoch_1_epoch",
         metadata={"help": "the output directory"},
     )
     learning_rate: Optional[float] = field(
@@ -68,10 +73,10 @@ class ScriptArguments:
         default=2, metadata={"help": "train batch size per device"}
     )
     per_device_eval_batch_size: Optional[int] = field(
-        default=2, metadata={"help": "eval batch size per device"}
+        default=1, metadata={"help": "eval batch size per device"}
     )
     gradient_accumulation_steps: Optional[int] = field(
-        default=2, metadata={"help": "the number of gradient accumulation steps"}
+        default=32, metadata={"help": "the number of gradient accumulation steps"}
     )
     gradient_checkpointing: Optional[bool] = field(
         default=True, metadata={"help": "whether to use gradient checkpointing"}
@@ -95,7 +100,7 @@ class ScriptArguments:
     #     default=12000, metadata={"help": "max number of training steps"}
     # )
     num_train_epochs: Optional[int] = field(
-        default=3, metadata={"help": "max number of training steps"}
+        default=1, metadata={"help": "max number of training steps"}
     )
     logging_steps: Optional[int] = field(
         default=5, metadata={"help": "the logging frequency"}
@@ -136,15 +141,43 @@ if __name__ == "__main__":
     parser = HfArgumentParser(ScriptArguments)
     script_args = parser.parse_args_into_dataclasses()[0]
 
-    # 1. load a pretrained model
-    model = AutoPeftModelForCausalLM.from_pretrained(
-        script_args.model_name_or_path,
-        low_cpu_mem_usage=True,
-        torch_dtype=torch.float32,
+    # Load the base model.
+    bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
-        is_trainable=True,
-        # device_map={"": Accelerator().local_process_index},
-        # device_map={"":torch.cuda.current_device()}
+        # load_in_8bit=True,
+        # llm_int8_threshold=6.0,
+        # llm_int8_has_fp16_weight=False,
+        # bnb_4bit_compute_dtype=torch.bfloat16,
+        # bnb_4bit_use_double_quant=True,
+        # bnb_4bit_quant_type="nf4",
+    )
+
+    # 1. load a pretrained model
+    # model = AutoPeftModelForCausalLM.from_pretrained(
+    #     script_args.model_name_or_path,
+    #     low_cpu_mem_usage=True,
+    #     torch_dtype=torch.float32,
+    #     load_in_4bit=False,
+    #     load_in_8bit=True,
+    #     is_trainable=True,
+    #     # device_map={"": Accelerator().local_process_index},
+    #     # device_map={"":torch.cuda.current_device()}
+    # )
+    model = AutoModelForCausalLM.from_pretrained(
+        script_args.base_model,
+        # load_in_4bit=True,
+        quantization_config=bnb_config,
+        # attn_implementation="flash_attention_2",
+        torch_dtype=torch.float32,
+        device_map="auto",
+    )
+    model_ref = AutoModelForCausalLM.from_pretrained(
+        script_args.base_model,
+        # load_in_4bit=True,
+        quantization_config=bnb_config,
+        # attn_implementation="flash_attention_2",
+        torch_dtype=torch.float32,
+        device_map="auto",
     )
     model.config.use_cache = False
 
@@ -157,18 +190,37 @@ if __name__ == "__main__":
             name for name, buffer in model.named_buffers() if buffer.dtype == torch.bool
         ]
 
-    model_ref = AutoPeftModelForCausalLM.from_pretrained(
+    # Load the adapter.
+    model = PeftModel.from_pretrained(
+        model,
         script_args.model_name_or_path,
-        low_cpu_mem_usage=True,
-        torch_dtype=torch.float32,
-        load_in_4bit=True,
-        # device_map={"": Accelerator().local_process_index},
-        # device_map={"":torch.cuda.current_device()}
+        is_trainable=True,
+        # adapter_name="train",
     )
+    # Load the adapter a second time, with a different name, which will be our reference model.
+    # model.load_adapter(script_args.model_name_or_path, adapter_name="reference")
+
+    model_ref = PeftModel.from_pretrained(
+        model_ref,
+        script_args.model_name_or_path,
+        # adapter_name="train",
+    )
+
+    # model_ref = AutoPeftModelForCausalLM.from_pretrained(
+    #     script_args.model_name_or_path,
+    #     low_cpu_mem_usage=True,
+    #     torch_dtype=torch.float32,
+    #     load_in_4bit=False,
+    #     load_in_8bit=True,
+    #     # device_map={"": Accelerator().local_process_index},
+    #     # device_map={"":torch.cuda.current_device()}
+    # )
     if script_args.dataset_name == "social-dimensions":
         dataset = SocialDimensions(task="zero-shot", model=script_args.base_model)
     elif script_args.dataset_name == "socket":
         dataset = Socket(task="zero-shot", model=script_args.base_model)
+    elif script_args.dataset_name == "instruction-socket":
+        dataset = InstructionSocket(task="zero-shot", model=script_args.base_model)
     elif script_args.dataset_name == "combined":
         dataset = Combined(model=script_args.base_model)
 
@@ -200,8 +252,8 @@ if __name__ == "__main__":
         lr_scheduler_type=script_args.lr_scheduler_type,
         warmup_steps=script_args.warmup_steps,
         optim=script_args.optimizer_type,
-        fp16=False,
-        # bf16=True,
+        # fp16=False,
+        bf16=True,
         remove_unused_columns=False,
         run_name=f"dpo_{MODEL_NAME}",
     )
@@ -219,6 +271,16 @@ if __name__ == "__main__":
             "fc_out",
             "wte",
         ],
+        # if "llama" in script_args.base_model
+        # else [
+        #     "q_proj",
+        #     "o_proj",
+        #     "k_proj",
+        #     "v_proj",
+        #     "gate_proj",
+        #     "up_proj",
+        #     "down_proj",
+        # ],
         bias="none",
         task_type="CAUSAL_LM",
     )
@@ -232,9 +294,11 @@ if __name__ == "__main__":
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
         tokenizer=tokenizer,
-        peft_config=peft_config,
+        # peft_config=peft_config,
         max_prompt_length=script_args.max_prompt_length,
         max_length=script_args.max_length,
+        # model_adapter_name="train",
+        # ref_adapter_name="reference",
     )
 
     # 6. train

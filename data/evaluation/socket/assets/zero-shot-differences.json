@@ -1,0 +1,186 @@
+[
+    {
+        "Group": "Humor and Sarcasm",
+        "task": "hahackathon#is_humor",
+        "diff_sociallite-instrucitons-zero-shot": 0.009,
+        "diff_fine-tune-zero-shot": 0.228,
+        "diff_reverse-instructions": 0.484,
+        "diff_RAG": 0.398
+    },
+    {
+        "Group": "Humor and Sarcasm",
+        "task": "sarc",
+        "diff_sociallite-instrucitons-zero-shot": 0.0985,
+        "diff_fine-tune-zero-shot": 0.053,
+        "diff_reverse-instructions": 0.0675,
+        "diff_RAG": 0.3025
+    },
+    {
+        "Group": "Humor and Sarcasm",
+        "task": "tweet_irony",
+        "diff_sociallite-instrucitons-zero-shot": 0.0586734694,
+        "diff_fine-tune-zero-shot": 0.2767857143,
+        "diff_reverse-instructions": 0.5357142857,
+        "diff_RAG": 0.2640306122
+    },
+    {
+        "Group": "Offensiveness",
+        "task": "contextual-abuse#IdentityDirectedAbuse",
+        "diff_sociallite-instrucitons-zero-shot": 0.1085501859,
+        "diff_fine-tune-zero-shot": -0.0550185874,
+        "diff_reverse-instructions": -0.0535315985,
+        "diff_RAG": 0.2
+    },
+    {
+        "Group": "Offensiveness",
+        "task": "contextual-abuse#PersonDirectedAbuse",
+        "diff_sociallite-instrucitons-zero-shot": 0.1182156134,
+        "diff_fine-tune-zero-shot": -0.0587360595,
+        "diff_reverse-instructions": -0.0089219331,
+        "diff_RAG": 0.1211895911
+    },
+    {
+        "Group": "Offensiveness",
+        "task": "hasbiasedimplication",
+        "diff_sociallite-instrucitons-zero-shot": 0.116,
+        "diff_fine-tune-zero-shot": 0.5595,
+        "diff_reverse-instructions": 0.671,
+        "diff_RAG": 0.4775
+    },
+    {
+        "Group": "Offensiveness",
+        "task": "hateoffensive",
+        "diff_sociallite-instrucitons-zero-shot": 0.0693227092,
+        "diff_fine-tune-zero-shot": 0.6725099602,
+        "diff_reverse-instructions": 0.7099601594,
+        "diff_RAG": 0.5593625498
+    },
+    {
+        "Group": "Offensiveness",
+        "task": "implicit-hate#explicit_hate",
+        "diff_sociallite-instrucitons-zero-shot": 0.1435,
+        "diff_fine-tune-zero-shot": 0.6985,
+        "diff_reverse-instructions": 0.732,
+        "diff_RAG": 0.0585
+    },
+    {
+        "Group": "Offensiveness",
+        "task": "implicit-hate#implicit_hate",
+        "diff_sociallite-instrucitons-zero-shot": 0.1405,
+        "diff_fine-tune-zero-shot": 0.1395,
+        "diff_reverse-instructions": 0.4025,
+        "diff_RAG": 0.045
+    },
+    {
+        "Group": "Offensiveness",
+        "task": "implicit-hate#stereotypical_hate",
+        "diff_sociallite-instrucitons-zero-shot": 0.218,
+        "diff_fine-tune-zero-shot": 0.6015,
+        "diff_reverse-instructions": 0.693,
+        "diff_RAG": 0.649
+    },
+    {
+        "Group": "Offensiveness",
+        "task": "intentyn",
+        "diff_sociallite-instrucitons-zero-shot": 0.207,
+        "diff_fine-tune-zero-shot": 0.27,
+        "diff_reverse-instructions": 0.507,
+        "diff_RAG": 0.3745
+    },
+    {
+        "Group": "Offensiveness",
+        "task": "tweet_offensive",
+        "diff_sociallite-instrucitons-zero-shot": 0.0825581395,
+        "diff_fine-tune-zero-shot": 0.273255814,
+        "diff_reverse-instructions": 0.4151162791,
+        "diff_RAG": 0.6325581395
+    },
+    {
+        "Group": "Sentiment and Emotion",
+        "task": "crowdflower",
+        "diff_sociallite-instrucitons-zero-shot": 0.01,
+        "diff_fine-tune-zero-shot": 0.1255,
+        "diff_reverse-instructions": 0.136,
+        "diff_RAG": 0.2065
+    },
+    {
+        "Group": "Sentiment and Emotion",
+        "task": "dailydialog",
+        "diff_sociallite-instrucitons-zero-shot": -0.057,
+        "diff_fine-tune-zero-shot": 0.6915,
+        "diff_reverse-instructions": 0.6705,
+        "diff_RAG": -0.0045
+    },
+    {
+        "Group": "Sentiment and Emotion",
+        "task": "empathy#distress_bin",
+        "diff_sociallite-instrucitons-zero-shot": 0.0806451613,
+        "diff_fine-tune-zero-shot": 0.1344086022,
+        "diff_reverse-instructions": 0.4784946237,
+        "diff_RAG": 0.5376344086
+    },
+    {
+        "Group": "Sentiment and Emotion",
+        "task": "tweet_emotion",
+        "diff_sociallite-instrucitons-zero-shot": 0.0499648135,
+        "diff_fine-tune-zero-shot": 0.2280084448,
+        "diff_reverse-instructions": 0.2540464462,
+        "diff_RAG": 0.6143560873
+    },
+    {
+        "Group": "Social Factors",
+        "task": "complaints",
+        "diff_sociallite-instrucitons-zero-shot": 0.0289855072,
+        "diff_fine-tune-zero-shot": 0.3130434783,
+        "diff_reverse-instructions": 0.4579710145,
+        "diff_RAG": 0.6782608696
+    },
+    {
+        "Group": "Social Factors",
+        "task": "hayati_politeness",
+        "diff_sociallite-instrucitons-zero-shot": 0.0625,
+        "diff_fine-tune-zero-shot": 0.0625,
+        "diff_reverse-instructions": 0.1875,
+        "diff_RAG": 0.625
+    },
+    {
+        "Group": "Social Factors",
+        "task": "questionintimacy",
+        "diff_sociallite-instrucitons-zero-shot": 0.0844444444,
+        "diff_fine-tune-zero-shot": 0.1555555556,
+        "diff_reverse-instructions": 0.1333333333,
+        "diff_RAG": 0.1555555556
+    },
+    {
+        "Group": "Social Factors",
+        "task": "stanfordpoliteness",
+        "diff_sociallite-instrucitons-zero-shot": 0.0617283951,
+        "diff_fine-tune-zero-shot": 0.2380952381,
+        "diff_reverse-instructions": 0.2927689594,
+        "diff_RAG": 0.5185185185
+    },
+    {
+        "Group": "Trustworthiness",
+        "task": "hypo-l",
+        "diff_sociallite-instrucitons-zero-shot": 0.2198142415,
+        "diff_fine-tune-zero-shot": 0.2600619195,
+        "diff_reverse-instructions": 0.5665634675,
+        "diff_RAG": 0.4520123839
+    },
+    {
+        "Group": "Trustworthiness",
+        "task": "rumor#rumor_bool",
+        "diff_sociallite-instrucitons-zero-shot": 0.2605633803,
+        "diff_fine-tune-zero-shot": 0.3169014085,
+        "diff_reverse-instructions": 0.4084507042,
+        "diff_RAG": 0.7042253521
+    },
+    {
+        "Group": "Trustworthiness",
+        "task": "two-to-lie#receiver_truth",
+        "diff_sociallite-instrucitons-zero-shot": -0.021312873,
+        "diff_fine-tune-zero-shot": 0.010230179,
+        "diff_reverse-instructions": 0.3657289003,
+        "diff_RAG": 0.8158567775
+    }
+]

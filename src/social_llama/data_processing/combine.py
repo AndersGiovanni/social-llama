@@ -13,7 +13,7 @@ from datasets.formatting.formatting import LazyRow
 from transformers import AutoTokenizer
 from trl.trainer import ConstantLengthDataset
 
-from social_llama.config import LlamaConfigs
+from social_llama.config import Configs
 from social_llama.data_processing.social_dimensions import (
     Sample as SocialDimensionsSample,
 )
@@ -45,7 +45,7 @@ class Combined:
         self.tokenizer.padding_side = (
             "right"  # Fix weird overflow issue with fp16 training
         )
-        self.llama_config = LlamaConfigs()
+        self.llama_config = Configs()
 
     def get_data(self) -> None:
         """Get the data from the datasets."""
@@ -133,7 +133,9 @@ class Combined:
         Returns:
             str: Prompt for the example
         """
-        chat: List[Dict[str, str]] = self.llama_config.get_chat_template()
+        chat: List[Dict[str, str]] = self.llama_config.get_chat_template(
+            "system" if "llama" in self.model else "user"
+        )
 
         # If we want to make a custom prompt.
         chat[0]["content"] = chat[0]["content"].format(prompt_prefix="")
@@ -163,12 +165,18 @@ class Combined:
                     + f" You can choose from the following labels: {', '.join(self.socket_dataset.labels[example['task']])}\nAnswer: {self.socket_dataset.labels[example['task']][example['label']]}"
                 )
 
-        chat.append(
-            {
+        if "llama" in self.model:
+            chat.append(
+                {
+                    "role": "user",
+                    "content": task_prompt,
+                }
+            )
+        else:
+            chat[0] = {
                 "role": "user",
-                "content": task_prompt,
+                "content": f"{chat[0]['content']} {task_prompt}",  # Gemma is not trained with a system prompt
             }
-        )
 
         return self.tokenizer.apply_chat_template(
             chat, tokenize=False, add_generation_prompt=True

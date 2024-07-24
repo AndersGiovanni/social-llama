@@ -205,7 +205,9 @@ class SocialDimensions(DataClass):
         Raises:
             ValueError: If the task is not supported.
         """
-        chat: List[Dict[str, str]] = self.llama_config.get_chat_template()
+        chat: List[Dict[str, str]] = self.llama_config.get_chat_template(
+            "system" if "llama" in self.model else "user"
+        )
 
         chat[0]["content"] = chat[0]["content"].format(
             prompt_prefix=self.config.prompt_prefix
@@ -251,12 +253,18 @@ class SocialDimensions(DataClass):
         else:
             raise ValueError(f"Type {type} is not supported.")
 
-        chat.append(
-            {
+        if "llama" in self.model:
+            chat.append(
+                {
+                    "role": "user",
+                    "content": task_prompt,
+                }
+            )
+        else:
+            chat[0] = {
                 "role": "user",
-                "content": task_prompt,
+                "content": f"{chat[0]['content']} {task_prompt}",  # Gemma is not trained with a system prompt
             }
-        )
 
         return self.tokenizer.apply_chat_template(
             chat, tokenize=False, add_generation_prompt=True

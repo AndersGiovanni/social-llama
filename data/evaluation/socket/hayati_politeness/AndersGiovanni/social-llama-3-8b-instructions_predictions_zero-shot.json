@@ -1,0 +1,258 @@
+[
+    {
+        "idx": 0,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given text into either 'impolite' or 'polite'. \n\n- 'impolite' label indicates that the text displays rudeness, lack of courtesy, or disrespectful tone.\n- 'polite' label indicates that the text is courteous, shows respect, and maintains a considerate tone.\nInput: Don't ever kiss the other girl in a 3some, don't hug that hoe none of that\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Offbeat, explicit, and impolite text. Not polite language used. Not suitable for a general audience. IMPOLITE label. offbeat language not suitable for all audiences not polite language used\nNote: The text is explicit and uses offensive language. It is not suitable for a general audience and is impolite in tone.\nLabel: IMPOLITE\nOffbeat language not suitable for all audiences not polite language used\nnot polite language used\nnot suitable for a general audience\nnot suitable for all audiences not polite language used\nnot polite language used\nIMPOLITE\nnot suitable for all audiences not polite language used not suitable for all audiences not polite language used not polite language used not suitable for all audiences not",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 1,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the sentiment of the input text as either 'impolite' or 'polite'. The label 'impolite' should be assigned when the text contains disrespectful or negative language, whereas the label 'polite' should be assigned when the text is respectful or positive in nature.\nInput: @BarackObama @MichelleObama omfg you elitist bitch no one cares what you think! go fuck yourselves are you in china anyway?\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite (offensive and respectful) (not polite)\n",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 2,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the input text based on politeness, assigning the label 'impolite' if the text contains rude or disrespectful language, and 'polite' if the text is respectful and courteous.\nInput: What is this miserable ass weather all about  dark and gloomy #depressing #weekoff #wheresthesun\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite (weather complaining and use of rude language)\nnot polite (not respectful, as it's not a respectful way to express weather complaints)\n\nNote: not polite, not respectful, not nice (not a good day weather-wise)  (not a good day mood-wise) (not a good day weather-wise  (not a good day mood-wise)  not a good day weather-wise  (not a good day mood-wise)  not a good day weather-wise  (not a good day mood-wise)  not a good day weather-wise  (not a good day mood-wise)  not a good day weather-wise  (not a good day mood-wise)  not a good day weather-wise ",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 3,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given text based on the sentiment expressed as either 'impolite' or 'polite'. Assign 'impolite' label if the text contains negative criticism or unfavorable remarks. Assign 'polite' label if the text is positive or neutral in tone, avoiding negative connotations.\nInput: An exhilarating futuristic thriller-noir , Minority Report twists the best of technology around a gripping story , delivering a riveting , pulse intensifying escapist adventure of the first order\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "no not impolite, positive review\nno not polite, no not biased, no not biased biased, biased, biased, biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "polite"
+    },
+    {
+        "idx": 4,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the input text based on its politeness level into either 'impolite' or 'polite' given the predefined labels.\nInput: So... you want to implement an exclusive decision tree without using if/elif? Why???\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Impolite\nnot very polite tone and a hint of frustration\n\n Tone: Curious but slightly annoyed\nbiased towards negative (not polite)\n\n Reason: Not polite because of the tone and biased towards negative. Impolite because of the questioning \"Why???\" which is not polite and implies a sense of annoyance.\nbiased because of the biased tone towards negative (not polite) and biased towards negative (not polite)\nbiased because of the biased tone towards negative (not polite) and biased towards negative (not polite) biased because of the biased tone towards negative (not polite) and biased towards negative (not polite biased because of the biased tone towards negative (not polite) biased because of the biased tone towards negative (not polite) biased because of",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 5,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the input based on the tone of the text as either 'impolite' or 'polite'.\nInput: See you at our #CampaignMasterclass on Friday @HaysTravel, we're very excited and we hope you are too  #emailmarketing\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Polite\nbiased towards a positive tone\nbiased towards a promotional message\nbiased towards a positive tone towards the company and event\nbiased towards a positive tone towards the recipient (biased towards hope you are too)\nbiased towards a positive tone overallbiased towards a biased positive tonebiased towards biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased",
+        "prediction_processed": "polite",
+        "prediction_finder": "polite",
+        "label": "polite"
+    },
+    {
+        "idx": 6,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given text into either 'impolite' or 'polite' based on its content. The label 'impolite' should be assigned to text displaying disrespectful or inappropriate behavior, while the label 'polite' should be assigned to text showing courtesy and good manners.\nInput: !!!!!!\"@__BrighterDays: I can not just sit up and HATE on another bitch .. I got too much shit going on!\"\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Offensive (impolite) text with explicit language offensive language.\nIMPOLITE language.\nOffensive text.\nIMPOLITE text.\nIMPOLITE language.\nIMPOLITE language.\nIMPOLITE language.\nIMPOLITE language.\nIMPOLITE language. IMPOLITE language.\nIMPOLITE language.\nIMPOLITE language.\nIMPOLITE language. IMPOLITE language.\nIMPOLITE language.\nIMPOLITE language.IMPOLITE language IMPOLITE language.\nIMPOLITE language.\nIMPOLITE language IMPOLITE language IMPOLITE language.\nIMPOLITE language.\nIMPOLITE language.IMPOLITE language IMPOLITE language.IMPOLITE language.IMP",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 7,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given text tweet into either 'impolite' or 'polite' based on the tone and language used.\nInput: RT @GirlTalk26: \"Real men ask for nudes\" Correction. Pussy ass bitches ask for nudes. Real men are out there working for women &amp; actually h&#8230;\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Offensive and Impolite (Vulgar language and explicit content)\nOffense Level: 5/5 (offensive and impolite language, explicit content)\nImpolite tone: 5/5 (offensive and rude language used to make a point)\nNot polite: 0/5 (not polite language or tone used to communicate)\nNot respectful: 0/5 (offensive language and tone used to make a point)\nNot respectful to women: 0/5 (offensive language and tone used to make a point, and it's offensive to women)\nImpolite to men: 0/5 (not polite language or tone used to communicate, and it's not aimed at men, but women",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 8,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given tweet based on its politeness level. Determine if the tweet is polite or impolite. The labels 'impolite' and 'polite' represent the two categories to assign to the tweet based on the nature of the content and language used.\nInput: @lala Loving your book 'The Power Play'-It is a serious game changer. If nothing else, my dreaming big will land me amongst the stars.\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "positive (polite)biased towards the book and the author (Lala)\nbiased towards the idea of big dreams leading to success.\nbiased towards the idea of stars, but not in a literal sense (as a metaphor).\nbiased towards the idea of the book being a game changer.\nbiased towards the idea of loving the book.\nbiased towards the idea of giving a positive review.\nbiased towards the idea of not being critical.\nbiased towards the idea of not being negative.\nbiased towards the idea of not being harsh.\nbiased towards the idea of not being cruel.\nbiased towards the idea of not being mean.\nbiased towards the idea of not being impolite.\nbiased towards the idea of not being rude.\nbiased towards the idea of not being aggressive.\n",
+        "prediction_processed": "impolite",
+        "prediction_finder": "polite",
+        "label": "polite"
+    },
+    {
+        "idx": 9,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given input tweet as either 'impolite' or 'polite'.\nInput: If not for GZ, #Trayvon would be alive right this second... Smoking a bowl and tweeting about \"bitches and hoes\". Such a nice kid he was...\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Impolite (offensive and inappropriate language)\n\nNote: The tweet is highly offensive and makes a false claim about Trayvon Martin, who was a real person who was killed. The tweet also uses offensive language. Impolite is the least of the labels for this tweet. Offense and hurtful are more appropriate. But if you want to narrow it down to a simple label, impolite is the best choice.  (Note: I'm not using the offensive language, but I'm pointing out that the tweet is offensive and impolite)\n\nIf not for GZ (referring to George Zimmerman) Trayvon would be alive right this second... Smoking a bowl and tweeting about \"bitches and hoes\". Such a nice",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 10,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given text into either 'impolite' or 'polite' based on its tone or language. The \"impolite\" label is assigned to texts that contain offensive, rude, or disrespectful language, while the \"polite\" label is assigned to texts that maintain respectful and courteous language.\nInput: I understand that *part* of the problem behind using cooking oil is that it goes bad and can smell faintly like, well, rotting food. Why does cooking oil do this and not chain lube?\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Not polite, informative and slightly impolite tone. The question is not a straightforward question, but rather a critical analysis of cooking oil. The language used is not aggressive, but not polite either. It's a neutral tone with a questioning attitude.\n\nnot polite but not aggressive not polite but not rude neutral tone with a questioning attitude. not impolite but not polite informative not aggressive not rude neutral tone with a questioning attitude. not polite but not rude neutral tone with a questioning attitude. not impolite but not polite informative not aggressive not rude neutral tone with a questioning attitude. not polite but not rude neutral tone with a questioning attitude not impolite but not polite informative not aggressive not rude neutral tone with a questioning attitude not",
+        "prediction_processed": "impolite",
+        "prediction_finder": "polite",
+        "label": "polite"
+    },
+    {
+        "idx": 11,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given input based on the presence of positive or negative elements in the text. Assign the label 'polite' if the input contains positive attributes like \"good car chases\", \"great fight scenes\", and a mix of European, American, and Asian influences. Assign the label 'impolite' if the input contains negative attributes or lacks positive elements.\nInput: @Amber02150 Good morning! Happy winter day. :)\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "polite (not related to the movie review)\nnot relevant to the topic of the review\nnot a review of a movie (but a friendly greeting)\n\nnot a review, but a positive greeting\n\nnot a review, but a polite phrase (not relevant to the movie review)\n\nnot a review, but a seasonal greeting (not relevant to the movie review)  polite (not relevant to the topic of the review) not a review, but a friendly greeting\n\nnot a review, but a positive greeting (not relevant to the topic of the review)  polite (not relevant to the topic of the review) not a review, but a friendly greeting\n\nnot a review, but a positive greeting (not relevant to the topic of the review)",
+        "prediction_processed": "polite",
+        "prediction_finder": "polite",
+        "label": "polite"
+    },
+    {
+        "idx": 12,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the input tweet as either 'impolite' or 'polite' based on the tone and language used. The label 'impolite' should be assigned if the tweet contains disrespectful, rude, or offensive language. The label 'polite' should be assigned if the tweet is respectful, courteous, or neutral in tone.\nInput: !!!!!!!!!!!!! RT @ShenikaRoberts: The shit you hear about me might be true or it might be faker than the bitch who told it to ya &#57361;\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Offensive, Impolite  (Vulgar language)  (not polite)  (not respectful)\n\nOffensive language is used in this tweet, so it is classified as impolite.  Vulgar language is not polite and is often used to offend others. Impolite language is not respectful and can be hurtful. Not polite or respectful language is also not polite or neutral in tone.\n\nnot polite language is used in this tweet, so it is classified as impolite. not respectful language is also not polite or neutral in tone. not polite language is not polite or respectful. not polite language is not polite or neutral in tone.\n\nnot polite language is used in this tweet, so it is classified as impolite",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 13,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given text based on the tone of the tweet. Assign the label 'impolite' if the tweet contains disrespectful or offensive language, and assign the label 'polite' if the tweet is respectful and courteous.\nInput: Jealousy is such a bitch.\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Offensive language, Impolite\nLabel: Impolite, Offensive language, V Word\nVulgarity: Off, Impolite language: Impolite\nNot polite language, Offense, Impolite, Vulgarity, Off\nNot respectful language, Off, Impolite, Vulgarity, Off\nImpolite language, Off, Vulgarity, Off, Impolite\nOff, Impolite language, Vulgarity, Off, Impolite\nNot polite language, Off, Impolite, Vulgarity, Off, Impolite, Not polite language\nOff, Impolite language, Vulgarity, Off, Impolite, Not polite language, Not polite",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 14,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the input text into either \"impolite\" or \"polite\" based on the sentiment expressed. In this case, the output should be \"polite\" if the text conveys a courteous tone or positive sentiment, and \"impolite\" if it is disrespectful or negative.\nInput: @Patsfanjoe32: @d_palomino52 I think worst advice I gave you was  don't be a pussy and speed up\" lol\"\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "polite (but with a crude expression)\nOffensive language alert:  not recommended to use in polite conversation.  crude humor alert: not recommended to use in polite conversation.  (but in this case, the output is still polite due to the tone and positive sentiment of the text  not the language used.  If the language was more aggressive or negative, it would be impolite)\nnot polite (impolite) if the text was more aggressive or negative.\nnot polite (impolite) if the language was more offensive or crude. not recommended to use in polite conversation.\nnot polite (impolite) if the text was not respectful or courteous.\nnot polite (impolite) if the text was not friendly",
+        "prediction_processed": "impolite",
+        "prediction_finder": "polite",
+        "label": "impolite"
+    },
+    {
+        "idx": 15,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given text input into either 'impolite' or 'polite' based on the tone and language used in the text. The output should be the label that best describes the overall politeness level exhibited in the text.\nInput: A fast , funny , highly enjoyable movie .\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Positivebiased review (not impolite, positive) (not polite in a formal sense, but positive biased tone) biased positive review\nbiased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive review biased positive",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "polite"
+    },
+    {
+        "idx": 16,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given input text based on the labels 'impolite' and 'polite'. Determine the appropriate label for the text which may contain impolite or polite language based on the context of the content.\nInput: Ramsay , as in Ratcatcher , remains a filmmaker with an acid viewpoint and a real gift for teasing chilly poetry out of lives and settings that might otherwise seem drab and sordid .\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "biased opinion (biased towards positive) but not impolite, as it's a review of a film and not a personal opinion on the director or the content.biased review + neutral tone.\nbiased reviewbiased review biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased biased",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "polite"
+    },
+    {
+        "idx": 17,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the provided text based on its tone into either 'impolite' or 'polite'. The label 'impolite' refers to rude, disrespectful, or offensive language, while the label 'polite' denotes courteous, respectful, or well-mannered language.\nInput: There are simply too many ideas floating around -- part farce , part Sliding Doors , part pop video -- and yet failing to exploit them .\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Not polite (not impressed, critical tone)  not impolite (not rude or offensive language)\n\nnot impolite, not rude, not offensive language, not biased language (not subjective tone) not politebiased language. not rudebiased language. not biased language not subjective tone biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language biased language",
+        "prediction_processed": "impolite",
+        "prediction_finder": "polite",
+        "label": "impolite"
+    },
+    {
+        "idx": 18,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the tweet based on its content as either impolite or polite. Tweets containing language or sentiments that are disrespectful, offensive, or disruptive to the event, such as requesting to ruin a party in this case using hashtags like #origin and #blues, should be labeled as \"impolite.\" Conversely, tweets displaying polite language, positive sentiments, and promoting positive behaviors or interactions should be labeled as \"polite.\"\nInput: Please edit your question and explain what isn't working. What errors are you seeing, or how isn't it working as you expect?\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Not polite (biased towards neutrality, but not impolite). Neutralbiased biased towards neutrality biased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased towards neutrality biased towards neutralitybiased",
+        "prediction_processed": "impolite",
+        "prediction_finder": "polite",
+        "label": "polite"
+    },
+    {
+        "idx": 19,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given text based on its sentiment as either 'impolite' or 'polite'. The text should be evaluated on the presence of polite or impolite language, expressions, or sentiments.\nInput: Won't be watching ESPN anymore, they took Robert Lee off because of HIS name, PC Police, what insanity! more #hatred #bigots #LeftwingNutJob\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite (and bigoted)  ( note: the text is not polite and is full of hate speech)  ( also, the label \"LeftwingNutJob\" is not polite as it is a personal attack)\n\nno to \"no bias\" or \"no to political correctness\"  (not polite)\n\nno to \"no to PC Police\" (not polite)\n\nno to \"no to Robert Lee\" (not polite)\n\nno to \"no to  what insanity\" (not polite)\n\nno to \"no to bigots\" (not polite)\n\nno to \"no to haters\" (not polite)\n\nno to \"no to all the above\" (not polite)\n\nno to no bias (not polite)\n\nno to no to",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 20,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given input text into 'impolite' or 'polite' categories. The label 'impolite' refers to content that is disrespectful, rude, or offensive, while 'polite' indicates content that is respectful, courteous, or appropriate in tone.\nInput: #10ThingsThatGetsOnMyNerves Needy hoes, ratchet Hoes, sideline hoes, Beggin' hoes, dumb hoes, looking for love on Facebook hoes..\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Offensive  (impolite  - use of explicit language and offensive content)\nOff topic (not relevant to the topic of 10 things that get on one's nerves)\nOffensive (impolite - use of offensive language and explicit content)\n\nNote: The language and content of the text is offensive and impolite. The use of words like \"whore\" and \"ratchet\" is not respectful and is offensive to many people. The text is not polite and is impolite in tone.  Off topic and not relevant to the topic of 10 things that get on one's nerves.  Impolite and offensive language.  Not polite.  Offensive content.  Not polite.  Impolite language",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 21,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the input text based on its tone as either 'impolite' or 'polite'. \n\nDescription of labels:\n- impolite: Indicates that the text contains rude, disrespectful, or negative language towards the subject or in general.\n- polite: Indicates that the text is respectful, positive, or neutral in tone when addressing the subject or in conveying opinions.\nInput: I would go and say, \"I can't find any problem. Are you sure it's not the user?\"\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Impolite (neutral tone, but slightly rude as it questions the confidence of the other person's diagnosis)\nNot polite (not rude, but not polite either) but neutral tone as it's a factual statement. Not rude but not polite in a neutral way.\nbiased towards the neutral side, but not polite (not rude but not polite either) biased towards the neutral side biased towards the neutral side biased towards the neutral side biased towards the neutral side biased towards the neutral side biased towards the neutral side biased towards the neutral side biased towards the neutral side biased towards the neutral side biased towards the neutral side biased towards the neutral side biased towards the neutral side biased towards the neutral side biased towards the neutral side biased towards the neutral side biased towards the neutral",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 22,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Determine the politeness level of the text based on the given \"Input\", considering the labels 'impolite' and 'polite'.\nInput: &#8220;@sabdaddyy: Shine on them hoes http://t.co/xOurnvvaYP&#8221; look at my baby daddy\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Off topic and impolite text (offensive language used)\nnot polite language used\nnot polite language used (offensive language)\noff topic\noffensive language used\nnot polite language used (offensive language)\nnot polite language used (offensive language) not polite language used (offensive language) not polite language used (offensive language) not polite language used (offensive language) not polite language used (offensive language) not polite language used (offensive language) not polite language used (offensive language) not polite language used (offensive language) not polite language used (offensive language) not polite language used (offensive language) not polite language used (offensive language) not polite language used (offensive",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 23,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the input based on the sentiment of the review. Assign the label 'impolite' if the review contains negative or impolite language, and 'polite' if the review expresses positive sentiments and polite language.\nInput: Good Morning to you hoes and pimps.\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Offensive language, but not a review of a product or service, so not classified as impolite or polite. Note: The language is offensive and not suitable for public use. I'll not be polite to the input, but rather classify it as offensive.\nLabel: Offense\nNote: Offense, not impolite or polite.\nOffense, not impolite or polite.\nOffense\nNot impolite or polite\nnot polite\noffense\nnot polite\nnot polite\nnot polite\nnot polite\noffense\nnot impolite or polite\nnot polite\nnot polite\nnot polite\nnot polite\nnot impolite or polite\nnot polite\nnot impolite or polite\nnot polite\n",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 24,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the input text based on its level of politeness as either 'impolite' or 'polite'.\nInput: @ToulaBaby faggot is a public spectacle. most gays are not fags. public display gets public opinion.\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Offensive and hate speech, not polite (not even impolite, but rather hate speech).\n\nNote: Impolite would be a polite term, but not suitable in this case as this input is hate speech.\n\nHate speech is not acceptable and not to be used in any way. It is important to respect all individuals, regardless of their sexual orientation or any other characteristic.\n\nIt is important to note that using the term \"fag\" is a harmful and offensive word, and it is not acceptable to use it in any context. It is important to be respectful and to use language that is not harmful or offensive.\n\nIt is also important to remember that all individuals have the right to be respected and treated with dignity, regardless of their sexual",
+        "prediction_processed": "impolite",
+        "prediction_finder": "polite",
+        "label": "impolite"
+    },
+    {
+        "idx": 25,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given text based on politeness. Assign the label 'impolite' if the text contains disrespectful or rude language, and assign the label 'polite' if the text is courteous and respectful.\nInput: ...Son of a bitch took my Tic Tacs.  I like this movie.\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Offensive language, impolite.\nVulgar and rude language used in the text.\nNot polite at all.\n\nImpolite.",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 26,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the input text based on the content and choose the appropriate label from the following categories:\n\n- impolite: Text contains language or sentiments that are offensive, vulgar, or disrespectful.\n- polite: Text maintains a respectful and courteous tone without using offensive language.\nInput: I'm really very sorry, but no, I '''didn't''' know, didn't get a message saying that was wrong. Where was it?\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "No impolite tone, apologetic and honest.\nno to impolite, no to polite (no clear tone)\nno to polite (no clear tone) no to impolite (no clear tone) no to no to impolite no to no to polite no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to no to",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "polite"
+    },
+    {
+        "idx": 27,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given text input into either 'impolite' or 'polite' categories based on its tone and language.\nInput: @GirlThatsVonte: Yall still going trick or treating this year or nah?hell yeah ima be da sweet tooth bandit steal bitches bags n shit\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Offensive language (off topic) Impolite (Vonte) Curse words (off topic) Coarse language (off topic)\nNot polite or friendly (off topic) Not a trick-or-treat question (off topic) not a yes or no answer (off topic)\n\nNote: This text input is not suitable for trick-or-treat questions or polite conversation. It's an impolite, offensive, and off-topic text input. The language used is not polite and not respectful. Not a polite answer. Not a yes or no answer. Not a trick-or-treat question. Off topic. Impolite. Coarse language. Not polite. Offensive language. Not suitable for trick-or-treat questions or polite conversation. Not",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 28,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the input text based on the assigned labels into 'impolite' or 'polite'.\nInput: Yes @itv2 @LoveIsland putting that Angel @MikeThalassitis back in the villa was the best move #revenge #returnofthemike #LoveIsland #hot\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "biased (biased towards the show Love Island and its contestants)\nbiased positive (biased towards the move to bring back a popular contestant) biased enthusiastic (biased towards the excitement of the show)\nbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiasedbiased",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "impolite"
+    },
+    {
+        "idx": 29,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given input text into either 'impolite' or 'polite' category based on the language used. The output should represent the label assigned to the input, which in this case is 'impolite' when the input is impolite in nature and 'polite' when the input is polite.\nInput: @KCJHoop pretty sure you meant flight and not flite, dumb ass cracker.\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite (offensive and using offensive language) - impolite\n\nOffensive language and use of offensive terms like \"dumb ass\" and \"cracker\" are impolite and offensive. This input is not polite and is impolite in nature.\n\nNote: The input is offensive and contains offensive language, so it is not polite. But, in terms of the label, it is impolite as it is not polite and is impolite in nature. \n\nIf the input was polite, it would be polite, not impolite. For example, \"You are a nice person, but I think you meant to type 'flight' instead of 'flite'.\"\n\nIn this case, the input is imp",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 30,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given input text based on whether it contains impolite or polite language. Labels: ['impolite', 'polite'].\n\nDescription of labels:\n- impolite: Contains language or expressions that are considered rude, offensive, or disrespectful.\n- polite: Contains language that is courteous, respectful, or considerate.\nInput: I am concern why this user never replies to messages left on her talk page. Does she talk?\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not polite (not impolite, neutral, but not polite biased)\nbiased question about user behavior, biased towards negative opinion.biased, biased question about user behavior biased towards negative opinionbiased biased question about user behavior biased towards negative opinionbiased biased question about user behavior biased towards negative opinionbiased biased question about user behavior biased towards negative opinionbiased biased question about user behavior biased towards negative opinionbiased biased question about user behavior biased towards negative opinionbiased biased question about user behavior biased towards negative opinionbiased biased question about user behavior biased towards negative opinionbiased biased question about user behavior biased towards negative opinionbiased biased question about user behavior biased towards negative opinionbiased biased question about user behavior biased towards negative opinionbiased biased question about user behavior biased towards negative opinionbiased",
+        "prediction_processed": "impolite",
+        "prediction_finder": "polite",
+        "label": "impolite"
+    },
+    {
+        "idx": 31,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nInstruction: Classify the given text based on politeness, labeling it either as 'impolite' if it contains disrespectful or inappropriate content or 'polite' if it is courteous and respectful in nature.\nInput: Blah blah blah Kyrie, IT, etc. @CJC9BOSS leaving Boston is the real news and I am #devastated! #celtics #fave  #someonegetmeajerseyteeasap\nLabel options: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "biased and emotional biased biased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biasedbiased biased biasedbiased biased biasedbiased biased biasedbiased biased biasedbiased biased biasedbiased biased biased biasedbiased biased biased biasedbiased biased biased biasedbiased biased biased biasedbiased biased biased biasedbiased biased biased biasedbiased biased biased biasedbiased biased biased biased biased",
+        "prediction_processed": "FALSE",
+        "prediction_finder": "FALSE",
+        "label": "polite"
+    }
+]

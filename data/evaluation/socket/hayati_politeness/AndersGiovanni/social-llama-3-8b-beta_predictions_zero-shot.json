@@ -1,0 +1,258 @@
+[
+    {
+        "idx": 0,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"Don't ever kiss the other girl in a 3some, don't hug that hoe none of that\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite`\n\nThis sentence is not only impolite but also offensive and degrading towards women, using derogatory language and a violent metaphor (kissing the other girl in a 3some). It is not a polite or respectful statement.`\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 1,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"@BarackObama @MichelleObama omfg you elitist bitch no one cares what you think! go fuck yourselves are you in china anyway?\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite`\n\nThis sentence is extremely impolite and uses aggressive and offensive language to address the former President and First Lady of the United States. It is not polite at all and is likely to be considered hate speech.",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 2,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"What is this miserable ass weather all about  dark and gloomy #depressing #weekoff #wheresthesun\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite`\n\nThe sentence uses strong negative language and has a tone that is not courteous or respectful. It is not polite.",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 3,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"An exhilarating futuristic thriller-noir , Minority Report twists the best of technology around a gripping story , delivering a riveting , pulse intensifying escapist adventure of the first order\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "polite`\n\nThis review uses positive adjectives like \"exhilarating\", \"gripping\", \"riveting\", and \"pulse intensifying\" to describe the movie, which is a polite way to express enthusiasm and admiration for it. The tone is enthusiastic and appreciative, rather than critical or offensive, making it a polite review.",
+        "prediction_processed": "polite",
+        "prediction_finder": "polite",
+        "label": "polite"
+    },
+    {
+        "idx": 4,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"So... you want to implement an exclusive decision tree without using if/elif? Why???\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not polite`\n\nThe sentence is questioning the reason behind not using if/elif, which may be perceived as impolite or even accusatory, especially if the person being asked is not familiar with the decision tree concept or its alternatives. The tone is somewhat confrontational and challenging. However, it's still a neutral and honest question, and not overtly rude or offensive.`\n\nnot polite`\n\nThe sentence is questioning the reason behind not using if/elif, which may be perceived as impolite or even accusatory, especially if the person being asked is not familiar with the decision tree concept or its alternatives. The tone is somewhat confrontational and challenging. However, it's still a neutral and honest question, and not overtly rude or offensive",
+        "prediction_processed": "impolite",
+        "prediction_finder": "polite",
+        "label": "impolite"
+    },
+    {
+        "idx": 5,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"See you at our #CampaignMasterclass on Friday @HaysTravel, we're very excited and we hope you are too  #emailmarketing\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "polite`\n\nThe sentence is inviting and expresses enthusiasm, which is polite. It also uses a friendly greeting and a hashtag, which adds to the polite tone. There is no language that could be perceived as impolite in this sentence.",
+        "prediction_processed": "impolite",
+        "prediction_finder": "polite",
+        "label": "polite"
+    },
+    {
+        "idx": 6,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"!!!!!!\"@__BrighterDays: I can not just sit up and HATE on another bitch .. I got too much shit going on!\"\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite`\n\nThis sentence contains explicit language and is highly impolite. The use of the word \"bitch\" is a slur and the tone is aggressive and hateful. It is not polite at all.",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 7,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"RT @GirlTalk26: \"Real men ask for nudes\" Correction. Pussy ass bitches ask for nudes. Real men are out there working for women &amp; actually h&#8230;\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite`\n\nThis tweet contains very offensive language and a derogatory attitude towards women. It is not polite at all.`\n\nNote: The tweet is not only impolite but also sexist and misogynistic.`\n\nIt's important to remember that just because someone tweets something doesn't mean it's acceptable or respectful. It's important to be honest and truthful in our answers, but also to be respectful and considerate of others.`\n\nIn this case, the tweet is not only impolite but also offensive and unacceptable. It's important to avoid using such language and attitudes in our interactions with others.`\n\nIt's important to remember that just because someone tweets something doesn't mean it's acceptable or respectful. It's important to be honest and",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 8,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"@lala Loving your book 'The Power Play'-It is a serious game changer. If nothing else, my dreaming big will land me amongst the stars.\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "polite``\n\nThe tone is positive and appreciative, with the user praising the book and expressing enthusiasm about its impact on their life. The language used is respectful and sincere, making it a polite statement.",
+        "prediction_processed": "polite",
+        "prediction_finder": "polite",
+        "label": "polite"
+    },
+    {
+        "idx": 9,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"If not for GZ, #Trayvon would be alive right this second... Smoking a bowl and tweeting about \"bitches and hoes\". Such a nice kid he was...\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite``\n\nThis sentence is not only impolite, but also quite disturbing and offensive. It's making assumptions about a deceased person's behavior and using derogatory language. Not acceptable!``\n\n(Note: Trayvon Martin, a young African American boy, was tragically murdered in 2012. George Zimmerman, a neighborhood watch volunteer, was acquitted of his murder. This sentence is a highly opinionated and controversial statement.)``\n\nIt's not only impolite, but also a very sensitive and disturbing topic. It's not respectful to Trayvon Martin's memory or his family. The language used is also offensive and not suitable for any decent conversation. Not polite at all!``\n\nPlease avoid using such language and topics in",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 10,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"I understand that *part* of the problem behind using cooking oil is that it goes bad and can smell faintly like, well, rotting food. Why does cooking oil do this and not chain lube?\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not polite`\n\nThe sentence uses a somewhat graphic description (\"rotting food\") and implies that cooking oil is not as good as chain lube, which could be perceived as impolite to cooking oil manufacturers or users. Additionally, the tone is more questioning and critical than polite. However, it is not overtly offensive, so I wouldn't label it as impolite. It's more neutral and honest.`\n\nnot polite`\n\nThe sentence uses a somewhat graphic description (\"rotting food\") and implies that cooking oil is not as good as chain lube, which could be perceived as impolite to cooking oil manufacturers or users. Additionally, the tone is more questioning and critical than polite. However, it is not overtly offensive, so",
+        "prediction_processed": "impolite",
+        "prediction_finder": "polite",
+        "label": "polite"
+    },
+    {
+        "idx": 11,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"@Amber02150 Good morning! Happy winter day. :)\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "polite`\n\nThe sentence is a greeting and wishes someone a happy day, which is a polite gesture. The use of the smiley face `:)` also adds a friendly and cheerful tone to the message.",
+        "prediction_processed": "polite",
+        "prediction_finder": "polite",
+        "label": "polite"
+    },
+    {
+        "idx": 12,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"!!!!!!!!!!!!! RT @ShenikaRoberts: The shit you hear about me might be true or it might be faker than the bitch who told it to ya &#57361;\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite`\n\nThis sentence uses strong profanity and derogatory language, which is not polite. It is also quite aggressive and confrontational. It does not show respect for others or use courteous language. It is best to avoid using such language in polite conversation or writing.",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 13,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"Jealousy is such a bitch.\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite``\n\nThis sentence is not polite as it uses a derogatory term to describe jealousy, which is not a respectful or courteous way to express oneself.`\n`\n\n",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 14,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"@Patsfanjoe32: @d_palomino52 I think worst advice I gave you was  don't be a pussy and speed up\" lol\"\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite`\n\nNote: The use of the word \"pussy\" in this context is a colloquialism that can be considered offensive and impolite. Additionally, the advice given is also somewhat impolite and aggressive. Therefore, I would label it as impolite.`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n`\n\n",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 15,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"A fast , funny , highly enjoyable movie .\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "polite``\n\nThe sentence is positive and uses adjectives like \"funny\" and \"enjoyable\" to describe the movie, making it a polite review.``\n\n",
+        "prediction_processed": "polite",
+        "prediction_finder": "polite",
+        "label": "polite"
+    },
+    {
+        "idx": 16,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"Ramsay , as in Ratcatcher , remains a filmmaker with an acid viewpoint and a real gift for teasing chilly poetry out of lives and settings that might otherwise seem drab and sordid .\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Not polite`\n\nThe sentence is not particularly polite because it uses words like \"acid viewpoint\" and \"chilly poetry\" which could be seen as somewhat harsh or critical. While it's not overly offensive, it's not a particularly flattering description either.`\n\nHowever, it's worth noting that the sentence is not aggressively rude or offensive, so it's not entirely impolite either. It's more neutral and descriptive than anything else.`\n\nIt's a mix of both, but leaning more towards not polite`.`\n`\n\nnot polite`\n\nneutral`\n\nneutral`\n\nnot polite`\n\nneutral`\n\nneutral`\n\nnot polite`\n\nneutral`\n\nneutral`\n\nnot polite`\n\nneutral`\n\nneutral`\n\nnot polite`\n\nneutral`\n\nneutral`\n\nnot polite`\n\nneutral`\n\nneutral`\n\nnot polite`\n\nneutral",
+        "prediction_processed": "impolite",
+        "prediction_finder": "polite",
+        "label": "polite"
+    },
+    {
+        "idx": 17,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"There are simply too many ideas floating around -- part farce , part Sliding Doors , part pop video -- and yet failing to exploit them .\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite`\n\nThe sentence is not polite because it criticizes the ideas presented, calling them \"failing to exploit them\", which implies that they are not good or effective. Additionally, the tone is somewhat negative and harsh. While it's not overly offensive, it's not polite either.`",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 18,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"Please edit your question and explain what isn't working. What errors are you seeing, or how isn't it working as you expect?\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "polite``\n\nNote: The sentence is constructive and provides guidance to the user, making it polite. It's not aggressive or condescending, but rather helpful and respectful. The tone is neutral and professional, which is typical of a polite message.",
+        "prediction_processed": "polite",
+        "prediction_finder": "polite",
+        "label": "polite"
+    },
+    {
+        "idx": 19,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"Won't be watching ESPN anymore, they took Robert Lee off because of HIS name, PC Police, what insanity! more #hatred #bigots #LeftwingNutJob\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite`\n\nThis sentence contains several offensive terms, including \"hatred\", \"bigots\", and \"LeftwingNutJob\", which are not polite. The tone is also accusatory and inflammatory, making it impolite. The use of the term \"PC Police\" is also somewhat derogatory and implies that the person being referred to is overly sensitive or uptight. Overall, the sentence is not polite and may be offensive to some readers.",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 20,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"#10ThingsThatGetsOnMyNerves Needy hoes, ratchet Hoes, sideline hoes, Beggin' hoes, dumb hoes, looking for love on Facebook hoes..\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite`\n\nThis sentence is extremely impolite, using derogatory language to describe women. It's offensive and disrespectful. Not only is it not polite, but it's also harmful and sexist.`\n\nNote: The original sentence contains explicit language and is not suitable for all audiences. I've kept it in to provide an accurate answer, but please be aware that it's not appropriate for most conversations.`\n`\n\nIf you'd like me to help you rephrase it in a more polite way, please let me know!`\n\n``\n\nWould you like me to help you rephrase it in a more polite way?`\n\n``\n\nPlease let me know if you have any further questions or if there's anything else I can help you with!",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 21,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"I would go and say, \"I can't find any problem. Are you sure it's not the user?\"\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not polite`\n\nThe sentence comes across as slightly defensive and non-helpful, which can be perceived as impolite. A more polite approach might be to ask for more information or offer assistance in finding a solution rather than implying that the problem is with the user.`\n",
+        "prediction_processed": "impolite",
+        "prediction_finder": "polite",
+        "label": "impolite"
+    },
+    {
+        "idx": 22,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"&#8220;@sabdaddyy: Shine on them hoes http://t.co/xOurnvvaYP&#8221; look at my baby daddy\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite``\n\nNote: The use of the word \"hoes\" is a colloquialism that is often used to refer to women in a derogatory manner, and the tweet is not polite. Additionally, the use of the phrase \"Shine on them\" is not a typical way to refer to someone in a polite manner, especially considering the context of the tweet.",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 23,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"Good Morning to you hoes and pimps.\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite`\n\nThis sentence uses informal language and addresses the addressees in a derogatory manner, which makes it impolite. It's also quite explicit and might be offensive to some people. Not the kind of greeting you'd typically use in a professional or polite setting!``\n\n(Note: I'm trying to provide a neutral and respectful answer while still accurately labeling the sentence as impolite. If you have any further questions or concerns, feel free to ask!`)`\n\n",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 24,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"@ToulaBaby faggot is a public spectacle. most gays are not fags. public display gets public opinion.\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite`\n\nThis sentence uses a derogatory term and makes a homophobic comment, which is not polite. It is offensive and respectful, and it does not contribute to a positive and inclusive conversation.`\n\nNote: I've labeled this sentence as impolite, but I want to emphasize that it is also offensive and harmful. It is important to use respectful language and avoid homophobia in all its forms.`\n`\n\nnot polite`\n\nThis sentence uses a derogatory term and makes a homophobic comment, which is not polite. It is offensive and respectful, and it does not contribute to a positive and inclusive conversation.`\n\nNote: I've labeled this sentence as impolite, but I want to emphasize that it is also offensive and harmful. It",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 25,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"...Son of a bitch took my Tic Tacs.  I like this movie.\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite`\n\nThis sentence uses a strong insult (\"Son of a bitch\") and is not polite at all. It's a very informal and offensive way to express oneself, and it's unlikely to be used in a polite conversation.",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 26,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"I'm really very sorry, but no, I '''didn't''' know, didn't get a message saying that was wrong. Where was it?\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Not very polite`\n\nThe sentence is apologetic, but the tone is somewhat defensive and slightly accusatory, which makes it not very polite`. The use of the word \"didn't\" in a negation (didn't know, didn't get a message) can also come across as slightly confrontational.",
+        "prediction_processed": "polite",
+        "prediction_finder": "polite",
+        "label": "polite"
+    },
+    {
+        "idx": 27,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"@GirlThatsVonte: Yall still going trick or treating this year or nah?hell yeah ima be da sweet tooth bandit steal bitches bags n shit\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite`\n\nThis sentence is not polite because of the use of the word \"bitches\" and the violent tone of the threat to steal bags. It is also quite crude and offensive.`\n\nIt's not only impolite but also quite rude and offensive. The use of the word \"bitches\" is a clear sign of disrespect and the threat of stealing bags is not only impolite but also illegal. It's not a polite conversation at all.`\n`\n\nnot polite`\n\nThis sentence is not polite because it contains explicit language and a threat. It's not a polite conversation at all.`\n\nnot polite`\n\nThis sentence is not polite because it contains the word \"bitches\" and the threat to steal bags. It's not",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 28,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"Yes @itv2 @LoveIsland putting that Angel @MikeThalassitis back in the villa was the best move #revenge #returnofthemike #LoveIsland #hot\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "not polite`\n\nThe sentence contains some negative undertones and is slightly aggressive, using words like \"revenge\" and \"return of the Mike\" which implies a sense of drama and conflict. Additionally, it is a criticism of the show's decision, which is not polite. However, it is not overly offensive or abusive, so it's not extremely impolite either. It's more of a slightly impolite remark.`\n\n",
+        "prediction_processed": "impolite",
+        "prediction_finder": "polite",
+        "label": "impolite"
+    },
+    {
+        "idx": 29,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"@KCJHoop pretty sure you meant flight and not flite, dumb ass cracker.\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite`\n\nThis sentence is not polite due to the use of derogatory terms such as \"dumb ass\" and \"cracker\", which are considered offensive and hurtful to some individuals or groups.\"`\n\nIt's also important to note that the sentence is addressed to someone using the handle @KCJHoop, which adds a level of personalization to the insult, making it even less polite.\"`\n\nIt's worth noting that while some people may use such language in casual conversation, it's generally considered impolite and unacceptable in most social settings, including online communication.\"`\n\nIn general, it's always a good idea to use respectful language and avoid using derogatory terms, even if you're trying to be humorous or playful, as",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "impolite"
+    },
+    {
+        "idx": 30,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"I am concern why this user never replies to messages left on her talk page. Does she talk?\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "Not polite`\n\nThe tone is neutral, but the question is a bit blunt and shows concern, which might be perceived as impolite by some users`.",
+        "prediction_processed": "impolite",
+        "prediction_finder": "polite",
+        "label": "impolite"
+    },
+    {
+        "idx": 31,
+        "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nFor the sentence: \"Blah blah blah Kyrie, IT, etc. @CJC9BOSS leaving Boston is the real news and I am #devastated! #celtics #fave  #someonegetmeajerseyteeasap\", is it polite? You can choose from the following labels: \"impolite\", \"polite\"\nAnswer:<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+        "prediction": "impolite`\n\nThe tone is somewhat dramatic and self-centered, which can come across as impolite. Additionally, the use of all capital letters in the hashtag \"#devastated\" can be seen as somewhat rude or attention-seeking. However, it's not overly aggressive or offensive, so it's not extremely impolite either. It's more of a somewhat impolite tone than a polite one. `\n\nNote: While it's not extremely impolite, it's still not polite. It's more of a somewhat impolite tone than a polite one. `\n\nnot polite`\n\nThe use of all capital letters in the hashtag \"#devastated\" can be seen as somewhat rude or attention-seeking. It's not a",
+        "prediction_processed": "impolite",
+        "prediction_finder": "impolite",
+        "label": "polite"
+    }
+]
