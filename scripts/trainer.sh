@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#SBATCH --job-name=dpo    # Job name
-#SBATCH --output=run_outputs/dpo.%j.out      # Name of output file (%j expands to jobId)
+#SBATCH --job-name=trainer    # Job name
+#SBATCH --output=run_outputs/trainer.%j.out      # Name of output file (%j expands to jobId)
 #SBATCH --cpus-per-task=12       # Schedule one core
 #SBATCH --time=1-24:00:00          # Run time (hh:mm:ss) - run for one hour max
 #SBATCH --gres=gpu:a100_80gb:1
@@ -15,12 +15,19 @@ nvidia-smi
 
 # module load poetry/1.5.1-GCCcore-12.3.0
 
+# module load poetry
+
 # poetry shell
 
-# poetry update
+
+# poetry shell
 
 # poetry install
 
 # pip install torch
 
+python -m src.social_llama.training.sft
+
 python -m src.social_llama.training.dpo
+
+# accelerate launch src/social_llama/training/sft.py

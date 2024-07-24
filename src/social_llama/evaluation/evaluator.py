@@ -2,6 +2,7 @@
 
 import os
 import time
+import sys
 from typing import Dict
 from typing import List
 from typing import Union
@@ -66,13 +67,14 @@ class Evaluator:
             # "stop_sequences": self.social_dimensions.config.labels,
         }
         self.generation_kwargs_local = {
-            "max_new_tokens": 250,
+            "max_new_tokens": 150,
             "temperature": 0.9,
             "do_sample": True,
         }
         if "llama" in model_id:
             self.tokenizer = AutoTokenizer.from_pretrained(
-                "meta-llama/Llama-2-7b-chat-hf"
+                # "meta-llama/Llama-2-7b-chat-hf"
+                "meta-llama/Meta-Llama-3-8B-Instruct"
             )
         elif "gemma" in model_id:
             self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-7b-it")
@@ -84,6 +86,7 @@ class Evaluator:
             "meta-llama/Llama-2-13b-chat-hf",
             "mistralai/Mistral-7B-Instruct-v0.2",
             "google/gemma-7b-it",
+            "meta-llama/Meta-Llama-3-8B-Instruct",
         ]:
             self.inference_client = InferenceClient(
                 model=model_id, token=os.environ["HUGGINGFACEHUB_API_TOKEN"]
@@ -156,7 +159,7 @@ class Evaluator:
                 "hypo-l",
                 "rumor#rumor_bool",
                 "two-to-lie#receiver_truth",
-            ]:
+            ][::-1]:
                 task_data, labels = self._prepare_socket_test_data(task=task)
                 save_path = (
                     DATA_DIR_EVALUATION_SOCKET
@@ -269,6 +272,9 @@ class Evaluator:
             split="test",  # trust_remote_code=True
         )
         dataset.cleanup_cache_files()
+        # if length is more than 2000, randomly sample 2000
+        if len(dataset) > 2000:
+            dataset = dataset.shuffle(seed=42).select(range(2000))
 
         if self.is_instruction:
             prompt = self.instructions_prompt_cls
@@ -297,9 +303,6 @@ class Evaluator:
             )
             knowledge = "" if pd.isna(knowledge) else knowledge
 
-        # if length is more than 2000, randomly sample 2000
-        if len(dataset) > 2000:
-            dataset = dataset.shuffle(seed=42).select(range(2000))
 
         labels: List[str] = dataset.features["label"].names
         labels_formatted = [f'"{label}"' for label in labels]
@@ -413,29 +416,18 @@ class Evaluator:
 
 
 if __name__ == "__main__":
-    models = [
-        # "AndersGiovanni/social-llama-7b-alpha",
-        # "AndersGiovanni/social-llama-7b-beta",
-        # "AndersGiovanni/social-gemma-7b-beta_v2"
-        # "AndersGiovanni/social-gemma-7b-beta_v2_sft"
-        # "AndersGiovanni/social-gemma-7b-beta",
-        # "meta-llama/Llama-2-7b-hf",
-        # "AndersGiovanni/social-llama-7b-alpha-v2"
-        "AndersGiovanni/social-llama-7b-instructions",
-        # "google/gemma-7b-it",
-        # "mistralai/Mistral-7B-Instruct-v0.2"
-        # "mistralai/Mistral-7B-Instruct-v0.2"
-    ]
 
-    for model in models:
-        # torch.cuda.empty_cache()
+    model = (
+        sys.argv[1] if len(sys.argv) > 1 else "AndersGiovanni/social-llama-3-8b-instructions"
+    )
+    # torch.cuda.empty_cache()
 
-        evaluator = Evaluator(model)
+    evaluator = Evaluator(model)
 
-        # evaluator.predict(task="social-dimensions")
+    # evaluator.predict(task="social-dimensions")
 
-        evaluator.predict(task="socket", note="zero-shot")
+    evaluator.predict(task="socket", note="zero-shot")
 
-        del evaluator
+    del evaluator
 
     a = 1

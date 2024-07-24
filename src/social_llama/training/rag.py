@@ -193,14 +193,7 @@ class HuggingfaceChatTemplate:
             None
         """
         self.model_name: str = model_name
-        if "llama" in model_name:
-            self.tokenizer = AutoTokenizer.from_pretrained(
-                "meta-llama/Llama-2-7b-chat-hf"
-            )
-        elif "gemma" in model_name:
-            self.tokenizer = AutoTokenizer.from_pretrained("google/gemma-7b-it")
-        else:
-            self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.tokenizer.use_default_system_prompt = False
 
     def get_template_classification(self, system_prompt: str, task: str) -> str:
@@ -244,31 +237,30 @@ class HuggingfaceChatTemplate:
 # Load the data
 dataset_names = ["social-dimensions"]
 dataset_names = [
-    # "hasbiasedimplication",
-    # "implicit-hate#stereotypical_hate",
-    # "intentyn",
-    # "tweet_offensive",
-    # "offensiveyn",
-    # "empathy#distress_bin",
-    # "complaints",
-    # "hayati_politeness",
-    # "stanfordpoliteness",
-    # "hypo-l",
-    # "rumor#rumor_bool",
-    # "two-to-lie#receiver_truth",
-    # here is the switch
-    # "hahackathon#is_humor",
+    "hasbiasedimplication",
+    "implicit-hate#stereotypical_hate",
+    "intentyn",
+    "tweet_offensive",
+    "offensiveyn",
+    "empathy#distress_bin",
+    "complaints",
+    "hayati_politeness",
+    "stanfordpoliteness",
+    "hypo-l",
+    "rumor#rumor_bool",
+    "two-to-lie#receiver_truth",
+    "hahackathon#is_humor",
     "sarc",
-    # "contextual-abuse#IdentityDirectedAbuse",
-    # "contextual-abuse#PersonDirectedAbuse",
-    # "tweet_irony",
-    # "questionintimacy",
-    # "tweet_emotion",
-    # "hateoffensive",
-    # "implicit-hate#explicit_hate",
-    # "implicit-hate#implicit_hate",
-    # "crowdflower",
-    # "dailydialog",
+    "contextual-abuse#IdentityDirectedAbuse",
+    "contextual-abuse#PersonDirectedAbuse",
+    "tweet_irony",
+    "questionintimacy",
+    "tweet_emotion",
+    "hateoffensive",
+    "implicit-hate#explicit_hate",
+    "implicit-hate#implicit_hate",
+    "crowdflower",
+    "dailydialog",
 ]
 
 for dataset_name in dataset_names:
@@ -375,11 +367,18 @@ for dataset_name in dataset_names:
         docs,
         remake_db=False,
     )
-    if model_name in ["AndersGiovanni/social-llama-7b-beta"]:
-        if "llama" in model_name:
-            tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf")
-        elif "gemma" in model_name:
-            tokenizer = AutoTokenizer.from_pretrained("google/gemma-7b-it")
+    if model_name in [
+        "AndersGiovanni/social-llama-7b-beta",
+        "AndersGiovanni/social-llama-3-8b-beta",
+        "AndersGiovanni/social-llama-7b-instructions",
+    ]:  # , "AndersGiovanni/social-llama-3-8b-instructions"]:
+        if model_name in [
+            "AndersGiovanni/social-llama-7b-beta",
+            "AndersGiovanni/social-llama-7b-instructions",
+        ]:
+            tokenizer = AutoTokenizer.from_pretrained(
+                "meta-llama/Llama-2-7b-chat-hf"
+            )  # Just for running the old Llama-2 models with no tokenizer.
         else:
             tokenizer = AutoTokenizer.from_pretrained(model_name)
         llm = pipeline(
@@ -387,12 +386,19 @@ for dataset_name in dataset_names:
             model=model_name,
             tokenizer=tokenizer,
             device_map="auto",
-            **{"max_new_tokens": 250, "temperature": 0.9, "do_sample": True},
+            # model_kwargs={"load_in_8bit": True},
+            **{"max_new_tokens": 50, "temperature": 0.9, "do_sample": True},
         )
         use_inference_client = False
     else:
+        if model_name == "AndersGiovanni/social-llama-3-8b-instructions":
+            client_path = (
+                "https://jpj5tfymwx6rrtj2.us-east-1.aws.endpoints.huggingface.cloud"
+            )
+        else:
+            client_path = model_name
         llm = InferenceClient(
-            model=model_name,
+            model=client_path,
             token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
             timeout=20,
         )
@@ -475,7 +481,7 @@ for dataset_name in dataset_names:
         while not has_output:
             if use_inference_client:
                 try:
-                    output = llm.text_generation(
+                    prediction = llm.text_generation(
                         template.format(
                             context=decoded_text,
                             text=sample["text"],
@@ -494,7 +500,7 @@ for dataset_name in dataset_names:
 
                     logging.info("Reinitializing LLM...")
                     llm = InferenceClient(
-                        model=model_name,
+                        model=client_path,
                         token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
                         timeout=20,
                     )
