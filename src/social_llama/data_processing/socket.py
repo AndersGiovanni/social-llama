@@ -80,9 +80,12 @@ class Socket(DataClass):
         return super().__getitem__(index)
 
     @override
-    def get_data(self) -> None:
+    def get_data(self, individual_task: str = "") -> None:
         """Get the data."""
-        tasks = self.socket["task"].values.tolist()
+        if individual_task:
+            tasks = [individual_task]
+        else:
+            tasks = self.socket["task"].values.tolist()
 
         features = Features(
             {

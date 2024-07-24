@@ -106,7 +106,11 @@ class Evaluator:
             self.use_inference_client = False
 
     def predict(
-        self, task: str = "social-dimensions", batch_size: int = 8, note: str = ""
+        self,
+        task: str = "social-dimensions",
+        batch_size: int = 8,
+        individual_task: str = "",
+        note: str = "",
     ) -> None:
         """Predict the labels for the test data."""
         self.socket_prompts: pd.DataFrame = pd.read_csv(
@@ -135,31 +139,36 @@ class Evaluator:
             # predictions = self._process_samples(task_data, labels)
             # save_json(save_path, predictions)
         elif task == "socket":
-            for task in [
-                "hahackathon#is_humor",
-                "sarc",
-                "contextual-abuse#IdentityDirectedAbuse",
-                "contextual-abuse#PersonDirectedAbuse",
-                "tweet_irony",
-                "questionintimacy",
-                "tweet_emotion",
-                "hateoffensive",
-                "implicit-hate#explicit_hate",
-                "implicit-hate#implicit_hate",
-                "crowdflower",
-                "dailydialog",
-                "hasbiasedimplication",
-                "implicit-hate#stereotypical_hate",
-                "intentyn",
-                "tweet_offensive",
-                "empathy#distress_bin",
-                "complaints",
-                "hayati_politeness",
-                "stanfordpoliteness",
-                "hypo-l",
-                "rumor#rumor_bool",
-                "two-to-lie#receiver_truth",
-            ][::-1]:
+            if individual_task == "":
+                tasks = [
+                    "hahackathon#is_humor",
+                    "sarc",
+                    "contextual-abuse#IdentityDirectedAbuse",
+                    "contextual-abuse#PersonDirectedAbuse",
+                    "tweet_irony",
+                    "questionintimacy",
+                    "tweet_emotion",
+                    "hateoffensive",
+                    "implicit-hate#explicit_hate",
+                    "implicit-hate#implicit_hate",
+                    "crowdflower",
+                    "dailydialog",
+                    "hasbiasedimplication",
+                    "implicit-hate#stereotypical_hate",
+                    "intentyn",
+                    "tweet_offensive",
+                    "empathy#distress_bin",
+                    "complaints",
+                    "hayati_politeness",
+                    "stanfordpoliteness",
+                    "hypo-l",
+                    "rumor#rumor_bool",
+                    "two-to-lie#receiver_truth",
+                ]
+            else:
+                tasks = [individual_task]
+                self.model_id = self.model_id.split("/")[-1]
+            for task in tasks:
                 task_data, labels = self._prepare_socket_test_data(task=task)
                 save_path = (
                     DATA_DIR_EVALUATION_SOCKET
@@ -420,14 +429,10 @@ if __name__ == "__main__":
         if len(sys.argv) > 1
         else "AndersGiovanni/social-llama-3-8b-instructions"
     )
-    # torch.cuda.empty_cache()
+    individual_task = sys.argv[2]
 
     evaluator = Evaluator(model)
 
     # evaluator.predict(task="social-dimensions")
 
-    evaluator.predict(task="socket", note="zero-shot")
-
-    del evaluator
-
-    a = 1
+    evaluator.predict(task="socket", note="zero-shot", individual_task=individual_task)

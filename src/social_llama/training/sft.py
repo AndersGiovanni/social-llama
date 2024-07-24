@@ -7,7 +7,6 @@ from typing import Optional
 
 import torch
 from dotenv import load_dotenv
-from peft import AutoPeftModelForCausalLM
 from peft import LoraConfig
 from transformers import AutoModelForCausalLM
 from transformers import AutoTokenizer
@@ -39,6 +38,9 @@ class ScriptArguments:
     dataset_name: Optional[str] = field(
         default="socket",
         metadata={"help": "the dataset name"},
+    )
+    individual_task: Optional[str] = field(
+        default="", metadata={"help": "the individual task to use"}
     )
     split: Optional[str] = field(default="train", metadata={"help": "the split to use"})
     shuffle_buffer: Optional[int] = field(
@@ -122,7 +124,7 @@ class ScriptArguments:
 parser = HfArgumentParser(ScriptArguments)
 script_args = parser.parse_args_into_dataclasses()[0]
 
-output_dir = f"{script_args.output_dir}/{script_args.model_name.split('/')[-1]}_{script_args.dataset_name}_{script_args.note}"
+output_dir = f"{script_args.output_dir}/{script_args.model_name.split('/')[-1]}_{script_args.dataset_name}_{script_args.individual_task}"
 
 if script_args.dataset_name == "social_dimensions":
     dataset = SocialDimensions(task=script_args.task, model=script_args.model_name)
@@ -135,7 +137,7 @@ elif script_args.dataset_name == "combined":
 else:
     raise ValueError(f"Dataset {script_args.dataset_name} is not supported.")
 
-dataset.get_data()
+dataset.get_data(script_args.individual_task)
 train_dataset, eval_dataset = dataset.preprocess_sft()
 
 # Based on the train dataset and the batch size, calculate the number of steps for 1 epoch
@@ -208,7 +210,7 @@ training_args = TrainingArguments(
     # fp16=True,
     bf16=True,
     remove_unused_columns=False,
-    run_name=f"sft_{script_args.model_name.split('/')[-1]}_{script_args.task}_{script_args.dataset_name}_{script_args.note}",
+    run_name=f"sft_{script_args.model_name.split('/')[-1]}_{script_args.task}_{script_args.dataset_name}_{script_args.individual_task}",
     seed=42,
 )
 
@@ -227,15 +229,3 @@ trainer.save_model(output_dir)
 
 output_dir_final = os.path.join(output_dir, "final_checkpoint")
 trainer.model.save_pretrained(output_dir_final)
-
-# Free memory for merging weights
-del base_model
-torch.cuda.empty_cache()
-
-model = AutoPeftModelForCausalLM.from_pretrained(
-    output_dir_final, device_map="auto", torch_dtype=torch.bfloat16
-)
-# model = model.merge_and_unload()
-
-# output_merged_dir = os.path.join(output_dir, "final_merged_checkpoint")
-# model.save_pretrained(output_merged_dir, safe_serialization=True)

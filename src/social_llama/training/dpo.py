@@ -49,8 +49,11 @@ class ScriptArguments:
         default="socket",
         metadata={"help": "the dataset name"},
     )
+    individual_task: Optional[str] = field(
+        default="hahackathon#is_humor", metadata={"help": "the individual task to use"}
+    )
     output_dir: Optional[str] = field(
-        default="./dpo/Meta-Llama-3-8B-Instruct_socket_1_epoch_1_epoch",
+        default="",
         metadata={"help": "the output directory"},
     )
     learning_rate: Optional[float] = field(
@@ -183,6 +186,7 @@ if __name__ == "__main__":
 
     MODEL_NAME = script_args.model_name_or_path.split("/")[-2]
     output_dir = "./dpo/" + MODEL_NAME
+    output_dir = f"./dpo/{script_args.base_model.split('/')[-1]}_{script_args.dataset_name}_{script_args.individual_task}"
 
     if script_args.ignore_bias_buffers:
         # torch distributed hack
@@ -224,7 +228,7 @@ if __name__ == "__main__":
     elif script_args.dataset_name == "combined":
         dataset = Combined(model=script_args.base_model)
 
-    dataset.get_data()
+    dataset.get_data(script_args.individual_task)
     train_dataset, eval_dataset = dataset.preprocess_dpo()
 
     tokenizer = AutoTokenizer.from_pretrained(
@@ -247,7 +251,7 @@ if __name__ == "__main__":
         learning_rate=script_args.learning_rate,
         evaluation_strategy="steps",
         eval_steps=script_args.eval_steps,
-        output_dir=script_args.output_dir,
+        output_dir=output_dir,
         report_to=script_args.report_to,
         lr_scheduler_type=script_args.lr_scheduler_type,
         warmup_steps=script_args.warmup_steps,
@@ -271,16 +275,6 @@ if __name__ == "__main__":
             "fc_out",
             "wte",
         ],
-        # if "llama" in script_args.base_model
-        # else [
-        #     "q_proj",
-        #     "o_proj",
-        #     "k_proj",
-        #     "v_proj",
-        #     "gate_proj",
-        #     "up_proj",
-        #     "down_proj",
-        # ],
         bias="none",
         task_type="CAUSAL_LM",
     )
@@ -303,8 +297,8 @@ if __name__ == "__main__":
 
     # 6. train
     dpo_trainer.train()
-    dpo_trainer.save_model(script_args.output_dir)
+    dpo_trainer.save_model(output_dir)
 
     # 7. save
-    output_dir = os.path.join(script_args.output_dir, "final_checkpoint")
+    output_dir = os.path.join(output_dir, "final_checkpoint")
     dpo_trainer.model.save_pretrained(output_dir)
