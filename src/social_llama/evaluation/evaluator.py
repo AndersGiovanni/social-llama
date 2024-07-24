@@ -1,8 +1,8 @@
 """Evaluation of the model."""
 
 import os
-import time
 import sys
+import time
 from typing import Dict
 from typing import List
 from typing import Union
@@ -303,7 +303,6 @@ class Evaluator:
             )
             knowledge = "" if pd.isna(knowledge) else knowledge
 
-
         labels: List[str] = dataset.features["label"].names
         labels_formatted = [f'"{label}"' for label in labels]
         labels_mapping: Dict[int, str] = {i: label for i, label in enumerate(labels)}
@@ -416,9 +415,10 @@ class Evaluator:
 
 
 if __name__ == "__main__":
-
     model = (
-        sys.argv[1] if len(sys.argv) > 1 else "AndersGiovanni/social-llama-3-8b-instructions"
+        sys.argv[1]
+        if len(sys.argv) > 1
+        else "AndersGiovanni/social-llama-3-8b-instructions"
     )
     # torch.cuda.empty_cache()
 

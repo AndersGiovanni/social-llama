@@ -19,4 +19,3 @@ python -m src.social_llama.training.rag "AndersGiovanni/social-llama-3-8b-instru
 # python -m src.social_llama.training.rag "AndersGiovanni/social-llama-7b-beta"
 # python -m src.social_llama.training.rag "AndersGiovanni/social-llama-3-8b-beta"
 # python -m src.social_llama.training.rag "AndersGiovanni/social-llama-7b-instructions"
-

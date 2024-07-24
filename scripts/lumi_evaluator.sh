@@ -12,7 +12,7 @@
 #SBATCH --time=1-24:00:00
 #SBATCH --account=project_465000859
 
-module load LUMI 
+module load LUMI
 module load cotainr
 
 touch /project/project_465000859/testfile

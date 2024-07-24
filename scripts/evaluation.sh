@@ -13,4 +13,3 @@ hostname
 # python -m src.social_llama.evaluation.evaluator "AndersGiovanni/social-llama-3-8b-instructions"
 
 python -m src.social_llama.evaluation.evaluator "meta-llama/Meta-Llama-3-8B-Instruct"
-

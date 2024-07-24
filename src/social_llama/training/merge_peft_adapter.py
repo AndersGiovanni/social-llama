@@ -23,7 +23,8 @@ class ScriptArguments:
         metadata={"help": "the model name"},
     )
     base_model_name: Optional[str] = field(
-        default="meta-llama/Meta-Llama-3-8B-Instruct", metadata={"help": "the model name"}
+        default="meta-llama/Meta-Llama-3-8B-Instruct",
+        metadata={"help": "the model name"},
     )
     output_name: Optional[str] = field(
         default="social-llama-3-8b-beta", metadata={"help": "the model name"}
