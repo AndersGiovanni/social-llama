@@ -76,6 +76,8 @@ ipykernel = "^6.25.2"
 black = "^23.12.1"
 seaborn = "^0.13.2"
 openai = "^1.16.0"
+streamlit = "^1.33.0"
+plotly = "^5.20.0"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]

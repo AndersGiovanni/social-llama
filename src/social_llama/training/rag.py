@@ -246,29 +246,29 @@ dataset_names = ["social-dimensions"]
 dataset_names = [
     # "hasbiasedimplication",
     # "implicit-hate#stereotypical_hate",
-    "intentyn",
-    "tweet_offensive",
-    "offensiveyn",
-    "empathy#distress_bin",
-    "complaints",
-    "hayati_politeness",
-    "stanfordpoliteness",
-    "hypo-l",
-    "rumor#rumor_bool",
-    "two-to-lie#receiver_truth",
+    # "intentyn",
+    # "tweet_offensive",
+    # "offensiveyn",
+    # "empathy#distress_bin",
+    # "complaints",
+    # "hayati_politeness",
+    # "stanfordpoliteness",
+    # "hypo-l",
+    # "rumor#rumor_bool",
+    # "two-to-lie#receiver_truth",
     # here is the switch
-    "hahackathon#is_humor",
+    # "hahackathon#is_humor",
     "sarc",
-    "contextual-abuse#IdentityDirectedAbuse",
-    "contextual-abuse#PersonDirectedAbuse",
-    "tweet_irony",
-    "questionintimacy",
-    "tweet_emotion",
-    "hateoffensive",
-    "implicit-hate#explicit_hate",
-    "implicit-hate#implicit_hate",
-    "crowdflower",
-    "dailydialog",
+    # "contextual-abuse#IdentityDirectedAbuse",
+    # "contextual-abuse#PersonDirectedAbuse",
+    # "tweet_irony",
+    # "questionintimacy",
+    # "tweet_emotion",
+    # "hateoffensive",
+    # "implicit-hate#explicit_hate",
+    # "implicit-hate#implicit_hate",
+    # "crowdflower",
+    # "dailydialog",
 ]
 
 for dataset_name in dataset_names:
@@ -356,7 +356,7 @@ for dataset_name in dataset_names:
     # Specify the model name you want to use
     # model_name = "meta-llama/Llama-2-7b-chat-hf"
     model_name = (
-        sys.argv[1] if len(sys.argv) > 1 else "AndersGiovanni/social-llama-7b-beta"
+        sys.argv[1] if len(sys.argv) > 1 else "meta-llama/Meta-Llama-3-8B-Instruct"
     )
 
     RAG = RAGClassification(

@@ -21,57 +21,59 @@ tasks = [
     if os.path.isdir(os.path.join(DATA_DIR_EVALUATION_SOCKET, i))
 ]
 
+alias_mapping = {
+    "hlab/SocialiteLlama_predictions_zero-shot.json": "Socialite",
+    "meta-llama/Llama-2-7b-chat-hf_predictions_zero-shot.json": "Llama-2 Zero-Shot",
+    "meta-llama/Meta-Llama-3-8B-Instruct_predictions_zero-shot.json": "Llama-3 Zero-Shot",
+    "meta-llama/Llama-2-7b-chat-hf_predictions_RAG.json": "Llama-2 RAG",
+    "meta-llama/Meta-Llama-3-8B-Instruct_predictions_knowledge.json": "Llama-3 Knowledge",
+    "meta-llama/Llama-2-7b-chat-hf_predictions_knowledge.json": "Llama-2 Knowledge",
+    "meta-llama/Meta-Llama-3-8B-Instruct_predictions_RAG.json": "Llama-3 RAG",
+    "AndersGiovanni/social-llama-3-8b-instructions_predictions_zero-shot.json": "Social-Llama-3 Instructions",
+    "AndersGiovanni/social-llama-7b-beta_predictions_zero-shot.json": "Social-Llama-2 Zero-Shot",
+    "AndersGiovanni/social-llama-3-8b-beta_predictions_RAG.json": "Social-Llama-3 RAG",
+    "AndersGiovanni/social-llama-7b-instructions_predictions_zero-shot.json": "Social-Llama-2 Instructions",
+    "AndersGiovanni/social-llama-3-8b-instructions_predictions_RAG.json": "Social-Llama-3 Instructions RAG",
+    "AndersGiovanni/social-llama-7b-instructions_predictions_RAG.json": "Social-Llama-2 Instructions RAG",
+    "AndersGiovanni/social-llama-3-8b-beta_predictions_zero-shot.json": "Social-Llama-3 Zero-Shot",
+    "AndersGiovanni/social-llama-7b-beta_predictions_RAG.json": "Social-Llama-2 RAG",
+}
+
 selected_tasks = [
+    "complaints",
+    "contextual-abuse#IdentityDirectedAbuse",
+    "contextual-abuse#PersonDirectedAbuse",
+    "crowdflower",
+    "dailydialog",
+    "empathy#distress_bin",
+    "hahackathon#is_humor",
     "hasbiasedimplication",
+    "hateoffensive",
+    "hayati_politeness",
+    "hypo-l",
+    "implicit-hate#explicit_hate",
+    "implicit-hate#implicit_hate",
     "implicit-hate#stereotypical_hate",
     "intentyn",
     "tweet_offensive",
-    "offensiveyn",
-    "empathy#distress_bin",
-    "complaints",
-    "hayati_politeness",
-    "stanfordpoliteness",
-    "hypo-l",
-    "rumor#rumor_bool",
-    "two-to-lie#receiver_truth",
-    "hahackathon#is_humor",
-    "sarc",
-    "contextual-abuse#IdentityDirectedAbuse",
-    "contextual-abuse#PersonDirectedAbuse",
-    "tweet_irony",
+    # "offensiveyn",
     "questionintimacy",
+    "rumor#rumor_bool",
+    "sarc",
+    "stanfordpoliteness",
     "tweet_emotion",
-    "hateoffensive",
-    "implicit-hate#explicit_hate",
-    "implicit-hate#implicit_hate",
-    "crowdflower",
-    "dailydialog",
+    "tweet_irony",
+    "tweet_offensive",
+    "two-to-lie#receiver_truth",
 ]
 
 
-results_llama = pd.DataFrame(
-    columns=[
-        "task",
-        "zero-shot",
-        "knowledge",
-        "RAG",
-        "fine-tune-zero-shot",
-        "fine-tune-knowledge",
-        "fine-tune-RAG",
-    ]
-)
-results_gemma = pd.DataFrame(
-    columns=[
-        "task",
-        "zero-shot",
-        "knowledge",
-        "RAG",
-        "fine-tune-zero-shot",
-        "fine-tune-knowledge",
-        "fine-tune-RAG",
-    ]
-)
+results_llama = pd.DataFrame()
 
+results_df = pd.DataFrame()
+
+
+# Save results where
 for task in tasks:
     if task not in selected_tasks:
         continue
@@ -83,9 +85,6 @@ for task in tasks:
         for i in os.listdir(os.path.join(DATA_DIR_EVALUATION_SOCKET, task))
         if os.path.isdir(os.path.join(DATA_DIR_EVALUATION_SOCKET, task, i))
     ]
-
-    if "AGMoller" in models:
-        models.remove("AGMoller")
 
     # Data storage for plotting
     model_names = []
@@ -105,6 +104,7 @@ for task in tasks:
                 i.endswith("knowledge.json")
                 or i.endswith("zero-shot.json")
                 or i.endswith("RAG.json")
+                or i.endswith("instruction_prompt.json")
             )
         ]
 
@@ -125,57 +125,69 @@ for task in tasks:
 
             acc = accuracy_score(predictions, labels)
 
+            # Check if task row exists in the results dataframe
+            if task not in results_df.columns:
+                results_df[task] = pd.Series(dtype="float64")
+
+            # If the f'model/{file}' column does not exist, create it and put it at the task row
+            if f"{model}/{file}" not in results_df.index:
+                results_df.loc[f"{model}/{file}"] = pd.Series(dtype="float64")
+            results_df.at[f"{model}/{file}", task] = acc
+
+            # Add mapping to the results dataframe
+            if f"{model}/{file}" in alias_mapping:
+                results_df.at[f"{model}/{file}", "alias"] = alias_mapping[
+                    f"{model}/{file}"
+                ]
+
+            if f"{model}/{file}" not in results_df.index:
+                results_df.loc[f"{model}/{file}"] = pd.Series(dtype="float64")
+            results_df.at[f"{model}/{file}", task] = acc
+
             # Append model performance data for plotting
             model_names.append(model + "_" + file)
             accuracies.append(acc)
 
             # Append model performance data for storage
             if "knowledge.json" in file:
-                column = "fine-tune-knowledge" if is_trained else "knowledge"
+                column = "knowledge"
             elif "zero-shot.json" in file:
-                column = "fine-tune-zero-shot" if is_trained else "zero-shot"
+                if model == "hlab":
+                    column = "sociallite-instrucitons-zero-shot"
+                else:
+                    if is_trained:
+                        if "instructions" in file:
+                            column = "reverse-instructions-zero-shot"
+                        else:
+                            column = "fine-tune-zero-shot"
+                    else:
+                        column = "zero-shot"
             elif "RAG.json" in file:
-                column = "fine-tune-RAG" if is_trained else "RAG"
+                if is_trained:
+                    if "instructions" in file:
+                        column = "reverse-instructions-RAG"
+                    else:
+                        column = "fine-tune-RAG"
+                else:
+                    column = "RAG"
             else:
                 continue
 
-            # Append model performance data for storage
-            if model == "google":
-                if task in results_gemma["task"].values:
-                    results_gemma.loc[results_gemma["task"] == task, column] = acc
-                else:
-                    new_row = pd.DataFrame(
-                        {
-                            "task": [task],
-                            column: [acc],
-                            **{
-                                col: [None]
-                                for col in results_gemma.columns
-                                if col not in ["task", column]
-                            },
-                        }
-                    )
-                    results_gemma = pd.concat(
-                        [results_gemma, new_row], ignore_index=True
-                    )
+            if task in results_llama["task"].values:
+                results_llama.loc[results_llama["task"] == task, column] = acc
             else:
-                if task in results_llama["task"].values:
-                    results_llama.loc[results_llama["task"] == task, column] = acc
-                else:
-                    new_row = pd.DataFrame(
-                        {
-                            "task": [task],
-                            column: [acc],
-                            **{
-                                col: [None]
-                                for col in results_llama.columns
-                                if col not in ["task", column]
-                            },
-                        }
-                    )
-                    results_llama = pd.concat(
-                        [results_llama, new_row], ignore_index=True
-                    )
+                new_row = pd.DataFrame(
+                    {
+                        "task": [task],
+                        column: [acc],
+                        **{
+                            col: [None]
+                            for col in results_llama.columns
+                            if col not in ["task", column]
+                        },
+                    }
+                )
+                results_llama = pd.concat([results_llama, new_row], ignore_index=True)
 
     if len(model_names) <= 1:
         continue
@@ -210,15 +222,17 @@ for task in tasks:
             va="center",
             ha="left",
         )
-    plt.savefig(
-        os.path.join(DATA_DIR_EVALUATION_SOCKET, "assets", f"{task}_accuracy.png")
-    )
+    # plt.savefig(
+    #     os.path.join(DATA_DIR_EVALUATION_SOCKET, "assets", f"{task}_accuracy.png")
+    # )
     # plt.show()
 
 # Save the results in a CSV
-# results_llama.to_csv(
-#     os.path.join(DATA_DIR_EVALUATION_SOCKET, "assets/results_llama.csv"), index=False
-# )
-# results_gemma.to_csv(
-#     os.path.join(DATA_DIR_EVALUATION_SOCKET, "assets/results_gemma.csv"), index=False
-# )
+results_llama.to_csv(
+    os.path.join(DATA_DIR_EVALUATION_SOCKET, "assets/results_llamas-total.csv"),
+    index=False,
+)
+
+results_df.to_csv(
+    os.path.join(DATA_DIR_EVALUATION_SOCKET, "assets/results_by_model.csv"), index=True
+)
