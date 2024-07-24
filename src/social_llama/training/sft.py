@@ -30,14 +30,14 @@ class ScriptArguments:
     """Script arguments."""
 
     model_name: Optional[str] = field(
-        default="meta-llama/Llama-2-7b-chat",
+        default="meta-llama/Meta-Llama-3-8B-Instruct",
         metadata={"help": "the model name"},
     )
     log_with: Optional[str] = field(
         default="wandb", metadata={"help": "use 'wandb' to log with wandb"}
     )
     dataset_name: Optional[str] = field(
-        default="instruction-socket",
+        default="socket",
         metadata={"help": "the dataset name"},
     )
     split: Optional[str] = field(default="train", metadata={"help": "the split to use"})
@@ -51,7 +51,7 @@ class ScriptArguments:
         default=10, metadata={"help": "the number of workers"}
     )
     num_train_epochs: Optional[int] = field(
-        default=5, metadata={"help": "the number of training epochs"}
+        default=1, metadata={"help": "the number of training epochs"}
     )
     # max_steps: Optional[int] = field(
     #     default=3000, metadata={"help": "the maximum number of sgd steps"}
@@ -63,7 +63,7 @@ class ScriptArguments:
         default=0.2, metadata={"help": "the saving frequency"}
     )
     per_device_train_batch_size: Optional[int] = field(
-        default=1, metadata={"help": "the per device train batch size"}
+        default=2, metadata={"help": "the per device train batch size"}
     )
     per_device_eval_batch_size: Optional[int] = field(
         default=1, metadata={"help": "the per device eval batch size"}
@@ -112,7 +112,7 @@ class ScriptArguments:
         default=1, metadata={"help": "the logging frequency"}
     )
     note: Optional[str] = field(
-        default="5_epoch_v3", metadata={"help": "the note to add to the run"}
+        default="1_epoch", metadata={"help": "the note to add to the run"}
     )
     task: Optional[str] = field(
         default="zero-shot", metadata={"help": "the task to run"}

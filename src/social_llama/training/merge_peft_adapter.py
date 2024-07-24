@@ -19,14 +19,14 @@ class ScriptArguments:
 
     adapter_model_name: Optional[str] = field(
         # default="dpo/Llama-2-7b-chat-hf_zero-shot_combined_3epoch/final_checkpoint/",
-        default="dpo/Llama-2-7b-hf_socket_5_epoch_v3/final_checkpoint/",
+        default="dpo/Meta-Llama-3-8B-Instruct_socket_1_epoch_1_epoch/final_checkpoint/",
         metadata={"help": "the model name"},
     )
     base_model_name: Optional[str] = field(
-        default="meta-llama/Llama-2-7b-hf", metadata={"help": "the model name"}
+        default="meta-llama/Meta-Llama-3-8B-Instruct", metadata={"help": "the model name"}
     )
     output_name: Optional[str] = field(
-        default="social-llama-7b-alpha-v2", metadata={"help": "the model name"}
+        default="social-llama-3-8b-beta", metadata={"help": "the model name"}
     )
 
 

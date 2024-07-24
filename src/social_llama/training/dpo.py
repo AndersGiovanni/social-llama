@@ -38,19 +38,19 @@ class ScriptArguments:
     )
     # training parameters
     model_name_or_path: Optional[str] = field(
-        default="sft/Llama-2-7b-chat-hf_instruction-socket_1_epoch/final_checkpoint",
+        default="sft/Meta-Llama-3-8B-Instruct_socket_1_epoch/final_checkpoint",
         metadata={"help": "the location of the SFT model name or path"},
     )
     base_model: Optional[str] = field(
-        default="meta-llama/Llama-2-7b-hf",
+        default="meta-llama/Meta-Llama-3-8B-Instruct",
         metadata={"help": "the base model name or path"},
     )
     dataset_name: Optional[str] = field(
-        default="instruction-socket",
+        default="socket",
         metadata={"help": "the dataset name"},
     )
     output_dir: Optional[str] = field(
-        default="./dpo/Llama-2-7b-chat-hf_instruction-socket_1_epoch_1_epoch",
+        default="./dpo/Meta-Llama-3-8B-Instruct_socket_1_epoch_1_epoch",
         metadata={"help": "the output directory"},
     )
     learning_rate: Optional[float] = field(
