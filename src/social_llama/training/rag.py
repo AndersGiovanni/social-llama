@@ -367,9 +367,11 @@ for dataset_name in dataset_names:
         docs,
         remake_db=False,
     )
-    if model_name in ["AndersGiovanni/social-llama-7b-beta", "AndersGiovanni/social-llama-3-8b-beta", "AndersGiovanni/social-llama-7b-instructions", "AndersGiovanni/social-llama-3-8b-instructions"]:
-        # tokenizer = AutoTokenizer.from_pretrained(model_name)
-        tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf") # Just for running the old Llama-2 models with no tokenizer.
+    if model_name in ["AndersGiovanni/social-llama-7b-beta", "AndersGiovanni/social-llama-3-8b-beta", "AndersGiovanni/social-llama-7b-instructions"]:#, "AndersGiovanni/social-llama-3-8b-instructions"]:
+        if model_name in ["AndersGiovanni/social-llama-7b-beta", "AndersGiovanni/social-llama-7b-instructions"]:
+            tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf") # Just for running the old Llama-2 models with no tokenizer.
+        else:
+            tokenizer = AutoTokenizer.from_pretrained(model_name)
         llm = pipeline(
             "text-generation",
             model=model_name,
@@ -380,8 +382,12 @@ for dataset_name in dataset_names:
         )
         use_inference_client = False
     else:
+        if model_name == "AndersGiovanni/social-llama-3-8b-instructions":
+            client_path = "https://jpj5tfymwx6rrtj2.us-east-1.aws.endpoints.huggingface.cloud"
+        else:
+            client_path = model_name
         llm = InferenceClient(
-            model=model_name,
+            model=client_path,
             token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
             timeout=20,
         )
@@ -483,7 +489,7 @@ for dataset_name in dataset_names:
 
                     logging.info("Reinitializing LLM...")
                     llm = InferenceClient(
-                        model=model_name,
+                        model=client_path,
                         token=os.environ["HUGGINGFACEHUB_API_TOKEN"],
                         timeout=20,
                     )
