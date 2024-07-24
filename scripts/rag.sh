@@ -13,10 +13,10 @@ hostname
 nvidia-smi
 # python -m src.social_llama.training.rag "google/gemma-7b-it"
 # python -m src.social_llama.training.rag "meta-llama/Llama-2-7b-chat-hf"
-# python -m src.social_llama.training.rag "AndersGiovanni/social-llama-3-8b-instructions"
+python -m src.social_llama.training.rag "AndersGiovanni/social-llama-3-8b-instructions"
 
 
-python -m src.social_llama.training.rag "AndersGiovanni/social-llama-7b-beta"
+# python -m src.social_llama.training.rag "AndersGiovanni/social-llama-7b-beta"
 # python -m src.social_llama.training.rag "AndersGiovanni/social-llama-3-8b-beta"
 # python -m src.social_llama.training.rag "AndersGiovanni/social-llama-7b-instructions"
 
